@@ -1,12 +1,12 @@
 module.exports = {
   title: 'AutoPi Documentation',
   tagline: 'Documentation and Guides for Cloud, Core and Devices',
-  url: 'https://docs.autopi.io',
-  baseUrl: '/',
+  url: 'https://autopi-io.github.io',
+  baseUrl: '/docs',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
-  organizationName: 'AutoPi.io', // Usually your GitHub org/user name.
-  projectName: 'AutoPi Docs', // Usually your repo name.
+  organizationName: 'autopi-io', // Usually your GitHub org/user name.
+  projectName: 'documentation', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'AutoPi Documentation',
