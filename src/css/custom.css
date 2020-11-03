@@ -1,0 +1,48 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #005afa;
+  --ifm-color-primary-dark: #0051e1;
+  --ifm-color-primary-darker: #004dd4;
+  --ifm-color-primary-darkest: #003faf;
+  --ifm-color-primary-light: #1469ff;
+  --ifm-color-primary-lighter: #2171ff;
+  --ifm-color-primary-lightest: #4689ff;
+  --ifm-code-font-size: 90%;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+body, input, textarea, select, button {
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-feature-settings: 'kern';
+	-moz-font-feature-settings: 'kern';
+	font-feature-settings: 'kern';
+
+  font-size: 0.95em;
+  line-height: 1.35em;
+  letter-spacing: .01rem;
+  font-family: "Open Sans",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+
+  font-weight: 300;  
+}
+
+.menu__link{
+  font-size: 1em;
+  line-height: 12px !important;
+  font-weight: 600;
+}

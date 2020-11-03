@@ -1,0 +1,76 @@
+<svg width="293pt" height="260pt" viewBox="0.00 0.00 293.00 260.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>States</title>
+<polygon fill="white" stroke="white" points="-4,5 -4,-256 290,-256 290,5 -4,5"></polygon>
+<!-- OFF -->
+<g id="node1" class="node"><title>OFF</title>
+<ellipse fill="none" stroke="black" cx="159" cy="-234" rx="28.6156" ry="18"></ellipse>
+<text text-anchor="middle" x="159" y="-229.8" font-family="Times,serif" font-size="14.00"><a href="#off">OFF</a></text>
+</g>
+<!-- BOOTING -->
+<g id="node3" class="node"><title>BOOTING</title>
+<ellipse fill="none" stroke="black" cx="159" cy="-162" rx="54.2146" ry="18"></ellipse>
+<text text-anchor="middle" x="159" y="-157.8" font-family="Times,serif" font-size="14.00"><a href="#booting">BOOTING</a></text>
+</g>
+<!-- OFF&#45;&gt;BOOTING -->
+<g id="edge2" class="edge"><title>OFF-&gt;BOOTING</title>
+<path fill="none" stroke="black" d="M153.122,-216.055C152.304,-208.346 152.061,-199.027 152.395,-190.364"></path>
+<polygon fill="black" stroke="black" points="155.894,-190.491 153.087,-180.275 148.911,-190.012 155.894,-190.491"></polygon>
+</g>
+<!-- HIBERNATING -->
+<g id="node5" class="node"><title>HIBERNATING</title>
+<ellipse fill="none" stroke="black" cx="77" cy="-18" rx="77.0032" ry="18"></ellipse>
+<text text-anchor="middle" x="77" y="-13.8" font-family="Times,serif" font-size="14.00"><a href="#hibernating">HIBERNATING</a></text>
+</g>
+<!-- OFF&#45;&gt;HIBERNATING -->
+<g id="edge4" class="edge"><title>OFF-&gt;HIBERNATING</title>
+<path fill="none" stroke="black" d="M138.377,-221.459C123.962,-212.218 105.631,-197.866 96,-180 73.102,-137.525 72.3523,-79.7318 74.3551,-46.1882"></path>
+<polygon fill="black" stroke="black" points="77.8469,-46.4261 75.0774,-36.1997 70.8651,-45.9211 77.8469,-46.4261"></polygon>
+</g>
+<!-- BOOTING&#45;&gt;OFF -->
+<g id="edge8" class="edge"><title>BOOTING-&gt;OFF</title>
+<path fill="none" stroke="black" d="M164.913,-180.275C165.715,-188.03 165.94,-197.362 165.591,-206.005"></path>
+<polygon fill="black" stroke="black" points="162.094,-205.832 164.878,-216.055 169.077,-206.327 162.094,-205.832"></polygon>
+</g>
+<!-- ON -->
+<g id="node7" class="node"><title>ON</title>
+<ellipse fill="none" stroke="black" cx="225" cy="-90" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="225" y="-85.8" font-family="Times,serif" font-size="14.00"><a href="#on">ON</a></text>
+</g>
+<!-- BOOTING&#45;&gt;ON -->
+<g id="edge6" class="edge"><title>BOOTING-&gt;ON</title>
+<path fill="none" stroke="black" d="M174.641,-144.411C183.511,-135.004 194.72,-123.115 204.31,-112.944"></path>
+<polygon fill="black" stroke="black" points="206.949,-115.247 211.262,-105.57 201.855,-110.445 206.949,-115.247"></polygon>
+</g>
+<!-- HIBERNATING&#45;&gt;BOOTING -->
+<g id="edge18" class="edge"><title>HIBERNATING-&gt;BOOTING</title>
+<path fill="none" stroke="black" d="M86.9716,-36.2678C101.274,-61.036 127.71,-106.816 144.27,-135.492"></path>
+<polygon fill="black" stroke="black" points="141.24,-137.244 149.272,-144.153 147.302,-133.743 141.24,-137.244"></polygon>
+</g>
+<!-- ON&#45;&gt;OFF -->
+<g id="edge10" class="edge"><title>ON-&gt;OFF</title>
+<path fill="none" stroke="black" d="M228.36,-108.046C231.176,-126.718 233.154,-157.059 222,-180 214.789,-194.831 201.282,-207.059 188.618,-216.018"></path>
+<polygon fill="black" stroke="black" points="186.469,-213.243 180.073,-221.689 190.34,-219.075 186.469,-213.243"></polygon>
+</g>
+<!-- ON&#45;&gt;HIBERNATING -->
+<g id="edge14" class="edge"><title>ON-&gt;HIBERNATING</title>
+<path fill="none" stroke="black" d="M203.48,-78.8214C181.295,-68.3286 146.145,-51.7038 118.525,-38.6402"></path>
+<polygon fill="black" stroke="black" points="120.013,-35.4722 109.476,-34.3604 117.02,-41.8001 120.013,-35.4722"></polygon>
+</g>
+<!-- SLEEPING -->
+<g id="node11" class="node"><title>SLEEPING</title>
+<ellipse fill="none" stroke="black" cx="229" cy="-18" rx="56.4429" ry="18"></ellipse>
+<text text-anchor="middle" x="229" y="-13.8" font-family="Times,serif" font-size="14.00"><a href="#sleeping">SLEEPING</a></text>
+</g>
+<!-- ON&#45;&gt;SLEEPING -->
+<g id="edge12" class="edge"><title>ON-&gt;SLEEPING</title>
+<path fill="none" stroke="black" d="M225.989,-71.6966C226.43,-63.9827 226.959,-54.7125 227.451,-46.1124"></path>
+<polygon fill="black" stroke="black" points="230.946,-46.2878 228.023,-36.1043 223.958,-45.8883 230.946,-46.2878"></polygon>
+</g>
+<!-- SLEEPING&#45;&gt;BOOTING -->
+<g id="edge16" class="edge"><title>SLEEPING-&gt;BOOTING</title>
+<path fill="none" stroke="black" d="M214.167,-35.7138C205.89,-45.7017 195.89,-58.9517 189,-72 178.562,-91.7675 170.7,-115.887 165.649,-134.028"></path>
+<polygon fill="black" stroke="black" points="162.2,-133.376 163.001,-143.941 168.963,-135.183 162.2,-133.376"></polygon>
+</g>
+</g>
+</svg>
