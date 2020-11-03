@@ -2,7 +2,7 @@ module.exports = {
   title: 'AutoPi Documentation',
   tagline: 'Documentation and Guides for Cloud, Core and Devices',
   url: 'https://autopi-io.github.io',
-  baseUrl: '/docs/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'autopi-io', // Usually your GitHub org/user name.
@@ -12,7 +12,7 @@ module.exports = {
       title: 'AutoPi Documentation',
       logo: {
         alt: 'AutoPi Docs Logo',
-        src: 'img/logo_trans_doc.png',
+        src: 'static/img/logo_trans_doc.png',
       },
       items: [
         {
