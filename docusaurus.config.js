@@ -2,7 +2,7 @@ module.exports = {
   title: 'AutoPi Documentation',
   tagline: 'Documentation and Guides for Cloud, Core and Devices',
   url: 'https://autopi-io.github.io',
-  baseUrl: '/docs',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'autopi-io', // Usually your GitHub org/user name.
