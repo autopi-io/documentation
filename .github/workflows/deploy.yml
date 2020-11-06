@@ -15,7 +15,9 @@ jobs:
         with:
           node-version: '12.x'
       - name: Test secrets
-        run: echo "${{ secrets.TEST_SECRET }}"
+        run: |
+          echo "Do you see me?"
+          echo "${{ secrets.TEST_SECRET }}"
       - name: Add key to allow access to repository
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
@@ -32,7 +34,7 @@ jobs:
       - name: Release to GitHub Pages
         env:
           USE_SSH: true
-          GIT_USER: git
+          GIT_USER: nikola-autopi
         run: |
           git config --global user.email "actions@gihub.com"
           git config --global user.name "gh-actions"
