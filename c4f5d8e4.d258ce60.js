@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[60],{115:function(n,e,t){"use strict";t.r(e);var o=t(0),c=t.n(o),a=(t(131),t(137),t(133),t(130),t(132),t(116),t(135));e.default=function(){return c.a.createElement(a.Redirect,{to:"/documentation/docs/"})}}}]);
