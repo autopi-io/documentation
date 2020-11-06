@@ -14,6 +14,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - name: Test secrets
+        run: echo "${{ secrets.TEST_SECRET }}"
       - name: Add key to allow access to repository
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
