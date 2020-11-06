@@ -5,8 +5,8 @@ title: Using Power Management
 
 Power management of the device consists of a low- and high-level layer:
 
-1. [Low-level](low_level)
-1. [High-level](high_level)
+1. [Low-level](low_level.md)
+1. [High-level](high_level.md)
 
 
 ## Status LEDs
@@ -17,20 +17,20 @@ Status LEDs are only available on the AutoPi Telematics Unit.
 
 ### Blue LED
 
-The blue LED indicates the current state of the [low-level ](/power/low_level) SPM system.
+The blue LED indicates the current state of the [low-level ](low_level.md) SPM system.
 
 | LED State | Description |
 | ------ | ------ |
-| Turned off | SPM is in [OFF](/power/low_level#off) state. |
-| Flashing brightly | SPM is in [BOOTING](/power/low_level#booting) state. |
-| Constantly bright | SPM is in [ON](/power/low_level#on) state. |
-| Breathing effect | SPM is in [SLEEPING](/power/low_level#sleeping) state. |
-| Constantly dimmed | SPM is in [HIBERNATING](/power/low_level#hibernating) state. |
+| Turned off | SPM is in [OFF](low_level.md#off) state. |
+| Flashing brightly | SPM is in [BOOTING](low_level.md#booting) state. |
+| Constantly bright | SPM is in [ON](low_level.md#on) state. |
+| Breathing effect | SPM is in [SLEEPING](low_level.md#sleeping) state. |
+| Constantly dimmed | SPM is in [HIBERNATING](low_level.md#hibernating) state. |
 
 
 ### Green LED
 
-The green LED indicates the current state of the [high-level](/power/high_level) system.
+The green LED indicates the current state of the [high-level](high_level.md) system.
 
 | LED State | Description |
 | ------ | ------ |

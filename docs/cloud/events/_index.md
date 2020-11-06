@@ -8,7 +8,7 @@ The system running on the device may listen and respond to events and perform ad
 
 All events are divided into two top level areas:
 
-  - [System](/events/system/)
-  - [Vehicle](/events/vehicle/)
+  - [System](system.md)
+  - [Vehicle](vehicle.md)
 
 Each event consist of a timestamp, a tag and some additional data fields.

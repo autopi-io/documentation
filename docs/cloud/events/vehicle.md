@@ -5,7 +5,7 @@ title: Vehicle
 
 ## Battery Events
 
-These events are calculated from the voltage level measured via the OBD-II connector and are fired by the trigger [`battery_event`](/services/obd_manager/#battery-event) in the [Obd Manager](/services/obd_manager/).
+These events are calculated from the voltage level measured via the OBD-II connector and are fired by the trigger [`battery_event`](../../core/services/obd_manager.md#battery-event) in the [Obd Manager](../../core/services/obd_manager.md).
 
 | Tag | Description | Fields |
 | ------ | ------ | ------ |
@@ -25,7 +25,7 @@ These events are calculated from the voltage level measured via the OBD-II conne
 
 ## Engine Events
 
-These events are fired by the trigger [`rpm_engine_event`](/services/obd_manager/#rpm-engine-event) in the [Obd Manager](/services/obd_manager/) and are only intended for ICE-type cars.
+These events are fired by the trigger [`rpm_engine_event`](../../core/services/obd_manager.md#rpm-engine-event) in the [Obd Manager](../../core/services/obd_manager.md) and are only intended for ICE-type cars.
 
 | Tag | Description | Fields |
 | ------ | ------ | ------ |
@@ -41,7 +41,7 @@ These events are fired by the trigger [`rpm_engine_event`](/services/obd_manager
 
 ## Communication Events
 
-These events are fired by the trigger [`communication_event`](/services/obd_manager/#communication-event) in the [Obd Manager](/services/obd_manager/) and used with EV-type cars that are unable to produce [Motor Events](#motor-events).
+These events are fired by the trigger [`communication_event`](../../core/services/obd_manager.md#communication-event) in the [Obd Manager](../../core/services/obd_manager.md) and used with EV-type cars that are unable to produce [Motor Events](#motor-events).
 
 | Tag | Description | Fields |
 | ------ | ------ | ------ |
@@ -57,7 +57,7 @@ These events are fired by the trigger [`communication_event`](/services/obd_mana
 
 ## Motor Events
 
-These events are fired by the trigger [`rpm_motor_event`](/services/obd_manager/#rpm-motor-event) in the [Obd Manager](/services/obd_manager/) and are intended for EV-type cars.
+These events are fired by the trigger [`rpm_motor_event`](../../core/services/obd_manager.md#rpm-motor-event) in the [Obd Manager](../../core/services/obd_manager.md) and are intended for EV-type cars.
 
 | Tag | Description | Fields |
 | ------ | ------ | ------ |
