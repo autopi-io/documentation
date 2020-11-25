@@ -8,8 +8,7 @@ module.exports = {
   organizationName: 'autopi-io', // Usually your GitHub org/user name.
   projectName: 'documentation', // Usually your repo name.
   themeConfig: {
-    navbar: {
-      title: 'AutoPi Documentation',
+    navbar: {      
       logo: {
         alt: 'AutoPi Docs Logo',
         src: 'img/logo_trans_doc.png',
@@ -17,12 +16,12 @@ module.exports = {
       items: [
         {
           to: 'docs/core/core-overview',
-          label: 'AutoPi Core Docs',
+          label: 'Core Docs',
           position: 'left',
         },
         {
           to: 'docs/cloud/cloud-overview',
-          label: 'My AutoPi Cloud Docs',
+          label: 'Cloud Docs',
           position: 'left',
         },
         {

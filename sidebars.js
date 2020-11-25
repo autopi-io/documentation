@@ -1,6 +1,6 @@
 module.exports = {
   coreSidebar: {
-    "AutoPi Core Docs": ['core/core-overview',
+    "Core Docs": ['core/core-overview',
                                   
                   {
                   "type": "category",
@@ -60,7 +60,7 @@ module.exports = {
             }],  
   },
   cloudSidebar: {
-    "My AutoPi Cloud Docs": ['cloud/cloud-overview',
+    "Cloud Docs": ['cloud/cloud-overview',
                   'cloud/configuration/cloud-config',
                   'cloud/events/cloud-events',
                   'cloud/jobs/cloud-jobs',
