@@ -1,6 +1,6 @@
 ---
 id: cloud-config
-title: Configuration
+title: Getting Started
 ---
 
 The configuration settings controls the behaviour of the device.

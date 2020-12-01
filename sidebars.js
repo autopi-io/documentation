@@ -60,16 +60,15 @@ module.exports = {
             }],  
   },
   cloudSidebar: {
-    "Cloud Docs": ['cloud/cloud-overview',
-                  'cloud/configuration/cloud-config',
-                  'cloud/events/cloud-events',
+    "Cloud Docs": ['cloud/cloud-overview',                                    
                   'cloud/jobs/cloud-jobs',
                   'cloud/triggers/cloud-triggers',
                   'cloud/trips/cloud-trips',
                   {"type": "category",
                     "label": "Configuration",
                     "items":
-                      ['cloud/configuration/cloud-config-acc',
+                      ['cloud/configuration/cloud-config',
+                      'cloud/configuration/cloud-config-acc',
                       'cloud/configuration/cloud-config-audio',
                       'cloud/configuration/cloud-config-bluetooth',
                       'cloud/configuration/cloud-config-api',
@@ -84,7 +83,8 @@ module.exports = {
                       {"type": "category",
                       "label": "Events",
                       "items":  
-                      ['cloud/events/cloud-events-system',
+                      ['cloud/events/cloud-events',
+                      'cloud/events/cloud-events-system',
                       'cloud/events/cloud-events-vehicle'],   
                       }
             ]

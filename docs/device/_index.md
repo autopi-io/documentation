@@ -2,11 +2,12 @@
 id: device-overview
 title: Device Overview
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This site contains the documentation for the AutoPi Telematics Unit, and will be continually updated to match the functionality provided.
  
 <p align="center">
-  <img src="../../static/img/gen3device_narrow.png" alt="AutoPi GEN3" width="300"/>
+  <img src={useBaseUrl('img/gen3device_narrow.png')} alt="AutoPi GEN3" width="400"/>
 </p>
 
 ## What is AutoPi?

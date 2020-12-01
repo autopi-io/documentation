@@ -1,6 +1,6 @@
 ---
 id: core-services
-title: "Using Core Services"
+title: Getting Started
 ---
 
 A variety of services are running on the device, each having its own specific area of responsibility. Most services are built around the same structure and using the same concepts which are described below.
