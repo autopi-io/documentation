@@ -2,6 +2,7 @@ module.exports = {
   title: 'AutoPi Documentation',
   tagline: 'Documentation and Guides for AutoPi Cloud, Core and Devices',
   url: 'https://autopi-io.github.io',
+  docsUrl: '',
   baseUrl: '/documentation/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
@@ -102,7 +103,6 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
-        path: 'content',
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),          
         },
