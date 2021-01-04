@@ -1,6 +1,6 @@
 ---
 id: cloud-events
-title: Getting Started
+title: Introduction
 ---
 
 An event describes a specific state change or condition encountered on the device.

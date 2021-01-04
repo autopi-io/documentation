@@ -1,6 +1,6 @@
 module.exports = {
   title: 'AutoPi Documentation',
-  tagline: 'Documentation and Guides for Cloud, Core and Devices',
+  tagline: 'Documentation and Guides for AutoPi Cloud, Core and Devices',
   url: 'https://autopi-io.github.io',
   baseUrl: '/documentation/',
   onBrokenLinks: 'throw',
@@ -10,18 +10,18 @@ module.exports = {
   themeConfig: {
     navbar: {      
       logo: {
-        alt: 'AutoPi Docs Logo',
+        alt: 'AutoPi Documentation Logo',
         src: 'img/logo_trans_doc.png',
       },
       items: [
         {
-          to: 'docs/core/core-overview',
-          label: 'Core Docs',
+          to: 'docs/cloud/cloud-overview',
+          label: 'Cloud',
           position: 'left',
         },
         {
-          to: 'docs/cloud/cloud-overview',
-          label: 'Cloud Docs',
+          to: 'docs/core/core-overview',
+          label: 'Core',
           position: 'left',
         },
         {
@@ -29,11 +29,11 @@ module.exports = {
           label: 'Guides',
           position: 'left',
         },
-        {
-          to: 'docs/device/device-overview',
-          label: 'Device',
-          position: 'left',
-        },
+//        {
+//          to: 'docs/device/device-overview',
+//          label: 'Device',
+//          position: 'left',
+//        },
       ],
     },
     footer: {

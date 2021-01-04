@@ -1,6 +1,6 @@
 ---
 id: core-power
-title: Getting Started
+title: Introduction
 ---
 
 Power management of the device consists of a low- and high-level layer:

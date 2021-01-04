@@ -1,6 +1,6 @@
 ---
 id: core-cmd-commands
-title: Getting Started
+title: Introduction
 ---
 
 Commands are executed on the device. They can be run remotely from the cloud terminal or through the local dashboard accessible via the WiFi hotspot. Commands can even be executed directly from the Linux shell via the built-in `autopi` executable.
