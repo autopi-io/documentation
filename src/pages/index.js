@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 import { Redirect } from "@docusaurus/router";
 
 const Index = () => {
-  return <Redirect to="/documentation/" />;
+  return <Redirect to="/docs/documentation/" />;
 };
 
 export default Index;

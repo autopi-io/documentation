@@ -2,7 +2,9 @@ module.exports = {
   title: 'AutoPi Documentation',
   tagline: 'Documentation and Guides for AutoPi Cloud, Core and Devices',
   url: 'https://autopi-io.github.io',
-  docsUrl: '',
+  // TODO: Error: These field(s) ["docsUrl",] are not recognized in docusaurus.config.js.
+  //docsUrl: '',
+  // See: https://stackoverflow.com/questions/53484668/does-docusaurus-support-renaming-the-docs-output-folder
   baseUrl: '/documentation/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
@@ -16,17 +18,17 @@ module.exports = {
       },
       items: [
         {
-          to: 'cloud/cloud-overview',
+          to: 'docs/cloud/cloud-overview',
           label: 'Cloud',
           position: 'left',
         },
         {
-          to: 'core/core-overview',
+          to: 'docs/core/core-overview',
           label: 'Core',
           position: 'left',
         },
         {
-          to: 'guides/guides-overview',
+          to: 'docs/guides/guides-overview',
           label: 'Guides',
           position: 'left',
         },
