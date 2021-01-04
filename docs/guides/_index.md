@@ -1,6 +1,6 @@
 ---
 id: guides-overview
-title: Guides Overview
+title: Overview
 ---
 
 

@@ -1,6 +1,6 @@
 module.exports = {
   coreSidebar: {
-    "Core Docs": ['core/core-overview',
+    "Core": ['core/core-overview',
                                   
                   {
                   "type": "category",
@@ -60,7 +60,7 @@ module.exports = {
             }],  
   },
   cloudSidebar: {
-    "Cloud Docs": ['cloud/cloud-overview',                                    
+    "Cloud": ['cloud/cloud-overview',                                    
                   'cloud/jobs/cloud-jobs',
                   'cloud/triggers/cloud-triggers',
                   'cloud/trips/cloud-trips',

@@ -1,6 +1,6 @@
 ---
 id: device-overview
-title: Device Overview
+title: Overview
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

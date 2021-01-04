@@ -1,6 +1,6 @@
 ---
 id: cloud-overview
-title: Cloud Overview
+title: Overview
 ---
 
 This site contains the documentation for the system, and will be continually updated to match the functionality provided.
