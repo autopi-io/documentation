@@ -16,22 +16,22 @@ module.exports = {
       },
       items: [
         {
-          to: 'content/cloud/cloud-overview',
+          to: 'cloud/cloud-overview',
           label: 'Cloud',
           position: 'left',
         },
         {
-          to: 'content/core/core-overview',
+          to: 'core/core-overview',
           label: 'Core',
           position: 'left',
         },
         {
-          to: 'content/guides/guides-overview',
+          to: 'guides/guides-overview',
           label: 'Guides',
           position: 'left',
         },
 //        {
-//          to: 'content/device/device-overview',
+//          to: 'device/device-overview',
 //          label: 'Device',
 //          position: 'left',
 //        },
