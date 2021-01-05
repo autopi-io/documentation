@@ -15,6 +15,7 @@ module.exports = {
       logo: {
         alt: 'AutoPi Documentation Logo',
         src: 'img/logo_trans_doc.png',
+        srcDark: 'img/logo_trans_doc_dark.png',
       },
       items: [
         {
