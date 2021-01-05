@@ -18,17 +18,17 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/cloud/cloud-overview',
+          to: 'cloud/cloud-overview',
           label: 'Cloud',
           position: 'left',
         },
         {
-          to: 'docs/core/core-overview',
+          to: 'core/core-overview',
           label: 'Core',
           position: 'left',
         },
         {
-          to: 'docs/guides/guides-overview',
+          to: 'guides/guides-overview',
           label: 'Guides',
           position: 'left',
         },
@@ -107,6 +107,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),          
+          routeBasePath: '/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
