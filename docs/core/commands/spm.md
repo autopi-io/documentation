@@ -1,5 +1,5 @@
 ---
-id: core-cmd-spm
+id: core-command-spm
 title: Spm
 ---
 
@@ -35,6 +35,7 @@ Runtime management of the underlying service instance.
 
   - `hook list|call <name> [argument]... [<key>=<value>]...`
   - `worker list|show|start|pause|resume|kill <name>`
+  - `reactor list|show <name>`
   - `run <key>=<value>...`
 
 
@@ -48,6 +49,8 @@ Runtime management of the underlying service instance.
   - `spm.manage worker pause *`
   - `spm.manage worker resume *`
   - `spm.manage worker kill *`
+  - `spm.manage reactor list`
+  - `spm.manage reactor show *`
   - `spm.manage run handler="query" args="[\"status\"]"`
 
 

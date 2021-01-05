@@ -1,5 +1,5 @@
 ---
-id: core-cmd-dac
+id: core-command-dac
 title: Dac
 ---
 

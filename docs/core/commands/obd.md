@@ -1,5 +1,5 @@
 ---
-id: core-cmd-obd
+id: core-command-obd
 title: Obd
 ---
 
@@ -83,6 +83,42 @@ Executes an AT/ST command.
 
 
 ----
+## `obd.file_export`
+
+Fast export of all messages on a bus to a log file.
+
+**OPTIONAL ARGUMENTS**
+
+  - **`run`** (bool): Specify if subprocess should be running or not. If not defined the current state will be queried.
+  - **`folder`** (str): Custom folder to place export log files.
+  - **`wait_timeout`** (int): Maximum time in seconds to wait for subprocess to complete. Default value is `0`.
+  - **`monitor_filtering`** (bool): Use filters while monitoring or monitor all messages? Default value is `False`. It is possible to specify `can` in order to add filters based on the messages found in a CAN database file (.dbc).
+  - **`monitor_mode`** (int): The STN monitor mode. Default is `0`.
+  - **`can_auto_format`** (bool): Apply automatic formatting of messages? Default value is `False`.
+  - **`read_timeout`** (int): How long time in seconds should the subprocess wait for data on the serial port? Default value is `1`.
+  - **`serial_baudrate`** (int): Specify a custom baud rate to use for the serial connection to the STN.
+  - **`process_nice`** (int): Process nice value that controls the priority of the subprocess. Default value is `-2`.
+  - **`protocol`** (str): ID of specific protocol to be used to receive the data. If none is specifed the current protocol will be used.
+  - **`baudrate`** (int): Specific protocol baudrate to be used. If none is specifed the current baudrate will be used.
+  - **`verify`** (bool): Verify that OBD-II communication is possible with the desired protocol? Default value is `False`.
+
+
+----
+## `obd.file_import`
+
+Fast import of exported log files containing messages from a bus.
+
+**OPTIONAL ARGUMENTS**
+
+  - **`folder`** (str): Custom folder to import log files from.
+  - **`limit`** (int): The maximum number of lines/messages to read each time. Default value is `5000`.
+  - **`idle_sleep`** (int): Pause in seconds if there is no lines/messages to import. Default value is `0`.
+  - **`cleanup_grace`** (int): Grace period in seconds before a fully imported log file is deleted. Default value is `60`.
+  - **`process_nice`** (int): Process nice value that controls the priority of the service. Default value is `0`.
+  - **`type`** (str): Specify a name of the type of the result. Default is `raw`.
+
+
+----
 ## `obd.filter`
 
 Manages filters used when monitoring.
@@ -115,6 +151,7 @@ Runtime management of the underlying service instance.
 
   - `hook list|call <name> [argument]... [<key>=<value>]...`
   - `worker list|show|start|pause|resume|kill <name>`
+  - `reactor list|show <name>`
   - `run <key>=<value>...`
 
 
@@ -128,6 +165,8 @@ Runtime management of the underlying service instance.
   - `obd.manage worker pause *`
   - `obd.manage worker resume *`
   - `obd.manage worker kill *`
+  - `obd.manage reactor list`
+  - `obd.manage reactor show *`
   - `obd.manage run handler="query" args="[\"ELM_VOLTAGE\"]" converter="battery" returner="cloud"`
 
 

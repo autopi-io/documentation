@@ -1,5 +1,5 @@
 ---
-id: core-cmd-ec2x
+id: core-command-ec2x
 title: Ec2X
 ---
 
@@ -21,7 +21,7 @@ Manages current connection.
 
 **OPTIONAL ARGUMENTS**
 
-  - **`close`** (bool): Close serial connection? Default value is `False`. 
+  - **`close`** (bool): Close serial connection? Default value is `False`.
 
 
 **EXAMPLES**
@@ -75,14 +75,14 @@ Revision identification of software release.
 ----
 ## `ec2x.gnss`
 
-The command is used to turn on GNSS function. Currently `<mode>` only supports
-turning on GNSS in Stand-alone Solution. When `<fixcount>` is 0, GNSS will fix
-position continuously, and it can be turned off via `AT+QGPSEND`. When `<fixcount>`
+The command is used to turn on GNSS function. Currently <mode> only supports
+turning on GNSS in Stand-alone Solution. When <fixcount> is 0, GNSS will fix
+position continuously, and it can be turned off via `AT+QGPSEND`. When <fixcount>
 is non-zero and reaches the specified value, GNSS will be turned off automatically.
 
-When GNSS is turned on and `<fixcount>` is 0, GNSS fixes position continuously.
+When GNSS is turned on and <fixcount> is 0, GNSS fixes position continuously.
 In this case, GNSS can be turned off compulsorily via this command. When
-`<fixcount>` is non-zero, GNSS will be turned off automatically when the
+<fixcount> is non-zero, GNSS will be turned off automatically when the
 parameter reaches the specified value, and thus the command can be ignored.
 
 **OPTIONAL ARGUMENTS**
@@ -157,6 +157,26 @@ Supported GNSS constellation (GPS is always on):
 - `4` = GLONASS on/BeiDou off/Galileo off
 - `5` = GLONASS off/BeiDou on/Galileo on
 - `6` = GLONASS off/BeiDou off/Galileo on
+
+
+----
+## `ec2x.gnss_fix_frequency`
+
+Gets or sets the fix frequency of the GNSS engine.
+
+:::note
+When changing the fix frequency, the GNSS engine needs to be restarted
+:::
+for changes to take effect.
+
+The fix frequency of the GNSS engine corresponds to how often will the position
+(latitude and longitude) update. Possible values (Hz):
+
+- None (default): returns the current fix_frequency of the GNSS engine
+- 1
+- 2
+- 5
+- 10
 
 
 ----
@@ -346,6 +366,7 @@ Runtime management of the underlying service instance.
 
   - `hook list|call <name> [argument]... [<key>=<value>]...`
   - `worker list|show|start|pause|resume|kill <name>`
+  - `reactor list|show <name>`
   - `run <key>=<value>...`
 
 
@@ -359,7 +380,9 @@ Runtime management of the underlying service instance.
   - `ec2x.manage worker pause *`
   - `ec2x.manage worker resume *`
   - `ec2x.manage worker kill *`
-  - `ec2x.manage run handler="exec" args="[\"ATI\"]" returner="cloud"` 
+  - `ec2x.manage reactor list`
+  - `ec2x.manage reactor show *`
+  - `ec2x.manage run handler="exec" args="[\"ATI\"]" returner="cloud"`
 
 
 ----
@@ -419,6 +442,18 @@ Specifies the RI (Ring Indicator) behavior when incoming SMS URCs are presented.
   - **`value`** (str):
   - **`pulse_duration`** (int): Default value is `120`.
   - **`pulse_count`** (int): Default value is `1`.
+
+
+----
+## `ec2x.roaming`
+
+Retrieves the current roaming configuration. If value parameter is set, it`ll set the roaming service to that value.
+
+Possible values:
+
+- False - (bool) Roaming is disabled
+- True - (bool) Roaming is enabled
+- `auto` - (string) Roaming is set to Auto mode
 
 
 ----

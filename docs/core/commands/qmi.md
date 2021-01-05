@@ -1,5 +1,5 @@
 ---
-id: core-cmd-qmi
+id: core-command-qmi
 title: Qmi
 ---
 

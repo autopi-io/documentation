@@ -1,5 +1,5 @@
 ---
-id: core-cmd-cloud
+id: core-command-cloud
 title: Cloud
 ---
 
@@ -24,6 +24,7 @@ Runtime management of the underlying service instance.
 
   - `hook list|call <name> [argument]... [<key>=<value>]...`
   - `worker list|show|start|pause|resume|kill <name>`
+  - `reactor list|show <name>`
   - `run <key>=<value>...`
 
 
@@ -37,6 +38,8 @@ Runtime management of the underlying service instance.
   - `cloud.manage worker pause *`
   - `cloud.manage worker resume *`
   - `cloud.manage worker kill *`
+  - `cloud.manage reactor list`
+  - `cloud.manage reactor show *`
   - `cloud.manage run handler="cache" args="[\"list_queues\"]"`
 
 

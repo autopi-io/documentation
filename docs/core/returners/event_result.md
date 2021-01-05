@@ -1,5 +1,5 @@
 ---
-id: core-returners-event-result
+id: core-returner-event-result
 title: Event Result
 ---
 

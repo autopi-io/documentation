@@ -1,5 +1,5 @@
 ---
-id: core-services-acc
+id: core-service-acc-manager
 title: Acc Manager
 ---
 

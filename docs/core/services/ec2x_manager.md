@@ -1,5 +1,5 @@
 ---
-id: core-services-ec2x
+id: core-service-ec2x-manager
 title: Ec2X Manager
 ---
 
@@ -64,6 +64,16 @@ Synchronizes the system clock with the EC2X device.
 **OPTIONAL ARGUMENTS**
 
   - **`force`** (bool): Default is `False`.
+
+
+----
+### `sync_time`
+
+Ensures following keys for return value:
+
+
+clock_synced: boolean
+npt_enabled: boolean
 
 
 ----

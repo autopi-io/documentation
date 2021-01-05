@@ -1,5 +1,5 @@
 ---
-id: core-services-event
+id: core-service-event-reactor
 title: Event Reactor
 ---
 
@@ -17,7 +17,7 @@ Manages cached data.
 ----
 ### `context`
 
-Queries or manipulatea context instance of this engine.
+Queries or manipulates context instance of this engine.
 
 ## Returners
 ### `module_result_cache`

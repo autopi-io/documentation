@@ -1,5 +1,5 @@
 ---
-id: core-cmd-log
+id: core-command-log
 title: Log
 ---
 

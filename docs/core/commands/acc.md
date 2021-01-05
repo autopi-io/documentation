@@ -1,5 +1,5 @@
 ---
-id: core-cmd-acc
+id: core-command-acc
 title: Acc
 ---
 
@@ -57,6 +57,7 @@ Runtime management of the underlying service instance.
 
   - `hook list|call <name> [argument]... [<key>=<value>]...`
   - `worker list|show|start|pause|resume|kill <name>`
+  - `reactor list|show <name>`
   - `run <key>=<value>...`
 
 
@@ -70,6 +71,8 @@ Runtime management of the underlying service instance.
   - `acc.manage worker pause *`
   - `acc.manage worker resume *`
   - `acc.manage worker kill *`
+  - `acc.manage reactor list`
+  - `acc.manage reactor show *`
   - `acc.manage run handler="query" args="[\"xyz\"]" returner="cloud"`
 
 

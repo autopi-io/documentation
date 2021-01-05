@@ -1,5 +1,5 @@
 ---
-id: core-services-tracking
+id: core-service-tracking-manager
 title: Tracking Manager
 ---
 

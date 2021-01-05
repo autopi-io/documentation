@@ -1,5 +1,5 @@
 ---
-id: core-cmd-power
+id: core-command-power
 title: Power
 ---
 

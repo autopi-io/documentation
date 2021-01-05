@@ -1,5 +1,5 @@
 ---
-id: core-cmd-hooklib
+id: core-command-hooklib
 title: Hooklib
 ---
 
@@ -30,3 +30,9 @@ Calls a Salt execution module directy from current process.
 ## `hooklib.module_handler`
 
 Calls a Salt execution module from within the minion process.
+
+
+----
+## `hooklib.skip_empty_filter`
+
+Filters out empty results.

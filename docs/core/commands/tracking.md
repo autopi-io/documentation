@@ -1,5 +1,5 @@
 ---
-id: core-cmd-tracking
+id: core-command-tracking
 title: Tracking
 ---
 
@@ -24,6 +24,7 @@ Runtime management of the underlying service instance.
 
   - `hook list|call <name> [argument]... [<key>=<value>]...`
   - `worker list|show|start|pause|resume|kill <name>`
+  - `reactor list|show <name>`
   - `run <key>=<value>...`
 
 
@@ -37,6 +38,8 @@ Runtime management of the underlying service instance.
   - `tracking.manage worker pause *`
   - `tracking.manage worker resume *`
   - `tracking.manage worker kill *`
+  - `tracking.manage reactor list`
+  - `tracking.manage reactor show *`
   - `tracking.manage run handler="gnss_query" args="[\"location\"]" converter="gnss_location_to_position" returner="cloud"`
 
 

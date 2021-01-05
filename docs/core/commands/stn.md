@@ -1,5 +1,5 @@
 ---
-id: core-cmd-stn
+id: core-command-stn
 title: Stn
 ---
 
