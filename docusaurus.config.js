@@ -5,7 +5,7 @@ module.exports = {
   // TODO: Error: These field(s) ["docsUrl",] are not recognized in docusaurus.config.js.
   //docsUrl: '',
   // See: https://stackoverflow.com/questions/53484668/does-docusaurus-support-renaming-the-docs-output-folder
-  baseUrl: '/documentation/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'autopi-io', // Usually your GitHub org/user name.
