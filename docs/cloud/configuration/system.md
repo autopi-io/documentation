@@ -19,7 +19,7 @@ title: System
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
-| COUNTRY CODE | The overall country code used on the device (in WiFi configuration etc). The default value is derived from the one specified in your customer profile. | iso_country_code | GB | - |
+| COUNTRY CODE | The overall (ISO) country code used on the device (in WiFi configuration etc). The default value is derived from the one specified in your customer profile. | iso_country_code | GB | - |
 
 ## Logging
 
@@ -32,21 +32,25 @@ title: System
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
 | CLEAR BUFFER | Allow clearing of the kernel ring buffer when retrieving log entries? | bool | True | - |
+| QUIET BOOT | Suppress display of all but very serious log messages during boot? | bool | True | - |
+
+## Network
+
+#### Firewall
+
+| Name | Description | Type | Default | Unit |
+| ------ | ------ | ------ | ------ | ------ |
+| ENTRIES | Specify additional 'iptables' entries (IPv4). | str | - | - |
 
 ## Security
 
-#### Decryption
+#### Rsa
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
-| FUNCTION | Qualified name of the function used to decrypt on the device. | str | - | - |
-
-#### Encryption
-
-| Name | Description | Type | Default | Unit |
-| ------ | ------ | ------ | ------ | ------ |
-| KEY | Key used for encryption. It must be 16, 24, or 32 characters long. | str | - | - |
-| ALGORITHM | Algorithm used for encryption. | str | AES | - |
+| KEY SIZE | Specify bit size of RSA key pair to be generated for this device. | int | - | - |
+| PUBLIC KEY | Public RSA key belonging to this device. | str | - | - |
+| PRIVATE KEY | Private RSA key belonging to this device. | str | - | - |
 
 ## Setup
 
@@ -61,12 +65,6 @@ title: System
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
 | SOURCE | Choose strategy for how to keep track of the current time. | str | fake | - |
-
-#### Rtc
-
-| Name | Description | Type | Default | Unit |
-| ------ | ------ | ------ | ------ | ------ |
-| AUTO UPDATE | Allow automatic update of real-time clock after NTP synchronization? | bool | True | - |
 
 ## User
 

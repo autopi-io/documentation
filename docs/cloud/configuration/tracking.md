@@ -7,4 +7,4 @@ title: Tracking
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
-| INTERVAL | How often should the position of the vehicle be logged? The smaller the interval, the more data is potential logged. Disabled if set to zero. | int | 5 | s |
+| INTERVAL | How often should the position of the vehicle be logged? The smaller the interval, the more data is potential logged. Disabled if set to zero. | float | 5 | s |

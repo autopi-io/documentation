@@ -7,7 +7,6 @@ title: Wifi
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
-| ENABLED | Enable connection to WiFi networks? | bool | True | - |
 | ALLOW SSH | Allow incoming SSH connections on port 22 from the WiFi client network? | bool | False | - |
 
 ## Hotspot
@@ -25,9 +24,10 @@ title: Wifi
 | ------ | ------ | ------ | ------ | ------ |
 | RANGE | Specify the range of addresses available for lease and optionally a lease time. | str | 192.168.4.2,192.168.4.20,255.255.255.0,24h | - |
 | HOSTS | Supply parameters for specified hosts using DHCP. Note that IP addresses do not have to be in the specified range, they just need to be on the same network. | str | - | - |
+| OPTIONS | Specify different or extra options to DHCP clients. | str | - | - |
 
 #### Dns
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
-| HOSTS | Specify additional host entries. | str | 192.168.4.1 local.autopi.io | - |
+| HOSTS | Specify additional host entries. | str | ['192.168.4.1 local.autopi.io'] | - |

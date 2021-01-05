@@ -1,6 +1,6 @@
 ---
 id: cloud-config-obd
-title: OBD
+title: Obd
 ---
 
 ## Elm327 Proxy

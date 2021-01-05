@@ -1,5 +1,5 @@
 ---
-id: cloud-config-api
+id: cloud-config-cloud-api
 title: Cloud Api
 ---
 
@@ -7,13 +7,6 @@ title: Cloud Api
 | ------ | ------ | ------ | ------ | ------ |
 | URL | The endpoint URL of the API where data is pushed to. | url | https://api.autopi.io/logbook/storage | - |
 | AUTH TOKEN | The authentication token used in HTTP header when pushing data to the API. | str | XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX | - |
-
-## Compression
-
-| Name | Description | Type | Default | Unit |
-| ------ | ------ | ------ | ------ | ------ |
-| ALGORITHM | Compress data with selected algorithm before uploading. | str | None | - |
-| LEVEL | Integer from 0 to 9 controlling the level of compression; 1 is fastest and produces the least compression, and 9 is slowest and produces the most compression. 0 is no compression. | int | 9 | - |
 
 ## Upload
 
