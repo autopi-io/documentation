@@ -21,7 +21,6 @@ title: Power
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
 | AUTO UPDATE | Automatic update of the firmware on the power management chip? | bool | True | - |
-| VERSION | Version number of the power management firmware. | str | 1.1.1.0 | - |
 
 ## Modem
 
@@ -69,12 +68,13 @@ title: Power
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
 | EVENT REGEX | Which event(s) should disable current sleep timers and prevent new ones from being enabled? | str | ^vehicle/engine/running | - |
+| SCHEDULE | Specifies one or more time periods during which the device must be awake. Added sleep timers are adjusted accordingly to not sleep for the specified time periods. The format consists of a cron expression in UTC, then a pipe sign (|) as separator and finally a duration in seconds. Example: 0 8 * * * | 7200 | str |  | - |
 
 ## Wake Trigger
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
-| VOLTAGE CHANGE | How much should the voltage change for the device to power up on engine start? Be careful about changing this parameter too much, as it could prevent your dongle from powering on. | str | +0.40 | V |
+| VOLTAGE CHANGE | How much should the voltage change for the device to power up on engine start? Be careful about changing this parameter too much, as it could prevent your dongle from powering on. | str | +0.50 | V |
 | VOLTAGE CHANGE DURATION | How long should the specified voltage change be observed before the device powers up on engine start? | int | 1000 | ms |
 | VOLTAGE LEVEL | At what voltage level should the device power on? | - | >13.20 | V |
 | VOLTAGE LEVEL DURATION | How long should the specified voltage level be observed before the device powers on? | int | 3 | s |

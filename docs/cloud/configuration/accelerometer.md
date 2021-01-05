@@ -1,5 +1,5 @@
 ---
-id: cloud-config-acc
+id: cloud-config-accelerometer
 title: Accelerometer
 ---
 
