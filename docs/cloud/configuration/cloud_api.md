@@ -1,5 +1,5 @@
 ---
-id: cloud-config-cloud_api
+id: cloud-config-cloud-api
 title: Cloud Api
 ---
 

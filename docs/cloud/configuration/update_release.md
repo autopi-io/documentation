@@ -1,5 +1,5 @@
 ---
-id: cloud-config-update_release
+id: cloud-config-update-release
 title: Update Release
 ---
 

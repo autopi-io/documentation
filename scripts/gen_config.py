@@ -95,7 +95,7 @@ for name, fields in field_files.items():
     with open(os.path.join(folder, name + ".md"), "a") as f:
 
         f.write("---\n")
-        f.write("id: cloud-config-{:}\n".format(name))
+        f.write("id: cloud-config-{:}\n".format(name.replace("_", "-")))
         f.write("title: {:}\n".format(name.replace("_", " ").title()))
         f.write("---\n")
 
