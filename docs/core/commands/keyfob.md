@@ -1,5 +1,5 @@
 ---
-id: core-command-keyfob
+id: core-commands-keyfob
 title: Keyfob
 ---
 

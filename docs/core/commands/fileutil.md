@@ -1,5 +1,5 @@
 ---
-id: core-command-fileutil
+id: core-commands-fileutil
 title: Fileutil
 ---
 

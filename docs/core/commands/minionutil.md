@@ -1,5 +1,5 @@
 ---
-id: core-command-minionutil
+id: core-commands-minionutil
 title: Minionutil
 ---
 

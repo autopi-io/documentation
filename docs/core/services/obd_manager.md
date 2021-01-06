@@ -1,5 +1,5 @@
 ---
-id: core-service-obd-manager
+id: core-services-obd-manager
 title: Obd Manager
 ---
 

@@ -1,5 +1,5 @@
 ---
-id: core-returner-mqtt
+id: core-returners-mqtt
 title: Mqtt
 ---
 

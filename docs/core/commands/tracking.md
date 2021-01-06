@@ -1,5 +1,5 @@
 ---
-id: core-command-tracking
+id: core-commands-tracking
 title: Tracking
 ---
 

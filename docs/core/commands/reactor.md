@@ -1,5 +1,5 @@
 ---
-id: core-command-reactor
+id: core-commands-reactor
 title: Reactor
 ---
 

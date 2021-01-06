@@ -1,5 +1,5 @@
 ---
-id: core-service-spm-manager
+id: core-services-spm-manager
 title: Spm Manager
 ---
 

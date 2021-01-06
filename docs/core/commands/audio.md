@@ -1,5 +1,5 @@
 ---
-id: core-command-audio
+id: core-commands-audio
 title: Audio
 ---
 

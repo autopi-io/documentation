@@ -1,5 +1,5 @@
 ---
-id: core-command-hostapd
+id: core-commands-hostapd
 title: Hostapd
 ---
 

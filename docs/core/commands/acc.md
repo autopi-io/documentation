@@ -1,5 +1,5 @@
 ---
-id: core-command-acc
+id: core-commands-acc
 title: Acc
 ---
 

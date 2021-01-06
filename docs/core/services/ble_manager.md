@@ -1,5 +1,5 @@
 ---
-id: core-service-ble-manager
+id: core-services-ble-manager
 title: Ble Manager
 ---
 

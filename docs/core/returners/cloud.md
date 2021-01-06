@@ -1,5 +1,5 @@
 ---
-id: core-returner-cloud
+id: core-returners-cloud
 title: Cloud
 ---
 

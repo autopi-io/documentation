@@ -1,5 +1,5 @@
 ---
-id: core-command-clock
+id: core-commands-clock
 title: Clock
 ---
 

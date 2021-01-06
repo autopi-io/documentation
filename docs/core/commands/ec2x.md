@@ -1,5 +1,5 @@
 ---
-id: core-command-ec2x
+id: core-commands-ec2x
 title: Ec2X
 ---
 

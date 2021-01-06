@@ -1,5 +1,5 @@
 ---
-id: core-command-cloud
+id: core-commands-cloud
 title: Cloud
 ---
 

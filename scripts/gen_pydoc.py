@@ -137,6 +137,6 @@ def gen_doc(src_path, dst_path, kind, group=False):
                             if d.endswith(":\n"):
                                 f.write("\n")
 
-gen_doc(CMD_SRC, CMD_DST, "command")
-gen_doc(RET_SRC, RET_DST, "returner")
-gen_doc(ENG_SRC, ENG_DST, "service", group=True)
+gen_doc(CMD_SRC, CMD_DST, "commands")
+gen_doc(RET_SRC, RET_DST, "returners")
+gen_doc(ENG_SRC, ENG_DST, "services", group=True)

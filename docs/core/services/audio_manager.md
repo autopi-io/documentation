@@ -1,5 +1,5 @@
 ---
-id: core-service-audio-manager
+id: core-services-audio-manager
 title: Audio Manager
 ---
 

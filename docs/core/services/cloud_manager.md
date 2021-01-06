@@ -1,5 +1,5 @@
 ---
-id: core-service-cloud-manager
+id: core-services-cloud-manager
 title: Cloud Manager
 ---
 

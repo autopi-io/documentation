@@ -1,5 +1,5 @@
 ---
-id: core-command-hooklib
+id: core-commands-hooklib
 title: Hooklib
 ---
 

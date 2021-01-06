@@ -1,5 +1,5 @@
 ---
-id: core-command-ble
+id: core-commands-ble
 title: Ble
 ---
 

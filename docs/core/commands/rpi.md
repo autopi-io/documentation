@@ -1,5 +1,5 @@
 ---
-id: core-command-rpi
+id: core-commands-rpi
 title: Rpi
 ---
 

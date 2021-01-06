@@ -1,5 +1,5 @@
 ---
-id: core-command-obd
+id: core-commands-obd
 title: Obd
 ---
 

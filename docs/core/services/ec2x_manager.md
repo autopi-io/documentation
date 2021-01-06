@@ -1,5 +1,5 @@
 ---
-id: core-service-ec2x-manager
+id: core-services-ec2x-manager
 title: Ec2X Manager
 ---
 

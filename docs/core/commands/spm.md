@@ -1,5 +1,5 @@
 ---
-id: core-command-spm
+id: core-commands-spm
 title: Spm
 ---
 

@@ -1,5 +1,5 @@
 ---
-id: core-service-event-reactor
+id: core-services-event-reactor
 title: Event Reactor
 ---
 

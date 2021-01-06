@@ -1,5 +1,5 @@
 ---
-id: core-service-key-fob-manager
+id: core-services-key-fob-manager
 title: Key Fob Manager
 ---
 

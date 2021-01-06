@@ -1,5 +1,5 @@
 ---
-id: core-command-wifi
+id: core-commands-wifi
 title: Wifi
 ---
 
