@@ -98,6 +98,21 @@ def gen_doc(src_path, dst_path, kind, group=False):
                 is_ex = False
 
                 for d in r["doc"]:
+                    # wrap all <content> with backticks (`)
+                    # but only if it's not already surrounded by some
+                    copy = d;
+                    skip = False
+                    d = '';
+
+                    for c in copy:
+                        if c == "'":
+                            skip = not skip
+                        elif c == '<' and not skip:
+                            c = '`<'
+                        elif c == '>' and not skip:
+                            c = '>`'
+                        d += c
+
                     if d.upper().startswith("    NOTE: "):
                         f.write(":::note\n")
                         f.write(re.sub("    NOTE: ", "" , d, flags=re.IGNORECASE))
