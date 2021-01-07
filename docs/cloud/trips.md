@@ -3,9 +3,9 @@ id: cloud-trips
 title: Trips
 ---
 
-Trips are automatically detected based on the events sent from the device, by default the [engine events](../events/vehicle.md#engine-events) are used. 
+Trips are automatically detected based on the events sent from the device, by default the [engine events](events/vehicle.md#engine-events) are used. 
 
-It is fully customizeable what events trigger a new trip to be created and it can be changed in the [advanced settings](../configuration/trip.md#event).
+It is fully customizeable what events trigger a new trip to be created and it can be changed in the [advanced settings](configuration/trip.md#event).
 
 :::tip
 You can check the events page on my.autopi.io to see all events logged from your device. When troubleshooting it is one of the first places to check if you are unsure why something happened. By looking at the events you can usually get a really good idea about why the device did something.
