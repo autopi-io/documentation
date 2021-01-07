@@ -1,5 +1,5 @@
 ---
-id: cloud-config
+id: cloud-config-intro
 title: Introduction
 ---
 

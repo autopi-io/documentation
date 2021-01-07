@@ -1,5 +1,5 @@
 ---
-id: core-power
+id: core-power-intro
 title: Introduction
 ---
 

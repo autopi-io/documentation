@@ -1,5 +1,5 @@
 ---
-id: core-services
+id: core-services-intro
 title: Introduction
 ---
 

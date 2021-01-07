@@ -1,5 +1,5 @@
 ---
-id: cloud-events
+id: cloud-events-intro
 title: Introduction
 ---
 

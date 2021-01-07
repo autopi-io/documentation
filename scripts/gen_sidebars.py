@@ -36,12 +36,15 @@ for subdir, dirs, files in os.walk(src_dir):
         for d in subdir.removeprefix(src_dir).split("/"):
             parent = parent["items"][d]
 
-    for f in sorted([f for f in files if not f.startswith(".")]):
+    for f in [f for f in files if not f.startswith(".")]:
         meta = yaml.load(read_meta(os.path.join(subdir, f)))
         parent["items"][os.path.splitext(f)[0]] = dict(meta, path=subdir.removeprefix(src_dir))
 
-    for d in sorted(dirs):
+    for d in dirs:
         parent["items"][d] = {"title": d.replace("_", " ").title(), "items": OrderedDict()}
+
+    # Order items by key
+    parent["items"] = OrderedDict(sorted(parent["items"].items()))
 
 print(json.dumps(graph, indent=4))
 

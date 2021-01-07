@@ -1,6 +1,6 @@
 ---
-id: core-overview
-title: Overview
+id: core-intro
+title: Introduction
 ---
 
 This site contains the documentation for the AutoPi Core

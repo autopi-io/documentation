@@ -1,5 +1,5 @@
 ---
-id: core-cmd-commands
+id: core-commands-intro
 title: Introduction
 ---
 

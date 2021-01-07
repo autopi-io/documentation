@@ -1,15 +1,12 @@
 module.exports = {
     "cloudSidebar": {
         "Cloud": [
-            "cloud/cloud-overview",
-            "cloud/cloud-jobs",
-            "cloud/cloud-triggers",
-            "cloud/cloud-trips",
+            "cloud/cloud-intro",
             {
                 "type": "category",
                 "label": "Configuration",
                 "items": [
-                    "cloud/configuration/cloud-config",
+                    "cloud/configuration/cloud-config-intro",
                     "cloud/configuration/cloud-config-accelerometer",
                     "cloud/configuration/cloud-config-audio",
                     "cloud/configuration/cloud-config-bluetooth",
@@ -28,21 +25,24 @@ module.exports = {
                 "type": "category",
                 "label": "Events",
                 "items": [
-                    "cloud/events/cloud-events",
+                    "cloud/events/cloud-events-intro",
                     "cloud/events/cloud-events-system",
                     "cloud/events/cloud-events-vehicle"
                 ]
-            }
+            },
+            "cloud/cloud-jobs",
+            "cloud/cloud-triggers",
+            "cloud/cloud-trips"
         ]
     },
     "coreSidebar": {
         "Core": [
-            "core/core-overview",
+            "core/core-intro",
             {
                 "type": "category",
                 "label": "Commands",
                 "items": [
-                    "core/commands/core-cmd-commands",
+                    "core/commands/core-commands-intro",
                     "core/commands/core-commands-acc",
                     "core/commands/core-commands-audio",
                     "core/commands/core-commands-ble",
@@ -72,7 +72,7 @@ module.exports = {
                 "type": "category",
                 "label": "Power Management",
                 "items": [
-                    "core/power_management/core-power",
+                    "core/power_management/core-power-intro",
                     "core/power_management/core-power-high",
                     "core/power_management/core-power-low"
                 ]
@@ -81,7 +81,7 @@ module.exports = {
                 "type": "category",
                 "label": "Returners",
                 "items": [
-                    "core/returners/core-returners",
+                    "core/returners/core-returners-intro",
                     "core/returners/core-returners-cloud",
                     "core/returners/core-returners-event",
                     "core/returners/core-returners-event-result",
@@ -92,7 +92,7 @@ module.exports = {
                 "type": "category",
                 "label": "Services",
                 "items": [
-                    "core/services/core-services",
+                    "core/services/core-services-intro",
                     "core/services/core-services-acc-manager",
                     "core/services/core-services-api-service",
                     "core/services/core-services-audio-manager",
@@ -110,7 +110,7 @@ module.exports = {
     },
     "guidesSidebar": {
         "Guides": [
-            "guides/guides-overview",
+            "guides/guides-intro",
             "guides/create-service-workers"
         ]
     }
