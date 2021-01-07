@@ -75,14 +75,14 @@ Revision identification of software release.
 ----
 ## `ec2x.gnss`
 
-The command is used to turn on GNSS function. Currently <mode> only supports
-turning on GNSS in Stand-alone Solution. When <fixcount> is 0, GNSS will fix
-position continuously, and it can be turned off via `AT+QGPSEND`. When <fixcount>
+The command is used to turn on GNSS function. Currently `<mode>` only supports
+turning on GNSS in Stand-alone Solution. When `<fixcount>` is 0, GNSS will fix
+position continuously, and it can be turned off via `AT+QGPSEND`. When `<fixcount>`
 is non-zero and reaches the specified value, GNSS will be turned off automatically.
 
-When GNSS is turned on and <fixcount> is 0, GNSS fixes position continuously.
+When GNSS is turned on and `<fixcount>` is 0, GNSS fixes position continuously.
 In this case, GNSS can be turned off compulsorily via this command. When
-<fixcount> is non-zero, GNSS will be turned off automatically when the
+`<fixcount>` is non-zero, GNSS will be turned off automatically when the
 parameter reaches the specified value, and thus the command can be ignored.
 
 **OPTIONAL ARGUMENTS**

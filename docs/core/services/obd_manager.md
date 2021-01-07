@@ -17,7 +17,7 @@ This converter supports both single value results as well as multiple values res
 The CAN database file (.dbc) is found on the local file system by the following path expression:
 
 
-/opt/autopi/obd/can/db/protocol_<PROTOCOL ID>.dbc
+/opt/autopi/obd/can/db/protocol_`<PROTOCOL ID>`.dbc
 
 
 ----
