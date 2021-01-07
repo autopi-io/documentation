@@ -11,6 +11,7 @@ src_dir = "../docs/"
 def read_meta(file):
     ret = ""
 
+    print("Reading meta for file: {:}".format(file))
     with open(file) as fp:
         found = False
 
@@ -35,12 +36,11 @@ for subdir, dirs, files in os.walk(src_dir):
         for d in subdir.removeprefix(src_dir).split("/"):
             parent = parent["items"][d]
 
-    for f in files:
+    for f in sorted([f for f in files if not f.startswith(".")]):
         meta = yaml.load(read_meta(os.path.join(subdir, f)))
-
         parent["items"][os.path.splitext(f)[0]] = dict(meta, path=subdir.removeprefix(src_dir))
 
-    for d in dirs:
+    for d in sorted(dirs):
         parent["items"][d] = {"title": d.replace("_", " ").title(), "items": OrderedDict()}
 
 print(json.dumps(graph, indent=4))

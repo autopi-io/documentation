@@ -1,6 +1,6 @@
 ---
 id: cloud-triggers
-title: "Triggers"
+title: Triggers
 ---
 
 Triggers allows you to get notifications and/or perform actions both based on events from the device, but also all the various data points uploaded to the AutoPi Cloud.
