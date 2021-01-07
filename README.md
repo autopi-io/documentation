@@ -31,3 +31,5 @@ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+**NOTE**: After a deploy, if you're getting a 404, you need to remember to set the GitHub pages redirect domain.
