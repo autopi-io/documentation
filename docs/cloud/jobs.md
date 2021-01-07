@@ -3,7 +3,7 @@ id: cloud-jobs
 title: Jobs
 ---
 
-Jobs can be scheduled to execute [commands](../../core/commands/core-cmd-commands) on the device and are configured from the AutoPi Cloud. The command results can then be uploaded to the AutoPi Cloud or other system by using [returners](../../core/returners/core-returners).
+Jobs can be scheduled to execute [commands](../core/commands/core-cmd-commands) on the device and are configured from the AutoPi Cloud. The command results can then be uploaded to the AutoPi Cloud or other system by using [returners](../core/returners/core-returners).
 
 **SCHEDULING**
 
