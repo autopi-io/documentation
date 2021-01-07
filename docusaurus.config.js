@@ -16,17 +16,17 @@ module.exports = {
       },
       items: [
         {
-          to: 'cloud/cloud-overview',
+          to: 'cloud/cloud-intro',
           label: 'Cloud',
           position: 'left',
         },
         {
-          to: 'core/core-overview',
+          to: 'core/core-intro',
           label: 'Core',
           position: 'left',
         },
         {
-          to: 'guides/guides-overview',
+          to: 'guides/guides-intro',
           label: 'Guides',
           position: 'left',
         },
