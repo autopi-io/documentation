@@ -22,14 +22,14 @@ Manages current connection.
 **OPTIONAL ARGUMENTS**
 
   - **`baudrate`** (int): Changes baudrate used to communicate with interface.
-  - **`reset`** (str): Reboots interface and re-initializes connection. 
+  - **`reset`** (str): Reboots interface. Available options: warm, cold
 
 
 **EXAMPLES**
 
   - `obd.connection`
   - `obd.connection baudrate=1152000`
-  - `obd.connection reset=True`
+  - `obd.connection reset=cold`
 
 
 ----
