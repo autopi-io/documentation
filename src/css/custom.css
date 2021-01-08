@@ -54,6 +54,22 @@ table {
   display: table;
 }
 
-thead {
+h1 {
+  text-align: center;
+}
+
+html[data-theme=light] h1 {
+  color: #6f6f6f;
+}
+
+html[data-theme=dark] h1 {
+  color: #ddd;
+}
+
+html[data-theme=light] thead {
   background-color: #f7f7f7;
+}
+
+html[data-theme=dark] thead {
+  background-color: #343434;
 }
