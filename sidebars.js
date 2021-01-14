@@ -111,7 +111,8 @@ module.exports = {
     "guidesSidebar": {
         "Guides": [
             "guides/guides-intro",
-            "guides/create-service-workers"
+            "guides/create-service-workers",
+            "guides/setup-your-tmu-diy-edition"
         ]
     }
 };
