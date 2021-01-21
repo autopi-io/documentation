@@ -1,11 +1,4 @@
-/* stylelint-disable docusaurus/copyright-header */
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
+/* Global styles */
 :root {
   --ifm-color-primary: #005afa;
   --ifm-color-primary-dark: #0051e1;
@@ -58,18 +51,24 @@ h1 {
   text-align: center;
 }
 
-html[data-theme=light] h1 {
-  color: #6f6f6f;
+/* Global light themed styles */
+html[data-theme=light] {
+  h1 {
+    color: #6f6f6f;
+  }
+
+  thead {
+    background-color: #f7f7f7;
+  }
 }
 
-html[data-theme=dark] h1 {
-  color: #ddd;
-}
+/* Global dark themed styles */
+html[data-theme=dark] {
+  h1 {
+    color: #ddd;
+  }
 
-html[data-theme=light] thead {
-  background-color: #f7f7f7;
-}
-
-html[data-theme=dark] thead {
-  background-color: #343434;
+  thead {
+    background-color: #343434;
+  }
 }
