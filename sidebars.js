@@ -112,6 +112,7 @@ module.exports = {
         "Guides": [
             "guides/guides-intro",
             "guides/create-service-workers",
+            "guides/log-raw-can-messages",
             "guides/setup-your-tmu-diy-edition"
         ]
     }
