@@ -24,7 +24,7 @@ The endpoint takes the following parameters
 
 | Parameter | Description  |
 | -------------: | :---------- |
-|  device_id | ID of the device (not the unit id) |
+|  device_id | ID of the device **(not the unit_id)** |
 |  field | The field that the value should be retrieved from. See 'Field' below |
 |  field_type | The type of the field. See 'Field' below. [float, geo_point, string, long] |
 |  from_utc | From time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
@@ -81,7 +81,7 @@ This is the list of data types currently available from a standard device.
 | track.pos |
 ​
 ## Raw data
-The raw data is not aggregated or treated in any way, it is in the same format as it was when it was sent by the device.
+The raw data is not aggregated or treated in any way, it is in the same format as it was when it was sent by the device. Remember to keep the time frame of your search narrows to be sure you'll get data back.
 
 ```
 GET /logbook/storage/raw/
@@ -91,7 +91,7 @@ https://api.autopi.io/#/logbook/logbook_storage_raw_list
 
 | Parameter       | Description  |
 | -------------: | :---------- |
-|  device_id | ID of the device (not the unit id) |
+|  device_id | ID of the device **(not the unit id)** |
 |  data_type | The datatype to retrieve. See 'Field' above. |
 |  start_utc | From time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
 |  end_utc | To time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
