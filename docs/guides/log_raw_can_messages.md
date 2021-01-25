@@ -29,11 +29,8 @@ This handler will continuously listen on the OBD port looking for any data. This
 will then be transported down the workflow and there you will be able to use the different
 hooks to transform the data and finally return the data to the cloud, or save it to a file.
 
-An important note for this is that the `obd.monitor` implementation is very slow, as it is written
-in python, while `obd.export`, which we will explore in the next section is much faster, as it is
-running a separate process implemented in C. However, `obd.monitor` may be preferred, as it does
-allow the device to query for OBD data in between handler executions, while the `obd.export`
-handler does not. The image below shows an example setup for an `obd.monitor` worker.
+For greater performance read on to the `obd.export` handler. The image below shows an example
+setup for an `obd.monitor` worker.
 
 ![obd_monitor_worker](../../static/img/guides/log_raw_can_messages/obd_monitor_worker.png)
 
