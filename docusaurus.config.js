@@ -1,7 +1,7 @@
 module.exports = {
   title: 'AutoPi Documentation',
   tagline: 'Documentation and Guides for AutoPi Cloud, Core and Devices',
-  url: 'https://autopi-io.github.io',
+  url: 'https://docs.autopi.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
