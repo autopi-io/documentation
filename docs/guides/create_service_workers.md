@@ -99,5 +99,17 @@ def some_function_name(result):
 
 The important part is that the function receives some result and returns some value. Based on the output of each hook the workflow might be interrupted. If falsy values are returned at a specific point in the workflow, the rest of the workflow will stop. **This isn't the case** with triggers - they will always execute, as the logic there might be very valuable to be executed even if there is an interruption. Even in the case of a thrown exception the trigger will still execute.
 
+### Troubleshooting your service
+
+#### My service doesn't start / I dont see any logs from my service
+1. Check that the service is enabled in the cloud, and check that it is part of the engines file in /etc/salt/minion.d/engines.conf
+2. Check that the associated custom module has valid code
+3. Turn on debug logging on the device (In advanced settings), and restart the salt-minion, and then look for errors.
+you can use the following command to grep for the specific service
+
+```
+sudo tail -f /var/log/salt/minion | grep service_name
+```
+
 ## Conclusion
 As a closer - workers are extremely powerful if used correctly. They can execute continuously or a set amount of times. Workflows within the worker can be set up so that the desired outcome is reached without having to write complicated custom code. Use them to your advantage whenever you want to communicate something with the hardware components of the AutoPi or with your car directly.
