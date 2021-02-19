@@ -13,7 +13,7 @@ More importantly however, the default services that come with an AutoPi are the 
 ![service_list|690x345, 100%](../../static/img/guides/create_service_workers/service_list.png) 
 
 ## Workers
-Now, the real deal - workers. Workers are simply a process that is going to be executed by a manager in a specific [workflow](http://docs.autopi.io/services/) that is going to eventually yield a desired output. Workflows are a number of steps that are going to be executed in order to create that desired output:
+Now, the real deal - workers. Workers are simply a process that is going to be executed by a manager in a specific [workflow](../core/services/core-services-intro/) that is going to eventually yield a desired output. Workflows are a number of steps that are going to be executed in order to create that desired output:
 
 ![worker_list|690x268](../../static/img/guides/create_service_workers/worker_list.png) 
 
@@ -46,6 +46,8 @@ Let's now get familiar with the interface. There are a few fields that need fill
 
 5. **Order**: This is the order that the workers are going to be executed in. This is a more 'global' field, meaning that it will affect the execution of the rest of the workers in this service as well. The lowest ordered worker will execute first and then go up from there.
 
+6. **Transactional**: This option is useful if there are multiple workflows on the same worker. If one of the workflows fails, if transactional is enabled, then all the rest of the workflows won't be executed. On the other hand, if it isn't enabled, the rest of the workflows will still be executed.
+
 ### Workflows
 Now that we've gone through the basic options, let's take a look at the possibilities for workflows. Creating a workflow adds a new row on the table below. This is the basic representation of a workflow. The columns in the table are as follows:
 
@@ -67,7 +69,7 @@ Now that we've gone through the basic options, let's take a look at the possibil
 
 All of the above (except for args and kwargs) are also called *hooks*. We will look into them in the next section.
 
-Different services have different defaults handlers. The best place to take a look at those handlers is [our documentation website](http://docs.autopi.io/services/). Since the idea we're going for in this guide is to invoke continuous OBD query commands, we're going to be using the [query](http://docs.autopi.io/services/obd_manager/#query) handler.
+Different services have different defaults handlers. The best place to take a look at those handlers is [the services page](../core/services/core-services-intro/). Since the idea we're going for in this guide is to invoke continuous OBD query commands, we're going to be using the [query](../core/services/core-services-obd-manager#query) handler.
 
 The arguments (args) and key-word arguments (kwargs) are specified in JSON format (this means double quotes instead of single quotes, it took me a while to figure that out the other day). We want to read out the fuel level every 10 seconds and record that data, so we will specify the following arguments:
 ```json
