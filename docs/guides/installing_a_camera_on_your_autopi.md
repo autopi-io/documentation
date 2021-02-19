@@ -1,0 +1,133 @@
+---
+id: install-camera-on-your-autopi
+title: Install camera on your AutoPi
+---
+
+Hello everyone!
+
+Today, we're going to explore how you can attach an external USB camera to your AutoPi device and make some use out of it.
+There is one prerequisite however - you need to be able to SSH into your dongle. We already have a guide on that which you can
+take a look at [here](https://community.autopi.io/t/guide-how-to-ssh-to-your-dongle/386).
+
+Firstly, we need to do some initial setup to get the AutoPi ready to use an external USB web camera. Let's start with the
+software that we're going to use:
+
+1. [motion](https://motion-project.github.io/motion_guide.html) - Motion is a daemon service that is responsible for communicating
+with the camera. It'll setup the devices (`/dev/video*`) and get them started.
+
+2. [motionEye](https://github.com/ccrisan/motioneyeA) - MotionEye is a web based frontend for motion. It provides an
+easy to use interface to setup configuration for each camera and also shows what the cameras are currently seeing.
+
+Installing both of them should be as easy as installing any other package on a debian system. We will use the `apt` command.
+The next command installs motion daemon and its dependencies:
+
+```
+$ sudo apt install motion
+```
+
+Let's now prepare for the installation of motioneye - there are some dependencies that need to be installed:
+
+```
+$ sudo apt install python-dev libssl-dev libcurl4-openssl-dev libjpeg-dev libz-dev
+```
+
+Now that we've got the dependencies installed, let's install motioneye itself:
+
+```
+$ sudo pip install motioneye
+```
+
+**Note**: If pillow installation fails, you can try installing it from official repos using `apt install python-pillow`.
+
+After successfully installing motion and motioneye we now need to prepare some directories for them to use.
+The next two commands will create the motioneye configuration directory and copy the default configuration file in that directory:
+
+```
+$ sudo mkdir -p /etc/motioneye
+$ sudo cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motion.conf
+```
+
+Now, let's create the directory in which motioneye will save our video files to:
+
+```
+$ sudo mkdir -p /var/lib/motioneye
+```
+
+Finally, let's create a service file for motioneye so that the system can automatically start it up:
+
+```
+$ sudo cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable motioneye
+$ sudo systemctl restart motioneye
+```
+
+At this point, the web interface should be running on the device, however you probably won't be able to access it from your computer or
+mobile phone. Instead, it's only accessible from the device itself. This is because there are some firewall settings that have been
+implemented on the device and we need to add a new exception. We can do that by navigating to the Advanced > Settings menu in my.autopi.io.
+There, one of the inner tabs called System should contain an entry called Network > Firewall. Let's add the following new entry to the list:
+
+```
+-A INPUT -s 192.168.4.0/24 -i uap0 -p tcp --dport 8765 -j ACCEPT
+```
+
+**NOTE**: 8765 is only the default port for MotionEye. If you happen to change the port number, please make sure to add the rule
+with the respective new port number.
+
+What this entry will do is allow all TCP traffic that comes from the AutoPi's WiFi network interface through port 8765 to be accepted.
+This will allow you to navigate to the following link: local.autopi.io:8765. There you'll finally be able to see the MotionEye frontend interface.
+
+At this point, you should be able to plug in the camera to your device's micro-usb, wait a few seconds and see the video feed on your screen.
+You should also be able to see the settings for the camera by clicking on the 'burger-menu' button on the top left of the website. If
+you're unable to see a long list of settings, try reloging as an admin. If this still doesn't do the trick, try restarting the motion and
+motioneye services using the following commands:
+
+```
+sudo systemctl restart motion motioneye
+```
+
+Now we will move on to some pointers on how to get started with certain, popular projects.
+
+### Setting up basic camera settings
+
+Sometimes the image on the camera can be very dim or with a low resolution as a default. The general settings for the camera can be found under
+the "Video Device" section. Settings such as brightness, contrast, sharpness and video resolution can be set up there. This should allow you to
+fine tune your camera for the environment you're looking to use it in. There is also the ability to automatically set the brighness and exposure
+of the camera. 
+
+Furthermore, you're also able to change the default location of where the video files (recordings) are saved. The default location is
+`/var/lib/motioneye/Camera1`, however you can change that by going under the "File Storage" section.
+
+There you're also able to setup a webhook or a command to be called whenever a new file has been saved on the file system.
+
+### Recording all the time
+
+Setting up a constantly recording camera is very simple. All you need to do is to go to your motioneye website
+(local.autopi.io:8765 while connected to the AutoPi device hotspot) and open the settings for the camera. In the list there should be a section
+called "Movies". You will need to turn on the movies section (which will enable the camera to record). In the Recording Mode field, select
+"Continuous Recording" (It's of course also possible to have the recording based on motion detection). The rest of the settings can be selected
+based on personal preference. 
+
+### Motion detection
+
+Apart from the ability to record only when the camera detects motion, you can also do some other cool things. For example, you
+can set up a mail notification or a webhook to be called whenever there is some motion. There is also the option to execute a
+command on the AutoPi either when a motion is detected or when the motion ends. That is to say, after the camera has started
+detecting motion, it can also execute a command when there is no more motion detected by it.
+
+You can find those settings under the "Motion Detection" and "Motion Notification" settings. In the Motion Detection section you can
+fine tune how you would like the motion to be detected, with higher or lower thresholds, for specific amount of frames and so on.
+"Motion Notifications" section is where you can setup the triggers to be executed whenever a motion is detected (or after).
+
+### Extra fine tuning
+
+For the more tech-savvy or adventurous people out there, there is also some configuration options that work directly with motion.
+Remember that MotionEye is actually a front-end application that communicates directly with motion. This means that all the options
+that are available on MotionEye are also available on Motion, however much more detailed. For example, there are more events that can
+be used with Motion than there are with MotionEye. One really good example is `on_camera_lost` which will trigger whenever a camera
+can't be found or when a camera is lost during its work, which allows you to set a notification if your camera stops working.
+
+You can look at all the configuration options available for Motion in [this](https://motion-project.github.io/motion_config.html) link.
+The documentation can be a bit overwhelming at first, however the developers have set it up in a neat way where there is a list of
+all the options in alphabetical order first and then a list of the same options based on category.
+Afterwards, there is a long list of the description of each option. 
