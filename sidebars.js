@@ -111,8 +111,14 @@ module.exports = {
     "guidesSidebar": {
         "Guides": [
             "guides/guides-intro",
+            {
+                "type": "category",
+                "label": "Api",
+                "items": [
+                    "guides/api/how-to-export-data-from-api"
+                ]
+            },
             "guides/create-service-workers",
-            "guides/how-to-export-data-from-api",
             "guides/install-camera-on-your-autopi",
             "guides/log-raw-can-messages",
             "guides/setup-your-tmu-diy-edition"
