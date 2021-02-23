@@ -115,7 +115,8 @@ module.exports = {
                 "type": "category",
                 "label": "Api",
                 "items": [
-                    "guides/api/how-to-export-data-from-api"
+                    "guides/api/how-to-export-data-from-api",
+                    "guides/api/send-device-data-to-own-server"
                 ]
             },
             "guides/create-service-workers",
