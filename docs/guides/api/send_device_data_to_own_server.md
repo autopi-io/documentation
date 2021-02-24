@@ -16,9 +16,9 @@ Since we will be building the server with NodeJS, this guide requires you to hav
 shouldn't be too hard to follow if you have used other programming languages. Also, you will need to have `node` and `npm` command line tools
 installed on your workstation. You can download the full NodeJS package from [here](https://nodejs.org/en/download/).
 
-## Set device's Cloud Api Url
+## Set device's Cloud API Url
 Firstly, we need to make sure that the device will connect to your own server. For this, we do have a very neat option that can
-be changed from the [AutoPi Cloud](https://my.autopi.io) website. You need to navigate to Advanced > Settings > Cloud Api where
+be changed from the [AutoPi Cloud](https://my.autopi.io) website. You need to navigate to Advanced > Settings > Cloud API where
 you will be able to see a screen like the following:
 
 ![cloud_api_uri](../../../static/img/guides/send_device_data_to_own_server/cloud_api_url.png) 
@@ -28,7 +28,7 @@ instead to a URL that is resolvable from your AutoPi device.
 
 ## Device communication
 Before we begin building our server, let's talk about the basic structure of the data that AutoPi devices send out. All data is sent in JSON format.
-More specifically an array of JSON objects. Let's take a look at an example:
+More specifically an array of JSON objects. Let's look at an example:
 
 ```json
 [
@@ -76,15 +76,15 @@ npm install --save express
 ```
 
 :::note
-By default with version npm 5.0+ npm install adds the module to the dependencies list in the package.json file; with earlier versions of npm,
+By default, with version npm 5.0+ npm install adds the module to the dependencies list in the package.json file; with earlier versions of npm,
 you must specify the --save option explicitly. Then, afterwards, running npm install in the app directory will automatically install modules
 in the dependencies list.
 :::
 
 Now that we have it installed, we can finally start writing code by creating an `index.js` file, or whatever you set the entry point to
-be named, in the root directory, or if you'd prefer, create a direcotry where you will keep your source code and create it there.
+be named, in the root directory, or if you'd prefer, create a directory where you will keep your source code and create it there.
 
-Firstly we start off by creating an express application:
+Firstly, we start off by creating an express application:
 
 ```javascript
 // index.js
@@ -94,7 +94,7 @@ const app = express();
 ```
 
 The express application object will be used to setup the configuration for our API routes. We can use the `get`, `post`, `put` and `delete`
-methods of the `app` object to build up the routes which will be available on your server. Let's take a look:
+methods of the `app` object to build up the routes which will be available on your server. Let's look:
 
 ```javascript
 // index.js
@@ -121,7 +121,7 @@ With this, we are ready to test out our application. Run `node index.js` in your
 navigate your browser to `localhost:8000`. You should be able to see the 'Hello world!' message appear on your screen.
 
 Let's now work with a more specific example. As expected, your device will be trying to send data over to your server. This data will be
-sent through `POST` requests, which means that we will need to chnage the method which the server recognizes and extract the data from the
+sent through `POST` requests, which means that we will need to change the method which the server recognizes and extract the data from the
 request body. Since the device will send data over in JSON format, you will also need to use a body parsing middleware such as
 [`express.json()`](https://expressjs.com/en/4x/api.html#express.json). Make sure to add the new code before you call the `listen`
 method on your express application.
@@ -150,7 +150,7 @@ app.listen(/* ... */);
 ## Authentication
 Of course, it would be nice if there is some type of authentication happening, instead of letting everyone send data over to your server.
 You can do that by adding a middleware function that will authenticate based on the token that is being sent by the device. You can find the token
-your device uses by navigating over to [AutoPi Cloud](https://my.autopi.io) > Advanced > Settings > Cloud Api. One of the first fields there should be the
+your device uses by navigating over to [AutoPi Cloud](https://my.autopi.io) > Advanced > Settings > Cloud API. One of the first fields there should be the
 Auth Token field. The token will be sent in the `Authorization` HTTP header in the following format:
 
 ```
