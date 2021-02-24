@@ -209,12 +209,12 @@ app.post('/', authenticate, (req, res) => {
 app.listen(/* ... */);
 ```
 
-With all of this setup, your server should be ready to accept data from your device. Of course, this code example is not going to store any of the data
+With all this setup, your server should be ready to accept data from your device. Of course, this code example is not going to store any of the data
 that is being sent from the device, but you are able to manipulate, store or do anything else you'd like with your data the way you prefer to.
 
 ## Final thoughts
 It should be fairly simple to get a server up and running to accept data from any AutoPi device. This guide went into brief details on how to implement such a
-server in NodeJS, however implementing a REST API server is very simple with any other modern programming language. As usual, if you have any questions in regards
+server in NodeJS, however implementing a REST API server is very simple with any other modern programming language. As usual, if you have any questions in regard
 to this, feel free to contact our support team on support@autopi.io and they will be more than happy to give you guidance.
 
 ## Full example code
@@ -261,6 +261,8 @@ app.listen(port, () => {
 ```
 
 ## Device data examples
+
+Following are some example data sets that AutoPi devices send regularly.
 
 #### GPS position
 ```json
