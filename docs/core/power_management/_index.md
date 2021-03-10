@@ -3,62 +3,26 @@ id: core-power-intro
 title: Introduction
 ---
 
-Power management of the device consists of a low- and high-level layer:
+The power management of the device consists of a low- and high-level layer. For further details please see: 
 
 1. [Low-level](low_level.md)
 1. [High-level](high_level.md)
 
 
-## Status LEDs
-
-:::note
-Status LEDs are only available on the AutoPi Telematics Unit.
-:::
-
-### Blue LED
-
-The blue LED indicates the current state of the [low-level ](low_level.md) SPM system.
-
-| LED State | Description |
-| ------ | ------ |
-| Turned off | SPM is in [OFF](low_level.md#off) state. |
-| Flashing brightly | SPM is in [BOOTING](low_level.md#booting) state. |
-| Constantly bright | SPM is in [ON](low_level.md#on) state. |
-| Breathing effect | SPM is in [SLEEPING](low_level.md#sleeping) state. |
-| Constantly dimmed | SPM is in [HIBERNATING](low_level.md#hibernating) state. |
-
-
-### Green LED
-
-The green LED indicates the current state of the [high-level](high_level.md) system.
-
-| LED State | Description |
-| ------ | ------ |
-| Turned off | Not running or in the process of booting up. |
-| Flashing brightly | Up and running but NOT (yet) connected to the cloud. |
-| Constantly bright | Up and running and connected to the cloud. |
-
-
-## AutoPi's Power Cycle
-There are three general states that the device can be in:
+## Power Cycle
+Overall, there are three states that the device can be in:
 
 * On
 * Sleeping
 * Hibernating
 
-
 #### On
-The `On` state is when the device is working. It will record data, communicate with the cloud or do whatever it has been configured to do.
-Eventually, when the vehicle has turned off, a sleep timer is scheduled that will shut down the device and go to sleep
-In order to conserve power. This sleep timer puts the device in the `Sleeping` state.
-
+The `On` state is when the device is awake and performing work. It will record data, communicate with the Cloud or do whatever it has been configured to do.
+Eventually, when the vehicle has turned off, a sleep timer is scheduled that will shut down the device and go to sleep in order to conserve power. This sleep timer puts the device into the `Sleeping` state.
 
 #### Sleeping
-The `Sleeping` state is a state in which the device is only partially working. When the device goes to sleep, there is always setup
-an interval until it will wake up again ([configuration here](../../cloud/configuration/cloud-config-power#sleep-timer)).
-The INACTIVITY setting defines how often should the device wake up after a sleep. For example, if the
-[`Modem > Power Save`](../../cloud/configuration/cloud-config-power#modem) option is set to false, the modem is still
-being powered with the idea that the device could be woken up by sending an SMS to it.
+The `Sleeping` state is a state where the device is powered off for a certain period of time. Before the device goes to sleep, there is always setup
+an interval until it will wake up again ([configuration here](../../cloud/configuration/cloud-config-power#sleep-timer)). When the [`Modem > Power Save`](../../cloud/configuration/cloud-config-power#modem) option is disabled, the modem is kept powered on while sleeping. This makes it possible to wake the device by sending an SMS to it, if it is within mobile network range.
 
 There are generally two reasons for a device to go to the `On` state while sleeping:
 1. **The vehicle's engine turns on.** More precisely, the vehicle's battery voltage raises above a [specified threshold](../../cloud/configuration/cloud-config-power#wake-trigger).
@@ -66,16 +30,15 @@ There are generally two reasons for a device to go to the `On` state while sleep
 
 We will take a look at example scenarios which will further describe the power cycle of the device.
 
-
 #### Hibernating
 The `Hibernating` state is the last effort the device will do in order to preserve your vehicle's battery. It will shut off almost all
 of the functionalities of the AutoPi leaving only one power-cheap component on - a chip that will detect a raise in the battery's
 voltage so that it can trigger an `On` state. This will happen when the vehicle is powered on, so this is the moment the battery will
 start to charge up again.
 
+### Walk-through
 
-## Example power cycle
-Let us now walk through an example power cycle. We will begin with the device being unplugged and the vehicle's engine not running.
+Let us now walk through an example of the power cycle. We will begin with the device being unplugged and the vehicle's engine not running.
 If we plug in a device in the vehicle's OBD-II port the following steps will occur:
 
 1. The device will start booting
@@ -116,8 +79,6 @@ the device is asleep at the moment that the engine of the vehicle gets turned on
 Almost the same process will occur if the device is already awake with the exception that it won't need to actually boot up again.
 Instead, the device will stay awake, current sleep timers will be cleared and new sleep timers won't be able to be set.
 
-
-## Hibernation
 So now you may be wondering, when exactly does the device go into hibernation, or maybe what even is the hibernation state?
 Hibernation is a state where the device sees that the battery is very low on power and will shut down completely, leaving only
 a very power-cheap device which will wake the device up again when the battery level raises to normal values. This mode is necessary
@@ -139,3 +100,37 @@ coverage at the current moment) the event will not be sent to the Cloud even if 
 As long as the battery doesn't go below the Voltage threshold that are set on those two settings (`Critical Level` and `Safety Cut-Out`)
 your device will wake up occasionally to check up on if it needs to do something or not. If there is nothing to do, it will go back to
 sleep after the sleep timer is triggered.
+
+:::warning
+For OBD-II non-compliant vehicles additional configuration may be required to ensure a well-functioning power cycle.
+For EVs please see this [guide](https://community.autopi.io/t/guide-how-to-setup-power-cycle-for-an-electric-vehicle/).
+:::
+
+
+## Status LEDs
+
+:::note
+Status LEDs are only available on the AutoPi Telematics Unit.
+:::
+
+### Blue LED
+
+The blue LED indicates the current state of the [low-level ](low_level.md) SPM system.
+
+| LED State | Description |
+| ------ | ------ |
+| Turned off | SPM is in [OFF](low_level.md#off) state. |
+| Flashing brightly | SPM is in [BOOTING](low_level.md#booting) state. |
+| Constantly bright | SPM is in [ON](low_level.md#on) state. |
+| Breathing effect | SPM is in [SLEEPING](low_level.md#sleeping) state. |
+| Constantly dimmed | SPM is in [HIBERNATING](low_level.md#hibernating) state. |
+
+### Green LED
+
+The green LED indicates the current state of the [high-level](high_level.md) system.
+
+| LED State | Description |
+| ------ | ------ |
+| Turned off | Not running or in the process of booting up. |
+| Flashing brightly | Up and running but NOT (yet) connected to the cloud. |
+| Constantly bright | Up and running and connected to the cloud. |
