@@ -101,7 +101,7 @@ As long as the battery doesn't go below the Voltage threshold that are set on th
 your device will wake up occasionally to check up on if it needs to do something or not. If there is nothing to do, it will go back to
 sleep after the sleep timer is triggered.
 
-:::warning
+:::caution
 For OBD-II non-compliant vehicles additional configuration may be required to ensure a well-functioning power cycle.
 For EVs please see this [guide](https://community.autopi.io/t/guide-how-to-setup-power-cycle-for-an-electric-vehicle/).
 :::
