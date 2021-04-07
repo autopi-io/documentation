@@ -44,7 +44,7 @@ The next two commands will create the motioneye configuration directory and copy
 
 ```
 $ sudo mkdir -p /etc/motioneye
-$ sudo cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motion.conf
+$ sudo cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf
 ```
 
 Now, let's create the directory in which motioneye will save our video files to:
