@@ -119,6 +119,13 @@ module.exports = {
                     "guides/api/send-device-data-to-own-server"
                 ]
             },
+            {
+                "type": "category",
+                "label": "Business",
+                "items": [
+                    "guides/business/move-to-private-environment"
+                ]
+            },
             "guides/create-service-workers",
             "guides/install-camera-on-your-autopi",
             "guides/log-raw-can-messages",
