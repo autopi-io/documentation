@@ -123,7 +123,7 @@ module.exports = {
                 "type": "category",
                 "label": "Business",
                 "items": [
-                    "guides/business/move-to-private-environment"
+                    "guides/business/move-to-dedicated-environment"
                 ]
             },
             "guides/create-service-workers",
