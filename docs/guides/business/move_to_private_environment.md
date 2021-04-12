@@ -32,8 +32,8 @@ $ autopi minionutil.change_master hub confirm=True
 $ minionutil.change_master hub confirm=True
 ```
 
-The above command will ensure the salt-minion configuration is set correctly and also restart
-the salt-minion.
+The above command will ensure the salt-minion configuration is set correctly and restart the
+salt-minion.
 
 Lastly, we need to accept the new device's keys. You can do that by logging in to your
 webpage (https://dedicated.autopi.io/account/devices) and registering your device if it isn't
