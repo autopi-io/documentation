@@ -109,6 +109,11 @@ module.exports = {
         theme: {
           customCss: require.resolve('./src/css/custom.scss'),
         },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          trailingSlash: true,
+        },
       },
     ],
   ],
