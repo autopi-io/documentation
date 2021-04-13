@@ -103,7 +103,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),          
+          sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
         },
         theme: {
