@@ -7,15 +7,15 @@
 <link rel="search" type="application/opensearchdescription+xml" title="AutoPi Documentation" href="/opensearch.xml"><title data-react-helmet="true">How to export data from API | AutoPi Documentation</title><meta data-react-helmet="true" name="docsearch:version" content="current,latest"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="How to export data from API | AutoPi Documentation"><meta data-react-helmet="true" name="description" content="​"><meta data-react-helmet="true" property="og:description" content="​"><meta data-react-helmet="true" property="og:url" content="https://docs.autopi.io/guides/api/how-to-export-data-from-api"><link data-react-helmet="true" rel="shortcut icon" href="/img/favicon.ico"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="anonymous"><link data-react-helmet="true" rel="canonical" href="https://docs.autopi.io/guides/api/how-to-export-data-from-api"><link rel="stylesheet" href="/styles.aca490d6.css">
 <link rel="stylesheet" href="/main.7c4e9e04.css">
 <link rel="preload" href="/styles.c631f36d.js" as="script">
-<link rel="preload" href="/runtime~main.2c39d5c2.js" as="script">
+<link rel="preload" href="/runtime~main.5ae3a145.js" as="script">
 <link rel="preload" href="/main.d517f9a0.js" as="script">
-<link rel="preload" href="/1.54e454db.js" as="script">
-<link rel="preload" href="/2.75d7d831.js" as="script">
-<link rel="preload" href="/1197c81d.36425a1a.js" as="script">
-<link rel="preload" href="/85.03cfe273.js" as="script">
-<link rel="preload" href="/84.9b4fc147.js" as="script">
+<link rel="preload" href="/1.f7d7b256.js" as="script">
+<link rel="preload" href="/2.61168106.js" as="script">
+<link rel="preload" href="/1197c81d.42592168.js" as="script">
+<link rel="preload" href="/85.e66f7e0c.js" as="script">
+<link rel="preload" href="/84.8e1f00cb.js" as="script">
 <link rel="preload" href="/935f2afb.7802a9df.js" as="script">
-<link rel="preload" href="/17896441.4009d698.js" as="script">
+<link rel="preload" href="/17896441.59021a8e.js" as="script">
 <link rel="preload" href="/f2229f0f.1bca14a0.js" as="script">
 </head>
 <body>
@@ -33,15 +33,15 @@ very very fast, but the downside is that it is not really geared towards downloa
 of data in one go.</p><p>For enterprise customers we also support automatic exporting of trips which will call a webhook on
 an external system signalling that an export can be downloaded.</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/guides/guides-intro"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« Introduction</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/guides/api/send-device-data-to-own-server"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Send device data to own server »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#aggregated-data" class="table-of-contents__link">Aggregated data</a><ul><li><a href="#example" class="table-of-contents__link">Example</a></li><li><a href="#field" class="table-of-contents__link">Field</a></li></ul></li><li><a href="#raw-data" class="table-of-contents__link">Raw data</a><ul><li><a href="#example-1" class="table-of-contents__link">Example</a></li></ul></li><li><a href="#how-to-export-trips" class="table-of-contents__link">How to export trips</a></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">AutoPi.io</h4><ul class="footer__items"><li class="footer__item"><a href="https://www.autopi.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">AutoPi.io</a></li><li class="footer__item"><a href="https://my.autopi.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">My AutoPi Cloud</a></li><li class="footer__item"><a href="https://shop.autopi.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Shop</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a href="https://community.autopi.io/" target="_blank" rel="noopener noreferrer" class="footer__link-item">AutoPi Community</a></li><li class="footer__item"><a href="https://github.com/autopi-io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub - AutoPi Core</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Social</h4><ul class="footer__items"><li class="footer__item"><a href="https://www.reddit.com/r/autopi/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Reddit</a></li><li class="footer__item"><a href="https://twitter.com/autopi_io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter</a></li><li class="footer__item"><a href="https://www.facebook.com/autopi.io/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Facebook</a></li><li class="footer__item"><a href="https://www.linkedin.com/company/autopi.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn</a></li><li class="footer__item"><a href="https://www.youtube.com/channel/UCH50VR17emPVVfnIWlGMLig" target="_blank" rel="noopener noreferrer" class="footer__link-item">Youtube</a></li></ul></div></div><div class="text--center"><div>Copyright © 2021 AutoPi.io.</div></div></div></footer></div>
 <script src="/styles.c631f36d.js"></script>
-<script src="/runtime~main.2c39d5c2.js"></script>
+<script src="/runtime~main.5ae3a145.js"></script>
 <script src="/main.d517f9a0.js"></script>
-<script src="/1.54e454db.js"></script>
-<script src="/2.75d7d831.js"></script>
-<script src="/1197c81d.36425a1a.js"></script>
-<script src="/85.03cfe273.js"></script>
-<script src="/84.9b4fc147.js"></script>
+<script src="/1.f7d7b256.js"></script>
+<script src="/2.61168106.js"></script>
+<script src="/1197c81d.42592168.js"></script>
+<script src="/85.e66f7e0c.js"></script>
+<script src="/84.8e1f00cb.js"></script>
 <script src="/935f2afb.7802a9df.js"></script>
-<script src="/17896441.4009d698.js"></script>
+<script src="/17896441.59021a8e.js"></script>
 <script src="/f2229f0f.1bca14a0.js"></script>
 </body>
 </html>
