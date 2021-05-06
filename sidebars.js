@@ -110,6 +110,7 @@ module.exports = {
     },
     "guidesSidebar": {
         "Guides": [
+            "guides/4g-internet-setup-troubleshooting",
             "guides/guides-intro",
             {
                 "type": "category",
