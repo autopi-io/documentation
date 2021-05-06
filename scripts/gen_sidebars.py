@@ -23,7 +23,7 @@ def read_meta(file):
                 found = True
             elif found:
                 ret += l
-    
+
     return ret
 
 
@@ -38,6 +38,8 @@ for subdir, dirs, files in os.walk(src_dir):
 
     for f in [f for f in files if not f.startswith(".")]:
         meta = yaml.load(read_meta(os.path.join(subdir, f)))
+        if not meta:
+            raise Exception('Make sure to have the metadata entry at the beginning of file {}'.format(os.path.join(subdir,f)))
         parent["items"][os.path.splitext(f)[0]] = dict(meta, path=subdir.removeprefix(src_dir))
 
     for d in dirs:
