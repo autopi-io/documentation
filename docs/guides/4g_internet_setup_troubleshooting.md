@@ -60,5 +60,5 @@ If the connection is still not online, then please contact support@autopi.io for
 
 ### Discussion
 
-If you'd like to discuss this topic with us or other fellow community memebers, you can to do on our community page dedicated for this guide:
+If you'd like to discuss this topic with us or other fellow community memebers, you can do so on our community page dedicated for this guide:
 [4G internet setup troubleshooting](https://community.autopi.io/t/4g-internet-setup-troubleshooting/235)

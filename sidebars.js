@@ -110,8 +110,6 @@ module.exports = {
     },
     "guidesSidebar": {
         "Guides": [
-            "guides/4g-internet-setup-troubleshooting",
-            "guides/guides-intro",
             {
                 "type": "category",
                 "label": "Api",
@@ -127,6 +125,9 @@ module.exports = {
                     "guides/business/move-to-dedicated-environment"
                 ]
             },
+            "guides/guides-intro",
+            "guides/4g-internet-setup-troubleshooting",
+            "guides/autopi-gpio-pinout",
             "guides/create-service-workers",
             "guides/install-camera-on-your-autopi",
             "guides/log-raw-can-messages",
