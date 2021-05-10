@@ -6,17 +6,17 @@
 <meta name="generator" content="Docusaurus v2.0.0-alpha.65">
 <link rel="search" type="application/opensearchdescription+xml" title="AutoPi Documentation" href="/opensearch.xml"><title data-react-helmet="true">Obd Manager | AutoPi Documentation</title><meta data-react-helmet="true" name="docsearch:version" content="current,latest"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Obd Manager | AutoPi Documentation"><meta data-react-helmet="true" name="description" content="Converters"><meta data-react-helmet="true" property="og:description" content="Converters"><meta data-react-helmet="true" property="og:url" content="https://docs.autopi.io/core/services/core-services-obd-manager"><link data-react-helmet="true" rel="shortcut icon" href="/img/favicon.ico"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="anonymous"><link data-react-helmet="true" rel="canonical" href="https://docs.autopi.io/core/services/core-services-obd-manager"><link rel="stylesheet" href="/styles.aca490d6.css">
 <link rel="stylesheet" href="/main.7c4e9e04.css">
-<link rel="preload" href="/styles.9ffe8876.js" as="script">
-<link rel="preload" href="/runtime~main.f79809b3.js" as="script">
-<link rel="preload" href="/main.e53e4778.js" as="script">
-<link rel="preload" href="/1.66277c3a.js" as="script">
-<link rel="preload" href="/2.859fc660.js" as="script">
-<link rel="preload" href="/1197c81d.742dd7f7.js" as="script">
-<link rel="preload" href="/86.7f587082.js" as="script">
-<link rel="preload" href="/85.6cd73d62.js" as="script">
-<link rel="preload" href="/935f2afb.3649233b.js" as="script">
-<link rel="preload" href="/17896441.87e97d2a.js" as="script">
-<link rel="preload" href="/ae23b022.ad3e2eb3.js" as="script">
+<link rel="preload" href="/styles.1c59bde1.js" as="script">
+<link rel="preload" href="/runtime~main.ea0a91d3.js" as="script">
+<link rel="preload" href="/main.983c14df.js" as="script">
+<link rel="preload" href="/1.5b64f03f.js" as="script">
+<link rel="preload" href="/2.beef77c1.js" as="script">
+<link rel="preload" href="/1197c81d.a9abc820.js" as="script">
+<link rel="preload" href="/87.e348ef66.js" as="script">
+<link rel="preload" href="/86.1e321abe.js" as="script">
+<link rel="preload" href="/935f2afb.85f4cf16.js" as="script">
+<link rel="preload" href="/17896441.98809cfb.js" as="script">
+<link rel="preload" href="/ae23b022.6ffe1cd9.js" as="script">
 </head>
 <body>
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -26,16 +26,16 @@ The CAN database file (.dbc) is found on the local file system by the following 
 This trigger supports single value results as well as multiple values results.</p><hr><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="rpm_motor_event"></a><code>rpm_motor_event</code><a aria-hidden="true" tabindex="-1" class="hash-link" href="#rpm_motor_event" title="Direct link to heading">#</a></h3><p>Looks for RPM result and triggers motor <code>vehicle/motor/[not_running|running|stopped]</code> event based on the value(s) found.
 This trigger supports single value results as well as multiple values results.
 This trigger is meant to be used for electric vehicles without an engine.</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/core/services/core-services-key-fob-manager"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« Key Fob Manager</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/core/services/core-services-spm-manager"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Spm Manager »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#converters" class="table-of-contents__link">Converters</a><ul><li><a href="#battery" class="table-of-contents__link"><code>battery</code></a></li><li><a href="#can" class="table-of-contents__link"><code>can</code></a></li><li><a href="#dtc" class="table-of-contents__link"><code>dtc</code></a></li></ul></li><li><a href="#filters" class="table-of-contents__link">Filters</a><ul><li><a href="#alternating_readout" class="table-of-contents__link"><code>alternating_readout</code></a></li></ul></li><li><a href="#handlers" class="table-of-contents__link">Handlers</a><ul><li><a href="#commands" class="table-of-contents__link"><code>commands</code></a></li><li><a href="#connection" class="table-of-contents__link"><code>connection</code></a></li><li><a href="#context" class="table-of-contents__link"><code>context</code></a></li><li><a href="#dump" class="table-of-contents__link"><code>dump</code></a></li><li><a href="#execute" class="table-of-contents__link"><code>execute</code></a></li><li><a href="#export" class="table-of-contents__link"><code>export</code></a></li><li><a href="#filter" class="table-of-contents__link"><code>filter</code></a></li><li><a href="#import" class="table-of-contents__link"><code>import</code></a></li><li><a href="#monitor" class="table-of-contents__link"><code>monitor</code></a></li><li><a href="#play" class="table-of-contents__link"><code>play</code></a></li><li><a href="#protocol" class="table-of-contents__link"><code>protocol</code></a></li><li><a href="#query" class="table-of-contents__link"><code>query</code></a></li><li><a href="#recordings" class="table-of-contents__link"><code>recordings</code></a></li><li><a href="#send" class="table-of-contents__link"><code>send</code></a></li><li><a href="#setup" class="table-of-contents__link"><code>setup</code></a></li><li><a href="#status" class="table-of-contents__link"><code>status</code></a></li></ul></li><li><a href="#triggers" class="table-of-contents__link">Triggers</a><ul><li><a href="#battery_event" class="table-of-contents__link"><code>battery_event</code></a></li><li><a href="#communication_event" class="table-of-contents__link"><code>communication_event</code></a></li><li><a href="#rpm_engine_event" class="table-of-contents__link"><code>rpm_engine_event</code></a></li><li><a href="#rpm_motor_event" class="table-of-contents__link"><code>rpm_motor_event</code></a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">AutoPi.io</h4><ul class="footer__items"><li class="footer__item"><a href="https://www.autopi.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">AutoPi.io</a></li><li class="footer__item"><a href="https://my.autopi.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">My AutoPi Cloud</a></li><li class="footer__item"><a href="https://shop.autopi.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Shop</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a href="https://community.autopi.io/" target="_blank" rel="noopener noreferrer" class="footer__link-item">AutoPi Community</a></li><li class="footer__item"><a href="https://github.com/autopi-io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub - AutoPi Core</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Social</h4><ul class="footer__items"><li class="footer__item"><a href="https://www.reddit.com/r/autopi/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Reddit</a></li><li class="footer__item"><a href="https://twitter.com/autopi_io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter</a></li><li class="footer__item"><a href="https://www.facebook.com/autopi.io/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Facebook</a></li><li class="footer__item"><a href="https://www.linkedin.com/company/autopi.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn</a></li><li class="footer__item"><a href="https://www.youtube.com/channel/UCH50VR17emPVVfnIWlGMLig" target="_blank" rel="noopener noreferrer" class="footer__link-item">Youtube</a></li></ul></div></div><div class="text--center"><div>Copyright © 2021 AutoPi.io.</div></div></div></footer></div>
-<script src="/styles.9ffe8876.js"></script>
-<script src="/runtime~main.f79809b3.js"></script>
-<script src="/main.e53e4778.js"></script>
-<script src="/1.66277c3a.js"></script>
-<script src="/2.859fc660.js"></script>
-<script src="/1197c81d.742dd7f7.js"></script>
-<script src="/86.7f587082.js"></script>
-<script src="/85.6cd73d62.js"></script>
-<script src="/935f2afb.3649233b.js"></script>
-<script src="/17896441.87e97d2a.js"></script>
-<script src="/ae23b022.ad3e2eb3.js"></script>
+<script src="/styles.1c59bde1.js"></script>
+<script src="/runtime~main.ea0a91d3.js"></script>
+<script src="/main.983c14df.js"></script>
+<script src="/1.5b64f03f.js"></script>
+<script src="/2.beef77c1.js"></script>
+<script src="/1197c81d.a9abc820.js"></script>
+<script src="/87.e348ef66.js"></script>
+<script src="/86.1e321abe.js"></script>
+<script src="/935f2afb.85f4cf16.js"></script>
+<script src="/17896441.98809cfb.js"></script>
+<script src="/ae23b022.6ffe1cd9.js"></script>
 </body>
 </html>
