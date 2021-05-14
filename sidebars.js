@@ -30,6 +30,16 @@ module.exports = {
                     "cloud/events/cloud-events-vehicle"
                 ]
             },
+            {
+                "type": "category",
+                "label": "Fleet",
+                "items": [
+                    "cloud/fleet/fleet-intro",
+                    "cloud/fleet/fleet-overview",
+                    "cloud/fleet/fleet-templates",
+                    "cloud/fleet/fleet-wakeup"
+                ]
+            },
             "cloud/cloud-jobs",
             "cloud/cloud-triggers",
             "cloud/cloud-trips"
