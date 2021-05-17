@@ -132,7 +132,8 @@ module.exports = {
             "guides/install-camera-on-your-autopi",
             "guides/log-raw-can-messages",
             "guides/remotely-waking-up-your-device",
-            "guides/setup-your-tmu-diy-edition"
+            "guides/setup-your-tmu-diy-edition",
+            "guides/using-the-rpi3-adapter"
         ]
     }
 };
