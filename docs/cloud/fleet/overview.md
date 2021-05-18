@@ -17,6 +17,10 @@ The fleet overview can be customized to show the columns that you need, by click
 Indicates if the device has been online in the last 5 minutes, to get a realtime indication you will need to use the ping function by clicking the globe while the device is active.
 This column also allows the use of the [remote wake up functionality](remote-wakeup.md)
 
+:::note active
+An active device means that it has been selected as the device that you're working on. You can verify which device you have active by looking at the top-right corner of the web page.
+:::
+
 #### Display
 The display name of the device, it will show the following values in order of availability.
 device name > vehicle name > Last 12 characters of the Unit ID.
@@ -25,7 +29,7 @@ device name > vehicle name > Last 12 characters of the Unit ID.
 The name of the vehicle currently assigned to the device
 
 #### Unit ID
-The unit id of the device. This ID is also printed on the device, so this makes it possible to corrolate which device you are working on.
+The unit id of the device. This ID is also printed on the device, so this makes it possible to correlate which device you are working on.
 
 #### IMEI
 The IMEI number of the modem installed in the device.
@@ -55,5 +59,5 @@ Shows the phone number associated to the device.
 Currently only available for customers which are using our SIM solution.
 
 :::tip
-Contact sales to get more information.
+Contact sales@autopi.io to get more information.
 :::

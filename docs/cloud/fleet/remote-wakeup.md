@@ -12,5 +12,5 @@ The feature is available in the fleet overview, and can be used by clicking the 
 The functionality is included in the fleet management add-on when using our SIM solution.
 
 :::tip
-Contact sales to get more information.
+Contact sales@autopi.io to get more information.
 :::
