@@ -20,7 +20,7 @@ Modules are created the same way for templates as they are for normal devices; c
 [Read more here](/guides/create_service_workers.md).
 
 #### Creating custom services
-Creating a custom service does right now not autocreate a custom module, so if you want to create a custom service, you should instead go create a custom module of the type service, then a service will be automatically created.
+Creating a custom service does not not autocreate a custom module as of now, so if you want to create a custom service, you should instead go create a custom module of the type service, then a service will be automatically created.
 
 #### Overriding default services
 To override a default engine, like the obd_manager from a template, you can simply create a new service which has the same name as the default service.
