@@ -36,8 +36,8 @@ module.exports = {
                 "items": [
                     "cloud/fleet/fleet-intro",
                     "cloud/fleet/fleet-overview",
-                    "cloud/fleet/fleet-templates",
-                    "cloud/fleet/fleet-wakeup"
+                    "cloud/fleet/fleet-wakeup",
+                    "cloud/fleet/fleet-templates"
                 ]
             },
             "cloud/cloud-jobs",
@@ -143,6 +143,7 @@ module.exports = {
             "guides/log-raw-can-messages",
             "guides/remotely-waking-up-your-device",
             "guides/setup-your-tmu-diy-edition",
+            "guides/using-the-gpio-and-hdmi-connector-with-the-autopi-gen-2-casing",
             "guides/using-the-rpi3-adapter"
         ]
     }
