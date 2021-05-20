@@ -9,9 +9,9 @@ Pins marked with "in use" cannot be used for anything else. This will interrupt 
 
 All other pins are free and their functionality follows that of the Raspberry Pi.
 
-![Rpi-pinout](../../static/img/guides/autopi-gpio-pinout/rpi-pinout.jpg)
+![Rpi-pinout](../../static/img/guides/autopi_gpio_pinout/rpi_pinout.jpg)
 
-![Rpi-pinout_TMU](../../static/img/guides/autopi-gpio-pinout/rpi-pinout-tmu.jpeg)
+![Rpi-pinout_TMU](../../static/img/guides/autopi_gpio_pinout/rpi_pinout_tmu.jpeg)
 
 ### Discussion
 
