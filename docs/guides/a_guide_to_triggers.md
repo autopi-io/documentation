@@ -3,8 +3,8 @@ id: a-guide-to-triggers
 title: A guide to Triggers
 ---
 
-The possibilities are endless with the AutoPi Dongle. This guide will be introducing and explaining how to use, create and edit
-triggers with your dongle. Triggers will allow you to get notifications both based on events from the device, but also all the
+The possibilities are endless with the AutoPi device. This guide will be introducing and explaining how to use, create and edit
+triggers with your device. Triggers will allow you to get notifications both based on events from the device, but also all the
 various data points, that are logged from the car.
 
 ![intro_pic](../../static/img/guides/a_guide_to_triggers/intro_pic.png) 
