@@ -122,6 +122,7 @@ module.exports = {
         "Guides": [
             "guides/guides-intro",
             "guides/4g-internet-setup-troubleshooting",
+            "guides/a-guide-to-triggers",
             {
                 "type": "category",
                 "label": "Api",
