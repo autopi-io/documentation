@@ -14,13 +14,13 @@ various data points, that are logged from the car.
 Triggers are a way to receive notifications when specific events occur on the device. Conditions can also be set on the triggers so
 that the notifications are only sent when those conditions have been met.
 
-More specifically, whenever a device recieves an event (eg. `vehicle/engine/running`) it will push that event and the data that comes
+More specifically, whenever a device recieves an event (e.g. `vehicle/engine/running`) it will push that event and the data that comes
 with it to the Cloud. When the Cloud system receives that data, it'll process it and find out if there are any triggers that need to
 be executed based on the event name (also known as a tag) and the conditions for each trigger that matches the tag.
 
 You can set up or edit these triggers on the AutoPi Cloud. As mentioned earlier, triggers are based on event from the device, and
 a trigger can have zero or more conditions that needs to be met before it is triggered. Once the condition(s) have been met, the
-trigger will execute the attached action(s), ie. a notification will be sent to you notifying you of this event, either via email
+trigger will execute the attached action(s), i.e. a notification will be sent to you notifying you of this event, either via email
 or a webhook request.
 
 In this guide we will explore how you can setup a trigger on your own. We will create a trigger that will notify you whenever your
@@ -42,12 +42,12 @@ the form to create a trigger.
 2. Next, let's fill out that form. We'll go through the options that are available in the form and explain each one of them.
 
     1. *Description* - This is a descriptive name of your trigger. You can set it to whatever suits you, but for this guide, we will
-    go with 'Vehicle started outside of working hours'
+    go with 'Vehicle started outside of working hours'.
 
-    2. *Last Triggered* - This shows the time the trigger was last triggered. The same form is used to view and edit the trigger
+    2. *Last Triggered* - This shows the time the trigger was last triggered. The same form is used to view and edit the trigger,
     so you are able to open it up and view that. This is also visible on the overview of your triggers.
 
-    3. *Enabled* - Whether or not the trigger is enabled.
+    3. *Enabled* - Whether the trigger is enabled.
 
     4. *Type* - This is the type of event that the trigger will be reacting on. For right now, only one option is available -
     Event, which is a device event, however in the future, there will be types like Alert, OBD Data and more.
@@ -56,11 +56,11 @@ the form to create a trigger.
     `vehicle/engine/running` or a more general specification with the use of regular expressions like `vehicle/engine/*`. For this
     guide we will be using `vehicle/engine/running` in this field.
 
-    6. *Conditions* - Here, you are able to specify different conditions for your trigger. Conditions are going to be reviewed deeper
+    6. *Conditions* - Here, you can specify different conditions for your trigger. Conditions are going to be reviewed deeper
     in a subsection later in this guide, but for now, we will set two conditions: one field `@ts` with data `time` should be less
     than `08:00:00` and a second field `@ts` with data `time` should be greater than `20:00:00`
 
-    7. *Actions* - This is where you specify the actions that are to be executed when the trigger is fired. You can chose from two
+    7. *Actions* - This is where you specify the actions that are to be executed when the trigger is fired. You can choose from two
     options as of now: sending an email and sending a webhook request. For this guide, we will use only the sending an email option
     to send an email to support@autopi.io (which is also the email you should use if you have any questions for this or any other
     guide 😉).  We will review the different options that you have when sending a webhook request further into this guide.
