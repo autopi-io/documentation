@@ -121,8 +121,6 @@ module.exports = {
     "guidesSidebar": {
         "Guides": [
             "guides/guides-intro",
-            "guides/4g-internet-setup-troubleshooting",
-            "guides/a-guide-to-triggers",
             {
                 "type": "category",
                 "label": "Api",
@@ -131,7 +129,6 @@ module.exports = {
                     "guides/api/send-device-data-to-own-server"
                 ]
             },
-            "guides/autopi-gpio-pinout",
             {
                 "type": "category",
                 "label": "Business",
@@ -139,7 +136,11 @@ module.exports = {
                     "guides/business/move-to-dedicated-environment"
                 ]
             },
+            "guides/4g-internet-setup-troubleshooting",
+            "guides/a-guide-to-triggers",
+            "guides/autopi-gpio-pinout",
             "guides/create-service-workers",
+            "guides/how-to-ssh-to-your-device",
             "guides/install-camera-on-your-autopi",
             "guides/log-raw-can-messages",
             "guides/remotely-waking-up-your-device",

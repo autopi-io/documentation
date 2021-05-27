@@ -1,0 +1,56 @@
+---
+id: how-to-ssh-to-your-device
+title: How to SSH to your device
+---
+
+
+## How-to
+In this quick guide, we will explore how you can SSH into your AutoPi device.
+
+1. **First connect to the hotspot.** By default, the SSID is "AutoPi" followed by the last 13 characters of your unit ID,
+like so "AutoPi-XXXXXXXXXXXX". Also by default, the password is the first 13 chars of your <u>*device*</u> ID, including dashes.
+
+   Like so: **XXXXXXXX-XXXX**-XXXX-XXXX-XXXXXXXXXXXX
+
+:::tip
+Notice this is not the unit ID like the SSID. You are able to view the device ID in the basic device settings
+(Profile Icon > Account > Devices).
+:::
+
+2. **Connect to the device via SSH, using the details below.**
+This can be done via most computers (you need an SSH client), or even mobile devices with an SSH client installed.
+
+   Host: local.autopi.io  
+   User: pi  
+   Password: autopi2018
+
+   **Example**:
+
+   ```
+   ssh pi@local.autopi.io
+   ```
+
+## Quick notes
+
+### Execute commands
+All AutoPi native commands (commands normally run from the Cloud terminal) can be run from the
+SSH prompt by adding the `autopi` function in front. An example is:
+
+```
+autopi power.status
+```
+
+This can be handly when doing local development.
+
+### Allow SSH connections to the device from your local WiFi
+When you are not connected to the device hotspot, but the device is instead configured to
+connect to your home WiFi, you will need to change the advanced configuration to allow this
+SSH connection. This is by default disabled as it can be insecure if you are using a public WiFi connection.
+
+You can find the setting to enable this, in **Settings > Advanced > WiFi > Client > Allow Ssh**.
+
+In such a case, the host will be the IP address that has been assigned to the device by your router.
+
+## Discussion
+If you'd like to discuss this topic with us or other fellow community memebers, you can do so on our community
+page dedicated for this guide: [Guide: How to SSH to your device](https://community.autopi.io/t/guide-how-to-ssh-to-your-device/386).
