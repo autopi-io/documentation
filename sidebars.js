@@ -144,6 +144,7 @@ module.exports = {
             "guides/install-camera-on-your-autopi",
             "guides/log-raw-can-messages",
             "guides/remotely-waking-up-your-device",
+            "guides/setting-up-our-device-with-verizon-wireless",
             "guides/setup-your-tmu-diy-edition",
             "guides/using-the-gpio-and-hdmi-connector-with-the-autopi-gen-2-casing",
             "guides/using-the-rpi3-adapter"
