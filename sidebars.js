@@ -136,6 +136,14 @@ module.exports = {
                     "guides/business/move-to-dedicated-environment"
                 ]
             },
+            {
+                "type": "category",
+                "label": "DiY Edition",
+                "items": [
+                    "guides/diy-edition/setup-your-gen-2-diy-edition",
+                    "guides/diy-edition/setup-your-tmu-diy-edition"
+                ]
+            },
             "guides/4g-internet-setup-troubleshooting",
             "guides/a-guide-to-triggers",
             "guides/autopi-gpio-pinout",
@@ -145,7 +153,6 @@ module.exports = {
             "guides/log-raw-can-messages",
             "guides/remotely-waking-up-your-device",
             "guides/setting-up-our-device-with-verizon-wireless",
-            "guides/setup-your-tmu-diy-edition",
             "guides/using-the-gpio-and-hdmi-connector-with-the-autopi-gen-2-casing",
             "guides/using-the-rpi3-adapter"
         ]
