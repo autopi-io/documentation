@@ -11,6 +11,10 @@ Queries or manipulates cache of event reactor.
 ----
 ## `reactor.context`
 
+:::warning
+**DEPRECATED**
+Use 'manage context' instead.
+:::
 Queries or manipulates context of event reactor.
 
 

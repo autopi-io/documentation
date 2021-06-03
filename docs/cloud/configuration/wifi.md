@@ -7,6 +7,7 @@ title: Wifi
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
+| ENABLED | Enable connection to WiFi networks? | bool | True | - |
 | ALLOW SSH | Allow incoming SSH connections on port 22 from the WiFi client network? | bool | False | - |
 
 ## Hotspot

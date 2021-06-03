@@ -33,6 +33,12 @@ Calls a Salt execution module from within the minion process.
 
 
 ----
+## `hooklib.returner_call_handler`
+
+Calls a Salt returner module directy from current process.
+
+
+----
 ## `hooklib.skip_empty_filter`
 
 Filters out empty results.

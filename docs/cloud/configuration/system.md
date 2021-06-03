@@ -15,6 +15,12 @@ title: System
 | ------ | ------ | ------ | ------ | ------ |
 | MEMORY | Amount of memory that is addressable from the GPU. Set as low as possible to give the system as much memory as possible. | int | 16 | - |
 
+## Filesystem
+
+| Name | Description | Type | Default | Unit |
+| ------ | ------ | ------ | ------ | ------ |
+| AUTO MOUNT USB | Automatically mount and and unmount USB mass storage devices? Mounted drives can be found on the filesystem below '/media'. | bool | - | - |
+
 ## Locale
 
 | Name | Description | Type | Default | Unit |
@@ -36,6 +42,12 @@ title: System
 
 ## Network
 
+#### Ethernet
+
+| Name | Description | Type | Default | Unit |
+| ------ | ------ | ------ | ------ | ------ |
+| STATIC IP | Specify a static IP address for the 'eth0' interface, if available. | str | - | - |
+
 #### Firewall
 
 | Name | Description | Type | Default | Unit |
@@ -48,7 +60,7 @@ title: System
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
-| KEY SIZE | Specify bit size of RSA key pair to be generated for this device. | int | - | - |
+| KEY SIZE | Specify bit size of RSA key pair to be generated for this device. | int | 0 | - |
 | PUBLIC KEY | Public RSA key belonging to this device. | str | - | - |
 | PRIVATE KEY | Private RSA key belonging to this device. | str | - | - |
 
@@ -64,7 +76,13 @@ title: System
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
-| SOURCE | Choose strategy for how to keep track of the current time. | str | fake | - |
+| SOURCE | Choose strategy for how to keep track of the current time. | str | rtc | - |
+
+#### Rtc
+
+| Name | Description | Type | Default | Unit |
+| ------ | ------ | ------ | ------ | ------ |
+| AUTO UPDATE | Allow automatic update of real-time clock after NTP synchronization? | bool | True | - |
 
 ## User
 

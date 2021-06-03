@@ -20,12 +20,6 @@ Converts NMEA0183 sentences result into position type.
 Filter that only returns significant non duplicated positions.
 
 ## Handlers
-### `context`
-
-Gets current context.
-
-
-----
 ### `gnss_query`
 
 Reads GNSS data and settings synchronously from EC2X module.

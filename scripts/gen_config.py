@@ -1,5 +1,6 @@
 
 import collections
+import datetime
 import jinja2
 import json
 import os
@@ -34,12 +35,16 @@ template = environment.get_template("dongle_config.yml")
 fields = yaml.load(template.render({
     "settings": Mock({"PUBLIC_API_URL": "https://api.autopi.io"}),
     "device": Mock({
+        "id": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
         "unit_id": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-        "owner": None,
         "token": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-        "vehicle": None
-        }),
-    "masterdata": None
+        "vehicle": None,
+        "created_at": datetime.datetime.utcnow()
+    }),
+    "owner": None,
+    "masterdata": {
+        "hw_board_ver": "5.1"
+    }
 }))
 print("[INFO] Loaded {:} fields".format(len(fields)))
 
@@ -123,6 +128,9 @@ for name, fields in field_files.items():
                 f.write("| ------ | ------ | ------ | ------ | ------ |\n")
 
                 last_group_parts = group_parts
+
+            if not "desc" in field:
+                print("{:}".format(field))
 
             f.write("| {:} | {:} | {:} | {:} | {:} |\n".format(
                 field["name"].replace("_", " ").upper(),

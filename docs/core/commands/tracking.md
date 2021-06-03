@@ -5,6 +5,10 @@ title: Tracking
 
 ## `tracking.context`
 
+:::warning
+**DEPRECATED**
+Use 'manage context' instead.
+:::
 Gets current context.
 
 

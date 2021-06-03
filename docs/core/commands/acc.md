@@ -21,6 +21,10 @@ Manages current connection.
 ----
 ## `acc.context`
 
+:::warning
+**DEPRECATED**
+Use 'manage context' instead.
+:::
 Gets current context.
 
 

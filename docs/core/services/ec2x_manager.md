@@ -14,12 +14,6 @@ Manages current connection.
 
 
 ----
-### `context`
-
-Gets current context.
-
-
-----
 ### `download`
 
 Downloads a file from the EC2X device.

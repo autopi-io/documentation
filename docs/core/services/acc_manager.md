@@ -25,12 +25,6 @@ Manages current connection.
 
 
 ----
-### `context`
-
-Gets current context.
-
-
-----
 ### `dump`
 
 Dumps raw XYZ readings to screen or file.

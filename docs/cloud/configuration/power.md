@@ -21,6 +21,7 @@ title: Power
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
 | AUTO UPDATE | Automatic update of the firmware on the power management chip? | bool | True | - |
+| VERSION | Version number of the power management firmware. | str | 2.2 | - |
 
 ## Modem
 

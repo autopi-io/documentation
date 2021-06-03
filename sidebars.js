@@ -10,7 +10,9 @@ module.exports = {
                     "cloud/configuration/cloud-config-accelerometer",
                     "cloud/configuration/cloud-config-audio",
                     "cloud/configuration/cloud-config-bluetooth",
-                    "cloud/configuration/cloud-config-cloud-api",
+                    "cloud/configuration/cloud-config-cloud-storage",
+                    "cloud/configuration/cloud-config-docker",
+                    "cloud/configuration/cloud-config-key-fob",
                     "cloud/configuration/cloud-config-mqtt",
                     "cloud/configuration/cloud-config-obd",
                     "cloud/configuration/cloud-config-power",
@@ -93,8 +95,10 @@ module.exports = {
                 "items": [
                     "core/returners/core-returners-intro",
                     "core/returners/core-returners-cloud",
+                    "core/returners/core-returners-cloud-jsonl",
                     "core/returners/core-returners-event",
                     "core/returners/core-returners-event-result",
+                    "core/returners/core-returners-jsonl",
                     "core/returners/core-returners-mqtt"
                 ]
             },
@@ -138,7 +142,7 @@ module.exports = {
             },
             {
                 "type": "category",
-                "label": "DiY Edition",
+                "label": "DIY Edition",
                 "items": [
                     "guides/diy-edition/setup-your-gen-2-diy-edition",
                     "guides/diy-edition/setup-your-tmu-diy-edition"

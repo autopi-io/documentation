@@ -3,6 +3,14 @@ id: cloud-config-obd
 title: Obd
 ---
 
+## Advanced
+
+| Name | Description | Type | Default | Unit |
+| ------ | ------ | ------ | ------ | ------ |
+| ADAPTIVE TIMING | Set adaptive timing mode. Sometimes, a single OBD requests results in multiple response frames. The time between frames varies significantly depending on the vehicle year, make, and model – from as low as 5ms up to 100ms. | int | 1 | - |
+| RESPONSE TIMEOUT | When adaptive timing is on, this sets the maximum time that is to be allowed, even if the adaptive algorithm determines that the setting should be longer. In most circumstances, it is best to let the adaptive timing algorithm determine what to use for the timeout. | int | 50 | ms |
+| PRINT SPACES | Turn printing of spaces in OBD responses on or off. To get better performance, turn spaces off. | bool | True | - |
+
 ## Elm327 Proxy
 
 | Name | Description | Type | Default | Unit |

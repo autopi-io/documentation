@@ -14,12 +14,6 @@ Performs a key fob button action.
 
 
 ----
-### `context`
-
-Gets current context.
-
-
-----
 ### `power`
 
 Powers on/off key fob.

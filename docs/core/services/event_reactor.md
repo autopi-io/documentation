@@ -13,12 +13,6 @@ Filter that only returns alternating/changed events from cache.
 
 Manages cached data.
 
-
-----
-### `context`
-
-Queries or manipulates context instance of this engine.
-
 ## Returners
 ### `module_result_cache`
 

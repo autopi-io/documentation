@@ -15,6 +15,10 @@ Performs a key fob button action.
 ----
 ## `keyfob.context`
 
+:::warning
+**DEPRECATED**
+Use 'manage context' instead.
+:::
 Gets current context.
 
 

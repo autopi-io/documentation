@@ -5,6 +5,10 @@ title: Ble
 
 ## `ble.context`
 
+:::warning
+**DEPRECATED**
+Use 'manage context' instead.
+:::
 Gets current context.
 
 

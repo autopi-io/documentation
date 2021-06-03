@@ -4,12 +4,6 @@ title: Ble Manager
 ---
 
 ## Handlers
-### `context`
-
-Gets current context.
-
-
-----
 ### `flash_firmware`
 
 Flashes new firmware to the BlueNRG device.
