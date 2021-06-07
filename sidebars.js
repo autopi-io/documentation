@@ -143,10 +143,18 @@ module.exports = {
             },
             {
                 "type": "category",
-                "label": "DIY Edition",
+                "label": "DiY Edition",
                 "items": [
                     "guides/diy-edition/setup-your-gen-2-diy-edition",
                     "guides/diy-edition/setup-your-tmu-diy-edition"
+                ]
+            },
+            {
+                "type": "category",
+                "label": "Gen 2 Specific",
+                "items": [
+                    "guides/gen-2-specific/using-gpio-and-hdmi-with-the-gen-2",
+                    "guides/gen-2-specific/using-the-rpi3-adapter"
                 ]
             },
             "guides/4g-internet-setup-troubleshooting",
@@ -157,9 +165,7 @@ module.exports = {
             "guides/install-camera-on-your-autopi",
             "guides/log-raw-can-messages",
             "guides/remotely-waking-up-your-device",
-            "guides/setting-up-our-device-with-verizon-wireless",
-            "guides/using-the-gpio-and-hdmi-connector-with-the-autopi-gen-2-casing",
-            "guides/using-the-rpi3-adapter"
+            "guides/setting-up-our-device-with-verizon-wireless"
         ]
     }
 };
