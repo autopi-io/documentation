@@ -163,6 +163,7 @@ module.exports = {
             "guides/create-service-workers",
             "guides/how-to-ssh-to-your-device",
             "guides/install-camera-on-your-autopi",
+            "guides/jumpers",
             "guides/log-raw-can-messages",
             "guides/remotely-waking-up-your-device",
             "guides/setting-up-our-device-with-verizon-wireless"
