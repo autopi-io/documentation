@@ -16,7 +16,7 @@ your device. The second method retrieves the log files directly from the device 
 ### Viewing logs from the Cloud
 
 To retrieve the primary logs from the device, we have some terminal commands that can be executed
-(on [my.autopi.io](https://my.autopi.io/) and [local.autopi.io](https://local.autopi.io/)):
+(on [my.autopi.io](https://my.autopi.io/) and [local.autopi.io](http://local.autopi.io/)):
 
 ```
 $ minionutil.last_logs
@@ -50,7 +50,7 @@ Sometimes, if we're having a back and forth on our support channel (support@auto
 ask you to provide some log files from your device. Most of the time, it will be the minion log
 file (`/var/log/salt/minion`), but sometimes it might also be the syslog file (`/var/log/syslog`).
 There are three ways that you can download log files from your device: downloading the files
-from the local admin page ([local.autopi.io](local.autopi.io)), copying it to your own computer with
+from the local admin page ([local.autopi.io](http://local.autopi.io)), copying it to your own computer with
 the `scp` command or by uploading it to your dropbox account.
 
 ### Local admin page download
