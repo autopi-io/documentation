@@ -160,6 +160,7 @@ module.exports = {
             "guides/4g-internet-setup-troubleshooting",
             "guides/a-guide-to-triggers",
             "guides/autopi-gpio-pinout",
+            "guides/autopi-logs",
             "guides/create-service-workers",
             "guides/how-to-ssh-to-your-device",
             "guides/install-camera-on-your-autopi",
