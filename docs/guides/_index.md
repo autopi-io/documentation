@@ -1,6 +1,6 @@
 ---
 id: guides-intro
-title: Introduction
+title: Getting started
 ---
 
 This is a step-by-step instructions on how to set-up your AutoPi 4G/LTE Edition. The AutoPi 4G/LTE
