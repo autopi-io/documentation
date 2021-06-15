@@ -145,7 +145,6 @@ module.exports = {
             "guides/a-guide-to-triggers",
             "guides/autopi-logs",
             "guides/create-service-workers",
-            "guides/getting-started",
             "guides/how-to-ssh-to-your-device",
             "guides/install-camera-on-your-autopi",
             "guides/jumpers",
