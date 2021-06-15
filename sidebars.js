@@ -141,25 +141,8 @@ module.exports = {
                     "guides/business/move-to-dedicated-environment"
                 ]
             },
-            {
-                "type": "category",
-                "label": "DiY Edition",
-                "items": [
-                    "guides/diy-edition/setup-your-gen-2-diy-edition",
-                    "guides/diy-edition/setup-your-tmu-diy-edition"
-                ]
-            },
-            {
-                "type": "category",
-                "label": "Gen 2 Specific",
-                "items": [
-                    "guides/gen-2-specific/using-gpio-and-hdmi-with-the-gen-2",
-                    "guides/gen-2-specific/using-the-rpi3-adapter"
-                ]
-            },
             "guides/4g-internet-setup-troubleshooting",
             "guides/a-guide-to-triggers",
-            "guides/autopi-gpio-pinout",
             "guides/autopi-logs",
             "guides/create-service-workers",
             "guides/getting-started",
@@ -169,6 +152,30 @@ module.exports = {
             "guides/log-raw-can-messages",
             "guides/remotely-waking-up-your-device",
             "guides/setting-up-our-device-with-verizon-wireless"
+        ]
+    },
+    "hardwareSidebar": {
+        "Hardware": [
+            "hardware/hardware-intro",
+            {
+                "type": "category",
+                "label": "Generation 2",
+                "items": [
+                    "hardware/generation-2/gen-2-intro",
+                    "hardware/generation-2/setup-your-gen-2-diy-edition",
+                    "hardware/generation-2/using-gpio-and-hdmi-with-the-gen-2",
+                    "hardware/generation-2/using-the-rpi3-adapter"
+                ]
+            },
+            {
+                "type": "category",
+                "label": "Generation 3",
+                "items": [
+                    "hardware/generation-3/gen-3-intro",
+                    "hardware/generation-3/developer-kit",
+                    "hardware/generation-3/setup-your-tmu-diy-edition"
+                ]
+            }
         ]
     }
 };

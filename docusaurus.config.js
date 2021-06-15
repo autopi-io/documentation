@@ -12,7 +12,7 @@ module.exports = {
       apiKey: '9f2c3a395a2ba729c5cfd5b8d443d4fd',
       indexName: 'autopi',
     },
-    navbar: {      
+    navbar: {
       logo: {
         alt: 'AutoPi Documentation Logo',
         src: 'img/logo_trans_doc.png',
@@ -32,6 +32,11 @@ module.exports = {
         {
           to: 'guides/guides-intro',
           label: 'Guides',
+          position: 'left',
+        },
+        {
+          to: 'hardware/hardware-intro',
+          label: 'Hardware',
           position: 'left',
         },
       ],
