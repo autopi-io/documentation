@@ -9,7 +9,7 @@ steps that need to be taken to get the device in running condition.
 
 :::note
 This guide is for TMU (Gen 3) DiY boards. For Gen 2 DiY boards, take a look at
-[this](setup_your_gen_2_diy_edition.md) guide.
+[this](../generation-2/setup_your_gen_2_diy_edition.md) guide.
 :::
 
 ## Connecting the Raspberry Pi
