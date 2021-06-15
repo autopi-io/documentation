@@ -6,7 +6,7 @@ title: Introduction
 In this section, we will explore specifics about the generation 2 devices. On this page, you will
 find general information like the GPIO pinout and where to put the jumper if you need it.
 
-![Second generation AutoPi device](/img/general/autopi_gen_2_device.jpg)
+![Second generation AutoPi device](/img/general/autopi_gen_2_device.png)
 
 ## Pinout
 
