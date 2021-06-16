@@ -1,0 +1,191 @@
+---
+id: using-the-can-bus-commands
+title: Using the CAN bus commands
+---
+
+:::caution
+Working with the CAN bus is on your own risk. Playback and sending commands to the vehicle can be
+used to control functions in the vehicle affecting the behavior of the vehicle. We recommend that
+you NEVER do testing on a vehicle in motion and that you have the parking brake enabled while you
+test.
+:::
+
+Hello everyone!
+
+In this guide, we will explore how you can communicate and interact with your vehicle's CAN bus.
+Typically, there are two types of CAN busses.
+
+One type responds to requests for data, that is to say, it almost acts like an HTTP server - it
+receives a request for a specific data point (let's say speed or RPM) and it sends the requested
+data back. This type of CAN bus is usually handled with PIDs.
+
+The second type sends all the vehicle's data on the CAN bus. This means that there is going to be
+large amounts of data being streamed. We call this type of data CAN Messages. Within those CAN
+messages are the so-called CAN signals. Each signal usually represents a specific data point, like
+speed or RPM.
+
+##  Sending PID's
+
+Let's start off with the [`obd.query`](/core/commands/obd.md/#obdquery) command. This command is
+used to query the first type of CAN busses. Let's take a look at an example:
+
+```console
+obd.query test mode=01 pid=0C
+```
+
+:::note
+You may need to add the ``force=True`` parameter to make sure the ECU in the vehicle accepts the
+command. 
+:::
+
+This command can be run from [my.autopi.io](https:/my.autopi.io) or
+[local.autopi.io](http://local.auotpi.io)'s web consoles. Let's try to explain each element of the
+command. Firstly, `obd.query` - that is simply the command that we're attempting to execute. Next is
+`test`. This is the name that the PID will use. It makes no difference to the comand's execution
+what the name is going to be, but if you end up setting up a logger, the name will be used to save
+that data on your account, so you can later reference it using the name to create a widget.
+
+Next, there is the `mode=01` and `pid=0C` pieces of the puzzle. These are the specifications of
+which data point you'd like to query for. In this case, we are asking the ECU of the vehicle to
+respond with the current RPM. You can see a full list of standard PID's
+[here](https://en.wikipedia.org/wiki/OBD-II_PIDs). Your vehicle may be able to support more or less
+PID's than shown on Wikipedia. 
+
+:::tip
+If you'd like to run this command directly
+from the device (through [SSH](/guides/how_to_ssh_to_your_device.mdx) or similar), you will need to
+prepend the `autopi` keyword, like so:
+
+```console
+autopi obd.query test mode=01 pid=0C
+```
+:::
+
+## The CAN interface
+The CAN interface is somewhat different than just sending standard PID's. It relies more on
+parcing the full data stream on the CAN bus. This is far more advanced, but it also opens up to a
+whole new level of fun. 
+
+### Setting the protocol
+
+The AutoPi is able to support a wide range of protocols. When you insert it into your vehicle it
+will try to autodetect the protocol used by the vehicle. It is not always going to be the case that
+the same protocol is used for all CAN traffic. In fact, CAN traffic may flow on more than one
+protocol in your vehicle. Switching the protocol on the AutoPi makes it listen for traffic on
+different electrical pins. You can check the current protocol settings using this command:
+
+```
+obd.protocol
+```
+
+This will give you a list of all the protocols you can set. Changing the protocol can be done with
+this command:
+
+```
+obd.protocol set=<num>
+```
+
+Where `<num>` is the protocol number.
+
+### Dumping/reading data from the CAN bus
+
+The new interface opens up for dumping data from the CAN bus on the protocol selected. This can be
+done using the [`obd.dump`](/core/commands/obd.md/#obddump) command. Using the command is very easy:
+
+```
+obd.dump duration=5
+```
+
+Optional parameters:
+* `duration=<seconds>`: How many seconds to record data. Default is `2` seconds.
+* `file=<path>`: Write data to a file instead of displaying it on the screen.
+
+This will dump a list of messages recorded within 5 seconds of starting the execution of the
+command. Those messages might not make much sense at first glance, but that's okay. Usually, DBC
+files are used to parse those messages into human readable data.
+
+### Playback of a recorded file
+
+A file recorded with the ``obd.dump`` command can be played/replayed to the vehicle using the
+[`obd.play`](/core/commands/obd.md/#obdplay) command. Here's an example usage:
+
+```
+obd.play file=<path>
+```
+
+The will playback the entire file on the CAN bus. 
+
+Optional parameters:
+* `slice=<T|B>`: Slice the list of messages before sending on the CAN bus. Based one the divide
+  and conquer algorithm. Multiple slice characters can be specified in continuation of each other.
+  * `T`: Top half of remaining result.
+  * `B`: Bottom half of remaining result.
+* `filter=<expression>`: Filter out messages before sending on the CAN bus. Multiple filters can
+  be specified if separated using comma characters.
+  * `+[id][#][data]`: Include only messages matching string.
+  * `-[id][#][data]`: Exclude messages matching string.
+  * `+duplicate`: Include only messages where duplicates exist.
+  * `-duplicate`: Exclude messages where duplicates exist.
+  * `+mutate`: Include only messages where data mutates.
+  * `-mutate`: Exclude messages where data mutates.
+* `group=<id|msg>`: How to group the result of sent messages. This only affects the display
+  values returned from this command. Default is `id`.
+* `test=<true|false>`: Run command in test-only (dry-run) mode. No data will be sent on CAN bus.
+  Default is `false`.
+
+All the filter parameters can be used to find the specific commands that you are seeking. With
+filters you can remove data that you know is not relevant for finding your specific command (like
+data that appears a lot). With the slice parameter you can use the "divide and conquer" technique
+to find the specific command. 
+
+### Sending a single message
+
+The ``obd.dump`` and the ``obd.play`` commands is typically used for finding a single specific
+command you want to send to the car. This can be lock/unlock or something else controlling your
+vehicle. 
+
+When you have the specific command, you can send it directly using the
+[`obd.send`](/core/commands/obd/#obdsend) command. Here's an example:
+
+`obd.send 2101#280000000003E800 expect_response=True auto_format=True`
+
+The first part before the # is the ECU number (the header) and the last part is the data payload.
+You may need to remove the ``expect_response`` if the ECU doesn't respond on the message you've
+send.
+
+## Using the Cloud CAN Analyzer
+All the above commands are how the interface to the vehicle works. We have combined all of this in
+an interactive CAN Analyzer, which is accessible from the AutoPi Cloud in
+Car Explorer > CAN Analyzer. If you don't see that menu link, you need to make sure that you've
+installed the CAN Analyzer add-on from the Add-ons page.
+
+The CAN Analyzer makes working with your car much simpler. To find your specific command follow
+these steps:
+
+1. Configure your CAN Bus interface. On the account page under "Vehicles" you can autodetect the
+most common CAN Bus. If you need to work with a special CAN bus, make sure you have the right baud
+rate configured.
+
+2. Select the Bus you want to use and press record. The device will make a "beep" sound when the
+recording begins and another one when the recording ends. Make sure that the CAN command you want
+to record is happening between the two sounds (like door unlock or window control).
+
+3. The recording is now stored on the device and you can play it back immediately using the CAN
+player on the right-hand side of the screen.
+
+4. You will see that a lot of data is returned from the bus, so to find the specific command for
+your function, we recommend using the filters on the right-hand side. Typically, a lot of the data
+is repetetive, so you can start out by removing all the duplicates.
+
+5. With the filters, narrow down the results to as few as possible. Then you can replay the
+commands one by one and see if you can find the command controlling the function you are looking
+for.
+
+6. When you have found your command you can always resend it by using the ``obd.send`` command
+described above.
+
+
+## Disussion
+If you'd like to discuss this topic with us or other fellow community memebers, you can do so on
+our community page dedicated for this guide:
+[Using the CAN bus commands](https://community.autopi.io/t/using-the-can-bus-commands/571)

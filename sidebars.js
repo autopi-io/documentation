@@ -150,7 +150,8 @@ module.exports = {
             "guides/jumpers",
             "guides/log-raw-can-messages",
             "guides/remotely-waking-up-your-device",
-            "guides/setting-up-our-device-with-verizon-wireless"
+            "guides/setting-up-our-device-with-verizon-wireless",
+            "guides/using-the-can-bus-commands",
         ]
     },
     "hardwareSidebar": {
