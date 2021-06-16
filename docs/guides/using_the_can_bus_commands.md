@@ -140,17 +140,19 @@ to find the specific command.
 
 ### Sending a single message
 
-The ``obd.dump`` and the ``obd.play`` commands is typically used for finding a single specific
+The `obd.dump` and the `obd.play` commands is typically used for finding a single specific
 command you want to send to the car. This can be lock/unlock or something else controlling your
 vehicle. 
 
 When you have the specific command, you can send it directly using the
-[`obd.send`](/core/commands/obd/#obdsend) command. Here's an example:
+[`obd.send`](/core/commands/obd.md/#obdsend) command. Here's an example:
 
-`obd.send 2101#280000000003E800 expect_response=True auto_format=True`
+```
+obd.send 2101#280000000003E800 expect_response=True auto_format=True
+```
 
 The first part before the # is the ECU number (the header) and the last part is the data payload.
-You may need to remove the ``expect_response`` if the ECU doesn't respond on the message you've
+You may need to remove the `expect_response` if the ECU doesn't respond on the message you've
 send.
 
 ## Using the Cloud CAN Analyzer
@@ -181,7 +183,7 @@ is repetetive, so you can start out by removing all the duplicates.
 commands one by one and see if you can find the command controlling the function you are looking
 for.
 
-6. When you have found your command you can always resend it by using the ``obd.send`` command
+6. When you have found your command you can always resend it by using the `obd.send` command
 described above.
 
 
