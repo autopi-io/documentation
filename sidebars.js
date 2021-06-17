@@ -151,6 +151,7 @@ module.exports = {
             "guides/log-raw-can-messages",
             "guides/remotely-waking-up-your-device",
             "guides/setting-up-our-device-with-verizon-wireless",
+            "guides/using-the-autopi-with-an-external-power-supply",
             "guides/using-the-can-bus-commands",
         ]
     },
