@@ -2,16 +2,10 @@ import os
 import json
 import yaml
 
-from collections import OrderedDict
-
-
-src_dir = "../docs/"
-
 
 def read_meta(file):
     ret = ""
 
-    print("Reading meta for file: {:}".format(file))
     with open(file) as fp:
         found = False
 
@@ -27,49 +21,79 @@ def read_meta(file):
     return ret
 
 
-# Build graph based on file structure
-graph = {"title": "Menu", "items": OrderedDict()}
-for subdir, dirs, files in os.walk(src_dir):
-
-    parent = graph
-    if subdir.removeprefix(src_dir):
-        for d in subdir.removeprefix(src_dir).split("/"):
-            parent = parent["items"][d]
-
-    for f in [f for f in files if not f.startswith(".")]:
-        meta = yaml.load(read_meta(os.path.join(subdir, f)))
-        if not meta:
-            raise Exception('Make sure to have the metadata entry at the beginning of file {}'.format(os.path.join(subdir,f)))
-        parent["items"][os.path.splitext(f)[0]] = dict(meta, path=subdir.removeprefix(src_dir))
-
-    for d in dirs:
-        parent["items"][d] = {"title": d.replace("_", " ").title(), "items": OrderedDict()}
-
-    # Order items by key
-    parent["items"] = OrderedDict(sorted(parent["items"].items()))
-
-print(json.dumps(graph, indent=4))
+def get_file_entry_name(path, filename, basedir):
+    meta = yaml.load(read_meta(os.path.join(path, filename)), Loader=yaml.BaseLoader)
+    if not meta:
+        raise Exception('Make sure to have the metadata entry at the beginning of file {}'.format(os.path.join(path, filename)))
+    
+    return '{}/{}'.format(path.removeprefix(basedir), meta['id'])
 
 
-def render(items):
-    ret = []
+def generate_sidebars(src_dir):
+    def build_entry(dir_entry, base_entry=False):
+        dir_name = dir_entry.name
+        dir_path = dir_entry.path
 
-    for k, v in items.items():
-        if "items" in v:
-            ret.append({
-                "type": "category",
-                "label": v["title"],
-                "items": render(v["items"])
-            })
-        else:
-            ret.append(os.path.join(v["path"], v["id"]))
+        items = []
 
-    return ret
+        files = [f.name for f in os.scandir(dir_path) if f.is_file()]
+        dirs = [d for d in os.scandir(dir_path) if d.is_dir()]
+
+        files.sort()
+        dirs.sort(key=lambda d: d.name)
+
+        # get _index file, put it first
+        index_file = None
+        if '_index.md' in files:
+            index_file = files[files.index('_index.md')]
+
+        elif '_index.mdx' in files:
+            index_file = files[files.index('_index.mdx')]
+        
+        if index_file:
+            index_entry_name = get_file_entry_name(dir_path, index_file, src_dir)
+            items.append(index_entry_name)
+
+        # get all folders, put them next, recursively
+        items.extend([build_entry(d) for d in dirs])
+
+        # get all the rest of the files, put them last
+        for f in files:
+            # skip intro file
+            if f in ['_index.md', '_index.mdx']:
+                continue
+
+            file_entry_name = get_file_entry_name(dir_path, f, src_dir)
+            items.append(file_entry_name)
+        
+        return items if base_entry else {
+            'type': 'category',
+            'label': dir_name.replace('_', ' ').replace('-', ' ').title(),
+            'items': items,
+        }
+    
+    # begin function execution here
+    sidebars = {}
+
+    # generate top-level sidebars
+    for base_dir_entry in os.scandir(src_dir):
+        if base_dir_entry.is_file():
+            continue
+        
+        sidebarName = "{}Sidebar".format(base_dir_entry.name)
+        sidebars[sidebarName] = build_entry(base_dir_entry, base_entry=True)
+
+    return sidebars
 
 
-# Write side bars JS file
-with open(os.path.join("..", "sidebars.js"), "w") as fp:
-    ret = {"{:}Sidebar".format(k): {v["title"]: render(v["items"])} for k, v in graph["items"].items() if not k.startswith("_")}
-    fp.write("module.exports = {:};".format(json.dumps(ret, indent=4)))
+def main():
+    src_dir = "../docs/"
+    sidebars = generate_sidebars(src_dir)
+
+    # Write side bars JS file
+    with open(os.path.join("..", "sidebars.js"), "w") as fp:
+        fp.write("module.exports = {:};".format(json.dumps(sidebars, indent=4)))
 
 
+if __name__ == "__main__":
+    main()
