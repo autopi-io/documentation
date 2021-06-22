@@ -141,7 +141,7 @@ Remember to replace the YOUR_ACCESS_TOKEN with the actual token you received in 
   ```
 
 ## Discussion
-If you'd like to discuss this topic with us or other fellow community memebers, you can do so on
+If you'd like to discuss this topic with us or other fellow community members, you can do so on
 our community pages dedicated for this guide:
 [Guide: How to retrieve logs from your device](https://community.autopi.io/t/guide-how-to-retrieve-logs-from-your-device/551) and
 [Tip: Send device logfile to dropbox with one command](https://community.autopi.io/t/tip-send-device-logfile-to-dropbox-with-one-command/1159).

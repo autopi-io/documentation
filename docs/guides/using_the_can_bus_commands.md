@@ -188,6 +188,6 @@ described above.
 
 
 ## Disussion
-If you'd like to discuss this topic with us or other fellow community memebers, you can do so on
+If you'd like to discuss this topic with us or other fellow community members, you can do so on
 our community page dedicated for this guide:
 [Using the CAN bus commands](https://community.autopi.io/t/using-the-can-bus-commands/571)

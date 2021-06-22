@@ -30,6 +30,6 @@ We recommend getting the OBD power cable from our shop, to ease the connection t
 power supply. You can get it [here](https://shop.autopi.io/en/products/obd-ii-power-cable-10/).
 
 ## Discussion
-If you'd like to discuss this topic with us or other fellow community memebers, you can do so on
+If you'd like to discuss this topic with us or other fellow community members, you can do so on
 our community page dedicated for this guide:
 [Using the AutoPi with an external power supply](https://community.autopi.io/t/using-the-autopi-with-an-external-power-supply-lab/626).

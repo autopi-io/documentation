@@ -20,7 +20,7 @@ All other pins are free and their functionality follows that of the Raspberry Pi
 ![Second generation AutoPi GPIO Pinout](/img/general/autopi_gen_2_gpio_pinout.jpg)
 
 :::note
-If you'd like to discuss this topic with us or other fellow community memebers, you can do so on
+If you'd like to discuss this topic with us or other fellow community members, you can do so on
 our community page dedicated for this guide:
 [AutoPi GPIO Pinout](https://community.autopi.io/t/autopi-gpio-pinout/271)
 :::

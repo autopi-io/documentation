@@ -30,5 +30,5 @@ ec2x.query 'AT+CMGD=1,4'
 
 ### Discussion
 
-If you'd like to discuss this topic with us or other fellow community memebers, you can do so on our community page dedicated for this guide:
+If you'd like to discuss this topic with us or other fellow community members, you can do so on our community page dedicated for this guide:
 [Remotely waking up your device](https://community.autopi.io/t/remotely-waking-up-your-device/280)

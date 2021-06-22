@@ -233,5 +233,5 @@ Address: Find on https://ifttt.com/services/maker_webhooks/settings
 Payload: optional and custom based on the IFTTT applet.  
 
 ## Discussion
-If you'd like to discuss this topic with us or other fellow community memebers, you can do so on our community page dedicated
+If you'd like to discuss this topic with us or other fellow community members, you can do so on our community page dedicated
 for this guide: [A Guide to Triggers](https://community.autopi.io/t/a-guide-to-triggers/429).

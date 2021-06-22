@@ -78,5 +78,5 @@ board. If you need to test the AutoPi in a lab environment, we encourage you to 
 :::
 
 ## Discussion
-If you'd like to discuss this topic with us or other fellow community memebers, you can do so on our community
+If you'd like to discuss this topic with us or other fellow community members, you can do so on our community
 page dedicated for this guide: [Getting started with your DiY Edition](https://community.autopi.io/t/getting-started-with-your-diy-edition/428).
