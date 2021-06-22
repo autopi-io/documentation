@@ -19,8 +19,8 @@ so, you need to first have the device boot up and connect to the internet. After
 that the device's key isn't accepted.
 
 :::note
-If you are a business customer and have a private environment, there is an extra step that you need
-to take. Take a look at [this](business/move_to_private_environment.md) guide for more information.
+If you are a business customer and have a dedicated environment, there is an extra step that you need
+to take. Take a look at [this](business/move_to_dedicated_environment.md) guide for more information.
 :::
 
 ![Not accepted notification](/img/guides/reflashing_your_device/not_accepted_notification.png)
