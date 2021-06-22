@@ -36,7 +36,7 @@ The above command will ensure the salt-minion configuration is set correctly and
 salt-minion.
 
 Lastly, we need to accept the new device's keys. You can do that by logging in to your
-webpage (https://dedicated.autopi.io/account/devices) and registering your device if it isn't
+webpage (https://dedicated.autopi.io/#account/devices) and registering your device if it isn't
 already.
 
 Once you have it registered and you have brought the device online, accept the key.
