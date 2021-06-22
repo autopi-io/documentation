@@ -93,6 +93,7 @@ module.exports = {
         "guides/install-camera-on-your-autopi",
         "guides/jumpers",
         "guides/log-raw-can-messages",
+        "guides/reflashing-your-device",
         "guides/remotely-waking-up-your-device",
         "guides/setting-up-our-device-with-verizon-wireless",
         "guides/using-the-autopi-with-an-external-power-supply",
