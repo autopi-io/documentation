@@ -3,7 +3,8 @@ id: reflashing-your-device
 title: Reflashing your device
 ---
 
-Your device contains an SD card with the AutoPi Core preinstalled. The SD card is located inside the device. 
+Your device contains an SD card with the AutoPi Core preinstalled. The SD card is located inside
+the device. 
 
 If you find yourself in need of reflashing your device, then you can always get the latest AutoPi
 Core image from [here](https://github.com/autopi-io/autopi-core/releases).
