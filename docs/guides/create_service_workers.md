@@ -10,12 +10,12 @@ To understand workers, one first needs to understand what services are. Services
 
 More importantly however, the default services that come with an AutoPi are the preferred point of communication between the Core software and their hardware counterpart. For example the OBD manager is responsible of communicating directly with the STN chip to get communications with a vehicle working. This makes services a very convenient place for operations that are closely related to specific parts of an AutoPi device.
 
-![service_list|690x345, 100%](../../static/img/guides/create_service_workers/service_list.png) 
+![service_list|690x345, 100%](/img/guides/create_service_workers/service_list.png) 
 
 ## Workers
-Now, the real deal - workers. Workers are simply a process that is going to be executed by a manager in a specific [workflow](../core/services/core-services-intro/) that is going to eventually yield a desired output. Workflows are a number of steps that are going to be executed in order to create that desired output:
+Now, the real deal - workers. Workers are simply a process that is going to be executed by a manager in a specific [workflow](/core/services/_index.md) that is going to eventually yield a desired output. Workflows are a number of steps that are going to be executed in order to create that desired output:
 
-![worker_list|690x268](../../static/img/guides/create_service_workers/worker_list.png) 
+![worker_list|690x268](/img/guides/create_service_workers/worker_list.png) 
 
 ### Let's create a worker
 First off, you'll need to decide which manager to use. That really depends on the use case you have. For example, if you would like to read OBD data, the obd_manager would make the most sense. If on the other hand you would like to execute some AT command that isn't implemented by default, the ec2x_manager is the one you'd be looking at.
@@ -24,11 +24,11 @@ For the purposes of this guide, we will create a worker inside the obd_manager t
 
 The new page that opens up is the home page for the obd_manager where all of its workers reside. We will create a new worker now. Click on the '+ Create' button to open up the creation window.
 
-![create_button|228x287](../../static/img/guides/create_service_workers/create_button.png) 
+![create_button|228x287](/img/guides/create_service_workers/create_button.png) 
 
 You'll be presented with the following window:
 
-![create_worker_empty|690x405](../../static/img/guides/create_service_workers/create_worker_empty.png) 
+![create_worker_empty|690x405](/img/guides/create_service_workers/create_worker_empty.png) 
 
 Let's now get familiar with the interface. There are a few fields that need filling out and then we will move on to the workflows:
 
@@ -69,7 +69,7 @@ Now that we've gone through the basic options, let's take a look at the possibil
 
 All of the above (except for args and kwargs) are also called *hooks*. We will look into them in the next section.
 
-Different services have different defaults handlers. The best place to take a look at those handlers is [the services page](../core/services/core-services-intro/). Since the idea we're going for in this guide is to invoke continuous OBD query commands, we're going to be using the [query](../core/services/core-services-obd-manager#query) handler.
+Different services have different defaults handlers. The best place to take a look at those handlers is [the services page](/core/services/_index.md). Since the idea we're going for in this guide is to invoke continuous OBD query commands, we're going to be using the [query](/core/services/obd_manager.md/#query) handler.
 
 The arguments (args) and key-word arguments (kwargs) are specified in JSON format (this means double quotes instead of single quotes, it took me a while to figure that out the other day). We want to read out the fuel level every 10 seconds and record that data, so we will specify the following arguments:
 ```json
@@ -86,7 +86,7 @@ The key-word arguments aren't essential for the worker to work, however they giv
 
 Now we've got the first part of a workflow going. From here on out, everything else is optional depending on your needs. Most of you would want to have some way of saving the data however, for which you can use a returner. You can view a guide about that [here](https://community.autopi.io/t/custom-code-redirect-logged-data-and-store-it-in-a-file-or-anywhere/1521). Here's the final result:
 
-![create_worker_completed|690x370](../../static/img/guides/create_service_workers/create_worker_completed.png)
+![create_worker_completed|690x370](/img/guides/create_service_workers/create_worker_completed.png)
 
 The last thing you need to do is to hit Save and let the device sync up with the new changes. After a service restart, the device should be executing your new service worker.
 

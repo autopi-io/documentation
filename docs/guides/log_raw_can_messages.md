@@ -9,9 +9,9 @@ In this guide we will explore these two options and show the differences between
 we will also explore how you can make sense of this raw data after it has been recorded.
 
 It is important to note that the monitoring tools can only be used as a part of an
-[OBD service](../core/services/obd_manager.md) workflow. We won't get into details about how
+[OBD service](/core/services/obd_manager.md) workflow. We won't get into details about how
 you can create a service worker in this guide, however we do have the
-[Create Service Workers](./create_service_workers.md) guide which you can take a look at
+[Create Service Workers](create_service_workers.md) guide which you can take a look at
 for more details on how to create a worker and setup its workflow.
 
 ## Reading raw CAN data
@@ -24,7 +24,7 @@ for your vehicle.
 
 ### `obd.monitor`
 The first and simplest way to monitor CAN data is with the
-[`obd.monitor`](../core/services/core-services-obd-manager#monitor) handler.
+[`obd.monitor`](/core/services/obd_manager.md/#monitor) handler.
 This handler will continuously listen on the OBD port looking for any data. This data
 will then be transported down the workflow and there you will be able to use the different
 hooks to transform the data and finally return the data to the cloud, or save it to a file.
@@ -32,10 +32,10 @@ hooks to transform the data and finally return the data to the cloud, or save it
 For greater performance read on to the `obd.export` handler. The image below shows an example
 setup for an `obd.monitor` worker.
 
-![obd_monitor_worker](../../static/img/guides/log_raw_can_messages/obd_monitor_worker.png)
+![obd_monitor_worker](/img/guides/log_raw_can_messages/obd_monitor_worker.png)
 
 ### `obd.export`
-[`obd.export`](../core/services/core-services-obd-manager#export) is basically
+[`obd.export`](/core/services/obd_manager.md/#export) is basically
 `obd.monitor` on steroids. It is much faster than it's python counterpart and doesn't clog up the
 AutoPi's resources as much. It starts up a separate process that does the monitoring,
 instead of running as a part of the salt-minion process.
@@ -52,23 +52,23 @@ the protocol number for your vehicle. In that directory you will be able to see 
 files which contain the raw data that has been recorded by the handler. An example setup for a
 workflow can be seen below.
 
-![obd_export_worker](../../static/img/guides/log_raw_can_messages/obd_export_worker.png)
+![obd_export_worker](/img/guides/log_raw_can_messages/obd_export_worker.png)
 
 ### `obd.import`
 In order to actually be able to use the recorded data by `obd.export` within the AutoPi Core system,
 we need to somehow import it. This is where
-[`obd.import`](../core/services/core-services-obd-manager#import) comes in -
+[`obd.import`](/core/services/obd_manager.md/#import) comes in -
 it reads the data that was written to the log files by `obd.export` and passes it down the workflow.
 It is simply a workflow enabler, meaning that after you read the data, you can transform it in any
 way you'd like, execute any triggers and use a returner to save the data on the cloud or a local
 file, just like with `obd.monitor`.
 
-![obd_import_worker](../../static/img/guides/log_raw_can_messages/obd_import_worker.png)
+![obd_import_worker](/img/guides/log_raw_can_messages/obd_import_worker.png)
 
 ## Making sense of raw CAN data
 
 A key converter that can be used in the workflows described above is the
-[CAN converter](../core/services/core-services-obd-manager#can). It is able
+[CAN converter](/core/services/obd_manager.md/#can). It is able
 to read the CAN database file that you have for your vehicle's protocol and transform the binary
 data that has been passed to it into a more sensible format. Both `obd.monitor` and `obd.import`
 use the CAN converter in the workflows to sanitize the data.
