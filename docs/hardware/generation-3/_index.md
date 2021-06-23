@@ -6,7 +6,7 @@ title: Introduction
 This section has a few guides written out that are specifically for third generation (TMU) devices.
 Some of the knowledge may be transferrable to second generation devices.
 
-![Third generation AutoPi device](/img/general/autopi_gen_3_device.png)
+![Third generation AutoPi device](/img/hardware/gen_3/device.png)
 
 ## Pinout
 
@@ -17,7 +17,7 @@ of the AutoPi. This I2C bus is used by the AutoPi, but can be shared with other 
 
 All other pins are free and their functionality follows that of the Raspberry Pi.
 
-![Third generation AutoPi GPIO Pinout](/img/general/autopi_gen_3_gpio_pinout.jpeg)
+![Third generation AutoPi GPIO Pinout](/img/hardware/gen_3/gpio_pinout.jpeg)
 
 :::note
 If you'd like to discuss this topic with us or other fellow community members, you can do so on
@@ -30,4 +30,4 @@ our community page dedicated for this guide:
 This is a picture of the location of the 5V FORCE pins. You can put a jumper on these pins to
 prevent the AutoPi from going to hibernation. More info [here](../../guides/jumpers.md).
 
-![Third generation AutoPi Jumper location](/img/general/autopi_gen_3_jumper.jpg)
+![Third generation AutoPi Jumper location](/img/hardware/gen_3/jumper.jpg)

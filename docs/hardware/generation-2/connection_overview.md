@@ -13,7 +13,7 @@ This is a diagram shows the connection possibilities of the second generation Au
 6. SIM card slot
 7. USB connectors for external use
 
-![connection overview](/img/general/autopi_gen_2_connection_overview.jpeg)
+![connection overview](/img/hardware/gen_2/connection_overview.jpeg)
 
 ## Discussion
 If you'd like to discuss this topic with us or other fellow community members, you can do so on
