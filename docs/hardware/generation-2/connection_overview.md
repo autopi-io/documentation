@@ -6,7 +6,7 @@ title: Connection Overview
 This is a diagram shows the connection possibilities of the second generation AutoPi.
 
 1. Upstream USB connector to RPi
-2. GPIO Jumper to force 5V on the RPi at all times (disables sleeptimers from hardware)
+2. GPIO Jumper to always force 5V on the RPi (disables sleep timers from hardware)
 3. OBD-II connector to vehicle
 4. JST connector for external speaker
 5. GPIO pins for RPi and external connections
