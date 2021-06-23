@@ -7,6 +7,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'autopi-io', // Usually your GitHub org/user name.
   projectName: 'documentation', // Usually your repo name.
+  trailingSlash: true,
   themeConfig: {
     algolia: {
       apiKey: '9f2c3a395a2ba729c5cfd5b8d443d4fd',
