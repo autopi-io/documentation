@@ -51,10 +51,10 @@ it will most likely not work, at least not without some changes.
 
 By clicking the **Add to library** button, the PID will be associated to the bus on your active
 vehicle. If no bus exists that matches the bus info in the selected PID, it will be created. As
-mentioned above, unless you filter on your specific make and model, even if the PID is actually
-supported by your vehicle, you may need to do some fiddling before it will work, which can be done
-by running the PID directly in the terminal. Keep in mind that the engine may need to be running
-for it to respond to PID's.
+mentioned above, unless you filter on your specific make and model, even if the PID is supported by
+your vehicle, you may need to do some fiddling before it will work, which can be done by running
+the PID directly in the terminal. Keep in mind that the engine may need to be running for it to
+respond to PID's.
 
 Now the PID should be available in **My Library**.
 
@@ -103,7 +103,7 @@ The formula is plain python with some added helper functions:
 * twos_comp
 
 [More info here](https://github.com/autopi-io/py-obd/blob/master/obd/utils.py#L109)
-So to convert a temperature response one would write the following formula
+So to convert a temperature response one would write the following formula:
 
 ```
 bytes_to_int(message.data[2:])-40
@@ -121,7 +121,7 @@ directly in the terminal.
 :::
 
 **Unit, Min and Max**  
-Select a unit that matches your data, or write your own.
+Select a unit that matches your data or write your own.
 Like the name, this unit is used when the device stores the response value of the PID, for easier
 parsing and displaying of the value in the dashboard widgets.
 Min and max are also used when storing and displaying the data.
@@ -140,7 +140,7 @@ it looks correct, and has the right make and model by searching for the PID.
 
 ## Troubleshooting if no PID's are Visible
 If your PID's aren't listed in **My Library**, check the following things.
-* That you device is updated to the most recent version.
+* That your device is updated to the most recent version.
 * That the device has been online since the update.
 * That the engine has been running for a little while since the update.
 * That the vehicle associated to your device, has the correct make and model specified.
