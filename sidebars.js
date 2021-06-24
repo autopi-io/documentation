@@ -91,6 +91,7 @@ module.exports = {
         "guides/autopi-logs",
         "guides/create-service-workers",
         "guides/how-to-ssh-to-your-device",
+        "guides/how-to-use-the-car-explorer-feature",
         "guides/install-camera-on-your-autopi",
         "guides/jumpers",
         "guides/log-raw-can-messages",
