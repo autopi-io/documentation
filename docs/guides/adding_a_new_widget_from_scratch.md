@@ -1,20 +1,20 @@
 ---
 id: adding-a-new-widget-from-scratch
-title: Adding a New Widget From Scratch
+title: Adding a New Widget from Scratch
 ---
 
-You are able to easily tie data directly from your vehicle to the dashboard. This guide will go
+You can easily tie data directly from your vehicle to the dashboard. This guide will go
 over the steps of adding a new widget based on data you discovered from your OBD library. Widgets
-depend on data from your vehicle. So lets get an overview of how data is retrieved from your
+depend on data from your vehicle. So, lets get an overview of how data is retrieved from your
 vehicle and added to your widgets.
 
 ![Create widget steps](/img/guides/adding_a_new_widget_from_scratch/create_widget_steps.jpeg) 
 
-Creating a new widget consist of the 3 steps shown above. Let go over them.
+Creating a new widget consists of the 3 steps shown above. Let go over them.
 
 ## Library - Discover PID's
 
-Use the library to discover what data you want to log. The library consist of data automatically
+Use the library to discover what data you want to log. The library consists of data automatically
 extracted from your vehicle, but also contains data created by other users. The library is divided
 into two parts - your own library and the community library. The community library contains all
 commands globally available in the AutoPi system and your own library contains all the commands
@@ -23,25 +23,24 @@ your vehicle, you can add them to your own library.
 
 :::note
 Since you can only create loggers for commands that are located in your own library, the last part
-is important. You will need to add commands from the community library to your own in order to use
-them.
+is important. You will need to add commands from the community library to your own to use them.
 :::
 
 ![Add command](/img/guides/adding_a_new_widget_from_scratch/add_command.jpeg) 
 
 ## Loggers - What Should be Logged
 
-Now that you have found out what should be logged, you need to setup the device to actually log
-it. This is done under the Loggers section (Car Explorer > Loggers). To create a new logger, just
-press the "Create" button and you will get this screen:
+Now that you have found out what should be logged, you need to setup the device to log it. This is
+done under the Loggers section (Car Explorer > Loggers). To create a new logger, just press the
+"Create" button and you will get this screen:
 
 ![Create logger](/img/guides/adding_a_new_widget_from_scratch/create_logger.jpeg) 
 
 From the PID list we simply select the PID you want to start logging. The list contains all the
 PID located in your library and only those you've moved to your library. Secondly you enter the
 interval you want log data with. The interval is time in seconds over which the logger will get
-executed on the device. For example and interval of 30 seconds means that the logger will get
-executed every 30 seconds. When you create your new logger, you can sync the changes to the device
+executed on the device. For example, an interval of 30 seconds means that the logger will get
+executed every 30 seconds. When you create your new logger, you can sync the changes to the device,
 and it will start logging immediately. 
 
 ## Widgets - Select Logged Data
