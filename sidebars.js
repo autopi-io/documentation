@@ -88,6 +88,7 @@ module.exports = {
         },
         "guides/4g-internet-setup-troubleshooting",
         "guides/a-guide-to-triggers",
+        "guides/adding-a-new-widget-from-scratch",
         "guides/autopi-logs",
         "guides/create-service-workers",
         "guides/how-to-ssh-to-your-device",
