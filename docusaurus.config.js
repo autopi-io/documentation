@@ -13,10 +13,6 @@ module.exports = {
       apiKey: '9f2c3a395a2ba729c5cfd5b8d443d4fd',
       indexName: 'autopi',
     },
-    gtag: {      
-      trackingID: 'G-DB2BZPKYN9',      
-      anonymizeIP: false,
-    },
     navbar: {
       logo: {
         alt: 'AutoPi Documentation Logo',
@@ -128,6 +124,5 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
-    '@docusaurus/plugin-google-gtag',
   ]
 };
