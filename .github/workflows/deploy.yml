@@ -13,11 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
-      - name: Test secrets
-        run: |
-          echo "Do you see me?"
-          echo "${{ secrets.TEST_SECRET }}"
+          node-version: '14'
       - name: Add key to allow access to repository
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
