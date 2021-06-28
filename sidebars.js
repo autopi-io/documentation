@@ -54,6 +54,7 @@ module.exports = {
                 "hardware/generation-2/gen-2-intro",
                 "hardware/generation-2/connection-overview",
                 "hardware/generation-2/setup-your-gen-2-diy-edition",
+                "hardware/generation-2/update-firmware-of-eg25-g-module",
                 "hardware/generation-2/using-gpio-and-hdmi-with-the-gen-2",
                 "hardware/generation-2/using-the-rpi3-adapter"
             ]
