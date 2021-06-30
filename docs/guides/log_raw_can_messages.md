@@ -11,7 +11,7 @@ we will also explore how you can make sense of this raw data after it has been r
 It is important to note that the monitoring tools can only be used as a part of an
 [OBD service](/core/services/obd_manager.md) workflow. We won't get into details about how
 you can create a service worker in this guide, however we do have the
-[Create Service Workers](create_service_workers.md) guide which you can take a look at
+[Create Service Workers](/guides/services/_index.md) guide which you can take a look at
 for more details on how to create a worker and setup its workflow.
 
 ## Reading raw CAN data

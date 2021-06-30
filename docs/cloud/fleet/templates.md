@@ -9,7 +9,7 @@ The template functionality makes it possible for a user to manage the configurat
 A template can contain the following configurations.
 
 ### Advanced configuration
-Most [advanced configuration settings](../configuration/_index.md) are available to be specified for a template. Options that aren't available for templates have been removed because they are too specific for each device and it doesn't make sense to set in a template.
+Most [advanced configuration settings](/cloud/configuration/_index.md) are available to be specified for a template. Options that aren't available for templates have been removed because they are too specific for each device and it doesn't make sense to set in a template.
 
 The table shows the settings currently associated to the template, and clicking the edit button will open the settings UI, with all available settings.
 
@@ -17,7 +17,7 @@ The table shows the settings currently associated to the template, and clicking 
 Modules are created the same way for templates as they are for normal devices; chose a type depending on what you need the module for, and when creating a custom module of type service, it will automatically create a custom service for you and associate that to the same template.
 
 ### Services
-[Read more here](/guides/create_service_workers.md).
+[Read more here](/guides/services/_index.md).
 
 #### Creating custom services
 Creating a custom service does not not autocreate a custom module as of now, so if you want to create a custom service, you should instead go create a custom module of the type service, then a service will be automatically created.
@@ -28,7 +28,7 @@ To override a default engine, like the obd_manager from a template, you can simp
 ### Triggers and Jobs
 Triggers and Jobs are created the same way for templates as they are for normal devices.
 
-More info about [Jobs](../jobs.md) and [Triggers](../triggers.md)
+More info about [Jobs](/cloud/jobs.md) and [Triggers](/cloud/triggers.md)
 
 ### Loggers
 Loggers are created the same way for templates as they are for normal devices. You will of course need to have the PIDs or CAN Messages and CAN Signals beforehand, just like when creating loggers for a device.

@@ -91,20 +91,20 @@ module.exports = {
             "type": "category",
             "label": "Services",
             "items": [
-                "guides/services/creating-custom-service-triggers"
+                "guides/services/create-service-workers",
+                "guides/services/create-custom-service-returners",
+                "guides/services/create-custom-service-triggers"
             ]
         },
         "guides/4g-internet-setup-troubleshooting",
         "guides/a-guide-to-triggers",
         "guides/adding-a-new-widget-from-scratch",
         "guides/autopi-logs",
-        "guides/create-service-workers",
         "guides/how-to-ssh-to-your-device",
         "guides/how-to-use-the-car-explorer-feature",
         "guides/install-camera-on-your-autopi",
         "guides/jumpers",
         "guides/log-raw-can-messages",
-        "guides/redirect-logged-data-to-a-file-or-anywhere",
         "guides/reflashing-your-device",
         "guides/remotely-waking-up-your-device",
         "guides/setting-up-our-device-with-verizon-wireless",
