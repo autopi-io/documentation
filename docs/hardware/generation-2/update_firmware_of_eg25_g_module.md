@@ -4,7 +4,7 @@ title: Update Firmware of EG25-G Module
 ---
 
 :::caution
-This firmware update applies to 2nd Generation 4G/LTE dongles, shipped out before September 1st
+This firmware update applies to 2nd Generation 4G/LTE dongles, shipped out before September 1st,
 2019 (i.e. **ONLY the EG25 modem**). All devices shipped after this date have their firmware
 upgraded.
 :::
