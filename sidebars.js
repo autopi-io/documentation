@@ -87,6 +87,13 @@ module.exports = {
                 "guides/business/move-to-dedicated-environment"
             ]
         },
+        {
+            "type": "category",
+            "label": "Services",
+            "items": [
+                "guides/services/creating-custom-service-triggers"
+            ]
+        },
         "guides/4g-internet-setup-troubleshooting",
         "guides/a-guide-to-triggers",
         "guides/adding-a-new-widget-from-scratch",
