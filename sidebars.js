@@ -105,6 +105,7 @@ module.exports = {
         "guides/install-camera-on-your-autopi",
         "guides/jumpers",
         "guides/log-raw-can-messages",
+        "guides/power-cycle-for-electric-vehicles",
         "guides/reflashing-your-device",
         "guides/remotely-waking-up-your-device",
         "guides/setting-up-our-device-with-verizon-wireless",
