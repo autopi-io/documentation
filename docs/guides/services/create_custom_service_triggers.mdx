@@ -59,8 +59,8 @@ is 50km/h or more. Let's dive straight in.
   play the beeping sound. Once the above or equal to condition is no longer met, we reset the
   context.
 
-  Now, let's synchronise the changes to the device by clicking the the **Sync** button. If the
-  device is offline the changes will automatically be synchronised on next startup.
+  Now, let's synchronise the changes to the device by clicking the **Sync** button. If the device
+  is offline the changes will automatically be synchronised on next start-up.
 
 2. Next, we need to register that trigger in the service that it'll be used. For this guide, we
   need to register it in the OBD service named **obd_manager**. Go to **Advanced** > **Services** >
@@ -80,7 +80,7 @@ is 50km/h or more. Let's dive straight in.
   The `query` handler with a `SPEED` argument is only valid for some vehicles, mostly internal
   combustion engine (ICE) vehicles. If you have an electric vehicle, you might need to use a more
   sophisticated setup to get the current speed of your vehicle. We suggest that you browse forums
-  for your particular make and model for such information.
+  for your make and model for such information.
   :::
 
   :::tip Not Working?
@@ -91,7 +91,7 @@ is 50km/h or more. Let's dive straight in.
 
 ## Want an Event Instead of a Beep?
 
-You are able to freely fire events from your custom code modules. If you're looking to execute
+You can freely fire events from your custom code modules. If you're looking to execute
 one or multiple different actions based on some event (in this case, speeding over 50km/h), you
 are able to do that. Let's add another function to the *my_triggers* custom code:
 
@@ -127,7 +127,7 @@ def speed_warning_event(result):
 
 The code here is esentially the same as the one presented above. The only difference is that
 the AutoPi will fire an event internally instead of playing a beeping sound. This event can then
-be used in the **event_reactor** service to perform other actions. Also the event will be uploaded
+be used in the **event_reactor** service to perform other actions. Also, the event will be uploaded
 to the cloud and be visible from **Advanced** > **Events**.
 
 <Discussion

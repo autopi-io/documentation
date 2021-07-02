@@ -9,20 +9,20 @@ The AutoPi dongle is initially configured to be powered on when the engine of th
 running. When the engine is not running, a sleep timer is created to put the dongle to sleep after
 5 minutes or whatever configured.
 
-Behind the scene this works by using [engine events](/cloud/events/vehicle.md/#engine-events).
+Behind the scenes this works by using [engine events](/cloud/events/vehicle.md/#engine-events).
 Engine events are triggered based on the RPM values continuously read from the vehicle. For all
 non-BEVs (Battery Electric Vehicles) this is setup automatically as default because they all
-support readout of engine RPM in exactly the same way according to the OBD-II PID standard
+support readout of engine RPM in the same way according to the OBD-II PID standard
 (SAE J1979).
 
-Unfortunately this is not as simple for BEVs. Here there is no standard and data is read out in
+Unfortunately, this is not as simple for BEVs. Here there is no standard and data is read out in
 different ways between makes and models. Two approaches are available:
 
-1. if your vehicle is able to respond to PID requests and/or 
+1. if your vehicle can respond to PID requests and/or 
 2. if your car continuously delivers data on a CAN bus.
 
 ## Setup a PID Logger Using the `rpm_motor_event` Trigger
-This option can be used if your vehicle is able to respond to PID queries.
+This option can be used if your vehicle can respond to PID queries.
 
 **Precondition:** A PID which on request delivers an RPM value related to the movement of the
 vehicle. It could be the RPM of an electric motor, a spinning wheel etc. If you do not know of such
@@ -110,8 +110,8 @@ Zoe. Go to **Car Explorer** > **Library** > **Community Library** and specify *M
 
 ![Community library screenshot](/img/guides/power_cycle_for_electric_vehicles/community_library_screenshot.png) 
 
-Click on the *RPM* signal and in the popup window click on the button *Add to my library*. You have
-now added the CAN message to your library and you can use it for logging.
+Click on the *RPM* signal and in the pop-up window click on the button *Add to my library*. You have
+now added the CAN message to your library, and you can use it for logging.
 
 Next step is to setup a CAN logger for the RPM signal. Go to **Car Explorer** > **Loggers** >
 **Create** > **CAN** and choose the RPM signal:
