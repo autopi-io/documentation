@@ -104,6 +104,7 @@ module.exports = {
         "guides/how-to-use-the-car-explorer-feature",
         "guides/install-camera-on-your-autopi",
         "guides/jumpers",
+        "guides/local-development-workflow",
         "guides/log-raw-can-messages",
         "guides/power-cycle-for-electric-vehicles",
         "guides/reflashing-your-device",
