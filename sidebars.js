@@ -106,6 +106,7 @@ module.exports = {
         "guides/jumpers",
         "guides/local-development-workflow",
         "guides/log-raw-can-messages",
+        "guides/obd-connector-pinout",
         "guides/power-cycle-for-electric-vehicles",
         "guides/reflashing-your-device",
         "guides/remotely-waking-up-your-device",
