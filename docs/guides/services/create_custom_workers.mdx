@@ -3,6 +3,8 @@ id: create-custom-workers
 title: Create Custom Workers
 ---
 
+import { Discussion } from '/src/components/Discussion.jsx';
+
 In this guide we are going to take a look at how to create workers for any service that is
 available, be it a default service like the OBD manager or a custom one that you've made for
 yourselves. First off we're going to explore what can workers be used for and later on in the guide
@@ -171,3 +173,8 @@ As a closer - workers are extremely powerful if used correctly. They can execute
 set amount of times. Workflows within the worker can be set up so that the desired outcome is
 reached without having to write complicated custom code. Use them to your advantage whenever you
 want to communicate something with the hardware components of the AutoPi or with your car directly.
+
+<Discussion
+  title="Create Service Workers"
+  url="https://community.autopi.io/t/guide-create-service-workers/2311"
+/>
