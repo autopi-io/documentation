@@ -91,9 +91,11 @@ module.exports = {
             "type": "category",
             "label": "Services",
             "items": [
-                "guides/services/create-service-workers",
-                "guides/services/create-custom-service-returners",
-                "guides/services/create-custom-service-triggers"
+                "guides/services/services-intro",
+                "guides/services/create-custom-returners",
+                "guides/services/create-custom-services",
+                "guides/services/create-custom-triggers",
+                "guides/services/create-custom-workers"
             ]
         },
         "guides/4g-internet-setup-troubleshooting",
