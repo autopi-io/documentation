@@ -100,6 +100,7 @@ module.exports = {
         "guides/a-guide-to-triggers",
         "guides/adding-a-new-widget-from-scratch",
         "guides/autopi-logs",
+        "guides/debug-raw-pid-queries",
         "guides/how-to-ssh-to-your-device",
         "guides/how-to-use-the-car-explorer-feature",
         "guides/install-camera-on-your-autopi",
