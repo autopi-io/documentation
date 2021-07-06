@@ -11,7 +11,7 @@ module.exports = {
   themeConfig: {
     image: 'img/favicon-194x194.png',
     metadatas: [
-      { name: 'og:type', content: 'website' },
+      { property: 'og:type', content: 'website' },
     ],
     algolia: {
       apiKey: '9f2c3a395a2ba729c5cfd5b8d443d4fd',
