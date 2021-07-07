@@ -1,0 +1,55 @@
+---
+id: how-to-import-custom-dbc-files
+title: How to Import Custom DBC Files
+---
+
+import { Discussion } from '/src/components/Discussion.jsx';
+
+DBC files describe the CAN network traffic of a vehicle. It specifies what modules are within it,
+what messages they can send, the messages' signals and details about them. In this guide we're
+going to review how you can import these files in [my.autopi.io](https://my.autopi.io), how to
+improve their readability and how you can share them with the rest of the community.
+
+## Steps to Import a New DBC File in Your Library
+
+1. Go to **Car Explorer** > **Library** and click on the Import button:
+
+![Import button](/img/guides/how_to_import_custom_dbc_files/import_button.png) 
+
+2. Select DBC from the dropdown menu that shows up and select the file from your filesystem.
+3. A list of the imported CAN signals will show up in your library.
+
+![Library view](/img/guides/how_to_import_custom_dbc_files/library_view.png) 
+
+## Adding Descriptions for Better Readability
+
+Some signal names can be very self explanatory. However some messages might be harder to
+understand. You can add descriptions to those messages to make it easier to recognize them in the
+future or for other fellow users, if you decide to share those signals with the community.
+
+To add a description for a signal, click on the signal you want to describe. A CAN message editing
+window will pop out. In this window you'll be able to see the CAN message at the top with all
+signals associated with it in a list below. The signal that you clicked on will be already expanded
+and highlighted in yellow.
+
+![Editing a CAN message](/img/guides/how_to_import_custom_dbc_files/editing_a_can_message.png)
+
+Edit the description field of the signal and click Save. You can also associate that CAN message
+with a vehicle CAN bus. You should see the CAN signal update with the new description:
+
+![ABS Malfunction example](/img/guides/how_to_import_custom_dbc_files/abs_malfunction_example.png) 
+
+## Sharing CAN Messages With the Rest of the Community
+To make it easy for other community members, you can share CAN messages you've identified for your
+vehicle. To do that, you must first associate a CAN message with a vehicle CAN bus, which you can
+do at the bottom of the "Editing CAN Message" pop-out window. After you've saved the changes,
+you'll be able to click on the "Share with the community" checkbox.
+
+![sharing a can message](/img/guides/how_to_import_custom_dbc_files/sharing_a_can_message.png) 
+
+Saving the changes shares the CAN message and all signals with the community.
+
+<Discussion
+  title="How to Import Custom DBC Files"
+  url="https://community.autopi.io/t/how-to-import-custom-dbc-files/2091"
+/>
