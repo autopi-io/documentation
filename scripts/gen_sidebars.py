@@ -65,12 +65,15 @@ def generate_sidebars(src_dir):
 
             file_entry_name = get_file_entry_name(dir_path, f, src_dir)
             items.append(file_entry_name)
-        
-        return items if base_entry else {
-            'type': 'category',
-            'label': dir_name.replace('_', ' ').replace('-', ' ').title(),
-            'items': items,
-        }
+
+        if base_entry:
+            return items
+        else:
+            return {
+                'type': 'category',
+                'label': dir_name.replace('_', ' ').replace('-', ' ').title().replace('Obd Ii', 'OBD-II'),
+                'items': items,
+            }
     
     # begin function execution here
     sidebars = {}

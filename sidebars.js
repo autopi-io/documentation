@@ -67,7 +67,8 @@ module.exports = {
                 "hardware/generation-3/developer-kit",
                 "hardware/generation-3/setup-your-tmu-diy-edition"
             ]
-        }
+        },
+        "hardware/obd-connector-pinout"
     ],
     "guidesSidebar": [
         "guides/guides-intro",
@@ -89,6 +90,17 @@ module.exports = {
         },
         {
             "type": "category",
+            "label": "OBD-II",
+            "items": [
+                "guides/obd-ii/debug-raw-pid-queries",
+                "guides/obd-ii/how-to-import-custom-dbc-files",
+                "guides/obd-ii/how-to-use-the-car-explorer-feature",
+                "guides/obd-ii/log-raw-can-messages",
+                "guides/obd-ii/using-the-can-bus-commands"
+            ]
+        },
+        {
+            "type": "category",
             "label": "Services",
             "items": [
                 "guides/services/services-intro",
@@ -102,21 +114,15 @@ module.exports = {
         "guides/a-guide-to-triggers",
         "guides/adding-a-new-widget-from-scratch",
         "guides/autopi-logs",
-        "guides/debug-raw-pid-queries",
-        "guides/how-to-import-custom-dbc-files",
         "guides/how-to-ssh-to-your-device",
-        "guides/how-to-use-the-car-explorer-feature",
         "guides/install-camera-on-your-autopi",
         "guides/jumpers",
         "guides/local-development-workflow",
-        "guides/log-raw-can-messages",
-        "guides/obd-connector-pinout",
         "guides/power-cycle-for-electric-vehicles",
         "guides/reflashing-your-device",
         "guides/remotely-waking-up-your-device",
         "guides/setting-up-our-device-with-verizon-wireless",
-        "guides/using-the-autopi-with-an-external-power-supply",
-        "guides/using-the-can-bus-commands"
+        "guides/using-the-autopi-with-an-external-power-supply"
     ],
     "coreSidebar": [
         "core/core-intro",

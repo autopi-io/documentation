@@ -3,6 +3,8 @@ id: how-to-use-the-car-explorer-feature
 title: How To Use The "Car Explorer" Feature
 ---
 
+import { Discussion } from '/src/components/Discussion.jsx';
+
 ![Community library overview](/img/guides/how_to_use_the_car_explorer_feature/community_library_overview.png) 
 
 This guide will give an overview of the Car Explorer feature, which is a way to discover the
@@ -102,7 +104,7 @@ The formula is plain python with some added helper functions:
 * bytes_to_hex
 * twos_comp
 
-[More info here](https://github.com/autopi-io/py-obd/blob/master/obd/utils.py#L109)
+[More info here](https://github.com/autopi-io/py-obd/blob/master/obd/utils.py#L109).
 So to convert a temperature response one would write the following formula:
 
 ```
@@ -146,7 +148,7 @@ If your PID's aren't listed in **My Library**, check the following things.
 * That the vehicle associated to your device, has the correct make and model specified.
 * That you have no errors in the log on the device.
 
-See [this guide](autopi_logs.md) if you are unsure how to get the logs from the device.
+See [this guide](/guides/autopi_logs.md) if you are unsure how to get the logs from the device.
 
 ## Issues?
 Let us know if you experience any issues, or if you have suggestions. We heavily rely on the
@@ -154,7 +156,7 @@ feedback from you guys! You can reach out to us by writing an email to support@a
 commenting on this guide's community post. You can find the link to the community post in the
 [Discussion](#discussion) section.
 
-## Discussion
-If you'd like to discuss this topic with us or other fellow community members, you can do so on
-our community page dedicated for this guide:
-[How to use the “Car Explorer” feature](https://community.autopi.io/t/how-to-use-the-car-explorer-feature/960)
+<Discussion
+  title="How to use the “Car Explorer” feature"
+  url="https://community.autopi.io/t/how-to-use-the-car-explorer-feature/960"
+/>
