@@ -115,7 +115,7 @@ module.exports = {
         "guides/adding-a-new-widget-from-scratch",
         "guides/autopi-logs",
         "guides/how-to-ssh-to-your-device",
-        "guides/install-camera-on-your-autopi",
+        "guides/installing-a-camera-on-your-autopi",
         "guides/jumpers",
         "guides/local-development-workflow",
         "guides/power-cycle-for-electric-vehicles",
