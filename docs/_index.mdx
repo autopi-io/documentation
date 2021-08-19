@@ -15,21 +15,21 @@ be updated with the latest details and functionalities about the platform.
 AutoPi is a cloud platform, and a hardware device that works together. The aim of AutoPi is to
 serve as a platform for various car projects, as the platform is open and allows for easy
 customization. The hardware device is built on top of a Raspberry Pi, and can use the RPi Zero, 3
-and 4 boards. It's is using a modified version of Raspbian.
+and 4 boards. It is using a modified version of Raspbian.
 
 <p align="center">
   <img src={useBaseUrl('img/gen3device_narrow.png')} alt="AutoPi GEN3" width="400"/>
 </p>
 
 The platform is separated in two major parts - the AutoPi Cloud and the AutoPi Core. The Cloud
-system is the server side of the AutoPi. It has the main website ([my.autopi.io](https://my.autopi.io))
+system is the server side of the AutoPi. It has the main website ([my.autopi.io](https://my.autopi.io)),
 which provides a user friendly front-end interface to work with AutoPi devices. The Cloud also has
-an open [RESTful API](https://api.autopi.io) which powers the [autopi](https://my.autopi.io)
+an open [RESTful API](https://api.autopi.io), which powers the [autopi](https://my.autopi.io)
 website. However, the API can also be used for your own custom solutions.
 
 The second part of the system is the AutoPi Core, which is the system that's running on the actual
 AutoPi device. It is built on top of [salt stack](https://saltproject.io/). The AutoPi Core system
-works together with the Cloud system by sending data back regularly so that it is easily accessible
+works together with the Cloud system by sending data back regularly, so that it is easily accessible
 by the users later on. Users are also able to change settings, execute commands and work with the
 device directly through the Cloud.
 
