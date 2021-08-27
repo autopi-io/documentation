@@ -45,10 +45,17 @@ be up and the "triangle" end point into the device.
 
 ![AutoPi.io - SIM card location](/img/guides/getting_started/getting_started_gen3.png)
 
+:::caution
 **Please notice:** When the sim-card is inserted correctly, you will hear a small "click" when the
 card is in position. Don't try do force the SIM out after the click as this will damage the device.
 Make sure the orientation is correct before inserting the SIM. Wrong orientation could potentially
 damage your device.
+:::
+
+Here's a list of the US based SIM providers that we recommend to be used with the AutoPi:
+1. AT&T
+2. T-Mobile
+3. Any MVNO provider that is roaming the networks of the providers above
 
 #### 3.
 
