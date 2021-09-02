@@ -12,9 +12,9 @@
     "gensidebars": "cd ./scripts && python3.9 ./gen_sidebars.py && cd ../"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-beta.2",
-    "@docusaurus/plugin-google-gtag": "^2.0.0-beta.2",
-    "@docusaurus/preset-classic": "^2.0.0-beta.2",
+    "@docusaurus/core": "^2.0.0-beta.5",
+    "@docusaurus/plugin-google-gtag": "^2.0.0-beta.5",
+    "@docusaurus/preset-classic": "^2.0.0-beta.5",
     "@mdx-js/react": "^1.5.8",
     "clsx": "^1.1.1",
     "docusaurus-plugin-sass": "^0.2.1",

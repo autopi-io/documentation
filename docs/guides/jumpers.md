@@ -25,8 +25,8 @@ next to which is written 'FORCE 5V'.
 
 To see how you can attach a jumper to your specific device view the following pages for:
 
-* [Generation 2 devices](../hardware/generation-2/_index.md/#jumper)
-* [Generation 3 devices](../hardware/generation-3/_index.md/#jumper)
+* [Generation 2 devices](../hardware/generation-2/index.md/#jumper)
+* [Generation 3 devices](../hardware/generation-3/index.md/#jumper)
 
 ## Need help?
 

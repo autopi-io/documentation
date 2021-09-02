@@ -91,7 +91,7 @@ phone/tablet and then on your phone choose the AutoPi hotspot in order to connec
 The hotspot is named something like autopi-XXXX, where XXX is an ID for your device. The password
 for the WiFi hotspot can be found from the My AutoPi Cloud. When the device is powered on, you can
 see a blue light on the side indicating power. For a full description of the two status LED's,
-please see [this](/core/power_management/_index.md/#status-leds).
+please see [this](/core/power_management/index.md/#status-leds).
 
 #### 7.
 

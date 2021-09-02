@@ -42,13 +42,13 @@ def generate_sidebars(src_dir):
         files.sort()
         dirs.sort(key=lambda d: d.name)
 
-        # get _index file, put it first
+        # get index file, put it first
         index_file = None
-        if '_index.md' in files:
-            index_file = files[files.index('_index.md')]
+        if 'index.md' in files:
+            index_file = files[files.index('index.md')]
 
-        elif '_index.mdx' in files:
-            index_file = files[files.index('_index.mdx')]
+        elif 'index.mdx' in files:
+            index_file = files[files.index('index.mdx')]
         
         if index_file:
             index_entry_name = get_file_entry_name(dir_path, index_file, src_dir)
@@ -60,7 +60,7 @@ def generate_sidebars(src_dir):
         # get all the rest of the files, put them last
         for f in files:
             # skip intro file
-            if f in ['_index.md', '_index.mdx']:
+            if f in ['index.md', 'index.mdx']:
                 continue
 
             file_entry_name = get_file_entry_name(dir_path, f, src_dir)
