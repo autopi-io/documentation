@@ -51,7 +51,7 @@ Each step in a workflow has a defined area of responsibility:
 | _`trigger`_ | Decides whether to trigger an event based on the result. | [See](obd_manager.md#triggers) |
 | _`filter`_ | Filters out result if insignificant. | [See](obd_manager.md#filters) |
 | _`enricher`_ | Enriches result with additional information. Could for example be calculations. | [See](acc_manager.md#enrichers) |
-| _`returner`_ | Returns the final result to an external system or service. | [See](../returners/_index.md) |
+| _`returner`_ | Returns the final result to an external system or service. | [See](../returners/index.md) |
 
 
 

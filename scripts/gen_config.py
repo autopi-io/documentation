@@ -65,7 +65,7 @@ fields_grouped = collections.OrderedDict(sorted(fields_grouped.items()))
 for file in os.listdir(folder):
     file_path = os.path.join(folder, file)
     try:
-        if os.path.isfile(file_path) and not file_path.endswith("_index.md"):
+        if os.path.isfile(file_path) and not file_path.endswith("index.md"):
             os.unlink(file_path)
     except Exception as ex:
         print("[ERROR] {:}".format(ex))
