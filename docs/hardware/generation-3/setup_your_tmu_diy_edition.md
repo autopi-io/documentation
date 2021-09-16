@@ -41,7 +41,7 @@ Etcher can write the compressed image directly to the SD card. We recommend usin
 with a minimum of 8GB storage.
 :::
 
-### Logging in to the device
+### Logging in to the Device
 The device is initially configured with the following credentials:
 
 *WiFi*  
@@ -55,7 +55,7 @@ Password: autopi2018
 
 **We highly recommend that you chnage those settings as soon as you are able to do so.**
 
-### Getting access to the Cloud
+### Getting Access to the Cloud
 To get your device on the AutoPi Cloud you need to get the unit ID of your device. You can find out
 your device's ID by reading out the `/etc/salt/minion_id` file. Once you have that ID, you should write to
 our support team (support@autopi.io) asking for it to be added to the system. Make sure that the dongle has
@@ -67,6 +67,20 @@ Powering the board through the micro usb (or usb-c for RPi 4) power plug on the 
 board. If you need to test the AutoPi in a lab environment, we encourage you to get the
 [OBD power connector](https://shop.autopi.io/en/products/obd-ii-power-cable-10/) from our shop.
 :::
+
+## Get 4G and GPS Connectivity
+If you are looking to use a 4G SIM card or for GPS tracking to be enabled on your device, you will
+have to purchase your own modem, as one isn't included in the DiY Edition of the AutoPi. The modem
+that we assemble the rest of our devices with is the Quectel EG25-G mini PCIe modem. This is the
+modem that we also test all of our devices with and as such is the one we recommend. However, since
+the modem is based on the Qualcomm chipset, other modems that are also based on the Qualcomm chipset
+should work as well.
+
+Once you've purchased your modem, you will need to install it in the modem slot on the back of the
+AutoPi board. Once you've done that, you will need to set one of the system settings to enable the
+`ec2x` manager. You can do that by going over to the Advanced Settings > System page and looking
+for the Setup > Mpcie > Module setting. There you can select the `ec2x` option which will install
+the driver for the modem.
 
 ## Discussion
 If you'd like to discuss this topic with us or other fellow community members, you can do so on our community

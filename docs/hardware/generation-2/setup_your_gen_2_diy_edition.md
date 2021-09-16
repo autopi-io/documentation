@@ -1,6 +1,6 @@
 ---
 id: setup-your-gen-2-diy-edition
-title: Setup your Gen 2 DiY Edition
+title: Setup Your Gen 2 DiY Edition
 ---
 
 Congratulations on your AutoPi Device, DiY Edition! We're sure that you have some great plans on how to use
@@ -42,7 +42,7 @@ Etcher can write the compressed image directly to the SD card. We recommend usin
 SD card with minimum 8Gb storage.
 :::
 
-### Logging in to the device
+### Logging in to the Device
 
 The device is initially configured to use the following credentials:
 
@@ -56,7 +56,7 @@ Password: autopi2018
 
 **You should consider changing these to something else once you get up and running.**
 
-### Getting access to the cloud
+### Getting Access to the Cloud
 To get your device on the AutoPi Cloud you need to get an ID for your device, see the below steps.
 
 1. Ensure that the `/etc/salt/minion` config file has the master specified. Look for the line:
@@ -76,6 +76,20 @@ Powering the board through the micro-USB (or USB-C for RPi 4) power plug on the 
 board. If you need to test the AutoPi in a lab environment, we encourage you to get the
 [OBD power connector](https://shop.autopi.io/en/products/obd-ii-power-cable-10/) from our shop.
 :::
+
+## Get 4G and GPS Connectivity
+If you are looking to use a 4G SIM card or for GPS tracking to be enabled on your device, you will
+have to purchase your own modem, as one isn't included in the DiY Edition of the AutoPi. The modem
+that we assemble the rest of our devices with is the Quectel EG25-G mini PCIe modem. This is the
+modem that we also test all of our devices with and as such is the one we recommend. However, since
+the modem is based on the Qualcomm chipset, other modems that are also based on the Qualcomm chipset
+should work as well.
+
+Once you've purchased your modem, you will need to install it in the modem slot on the back of the
+AutoPi board. Once you've done that, you will need to set one of the system settings to enable the
+`ec2x` manager. You can do that by going over to the Advanced Settings > System page and looking
+for the Setup > Mpcie > Module setting. There you can select the `ec2x` option which will install
+the driver for the modem.
 
 ## Discussion
 If you'd like to discuss this topic with us or other fellow community members, you can do so on our community
