@@ -78,6 +78,7 @@ module.exports = {
             "label": "Api",
             "items": [
                 "guides/api/api-intro",
+                "guides/api/how-to-change-your-devices-settings-from-api",
                 "guides/api/how-to-export-data-from-api",
                 "guides/api/send-device-data-to-own-server"
             ]

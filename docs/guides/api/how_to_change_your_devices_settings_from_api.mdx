@@ -1,0 +1,161 @@
+---
+id: how-to-change-your-devices-settings-from-api
+title: How to Change Your Device's Settings from the REST API
+---
+
+import { Discussion } from '/src/components/Discussion.jsx';
+
+Hi all,
+
+In this guide we'll explore how you can change your device's advanced settings directly through our
+REST API, without having to go through the AutoPi Cloud system to do it.
+
+This guide will assume that you are able to log in to your account and receive a JWT token that you
+can authenticate with to make the requests ([here's a guide for that](./index.md)).
+
+:::note
+Currently, the settings endpoints used in this guide aren't documented in our API documentation
+[website](https://api.autopi.io).
+:::
+
+The rest of the guide also assumes that the API URL is `https://api.autopi.io/`. All the endpoints
+that are described below require you to prepend this API URL in order for them to work properly. If
+you are a business customer, you will need to prepend the respective URL for your dedicated
+environment.
+
+Lastly, for the most part, the API works with the primary key of the device instead of the unit id.
+Although they have the same type (`UUID`), they aren't the same. You are able to retrieve the
+device IDs of all your devices by making a `GET` request to [`/dongle/devices`](https://api.autopi.io/#/dongle/dongle_devices_list)
+which retrieves all the devices you own and give you information about them including the "id" and
+"unit_id" values. 
+
+Let's get started.
+
+## The Endpoints
+
+There are three endpoints that you're looking at for the most part:
+1. Retrieve all available configuration options available for a device
+2. Retrieve current settings and their state for a specific device
+3. Make changes to the state of the settings for a specific device
+
+### Retrieve All Configuration Options
+
+One of the more important parts of this whole process will be to actually see all available options
+and their specific UUIDs, as this is what's going to be used to change them later on. The API
+endpoint that you need to call is `/dongle/settings/schema/?device_id={{device_id}}` where
+`{{device_id}}` is the primary key of your device. A successful request to that endpoint will
+return an array of JSON objects, each object containing information for one configuration that you
+can change. Let's take a look at an example configuration:
+
+```json
+...
+    "system.logging.level": {
+        "uuid": "9ae810c7-9069-4f7c-83b5-5f88f50aba4a",
+        "default": "warning",
+        "desc": "The log level of the Salt Minion log. Change if you want more detailed logging.",
+        "choices": [
+            "quiet",
+            "critical",
+            "error",
+            "warning",
+            "info",
+            "profile",
+            "debug",
+            "trace",
+            "garbage",
+            "all"
+        ],
+        "type": "str",
+        "sls": "minion.config"
+    },
+...
+```
+
+Above you can see the configuration object for the `system.logging.level` setting. It has a `uuid`
+which is unique, some `default` value, a `desc`ription and the data `type` of the value which will
+be important later on when you actually try to change it. The `sls` field is there for metadata on
+how to handle that configuration internally.
+
+The `choices` field isn't present in all settings, as not all settings are restricted to specific
+values. In this case however, it is - you can only set the logging level to a known logging level.
+
+There is another field, a `unit` field that's present in some integer type settings to define what
+unit the setting is measured in. This is useful for example to distinguish between seconds and
+milliseconds.
+
+### Get the Current State of Configuration Options
+
+Now that we're familiar with how to see basic information for all configuration options, it's time
+to actually see the values that are saved for them. You can do that by making a `GET` request to
+`/dongle/settings/?device_id={{device_id}}` and, same as before, `{{device_id}}` is the primary key
+of your device. A successful request will return another array of JSON objects in the following
+format:
+
+```json
+...
+    "9ae810c7-9069-4f7c-83b5-5f88f50aba4a": {
+        "state": "SYNCED",
+        "value": "info"
+    },
+...
+```
+
+In this case, the UUID is the one for the `system.logging.level` setting. The `state` field
+describes whether the change has been applied to the device. The `value` field is the currently
+saved value for that setting.
+
+### Change Settings and Synchronize Them With Your Device
+
+Finally, after going through this information, we're able to make a request to change a setting.
+This time, we're going to make a `POST` request to `/dongle/settings/?device_id={{device_id}}` with
+a JSON body. It's also important to note here that you do need to set the `Content-Type` header to
+`application/json` as the server will reject the request otherwise. Here's the JSON format:
+
+``` {
+    "{{setting_uuid_1}}": {{new_setting_value1}},
+    "{{setting_uuid_2}}": {{new_setting_value2}}
+}
+```
+
+Let's take a look at an actual example:
+
+```json
+{
+    "9ae810c7-9069-4f7c-83b5-5f88f50aba4a": "debug"
+}
+```
+
+This will ask the server to update the `system.logging.level` setting to a `debug` level. If we now
+query the current settings for our device now we can see that the data for that setting has changed:
+
+```json
+...
+    "9ae810c7-9069-4f7c-83b5-5f88f50aba4a": {
+        "state": "MODIFIED",
+        "value": "debug"
+    },
+...
+```
+
+Now the setting is set to `debug`, however it's in the `MODIFIED` state which means that it hasn't
+been synced to the device yet. To actually sync the changes you need to make another `POST` request
+to `/dongle/devices/{{device_id}}/execute/` with the following request body:
+
+```json
+{
+    "command": "state.sls",
+    "arg": ["pending"],
+    "kwarg": {}
+}
+```
+
+Also remember to set the `Content-Type` header to `application/json` for this request as well. This
+will trigger the server to push those changes to the device and your device should update soon.
+
+With this you should now be able to work with the API that controls the custom settings for your
+devices.
+
+<Discussion
+  url="https://community.autopi.io/t/changing-devices-custom-settings-through-rest-api/2438"
+  title="Changing devices’ custom settings through REST API"
+/>
