@@ -10,8 +10,8 @@ computer.
 ## Viewing logs
 
 There are two primary methods for viewing your AutoPi's logs. The first method uses some commands
-that you can write in the terminal from the [Cloud](https://my.autopi.io) or the local admin for
-your device. The second method retrieves the log files directly from the device through SSH.
+that you can write in the web terminal from the [Cloud](https://my.autopi.io) or the local admin
+for your device. The second method retrieves the log files directly from the device through SSH.
 
 ### Viewing logs from the Cloud
 
@@ -41,7 +41,7 @@ $ less /var/log/salt/minion
 ```
 
 :::tip
-Remember that the timestamps in the log files is in UTC
+Remember that the timestamps in the log files are in UTC.
 :::
 
 ## Downloading logs
@@ -139,6 +139,22 @@ Remember to replace the YOUR_ACCESS_TOKEN with the actual token you received in 
   ```bash
   cmd.run 'curl -X POST https://content.dropboxapi.com/2/files/upload --header "Authorization: Bearer YOUR_ACCESS_TOKEN" --header "Dropbox-API-Arg: {\"path\": \"/minion.gz\"}" --header "Content-Type: application/octet-stream" --data-binary @/var/log/salt/minion.gz'
   ```
+
+## Log rotation
+Every so often the logs on your AutoPi device will [rotate](https://en.wikipedia.org/wiki/Log_rotation).
+This essentially means that the current log files will be compressed and renmaed so that a new log
+file can start being used. This is done in order to keep the size of the log files relatively small.
+
+#### `/var/log/salt/minion`
+By default the salt minion log file is being rotated every week. Also by default, there will be 7
+older versions of the log file that will be kept on the SD card before being removed. You can
+double check those defaults if you read the `/etc/logrotate.d/salt-common` file which has those
+definitions.
+
+#### `/var/log/syslog`
+By default the syslog file is being rotated every day. Also by default, there will be 7 older
+versions of the log file that will be kept on the SD card before being removed. You can double check
+those defaults if you read the `/etc/logrotate.d/rsyslog` file which has those definitions.
 
 ## Discussion
 If you'd like to discuss this topic with us or other fellow community members, you can do so on
