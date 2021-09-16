@@ -59,7 +59,7 @@ To download the log files from the local admin page, you will need to connect to
 hotspot first. After you've done that, you can navigate your browser to http://local.autopi.io.
 
 :::tip
-If the browser is unable to load the web page, because it can't resolve the URL, try typing in the
+If the browser is unable to load the web page because it can't resolve the URL, try typing in the
 IP address instead: http://192.168.4.1.
 :::
 
@@ -146,13 +146,13 @@ This essentially means that the current log files will be compressed and renmaed
 file can start being used. This is done in order to keep the size of the log files relatively small.
 
 #### `/var/log/salt/minion`
-By default the salt minion log file is being rotated every week. Also by default, there will be 7
+By default, the salt minion log file is being rotated every week. Also by default, there will be 7
 older versions of the log file that will be kept on the SD card before being removed. You can
 double check those defaults if you read the `/etc/logrotate.d/salt-common` file which has those
 definitions.
 
 #### `/var/log/syslog`
-By default the syslog file is being rotated every day. Also by default, there will be 7 older
+By default, the syslog file is being rotated every day. Also by default, there will be 7 older
 versions of the log file that will be kept on the SD card before being removed. You can double check
 those defaults if you read the `/etc/logrotate.d/rsyslog` file which has those definitions.
 

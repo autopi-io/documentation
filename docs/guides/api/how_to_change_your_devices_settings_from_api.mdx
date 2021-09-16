@@ -126,7 +126,7 @@ Let's take a look at an actual example:
 ```
 
 This will ask the server to update the `system.logging.level` setting to a `debug` level. If we now
-query the current settings for our device now we can see that the data for that setting has changed:
+query the current settings for our device we can see that the data for that setting has changed:
 
 ```json
 ...
@@ -138,7 +138,7 @@ query the current settings for our device now we can see that the data for that 
 ```
 
 Now the setting is set to `debug`, however it's in the `MODIFIED` state which means that it hasn't
-been synced to the device yet. To actually sync the changes you need to make another `POST` request
+been synced to the device yet. To actually sync the changes, you need to make another `POST` request
 to `/dongle/devices/{{device_id}}/execute/` with the following request body:
 
 ```json

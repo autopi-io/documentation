@@ -53,7 +53,7 @@ Password: autopi2018
 User: pi  
 Password: autopi2018
 
-**We highly recommend that you chnage those settings as soon as you are able to do so.**
+**We highly recommend that you change those settings as soon as you are able to do so.**
 
 ### Getting Access to the Cloud
 To get your device on the AutoPi Cloud you need to get the unit ID of your device. You can find out
@@ -72,7 +72,7 @@ board. If you need to test the AutoPi in a lab environment, we encourage you to 
 If you are looking to use a 4G SIM card or for GPS tracking to be enabled on your device, you will
 have to purchase your own modem, as one isn't included in the DiY Edition of the AutoPi. The modem
 that we assemble the rest of our devices with is the Quectel EG25-G mini PCIe modem. This is the
-modem that we also test all of our devices with and as such is the one we recommend. However, since
+modem that we also test all of our devices with and as such is the one, we recommend. However, since
 the modem is based on the Qualcomm chipset, other modems that are also based on the Qualcomm chipset
 should work as well.
 
