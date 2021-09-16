@@ -65,6 +65,7 @@ module.exports = {
             "items": [
                 "hardware/generation-3/gen-3-intro",
                 "hardware/generation-3/developer-kit",
+                "hardware/generation-3/installing-external-antennas",
                 "hardware/generation-3/setup-your-tmu-diy-edition"
             ]
         },
