@@ -23,11 +23,11 @@ Fortunately, there are other much faster alternatives, here are a few ways to do
 You could instead SSH into the device and edit the files directly. When syncing from the cloud,
 the modules will be put in the following directories, based on the type:
 
-* /opt/autopi/modules
-* /opt/autopi/returners
-* /opt/autopi/utils
-* /opt/autopi/engines
-* /opt/autopi/states
+* /opt/autopi/salt/modules
+* /opt/autopi/salt/returners
+* /opt/autopi/salt/utils
+* /opt/autopi/salt/engines
+* /opt/autopi/salt/states
 
 So you can simply edit/create the files directly, but make sure to avoid clashes with the cloud
 synced modules, to prevent losing work if you sync the module from the cloud, as that will, without
