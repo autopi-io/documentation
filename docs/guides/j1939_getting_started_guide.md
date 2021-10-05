@@ -216,46 +216,26 @@ As default, all created CAN messages and associated CAN signals are synchronized
 
 ### Test CAN Converter
 
-To easily CAN message conversion with a DBC file
+To easily test CAN message conversion with a DBC file, the following terminal command can be executed. It performs a single workflow that queries a PGN and then converts the raw response message using the DBC file.
 
 ```
 obd.manage run handler="query" args="['EEC1']" kwargs="{'mode': '00', 'pid': 'F004', 'header': '18EA00F9', 'force': true}" converter="can"
 ```
 
+#### Command Breakdown
 
+>_**obd.manage**_ is the [command](/core/commands/core-commands-obd/#obdmanage) to execute.
+>
+>_**run**_ a [workflow](/core/services/core-services-intro/#workflows) directly.
+>
+>_**handler="query"**_ specifies the handler of the workflow to be called.
+>
+>_**args="['EEC1']"**_ specifices the arguments of the handler. The value consists of an embedded JSON array.
+>
+>_**kwargs="{'mode': '00', 'pid': 'F004', 'header': '18EA00F9', 'force': true}"**_ specifices the keyword arguments of the handler. The value consists of an embedded JSON dictionary.
+>
+>_**converter="can"**_ specifies a converter in the workflow to be called after the handler. Here we use the [CAN](/core/services/core-services-obd-manager/#can) converter.
 
-## Setup Logger 
+## Setup Loggers
 
-
-
-
-
-
-? Write a custom converter in a _Custom Code_ module.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Convert responses
-  - Test with command that uses CAN converter
-
-
-
-
-Setup loggers
-  - query
-  - monitor
-
-
-
+To receive the J1939 data in the cloud, loggers must first be set up on the device. Go to _Car Explorer_ > _Loggers_ and create loggers for the respective PIDs and or CAN messages. After a logger has been created, it must be synchronized to the AutoPi device, just like any other change.
