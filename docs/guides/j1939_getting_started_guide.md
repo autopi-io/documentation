@@ -222,6 +222,10 @@ To easily test CAN message conversion with a DBC file, the following terminal co
 obd.manage run handler="query" args="['EEC1']" kwargs="{'mode': '00', 'pid': 'F004', 'header': '18EA00F9', 'force': true}" converter="can"
 ```
 
+_Example_:
+
+![create_pid_for_j1939_request_pgn](../../static/img/guides/j1939_getting_started_guide/run_j1939_query_workflow.png)
+
 #### Command Breakdown
 
 >_**obd.manage**_ is the [command](/core/commands/core-commands-obd/#obdmanage) to execute.
