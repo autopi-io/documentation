@@ -94,6 +94,8 @@ module.exports = {
             "type": "category",
             "label": "OBD-II",
             "items": [
+                "guides/obd-ii/obd-ii-intro",
+                "guides/obd-ii/create-pid-loggers",
                 "guides/obd-ii/debug-raw-pid-queries",
                 "guides/obd-ii/how-to-import-custom-dbc-files",
                 "guides/obd-ii/how-to-use-the-car-explorer-feature",
