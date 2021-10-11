@@ -1,6 +1,6 @@
 ---
 id: api-intro
-title: Getting started
+title: Introduction
 ---
 
 You are able to use the [AutoPi REST API](https://api.autopi.io) with your browser, which will display our
