@@ -120,6 +120,7 @@ module.exports = {
         "guides/autopi-logs",
         "guides/how-to-ssh-to-your-device",
         "guides/installing-a-camera-on-your-autopi",
+        "guides/j1939-getting-started-guide",
         "guides/jumpers",
         "guides/local-development-workflow",
         "guides/power-cycle-for-electric-vehicles",
