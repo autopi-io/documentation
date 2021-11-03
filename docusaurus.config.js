@@ -119,6 +119,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
+          editUrl: "https://github.com/autopi-io/documentation/edit/master/"
         },
         theme: {
           customCss: require.resolve('./src/css/custom.scss'),
