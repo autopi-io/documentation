@@ -247,14 +247,4 @@ that you clicked on will be already expanded and highlighted in yellow.
 Edit the description field of the signal and click Save. You can also associate that CAN message
 with a vehicle CAN bus. You should see the CAN signal update with the new description:
 
-![ABS Malfunction example](/img/user-manual/car-explorer/library/abs_malfunction_example.png) 
-
-### Sharing CAN Messages With the Rest of the Community
-To make it easy for other community members, you can share CAN messages you've identified for your
-vehicle. To do that, you must first associate a CAN message with a vehicle CAN bus, which you can
-do at the bottom of the '*Editing CAN Message*' pop-out window. After you've saved the changes,
-you'll be able to select the '*Share with the community*' checkbox.
-
-![sharing a can message](/img/user-manual/car-explorer/library/sharing_a_can_message.png) 
-
-Saving the changes shares the CAN message and all signals with the community.
+![ABS Malfunction example](/img/user-manual/car-explorer/library/abs_malfunction_example.png)
