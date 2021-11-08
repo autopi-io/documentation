@@ -111,7 +111,6 @@ module.exports = {
                 "guides/obd-ii/obd-ii-intro",
                 "guides/obd-ii/create-pid-loggers",
                 "guides/obd-ii/debug-raw-pid-queries",
-                "guides/obd-ii/how-to-import-custom-dbc-files",
                 "guides/obd-ii/how-to-use-the-car-explorer-feature",
                 "guides/obd-ii/log-raw-can-messages",
                 "guides/obd-ii/using-the-can-bus-commands"
