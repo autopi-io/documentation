@@ -41,6 +41,20 @@ module.exports = {
                 "cloud/fleet/fleet-templates"
             ]
         },
+        {
+            "type": "category",
+            "label": "User Manual",
+            "items": [
+                "cloud/user-manual/user-manual-intro",
+                {
+                    "type": "category",
+                    "label": "Car Explorer",
+                    "items": [
+                        "cloud/user-manual/car-explorer/car-explorer-library-manual"
+                    ]
+                }
+            ]
+        },
         "cloud/cloud-jobs",
         "cloud/cloud-triggers",
         "cloud/cloud-trips"
