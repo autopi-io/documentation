@@ -125,7 +125,7 @@ page, it means your device is online and has started uploading data to the AutoP
 #### 10.
 
 Your device is now online and connected to the AutoPi Cloud. When you have completed the setup,
-remember to change your device WiFi password. The password your device came with is ment for a one
+remember to change your device WiFi password. The password your device came with is meant for a one
 time setup and it is recommended to change it after you have setup your device. You can change the
 password from the AutoPi Cloud Advanced Settings.
 
