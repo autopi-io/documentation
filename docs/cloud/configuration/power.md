@@ -69,7 +69,7 @@ title: Power
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
 | EVENT REGEX | Which event(s) should disable current sleep timers and prevent new ones from being enabled? | str | ^vehicle/engine/running | - |
-| SCHEDULE | Specifies one or more time periods during which the device must be awake. Added sleep timers are adjusted accordingly to not sleep for the specified time periods. The format consists of a cron expression in UTC, then a pipe sign (|) as separator and finally a duration in seconds. Example: 0 8 * * * | 7200 | str |  | - |
+| SCHEDULE | Specifies one or more time periods during which the device must be awake. Added sleep timers are adjusted accordingly to not sleep for the specified time periods. The format consists of a cron expression in UTC, then a pipe sign (&vert;) as separator and finally a duration in seconds. Example: 0 8 * * * &vert; 7200 | str |  | - |
 
 ## Wake Trigger
 
