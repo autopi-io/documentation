@@ -121,19 +121,6 @@ These events apply depending on which peripherals are installed inside the dongl
 | `old` | Timestamp | The old time before synchronization. | 2019-03-13 10:08:30 |
 | `source` | Text | The source that was synchronized against. | `network`, `ntp`, `rtc`  |
 
-## Jolting Events
-
-| Tag | Description | Fields |
-| ------ | ------ | ------ |
-| `vehicle/motion/jolting` | The accelerometer readings detected a jolt in the device. | `changes` |
-| `vehicle/motion/steady` | The accelerometer readings detect a steady device (there is no movement). | - |
-
-**FIELD DEFINITIONS**
-
-| Name | Type | Description | Example |
-| ------ | ------ | ------ | ------ |
-| `changes` | Dictionary | Shows a dictionary with the changes detected on each axis (X, Y or Z). | `{x: 0.1, y: 0.2}` |
-
 ## Short Message Service (SMS) Events
 
 | Tag | Description | Fields |

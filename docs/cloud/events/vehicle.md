@@ -84,3 +84,16 @@ These events are fired by the trigger [`rpm_motor_event`](../../core/services/ob
 | Name | Type | Description | Example |
 | ------ | ------ | ------ | ------ |
 | `reason` | Text | The explanatory cause for the event. | no_fix |
+
+## Jolting Events
+
+| Tag | Description | Fields |
+| ------ | ------ | ------ |
+| `vehicle/motion/jolting` | The accelerometer readings detected a jolt in the device. | `changes` |
+| `vehicle/motion/steady` | The accelerometer readings detect a steady device (there is no movement). | - |
+
+**FIELD DEFINITIONS**
+
+| Name | Type | Description | Example |
+| ------ | ------ | ------ | ------ |
+| `changes` | Dictionary | Shows a dictionary with the changes detected on each axis (X, Y or Z). | `{x: 0.1, y: 0.2}` |
