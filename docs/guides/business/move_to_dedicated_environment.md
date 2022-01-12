@@ -58,6 +58,13 @@ Once you have it registered and you have brought the device online, accept the k
 
 ![Key state denied](../../../static/img/guides/move_to_dedicated_environment/key_state_denied.jpg)
 
+:::tip
+When accepting the key you might receive a 404 error saying that the key for that device was not
+found. If that's the case, most likely your device was unable to get connected to the environment
+yet. Make sure that you have internet connection and that you have typed in the URL of your dedicated
+environment correctly.
+:::
+
 When that is done, you'll need to restart the salt-minion once more, either by waiting for it to go to sleep, or by issuing the following command:
 
 ```bash
