@@ -127,6 +127,7 @@ module.exports = {
                 "guides/services/create-custom-workers"
             ]
         },
+        "guides/upgrading-your-raspberrypi",
         "guides/4g-internet-setup-troubleshooting",
         "guides/a-guide-to-triggers",
         "guides/adding-a-new-widget-from-scratch",
