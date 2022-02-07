@@ -8,6 +8,8 @@ This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern 
 For this project you need to have installed the following tools:
 - `NodeJs`
 - `Npm`
+
+If the `gen_sidebars.py` script is going to be used, the following prerequisites are also needed:
 - `Python => v3.9`
 	- `Pip`
 	- `Pyyaml module`
@@ -30,7 +32,7 @@ This command starts a local development server and open up a browser window. Mos
 npm run gensidebars
 ```
 
-If you add new pages to the docs, you can run the following script to generate the configuration for the sidebar of the website.
+If you add new pages to the docs, you can run the above script to generate the configuration for the sidebar of the website.
 
 ## Build
 

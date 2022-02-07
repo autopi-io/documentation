@@ -127,7 +127,6 @@ module.exports = {
                 "guides/services/create-custom-workers"
             ]
         },
-        "guides/upgrading-your-raspberrypi",
         "guides/4g-internet-setup-troubleshooting",
         "guides/a-guide-to-triggers",
         "guides/adding-a-new-widget-from-scratch",
@@ -141,6 +140,7 @@ module.exports = {
         "guides/reflashing-your-device",
         "guides/remotely-waking-up-your-device",
         "guides/setting-up-our-device-with-verizon-wireless",
+        "guides/upgrading-your-raspberrypi",
         "guides/using-the-autopi-with-an-external-power-supply"
     ],
     "coreSidebar": [
