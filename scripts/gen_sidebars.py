@@ -95,7 +95,7 @@ def main():
 
     # Write side bars JS file
     with open(os.path.join("..", "sidebars.js"), "w") as fp:
-        fp.write("module.exports = {:};".format(json.dumps(sidebars, indent=4)))
+        fp.write("module.exports = {:};".format(json.dumps(sidebars, indent=4, sort_keys=True)))
 
 
 if __name__ == "__main__":

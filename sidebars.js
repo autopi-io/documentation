@@ -2,8 +2,6 @@ module.exports = {
     "cloudSidebar": [
         "cloud/cloud-intro",
         {
-            "type": "category",
-            "label": "Configuration",
             "items": [
                 "cloud/configuration/cloud-config-intro",
                 "cloud/configuration/cloud-config-accelerometer",
@@ -20,133 +18,50 @@ module.exports = {
                 "cloud/configuration/cloud-config-trip",
                 "cloud/configuration/cloud-config-update-release",
                 "cloud/configuration/cloud-config-wifi"
-            ]
+            ],
+            "label": "Configuration",
+            "type": "category"
         },
         {
-            "type": "category",
-            "label": "Events",
             "items": [
                 "cloud/events/cloud-events-intro",
                 "cloud/events/cloud-events-system",
                 "cloud/events/cloud-events-vehicle"
-            ]
+            ],
+            "label": "Events",
+            "type": "category"
         },
         {
-            "type": "category",
-            "label": "Fleet",
             "items": [
                 "cloud/fleet/fleet-intro",
                 "cloud/fleet/fleet-overview",
                 "cloud/fleet/fleet-wakeup",
                 "cloud/fleet/fleet-templates"
-            ]
+            ],
+            "label": "Fleet",
+            "type": "category"
         },
         {
-            "type": "category",
-            "label": "User Manual",
             "items": [
                 "cloud/user-manual/user-manual-intro",
                 {
-                    "type": "category",
-                    "label": "Car Explorer",
                     "items": [
                         "cloud/user-manual/car-explorer/car-explorer-library-manual"
-                    ]
+                    ],
+                    "label": "Car Explorer",
+                    "type": "category"
                 }
-            ]
+            ],
+            "label": "User Manual",
+            "type": "category"
         },
         "cloud/cloud-jobs",
         "cloud/cloud-triggers",
         "cloud/cloud-trips"
     ],
-    "hardwareSidebar": [
-        "hardware/hardware-intro",
-        {
-            "type": "category",
-            "label": "Generation 2",
-            "items": [
-                "hardware/generation-2/gen-2-intro",
-                "hardware/generation-2/connection-overview",
-                "hardware/generation-2/setup-your-gen-2-diy-edition",
-                "hardware/generation-2/update-firmware-of-eg25-g-module",
-                "hardware/generation-2/using-gpio-and-hdmi-with-the-gen-2",
-                "hardware/generation-2/using-the-rpi3-adapter"
-            ]
-        },
-        {
-            "type": "category",
-            "label": "Generation 3",
-            "items": [
-                "hardware/generation-3/gen-3-intro",
-                "hardware/generation-3/developer-kit",
-                "hardware/generation-3/installing-external-antennas",
-                "hardware/generation-3/setup-your-tmu-diy-edition"
-            ]
-        },
-        "hardware/obd-connector-pinout"
-    ],
-    "guidesSidebar": [
-        "guides/guides-intro",
-        {
-            "type": "category",
-            "label": "Api",
-            "items": [
-                "guides/api/api-intro",
-                "guides/api/how-to-change-your-devices-settings-from-api",
-                "guides/api/how-to-export-data-from-api",
-                "guides/api/send-device-data-to-own-server"
-            ]
-        },
-        {
-            "type": "category",
-            "label": "Business",
-            "items": [
-                "guides/business/move-to-dedicated-environment"
-            ]
-        },
-        {
-            "type": "category",
-            "label": "OBD-II",
-            "items": [
-                "guides/obd-ii/obd-ii-intro",
-                "guides/obd-ii/create-pid-loggers",
-                "guides/obd-ii/debug-raw-pid-queries",
-                "guides/obd-ii/how-to-use-the-car-explorer-feature",
-                "guides/obd-ii/log-raw-can-messages",
-                "guides/obd-ii/using-the-can-bus-commands"
-            ]
-        },
-        {
-            "type": "category",
-            "label": "Services",
-            "items": [
-                "guides/services/services-intro",
-                "guides/services/create-custom-returners",
-                "guides/services/create-custom-services",
-                "guides/services/create-custom-triggers",
-                "guides/services/create-custom-workers"
-            ]
-        },
-        "guides/4g-internet-setup-troubleshooting",
-        "guides/a-guide-to-triggers",
-        "guides/adding-a-new-widget-from-scratch",
-        "guides/autopi-logs",
-        "guides/how-to-ssh-to-your-device",
-        "guides/installing-a-camera-on-your-autopi",
-        "guides/j1939-getting-started-guide",
-        "guides/jumpers",
-        "guides/local-development-workflow",
-        "guides/power-cycle-for-electric-vehicles",
-        "guides/reflashing-your-device",
-        "guides/remotely-waking-up-your-device",
-        "guides/setting-up-our-device-with-verizon-wireless",
-        "guides/using-the-autopi-with-an-external-power-supply"
-    ],
     "coreSidebar": [
         "core/core-intro",
         {
-            "type": "category",
-            "label": "Commands",
             "items": [
                 "core/commands/core-commands-intro",
                 "core/commands/core-commands-acc",
@@ -172,20 +87,20 @@ module.exports = {
                 "core/commands/core-cmd-time",
                 "core/commands/core-commands-tracking",
                 "core/commands/core-commands-wifi"
-            ]
+            ],
+            "label": "Commands",
+            "type": "category"
         },
         {
-            "type": "category",
-            "label": "Power Management",
             "items": [
                 "core/power_management/core-power-intro",
                 "core/power_management/core-power-high",
                 "core/power_management/core-power-low"
-            ]
+            ],
+            "label": "Power Management",
+            "type": "category"
         },
         {
-            "type": "category",
-            "label": "Returners",
             "items": [
                 "core/returners/core-returners-intro",
                 "core/returners/core-returners-cloud",
@@ -194,11 +109,11 @@ module.exports = {
                 "core/returners/core-returners-event-result",
                 "core/returners/core-returners-jsonl",
                 "core/returners/core-returners-mqtt"
-            ]
+            ],
+            "label": "Returners",
+            "type": "category"
         },
         {
-            "type": "category",
-            "label": "Services",
             "items": [
                 "core/services/core-services-intro",
                 "core/services/core-services-acc-manager",
@@ -212,7 +127,94 @@ module.exports = {
                 "core/services/core-services-obd-manager",
                 "core/services/core-services-spm-manager",
                 "core/services/core-services-tracking-manager"
-            ]
+            ],
+            "label": "Services",
+            "type": "category"
         }
+    ],
+    "guidesSidebar": [
+        "guides/guides-intro",
+        {
+            "items": [
+                "guides/api/api-intro",
+                "guides/api/how-to-change-your-devices-settings-from-api",
+                "guides/api/how-to-export-data-from-api",
+                "guides/api/send-device-data-to-own-server"
+            ],
+            "label": "Api",
+            "type": "category"
+        },
+        {
+            "items": [
+                "guides/business/move-to-dedicated-environment"
+            ],
+            "label": "Business",
+            "type": "category"
+        },
+        {
+            "items": [
+                "guides/obd-ii/obd-ii-intro",
+                "guides/obd-ii/create-can-signal-loggers",
+                "guides/obd-ii/create-pid-loggers",
+                "guides/obd-ii/debug-raw-pid-queries",
+                "guides/obd-ii/how-to-use-the-car-explorer-feature",
+                "guides/obd-ii/log-raw-can-messages",
+                "guides/obd-ii/using-the-can-bus-commands"
+            ],
+            "label": "OBD-II",
+            "type": "category"
+        },
+        {
+            "items": [
+                "guides/services/services-intro",
+                "guides/services/create-custom-returners",
+                "guides/services/create-custom-services",
+                "guides/services/create-custom-triggers",
+                "guides/services/create-custom-workers"
+            ],
+            "label": "Services",
+            "type": "category"
+        },
+        "guides/4g-internet-setup-troubleshooting",
+        "guides/a-guide-to-triggers",
+        "guides/adding-a-new-widget-from-scratch",
+        "guides/autopi-logs",
+        "guides/enabling_bluetooth_on_TMU_devices",
+        "guides/how-to-ssh-to-your-device",
+        "guides/installing-a-camera-on-your-autopi",
+        "guides/j1939-getting-started-guide",
+        "guides/jumpers",
+        "guides/local-development-workflow",
+        "guides/power-cycle-for-electric-vehicles",
+        "guides/reflashing-your-device",
+        "guides/remotely-waking-up-your-device",
+        "guides/setting-up-our-device-with-verizon-wireless",
+        "guides/using-the-autopi-with-an-external-power-supply"
+    ],
+    "hardwareSidebar": [
+        "hardware/hardware-intro",
+        {
+            "items": [
+                "hardware/generation-2/gen-2-intro",
+                "hardware/generation-2/connection-overview",
+                "hardware/generation-2/setup-your-gen-2-diy-edition",
+                "hardware/generation-2/update-firmware-of-eg25-g-module",
+                "hardware/generation-2/using-gpio-and-hdmi-with-the-gen-2",
+                "hardware/generation-2/using-the-rpi3-adapter"
+            ],
+            "label": "Generation 2",
+            "type": "category"
+        },
+        {
+            "items": [
+                "hardware/generation-3/gen-3-intro",
+                "hardware/generation-3/developer-kit",
+                "hardware/generation-3/installing-external-antennas",
+                "hardware/generation-3/setup-your-tmu-diy-edition"
+            ],
+            "label": "Generation 3",
+            "type": "category"
+        },
+        "hardware/obd-connector-pinout"
     ]
 };
