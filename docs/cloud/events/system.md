@@ -120,3 +120,17 @@ These events apply depending on which peripherals are installed inside the dongl
 | `new` | Timestamp | The new time after synchronization. | 19-03-13 10:08:19 |
 | `old` | Timestamp | The old time before synchronization. | 2019-03-13 10:08:30 |
 | `source` | Text | The source that was synchronized against. | `network`, `ntp`, `rtc`  |
+
+## Short Message Service (SMS) Events
+
+| Tag | Description | Fields |
+| ------ | ------ | ------ |
+| `system/sms/received` | A new SMS message was received. | `sender`, `timestamp`, `text` |
+
+**FIELD DEFINITIONS**
+
+| Name | Type | Description | Example |
+| ------ | ------ | ------ | ------ |
+| `sender` | Text | The phone number of whoever sent the message, including country code. | +4501020304 |
+| `timestamp` | Timestamp | The timestamp that the message was received on. Timestamp is in UTC. | 2019-03-13 10:08:30 |
+| `text` | Text | The text contained in the mesage. | 'An example text message.'  |
