@@ -59,7 +59,7 @@ These events apply depending on which peripherals are installed inside the dongl
 | `system/power/sleep` | Device went into sleep because of specifed reason.  | `delay`, `interval`, `reason`, `uptime` |
 | `system/power/hibernate` | Device went into hibernation because of specifed reason. | `delay`, `interval`, `reason`, `uptime` |
 | `system/power/3v3/restarted` | The 3V3 power supply has been restarted. | `reason` |
-
+| `system/power/config_failed` | One or more configuration parameters of the SPM subsystem could not be loaded and have therefore been restored to default. This event only applies to SPM version 3. | `params` |
 
 **FIELD DEFINITIONS**
 
@@ -72,6 +72,7 @@ These events apply depending on which peripherals are installed inside the dongl
 | `timestamp` | Timestamp | Time to be reported. | 2019-03-13T11:10:14 |
 | `trigger` | Text | Underlying cause of the event reported by the SPM subsystem. | `acc`, `boot_timeout`, `heartbeat_timeout`, `modem`, `rpi`, `spm`, `stn`, `timer` |
 | `uptime` | Number | System uptime in seconds. | 3745 |
+| `params` | List | List of parameter names. | - |
 
 ## Release Events
 
