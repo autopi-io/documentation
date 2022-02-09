@@ -189,7 +189,7 @@ module.exports = {
         "guides/reflashing-your-device",
         "guides/remotely-waking-up-your-device",
         "guides/setting-up-our-device-with-verizon-wireless",
-        "guides/upgrading-your-raspberrypi",
+        "guides/upgrading-your-raspberry-pi",
         "guides/using-the-autopi-with-an-external-power-supply"
     ],
     "hardwareSidebar": [
