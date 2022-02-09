@@ -198,10 +198,11 @@ module.exports = {
             "items": [
                 "hardware/generation-2/gen-2-intro",
                 "hardware/generation-2/connection-overview",
+                "hardware/generation-2/obd-connector-pinout",
                 "hardware/generation-2/setup-your-gen-2-diy-edition",
                 "hardware/generation-2/update-firmware-of-eg25-g-module",
                 "hardware/generation-2/using-gpio-and-hdmi-with-the-gen-2",
-                "hardware/generation-2/using-the-rpi3-adapter"
+                "hardware/generation-2/using-the-rpi3-adapter",
             ],
             "label": "Generation 2",
             "type": "category"
@@ -209,13 +210,22 @@ module.exports = {
         {
             "items": [
                 "hardware/generation-3/gen-3-intro",
+                "hardware/generation-3/connection-overview",
                 "hardware/generation-3/developer-kit",
                 "hardware/generation-3/installing-external-antennas",
-                "hardware/generation-3/setup-your-tmu-diy-edition"
+                "hardware/generation-3/obd-connector-pinout",
+                "hardware/generation-3/setup-your-tmu-diy-edition",
             ],
             "label": "Generation 3",
             "type": "category"
         },
-        "hardware/obd-connector-pinout"
+        {
+            "items": [
+                "hardware/generation-3.5-CAN_FD/gen-3.5-intro",
+                "hardware/generation-3.5-CAN_FD/connection-overview",
+            ],
+            "label": "Generation 3.5 CAN-FD",
+            "type": "category",
+        },
     ]
 };

@@ -1,5 +1,5 @@
 ---
-id: gen-3-intro
+id: gen-3.5-intro
 title: Introduction
 ---
 
