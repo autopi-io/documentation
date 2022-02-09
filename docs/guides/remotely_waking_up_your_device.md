@@ -17,8 +17,8 @@ ec2x.list_sms
 
 If you find your device not to respond to the SMS wake up, then there is two things you can check:
 
-1) Check if the modem is "Power save" mode, during sleep. If you go to settings->dongles->advanced->power there is a new section called “modem”
-“Put modem into lower power mode during sleep? When enabled it is no longer possible to wakup device on SMS.”
+1) Check if the modem is "Power save" mode, during sleep. If you go to settings->dongles->advanced->power there is a new section called "modem"
+"Put modem into lower power mode during sleep? When enabled it is no longer possible to wakup device on SMS."
 
 2) The modem/SIM has a limit on how many unread messages it can contain. To clear the message you can use this command:
 ```
