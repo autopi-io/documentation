@@ -50,6 +50,18 @@ npm run serve
 After building, it is important to test that everything works as intended, and that your build was successful.
 Run `serve` to start a server with your newly built project.
 
+## Conventions
+
+There are a few conventions that should be followed when working with the documentation repository.
+1. When adding images for a guide:
+  1. Create a folder in `static/img/guides/<id-of-new-guide>` and place the images there
+	2. Ensure images aren't too large (no more than 2MB?)
+	3. Ensure images are in JPEG/JPG format
+2. Follow the naming conventions across the repository:
+  1. File names should be written_in_snake_case
+  2. Page IDs need to be separated-with-dashes
+  3. Titles and headings use capital letters for each word with some exceptions (a, to, for, the, etc)
+
 ## Deployment
 
 ```console
