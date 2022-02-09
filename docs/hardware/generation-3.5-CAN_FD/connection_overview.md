@@ -42,24 +42,24 @@ This is a diagram shows the connection possibilities of the  generation AutoPi.
 <br/>
 <br/>
 
-![connection overview back](/img/hardware/gen_3/gpio_pinout_1.6.jpeg) 
+![GPIO pinout](/img/hardware/gen_3/gpio_pinout_1.6.jpeg) 
 
 <br/>
 <br/>
 
-![connection overview back](/img/hardware/gen_3.5/AP_EXT1_3.5.png)
+![AP EXT 1 connector pinout](/img/hardware/gen_3.5/AP_EXT1_3.5.png)
 
 <br/>
 <br/>
 
-![connection overview back](/img/hardware/gen_3.5/AP_EXT2_3.5.png)
+![AP EXT 2 connector pinout](/img/hardware/gen_3.5/AP_EXT2_3.5.png)
 
 <br/>
 <br/>
 
-![connection overview back](/img/hardware/gen_3.5/USER_EXT1_3.5.png)
+![USER EXT 1 connector pinout](/img/hardware/gen_3.5/USER_EXT1_3.5.png)
 
 <br/>
 <br/>
 
-![connection overview back](/img/hardware/gen_3.5/ETN_CONN_3.5.png)
+![ETH connector  pinout](/img/hardware/gen_3.5/ETN_CONN_3.5.png)

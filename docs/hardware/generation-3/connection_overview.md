@@ -64,20 +64,20 @@ our community page dedicated for this guide:
 <br/>
 
 
-![connection overview back](/img/hardware/gen_3/AP_EXT1_1.6.png)
+![AP EXT 1 connector pinout](/img/hardware/gen_3/AP_EXT1_1.6.png)
 
 <br/>
 <br/>
 
-![connection overview back](/img/hardware/gen_3/AP_EXT2_1.6.png)
+![AP EXT 2 connector pinout](/img/hardware/gen_3/AP_EXT2_1.6.png)
 
 <br/>
 <br/>
 
-![connection overview back](/img/hardware/gen_3/USER_EXT1_1.6.png)
+![USER EXT 1 connector pinout](/img/hardware/gen_3/USER_EXT1_1.6.png)
 
 <br/>
 <br/>
 
-![connection overview back](/img/hardware/gen_3/USER_EXT2_1.6.png)
+![USER EXT 2 connector pinout](/img/hardware/gen_3/USER_EXT2_1.6.png)
 
