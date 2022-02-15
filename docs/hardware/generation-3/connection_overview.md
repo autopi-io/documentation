@@ -19,7 +19,7 @@ This is a diagram shows the connection possibilities of the second generation Au
 <br/>
 <br/>
 
-![connection overview front](/img/hardware/gen_3/1.6_front1.jpg)
+![connection overview front](/img/hardware/gen_3/side1.png)
 
 <br/>
 <br/>
@@ -36,7 +36,7 @@ This is a diagram shows the connection possibilities of the  generation AutoPi.
 <br/>
 <br/>
 
-![connection overview back](/img/hardware/gen_3/1.6_back1.jpg)
+![connection overview back](/img/hardware/gen_3/side2.png)
 
 <br/>
 <br/>
@@ -50,7 +50,7 @@ of the AutoPi. This I2C bus is used by the AutoPi, but can be shared with other 
 
 All other pins are free and their functionality follows that of the Raspberry Pi.
 
-![Third generation AutoPi GPIO Pinout](/img/hardware/gen_3/gpio_pinout_1.6.jpeg)
+![Third generation AutoPi GPIO Pinout](/img/hardware/gen_3/gpio_pinout_gen3.png)
 
 :::note
 If you'd like to discuss this topic with us or other fellow community members, you can do so on
@@ -64,20 +64,20 @@ our community page dedicated for this guide:
 <br/>
 
 
-![AP EXT 1 connector pinout](/img/hardware/gen_3/AP_EXT1_1.6.png)
+![AP EXT 1 connector pinout](/img/hardware/gen_3/AP_EXT1.png)
 
 <br/>
 <br/>
 
-![AP EXT 2 connector pinout](/img/hardware/gen_3/AP_EXT2_1.6.png)
+![AP EXT 2 connector pinout](/img/hardware/gen_3/AP_EXT2.png)
 
 <br/>
 <br/>
 
-![USER EXT 1 connector pinout](/img/hardware/gen_3/USER_EXT1_1.6.png)
+![USER EXT 1 connector pinout](/img/hardware/gen_3/USER_EXT1.png)
 
 <br/>
 <br/>
 
-![USER EXT 2 connector pinout](/img/hardware/gen_3/USER_EXT2_1.6.png)
+![USER EXT 2 connector pinout](/img/hardware/gen_3/USER_EXT2.png)
 

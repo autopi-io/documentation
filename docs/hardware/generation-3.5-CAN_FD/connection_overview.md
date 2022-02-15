@@ -7,8 +7,8 @@ title: Connection overview
 This is a diagram shows the connection possibilities of the second generation AutoPi.
 
 1. Sim card slot    
-2. 
-3. Ethernet connector
+2. USER EXT 1
+3. ETH CONN
 4. GPIO pins for RPi and external connections
 5. GPIO Jumper to always force 5V on the RPi
 6. JST connector for external speaker
@@ -19,16 +19,16 @@ This is a diagram shows the connection possibilities of the second generation Au
 <br/>
 <br/>
 
-![connection overview front](/img/hardware/gen_3.5/3.5.6_front2.jpg)
+![connection overview front](/img/hardware/gen_3.5/side1.png)
 
 <br/>
 <br/>
 
 This is a diagram shows the connection possibilities of the  generation AutoPi.
 
-1. BLE module slot
+1. AP EXT 2
 2. Upstream USB connector to RPi
-3. GPIO connector
+3. AP EXT 1
 4. Modem slot
 
 
@@ -37,29 +37,38 @@ This is a diagram shows the connection possibilities of the  generation AutoPi.
 <br/>
 
 
-![connection overview back](/img/hardware/gen_3.5/3.5.6_back1.jpg)
+![connection overview back](/img/hardware/gen_3.5/side2.png)
 
 <br/>
 <br/>
 
-![GPIO pinout](/img/hardware/gen_3/gpio_pinout_1.6.jpeg) 
+## Pinout
+
+This image is an overview of the GPIO pinout of the 3<sup>rd</sup> generation (TMU) AutoPi.
+
+Pins marked with "in use" cannot be used for anything else. This will interrupt the functionality
+of the AutoPi. This I2C bus is used by the AutoPi, but can be shared with other devices. 
+
+All other pins are free and their functionality follows that of the Raspberry Pi.
+
+![GPIO pinout](/img/hardware/gen_3.5/gpio_pinout_gen3.5.png) 
 
 <br/>
 <br/>
 
-![AP EXT 1 connector pinout](/img/hardware/gen_3.5/AP_EXT1_3.5.png)
+![AP EXT 1 connector pinout](/img/hardware/gen_3.5/AP_EXT1.png)
 
 <br/>
 <br/>
 
-![AP EXT 2 connector pinout](/img/hardware/gen_3.5/AP_EXT2_3.5.png)
+![AP EXT 2 connector pinout](/img/hardware/gen_3.5/AP_EXT2.png)
 
 <br/>
 <br/>
 
-![USER EXT 1 connector pinout](/img/hardware/gen_3.5/USER_EXT1_3.5.png)
+![USER EXT 1 connector pinout](/img/hardware/gen_3.5/USER_EXT1.png)
 
 <br/>
 <br/>
 
-![ETH connector  pinout](/img/hardware/gen_3.5/ETN_CONN_3.5.png)
+![ETH connector  pinout](/img/hardware/gen_3.5/ETH_CONN.png)
