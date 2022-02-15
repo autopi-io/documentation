@@ -4,7 +4,7 @@ title: Connection overview
 ---
 
 
-This is a diagram shows the connection possibilities of the second generation AutoPi.
+This is a diagram shows the connection possibilities of the 3.5 CAN-FD generation AutoPi.
 
 1. Sim card slot    
 2. USER EXT 1
@@ -26,9 +26,9 @@ This is a diagram shows the connection possibilities of the second generation Au
 
 This is a diagram shows the connection possibilities of the  generation AutoPi.
 
-1. AP EXT 2
+1. AP EXT 2 - BLE module connector
 2. Upstream USB connector to RPi
-3. AP EXT 1
+3. AP EXT 1 - OBD2 pass through connector
 4. Modem slot
 
 
@@ -44,7 +44,7 @@ This is a diagram shows the connection possibilities of the  generation AutoPi.
 
 ## Pinout
 
-This image is an overview of the GPIO pinout of the 3<sup>rd</sup> generation (TMU) AutoPi.
+This image is an overview of the GPIO pinout of the 3.5 CAN-FD generation (TMU) AutoPi.
 
 Pins marked with "in use" cannot be used for anything else. This will interrupt the functionality
 of the AutoPi. This I2C bus is used by the AutoPi, but can be shared with other devices. 
