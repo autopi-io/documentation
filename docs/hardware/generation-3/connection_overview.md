@@ -4,14 +4,15 @@ title: Connection overview
 ---
 
 
-This is a diagram shows the connection possibilities of the 3<sup>rd</sup> generation AutoPi.
+
+This diagram shows the 3<sup>rd</sup> generation frontside connections possibilities
 
 1. USER EXT 1
 2. USER EXT 2
 3. GPIO pins for RPi and external connections
 4. GPIO Jumper to always force 5V on the RPi
 5. JST connector for external speaker
-6. OBD-II connector to vehicle
+6. OBD-II connector to the vehicle
 7. RTC battery connector
 8. Micro USB connectors for external use
 9. SD card slot
@@ -24,11 +25,11 @@ This is a diagram shows the connection possibilities of the 3<sup>rd</sup> gener
 <br/>
 <br/>
 
-This is a diagram shows the connection possibilities of the  generation AutoPi.
+This diagram shows the 3<sup>rd</sup> generation backside connections possibilities
 
 1. AP EXT2 - BLE module connector
 2. Upstream USB connector to RPi
-3. AP EXT1 - OBD2 pass through connector
+3. AP EXT1 - OBD2 pass-through connector
 4. Modem slot
 
 

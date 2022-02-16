@@ -4,7 +4,7 @@ title: Connection overview
 ---
 
 
-This is a diagram shows the connection possibilities of the 3.5 CAN-FD generation AutoPi.
+This diagram shows the 3.5 CAN-FD generation frontside connections possibilities
 
 1. Sim card slot    
 2. USER EXT 1
@@ -12,7 +12,7 @@ This is a diagram shows the connection possibilities of the 3.5 CAN-FD generatio
 4. GPIO pins for RPi and external connections
 5. GPIO Jumper to always force 5V on the RPi
 6. JST connector for external speaker
-7. OBD-II connector to vehicle
+7. OBD-II connector to the vehicle
 8. RTC battery connector
 9. Micro USB connectors for external use
 
@@ -24,7 +24,7 @@ This is a diagram shows the connection possibilities of the 3.5 CAN-FD generatio
 <br/>
 <br/>
 
-This is a diagram shows the connection possibilities of the  generation AutoPi.
+This diagram shows the 3.5 CAN-FD generation backside connections possibilities
 
 1. AP EXT 2 - BLE module connector
 2. Upstream USB connector to RPi
@@ -44,7 +44,7 @@ This is a diagram shows the connection possibilities of the  generation AutoPi.
 
 ## Pinout
 
-This image is an overview of the GPIO pinout of the 3.5 CAN-FD generation (TMU) AutoPi.
+This image is an overview of the GPIO pinout of the 3.5 CAN-FD generation AutoPi.
 
 Pins marked with "in use" cannot be used for anything else. This will interrupt the functionality
 of the AutoPi. This I2C bus is used by the AutoPi, but can be shared with other devices. 
