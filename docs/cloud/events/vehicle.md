@@ -100,12 +100,12 @@ These events are fired by the trigger [`rpm_motor_event`](../../core/services/ob
 
 ## Geofence Events
 
-These events are triggered by the [`geofence_event`](../../core/services/tracking_manager.md#geofence_event) trigger in the [Tracking Manager](../../core/services/tracking_manager.md) after first acquiring a GPS signal after startup (entering the `on` power state) and while driving when the vehicle enters/exits a geofence. The geofence_slug is a URL-safe version of the geofence's name. 
+These events are triggered by the [`geofence_event`](../../core/services/tracking_manager.md#geofence_event) trigger in the [Tracking Manager](../../core/services/tracking_manager.md) after first acquiring a GPS signal after startup (entering the `on` power state) and while driving when the vehicle enters/exits a geofence. The geofence_slug is a URL-safe version of the geofence's name.
 
 | Tag | Description | Fields |
 | ------ | ------ | ------ |
-| `vehicle/geofence/{geofence_slug}/inside` | The vehicle is inside a geofence. | `fence_id` |
-| `vehicle/geofence/{geofence_slug}/outside` | The vehicle is outside a geofence. | `fence_id` |
+| `vehicle/geofence/<geofence_slug>/inside` | The vehicle is inside a geofence. | `fence_id` |
+| `vehicle/geofence/<geofence_slug>/outside` | The vehicle is outside a geofence. | `fence_id` |
 
 **FIELD DEFINITIONS**
 
