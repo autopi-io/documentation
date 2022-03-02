@@ -134,3 +134,35 @@ These events apply depending on which peripherals are installed inside the dongl
 | `sender` | Text | The phone number of whoever sent the message, including country code. | +4501020304 |
 | `timestamp` | Timestamp | The timestamp that the message was received on. Timestamp is in UTC. | 2019-03-13 10:08:30 |
 | `text` | Text | The text contained in the mesage. | 'An example text message.'  |
+
+## HostAPD Events
+
+| Tag | Description | Fields |
+| ------ | ------ | ------ |
+| `system/hostapd/client/<mac>/connected` | A client with MAC accress `<mac>` has connected to the device's hotspot. | - |
+| `system/hostapd/client/<mac>/disconnected` | A client with MAC accress `<mac>` has disconnected from the device's hotspot. | - |
+| `system/hostapd/client/<mac>/not_connected` | A client with MAC accress `<mac>` hasn't connected to the device's hotspot. This is only available with the custom handler `hostapd.expect_allow_list_handler`. | - |
+
+**FIELD DEFINITIONS**
+
+| Name | Type | Description | Example |
+| ------ | ------ | ------ | ------ |
+| `mac` | Text | A Media Access Control address. | 2C-54-91-88-C9-E3 |
+
+## USB Device Events
+
+| Tag | Description | Fields |
+| ------ | ------ | ------ |
+| `system/usb/<vendor_id>/<product_id>/connected` | A USB device was connected to the AutoPi. Run `usbutil.devices` to get a list of currently connected devices. | `bus`, `device`, `name` |
+| `system/usb/<vendor_id>/<product_id>/disconnected` | A USB device has disconnected from the AutoPi. | `bus`, `device`, `name` |
+| `system/usb/<vendor_id>/<product_id>/not_connected` | A device with `<vendor_id>` and `<product_id>` has been specified as expected, but was not found to be connected when the device was started. | - |
+
+**FIELD DEFINITIONS**
+
+| Name | Type | Description | Example |
+| ------ | ------ | ------ | ------ |
+| `bus` | Text | The (linux) bus number the device is connected on. | 001 |
+| `device` | Text | The device number the system has assigned to the device. | 001 |
+| `vendor` | Text | The vendor hexadecimal number/ID of the device. | 1d6d |
+| `product` | Text | The product's hexadecimal number/ID of the device. | 0002 |
+| `name` | Text | The device's name. | Linux Foundation 2.0 root hub |
