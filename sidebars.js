@@ -224,6 +224,7 @@ module.exports = {
                 "hardware/generation-3.5-CAN_FD/gen-3.5-intro",
                 "hardware/generation-3.5-CAN_FD/connection-overview",
                 "hardware/generation-3.5-CAN_FD/mounting_holes",
+                "hardware/generation-3.5-CAN_FD/device_dimensions",
             ],
             "label": "Generation 3.5 CAN-FD",
             "type": "category",

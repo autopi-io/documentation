@@ -5,4 +5,4 @@ title: Mounting holes
 
 
 
-![connection overview front](/img/hardware/gen_3.5/mounting_holes.png)
+![Mounting holes](/img/hardware/gen_3.5/mounting_holes.png)
