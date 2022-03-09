@@ -135,13 +135,13 @@ These events apply depending on which peripherals are installed inside the dongl
 | `timestamp` | Timestamp | The timestamp that the message was received on. Timestamp is in UTC. | 2019-03-13 10:08:30 |
 | `text` | Text | The text contained in the mesage. | 'An example text message.'  |
 
-## HostAPD Events
+## Hotspot Events
 
 | Tag | Description | Fields |
 | ------ | ------ | ------ |
-| `system/hostapd/client/<mac>/connected` | A client with MAC accress `<mac>` has connected to the device's hotspot. | - |
-| `system/hostapd/client/<mac>/disconnected` | A client with MAC accress `<mac>` has disconnected from the device's hotspot. | - |
-| `system/hostapd/client/<mac>/not_connected` | A client with MAC accress `<mac>` hasn't connected to the device's hotspot. This is only available with the custom handler `hostapd.expect_allow_list_handler`. | - |
+| `system/hotspot/client/<mac>/connected` | A client with MAC accress `<mac>` has connected to the device's hotspot. | - |
+| `system/hotspot/client/<mac>/disconnected` | A client with MAC accress `<mac>` has disconnected from the device's hotspot. | - |
+| `system/hotspot/client/<mac>/not_connected` | A client with MAC accress `<mac>` hasn't connected to the device's hotspot. This is only available with the custom handler `hostapd.expect_allow_list_handler`. | - |
 
 **FIELD DEFINITIONS**
 
