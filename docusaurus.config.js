@@ -14,7 +14,8 @@ module.exports = {
       { property: 'og:type', content: 'website' },
     ],
     algolia: {
-      apiKey: '9f2c3a395a2ba729c5cfd5b8d443d4fd',
+      appId: '7BRH96O31B',
+      apiKey: '6dfef04434e917765e1dd4f89e170e74',
       indexName: 'autopi',
     },
     gtag: {      
