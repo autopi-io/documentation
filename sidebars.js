@@ -5,14 +5,17 @@ module.exports = {
             "items": [
                 "cloud/configuration/cloud-config-intro",
                 "cloud/configuration/cloud-config-accelerometer",
+                "cloud/configuration/cloud-config-alerts",
                 "cloud/configuration/cloud-config-audio",
                 "cloud/configuration/cloud-config-bluetooth",
+                "cloud/configuration/cloud-config-charging-session",
                 "cloud/configuration/cloud-config-cloud-storage",
                 "cloud/configuration/cloud-config-docker",
                 "cloud/configuration/cloud-config-key-fob",
                 "cloud/configuration/cloud-config-mqtt",
                 "cloud/configuration/cloud-config-obd",
                 "cloud/configuration/cloud-config-power",
+                "cloud/configuration/cloud-config-rfid",
                 "cloud/configuration/cloud-config-system",
                 "cloud/configuration/cloud-config-tracking",
                 "cloud/configuration/cloud-config-trip",
@@ -66,9 +69,12 @@ module.exports = {
                 "core/commands/core-commands-intro",
                 "core/commands/core-commands-acc",
                 "core/commands/core-commands-audio",
+                "core/commands/core-commands-avrdude",
                 "core/commands/core-commands-ble",
+                "core/commands/core-commands-can",
                 "core/commands/core-commands-clock",
                 "core/commands/core-commands-cloud",
+                "core/commands/core-commands-cryptoauth",
                 "core/commands/core-commands-dac",
                 "core/commands/core-commands-ec2x",
                 "core/commands/core-commands-fileutil",
@@ -81,11 +87,14 @@ module.exports = {
                 "core/commands/core-commands-power",
                 "core/commands/core-commands-qmi",
                 "core/commands/core-commands-reactor",
+                "core/commands/core-commands-rfid",
                 "core/commands/core-commands-rpi",
+                "core/commands/core-commands-socketcan",
                 "core/commands/core-commands-spm",
                 "core/commands/core-commands-stn",
                 "core/commands/core-cmd-time",
                 "core/commands/core-commands-tracking",
+                "core/commands/core-commands-usbutil",
                 "core/commands/core-commands-wifi"
             ],
             "label": "Commands",
@@ -120,11 +129,15 @@ module.exports = {
                 "core/services/core-services-api-service",
                 "core/services/core-services-audio-manager",
                 "core/services/core-services-ble-manager",
+                "core/services/core-services-can-manager",
                 "core/services/core-services-cloud-manager",
+                "core/services/core-services-docker-monitor",
                 "core/services/core-services-ec2x-manager",
                 "core/services/core-services-event-reactor",
                 "core/services/core-services-key-fob-manager",
                 "core/services/core-services-obd-manager",
+                "core/services/core-services-process-manager",
+                "core/services/core-services-rfid-manager",
                 "core/services/core-services-spm-manager",
                 "core/services/core-services-tracking-manager"
             ],
@@ -202,7 +215,7 @@ module.exports = {
                 "hardware/generation-2/setup-your-gen-2-diy-edition",
                 "hardware/generation-2/update-firmware-of-eg25-g-module",
                 "hardware/generation-2/using-gpio-and-hdmi-with-the-gen-2",
-                "hardware/generation-2/using-the-rpi3-adapter",
+                "hardware/generation-2/using-the-rpi3-adapter"
             ],
             "label": "Generation 2",
             "type": "category"
@@ -214,7 +227,7 @@ module.exports = {
                 "hardware/generation-3/developer-kit",
                 "hardware/generation-3/installing-external-antennas",
                 "hardware/generation-3/obd-connector-pinout",
-                "hardware/generation-3/setup-your-tmu-diy-edition",
+                "hardware/generation-3/setup-your-tmu-diy-edition"
             ],
             "label": "Generation 3",
             "type": "category"
@@ -223,11 +236,11 @@ module.exports = {
             "items": [
                 "hardware/generation-3.5-CAN_FD/gen-3.5-intro",
                 "hardware/generation-3.5-CAN_FD/connection-overview",
-                "hardware/generation-3.5-CAN_FD/mounting_holes",
                 "hardware/generation-3.5-CAN_FD/device_dimensions",
+                "hardware/generation-3.5-CAN_FD/mounting_holes"
             ],
-            "label": "Generation 3.5 CAN-FD",
-            "type": "category",
-        },
+            "label": "Generation 3.5 Can Fd",
+            "type": "category"
+        }
     ]
 };

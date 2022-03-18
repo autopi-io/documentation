@@ -15,7 +15,7 @@ Power down system and put device into hibernate state.
 
 **OPTIONAL ARGUMENTS**
 
-  - **`delay`** (str): Delay in seconds before powering down. Default is `10`.
+  - **`delay`** (str): Delay in seconds before powering down. Default is `60`.
   - **`confirm`** (bool): Acknowledge the execution of this command. Default is `False`.
   - **`reason`** (str): Reason code that tells why we decided to hibernate. Default is `unknown`.
 
@@ -63,7 +63,7 @@ Power down system and put device into sleep state.
 **OPTIONAL ARGUMENTS**
 
   - **`interval`** (int): Sleep interval in seconds. Default is `60`.
-  - **`delay`** (str): Delay in seconds before powering down. Default is `10`.
+  - **`delay`** (str): Delay in seconds before powering down. Default is `60`.
   - **`modem_off`** (bool): Power off 3V3 supply to modem on mPCIe slot. Default is `False`.
   - **`acc_off`** (bool): Put accelerometer into standby. Default is `False`.
   - **`confirm`** (bool): Acknowledge the execution of this command. Default is `False`.

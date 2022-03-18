@@ -63,6 +63,11 @@ UART wakeup pulse timing configuration.
 Manual calibration of voltage measurement.
 Default value `0000` will restore to the factory calibration.
 
+**OPTIONAL ARGUMENTS**
+
+  - **`value`** (int): The value to set the calibration to. Default is 0000.
+  - **`confirm`** (bool): Achknowledge the execution of this command. Default is `False`.
+
 
 ----
 ## `stn.volt_change_wake`

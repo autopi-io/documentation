@@ -20,6 +20,13 @@ title: System
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
 | AUTO MOUNT USB | Automatically mount and and unmount USB mass storage devices? Mounted drives can be found on the filesystem below '/media'. | bool | - | - |
+| EXPECTED USB DEVICES | Specify a list of devices' vendor and product IDs in the following format: `<vendor_id>:<product_id>`. Example: `0123:abcd` | str | ['2c7c:0125'] | - |
+
+#### Swap
+
+| Name | Description | Type | Default | Unit |
+| ------ | ------ | ------ | ------ | ------ |
+| ENABLED | Allocate more virtual memory by using a swap file? | bool | False | - |
 
 ## Locale
 
@@ -56,13 +63,26 @@ title: System
 
 ## Security
 
+#### Decryption
+
+| Name | Description | Type | Default | Unit |
+| ------ | ------ | ------ | ------ | ------ |
+| FUNCTION | Qualified name of the function used to decrypt on the device. | str | - | - |
+
+#### Encryption
+
+| Name | Description | Type | Default | Unit |
+| ------ | ------ | ------ | ------ | ------ |
+| KEY | Key used for encryption. It must be 16, 24, or 32 characters long. | str | - | - |
+| ALGORITHM | Algorithm used for encryption. | str | AES | - |
+
 #### Rsa
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
 | KEY SIZE | Specify bit size of RSA key pair to be generated for this device. | int | 0 | - |
-| PUBLIC KEY | Public RSA key belonging to this device. | str | - | - |
 | PRIVATE KEY | Private RSA key belonging to this device. | str | - | - |
+| PUBLIC KEY | Public RSA key belonging to this device. | str | - | - |
 
 ## Setup
 

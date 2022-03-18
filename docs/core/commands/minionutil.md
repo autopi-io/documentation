@@ -14,6 +14,20 @@ Change to different master host.
 **OPTIONAL ARGUMENTS**
 
   - **`confirm`** (bool): Acknowledge the execution of this command. Default is `False`.
+  - **`show_changes`** (bool): Show the changes made in the files `/etc/salt/minion` and `/boot/host.aliases`. Default is `False`.
+
+:::note
+When the master (hub) is changed, the API endpoint URL won't be updated automatically
+:::
+unless there is a pending sync (for example coming from an update) that will execute the
+minion.config state.
+
+:::note
+When moving back and forth between envs and the key hasn't been accepted,
+:::
+the device will keep retrying to connect to the master. If then the salt-minion service
+is restarted, the service won`t shutdown until a SIGKILL is sent to the process (i.e. the
+salt-minion service will keep retrying to connect to the salt-master)
 
 
 ----

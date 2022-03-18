@@ -19,6 +19,15 @@ Shows this help information.
 
 
 ----
+## `tracking.load_geofences`
+
+Loads geofences.
+**OPTIONAL ARGUMENTS**
+
+  - `path` path to the geofences file
+
+
+----
 ## `tracking.manage`
 
 Runtime management of the underlying service instance.

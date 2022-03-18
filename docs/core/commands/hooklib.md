@@ -3,6 +3,24 @@ id: core-commands-hooklib
 title: Hooklib
 ---
 
+## `hooklib.alternating_readout_filter`
+
+Filter that only returns alternating/changed results.
+
+
+----
+## `hooklib.battery_converter`
+
+Converts a voltage reading result with battery charge state and level.
+
+
+----
+## `hooklib.battery_event_trigger`
+
+Looks for battery results and triggers `vehicle/battery/*` event when voltage changes.
+
+
+----
 ## `hooklib.echo_handler`
 
 Mainly for testing.

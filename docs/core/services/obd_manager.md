@@ -32,6 +32,12 @@ Converts Diagnostics Trouble Codes (DTCs) result into a cloud friendly format.
 Converts speed value of 255 (max value 0xFF) to 0. Some vehicles can sporadically return value of 255.
 
 ## Filters
+### `alternating_dtc`
+
+Filters out repeating Diagnostics Trouble Codes (DTCs).
+
+
+----
 ### `alternating_readout`
 
 Filter that only returns alternating/changed results.
@@ -141,7 +147,7 @@ Monitors messages on bus until limit or duration is reached.
 
 **OPTIONAL ARGUMENTS**
 
-  - **`wait`** (bool): Wait for each message/line to read according to the default timeout of the serial connection (default 1 second). Otherwise there will only be waiting on the first line. line/message. Default value is `False`.
+  - **`wait`** (bool): Wait for each message/line to read according to the default timeout of the serial connection (default 1 second). Otherwise there will only be waiting on the first line/message. Default value is `False`.
   - **`limit`** (int): The maximum number of messages to read. Default value is `500`.
   - **`duration`** (float): How many seconds to monitor? If not set there is no limitation.
   - **`mode`** (int): The STN monitor mode. Default is `0`.
@@ -233,6 +239,12 @@ Queries an OBD command.
 **OPTIONAL ARGUMENTS, J1939 SPECIFIC**
 
   - **`j1939_pgn_filter`** (str): Ensure J1939 PGN filter is added. Value must consist of `<PGN>[,<Target Address>]`.
+
+
+----
+### `query_many`
+
+Queries many OBD commands in one call.
 
 
 ----

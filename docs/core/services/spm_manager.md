@@ -6,19 +6,19 @@ title: Spm Manager
 ## Handlers
 ### `flash_firmware`
 
-Flashes new SPM firmware to ATtiny.
+Flashes new SPM firmware to the ATtiny.
+
+
+----
+### `fuse`
+
+Manage fuse of the ATtiny.
 
 
 ----
 ### `heartbeat`
 
 Triggers SPM heartbeat and fires power on event when booting.
-
-
-----
-### `heartbeat`
-
-Reset/restart ATtiny.
 
 
 ----
@@ -40,3 +40,9 @@ Queries a given SPM command.
 **ARGUMENTS**
 
   - **`cmd`** (str): The SPM command to query.
+
+
+----
+### `reset`
+
+Reset/restart ATtiny.

@@ -9,7 +9,7 @@ Manages current connection.
 
 **OPTIONAL ARGUMENTS**
 
-  - **`close`** (bool): Close MMA8X5X connection? Default value is `False`. 
+  - **`close`** (bool): Close connection? Default value is `False`. 
 
 
 **EXAMPLES**
@@ -38,7 +38,7 @@ Dumps raw XYZ readings to screen or file.
   - **`duration`** (int): How many seconds to record data? Default value is `1`.
   - **`file`** (str): Write data to a file with the given name.
   - **`range`** (int): Maximum number of g-forces being measured. Default value is `8`.
-  - **`rate`** (float): How many Hz (samples per second)? Default value is `50`.
+  - **`rate`** (float): How many Hz (samples per second)? Default value is `12.5`.
   - **`decimals`** (int): How many decimals to calculate? Default value is `4`.
   - **`timestamp`** (bool): Add timestamp to each sample? Default value is `True`.
   - **`sound`** (bool): Play sound when starting and stopping recording? Default value is `True`.

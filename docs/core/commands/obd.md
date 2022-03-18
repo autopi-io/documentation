@@ -296,6 +296,12 @@ Queries a given OBD command. To see supported OBD commands for your vehicle run:
 
 
 ----
+## `obd.query_many`
+
+Queries many OBD commands in one call.
+
+
+----
 ## `obd.recordings`
 
 Lists all dumped recordings available on disk.

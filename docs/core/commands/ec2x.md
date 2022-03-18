@@ -53,6 +53,20 @@ Deletes a single file or all the files in the specified storage.
 
 
 ----
+## `ec2x.delete_sms`
+
+Delete messages from message storage.
+
+It is possible to list possible for deleting if no indexes are passed and the `delete_all` kwarg is not passed (or set to `False`).
+
+Keyword argumnets:
+
+- index (int): The index of the message to be deleted. Default None.
+- delete_all (bool): Set this boolean to true if all messages stored in the modem should be deleted. Default `False`.
+- confirm (bool): A confirm flag when deleting messages. Default `False`.
+
+
+----
 ## `ec2x.download`
 
 Low-level function to download files.
@@ -359,6 +373,11 @@ lists the information of a single file or all files in the required storage medi
 
 List all messages from message storage.
 
+:::note
+In order to use this function, you need to first execute `ec2x.sms_format_config value=1`
+:::
+to set the correct format of the SMS messages.
+
 
 ----
 ## `ec2x.manage`
@@ -387,6 +406,63 @@ Runtime management of the underlying service instance.
   - `ec2x.manage reactor list`
   - `ec2x.manage reactor show *`
   - `ec2x.manage run handler="exec" args="[\"ATI\"]" returner="cloud"`
+
+
+----
+## `ec2x.modem_functionality`
+
+Get or set the modem`s functionality level. There are three values that can be selected:
+
+
+1. `minimum` - minimal functionality level
+2. `full` - full functionality level
+3. `disable` - disable all communication going in and from the modem
+
+Parameters:
+
+- value (string): Default None. If the functionality level on the modem should be changed, this
+parameter needs to be set to one of the three available values: [`minimum`, `full`, `disable`]
+- reset (boolean): Default False. This parameter is ignored if value == None. If set to a truthy
+value, the modem will be completely restarted with the execution of this function
+
+
+----
+## `ec2x.network_registration_status`
+
+Gets the network registration status from the modem. There are five possible results:
+
+
+1. `not-registered-not-searching`: Modem isn`t registered to a network. The modem isn`t searching for a new network.
+2. `not-registered-searching`: Modem isn`t registered to a network, but searching for one.
+3. `registration-denied`: Registration has been denied.
+4. `registered-home`: Modem is registered to a home network.
+5. `registered-roaming`: Modem is registered to a roaming network.
+
+
+----
+## `ec2x.operator_selection`
+
+This command returns the current operators and their status, and allows setting automatic or
+manual network selection. There are three actions that can be achieved through this function.
+
+The Search action returns a set of five parameters each representing an operator present in the
+network. This list can later be used to attempt connecting to a specific operator.
+
+The Read action returns the current mode and the currently selected operator. If no operator is
+selected, `<format>`, `<operator>` and `<access_tech>` are omitted.
+
+The Write action forces an attempt to select and register the GSM/UMTS network operator. If the
+selected operator is not available, no other operator shall be selected (except when using `<mode>`=4).
+
+Parameters:
+
+- search (bool): Default False. Whether the search action should be executed. Search action attempts to
+retrieve all currently available operators in the area. This can take a long time. If this
+argument is provided, all other parameters will be ignored.
+- mode (string): Default None. What mode should the operator selection be put in.
+- op_format (string): Default None. In what format is the operator name written in.
+- operator (string): Default None. The operator name to attempt a connection with.
+- access_tech (string): Default None. The access technology that should be used.
 
 
 ----
@@ -463,6 +539,12 @@ Possible values:
 ----
 ## `ec2x.sms_format_config`
 
+Gets or sets the SMS format configuration.
+
+Possible values:
+
+- 0: PDU mode - entire TP data units used (hex responses). This is the default value.
+- 1: Text mode - headers and body of the message given as separate parameters.
 
 
 ----

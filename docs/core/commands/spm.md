@@ -3,9 +3,21 @@ id: core-commands-spm
 title: Spm
 ---
 
+## `spm.battery`
+
+Gets current battery voltage
+
+
+----
 ## `spm.flash_firmware`
 
-Flashes new SPM firmware to ATtiny.
+Flashes new SPM firmware to the ATtiny.
+
+
+----
+## `spm.fuse`
+
+Manage fuse of the ATtiny.
 
 
 ----

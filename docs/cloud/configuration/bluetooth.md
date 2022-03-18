@@ -13,8 +13,8 @@ title: Bluetooth
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
-| DEVICE | Specify Bluetooth Low Energy device provided by expansion board connected to the AutoPi main board. | str | - | - |
 | MAC ADDRESS | MAC address of the BLE device. | str | - | - |
+| DEVICE | Specify Bluetooth Low Energy device provided by expansion board connected to the AutoPi main board. | str | - | - |
 
 ###### Firmware
 
