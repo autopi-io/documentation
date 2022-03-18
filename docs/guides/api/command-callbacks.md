@@ -77,12 +77,12 @@ BODY
 }
 ```
 
-#### Security
+#### Verifying the requests using the HMAC signature.
 
 The response contains a HMAC sign in the `X-Request-Signature` header that can be used to verify the integrity of the webhook request.
 The response json is signed with HMAC SHA-256 using the Authorization header used for executing the command (Without the 'APIToken' or 'Bearer' part).
 
-Verifyin the request is done like this
+Example python code that verifies the request.
 ```python
 import hmac
 import hashlib
@@ -103,6 +103,8 @@ Each response always includes a unique job id, so no two request signatures are 
 ### 3. Debugging: Getting information about the scheduled callback
 
 The `/dongle/devices/{DEVICE_ID}/callback/{JOB_ID}/` endpoint allows you to get the callback object from our system.
+
+Each callback will be stored in our system for 2 days before automatically expiring.
 
 ```json
 GET /dongle/devices/{DEVICE_ID}/callback/{JOB_ID}/
