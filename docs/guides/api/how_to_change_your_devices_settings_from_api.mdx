@@ -111,7 +111,8 @@ This time, we're going to make a `POST` request to `/dongle/settings/?device_id=
 a JSON body. It's also important to note here that you do need to set the `Content-Type` header to
 `application/json` as the server will reject the request otherwise. Here's the JSON format:
 
-``` {
+```json
+{
     "{{setting_uuid_1}}": {{new_setting_value1}},
     "{{setting_uuid_2}}": {{new_setting_value2}}
 }
