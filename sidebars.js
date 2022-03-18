@@ -150,11 +150,12 @@ module.exports = {
         {
             "items": [
                 "guides/api/api-intro",
+                "guides/api/command-webhook-callbacks",
                 "guides/api/how-to-change-your-devices-settings-from-api",
                 "guides/api/how-to-export-data-from-api",
                 "guides/api/send-device-data-to-own-server"
             ],
-            "label": "Api",
+            "label": "API",
             "type": "category"
         },
         {
@@ -202,6 +203,7 @@ module.exports = {
         "guides/reflashing-your-device",
         "guides/remotely-waking-up-your-device",
         "guides/setting-up-our-device-with-verizon-wireless",
+        "guides/troubleshooting-device-issues",
         "guides/upgrading-your-raspberry-pi",
         "guides/using-the-autopi-with-an-external-power-supply"
     ],
