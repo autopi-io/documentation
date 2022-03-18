@@ -71,7 +71,7 @@ def generate_sidebars(src_dir):
         else:
             return {
                 'type': 'category',
-                'label': dir_name.replace('_', ' ').replace('-', ' ').title().replace('Obd Ii', 'OBD-II'),
+                'label': dir_name.replace('_', ' ').replace('-', ' ').title().replace('Obd Ii', 'OBD-II').replace('Api', 'API'),
                 'items': items,
             }
     
