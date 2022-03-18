@@ -5,7 +5,7 @@ title: Command Webhook Callbacks
 
 It is possible to get notified via webhook when a command completes on a device.
 
-#### Quick overview of the functionality.
+### Overview
 
 1. Execute command through the API
 2. If the device does respond, a webhook request is sent with the result of the command.
