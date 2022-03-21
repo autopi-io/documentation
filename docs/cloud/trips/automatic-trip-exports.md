@@ -124,12 +124,3 @@ In the response for each task you can see the task ID, and which trip ID it was 
 Now you can use the task ID to retrieve the result, in this case: 100
 
 `GET tasks/100/result/`
-
-## Changes
-
-| Version | Date | Who | Change |
-|----|-----|--------|-----|
-| 1.0 | 30/01/20 | MHA | Initial version |
-| 1.1 | 03/02/20 | MHA | Added authentication section |
-| 1.2 | 05/02/20 | MHA | Added section on how to re-run an export |
-| 1.3 | 15/04/20 | MHA | Added sections on how to manually retrieve results based on task_id |
