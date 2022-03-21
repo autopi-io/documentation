@@ -36,7 +36,7 @@ def generate_sidebars(src_dir):
 
         items = []
 
-        files = [f.name for f in os.scandir(dir_path) if f.is_file()]
+        files = [f.name for f in os.scandir(dir_path) if f.is_file() and not f.name == ".DS_Store"]
         dirs = [d for d in os.scandir(dir_path) if d.is_dir()]
 
         files.sort()
