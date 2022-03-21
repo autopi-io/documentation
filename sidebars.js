@@ -46,6 +46,14 @@ module.exports = {
         },
         {
             "items": [
+                "cloud/trips/introduction",
+                "cloud/trips/automatic-exports"
+            ],
+            "label": "Trips",
+            "type": "category"
+        },
+        {
+            "items": [
                 "cloud/user-manual/user-manual-intro",
                 {
                     "items": [
@@ -59,8 +67,7 @@ module.exports = {
             "type": "category"
         },
         "cloud/cloud-jobs",
-        "cloud/cloud-triggers",
-        "cloud/cloud-trips"
+        "cloud/cloud-triggers"
     ],
     "coreSidebar": [
         "core/core-intro",
@@ -203,6 +210,7 @@ module.exports = {
         "guides/reflashing-your-device",
         "guides/remotely-waking-up-your-device",
         "guides/setting-up-our-device-with-verizon-wireless",
+        "guides/troubleshooting-device-issues",
         "guides/upgrading-your-raspberry-pi",
         "guides/using-the-autopi-with-an-external-power-supply"
     ],

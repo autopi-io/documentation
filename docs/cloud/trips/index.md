@@ -1,6 +1,6 @@
 ---
-id: cloud-trips
-title: Trips
+id: introduction
+title: Introduction
 ---
 
 Trips are automatically detected based on the events sent from the device, by default the [engine events](events/vehicle.md#engine-events) are used. 
