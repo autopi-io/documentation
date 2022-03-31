@@ -56,9 +56,9 @@ we will move on to the workflows:
   device. You can set this to the following values:
 
     1. *less than 0*: The worker will loop forever and execute the workflow every time
-    2. *0*: The worker won't work. This is the equivalent of disabling the worker.
-    3. *more than 0*: The worker will loop the amount of times specified and then stop. This can be
-      used if you want the worker to do a specified amount of work and then stop working.
+    2. *0 or more than 0*: The worker will loop the amount of times specified and then stop. This can be
+      used if you want the worker to do a specified amount of work and then stop working. The total
+      amount of executions that will occur are equal to the loop count + 1.
 
 5. **Order**: This is the order that the workers are going to be executed in. This is a more
   'global' field, meaning that it will affect the execution of the rest of the workers in this
