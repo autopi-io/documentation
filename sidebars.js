@@ -61,7 +61,8 @@ module.exports = {
                     ],
                     "label": "Car Explorer",
                     "type": "category"
-                }
+                },
+                "cloud/user-manual/software-updates"
             ],
             "label": "User Manual",
             "type": "category"
