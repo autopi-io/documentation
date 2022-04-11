@@ -211,6 +211,7 @@ module.exports = {
         "guides/power-cycle-for-electric-vehicles",
         "guides/reflashing-your-device",
         "guides/remotely-waking-up-your-device",
+        "guides/rfid-integartion",
         "guides/setting-up-our-device-with-verizon-wireless",
         "guides/upgrading-your-raspberry-pi",
         "guides/using-the-autopi-with-an-external-power-supply"

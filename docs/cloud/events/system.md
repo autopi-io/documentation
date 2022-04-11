@@ -121,6 +121,21 @@ These events apply depending on which peripherals are installed inside the dongl
 | `old` | Timestamp | The old time before synchronization. | 2019-03-13 10:08:30 |
 | `source` | Text | The source that was synchronized against. | `network`, `ntp`, `rtc`  |
 
+## RFID Events
+
+| Tag | Description | Fields |
+| ------ | ------ | ------ |
+| `system/rfid/<rfid_token>/read` | A new RFID token has been read by the reader. | - |
+| `system/rfid/<rfid_token>/rejected` | A token that was read was rejected. | - |
+| `system/rfid/<rfid_token>/authenticated` | A token that was read was authenticated. | `valid_from`, `valid_for` |
+
+**FIELD DEFINITIONS**
+
+| Name | Type | Description | Example |
+| ------ | ------ | ------ | ------ |
+| `valid_from` | Timestamp | From what time is the token valid. The timestamp is in UTC. | 2019-03-13 10:08:30 |
+| `valid_for` | Number | For how long (in seconds) is the token valid for. | 7200  |
+
 ## Short Message Service (SMS) Events
 
 | Tag | Description | Fields |
