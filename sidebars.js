@@ -67,6 +67,7 @@ module.exports = {
             "label": "User Manual",
             "type": "category"
         },
+        "cloud/geofences",
         "cloud/cloud-jobs",
         "cloud/cloud-triggers"
     ],
