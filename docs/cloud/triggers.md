@@ -11,7 +11,7 @@ _Webhooks_ are supported so you can integrate with almost any service or system.
   - [IFTFT](https://ifttt.com)
 
 :::note
-For more information on how to setup triggers in the AutoPi Cloud please go to this community guide: https://community.autopi.io/t/a-guide-to-create-and-use-triggers
+For more information on how to setup triggers in the AutoPi Cloud please see [this guide](../guides/a_guide_to_triggers.md)
 :::
 
 :::tip
