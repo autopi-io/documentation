@@ -95,7 +95,17 @@ These events are fired by the trigger [`rpm_motor_event`](../../core/services/ob
 
 ## Geofence Events
 
-These events are triggered by the [`geofence_event`](../../core/services/tracking_manager.md#geofence_event) trigger in the [Tracking Manager](../../core/services/tracking_manager.md) after first acquiring a GPS signal after startup (entering the `on` power state) and while driving when the vehicle enters/exits a geofence. The geofence_slug is a URL-safe version of the geofence's name.
+These events are triggered by the [`geofence_event`](../../core/services/tracking_manager.md#geofence_event) trigger in the [Tracking Manager](../../core/services/tracking_manager.md) after first acquiring a GPS signal after startup (entering the `on` power state). 
+The geofence_slug is a URL-safe version of the geofence's name.
+
+`enter|exit` gets triggered while driving when the vehicle enters/exits a geofence.
+
+| Tag | Description | Fields |
+| ------ | ------ | ------ |
+| `vehicle/geofence/<geofence_slug>/enter` | The vehicle went from being outside a geofence to inside a geofence. | `fence_id` |
+| `vehicle/geofence/<geofence_slug>/exit` | The vehicle went from being inside a geofence to outside a geofence. | `fence_id` |
+
+`inside|outside` events are triggered once for each geofence when the device wakes up, and is a snapshot of the current state.
 
 | Tag | Description | Fields |
 | ------ | ------ | ------ |
