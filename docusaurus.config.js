@@ -10,17 +10,13 @@ module.exports = {
   trailingSlash: true,
   themeConfig: {
     image: 'img/favicon-194x194.png',
-    metadatas: [
+    metadata: [
       { property: 'og:type', content: 'website' },
     ],
     algolia: {
       appId: '7BRH96O31B',
       apiKey: '6dfef04434e917765e1dd4f89e170e74',
       indexName: 'autopi',
-    },
-    gtag: {      
-      trackingID: 'G-DB2BZPKYN9',      
-      anonymizeIP: false,
     },
     navbar: {
       logo: {
@@ -121,6 +117,10 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
           editUrl: "https://github.com/autopi-io/documentation/edit/master/"
+        },
+        gtag: {      
+          trackingID: 'G-DB2BZPKYN9',      
+          anonymizeIP: false,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.scss'),
