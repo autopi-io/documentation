@@ -247,6 +247,7 @@ module.exports = {
                 "hardware/generation-3.5-CAN_FD/gen-3.5-intro",
                 "hardware/generation-3.5-CAN_FD/connection-overview",
                 "hardware/generation-3.5-CAN_FD/device_dimensions",
+                "hardware/generation-3.5-CAN_FD/installing-external-antennas",
                 "hardware/generation-3.5-CAN_FD/mounting_holes"
             ],
             "label": "Generation 3.5 Can Fd",
