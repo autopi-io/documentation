@@ -13,11 +13,11 @@ aren't sure if AutoPi devices will work well with those.
 
 ## Enabling the RFID Component
 
-1. Power on the device
+1. **Power on the device**  
    The RFID reader must first be connected to the AutoPi device. Power on the device, as we will need to gather some
    information for the RFID reader, namely, the vendor and product IDs.
 
-2. Get the RFID reader's vendor ID and product ID
+2. **Get the RFID reader's vendor ID and product ID**  
    Once the device is powered on, you can run the following command:
    ```
    $ usbutil.devices
@@ -38,13 +38,15 @@ aren't sure if AutoPi devices will work well with those.
    Note that sometimes the RFID reader might not have a name, similarly to our custom hub. Grab the vendor and product
    values for your RFID reader and note them down for the next step.
 
-3. Type in the RFID reader's information in the Cloud
+3. **Type in the RFID reader's information in the Cloud**  
    Now, it's time we enable the RFID reader from the Cloud. Navigate to [my.autopi.io](https://my.autopi.io) and go to
    the Advanced > Settings > RFID page.
+
    :::note
    If you don't see the RFID section in the Advanced Settings, you should reach out to our sales department by writing
    an email to sales@autopi.io.
    :::
+
    Now, we need to first enable the RFID reader functionality by clicking the Enabled field. It should say True. Next,
    we need to type in the vendor and product ID combo that we noted down for the RFID reader under the Device Vendor
    Product Id field. The format is the following: `<vendor_id>:<product_id>`. Here's an example: `2c7c:0125`. With those
