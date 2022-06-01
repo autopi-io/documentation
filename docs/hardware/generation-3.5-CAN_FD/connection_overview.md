@@ -3,6 +3,9 @@ id: connection-overview
 title: Connection overview
 ---
 
+## Connectivity
+
+### Front side
 
 This diagram shows the 3.5 CAN-FD generation frontside connections possibilities
 
@@ -16,13 +19,9 @@ This diagram shows the 3.5 CAN-FD generation frontside connections possibilities
 8. RTC battery connector
 9. Micro USB connectors for external use
 
-<br/>
-<br/>
-
 ![connection overview front](/img/hardware/gen_3.5/side1.png)
 
-<br/>
-<br/>
+### Back side
 
 This diagram shows the 3.5 CAN-FD generation backside connections possibilities
 
@@ -32,17 +31,11 @@ This diagram shows the 3.5 CAN-FD generation backside connections possibilities
 4. Modem slot
 
 
-
-<br/>
-<br/>
-
-
 ![connection overview back](/img/hardware/gen_3.5/side2.png)
 
-<br/>
-<br/>
-
 ## Pinout
+
+### GPIO Pins
 
 This image is an overview of the GPIO pinout of the 3.5 CAN-FD generation AutoPi.
 
@@ -53,22 +46,18 @@ All other pins are free and their functionality follows that of the Raspberry Pi
 
 ![GPIO pinout](/img/hardware/gen_3.5/gpio_pinout_gen3.5.png) 
 
-<br/>
-<br/>
+### AutoPi Extension Port 1
 
 ![AP EXT 1 connector pinout](/img/hardware/gen_3.5/AP_EXT1.png)
 
-<br/>
-<br/>
+### AutoPi Extension Port 2
 
 ![AP EXT 2 connector pinout](/img/hardware/gen_3.5/AP_EXT2.png)
 
-<br/>
-<br/>
+### User Extension Port 1
 
 ![USER EXT 1 connector pinout](/img/hardware/gen_3.5/USER_EXT1.png)
 
-<br/>
-<br/>
+### Ethernet Connection Port
 
-![ETH connector  pinout](/img/hardware/gen_3.5/ETH_CONN.png)
+![ETH connector pinout](/img/hardware/gen_3.5/ETH_CONN.png)

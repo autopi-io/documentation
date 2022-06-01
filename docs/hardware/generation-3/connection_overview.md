@@ -3,7 +3,9 @@ id: connection-overview
 title: Connection overview
 ---
 
+## Connectivity
 
+### Front side
 
 This diagram shows the 3<sup>rd</sup> generation frontside connections possibilities
 
@@ -17,13 +19,9 @@ This diagram shows the 3<sup>rd</sup> generation frontside connections possibili
 8. Micro USB connectors for external use
 9. SD card slot
 
-<br/>
-<br/>
-
 ![connection overview front](/img/hardware/gen_3/side1.png)
 
-<br/>
-<br/>
+### Back side
 
 This diagram shows the 3<sup>rd</sup> generation backside connections possibilities
 
@@ -32,17 +30,11 @@ This diagram shows the 3<sup>rd</sup> generation backside connections possibilit
 3. AP EXT1 - OBD2 pass-through connector
 4. Modem slot
 
-
-
-<br/>
-<br/>
-
 ![connection overview back](/img/hardware/gen_3/side2.png)
 
-<br/>
-<br/>
+## Pinouts
 
-## Pinout
+### GPIO Pins
 
 This image is an overview of the GPIO pinout of the 3<sup>rd</sup> generation (TMU) AutoPi.
 
@@ -59,26 +51,20 @@ our community page dedicated for this guide:
 [AutoPi GPIO Pinout](https://community.autopi.io/t/autopi-gpio-pinout/271)
 :::
 
- 
 
-<br/>
-<br/>
-
+### AutoPi Extension Port 1
 
 ![AP EXT 1 connector pinout](/img/hardware/gen_3/AP_EXT1.png)
 
-<br/>
-<br/>
+### AutoPi Extension Port 2
 
 ![AP EXT 2 connector pinout](/img/hardware/gen_3/AP_EXT2.png)
 
-<br/>
-<br/>
+### User Extension Port 1
 
 ![USER EXT 1 connector pinout](/img/hardware/gen_3/USER_EXT1.png)
 
-<br/>
-<br/>
+### User Extension Port 2
 
 ![USER EXT 2 connector pinout](/img/hardware/gen_3/USER_EXT2.png)
 

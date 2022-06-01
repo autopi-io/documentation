@@ -211,6 +211,7 @@ module.exports = {
         "guides/power-cycle-for-electric-vehicles",
         "guides/reflashing-your-device",
         "guides/remotely-waking-up-your-device",
+        "guides/rfid-integartion",
         "guides/setting-up-our-device-with-verizon-wireless",
         "guides/upgrading-your-raspberry-pi",
         "guides/using-the-autopi-with-an-external-power-supply"
@@ -247,7 +248,8 @@ module.exports = {
                 "hardware/generation-3.5-CAN_FD/gen-3.5-intro",
                 "hardware/generation-3.5-CAN_FD/connection-overview",
                 "hardware/generation-3.5-CAN_FD/device_dimensions",
-                "hardware/generation-3.5-CAN_FD/mounting_holes"
+                "hardware/generation-3.5-CAN_FD/mounting_holes",
+                "hardware/generation-3.5-CAN_FD/obd-connector-pinout"
             ],
             "label": "Generation 3.5 Can Fd",
             "type": "category"
