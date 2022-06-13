@@ -181,3 +181,32 @@ These events apply depending on which peripherals are installed inside the dongl
 | `vendor` | Text | The vendor hexadecimal number/ID of the device. | 1d6d |
 | `product` | Text | The product's hexadecimal number/ID of the device. | 0002 |
 | `name` | Text | The device's name. | Linux Foundation 2.0 root hub |
+
+## Docker events
+
+We pass through the following docker events from the docker instance event stream.
+* start
+* stop
+* die
+* pull
+
+See more information about the events here:
+https://docs.docker.com/engine/reference/commandline/events/
+
+| Tag | Description | Fields |
+| ------ | ------ | ------ |
+| `system/docker/container/name/start` | A container was started. This event will occur every time the device starts. | `release_hash`, `image`, `name`, `project`, `id`, `release` |
+| `system/docker/container/name/stop` | A container was stopped. | `release_hash`, `image`, `name`, `project`, `id`, `release` |
+| `system/docker/container/name/die` | A container stopped unexpectedly. | `release_hash`, `image`, `name`, `project`, `id`, `release` |
+| `system/docker/image/name/pull` | An image was pulled | `tag`, `release_hash`, `image`, `name`, `project`, `id`, `release` |
+
+**FIELD DEFINITIONS**
+
+| Name | Type | Description | Example |
+| ------ | ------ | ------ | ------ |
+| `release_hash` | Text | The version of the docker release | `e205220a` |
+| `image` | Text | The name of the image | redis:bullseye |
+| `name` | Text | Unique name of the container | project_name-container_name-pretty_version |
+| `project` | Text | Project name | my_project |
+| `id` | Text | ID of docker object | 40d7a9a7d6bb3c085149a45fc1874de8b4541bac7a28a46f60f734e34f52989b |
+| `release` | Text | Pretty version of the release | 1.2.3 |
