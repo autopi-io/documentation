@@ -61,6 +61,9 @@ There are a few conventions that should be followed when working with the docume
   1. File names should be written_in_snake_case
   2. Page IDs need to be separated-with-dashes
   3. Titles and headings use capital letters for each word with some exceptions (a, to, for, the, etc)
+3. Try to have consistent spacing:
+  1. Lines shouldn't be longer than 120 characters
+  2. Indented lines are 2 spaces
 
 ## Deployment
 
