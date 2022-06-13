@@ -6,6 +6,8 @@ import json
 import os
 import yaml
 
+from yaml import CLoader as Loader
+
 
 folder = "../docs/cloud/configuration" 
 
@@ -45,7 +47,7 @@ fields = yaml.load(template.render({
     "masterdata": {
         "hw_board_ver": "5.1"
     }
-}))
+}), Loader=Loader)
 print("[INFO] Loaded {:} fields".format(len(fields)))
 
 # Group fields excluding name
@@ -134,7 +136,7 @@ for name, fields in field_files.items():
 
             f.write("| {:} | {:} | {:} | {:} | {:} |\n".format(
                 field["name"].replace("_", " ").upper(),
-                field["desc"],
+                field["desc"].replace("|", "\|"),
                 field.get("type", "-"),
                 render_as_string(field.get("default", "-")),
                 field.get("unit", "-"),
