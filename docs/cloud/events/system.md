@@ -195,10 +195,10 @@ https://docs.docker.com/engine/reference/commandline/events/
 
 | Tag | Description | Fields |
 | ------ | ------ | ------ |
-| `system/docker/<container>/<name>/start` | A container was started. This event will occur every time the device starts. | `release_hash`, `image`, `name`, `project`, `id`, `release` |
-| `system/docker/<container>/<name>/stop` | A container was stopped. | `release_hash`, `image`, `name`, `project`, `id`, `release` |
-| `system/docker/<container>/<name>/die` | A container stopped unexpectedly. | `release_hash`, `image`, `name`, `project`, `id`, `release` |
-| `system/docker/<image>/<name>/pull` | An image was pulled | `tag`, `release_hash`, `image`, `name`, `project`, `id`, `release` |
+| `system/docker/container/<name>/start` | A container was started. This event will occur every time the device starts. | `release_hash`, `image`, `name`, `project`, `id`, `release` |
+| `system/docker/container/<name>/stop` | A container was stopped. | `release_hash`, `image`, `name`, `project`, `id`, `release` |
+| `system/docker/container/<name>/die` | A container stopped unexpectedly. | `release_hash`, `image`, `name`, `project`, `id`, `release` |
+| `system/docker/image/<name>/pull` | An image was pulled | `tag`, `release_hash`, `image`, `name`, `project`, `id`, `release` |
 
 **FIELD DEFINITIONS**
 
