@@ -98,9 +98,11 @@ file uploaded:
 
   ![dropbox_create_app](/img/guides/autopi_logs/dropbox_create_app.png) 
 
-2. Now click the "Generate" button under **Generated access token**.
+2. Go to the Permissions tab and make sure that the **files.content.write** permission is enabled.
 
-3. You can now use the below commands to send files to your new dropbox folder located in
+3. Now go back to the settings tab and click the "Generate" button under **Generated access token**.
+
+4. You can now use the below commands to send files to your new dropbox folder located in
 "dropbox/Apps/AutoPi Logfiles". Execute them in the web terminal, or in the SSH terminal by
 prepending `autopi` before the command.
 :::note
@@ -115,9 +117,9 @@ Remember to replace the YOUR_ACCESS_TOKEN with the actual token you received in 
   $ autopi fileutil.upload /var/log/salt/minion gzip=True service=dropbox token=YOUR_ACCESS_TOKEN
   ```
 
-4. You should now be able to see the uploaded file in your dropbox folder.
+5. You should now be able to see the uploaded file in your dropbox folder.
 
-5. You can also upload the file to dropbox using raw Linux commands. Here are the commands:
+6. You can also upload the file to dropbox using raw Linux commands. Here are the commands:
 
   ```
   cmd.run 'gzip --keep -f /var/log/salt/minion'
