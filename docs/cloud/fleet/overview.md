@@ -7,7 +7,7 @@ The fleet overview section allows you to monitor the entire fleet of vehicles, a
 
 All devices with a known position is shown in the map, and each device can be highlighted by clicking the device in the table.
 
-![fleetoverview](../../../static/img/fleet/fleet-overview.jpg)
+![fleetoverview](../../../static/img/cloud/fleet/fleet-overview.jpg)
 
 ### Available columns
 The fleet overview can be customized to show the columns that you need, by clicking the three dots in the top of the fleet overview table.

@@ -3,6 +3,14 @@ module.exports = {
         "cloud/cloud-intro",
         {
             "items": [
+                "cloud/api/api-intro",
+                "cloud/api/command-webhook-callbacks"
+            ],
+            "label": "API",
+            "type": "category"
+        },
+        {
+            "items": [
                 "cloud/configuration/cloud-config-intro",
                 "cloud/configuration/cloud-config-accelerometer",
                 "cloud/configuration/cloud-config-alerts",
@@ -158,8 +166,6 @@ module.exports = {
         "guides/guides-intro",
         {
             "items": [
-                "guides/api/api-intro",
-                "guides/api/command-webhook-callbacks",
                 "guides/api/how-to-change-your-devices-settings-from-api",
                 "guides/api/how-to-export-data-from-api",
                 "guides/api/send-device-data-to-own-server"
