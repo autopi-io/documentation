@@ -208,6 +208,7 @@ module.exports = {
         "guides/a-guide-to-triggers",
         "guides/adding-a-new-widget-from-scratch",
         "guides/autopi-logs",
+        "guides/configuring-mqtt",
         "guides/enabling_bluetooth_on_TMU_devices",
         "guides/how-to-ssh-to-your-device",
         "guides/installing-a-camera-on-your-autopi",
