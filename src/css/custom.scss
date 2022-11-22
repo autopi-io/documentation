@@ -19,6 +19,11 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
+@font-face {
+  font-family: "AutoPi";
+  src: url("../fonts/Open Sans/OpenSans-VariableFont_wdth\,wght.ttf");
+}
+
 body, input, textarea, select, button {
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -28,11 +33,10 @@ body, input, textarea, select, button {
 	-moz-font-feature-settings: 'kern';
 	font-feature-settings: 'kern';
 
-  font-size: 1.1rem;
-  line-height: 1.5;
-  letter-spacing: -0.5px;
-  font-family: "Open Sans";
-  src: url("../fonts/Open\ Sans/OpenSans-VariableFont_wdth\,wght.ttf");
+  font-size: 1.0rem;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
+  font-family: "AutoPi";
   font-weight: 400;  
 }
 
