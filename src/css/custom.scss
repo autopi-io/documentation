@@ -1,4 +1,6 @@
 /* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 :root {
   --ifm-color-primary: #005afa;
   --ifm-color-primary-dark: #0051e1;
@@ -28,11 +30,10 @@ body, input, textarea, select, button {
 	-moz-font-feature-settings: 'kern';
 	font-feature-settings: 'kern';
 
-  font-size: 1.1rem;
-  line-height: 1.5;
-  letter-spacing: -0.5px;
+  font-size: 1.0rem;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
   font-family: "Open Sans";
-  src: url("../fonts/Open\ Sans/OpenSans-VariableFont_wdth\,wght.ttf");
   font-weight: 400;  
 }
 
