@@ -260,6 +260,14 @@ module.exports = {
             ],
             "label": "Generation 3.5 Can Fd",
             "type": "category"
+        },
+        {
+            "items": [
+                "hardware/autopi-tmu-cm4/autopi-cm4-intro",
+                "hardware/autopi-tmu-cm4/installing-heatsink",
+            ],
+            "label": "AutoPi TMU CM4",
+            "type": "category"
         }
     ]
 };
