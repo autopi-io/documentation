@@ -76,7 +76,7 @@ On the AutoPi cloud portal (my.autopi.io for private customers, <company_name>.a
 - Returner > Enabled: True
 
 :::note
-Some of these settings are not a necessity, but these are the settings we've seen provide best reliability and performance. The meaning of these settings can be found on the [Eclipse Mosquitto website](https://mosquitto.org/man/mosquitto-conf-5.html). The settings you add in [Broker > Custom > Configuraion] go directly into a Mosquitto configuration file: /etc/mosquitto/conf.d/custom.conf.
+Some of these settings are not a necessity, but these are the settings we've seen provide best reliability and performance. The meaning of these settings can be found on the [Eclipse Mosquitto website](https://mosquitto.org/man/mosquitto-conf-5.html). The settings you add in [Broker > Custom > Configuration] go directly into a Mosquitto configuration file: /etc/mosquitto/conf.d/custom.conf.
 :::
 
 **Example**:
@@ -103,15 +103,15 @@ If the command is not found, it can be installed from apt (it is not used outsid
 
 This section covers adding the MQTT returner to the 3 main data sources: loggers, services and jobs. Which data points can be retrieved from each source can be seen in the following table.
 
-| **Data point**         | **Source** |
-|------------------------|------------|
-| PID data               | Loggers    |
-| CAN data               | Service    |
-| GPS location           | Service    |
-| Accelerometer readings | Service    |
-| Voltage                | Service    |
-| Events                 | Service    |
-| Device Temperature     | Job        |
+| **Data point**         | **Source** |**MQTT Topic**      |
+|------------------------|------------|--------------------|
+| PID data               | Loggers    |obd/<LOGGER_NAME\>  |
+| CAN data               | Service    |obd/<LOGGER_NAME\>  |
+| GPS location           | Service    |track/pos           |
+| Accelerometer readings | Service    |acc/xyz             |
+| Voltage                | Service    |spm/bat             |
+| Events                 | Service    |reactor             |
+| Device Temperature     | Job        |rpi/temp            |
 
 ### Loggers
 
