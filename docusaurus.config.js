@@ -33,6 +33,11 @@ module.exports = {
           to: 'cloud/cloud-intro',
           label: 'Cloud',
           position: 'left',
+        },        
+        {
+          to: 'hardware/hardware-intro',
+          label: 'Hardware',
+          position: 'left',
         },
         {
           to: 'core/core-intro',
@@ -43,10 +48,10 @@ module.exports = {
           to: 'guides/guides-intro',
           label: 'Guides',
           position: 'left',
-        },
+        },        
         {
-          to: 'hardware/hardware-intro',
-          label: 'Hardware',
+          to: 'https://api.autopi.io/',
+          label: 'API',
           position: 'left',
         },
       ],
