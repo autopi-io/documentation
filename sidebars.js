@@ -259,13 +259,29 @@ module.exports = {
                 "hardware/generation-3.5-CAN_FD/mounting_holes",
                 "hardware/generation-3.5-CAN_FD/obd-connector-pinout"
             ],
-            "label": "Generation 3.5 Can Fd",
+            "label": "AutoPi TMU CAN-FD",
+            "type": "category"
+        },        
+        {
+            "items": [
+                "hardware/generation-3.5-SocketCAN/SocketCAN-intro",
+                "hardware/generation-3.5-SocketCAN/connection-overview",
+                "hardware/generation-3.5-SocketCAN/device_dimensions",
+                "hardware/generation-3.5-SocketCAN/installing-external-antennas",
+                "hardware/generation-3.5-SocketCAN/mounting_holes",
+                "hardware/generation-3.5-SocketCAN/obd-connector-pinout"
+            ],
+            "label": "AutoPi TMU SocketCAN",
             "type": "category"
         },
         {
             "items": [
                 "hardware/autopi-tmu-cm4/autopi-cm4-intro",
                 "hardware/autopi-tmu-cm4/installing-heatsink",
+                "hardware/autopi-tmu-cm4/device_dimensions",
+                "hardware/autopi-tmu-cm4/mounting_holes",
+                "hardware/autopi-tmu-cm4/obd-connector-pinout",
+                "hardware/autopi-tmu-cm4/using-hat"
             ],
             "label": "AutoPi TMU CM4",
             "type": "category"

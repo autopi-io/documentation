@@ -1,0 +1,56 @@
+---
+id: using-hat
+title: Using the HAT
+---
+
+The AutoPi TMU CM4 comes with an integrated 40 pin header (1.27mm pitch). It is possible to use the header to design HAT (Hardware Attached on Top) boards that greatly extends the functionality of the device. The image below shows the placement of the HAT on the board. It has been designed, so that a new HAT can fit into the casing.
+
+![HAT Placement](/img/hardware/cm4_pcb_Pinlayout.png)
+
+
+The following table is an explanation of each pinout:
+
+| **Pin** | **Name** | **Description** |
+|:-----:|--------|--------|
+|   1   |    HS_CAN_HIGH / OBD_PIN_6    |   Connection to CAN0 High line and directly to OBD pin     |
+|   2    |   HS_CAN_LOW / OBD_PIN_14     |  Connection to CAN0 Low line and directly to OBD pin      |
+|   3    |   MS_CAN_HIGH / OBD_PIN_3     |  Connection to CAN1 High line and directly to OBD pin      |
+|   4    |   MS_CAN_LOW / OBD_PIN_11     |  Connection to CAN1 Low line and directly to OBD pin      |
+|   5    |   OBD_PIN_1     |   Directly connected to OBD pin     |
+|   6    |   OBD_PIN_7     |    Directly connected to OBD pin    |
+|   7    |   OBD_PIN_15     |  Directly connected to OBD pin      |
+|   8    |   OBD_PIN_2     |   Directly connected to OBD pin     |
+|   9    |   OBD_PIN_10     |  Directly connected to OBD pin      |
+|   10    |  OBD_PIN_8      |  Directly connected to OBD pin      |
+|   11    |  OBD_PIN_9      |  Directly connected to OBD pin      |
+|   12    |  OBD_PIN_12      |  Directly connected to OBD pin      |
+|   13   |   OBD_PIN_13     |  Directly connected to OBD pin      |
+|   14    |  GND      |  Ground      |
+|   15    |  12V_CAR / OBD_PIN_16      |  Connection to 12V supply from the car on OBD pin 16      |
+|   16    |  RP2040_GPIO27      | Connection to RP2040 SPM on GPIO27       |
+|   17    |  5V_EXT      |   Controlable 5V supply     |
+|   18    |  3V3_EXT      |   Controlable 3.3V supply     |
+|   19    |  DOIP_ACT      |  Connection to RP2040 SPM on DoIP activate pin      |
+|   20    |  RPI_GPIO23      |  Raspberry Pi CM4 GPIO23      |
+|   21    |  RPI_GPIO24      |  Raspberry Pi CM4 GPIO24      |
+|   22    |  RPI_GPIO27      |  Raspberry Pi CM4 GPIO27      |
+|   23    |  GND      |    Ground    |
+|   24    |  GND      |  Ground      |
+|   25    |  5V      |  5V Supply     |
+|   26    |  3V3      |  3.3V Supply      |
+|   27    |  ETH_TD0-      |  Ethernet Data pin TD0-      |
+|   28    |  ETH_TD0+      |  Ethernet Data pin TD0+      |
+|   29    |  ETH_TD1-      |  Ethernet Data pin TD1-      |
+|   30    |  ETH_TD1+      |  Ethernet Data pin TD1+      |
+|   31    |  RPI_PWR      |   CM4 power status pin     |
+|   32    |  RP2040_GPIO17      |  Connection to RP2040 SPM on GPIO17      |
+|   33    |  RP2040_GPIO28      |  Connection to RP2040 SPM on GPIO28      |
+|   34    |  USB_DP_EXT      |  USB4 D+ Data line - HAT USB      |
+|   35    |  USB_DM_EXT      |  USB4 D- Data line - HAT USB        |
+|   36    |  RPI_GPIO22      |  Raspberry Pi CM4 GPIO22       |
+|   37    |  RPI_ID_SD      |  Raspberry Pi CM4 ID_SD       |
+|   38    |  RPI_ID_SC      |  Raspberry Pi CM4 ID_SC       |
+|   39    |  I2C1_SDA      |  I2C1 Data line      |
+|   40    |  I2C1_SCL      |  I2C1 Clock line      |
+
+

@@ -1,6 +1,6 @@
 ---
 id: device_dimensions
-title: CAN-FD Device dimensions
+title: SocketCAN Device dimensions
 ---
 
 

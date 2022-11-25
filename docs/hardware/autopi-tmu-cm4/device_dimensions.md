@@ -1,6 +1,6 @@
 ---
 id: device_dimensions
-title: CAN-FD Device dimensions
+title: CM4 Device dimensions
 ---
 
 
