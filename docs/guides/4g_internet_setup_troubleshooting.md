@@ -27,7 +27,12 @@ The output of the command should be similar to this:
 
 ![lsusb](../../static/img/guides/4g_internet_setup_troubleshooting/lsusb.jpg)
 
-The important part to look for is the USB device named `"2c7c:0121"`. This is the modem. 
+The important part to look for is the Modem. The ID will be different depending on which modem your device is equipped with:
+
+| **Modem Manufacturer** | **ID**      |
+|------------------------|-------------|
+| Quectel                | `2c7c:0121` |
+| Telit                  | `1bc7:1031` |
 
 If you ordered a 4G edition and you don't find the modem in your list, then please contact support@autopi.io
 
