@@ -206,6 +206,7 @@ module.exports = {
         },
         "guides/4g-internet-setup-troubleshooting",
         "guides/a-guide-to-triggers",
+        "guides/setting-up-docker",
         "guides/adding-a-new-widget-from-scratch",
         "guides/autopi-logs",
         "guides/configuring-mqtt",
