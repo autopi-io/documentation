@@ -225,42 +225,17 @@ module.exports = {
         "guides/using-the-autopi-with-an-external-power-supply"
     ],
     "hardwareSidebar": [
-        "hardware/hardware-intro",
+        "hardware/hardware-intro",        
         {
             "items": [
-                "hardware/generation-2/gen-2-intro",
-                "hardware/generation-2/connection-overview",
-                "hardware/generation-2/obd-connector-pinout",
-                "hardware/generation-2/setup-your-gen-2-diy-edition",
-                "hardware/generation-2/update-firmware-of-eg25-g-module",
-                "hardware/generation-2/using-gpio-and-hdmi-with-the-gen-2",
-                "hardware/generation-2/using-the-rpi3-adapter"
+                "hardware/autopi-tmu-cm4/autopi-cm4-intro",
+                "hardware/autopi-tmu-cm4/installing-heatsink",
+                "hardware/autopi-tmu-cm4/device_dimensions",
+                "hardware/autopi-tmu-cm4/mounting_holes",
+                "hardware/autopi-tmu-cm4/obd-connector-pinout",
+                "hardware/autopi-tmu-cm4/using-hat"
             ],
-            "label": "Generation 2",
-            "type": "category"
-        },
-        {
-            "items": [
-                "hardware/generation-3/gen-3-intro",
-                "hardware/generation-3/connection-overview",
-                "hardware/generation-3/developer-kit",
-                "hardware/generation-3/installing-external-antennas",
-                "hardware/generation-3/obd-connector-pinout",
-                "hardware/generation-3/setup-your-tmu-diy-edition"
-            ],
-            "label": "Generation 3",
-            "type": "category"
-        },
-        {
-            "items": [
-                "hardware/generation-3.5-CAN_FD/gen-3.5-intro",
-                "hardware/generation-3.5-CAN_FD/connection-overview",
-                "hardware/generation-3.5-CAN_FD/device_dimensions",
-                "hardware/generation-3.5-CAN_FD/installing-external-antennas",
-                "hardware/generation-3.5-CAN_FD/mounting_holes",
-                "hardware/generation-3.5-CAN_FD/obd-connector-pinout"
-            ],
-            "label": "AutoPi TMU CAN-FD",
+            "label": "AutoPi TMU CM4",
             "type": "category"
         },        
         {
@@ -275,16 +250,42 @@ module.exports = {
             "label": "AutoPi TMU SocketCAN",
             "type": "category"
         },
+        
         {
             "items": [
-                "hardware/autopi-tmu-cm4/autopi-cm4-intro",
-                "hardware/autopi-tmu-cm4/installing-heatsink",
-                "hardware/autopi-tmu-cm4/device_dimensions",
-                "hardware/autopi-tmu-cm4/mounting_holes",
-                "hardware/autopi-tmu-cm4/obd-connector-pinout",
-                "hardware/autopi-tmu-cm4/using-hat"
+                "hardware/generation-3.5-CAN_FD/gen-3.5-intro",
+                "hardware/generation-3.5-CAN_FD/connection-overview",
+                "hardware/generation-3.5-CAN_FD/device_dimensions",
+                "hardware/generation-3.5-CAN_FD/installing-external-antennas",
+                "hardware/generation-3.5-CAN_FD/mounting_holes",
+                "hardware/generation-3.5-CAN_FD/obd-connector-pinout"
             ],
-            "label": "AutoPi TMU CM4",
+            "label": "AutoPi TMU CAN-FD",
+            "type": "category"
+        },
+        {
+            "items": [
+                "hardware/generation-3/gen-3-intro",
+                "hardware/generation-3/connection-overview",
+                "hardware/generation-3/developer-kit",
+                "hardware/generation-3/installing-external-antennas",
+                "hardware/generation-3/obd-connector-pinout",
+                "hardware/generation-3/setup-your-tmu-diy-edition"
+            ],
+            "label": "AutoPi Dongle GEN2",
+            "type": "category"
+        },
+        {
+            "items": [
+                "hardware/generation-2/gen-2-intro",
+                "hardware/generation-2/connection-overview",
+                "hardware/generation-2/obd-connector-pinout",
+                "hardware/generation-2/setup-your-gen-2-diy-edition",
+                "hardware/generation-2/update-firmware-of-eg25-g-module",
+                "hardware/generation-2/using-gpio-and-hdmi-with-the-gen-2",
+                "hardware/generation-2/using-the-rpi3-adapter"
+            ],
+            "label": "AutoPi Dongle",
             "type": "category"
         }
     ]
