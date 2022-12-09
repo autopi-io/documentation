@@ -3,6 +3,11 @@ id: core-power-intro
 title: Introduction
 ---
 
+:::tip
+For power cycle, LED and button information on the AutoPi TMU CM4, please see [configuration here](/hardware/autopi-tmu-cm4/led-and-button)
+:::
+
+
 The power management of the device consists of a low- and high-level layer. For further details please see: 
 
 1. [Low-level](low_level.md)
