@@ -273,7 +273,7 @@ module.exports = {
                 "hardware/generation-3/obd-connector-pinout",
                 "hardware/generation-3/setup-your-tmu-diy-edition"
             ],
-            "label": "AutoPi Dongle GEN2",
+            "label": "AutoPi Dongle GEN3",
             "type": "category"
         },
         {

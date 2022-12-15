@@ -58,6 +58,11 @@ All other pins are free and their functionality follows that of the Raspberry Pi
 
 ![USER EXT 1 connector pinout](/img/hardware/gen_3.5/USER_EXT1.png)
 
+The power to the extension ports can be controlled using the following commands:
+
+`spm.query ext_pins [high|low|toggle]=ext_sw_3v3`
+`spm.query ext_pins [high|low|toggle]=ext_sw_5v`
+
 ### Ethernet Connection Port
 
 ![ETH connector pinout](/img/hardware/gen_3.5/ETH_CONN.png)
