@@ -61,6 +61,7 @@ All other pins are free and their functionality follows that of the Raspberry Pi
 The power to the extension ports can be controlled using the following commands:
 
 `spm.query ext_pins [high|low|toggle]=ext_sw_3v3`
+
 `spm.query ext_pins [high|low|toggle]=ext_sw_5v`
 
 ### Ethernet Connection Port
