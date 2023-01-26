@@ -225,10 +225,29 @@ module.exports = {
         "guides/using-the-autopi-with-an-external-power-supply"
     ],
     "hardwareSidebar": [
-        "hardware/hardware-intro",        
+        "hardware/hardware-intro",   
+        {
+            "items": [
+                "hardware/accessories/accessories-intro",         
+                {
+                    "items": [
+                        "hardware/accessories/keyfob-hat/keyfob-intro",
+                        "hardware/accessories/keyfob-hat/keyfob-hat",
+                    ],
+                    "label": "Keyless entry",
+                    "type": "category"
+
+
+                }       
+                   
+            ],
+            "label": "Accessories",
+            "type": "category"
+        },       
         {
             "items": [
                 "hardware/autopi-tmu-cm4/autopi-cm4-intro",
+                "hardware/autopi-tmu-cm4/device_specifications",
                 "hardware/autopi-tmu-cm4/installing-heatsink",
                 "hardware/autopi-tmu-cm4/device_dimensions",
                 "hardware/autopi-tmu-cm4/mounting_holes",
