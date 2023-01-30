@@ -9,7 +9,14 @@ title: Introduction
 The keyless entry solution described here only works with the AutoPi TMU CM4 and newer editions
 :::
 
-This guide provides a general technical overview of the AutoPi Keyless solution. Many different approaches to lock/unlock exist already, but with the solution from AutoPi, you receive an agnostic solution working across all make and models available. These are some of the benefits:
+
+This guide provides a general technical overview of the AutoPi Keyless solution. 
+
+<p align="center">
+<img src="/img/hardware/accessories/keyfob/command_flow_1.jpg" alt="Keyfob flow" width="60%" />
+</p>
+
+Many different approaches to lock/unlock exist already, but with the solution from AutoPi, you receive an agnostic solution working across all make and models available. These are some of the benefits:
 -	No wire cutting needed, which means your vehicle’s warranty is not voided 
 -	Easy and fast installation and removal
 -	Supports keyless ignition for vehicles with electronic start/stop technology

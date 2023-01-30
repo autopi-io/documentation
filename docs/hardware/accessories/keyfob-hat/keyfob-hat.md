@@ -1,5 +1,5 @@
 ---
-id: keyfob-hat
+id: keyfob-hat-install
 title: Keyfob HAT Install
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -24,8 +24,6 @@ The keyless entry solution described here only works with the AutoPi TMU CM4 and
 
 
 ## Step-by-step guide
-
-
 
 ### Step 1
 Open up the AutoPi device by unscrewing the four screws at the bottom. 

@@ -232,7 +232,9 @@ module.exports = {
                 {
                     "items": [
                         "hardware/accessories/keyfob-hat/keyfob-intro",
-                        "hardware/accessories/keyfob-hat/keyfob-hat",
+                        "hardware/accessories/keyfob-hat/keyfob-interface",                        
+                        "hardware/accessories/keyfob-hat/keyfob-hat-install",
+                        "hardware/accessories/keyfob-hat/keyfob-hat-pinout",                        
                     ],
                     "label": "Keyless entry",
                     "type": "category"
