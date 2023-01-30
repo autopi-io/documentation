@@ -27,23 +27,23 @@ Unit ID ready. Your unit ID is printed on the side of your device, but also part
 documentation sent to you per email.
 
 When your device is associated to your account, go to **"Advanced->Settings->WiFi"** to see the
-WiFi hotspot password and SSID. You will need these later.
+WiFi hotspot password and SSID.
 
-![AutoPi.io - WiFi Password location](/img/guides/getting_started/wifi_pasword_scaled.jpg)
+You will need these later.
+
+![AutoPi.io - WiFi Password location](/img/guides/getting_started/wifi_settings.png)
 
 ## 2. Insert SIM
 
 Now its time to install your device in your vehicle. First and foremost, insert your sim-card into
-your AutoPi. Do this before powering on the device. The AutoPi uses nano sim sizes, so you may need
-an adapter to ensure the right size. The location of the sim-card slot is shown on the picture here:
-
-![AutoPi.io - WiFi SIM card location](/img/guides/getting_started/autopi_sim_slot_scaled.png)
+your AutoPi. Do this before powering on the device. The AutoPi uses nano sim sizes. The location of
+the sim-card slot is shown on the picture here:
 
 When you insert the sim-card it's important that the sim card is inserted correctly. The picture
 below shows the orientation of the sim card. Please notice that the text side of the sim card must
 be up and the "triangle" end point into the device.
 
-![AutoPi.io - SIM card location](/img/guides/getting_started/getting_started_gen3.png)
+![AutoPi.io - SIM card location](/img/guides/getting_started/sim_card.png)
 
 :::caution
 **Please notice:** When the sim-card is inserted correctly, you will hear a small "click" when the
@@ -62,10 +62,14 @@ Here's a list of the US based SIM providers that we recommend to be used with th
 Next step is to locate your OBD port in your car, it is usually found underneath the dashboard and
 looks something like this:
 
-![AutoPi.io - OBD port](/img/guides/getting_started/obd_location.jpg)
+<div style={{textAlign: 'center'}}>
 
-The location of the OBD port varies from make and model, but is typically fund in one of the
-locations shown below:
+  ![AutoPi.io - OBD port](/img/guides/getting_started/obd_location.jpg)
+
+</div>
+
+**The location of the OBD port varies from make and model, but is typically fund in one of the
+locations shown below:**
 
 ![AutoPi.io - OBD port location](/img/guides/getting_started/TMU_placement_dashboard_v1_finecut-01.jpg)
 
@@ -80,7 +84,9 @@ won’t have a good GPS signal.
 If the port is located in an inconvenient place or is in the way of your legs, you can purchase a
 relocator cable for your AutoPi to keep it in more convenient area. You can also place it in an
 holder or purchase a velcro strip to secure it on the side or underneath the dashboard, just
-remember that the logo needs to face upwards. This is the relocator cable:
+remember that the logo needs to face upwards.
+
+This is the relocator cable:
 
 ![AutoPi.io - Relocator cable](/img/guides/getting_started/relocator_cable2.jpg)
 
@@ -90,31 +96,40 @@ Once you have inserted the AutoPi Telematics Unit into the OBD port, turn on you
 phone/tablet and then on your phone choose the AutoPi hotspot in order to connect with the device.
 The hotspot is named something like autopi-XXXX, where XXX is an ID for your device. The password
 for the WiFi hotspot can be found from the My AutoPi Cloud. When the device is powered on, you can
-see a blue light on the side indicating power. For a full description of the two status LED's,
-please see [this](/core/power_management/index.md/#status-leds).
+see a blue light on the side indicating power.
+
+For a full description of the two status LED's, please see [this](/core/power_management/index.md/#status-leds).
 
 ## 7. Connect to local administration
 
 Once connected to the WiFi hotspot, you need to configure your APN settings for the sim card
 inserted. To do so, go to [my.autopi.io](https://my.autopi.io/). Click on the "Go local" button in
-the bottom. This will connect you to the local device and you should see a screen like shown on the
-right. This will indicate that you are connected to the local device and you can go ahead and login.
+the bottom. This will connect you to the local device and you should see a screen like shown in the bottom image
+. This will indicate that you are connected to the local device and you can go ahead and login.
 No username/password needed.
 
-![AutoPi.io - Localhost login](/img/guides/getting_started/localhost.jpg)
+
+![AutoPi.io - Localhost login](/img/guides/getting_started/local.jpg)
 
 ## 8. Setup APN
 
-Once logged in you need to go the settings page and enter your sim card APN settings. You can
-usually get these from your network carrier. On the settings page, there is a small button where
-you can get help to set up your APN settings from a list of carriers worldwide, in case you have
+Once logged in you need to go the **4G/LTE** pane and enter your sim card APN settings. You can
+usually get these from your network carrier. On this pane, you can directly select the appropriate APN settings from a list of predefined carriers worldwide in case you have
 trouble finding it from your carrier. Please select your carrier or fill out the information
-manually. Once the information is saved, it will be applied to the device and you should see a
+manually.
+
+Once the information is saved, it will be applied to the device and you should see a
 notification when successfully saved.
 
-Settings Page | APN Presets | Settings Saved
-- | - | -
-![AutoPi.io - Settings Page](/img/guides/getting_started/settings_page.jpg) | ![AutoPi.io - APN Presets](/img/guides/getting_started/apn_presets.jpg) | ![AutoPi.io - Settings Saved](/img/guides/getting_started/settings_saved.jpg)
+4G/LTE Settings | 
+- |
+![AutoPi.io - Settings Page](/img/guides/getting_started/apn_settings.png)
+
+##
+
+APN Presets List |
+- |
+![AutoPi.io - Settings Page](/img/guides/getting_started/apn_settings_list.png) 
 
 ## 9. Verify Connectivity
 
