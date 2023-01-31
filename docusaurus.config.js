@@ -19,7 +19,7 @@ module.exports = {
       indexName: 'autopi',
     },
     gtag: {      
-      trackingID: 'G-DB2BZPKYN9',      
+      trackingID: 'GTM-56CGBJN',      
       anonymizeIP: false,
     },
     navbar: {
