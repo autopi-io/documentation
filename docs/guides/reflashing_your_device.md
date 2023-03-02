@@ -28,7 +28,7 @@ You can get the latest AutoPi Core image from the [autopi-core releases page](ht
 ### 2. Set up Balena Ethcher (or alternative)
 
 We recommend using [Etcher](https://etcher.io) for flashing - it will take the GZ image directly and flash it. If using Windows, the 
-installation can be done through a regular .exe file. For Linux, follow the steps on [Balena's Etcher repository](https://github.com/balena-io/etcher?d_id=fae0960a-c0ca-432e-af94-7e81c00d32a9&s_id=1677580787961#debian-and-ubuntu-based-package-repository-gnulinux-x86x64). While working with it ourselves, we've noticed that the first command does not always work on the first try. If that happens, update your package list through `sudo apt update` and try again. 
+installation can be done through a regular .exe file. For Linux, follow the steps on [Balena's Etcher repository](https://github.com/balena-io/etcher?d_id=fae0960a-c0ca-432e-af94-7e81c00d32a9&s_id=1677580787961#debian-and-ubuntu-based-package-repository-gnulinux-x86x64). We've noticed that the first command does not always work on the first try. If that happens, update your package list through `sudo apt update` and try again. 
 
 :::note for Linux users
 On Linux, we are installing by adding the Balena package repository and installing through our package manager, but keep in mind than
@@ -64,7 +64,7 @@ Download the [rpiboot installer](https://github.com/raspberrypi/usbboot/raw/mast
 the installation is complete, run the newly added rpiboot program, which you can find in the Start menu. 
 
 :::info
-More details on the rpiboot setup for Windows can be found on the [Raspberry Pi Documentation site](https://www.raspberrypi.com/documentation/computers/compute-module.html#windows-installer). But keep in mind that where the the documentation is talking about jumper cables, on the AutoPi board, that means changing the device state. 
+More details on the rpiboot setup for Windows can be found on the [Raspberry Pi Documentation site](https://www.raspberrypi.com/documentation/computers/compute-module.html#windows-installer). But keep in mind that where the documentation is talking about jumper cables, on the AutoPi board, that means changing the device state. 
 :::
 
 
@@ -94,7 +94,7 @@ Using Balena Etcher or alternative, select the image file you downloaded in earl
 ![balena configured with image and device](/img/guides/reflashing_your_device/configured_balena.png)
 
 :::warning
-It is unsafe to remove the device from power while the it is on or booting. The safest point when to unplug the device from power is right after unmounting.
+It is unsafe to remove the device from power while it is on or booting. The safest point when to unplug the device from power is right after unmounting.
 :::
 
 Once the flashing is complete, unmount the storage device. After that you can remove the SD card from its reader and put it back into the 
@@ -108,7 +108,7 @@ that the device's key isn't accepted.
 
 :::note
 If you are a business customer and have a dedicated environment, there is an extra step that you need
-to take. Take a look at [this](business/move_to_dedicated_environment.md) guide for more information.
+to take. Look at [this](business/move_to_dedicated_environment.md) guide for more information.
 :::
 
 ![Not accepted notification](/img/guides/reflashing_your_device/not_accepted_notification.png)
