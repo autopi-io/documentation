@@ -89,7 +89,7 @@ Once you have both the rpiboot utility running on your computer and the device i
 At this point you can access the internal file system of the AutoPi's Raspberry Pi through the mounted drives. On this Linux distribution the mounting points are `/media/<user>/boot` and `/media/<user>/rootfs`. On Windows you should be able to see at least one of the partitions in the File Explorer.
 
 ### 4. Flashing the device
-Using Balena Etcher or alternative, select the image file you downloaded in earlier, and the storage device. Once that's done, click flash and wait for it to complete. It's worth noting, that if it fails on the first try, it's try again. 
+Using Balena Etcher or alternative, select the image file you downloaded earlier, and the storage device. Once that's done, click flash and wait for it to complete. It's worth noting, that if it fails on the first try, try again. 
 
 ![balena configured with image and device](/img/guides/reflashing_your_device/configured_balena.png)
 
