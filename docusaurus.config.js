@@ -33,15 +33,15 @@ module.exports = {
           to: 'cloud/cloud-intro',
           label: 'Cloud',
           position: 'left',
-        },        
-        {
-          to: 'hardware/hardware-intro',
-          label: 'Hardware',
-          position: 'left',
         },
         {
           to: 'core/core-intro',
           label: 'Core',
+          position: 'left',
+        },                
+        {
+          to: 'hardware/hardware-intro',
+          label: 'Hardware',
           position: 'left',
         },
         {

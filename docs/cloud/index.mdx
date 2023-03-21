@@ -11,25 +11,36 @@ are also explored in this section.
 
 ## What is the AutoPi Cloud?
 
-The AutoPi Cloud is a system created to more easily manage your AutoPi device. It is essentially a
-friendly interface that shows the current state of the device and allows you to easily change that
-state to whatever is needed. For example, there is a big section of advanced settings that are
-available that change various functionalities of the device like WiFi, hotspot, accelerometer
-and power settings. It is also possible to setup the device to send data back to your own servers.
-This way data can be kept private if needed.
+The AutoPi Cloud is a system created to more easily manage your AutoPi device. The Cloud is divided into several sections:
+
+- Device management 
+- Fleet management 
+- API
 
 <p align="center">
-  <img src={useBaseUrl('/img/gen3device_narrow.png')} alt="AutoPi GEN3" width="400"/>
+  <img src={useBaseUrl('/img/cloud/cloud_device_setups_scaled.png')} alt="AutoPi Cloud" width="400"/>
 </p>
 
-The Cloud also allows you to view data that your device has sent back. There is a dashboard that
+
+### Device management
+This is an area that shows the current state of your devices and allows you to easily change that
+state to whatever is needed. For example, there is a section of advanced settings that are
+available that change various functionalities of the device like WiFi, hotspot, accelerometer
+and power settings. It is also possible to setup the device to send data back to your own servers.
+This way data can be kept private if needed. It possible to manage and maintain multiple devices at the same type, by applying templates to groups of devices.
+
+
+### Fleet management
+The Cloud also allows you to view data that has been recorded from your vehicle. There is a dashboard that
 shows past OBD-II data like RPM, speed and fuel level. The device also sends back information about
 [trips](/cloud/trips/introduction), which are also viewable. The Cloud also keeps track of the
 [events](/cloud/events/index.md) that were triggered on your device. In the events page, you are
 able to view all events and filter them by date or tag.
 
-## Links
+### Cloud API
+The [API](/cloud/api/api-intro) gives you acccess to all the same functionalities you see in the cloud. Through the API it is possible to extend the features to your own systems or APP solution and thereby build on top of the platform. 
 
+## Links
   - Read more about our [product](https://autopi.io)
   - Buy the device in our [shop](https://shop.autopi.io)
   - Visit our [community](https://community.autopi.io)
