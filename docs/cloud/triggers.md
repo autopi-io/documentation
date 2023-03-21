@@ -3,12 +3,18 @@ id: cloud-triggers
 title: Triggers
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Triggers allows you to get notifications and/or perform actions both based on events from the device, but also all the various data points uploaded to the AutoPi Cloud.
 
 _Webhooks_ are supported so you can integrate with almost any service or system. Popular examples are:
 
   - [Slack](https://slack.com)
   - [IFTFT](https://ifttt.com)
+
+<p align="center">
+  <img src={useBaseUrl('/img/cloud/triggers.jpg')} alt="AutoPi Cloud Triggers"/>
+</p>
 
 :::note
 For more information on how to setup triggers in the AutoPi Cloud please see [this guide](../guides/a_guide_to_triggers.md)
