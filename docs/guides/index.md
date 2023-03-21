@@ -3,6 +3,9 @@ id: guides-intro
 title: Getting started
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import SideBySide from '@site/src/components/SideBySide';
+
 This is a step-by-step instructions on how to set-up your AutoPi 4G/LTE Edition. The AutoPi 4G/LTE
 Edition is already assembled with your SD card inside and just needs a few steps to complete the
 installation.
@@ -143,6 +146,45 @@ Your device is now online and connected to the AutoPi Cloud. When you have compl
 remember to change your device WiFi password. The password your device came with is meant for a one
 time setup and it is recommended to change it after you have setup your device. You can change the
 password from the AutoPi Cloud Advanced Settings.
+
+## 11. Tips
+
+When installing the device in the car, there is a few tips on how to get the best performance of your device.
+
+<SideBySide>
+	<p>
+		<strong>Hint 1: </strong>Try to avoid installing the device in direct sun. Direct sun will heat up the device and in the summertime this can cause the CPU to throttle down, if the temperature gets too hot. 
+	</p>
+	<img alt="Hint 2" src={require('@site/static/img/user-manual/usage_avoid_direct_sun.png').default}/>
+</SideBySide>
+
+<br/>
+
+<SideBySide>
+	<p>
+		<strong>Hint 2: </strong>The device contains a GPS antenna inside. Make sure that there is no metal covering the device as this can affect the performance of the device. 
+	</p>
+	<img alt="Hint 2" src={require('@site/static/img/user-manual/usage_avoid_metal.png').default}/>
+</SideBySide>
+
+<br/>
+
+<SideBySide>
+	<p>
+		<strong>Hint 3: </strong>The GPS antenna is located close the the logo on the device. To ensure the best performance of your device, make sure the logo side of the device is facing the sky.
+	</p>
+	<img alt="Hint 3" src={require('@site/static/img/user-manual/usage_gps_antenna_orientation.png').default}/>
+</SideBySide>
+
+<br/>
+
+<SideBySide>
+	<p>
+		<strong>Hint 4: </strong>When powering the device, make sure you only power it through the OBD connector. The device can not be powered through any of the other ports.
+	</p>
+	<img alt="Hint 4" src={require('@site/static/img/user-manual/usage_how_to_power.png').default}/>
+</SideBySide>
+
 
 :::note
 Getting started with you **DiY Edition**? For TMU devices, check [this](/hardware/generation-3/setup_your_tmu_diy_edition.md) guide,
