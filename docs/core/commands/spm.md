@@ -11,13 +11,13 @@ Gets current battery voltage
 ----
 ## `spm.flash_firmware`
 
-Flashes new SPM firmware to the ATtiny.
+Flashes new SPM firmware to the MCU.
 
 
 ----
 ## `spm.fuse`
 
-Manage fuse of the ATtiny.
+Manages the fuse of the MCU.
 
 
 ----
@@ -79,4 +79,4 @@ Queries a given SPM command.
 ----
 ## `spm.reset`
 
-Reset/restart ATtiny.
+Reset/restart the MCU.

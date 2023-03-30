@@ -34,7 +34,7 @@ def parse_doc(file_path, group=False):
                 if not is_doc:
                     is_doc = True
                 else:
-                    if group:
+                    if group and "_" in cmd:
                         ret.append({"cmd": cmd[:cmd.rindex("_")], "grp": cmd[cmd.rindex("_")+1:], "doc": doc})
                     else:
                         ret.append({"cmd": cmd, "doc": doc})
@@ -66,7 +66,7 @@ def gen_doc(src_path, dst_path, kind, group=False):
 
             res = parse_doc(os.path.join(src_path, fn), group=group)
             if group:
-                res = sorted(res, key=lambda r: (r["grp"], r["cmd"]))
+                res = sorted(res, key=lambda r: (r.get("grp", ""), r["cmd"]))
                 grp = None
             else:
                 res = sorted(res, key=lambda r: r["cmd"])
@@ -77,7 +77,7 @@ def gen_doc(src_path, dst_path, kind, group=False):
 
                 f.write("\n")
                 if group:
-                    if grp != r["grp"]:
+                    if "grp" in r and grp != r["grp"]:
                         grp = r["grp"]
                         f.write("## {:}s\n".format(grp.title()))
                         i = 1
@@ -85,7 +85,8 @@ def gen_doc(src_path, dst_path, kind, group=False):
                     if i > 1:
                         f.write("\n----\n")
 
-                    f.write("### `{:}`\n".format(r["cmd"]))  
+                    if r["cmd"]:
+                        f.write("### `{:}`\n".format(r["cmd"]))  
                 else:
                     if i > 1:
                         f.write("\n----\n")

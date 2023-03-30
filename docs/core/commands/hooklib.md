@@ -27,6 +27,15 @@ Mainly for testing.
 
 
 ----
+## `hooklib.geofence_event_trigger`
+
+Listens for position results and triggers geofence inside/outside and enter/exit events
+inside/outside - triggered on startup
+enter/exit - triggered during driving
+Change happens when the same result is repeated [repeat_count_to_trigger_change] times
+
+
+----
 ## `hooklib.kernel_error_blacklist_filter`
 
 Filters out blacklisted kernel errors.
@@ -36,6 +45,12 @@ Filters out blacklisted kernel errors.
 ## `hooklib.kernel_error_event_trigger`
 
 Triggers `system/kernel/error` events.
+
+
+----
+## `hooklib.load_geofences_handler`
+
+Loads geofence file
 
 
 ----
@@ -60,3 +75,9 @@ Calls a Salt returner module directy from current process.
 ## `hooklib.skip_empty_filter`
 
 Filters out empty results.
+
+
+----
+## `hooklib.temperature_event_trigger`
+
+Looks for temperature results and triggers `system/temperature/*` event when temperature changes.

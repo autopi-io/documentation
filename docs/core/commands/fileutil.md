@@ -3,6 +3,21 @@ id: core-commands-fileutil
 title: Fileutil
 ---
 
+## `fileutil.grep`
+
+Match lines in a text file.
+
+**ARGUMENTS**
+
+  - **`pattern`** (str): Regex pattern to match.
+  - **`file`** (str): File to search in.
+
+**OPTIONAL ARGUMENTS**
+
+  - **`tail_lines`** (int): How many of the last matched lines should be included? Set to `0` to include all lines. Default is `10`.
+
+
+----
 ## `fileutil.line_count`
 
 Returns count of new line characters in a file.

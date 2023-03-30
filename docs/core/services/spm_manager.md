@@ -6,13 +6,13 @@ title: Spm Manager
 ## Handlers
 ### `flash_firmware`
 
-Flashes new SPM firmware to the ATtiny.
+Flashes new SPM firmware to the MCU.
 
 
 ----
 ### `fuse`
 
-Manage fuse of the ATtiny.
+Manage fuse of the MCU.
 
 
 ----
@@ -45,4 +45,4 @@ Queries a given SPM command.
 ----
 ### `reset`
 
-Reset/restart ATtiny.
+Reset/restart the MCU.

@@ -13,6 +13,14 @@ are missing, i.e. not seen for whatever reason when running the `usbutil.devices
 ## `usbutil.devices`
 
 Returns the lsusb bash command result as a list of dictionaries, each dict is a separete device.
+An example dict structure is presented below:
+
+
+- bus: `001`                          # the linux system bus number
+device: `001`                       # the linux system device number
+name: Linux Foundation 2.0 root hub # the name of the device
+product: `0002`                     # the product number (hex) of the device
+vendor: 1d6b                        # the vendor number (hex) of the device
 
 
 ----

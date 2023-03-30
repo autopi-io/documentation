@@ -14,7 +14,7 @@ Change to different master host.
 **OPTIONAL ARGUMENTS**
 
   - **`confirm`** (bool): Acknowledge the execution of this command. Default is `False`.
-  - **`show_changes`** (bool): Show the changes made in the files `/etc/salt/minion` and `/boot/host.aliases`. Default is `False`.
+  - **`show_changes`** (bool): Show the changes made in the file `/etc/salt/minion`. Default is `False`.
 
 :::note
 When the master (hub) is changed, the API endpoint URL won't be updated automatically
@@ -144,6 +144,15 @@ Update a minion to newest release by running a highstate if not already up-to-da
 
 **OPTIONAL ARGUMENTS**
 
-  - **`force`** (bool): Default is `False`.
-  - **`dry_run`** (bool): Default is `False`.
-  - **`only_retry`** (bool): Default is `False`.
+  - **`force`** (bool): Default is `False`. Force an update, skipping all checks that would stop the update from occuring.
+  - **`demand`** (bool): Default is `False`. Demand an update, even if the device is already in the latest version.
+  - **`dry_run`** (bool): Default is `False`. Don`t actually perform the update.
+  - **`only_retry`** (bool): Default is `False`. Perform an update only if it is in the retrying state.
+  - **`reset_attempts`** (bool): Default is `False`. Set this to true if you want to reset the attempts counter that limits the amount of failed update retries.
+
+Notes:
+
+- The difference between the `force` and `demand` arguments is that `demand` is used to perform an update even if the device is already up-to-date.
+It will not skip over the maximum allowed failed update retries. `force` on the other hand will do both, it will perform an update on the device,
+even if it`s already up to date, but will also skip over the maximum allowed failed updates. In other words, they are almost the same, except that
+`force` will skip over the retry limit.
