@@ -72,6 +72,13 @@ events. All of those events signify that the device had started an update attemp
 `system/release/failed`, `system/release/updated` or an event that means the device [shut down](/cloud/events/system.md#power-events),
 then the device has likely stopped updating.
 
+**It is also possible to fetch the events from the reactor cache with the following command, directly on the device**
+
+`reactor.manage context cache`
+
+If this list of events contains the above mentioned `system/release/pending`, that means the device us currently applying the update.
+Either during the `startup` states, or during the `power.sleep` command.
+
 #### Running `saltutil.running`
 
 With the `saltutil.running` command you can check the jobs the device is currently running. Using this command,
