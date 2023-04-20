@@ -148,7 +148,6 @@ module.exports = {
                 "core/services/core-services-ble-manager",
                 "core/services/core-services-can-manager",
                 "core/services/core-services-cloud-manager",
-                "core/services/core-services-docker-monitor",
                 "core/services/core-services-ec2x-manager",
                 "core/services/core-services-event-reactor",
                 "core/services/core-services-key-fob-manager",

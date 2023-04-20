@@ -106,10 +106,13 @@ For a full description of the two status LED's, please see [this](/core/power_ma
 ## 7. Connect to local administration
 
 Once connected to the WiFi hotspot, you need to configure your APN settings for the sim card
-inserted. To do so, go to [my.autopi.io](https://my.autopi.io/). Click on the "Go local" button in
-the bottom. This will connect you to the local device and you should see a screen like shown in the bottom image
+inserted. To do so, go to [my.autopi.io](https://my.autopi.io/). Click on the "Go local" button at
+the bottom. However you will need to be logged out in order to see the "Go local" button. Alternative of clicking the "Go local" button would be going to [local.autopi.io](https://local.autopi.io/).
+
+This will connect you to the local device and you should see a screen like shown in the bottom image
 . This will indicate that you are connected to the local device and you can go ahead and login.
 No username/password needed.
+
 
 
 ![AutoPi.io - Localhost login](/img/guides/getting_started/local.jpg)
