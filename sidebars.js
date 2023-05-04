@@ -254,7 +254,8 @@ module.exports = {
                 "hardware/autopi-tmu-cm4/mounting_holes",
                 "hardware/autopi-tmu-cm4/obd-connector-pinout",
                 "hardware/autopi-tmu-cm4/using-hat",
-                "hardware/autopi-tmu-cm4/led-and-button"
+                "hardware/autopi-tmu-cm4/led-and-button",
+                "hardware/autopi-tmu-cm4/installing_external_antennas",
             ],
             "label": "AutoPi TMU CM4",
             "type": "category"
@@ -264,7 +265,7 @@ module.exports = {
                 "hardware/generation-3.5-SocketCAN/SocketCAN-intro",
                 "hardware/generation-3.5-SocketCAN/connection-overview",
                 "hardware/generation-3.5-SocketCAN/device_dimensions",
-                "hardware/generation-3.5-SocketCAN/installing-external-antennas",
+                "hardware/generation-3.5-SocketCAN/installing_external_antennas",
                 "hardware/generation-3.5-SocketCAN/mounting_holes",
                 "hardware/generation-3.5-SocketCAN/obd-connector-pinout"
             ],
