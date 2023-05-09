@@ -37,6 +37,10 @@ title: Accelerometer
 
 ## Wake On Motion
 
+Devices with a hardware version of **5.1** and earlier have the wake on motion available, this includes Gen 2 devices as well.
+
+Devices with a hardware version of **5.2** and above **don't** support wake on motion.
+
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
 | SENSITIVITY | The sensitivity of a trigger for the motions/jolts. Minimum value is 0 and maximum value is 127. The sensitivity value defines how much G force is required to trigger a wake event using the formula `sensitivity * 0.063 = G` | int | 5 | - |
