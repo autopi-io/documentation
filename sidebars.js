@@ -227,13 +227,15 @@ module.exports = {
         "hardware/hardware-intro",   
         {
             "items": [
-                "hardware/accessories/accessories-intro",         
+                "hardware/accessories/accessories-intro",    
+                "hardware/accessories/device_mounts",     
                 {
                     "items": [
                         "hardware/accessories/keyfob-hat/keyfob-intro",
                         "hardware/accessories/keyfob-hat/keyfob-interface",                        
                         "hardware/accessories/keyfob-hat/keyfob-hat-install",
-                        "hardware/accessories/keyfob-hat/keyfob-hat-pinout",                        
+                        "hardware/accessories/keyfob-hat/keyfob-hat-pinout",      
+                                        
                     ],
                     "label": "Keyless entry",
                     "type": "category"

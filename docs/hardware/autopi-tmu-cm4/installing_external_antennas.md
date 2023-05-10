@@ -25,7 +25,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 		<strong>Step 1: </strong>
 		Take your AutoPi and flip it so you can face the bottom of the device. Unscrew the bottom cover of the device and get out the shield that was previously installed and disconnect the internal antennas. 
 	</p>
-	<img alt="Step 1" src={useBaseUrl('/img/hardware/tmu_cm4/ext_ant3.jpg')} width="500px" height="350px"/>
+	<img alt="Step 1" src={useBaseUrl('/img/hardware/tmu_cm4/ext_ant3.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -39,7 +39,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 			<li>The right antenna (Alt. 4G) should be connected to the right connector of the modem</li></ul><br/>
 			<strong>Note: </strong>
 			Please make sure that the antennas are not stuck in between the casings or that they are accidentally screwed in when you put back the screws in the casing. Once installed,
-			don't tighten the SMA nut anymore because the cables will twist and be damanged in the interior of the device.
+			don't tighten the SMA nut anymore because the cables will twist and be damaged in the interior of the device.
 	</p>
 	<img alt="Step 2" src={useBaseUrl('/img/hardware/tmu_cm4/ext_ant4.jpg')}/>
 </SideBySide>
@@ -52,7 +52,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 		<strong>Note: </strong>
 			Please make sure that the antennas are not stuck in between the casings or that they are accidentally screwed in when you put back the screws in the casing.
 	</p>
-	<img alt="Step 3" src={useBaseUrl('/img/hardware/tmu_cm4/ext_ant5.jpg')}/>
+	<img class="zoomable" alt="Step 3" src={useBaseUrl('/img/hardware/tmu_cm4/ext_ant5.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -73,6 +73,8 @@ You need to be careful not to tear or damange some of the cables when handling t
 	<img alt="Step 5" src={useBaseUrl('/img/hardware/tmu_cm4/ext_ant6.jpg')}/>
 </SideBySide>
 <br/> 
+
+
 
 ### Disscussion
 <p>
