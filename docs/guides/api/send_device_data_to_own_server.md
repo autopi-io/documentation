@@ -130,7 +130,7 @@ method on your express application.
 // index.js
 
 const express = require('express');
-const app = require('app');
+const app = express();
 
 app.use(express.json());
 
@@ -167,7 +167,7 @@ module.exports = function authenticate(req, res, next) {
     const authorizedToken = "SOME TOKEN PASTED IN HERE OR SOMEWHERE ELSE";
     const token = req.get('Authorization');
     
-    if token !== `Bearer ${authorizedToken}` {
+    if (token !== `Bearer ${authorizedToken}`) {
         // token is invalid, bail out
         res.status(401).end();
         return
@@ -192,7 +192,7 @@ After implementing `authenticate`, you can attach it to the already existing rou
 // index.js
 
 const express = require('express');
-const app = require('app');
+const app = express();
 
 // import the authenticate function
 const authenticate = require('./authenticate.js');
@@ -225,7 +225,7 @@ module.exports = function authenticate(req, res, next) {
     const authorizedToken = "SOME TOKEN PASTED IN HERE OR SOMEWHERE ELSE";
     const token = req.get('Authorization');
 
-    if token !== `Bearer ${authorizedToken}` {
+    if (token !== `Bearer ${authorizedToken}`) {
         // token is invalid, bail out
         res.status(401).end();
         return
@@ -240,7 +240,7 @@ module.exports = function authenticate(req, res, next) {
 // index.js
 
 const express = require('express');
-const app = require('app');
+const app = express();
 const authenticate = require('./authenticate.js');
 
 const port = 8000;
