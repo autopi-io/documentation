@@ -121,7 +121,8 @@ module.exports = {
             "items": [
                 "core/power_management/core-power-intro",
                 "core/power_management/core-power-high",
-                "core/power_management/core-power-low"
+                "core/power_management/core-power-low",
+                "core/power_management/core-power-sleep-timers"
             ],
             "label": "Power Management",
             "type": "category"
