@@ -74,6 +74,10 @@ module.exports = {
               label: 'Shop',
               to: 'https://shop.autopi.io',
             },
+            {
+              label: 'Search Documentation',
+              to: 'https://docs.autopi.io/search/',
+            },            
           ],
         },
         {
