@@ -302,13 +302,13 @@ module.exports = {
         },
         {
             "items": [
-                "hardware/generation-2/gen-2-intro",
-                "hardware/generation-2/connection-overview",
-                "hardware/generation-2/obd-connector-pinout",
-                "hardware/generation-2/setup-your-gen-2-diy-edition",
-                "hardware/generation-2/update-firmware-of-eg25-g-module",
-                "hardware/generation-2/using-gpio-and-hdmi-with-the-gen-2",
-                "hardware/generation-2/using-the-rpi3-adapter"
+                "hardware/autopi_dongle/gen-2-intro",
+                "hardware/autopi_dongle/connection-overview",
+                "hardware/autopi_dongle/obd-connector-pinout",
+                "hardware/autopi_dongle/setup-your-gen-2-diy-edition",
+                "hardware/autopi_dongle/update-firmware-of-eg25-g-module",
+                "hardware/autopi_dongle/using-gpio-and-hdmi-with-the-gen-2",
+                "hardware/autopi_dongle/using-the-rpi3-adapter"
             ],
             "label": "AutoPi Dongle",
             "type": "category"

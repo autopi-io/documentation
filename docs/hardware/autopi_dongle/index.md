@@ -6,7 +6,7 @@ title: Introduction
 In this section, we will explore specifics about the generation 2 devices. On this page, you will
 find general information like the GPIO pinout and where to put the jumper if you need it.
 
-![Second generation AutoPi device](/img/hardware/gen_2/device.png)
+![Second generation AutoPi device](/img/hardware/autopi_dongle/device.png)
 
 ## Pinout
 
@@ -17,7 +17,7 @@ of the AutoPi. This I2C bus is used by the AutoPi, but can be shared with other 
 
 All other pins are free and their functionality follows that of the Raspberry Pi.
 
-![Second generation AutoPi GPIO Pinout](/img/hardware/gen_2/gpio_pinout.jpg)
+![Second generation AutoPi GPIO Pinout](/img/hardware/autopi_dongle/gpio_pinout.jpg)
 
 :::note
 If you'd like to discuss this topic with us or other fellow community members, you can do so on
@@ -30,4 +30,4 @@ our community page dedicated for this guide:
 This is a picture of the location of the 5V FORCE pins. You can put a jumper on these pins to
 prevent the AutoPi from going to hibernation. More info [here](../../guides/jumpers.md).
 
-![Second generation AutoPi Jumper location](/img/hardware/gen_2/jumper.jpg)
+![Second generation AutoPi Jumper location](/img/hardware/autopi_dongle/jumper.jpg)

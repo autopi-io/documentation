@@ -20,25 +20,25 @@ Here is what you need to do:
 
 3. Your RPi3 adapter comes with screws that you’ll have to insert (from the bottom side, upwards) in four corners of your RPi3, once you do that, you can put the spacers down unto your screws. Be gentle with the screws since they are made of plastic. The following image illustrates how it should look:
 
-![bottom_of_rpi3_with_screws](/img/guides/using_the_rpi3_adapter/bottom_of_rpi3_with_screws.jpg)
+![bottom_of_rpi3_with_screws](/img/hardware/autopi_dongle/using_the_rpi3_adapter/bottom_of_rpi3_with_screws.jpg)
 
 It is important that you insert your screws first, from the bottom so the spacers can be put on:
 
-![spacers_showcased](/img/guides/using_the_rpi3_adapter/spacers_showcased.jpg)
+![spacers_showcased](/img/hardware/autopi_dongle/using_the_rpi3_adapter/spacers_showcased.jpg)
 
 4. Hereafter, insert 4 screws downward the four inner holes on your RPi3 adapter, and screw them closed with 4 nuts. 
 
-![adapter_board_bottom_view](/img/guides/using_the_rpi3_adapter/adapter_board_bottom_view.jpg)
+![adapter_board_bottom_view](/img/hardware/autopi_dongle/using_the_rpi3_adapter/adapter_board_bottom_view.jpg)
 
 Make sure the screws are faced downwards in the four inner holes. 
 
-![adapter_board_top_view](/img/guides/using_the_rpi3_adapter/adapter_board_top_view.jpg)
+![adapter_board_top_view](/img/hardware/autopi_dongle/using_the_rpi3_adapter/adapter_board_top_view.jpg)
 
 Put on the nuts and tighten the screws in place by rotating them clockwise.
 
 5. Then, push down your RPi3 adapter unto the RPi3 (where the left side black box will fit the headerpins on the RPi3).
 
-![adapter_board_and_rpi3_connected](/img/guides/using_the_rpi3_adapter/adapter_board_and_rpi3_connected.jpg)
+![adapter_board_and_rpi3_connected](/img/hardware/autopi_dongle/using_the_rpi3_adapter/adapter_board_and_rpi3_connected.jpg)
 
 This is what it should like once you have safely pushed the adapter down on the RPi3
 
@@ -50,7 +50,7 @@ This is what it should like once you have safely pushed the adapter down on the 
 
 9. This step only applies if you have a 4G edition and you want to use the modem. To enable the modem you need to connect the AutoPi to the RPi3 using the flat Micro USB cable that came with your AutoPi. Insert the USB cable into the micro USB to USB adapter that came with your Raspberry Pi 3 Adapter. Then insert it into the RPi3. You can see how in this image (red circles):
 
-![usb_connection_rpi3](/img/guides/using_the_rpi3_adapter/usb_connection_rpi3.jpg)
+![usb_connection_rpi3](/img/hardware/autopi_dongle/using_the_rpi3_adapter/usb_connection_rpi3.jpg)
 
 If you have another micro USB to USB cable, you can also use that. Anyone will work. 
 
@@ -73,11 +73,11 @@ This ID needs to be accepted by AutoPi. So you need to send the correct ID to su
 
 The final result should look something similar to this. 
 
-![final_result_1](/img/guides/using_the_rpi3_adapter/final_result_1.jpg)
+![final_result_1](/img/hardware/autopi_dongle/using_the_rpi3_adapter/final_result_1.jpg)
 
-![final_result_2](/img/guides/using_the_rpi3_adapter/final_result_2.jpg)
+![final_result_2](/img/hardware/autopi_dongle/using_the_rpi3_adapter/final_result_2.jpg)
 
-![final_result_3](/img/guides/using_the_rpi3_adapter/final_result_3.jpg)
+![final_result_3](/img/hardware/autopi_dongle/using_the_rpi3_adapter/final_result_3.jpg)
 
 ### Discussion
 If you'd like to discuss this topic with us or other fellow community members, you can do so on our community page dedicated for this guide:
