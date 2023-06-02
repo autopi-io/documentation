@@ -290,12 +290,12 @@ module.exports = {
         },
         {
             "items": [
-                "hardware/generation-3/gen-3-intro",
-                "hardware/generation-3/connection-overview",
-                "hardware/generation-3/developer-kit",
-                "hardware/generation-3/installing-external-antennas",
-                "hardware/generation-3/obd-connector-pinout",
-                "hardware/generation-3/setup-your-tmu-diy-edition"
+                "hardware/autopi_dongle_gen3/gen-3-intro",
+                "hardware/autopi_dongle_gen3/connection-overview",
+                "hardware/autopi_dongle_gen3/developer-kit",
+                "hardware/autopi_dongle_gen3/installing-external-antennas",
+                "hardware/autopi_dongle_gen3/obd-connector-pinout",
+                "hardware/autopi_dongle_gen3/setup-your-tmu-diy-edition"
             ],
             "label": "AutoPi Dongle GEN3",
             "type": "category"

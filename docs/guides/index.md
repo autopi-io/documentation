@@ -190,6 +190,6 @@ When installing the device in the car, there is a few tips on how to get the bes
 
 
 :::note
-Getting started with you **DiY Edition**? For TMU devices, check [this](/hardware/generation-3/setup_your_tmu_diy_edition.md) guide,
+Getting started with you **DiY Edition**? For TMU devices, check [this](/hardware/autopi_dongle_gen3/setup_your_tmu_diy_edition.md) guide,
 for older, generation 2 devices, check [this](/hardware/autopi_dongle/setup_your_gen_2_diy_edition.md) guide.
 :::

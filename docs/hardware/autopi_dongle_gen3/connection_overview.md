@@ -19,7 +19,7 @@ This diagram shows the 3<sup>rd</sup> generation frontside connections possibili
 8. Micro USB connectors for external use
 9. SD card slot
 
-![connection overview front](/img/hardware/gen_3/side1.png)
+![connection overview front](/img/hardware/autopi_dongle_gen3/connection_overview/side1.png)
 
 ### Back side
 
@@ -30,7 +30,7 @@ This diagram shows the 3<sup>rd</sup> generation backside connections possibilit
 3. AP EXT1 - OBD2 pass-through connector
 4. Modem slot
 
-![connection overview back](/img/hardware/gen_3/side2.png)
+![connection overview back](/img/hardware/autopi_dongle_gen3/connection_overview/side2.png)
 
 ## Pinouts
 
@@ -43,7 +43,7 @@ of the AutoPi. This I2C bus is used by the AutoPi, but can be shared with other 
 
 All other pins are free and their functionality follows that of the Raspberry Pi.
 
-![Third generation AutoPi GPIO Pinout](/img/hardware/gen_3/gpio_pinout_gen3.png)
+![Third generation AutoPi GPIO Pinout](/img/hardware/autopi_dongle_gen3/connection_overview/gpio_pinout_gen3.png)
 
 :::note
 If you'd like to discuss this topic with us or other fellow community members, you can do so on
@@ -54,17 +54,17 @@ our community page dedicated for this guide:
 
 ### AutoPi Extension Port 1
 
-![AP EXT 1 connector pinout](/img/hardware/gen_3/AP_EXT1.png)
+![AP EXT 1 connector pinout](/img/hardware/autopi_dongle_gen3/connection_overview/AP_EXT1.png)
 
 ### AutoPi Extension Port 2
 
-![AP EXT 2 connector pinout](/img/hardware/gen_3/AP_EXT2.png)
+![AP EXT 2 connector pinout](/img/hardware/autopi_dongle_gen3/connection_overview/AP_EXT2.png)
 
 ### User Extension Port 1
 
-![USER EXT 1 connector pinout](/img/hardware/gen_3/USER_EXT1.png)
+![USER EXT 1 connector pinout](/img/hardware/autopi_dongle_gen3/connection_overview/USER_EXT1.png)
 
 ### User Extension Port 2
 
-![USER EXT 2 connector pinout](/img/hardware/gen_3/USER_EXT2.png)
+![USER EXT 2 connector pinout](/img/hardware/autopi_dongle_gen3/connection_overview/USER_EXT2.png)
 
