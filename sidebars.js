@@ -265,12 +265,12 @@ module.exports = {
         },        
         {
             "items": [
-                "hardware/generation-3.5-SocketCAN/SocketCAN-intro",
-                "hardware/generation-3.5-SocketCAN/connection-overview",
-                "hardware/generation-3.5-SocketCAN/device_dimensions",
-                "hardware/generation-3.5-SocketCAN/installing_external_antennas",
-                "hardware/generation-3.5-SocketCAN/mounting_holes",
-                "hardware/generation-3.5-SocketCAN/obd-connector-pinout"
+                "hardware/autopi_tmu_socketcan/SocketCAN-intro",
+                "hardware/autopi_tmu_socketcan/connection-overview",
+                "hardware/autopi_tmu_socketcan/device_dimensions",
+                "hardware/autopi_tmu_socketcan/installing_external_antennas",
+                "hardware/autopi_tmu_socketcan/mounting_holes",
+                "hardware/autopi_tmu_socketcan/obd-connector-pinout"
             ],
             "label": "AutoPi TMU SocketCAN",
             "type": "category"

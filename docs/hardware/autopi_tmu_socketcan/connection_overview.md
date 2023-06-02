@@ -19,7 +19,7 @@ This diagram shows the 3.5 CAN-FD generation frontside connections possibilities
 8. RTC battery connector
 9. Micro USB connectors for external use
 
-![connection overview front](/img/hardware/gen_3.5/side1.png)
+![connection overview front](/img/hardware/autopi_tmu_socketcan/connection_overview/side1.png)
 
 ### Back side
 
@@ -31,7 +31,7 @@ This diagram shows the 3.5 CAN-FD generation backside connections possibilities
 4. Modem slot
 
 
-![connection overview back](/img/hardware/gen_3.5/side2.png)
+![connection overview back](/img/hardware/autopi_tmu_socketcan/connection_overview/side2.png)
 
 ## Pinout
 
@@ -44,19 +44,19 @@ of the AutoPi. This I2C bus is used by the AutoPi, but can be shared with other 
 
 All other pins are free and their functionality follows that of the Raspberry Pi.
 
-![GPIO pinout](/img/hardware/gen_3.5/gpio_pinout_gen3.5.png) 
+![GPIO pinout](/img/hardware/autopi_tmu_socketcan/connection_overview/gpio_pinout_gen3.5.png) 
 
 ### AutoPi Extension Port 1
 
-![AP EXT 1 connector pinout](/img/hardware/gen_3.5/AP_EXT1.png)
+![AP EXT 1 connector pinout](/img/hardware/autopi_tmu_socketcan/connection_overview/AP_EXT1.png)
 
 ### AutoPi Extension Port 2
 
-![AP EXT 2 connector pinout](/img/hardware/gen_3.5/AP_EXT2.png)
+![AP EXT 2 connector pinout](/img/hardware/autopi_tmu_socketcan/connection_overview/AP_EXT2.png)
 
 ### User Extension Port 1
 
-![USER EXT 1 connector pinout](/img/hardware/gen_3.5/USER_EXT1.png)
+![USER EXT 1 connector pinout](/img/hardware/autopi_tmu_socketcan/connection_overview/USER_EXT1.png)
 
 The power to the extension ports can be controlled using the following commands:
 
@@ -66,4 +66,4 @@ The power to the extension ports can be controlled using the following commands:
 
 ### Ethernet Connection Port
 
-![ETH connector pinout](/img/hardware/gen_3.5/ETH_CONN.png)
+![ETH connector pinout](/img/hardware/autopi_tmu_socketcan/connection_overview/ETH_CONN.png)
