@@ -278,12 +278,12 @@ module.exports = {
         
         {
             "items": [
-                "hardware/generation-3.5-CAN_FD/gen-3.5-intro",
-                "hardware/generation-3.5-CAN_FD/connection-overview",
-                "hardware/generation-3.5-CAN_FD/device_dimensions",
-                "hardware/generation-3.5-CAN_FD/installing-external-antennas",
-                "hardware/generation-3.5-CAN_FD/mounting_holes",
-                "hardware/generation-3.5-CAN_FD/obd-connector-pinout"
+                "hardware/autopi_tmu_can_fd/gen-3.5-intro",
+                "hardware/autopi_tmu_can_fd/connection-overview",
+                "hardware/autopi_tmu_can_fd/device_dimensions",
+                "hardware/autopi_tmu_can_fd/installing-external-antennas",
+                "hardware/autopi_tmu_can_fd/mounting_holes",
+                "hardware/autopi_tmu_can_fd/obd-connector-pinout"
             ],
             "label": "AutoPi TMU CAN-FD",
             "type": "category"
