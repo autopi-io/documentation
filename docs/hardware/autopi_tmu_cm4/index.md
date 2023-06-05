@@ -7,7 +7,7 @@ This section has a few guides written out that are specifically for the AutoPi T
 Some of the knowledge may be transferrable to previous generation devices.
 
 <p align="center">
-<img src="/img/hardware/tmu_cm4/TMU_Floating_Topside_V1_scaled.png" alt="AutoPi TMU CM4" width="60%" />
+<img src="/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png" alt="AutoPi TMU CM4" width="60%" />
 </p>
 
 ## Key benefits

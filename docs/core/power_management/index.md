@@ -4,7 +4,7 @@ title: Introduction
 ---
 
 :::tip
-For power cycle, LED and button information on the AutoPi TMU CM4, please see [configuration here](/hardware/autopi-tmu-cm4/led-and-button)
+For power cycle, LED and button information on the AutoPi TMU CM4, please see [configuration here](/hardware/autopi_tmu_cm4/led_and_button.mdx)
 :::
 
 

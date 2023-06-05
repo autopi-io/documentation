@@ -25,7 +25,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 		<strong>Step 1: </strong>
 		Take your AutoPi and flip it so you can face the bottom of the device. Unscrew the bottom cover of the device and get out the shield that was previously installed and disconnect the internal antennas. 
 	</p>
-	<img alt="Step 1" src={useBaseUrl('/img/hardware/tmu_cm4/ext_ant3.jpg')}/>
+	<img alt="Step 1" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/installing_external_antennas/ext_ant3.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -41,7 +41,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 			Please make sure that the antennas are not stuck in between the casings or that they are accidentally screwed in when you put back the screws in the casing. Once installed,
 			don't tighten the SMA nut anymore because the cables will twist and be damaged in the interior of the device.
 	</p>
-	<img alt="Step 2" src={useBaseUrl('/img/hardware/tmu_cm4/ext_ant4.jpg')}/>
+	<img alt="Step 2" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/installing_external_antennas/ext_ant4.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -52,7 +52,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 		<strong>Note: </strong>
 			Please make sure that the antennas are not stuck in between the casings or that they are accidentally screwed in when you put back the screws in the casing.
 	</p>
-	<img class="zoomable" alt="Step 3" src={useBaseUrl('/img/hardware/tmu_cm4/ext_ant5.jpg')}/>
+	<img class="zoomable" alt="Step 3" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/installing_external_antennas/ext_ant5.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -61,7 +61,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 		<strong>Step 4: </strong>
 		Screw back in the four metal screws that you took out in the beginning. You don’t have to worry about where to put them as they all have the same dimensions. 
 	</p>
-	<img alt="Step 4" src={useBaseUrl('/img/hardware/tmu_cm4/ext_ant2.jpg')}/>
+	<img alt="Step 4" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/installing_external_antennas/ext_ant2.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -70,7 +70,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 		<strong>Step 5: </strong>
 		Check that all the components are placed in their place and that there are no spaces between the casing!
 	</p>
-	<img alt="Step 5" src={useBaseUrl('/img/hardware/tmu_cm4/ext_ant6.jpg')}/>
+	<img alt="Step 5" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/installing_external_antennas/ext_ant6.jpg')}/>
 </SideBySide>
 <br/> 
 
