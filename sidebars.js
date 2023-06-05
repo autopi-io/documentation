@@ -88,19 +88,25 @@ module.exports = {
                 "core/commands/core-commands-audio",
                 "core/commands/core-commands-avrdude",
                 "core/commands/core-commands-ble",
+                "core/commands/core-commands-bluetooth",
                 "core/commands/core-commands-can",
                 "core/commands/core-commands-clock",
                 "core/commands/core-commands-cloud",
+                "core/commands/core-commands-crypto",
                 "core/commands/core-commands-cryptoauth",
                 "core/commands/core-commands-dac",
                 "core/commands/core-commands-ec2x",
                 "core/commands/core-commands-fileutil",
+                "core/commands/core-commands-gnss",
                 "core/commands/core-commands-hooklib",
                 "core/commands/core-commands-hostapd",
                 "core/commands/core-commands-keyfob",
                 "core/commands/core-commands-log",
                 "core/commands/core-commands-minionutil",
+                "core/commands/core-commands-modem",
+                "core/commands/core-commands-mosquitto",
                 "core/commands/core-commands-obd",
+                "core/commands/core-commands-openocd",
                 "core/commands/core-commands-power",
                 "core/commands/core-commands-qmi",
                 "core/commands/core-commands-reactor",
@@ -149,9 +155,12 @@ module.exports = {
                 "core/services/core-services-ble-manager",
                 "core/services/core-services-can-manager",
                 "core/services/core-services-cloud-manager",
+                "core/services/core-services-crypto-manager",
                 "core/services/core-services-ec2x-manager",
                 "core/services/core-services-event-reactor",
+                "core/services/core-services-gnss-manager",
                 "core/services/core-services-key-fob-manager",
+                "core/services/core-services-modem-manager",
                 "core/services/core-services-obd-manager",
                 "core/services/core-services-process-manager",
                 "core/services/core-services-rfid-manager",
@@ -206,7 +215,6 @@ module.exports = {
         },
         "guides/4g-internet-setup-troubleshooting",
         "guides/a-guide-to-triggers",
-        "guides/setting-up-docker",
         "guides/adding-a-new-widget-from-scratch",
         "guides/autopi-logs",
         "guides/configuring-mqtt",
@@ -220,62 +228,56 @@ module.exports = {
         "guides/reflashing-your-device",
         "guides/remotely-waking-up-your-device",
         "guides/rfid-integartion",
+        "guides/setting-up-docker",
         "guides/setting-up-our-device-with-verizon-wireless",
         "guides/upgrading-your-raspberry-pi",
         "guides/using-the-autopi-with-an-external-power-supply"
     ],
     "hardwareSidebar": [
-        "hardware/hardware-intro",   
+        "hardware/hardware-intro",
         {
             "items": [
-                "hardware/accessories/accessories-intro",    
-                "hardware/accessories/device_mounts",     
+                "hardware/accessories/accessories-intro",
                 {
                     "items": [
                         "hardware/accessories/keyfob-hat/keyfob-intro",
-                        "hardware/accessories/keyfob-hat/keyfob-interface",                        
+                        "hardware/accessories/keyfob-hat/keyfob-interface",
                         "hardware/accessories/keyfob-hat/keyfob-hat-install",
-                        "hardware/accessories/keyfob-hat/keyfob-hat-pinout",      
-                                        
+                        "hardware/accessories/keyfob-hat/keyfob-hat-pinout"
                     ],
-                    "label": "Keyless entry",
+                    "label": "Keyfob Hat",
                     "type": "category"
-
-
-                }       
-                   
+                },
+                "hardware/accessories/device_mounts"
             ],
             "label": "Accessories",
             "type": "category"
-        },       
+        },
         {
             "items": [
-                "hardware/autopi_tmu_cm4/autopi-cm4-intro",
-                "hardware/autopi_tmu_cm4/device_specifications",
-                "hardware/autopi_tmu_cm4/installing-heatsink",
-                "hardware/autopi_tmu_cm4/device_dimensions",
-                "hardware/autopi_tmu_cm4/mounting_holes",
-                "hardware/autopi_tmu_cm4/obd-connector-pinout",
-                "hardware/autopi_tmu_cm4/using-hat",
-                "hardware/autopi_tmu_cm4/led-and-button",
-                "hardware/autopi_tmu_cm4/installing_external_antennas",
+                "hardware/autopi_dongle/gen-2-intro",
+                "hardware/autopi_dongle/connection-overview",
+                "hardware/autopi_dongle/obd-connector-pinout",
+                "hardware/autopi_dongle/setup-your-gen-2-diy-edition",
+                "hardware/autopi_dongle/update-firmware-of-eg25-g-module",
+                "hardware/autopi_dongle/using-gpio-and-hdmi-with-the-gen-2",
+                "hardware/autopi_dongle/using-the-rpi3-adapter"
             ],
-            "label": "AutoPi TMU CM4",
-            "type": "category"
-        },        
-        {
-            "items": [
-                "hardware/autopi_tmu_socketcan/SocketCAN-intro",
-                "hardware/autopi_tmu_socketcan/connection-overview",
-                "hardware/autopi_tmu_socketcan/device_dimensions",
-                "hardware/autopi_tmu_socketcan/installing_external_antennas",
-                "hardware/autopi_tmu_socketcan/mounting_holes",
-                "hardware/autopi_tmu_socketcan/obd-connector-pinout"
-            ],
-            "label": "AutoPi TMU SocketCAN",
+            "label": "AutoPi Dongle",
             "type": "category"
         },
-        
+        {
+            "items": [
+                "hardware/autopi_dongle_gen3/gen-3-intro",
+                "hardware/autopi_dongle_gen3/connection-overview",
+                "hardware/autopi_dongle_gen3/developer-kit",
+                "hardware/autopi_dongle_gen3/installing-external-antennas",
+                "hardware/autopi_dongle_gen3/obd-connector-pinout",
+                "hardware/autopi_dongle_gen3/setup-your-tmu-diy-edition"
+            ],
+            "label": "AutoPi Dongle Gen3",
+            "type": "category"
+        },
         {
             "items": [
                 "hardware/autopi_tmu_can_fd/gen-3.5-intro",
@@ -290,27 +292,29 @@ module.exports = {
         },
         {
             "items": [
-                "hardware/autopi_dongle_gen3/gen-3-intro",
-                "hardware/autopi_dongle_gen3/connection-overview",
-                "hardware/autopi_dongle_gen3/developer-kit",
-                "hardware/autopi_dongle_gen3/installing-external-antennas",
-                "hardware/autopi_dongle_gen3/obd-connector-pinout",
-                "hardware/autopi_dongle_gen3/setup-your-tmu-diy-edition"
+                "hardware/autopi_tmu_cm4/autopi-cm4-intro",
+                "hardware/autopi_tmu_cm4/device_dimensions",
+                "hardware/autopi_tmu_cm4/device_specifications",
+                "hardware/autopi_tmu_cm4/installing_external_antennas",
+                "hardware/autopi_tmu_cm4/installing-heatsink",
+                "hardware/autopi_tmu_cm4/led-and-button",
+                "hardware/autopi_tmu_cm4/mounting_holes",
+                "hardware/autopi_tmu_cm4/obd-connector-pinout",
+                "hardware/autopi_tmu_cm4/using-hat"
             ],
-            "label": "AutoPi Dongle GEN3",
+            "label": "AutoPi TMU CM4",
             "type": "category"
         },
         {
             "items": [
-                "hardware/autopi_dongle/gen-2-intro",
-                "hardware/autopi_dongle/connection-overview",
-                "hardware/autopi_dongle/obd-connector-pinout",
-                "hardware/autopi_dongle/setup-your-gen-2-diy-edition",
-                "hardware/autopi_dongle/update-firmware-of-eg25-g-module",
-                "hardware/autopi_dongle/using-gpio-and-hdmi-with-the-gen-2",
-                "hardware/autopi_dongle/using-the-rpi3-adapter"
+                "hardware/autopi_tmu_socketcan/SocketCAN-intro",
+                "hardware/autopi_tmu_socketcan/connection-overview",
+                "hardware/autopi_tmu_socketcan/device_dimensions",
+                "hardware/autopi_tmu_socketcan/installing_external_antennas",
+                "hardware/autopi_tmu_socketcan/mounting_holes",
+                "hardware/autopi_tmu_socketcan/obd-connector-pinout"
             ],
-            "label": "AutoPi Dongle",
+            "label": "AutoPi TMU SocketCAN",
             "type": "category"
         }
     ]
