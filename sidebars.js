@@ -255,43 +255,6 @@ module.exports = {
         },
         {
             "items": [
-                "hardware/autopi_dongle/gen-2-intro",
-                "hardware/autopi_dongle/connection-overview",
-                "hardware/autopi_dongle/obd-connector-pinout",
-                "hardware/autopi_dongle/setup-your-gen-2-diy-edition",
-                "hardware/autopi_dongle/update-firmware-of-eg25-g-module",
-                "hardware/autopi_dongle/using-gpio-and-hdmi-with-the-gen-2",
-                "hardware/autopi_dongle/using-the-rpi3-adapter"
-            ],
-            "label": "AutoPi Dongle",
-            "type": "category"
-        },
-        {
-            "items": [
-                "hardware/autopi_dongle_gen3/gen-3-intro",
-                "hardware/autopi_dongle_gen3/connection-overview",
-                "hardware/autopi_dongle_gen3/developer-kit",
-                "hardware/autopi_dongle_gen3/installing-external-antennas",
-                "hardware/autopi_dongle_gen3/obd-connector-pinout",
-                "hardware/autopi_dongle_gen3/setup-your-tmu-diy-edition"
-            ],
-            "label": "AutoPi Dongle Gen3",
-            "type": "category"
-        },
-        {
-            "items": [
-                "hardware/autopi_tmu_can_fd/gen-3.5-intro",
-                "hardware/autopi_tmu_can_fd/connection-overview",
-                "hardware/autopi_tmu_can_fd/device_dimensions",
-                "hardware/autopi_tmu_can_fd/installing-external-antennas",
-                "hardware/autopi_tmu_can_fd/mounting_holes",
-                "hardware/autopi_tmu_can_fd/obd-connector-pinout"
-            ],
-            "label": "AutoPi TMU CAN-FD",
-            "type": "category"
-        },
-        {
-            "items": [
                 "hardware/autopi_tmu_cm4/autopi-cm4-intro",
                 "hardware/autopi_tmu_cm4/device_dimensions",
                 "hardware/autopi_tmu_cm4/device_specifications",
@@ -315,6 +278,43 @@ module.exports = {
                 "hardware/autopi_tmu_socketcan/obd-connector-pinout"
             ],
             "label": "AutoPi TMU SocketCAN",
+            "type": "category"
+        },
+        {
+            "items": [
+                "hardware/autopi_tmu_can_fd/gen-3.5-intro",
+                "hardware/autopi_tmu_can_fd/connection-overview",
+                "hardware/autopi_tmu_can_fd/device_dimensions",
+                "hardware/autopi_tmu_can_fd/installing-external-antennas",
+                "hardware/autopi_tmu_can_fd/mounting_holes",
+                "hardware/autopi_tmu_can_fd/obd-connector-pinout"
+            ],
+            "label": "AutoPi TMU CAN-FD",
+            "type": "category"
+        },
+        {
+            "items": [
+                "hardware/autopi_dongle_gen3/gen-3-intro",
+                "hardware/autopi_dongle_gen3/connection-overview",
+                "hardware/autopi_dongle_gen3/developer-kit",
+                "hardware/autopi_dongle_gen3/installing-external-antennas",
+                "hardware/autopi_dongle_gen3/obd-connector-pinout",
+                "hardware/autopi_dongle_gen3/setup-your-tmu-diy-edition"
+            ],
+            "label": "AutoPi Dongle Gen3",
+            "type": "category"
+        },
+        {
+            "items": [
+                "hardware/autopi_dongle/gen-2-intro",
+                "hardware/autopi_dongle/connection-overview",
+                "hardware/autopi_dongle/obd-connector-pinout",
+                "hardware/autopi_dongle/setup-your-gen-2-diy-edition",
+                "hardware/autopi_dongle/update-firmware-of-eg25-g-module",
+                "hardware/autopi_dongle/using-gpio-and-hdmi-with-the-gen-2",
+                "hardware/autopi_dongle/using-the-rpi3-adapter"
+            ],
+            "label": "AutoPi Dongle",
             "type": "category"
         }
     ]
