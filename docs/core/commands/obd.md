@@ -272,6 +272,7 @@ Queries a given OBD command. To see supported OBD commands for your vehicle run:
   - **`baudrate`** (int): Specific protocol baudrate to be used. If none is specifed the current baudrate will be used.
   - **`verify`** (bool): Verify that OBD-II communication is possible with the desired protocol? Default value is `False`.
   - **`force`** (bool): Force query of unknown command. Default is `False`.
+  - **`type`** (str): Specify an alternative name of the type of the result. Default is the given name of the command.
 
 **OPTIONAL ARGUMENTS, CAN SPECIFIC**
 

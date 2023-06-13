@@ -227,6 +227,7 @@ Queries an OBD command.
   - **`baudrate`** (int): Specific protocol baudrate to be used. If none is specifed the current baudrate will be used.
   - **`verify`** (bool): Verify that OBD-II communication is possible with the desired protocol? Default value is `False`.
   - **`force`** (bool): Force query of unknown command. Default is `False`.
+  - **`type`** (str): Specify an alternative name of the type of the result. Default is the given name of the command.
 
 **OPTIONAL ARGUMENTS, CAN SPECIFIC**
 
@@ -307,6 +308,7 @@ Setup advanced runtime settings.
   - **`can_flow_control_clear`** (bool): Clear all CAN flow control filters and ID pairs before adding any new ones.
   - **`can_flow_control_filter`** (str): Ensure CAN flow control filter is added. Value must consist of `<Pattern>,<Mask>`.
   - **`can_flow_control_id_pair`** (str): Ensure CAN flow control ID pair is added. Value must consist of `<Transmitter ID>,<Receiver ID>`.
+  - **`allow_sending_can_frames`** (bool): Allow the connection to send CAN frames on the CAN bus.
 
 **OPTIONAL ARGUMENTS, J1939 SPECIFIC**
 
