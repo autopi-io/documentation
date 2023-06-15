@@ -263,7 +263,8 @@ module.exports = {
                 "hardware/autopi_tmu_cm4/led-and-button",
                 "hardware/autopi_tmu_cm4/mounting_holes",
                 "hardware/autopi_tmu_cm4/obd-connector-pinout",
-                "hardware/autopi_tmu_cm4/using-hat"
+                "hardware/autopi_tmu_cm4/using-hat",
+                "hardware/autopi_tmu_cm4/replacing-cm4"
             ],
             "label": "AutoPi TMU CM4",
             "type": "category"
