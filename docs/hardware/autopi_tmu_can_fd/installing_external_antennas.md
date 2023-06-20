@@ -76,7 +76,7 @@ We recommend using [**this**](https://shop.autopi.io/en/products/external-antenn
 		Now, take your AutoPi and flip it so you can face the bottom of the device. Next, unscrew the bottom cover of
 		the device and get out the shield that was previously installed.
 	</p>
-	<img alt="Step 5" src={useBaseUrl('/img/hardware/autopi_tmu_can_fd/installing_external_antennas/installing_external_antennas/v5.jpg')}/>
+	<img alt="Step 5" src={useBaseUrl('/img/hardware/autopi_tmu_can_fd/installing_external_antennas/v5.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -95,7 +95,7 @@ We recommend using [**this**](https://shop.autopi.io/en/products/external-antenn
 		Grab the rear shield that you have assembled with the installed antennas. Note that the cables of the antennas
 		need to be facing the internals of the AutoPi device.
 	</p>
-	<img alt="Step 7" src={useBaseUrl('/img/hardware/autopi_tmu_can_fd/installing_external_antennas/installing_external_antennas/v7.jpg')}/>
+	<img alt="Step 7" src={useBaseUrl('/img/hardware/autopi_tmu_can_fd/installing_external_antennas/v7.jpg')}/>
 </SideBySide>
 <br/>
 

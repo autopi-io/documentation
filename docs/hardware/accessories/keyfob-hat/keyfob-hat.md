@@ -28,7 +28,7 @@ The keyless entry solution described here only works with the AutoPi TMU CM4 and
 ### Step 1
 Open up the AutoPi device by unscrewing the four screws at the bottom. 
 <p align="center">
-<img alt="Step 1" src={useBaseUrl('/img/hardware/tmu_cm4/TMU_Floating_Topside_V1_scaled.png')} width="60%" />
+<img alt="Step 2" width="460px" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/installing_external_antennas/ext_ant2.jpg')}/>
 </p>
 
 ### Step 2

@@ -1,6 +1,6 @@
 ---
 id: replacing-cm4
-title: Replacing CM4
+title: Replacing the CM4
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
