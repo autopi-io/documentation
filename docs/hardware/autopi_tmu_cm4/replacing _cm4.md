@@ -16,6 +16,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 **Prerequesites** for this guide:
 - An AutoPi TMU CM4 device
 - New Raspberry Pi CM4
+- You can buy the new CM4 from: https://www.raspberrypi.com/products/compute-module-4/?variant=raspberry-pi-cm4001000
 :::
 
 ### Step-by-step guide

@@ -244,14 +244,22 @@ module.exports = {
                         "hardware/accessories/keyfob-hat/keyfob-interface",
                         "hardware/accessories/keyfob-hat/keyfob-hat-install",
                         "hardware/accessories/keyfob-hat/keyfob-hat-pinout"
-                    ],
+                    ], 
                     "label": "Keyfob Hat",
+                    "type": "category"
+                },
+                {
+                    "items": [
+                        "hardware/accessories/doip-hat/doip-intro",
+                        "hardware/accessories/doip-hat/doip-install",
+                    ],
+                    "label": "DOIP Hat",
                     "type": "category"
                 },
                 "hardware/accessories/device_mounts"
             ],
             "label": "Accessories",
-            "type": "category"
+            "type": "category"  
         },
         {
             "items": [
