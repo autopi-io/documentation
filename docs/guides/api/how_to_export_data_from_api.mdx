@@ -94,9 +94,10 @@ https://api.autopi.io/#/logbook/logbook_storage_raw_list
 | Parameter       | Description  |
 | -------------: | :---------- |
 |  device_id | ID of the device **(not the unit id)** |
-|  data_type | The datatype to retrieve. See 'Field' above. |
+|  data_type | Optional. The datatype to retrieve. Will return all datatypes of omitted. See 'Field' above. |
 |  start_utc | From time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
 |  end_utc | To time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
+|  use_upload_time | Optional. If false (default), *start_utc* and *end_utc* will mean 'period when the data was **recorded**'. If true, *start_utc* and *end_utc* will mean 'period when the data was **uploaded**'. |
 
 ### Example 
 How get logged position objects raw
