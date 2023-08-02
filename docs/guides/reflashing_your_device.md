@@ -14,6 +14,7 @@ The process for reflashing an AutoPi device differs a little depending on the de
         - Windows
         - Linux
 4. Perform the flash
+6. Ensure your device is connecting to the correct environment
 5. Set up the device
 
 ### 1. Download the AutoPi OS image
@@ -100,16 +101,14 @@ It is unsafe to remove the device from power while it is on or booting. The safe
 Once the flashing is complete, unmount the storage device. After that you can remove the SD card from its reader and put it back into the 
 AutoPi device. If using a CM4 device, unplug the CM4 device's USB cable and press the button to put the device into hibernation, then a short press to start up the device. 
 
-### 5. Set up the device
-Once you have flashed your device, you will need to have it re-accepted in the AutoPi Cloud. To do
+### 5. Ensure your device is connecting to the correct environment
+This step is required only if your company is using a dedicated environment. You can find out whether this is the case by checking what website you're going to to access your device. If it's different from my.autopi.io, for example my_company.autopi.io, then this is a dedicated environment and you need to follow this [Guide: Move to a dedicated environment](/guides/business/move_to_dedicated_environment.md/).
+
+### 6. Set up the device
+Next, you will need to have the device re-accepted in the AutoPi Cloud. To do
 so, you need to first have the device boot up and connect to the internet. After that, log in to
 [my.autopi.io](https://my.autopi.io). You should immediately see a notification letting you know
 that the device's key isn't accepted.
-
-:::note
-If you are a business customer and have a dedicated environment, there is an extra step that you need
-to take. Look at [this](business/move_to_dedicated_environment.md) guide for more information.
-:::
 
 ![Not accepted notification](/img/guides/reflashing_your_device/not_accepted_notification.png)
 
