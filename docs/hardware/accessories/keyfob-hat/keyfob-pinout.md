@@ -29,14 +29,14 @@ The pinout for this connector is:
 
 | **Pin** | **Name** | **Description** | **Comments** |
 |:-----:|--------|--------|--------|
-|   1   |    Vcc3v3_switched    |   Controlable 3.3V power supply     | Controlled by HAT MCU | 
-|   2    |   GND     |  Internal Ground      | |
-|   3    |   Vcc5v_switched     |  Controlable 5V power supply      | Controlled by HAT MCU |
-|   4    |   DIO9     |  Digital Input/Output      | |
-|   5    |   DIO10     |   Directly connected to OBD pin     | |
-|   6    |   DIO3     |    Directly connected to OBD pin    | |
-|   7    |   DIO2     |  Directly connected to OBD pin      | |
-|   8    |   DIO0     |   Directly connected to OBD pin     | |
+|   1   |   Vcc3v3_switched    |   Controllable 3.3V power supply   |   Controlled by the HAT's onboard MCU   | 
+|   2   |   GND                |   Internal ground                  |   |
+|   3   |   Vcc5v_switched     |   Controllable 5V power supply     |   Controlled by the HAT's onboard MCU   |
+|   4   |   DIO9               |   Digital input/output             |   Controlled by the HAT's onboard MCU   |
+|   5   |   DIO10              |   Digital input/output             |   Controlled by the HAT's onboard MCU   |
+|   6   |   DIO3               |   Digital input/output             |   Controlled by the HAT's onboard MCU   |
+|   7   |   DIO2               |   Digital input/output             |   Controlled by the HAT's onboard MCU   |
+|   8   |   DIO0               |   Digital input/output             |   Controlled by the HAT's onboard MCU   |
 
 
 ## Pinout Conn 2 - Main
@@ -46,13 +46,13 @@ The pinout for this connector is:
 
 | **Pin** | **Name** | **Description** | **Comments** |
 |:-----:|--------|--------|--------|
-|   1   |    Vcc3v3_switched    |   Controlable 3.3V power supply     | Controlled by AutoPi base board | 
-|   2    |   GND     |  Internal Ground      | |
-|   3    |   Vcc5v_switched     |  Controlable 5V power supply      | Controlled by AutoPi base board |
-|   4    |   RPI_ID_SD     |  Digital Input/Output from RPi      | |
-|   5    |   RPI_GPIO24     |   Directly connected to OBD pin from RPi     | |
-|   6    |   RPI_ID_SC      |    Directly connected to OBD pin from RPi    | |
-|   7    |   RPI_GPIO27     |  Directly connected to OBD pin from RPi      | |
-|   8    |   RPI_GPIO23     |   Directly connected to OBD pin from RPi     | |
+|   1   |   Vcc3v3_switched   |   Controllable 3.3V power supply   |   Controlled by the AutoPi base board MCU   | 
+|   2   |   GND               |   Internal ground                  |   |
+|   3   |   Vcc5v_switched    |   Controllable 5V power supply     |   Controlled by the AutoPi base board MCU   |
+|   4   |   RPI_ID_SD         |   Digital input/output             |   Controlled by the RPi   |
+|   5   |   RPI_GPIO24        |   Digital input/output             |   Controlled by the RPi   |
+|   6   |   RPI_ID_SC         |   Digital input/output             |   Controlled by the RPi   |
+|   7   |   RPI_GPIO27        |   Digital input/output             |   Controlled by the RPi   |
+|   8   |   RPI_GPIO23        |   Digital input/output             |   Controlled by the RPi   |
 
 
