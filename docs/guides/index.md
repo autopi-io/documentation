@@ -20,6 +20,7 @@ interface to your car and communicates with the ECU in your car.
   performance of your car and the battery in the car.
 4. The device can only be powered through the OBD-II port. Powering the Raspberry Pi directly, is
   not supported, and can cause issues.
+5. When inserting the device for the first time, make sure the vehicle is powered off.
 :::
 
 ## 1. Setting up user account

@@ -10,8 +10,9 @@ This guide will show how to retrieve data from a vehicle supporting the J1939 pr
 Before proceeding the AutoPi device must be:
 
   1. Connected to the vehicle with an appropiate OBD-II adapter cable that connects the vehicles two J1939 CAN bus wires to pin 6 (high) and 14 (low) of the OBD-II connector on the AutoPi device. If you are missing an adapter cable for your specific vehicle please contact sales@autopi.io.
-  2. Powered on and online in the AutoPi Cloud at https://my.autopi.io.
-  3. Also the ignition of the vehicle must be turned on to ensure the J1939 CAN bus is active.
+  2. When initially inserting the device, make sure that the vehicle is powered off.
+  3. Powered on and online in the AutoPi Cloud at https://my.autopi.io.
+  4. Also the ignition of the vehicle must be turned on to ensure the J1939 CAN bus is active.
 
 
 ## Check for Broadcast Data
