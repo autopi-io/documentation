@@ -157,6 +157,68 @@ The first part before the # is the ECU number (the header) and the last part is 
 You may need to remove the `expect_response` if the ECU doesn't respond on the message you've
 send.
 
+### Non-OBD2 queries
+Sometimes a vehicle supports non-OBD-2 queries. An example of this is manufacturer proprietary
+protocols. When this is the case, you need to enrich the queries with CAN Flow Control parameters.
+
+Let's look at an example of a proprietary query, where the request data is `1AA # 02 00 01 00 00 00 00 00`, 
+and the response is `2AA # 02 XX XX 00 00 00 00 00`, where the `XX` bytes are the data bytes. For 
+the sake of having the example complete, let's assume that this queries for the speed in kph. If 
+we try to do this query as we might with any other OBD-2 PID, we won't get a response. This is 
+because the device does not know how the message looks like. This might seem pointless if these 
+request-response messages are the only traffic on the CAN bus, however, imagine if there are hundreads
+of CAN frames being sent on the bus every second. How is the device to know which CAN frame is the
+response? We need to specify this manually.  
+
+If you take a look at the [obd.query](/core/commands/obd.md#obdquery) command, you'll notice several
+arguments dedicated to can flow control. The 2 relevant ones are **`can_flow_control_filter`** and
+**`can_flow_control_id_pair`**. 
+
+**`can_flow_control_filter`** - filters out all non-query related can frames from the traffic. Although you
+might get an expected response without specifying this parameter, you should still add it. The format for
+it is `can_flow_control_filter=<Pattern>,<Mask>`. In the current example, that would look like this:
+`can_flow_control_filter=2AA,7FF`.
+
+**`can_flow_control_id_pair`** - pairs the query request header (Transmitter ID) to the response header (Receiver ID)
+in format `can_flow_control_id_pair=<Transmitter ID>,<Receiver ID>`. In this example, it would be: `can_flow_control_id_pair=1AA,2AA`.
+
+All this taken into account, the command would look like this:
+```
+$ obd.query PROPRIETARY_SPEED header=1AA mode=00 pid=01 can_flow_control_filter=2AA,7FF can_flow_control_id_pair=1AA,2AA force=True
+_stamp: '2023-08-28T12:22:31.253543'
+_type: proprietary_speed
+value: 2aa0200430000000000
+```
+
+Next, we'll need to extract the speed data with a formula. In this case, all the data bytes correspond to
+the data we're looking for, so we can use the simple formula of `bytes_to_int(message.data)`:
+
+```
+$ obd.query PROPRIETARY_SPEED header=1AA mode=00 pid=01 can_flow_control_filter=2AA,7FF can_flow_control_id_pair=1AA,2AA force=True formula='bytes_to_int(message.data)'
+_stamp: '2023-08-28T12:22:35.052518'
+_type: proprietary_speed
+value: 67
+```
+
+:::tip
+There are a few quirks to keep in mind when working with these and with CAN bus in general:
+- As long as the vehicle's bus is autodetected, the `obd.query` command will try to verify that the
+protocol is still valid by sending a known valid OBD-2 message onto the bus and waiting for a reply. If
+the vehicle does not support standard OBD-2, this will cause the command to fail. To prevent this, either
+ensure the vehicle supports OBD-2, or create a new bus, which does not have the 'autodetected' flag.
+- The selected protocol's header length must match the header length of the sent/received messages. For
+example, you can not specify `protocol=7`, which has a 29-bit header length, and then query for an 11-bit
+message. You will not get the expected result. Keep in mind that there will always be a protocol selected,
+even when one is not specified in the command. When the command is being run through the logger, this will
+be the `default` protocol.
+:::
+
+:::note
+For those closely familiar with CAN flow control, it might seem confusing that these parameters have
+the can\_flow\_control\_ prefix, as CAN flow control usually refers to multi-frame messages. The naming is
+related to how older versions of the AutoPi communicated on the CAN bus.
+:::
+
 ## Using the Cloud CAN Analyzer
 All the above commands are how the interface to the vehicle works. We have combined all of this in
 an interactive CAN Analyzer, which is accessible from the AutoPi Cloud in

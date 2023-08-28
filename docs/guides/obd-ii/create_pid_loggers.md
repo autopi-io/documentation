@@ -115,8 +115,7 @@ data points for this PID logger, hence will be the name you use to create widget
 **Bytes**: This defines the expected length of the PID response.
 
 **Enhanced PID**: This menu allows you to set some more specific details about how the PID should
-be sent on the CAN bus and how the response should be found. However, this guide only covers the
-basic OBD-II PID communication, so we will take a look at this dropdown in another guide.
+be sent on the CAN bus and how the response should be found. See [Enhanced PID](#enhanced-pid) below.
 
 **Formula**: This is where any parsing formulas can be inputted. Any valid python code can be
 written in this field and will be evaluated during the execution of a PID Logger.
@@ -138,6 +137,23 @@ your engine running while you execute the command.
 Once you've confirmed that the PID returns valid data that you can use, you can click the Save
 button and move on to the next section.
 
+### Enhanced PID
+
+![Enhanced PID drowdown](/img/guides/create_pid_loggers/enhanced_pid_dropdown.png)
+
+**Frames**: how many frames the message is expected to consist of
+
+**Strict**: enforce frame and byte count
+
+**CAN Extended Address**: CAN Extended Address byte. Note that this does not refer to 29-bit headers, 
+but to an ELM327 specification. 
+
+Before working with the CAN Flow Control Enhanced PID settings, it is highly recommended that you understand how the 
+`can_flow_control_` prefixed parameters work on the obd.query command. This is explained in
+[non-OBD2 queries](/guides/obd-ii/using-the-can-bus-commands/#non-obd2-queries). The Enhanced PID
+section essentially allows you to enrich your loggers with the same functionality. The filter and
+mask correspond to the `can_flow_control_filter` parameter's 2 comma seperated values in that order. The
+same applies to the Transmitter ID and Receiver ID.
 
 ### Creating the Logger
 Now that we have a PID registered in our library, we can finally add a logger to our device which
