@@ -216,14 +216,140 @@ right-hand side of the Edit CAN Message window. You will need to select (tick) t
 community* checkbox.
 
 
-## Importing DBC Files
+## Importing library items from files
+The Library supports importing both CAN messages and signals through DBC files, as well as PIDs through
+JSON files. As an example, let's use this simple DBC file:
+```
+VERSION "1.0"
+
+BO_ 938 FRONT_LEFT: 4 IO
+  SG_ LEFT_SEAT_TEMP: 0|8@1+ (1,0) [0|0] "c" ECU1
+  SG_ LEFT_BACK_TEMP: 8|16@1+ (1,0) [0|0] "c" ECU1
+
+BO_ 937 FRONT_RIGHT: 4 IO
+  SG_ RIGHT_SEAT_TEMP: 0|8@1+ (1,0) [0|0] "c" ECU1
+  SG_ RIGHT_BACK_TEMP: 8|16@1+ (1,0) [0|0] "c" ECU1
+
+CM_ SG_ 1 LEFT_SEAT_TEMP "Temperature of the front left seat";
+```
+
+### First import
+When you first select a file for import, you will be presented with options looking like this:
+  ![File options](/img/user-manual/car-explorer/library/file_options.png) 
+
+Here you can select whether the file's contents are CAN messages & signals or PIDs. You can also set a
+namespace, which will prefix all the imported items with the selected Name string. This can help when you need to
+manage multiple files, which have conflicting signal or PID names. Once you've set these options, the file will be 
+sent for validation. Once that's done, you'll be able to review all the messages and signals that will be imported.
+You can also ignore messages and signals, which you'd like to not be imported. For this example, we're ignoring the left
+seat's temperature.
+
+  ![Imported and validated messages](/img/user-manual/car-explorer/library/imported_messages.png) 
+  ![Imported and validated signals](/img/user-manual/car-explorer/library/imported_signals.png) 
+
+### Adding signals to existing messages
+Once you've selected what to create and what to ignore, click on the upload button and the messages will be created. If
+you now try to import the same file with the same options, you'll see that front right seat, which we imported with all
+its signals, is unchanged. Front left, however, is shown as changed, since we ignored one of its signals. Now we have the
+option to update the Front Left message by creating the Left Seat Temperature signal.
+
+  ![Library view](/img/user-manual/car-explorer/library/post_import_messages.png) 
+  ![Library view](/img/user-manual/car-explorer/library/post_import_signals.png) 
+
+### Updating message and signal properties
+To update a value, all you need to do is change it in the imported file and import it again with the same options. For this
+example, we're changing the unit of the Right Seat Temperature from Celsius to Fahrenheit. 
+
+```
+Before: SG_ RIGHT_SEAT_TEMP: 0|8@1+ (1,0) [0|0] "c" ECU1
+After:  SG_ RIGHT_SEAT_TEMP: 0|8@1+ (1,0) [0|0] "f" ECU1
+```
+
+After uploading the file and validating, the signal shows as changed and the changed property's new and old values can be seen.
+
+  ![Library view](/img/user-manual/car-explorer/library/updating_a_signal.png) 
+
+:::note
+Setting a message's Option to 'Ignore' will force 'Ignore' to all its child signals.
+:::
+
+### Deleting signals
+You can delete signals by removing them from the DBC file, then importing the file. In this example, we're deleting the Right Seat's
+Backrest's Temperature. 
+```
+Before:
+BO_ 937 FRONT_RIGHT: 4 IO
+  SG_ RIGHT_SEAT_TEMP: 0|8@1+ (1,0) [0|0] "f" ECU1
+  SG_ RIGHT_BACK_TEMP: 8|16@1+ (1,0) [0|0] "c" ECU1
+
+After:
+BO_ 937 FRONT_RIGHT: 4 IO
+  SG_ RIGHT_SEAT_TEMP: 0|8@1+ (1,0) [0|0] "f" ECU1
+```
+
+  ![Library view](/img/user-manual/car-explorer/library/deleting_a_signal.png) 
+
+### Working with PIDs
+
+Unlike CAN messages and signals, there's no industry standard file format for PIDs. Therefore, there's a custom JSON based format 
+that you need to follow. This is an example PID JSON file:
+
+```json
+[
+	{
+		"fields": {
+			"type": "PTY",
+			"header": "700",
+			"mode": "220",
+			"code": "0103",
+			"bytes": null,
+			"frames": null,
+			"strict": false,
+			"formula": "bytes_to_int(messages[0].data[-3:])",
+			"unit": "km",
+			"min": null,
+			"max": null,
+			"datatype": null,
+			"parent": null,
+			"name": "TractorLighting",
+			"description": "Tractor's light emission",
+			"hash": "",
+			"initial_hash": null,
+			"can_extended_address": null,
+			"can_flow_control": {
+				"filter": {
+					"pattern": "708",
+					"mask": "7FF"
+				},
+				"id_pair": {
+					"receiver_id": "700",
+					"transmitter_id": "708"
+				}
+			},
+			"can_messages": []
+		}
+	},
+	{
+		"fields": {
+			"type": "PTY",
+            ...
+        }
+	}
+]
+```
+
+## Legacy importer
+
+  ![Library view](/img/user-manual/car-explorer/library/import_file_button.png) 
+
+Depending on what version you are using, you might see multiple "Import" buttons in the library. This is
+because there are 2 versions of the importer: the new and the legacy. The legacy importer was able to
+import CAN messages and signals, but could not handle updates, deleted items or PIDs.
 
 DBC files describe the CAN network traffic of a vehicle. It specifies what modules are within it,
 what CAN messages they can send, the messages' signals and details about how to parse them. In this
-section we are going to review how you can import these files in your Library, how to improve their
-readability and how you can share them with the rest of the community.
-
-### Steps to Import a DBC File
+section we are going to review how you can import these files in your Library, how to keep them up 
+to date, how to improve their readability and how you can share them with the rest of the community.
 
 1. Go to **Car Explorer** > **Library** and click on the Import button:
   ![Import button](/img/user-manual/car-explorer/library/import-button-location.jpg) 
@@ -231,7 +357,7 @@ readability and how you can share them with the rest of the community.
 3. A list of the imported CAN signals will show up in your library.
   ![Library view](/img/user-manual/car-explorer/library/library_view.png) 
 
-### Adding Descriptions for Better Readability
+## Adding Descriptions for Better Readability
 
 Some signal names can be very self explanatory. However others might be harder to understand. You
 can add descriptions to those messages to make it easier to recognize them in the future or for
