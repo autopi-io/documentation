@@ -31,7 +31,48 @@ Triggers and Jobs are created the same way for templates as they are for normal 
 More info about [Jobs](/cloud/jobs.md) and [Triggers](/cloud/triggers.md)
 
 ### Loggers
-Loggers are created the same way for templates as they are for normal devices. You will of course need to have the PIDs or CAN Messages and CAN Signals beforehand, just like when creating loggers for a device.
+Loggers are created similarly to how they are for regular devices. They are a little different since creating loggers on a template will create buses
+as well. A prerequisite to setting up Tempalted Loggers is to have already created some CAN Messages and CAN Signals or PIDs in the Library.
+
+#### Templated CAN loggers
+To create a templated CAN logger, find the `Loggers` tab in the template you would like to edit, click `Create`, and `CAN`. You will be presented
+with a window like this:
+
+  ![Create can logger](/img/cloud/fleet/template_create_can_logger.png)
+
+Here you will need to select the CAN signal you'd like to log, and set the bus configuration. In a guide on 
+[importing CAN messages and signals through DBC files](/cloud/user-manual/car-explorer/car-explorer-library-manual#importing-library-items-from-files) 
+we imported some signals related to the seat temperatures. Here we can see those:
+
+  ![Select logged signal](/img/cloud/fleet/template_select_logged_signal.png)
+
+The first logger you create on a template will always create a bus that's associated to that template. More buses will be created when loggers
+are created with a protocol, which none of the existing buses are set to. Multiple buses with the same protocol are not supported. When you click 
+on the Bus dropdown, you will see both the buses that are associated to the template, and the buses which are 'supported' by the message. If one
+of these buses is selected, it will prefil the Protocol and Baudrate fields (there are no association made between the selected bus and the newly
+created logger/bus/template).
+
+:::note
+The `Message supported buses` section refers to the `Used by Vehicle(s)` dropdown in the CAN Message edit window in the library.
+
+  ![Logger buses](/img/cloud/fleet/template_can_logger_buses.png)
+:::
+
+Let's say this signal can be logged on a bus with protocol ID 6 and default baudrate. You'd set the parameter values, save, and the next logger you
+create for this template, you can choose to fill these fields using the bus that was just created.
+
+  ![Can logger buses with tempalte bus](/img/cloud/fleet/template_can_logger_buses_with_template_bus.png)
+
+#### Templated PIDs
+The process for creating templated PID loggers is very similar as for CAN loggers. Go to the template's `Loggers` tab, click `Create`, then `PID`. 
+You'll be presented with a window similar to this:
+
+  ![Logger buses](/img/cloud/fleet/template_create_pid_logger.png)
+
+Most of this is identical to what you'd see when [creating PID loggers for devices](/guides/obd-ii/create_pid_loggers.md/#creating-the-logger), with
+the exception of Bus settings. Take a look at the [templated CAN loggers section](/cloud/fleet/templates.md/#templated-can-loggers) to get
+an idea of how they work. A notable difference here is that for PID loggers, the Bus is optional. If one's not specified, the PID will be logged
+using the vehicle's default bus.
 
 ## Functionality
 
