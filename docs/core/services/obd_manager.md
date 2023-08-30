@@ -247,6 +247,25 @@ Queries an OBD command.
 
 Queries many OBD commands in one call.
 
+The function should receive an array of dictionaries. Each dict should have an `args` key which value is an array,
+and a `kwargs` key which value is another dictionary. Inside the `args` and `kwargs` fields, the respective arguments
+and keyword arguments from the `query_handler` should be passed.
+
+Example as command:
+
+```
+$ obd.query_many \
+  '{"args": ["SPEED"], "kwargs": {"header": "7DF", "mode": "01", "pid": "0D"}}' \
+  '{"args": ["RPM"], "kwargs": {"header": "7DF", "mode": "01", "pid": "0C"}}'
+```
+
+:::note
+The dictionaries need to be surrounded by a single quote character, not a backtick.
+:::
+
+To set this up as a handler inside a worker, the format is the same. You will need to pass the parameters in the
+"args" field in the respective workflow.
+
 
 ----
 ### `recordings`

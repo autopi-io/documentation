@@ -301,6 +301,8 @@ Queries a given OBD command. To see supported OBD commands for your vehicle run:
 
 Queries many OBD commands in one call.
 
+For details, check out the `obd_manager.query_many_handler` documentation
+
 
 ----
 ## `obd.recordings`
