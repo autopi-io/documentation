@@ -20,11 +20,25 @@ The process for reflashing an AutoPi device differs a little depending on the de
 ### 1. Download the AutoPi OS image
 
 Make sure that you select the right image for your device: 
-- Generation 2 devices: autopi\_core\_gen2\_\*.img.gz image 
-- Generation 3 (TMU): autopi\_core\_tmu\_\*.img.gz image
-- Generation 4 (CM4):  autopi\_core\_CM4\_\*.img.gz image
 
-You can get the latest AutoPi Core image from the [autopi-core releases page](https://github.com/autopi-io/autopi-core/releases).
+| Generation | Board Version | Release Page                                                    | Image Link                                                                                                                     |
+|------------|------------|-----------------------------------------------------------------|
+|      2     | 3.2        | [v27.05.20](https://github.com/autopi-io/autopi-core/releases/tag/v27.05.20) |
+|      2     | 3.4        | [v27.05.20](https://github.com/autopi-io/autopi-core/releases/tag/v27.05.20) |
+|      2     | 3.4.1      | [v27.05.20](https://github.com/autopi-io/autopi-core/releases/tag/v27.05.20) | 
+|      2     | 3.4.2      | [v27.05.20](https://github.com/autopi-io/autopi-core/releases/tag/v27.05.20) | 
+|      2     | 4.0        | [v27.05.20](https://github.com/autopi-io/autopi-core/releases/tag/v27.05.20) | 
+|      3     | 5.0        | [v1.21](https://github.com/autopi-io/autopi-core/releases/tag/v1.21)     |
+|      3     | 5.1        | [v1.21](https://github.com/autopi-io/autopi-core/releases/tag/v1.21)     | 
+|      3     | 5.2        | [v1.21](https://github.com/autopi-io/autopi-core/releases/tag/v1.21)     |
+|      3     | 6.0        | [v1.21](https://github.com/autopi-io/autopi-core/releases/tag/v1.21)     |
+|      3     | 6.1        | [v1.22](https://github.com/autopi-io/autopi-core/releases/tag/v1.22)     | 
+|      3     | 6.2        | [v1.22](https://github.com/autopi-io/autopi-core/releases/tag/v1.22)     | 
+|      3     | 6.3        | [v1.22](https://github.com/autopi-io/autopi-core/releases/tag/v1.22)     | 
+|      4     | 7.0        | [v1.22.9](https://github.com/autopi-io/autopi-core/releases/tag/v1.22.9) |
+
+
+You may also check the [autopi-core releases page](https://github.com/autopi-io/autopi-core/releases) for a newer compatible image.
 
 ### 2. Set up Balena Ethcher (or alternative)
 
