@@ -192,6 +192,7 @@ module.exports = {
         {
             "items": [
                 "guides/obd-ii/obd-ii-intro",
+                "guides/obd-ii/can-bus-configuration",
                 "guides/obd-ii/create-can-signal-loggers",
                 "guides/obd-ii/create-pid-loggers",
                 "guides/obd-ii/debug-raw-pid-queries",
