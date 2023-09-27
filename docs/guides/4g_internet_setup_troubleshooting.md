@@ -40,11 +40,16 @@ There's a command you can run to verify that the modem has been set up correcty.
 
 `modem.connection execute AT+CGDCONT?`
 
-this should retrun a message that looks like either 
-**data: '+CGDCONT: 1, "IPV4V6","",0,0,0,0'**
+this should retrun a message that looks like either. 
+
+**data: '+CGDCONT: 1, "IPV4V6","",0,0,0,0'**.
+
 or
+
 **Data:**
+
 **'+CGDCONT:1,"IPV4V6","",0,0,0,0'**
+
 **'+CGDCONT:2,"IPV4V6","ims","",0,0,0,0'**
 
 if you get the second message then you can reconfigure the modem by running these three commands.
