@@ -3,6 +3,7 @@
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
 ## Installation
+
 ### Prerequisites
 
 For this project you need to have installed the following tools:
