@@ -36,6 +36,27 @@ The important part to look for is the Modem. The ID will be different depending 
 
 If you ordered a 4G edition and you don't find the modem in your list, then please contact support@autopi.io
 
+There's a command you can run to verify that the modem has been set up correcty.
+
+`modem.connection execute AT+CGDCONT?`
+
+this should retrun a message that looks like either 
+**data: '+CGDCONT: 1, "IPV4V6","",0,0,0,0'**
+or
+**Data:**
+**'+CGDCONT:1,"IPV4V6","",0,0,0,0'**
+**'+CGDCONT:2,"IPV4V6","ims","",0,0,0,0'**
+
+if you get the second message then you can reconfigure the modem by running these three commands.
+
+`cmd.run "systemctl stop qmi-manager"`
+
+`modem.connection execute AT+CGDCONT=2`
+
+`cmd.run "systemctl restart qmi-manager"`
+
+after restarting your devices you can run the first command again to verify you get the first message. 
+
 ### Checking qmi-manager status
 The device contains a software manager, which ensure stable connection to the internet. This is called qmi-manager. To check status, please write the following command in the terminal:
 
@@ -58,6 +79,16 @@ If the last command reports issue with detecting the SIM card, then double check
 
 If you experience connection issues where the connection drops sometimes and/or if it is online, but not shown as online on my.autopi.io, then you can try to tweak the MTU from the default value: 1500, to a lower value, in increments (ex. 1500 -> 1450 -> etc).
 This can be done on the local configuration tool, by connecting to the device hotspot and opening local.autopi.io in your browser.
+
+From the terminal located in the top right corner on the webpage, you can run the following two commands to update the MTU and save the changes.
+
+`grains.set qmi:mtu xxxx`
+`state.sls network.wwan.qmi.config.`
+
+To verify that these changes have been saved, you can run the following two commands, here you want to check that first command retruns the same value you set, and that the seconed command where mtu= the same value as the one we set.    
+
+`grains.get qmi:mtu`
+`cmd.run "cat /etc/udhcpc/qmi.override"`
 
 **NOTE**: For US Verizon customers, please try this MTU: 1428.
 
