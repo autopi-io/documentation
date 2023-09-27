@@ -47,9 +47,7 @@ this should retrun a message that looks like either.
 or
 
 **Data:**
-
 **'+CGDCONT:1,"IPV4V6","",0,0,0,0'**
-
 **'+CGDCONT:2,"IPV4V6","ims","",0,0,0,0'**
 
 if you get the second message then you can reconfigure the modem by running these three commands.
