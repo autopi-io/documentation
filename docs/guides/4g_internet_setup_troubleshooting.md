@@ -36,21 +36,26 @@ The important part to look for is the Modem. The ID will be different depending 
 
 If you ordered a 4G edition and you don't find the modem in your list, then please contact support@autopi.io
 
-There's a command you can run to verify that the modem has been set up correcty.
+### Check Modem Setup
+**Check PDP Context:**  
+If your devices is using a Telit Modem is using software version 1.22.7 or newer,
+There's a command you can run to verify that the modem has been set up correctly. 
+
+`modem.connection pdp_context`
+
+Incase your software version is older than 1.22.7, you can run the following command to get the same information. 
 
 `modem.connection execute AT+CGDCONT?`
 
-this should retrun a message that looks like either. 
+This should return a message that looks like either. 
 
-**data: '+CGDCONT: 1, "IPV4V6","",0,0,0,0'**.
+**data: '+CGDCONT: 1, "IPV4V6","",0,0,0,0'**  
+or  
+**Data:**   
+**- '+CGDCONT:1,"IPV4V6","",0,0,0,0'**   
+**- '+CGDCONT:2,"IPV4V6","ims","",0,0,0,0'**
 
-or
-
-**Data:**
-**'+CGDCONT:1,"IPV4V6","",0,0,0,0'**
-**'+CGDCONT:2,"IPV4V6","ims","",0,0,0,0'**
-
-if you get the second message then you can reconfigure the modem by running these three commands.
+If you get the second message then you can reconfigure the modem by running these three commands.
 
 `cmd.run "systemctl stop qmi-manager"`
 
@@ -58,7 +63,24 @@ if you get the second message then you can reconfigure the modem by running thes
 
 `cmd.run "systemctl restart qmi-manager"`
 
-after restarting your devices you can run the first command again to verify you get the first message. 
+After restarting your devices you can run the first command again to verify you get the first message. 
+
+**Check Firmware Switch:**  
+Check if the firmware switch is set correctly by running this command if you are using software version 1.22.7 or newer.
+
+`modem.connection active_firmware_image`
+
+Incase your software version is older than 1.22.7, you can run the following command to get the same informaiton.
+
+`modem.connection execute AT+CGDCONT?`
+
+This should return with a message that looks like this. 
+
+**Data:'FWSWITCH:40:1'**  
+
+Incase the FWSWITCH does not start with 40 this can be reconfigued manually by running the following command.
+
+`modem.connection execute AT#FWSWITCH=40,1`
 
 ### Checking qmi-manager status
 The device contains a software manager, which ensure stable connection to the internet. This is called qmi-manager. To check status, please write the following command in the terminal:
@@ -96,6 +118,16 @@ To verify that these changes have been saved, you can run the following two comm
 **NOTE**: For US Verizon customers, please try this MTU: 1428.
 
 If the connection is still not online, then please contact support@autopi.io for additional help.
+
+### Check Connections
+
+You can to check if the device can connect to the internet though the 4g connection you can run the following command.
+
+`cmd.run "ping -c 5 -I wwan0 google.com"`
+
+You can also check the connection to the autopi cloud service by running the following command. 
+
+`cmd.run "curl -v my.autopi.io"`
 
 ### Discussion
 
