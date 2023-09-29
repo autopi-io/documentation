@@ -43,6 +43,22 @@ There's a command you can run to verify that the modem has been set up correctly
 
 `modem.connection pdp_context`
 
+This should return a message that looks like either.
+
+**value:**  
+**- apn: ''**  
+**cid: 1**  
+**pdp_type: IPV4V6**  
+
+or  
+**value:**  
+**- apn: ''**  
+**cid: 1**  
+**pdp_type: IPV4V6**  
+**- apn: 'ims'**  
+**cid: 2**  
+**pdp_type: IPV4V6**  
+
 Incase your software version is older than 1.22.7, you can run the following command to get the same information. 
 
 `modem.connection execute AT+CGDCONT?`
@@ -55,7 +71,7 @@ or
 **- '+CGDCONT:1,"IPV4V6","",0,0,0,0'**   
 **- '+CGDCONT:2,"IPV4V6","ims","",0,0,0,0'**
 
-If you get the second message then you can reconfigure the modem by running these three commands.
+If you get the second message after running either command then you can reconfigure the modem by running these three commands.
 
 `cmd.run "systemctl stop qmi-manager"`
 
@@ -68,17 +84,25 @@ After restarting your devices you can run the first command again to verify you 
 **Check Firmware Switch:**  
 Check if the firmware switch is set correctly by running this command if you are using software version 1.22.7 or newer.
 
-`modem.connection active_firmware_image`
+`modem.connection active_firmware_image`  
 
-Incase your software version is older than 1.22.7, you can run the following command to get the same informaiton.
+this should return a message that looks like this.  
 
-`modem.connection execute AT+CGDCONT?`
+**_stamp: "the curent date"**  
+**_type: active_firmware_image**  
+**net_conf:global**  
+**storage_conf: ram**  
+Here we are looking to see if the net_conf is set to global.
+
+Incase your software version is older than 1.22.7, you can run the following command to get the same informaiton.  
+
+`modem.connection execute AT#FWSWITCH?`
 
 This should return with a message that looks like this. 
 
 **Data:'FWSWITCH:40:1'**  
 
-Incase the FWSWITCH does not start with 40 this can be reconfigued manually by running the following command.
+Incase the FWSWITCH does not start with 40 or net_conf is not global this can be reconfigured manually by running the following command.
 
 `modem.connection execute AT#FWSWITCH=40,1`
 
@@ -107,12 +131,12 @@ This can be done on the local configuration tool, by connecting to the device ho
 
 From the terminal located in the top right corner on the webpage, you can run the following two commands to update the MTU and save the changes.
 
-`grains.set qmi:mtu xxxx`
-`state.sls network.wwan.qmi.config.`
+`grains.set qmi:mtu xxxx`  
+`state.sls network.wwan.qmi.config`
 
 To verify that these changes have been saved, you can run the following two commands, here you want to check that first command retruns the same value you set, and that the seconed command where mtu= the same value as the one we set.    
 
-`grains.get qmi:mtu`
+`grains.get qmi:mtu`  
 `cmd.run "cat /etc/udhcpc/qmi.override"`
 
 **NOTE**: For US Verizon customers, please try this MTU: 1428.
