@@ -39,21 +39,25 @@ You will need these later.
 
 ## 2. Insert SIM
 
-Now its time to install your device in your vehicle. First and foremost, insert your sim-card into
+Now its time to install your device in your vehicle. First and foremost, insert your SIM card into
 your AutoPi. Do this before powering on the device. The AutoPi uses nano sim sizes. The location of
-the sim-card slot is shown on the picture here:
+the SIM card slot is shown on the picture here:
 
-When you insert the sim-card it's important that the sim card is inserted correctly. The picture
-below shows the orientation of the sim card. Please notice that the text side of the sim card must
+When you insert the SIM card it's important that the SIM card is inserted correctly. The picture
+below shows the orientation of the SIM card. Please notice that the text side of the SIM card must
 be up and the "triangle" end point into the device.
 
 ![AutoPi.io - SIM card location](/img/guides/getting_started/sim_card.png)
 
 :::caution
-**Please notice:** When the sim-card is inserted correctly, you will hear a small "click" when the
+**Please notice:** When the SIM card is inserted correctly, you will hear a small "click" when the
 card is in position. Don't try do force the SIM out after the click as this will damage the device.
 Make sure the orientation is correct before inserting the SIM. Wrong orientation could potentially
-damage your device.
+damage your device.  
+:::
+
+:::caution
+**Please notice:** The SIM card needs to be compatible with ipv4, for the device to establish a 4g/LTE connection. 
 :::
 
 Here's a list of the US based SIM providers that we recommend to be used with the AutoPi:
@@ -106,7 +110,7 @@ For a full description of the two status LED's, please see [this](/core/power_ma
 
 ## 7. Connect to local administration
 
-Once connected to the WiFi hotspot, you need to configure your APN settings for the sim card
+Once connected to the WiFi hotspot, you need to configure your APN settings for the SIM card
 inserted. To do so, go to [my.autopi.io](https://my.autopi.io/). Click on the "Go local" button at
 the bottom. However you will need to be logged out in order to see the "Go local" button. Alternative of clicking the "Go local" button would be going to [local.autopi.io](https://local.autopi.io/).
 
@@ -120,7 +124,7 @@ No username/password needed.
 
 ## 8. Setup APN
 
-Once logged in you need to go the **4G/LTE** pane and enter your sim card APN settings. You can
+Once logged in you need to go the **4G/LTE** pane and enter your SIM card APN settings. You can
 usually get these from your network carrier. On this pane, you can directly select the appropriate APN settings from a list of predefined carriers worldwide in case you have
 trouble finding it from your carrier. Please select your carrier or fill out the information
 manually.
