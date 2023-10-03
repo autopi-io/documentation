@@ -80,5 +80,5 @@ be of type CAN. There are a few guides that you can take a look at to get them u
 
 1. [How to setup power cycle for an electric vehicle](https://community.autopi.io/t/guide-how-to-setup-power-cycle-for-an-electric-vehicle/1668)
 
-2. [How to import custom DBC files](https://community.autopi.io/t/how-to-import-custom-dbc-files/2091)
+2. [How to import custom DBC files](/cloud/user-manual/car-explorer/car-explorer-library-manual/#importing-library-items-from-files)
 
