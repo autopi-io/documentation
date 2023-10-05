@@ -91,7 +91,7 @@ device. The setup should look something like pictured below:
 ![rpiboot setup](/img/guides/reflashing_your_device/rpiboot_setup.png)
 
 ##### 3.b.2. Put the device into the EMMC FLASHING state
-To do this, your device will need to be receiving power from either a vehicle, or a power supply with an adapter cable (the USB port can not be used for power). Details for button location and state transitions can be found in the [AutoPi CM4 TMU documentation](https://docs.autopi.io/hardware/autopi-tmu-cm4/led-and-button/). 
+To do this, your device will need to be receiving power from either a vehicle, or a power supply with an adapter cable (the USB port can not be used for power). Details for button location and state transitions can be found in the [AutoPi CM4 TMU documentation](https://docs.autopi.io/hardware/autopi_tmu_cm4/led-and-button/). 
 
 To put the task in more simple terms: press the button (located in one of the holes on the side of the device) until the blue LED starts flashing very fast. If you've just plugged your device into power, wait until the blue LED turns solid. Then do a short press of the button, to do a gentle shutdown. Once the blue LED turns dim, it has gone into hibernation. From here long press the button until the LED starts flashing slowly (approx 1 flash per second). The device is now in the USER SETUP state. After another long press, the LED should start flashing rapidly, at which point the device is in the correct EMMC FLASHING state. 
 
