@@ -47,7 +47,8 @@ module.exports = {
                 "cloud/fleet/fleet-intro",
                 "cloud/fleet/fleet-overview",
                 "cloud/fleet/fleet-wakeup",
-                "cloud/fleet/fleet-templates"
+                "cloud/fleet/fleet-templates",
+                "cloud/fleet/device-install-procedure"
             ],
             "label": "Fleet",
             "type": "category"
