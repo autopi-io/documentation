@@ -52,7 +52,25 @@ module.exports = {
         {
           to: 'https://api.autopi.io/',
           label: 'API',
-          position: 'left',
+          position: 'left',          
+        },
+        {
+          to: 'https://demo.autopi.io/',
+          label: 'Online Demo',
+          position: 'right',
+          className: 'btn-primary cta-btn',
+        },
+        {
+          to: 'https://my.autopi.io/',
+          label: 'My Cloud',
+          position: 'right',
+          className: 'cloud-btn',
+        },
+        {
+          to: 'https://shop.autopi.io/',
+          label: 'Shop',
+          position: 'right',
+          className: 'cta-btn'
         },
       ],
     },
