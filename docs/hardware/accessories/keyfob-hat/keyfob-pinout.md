@@ -21,26 +21,8 @@ After assembly of the device, the ports can be seen from the picture below:
 <img src="/img/hardware/accessories/keyfob/keyfob_ports.jpg" alt="Keyfob HAT pinouts" width="60%" />
 </p>
 
-## Pinout Conn 1 - Local
-
-Connection 1 on the Keyfob HAT is controlled locally on the keyfob extension board. 
-
-The pinout for this connector is:
-
-| **Pin No.** | **Wire Color** | **Name** | **Description** | **Comments** |
-|:-----:|--------|--------|--------|--------|
-|   1   |   Red      |   Vcc3v3_switched    |   Controllable 3.3V power supply   |   Controlled by the HAT's onboard MCU   | 
-|   2   |   Black    |   GND                |   Internal ground                  |   |
-|   3   |   Yellow   |   Vcc5v_switched     |   Controllable 5V power supply     |   Controlled by the HAT's onboard MCU   |
-|   4   |   Green    |   DIO9               |   Digital input/output             |   Controlled by the HAT's onboard MCU   |
-|   5   |   Blue     |   DIO10              |   Digital input/output             |   Controlled by the HAT's onboard MCU   |
-|   6   |   White    |   DIO3               |   Digital input/output             |   Controlled by the HAT's onboard MCU   |
-|   7   |   Orange   |   DIO2               |   Digital input/output             |   Controlled by the HAT's onboard MCU   |
-|   8   |   Purple   |   DIO0               |   Digital input/output             |   Controlled by the HAT's onboard MCU   |
-
-
-## Pinout Conn 2 - Main
-Connection 2 on the Keyfob HAT is controlled from the AutoPi base board, by the standard AutoPi setup. 
+## Pinout Conn 1 - RPI
+Connection 1 on the Keyfob HAT is controlled from the AutoPi base board, by the standard AutoPi setup. 
 
 The pinout for this connector is:
 
@@ -55,4 +37,20 @@ The pinout for this connector is:
 |   7   |   Orange   |   RPI_GPIO27        |   Digital input/output             |   Controlled by the RPi   |
 |   8   |   Purple   |   RPI_GPIO23        |   Digital input/output             |   Controlled by the RPi   |
 
+## Pinout Conn 2 - Local
+
+Connection 2 on the Keyfob HAT is controlled locally on the keyfob extension board. 
+
+The pinout for this connector is:
+
+| **Pin No.** | **Wire Color** | **Name** | **Description** | **Comments** |
+|:-----:|--------|--------|--------|--------|
+|   1   |   Red      |   Vcc3v3_switched    |   Controllable 3.3V power supply   |   Controlled by the HAT's onboard MCU   | 
+|   2   |   Black    |   GND                |   Internal ground                  |   |
+|   3   |   Yellow   |   Vcc5v_switched     |   Controllable 5V power supply     |   Controlled by the HAT's onboard MCU   |
+|   4   |   Green    |   DIO9               |   Digital input/output             |   Controlled by the HAT's onboard MCU   |
+|   5   |   Blue     |   DIO10              |   Digital input/output             |   Controlled by the HAT's onboard MCU   |
+|   6   |   White    |   DIO3               |   Digital input/output             |   Controlled by the HAT's onboard MCU   |
+|   7   |   Orange   |   DIO2               |   Digital input/output             |   Controlled by the HAT's onboard MCU   |
+|   8   |   Purple   |   DIO0               |   Digital input/output             |   Controlled by the HAT's onboard MCU   |
 
