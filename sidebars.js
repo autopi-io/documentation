@@ -218,6 +218,7 @@ module.exports = {
         "guides/4g-internet-setup-troubleshooting",
         "guides/a-guide-to-triggers",
         "guides/adding-a-new-widget-from-scratch",
+        "guides/automatic-obd-logger-pausing",
         "guides/autopi-logs",
         "guides/configuring-mqtt",
         "guides/enabling_bluetooth_on_TMU_devices",
