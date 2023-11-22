@@ -9,7 +9,7 @@ The template functionality makes it possible for a user to manage the configurat
 A template can contain the following configurations.
 
 ### Advanced configuration
-Most [advanced configuration settings](/cloud//configuration/tmu/index.md) are available to be specified for a template. Options that aren't available for templates have been removed because they are too specific for each device and it doesn't make sense to set in a template.
+Most [advanced configuration settings](/cloud/configuration/TMU/index.md) are available to be specified for a template. Options that aren't available for templates have been removed because they are too specific for each device and it doesn't make sense to set in a template.
 
 The table shows the settings currently associated to the template, and clicking the edit button will open the settings UI, with all available settings.
 
