@@ -13,7 +13,7 @@ See all the available power commands [here](../commands/power.md).
 
 ## Configuration
 
-See all the available power configuration options [here](../../cloud/configuration/power.md).
+See all the available power configuration options [here](../../cloud/configuration/TMU/power.md).
 
 ## Events
 

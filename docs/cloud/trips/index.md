@@ -5,7 +5,7 @@ title: Introduction
 
 Trips are automatically detected based on the events sent from the device, by default the [engine events](../events/vehicle.md#engine-events) are used. 
 
-It is fully customizeable what events trigger a new trip to be created and it can be changed in the [advanced settings](../configuration/trip.md#event).
+It is fully customizeable what events trigger a new trip to be created and it can be changed in the [advanced settings](../configuration/TMU/trip.md#event).
 
 :::tip
 You can check the events page on my.autopi.io to see all events logged from your device. When troubleshooting it is one of the first places to check if you are unsure why something happened. By looking at the events you can usually get a really good idea about why the device did something.
@@ -40,4 +40,8 @@ This means that a typical trip generation lifecycle can look like this
 :::tip
 For EV's it's possible to set up new events so that the trip generation works as expected.
 See more here: [Setup power cycle for an electric vehicle](https://community.autopi.io/t/guide-how-to-setup-power-cycle-for-an-electric-vehicle/1668)
+:::
+
+:::note
+For AutoPi Mini, the start/stop trip events are `trip/start` and `trip/stop`
 :::

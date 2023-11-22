@@ -11,24 +11,37 @@ module.exports = {
         },
         {
             "items": [
-                "cloud/configuration/cloud-config-intro",
-                "cloud/configuration/cloud-config-accelerometer",
-                "cloud/configuration/cloud-config-alerts",
-                "cloud/configuration/cloud-config-audio",
-                "cloud/configuration/cloud-config-bluetooth",
-                "cloud/configuration/cloud-config-charging-session",
-                "cloud/configuration/cloud-config-cloud-storage",
-                "cloud/configuration/cloud-config-docker",
-                "cloud/configuration/cloud-config-key-fob",
-                "cloud/configuration/cloud-config-mqtt",
-                "cloud/configuration/cloud-config-obd",
-                "cloud/configuration/cloud-config-power",
-                "cloud/configuration/cloud-config-rfid",
-                "cloud/configuration/cloud-config-system",
-                "cloud/configuration/cloud-config-tracking",
-                "cloud/configuration/cloud-config-trip",
-                "cloud/configuration/cloud-config-update-release",
-                "cloud/configuration/cloud-config-wifi"
+                {
+                    "items": [
+                        "cloud/configuration/TMU/cloud-config-intro",
+                        "cloud/configuration/TMU/cloud-config-accelerometer",
+                        "cloud/configuration/TMU/cloud-config-alerts",
+                        "cloud/configuration/TMU/cloud-config-audio",
+                        "cloud/configuration/TMU/cloud-config-bluetooth",
+                        "cloud/configuration/TMU/cloud-config-charging-session",
+                        "cloud/configuration/TMU/cloud-config-cloud-storage",
+                        "cloud/configuration/TMU/cloud-config-docker",
+                        "cloud/configuration/TMU/cloud-config-key-fob",
+                        "cloud/configuration/TMU/cloud-config-mqtt",
+                        "cloud/configuration/TMU/cloud-config-obd",
+                        "cloud/configuration/TMU/cloud-config-power",
+                        "cloud/configuration/TMU/cloud-config-rfid",
+                        "cloud/configuration/TMU/cloud-config-system",
+                        "cloud/configuration/TMU/cloud-config-tracking",
+                        "cloud/configuration/TMU/cloud-config-trip",
+                        "cloud/configuration/TMU/cloud-config-update-release",
+                        "cloud/configuration/TMU/cloud-config-wifi"
+                    ],
+                    "label": "TMU",
+                    "type": "category"
+                },
+                {
+                    "items": [
+                        "cloud/configuration/mini/cloud-config-mini-intro"
+                    ],
+                    "label": "Mini",
+                    "type": "category"
+                }
             ],
             "label": "Configuration",
             "type": "category"
@@ -45,10 +58,10 @@ module.exports = {
         {
             "items": [
                 "cloud/fleet/fleet-intro",
+                "cloud/fleet/device-install-procedure",
                 "cloud/fleet/fleet-overview",
                 "cloud/fleet/fleet-wakeup",
-                "cloud/fleet/fleet-templates",
-                "cloud/fleet/device-install-procedure"
+                "cloud/fleet/fleet-templates"
             ],
             "label": "Fleet",
             "type": "category"
@@ -195,6 +208,7 @@ module.exports = {
                 "guides/obd-ii/obd-ii-intro",
                 "guides/obd-ii/can-bus-configuration",
                 "guides/obd-ii/create-can-signal-loggers",
+                "guides/obd-ii/create-mini-loggers",
                 "guides/obd-ii/create-pid-loggers",
                 "guides/obd-ii/debug-raw-pid-queries",
                 "guides/obd-ii/how-to-use-the-car-explorer-feature",
@@ -227,6 +241,7 @@ module.exports = {
         "guides/j1939-getting-started-guide",
         "guides/jumpers",
         "guides/local-development-workflow",
+        "guides/mini-guides-intro",
         "guides/power-cycle-for-electric-vehicles",
         "guides/reflashing-your-device",
         "guides/remotely-waking-up-your-device",
@@ -243,65 +258,38 @@ module.exports = {
                 "hardware/accessories/accessories-intro",
                 {
                     "items": [
-                        "hardware/accessories/keyfob-hat/keyfob-intro",
-                        "hardware/accessories/keyfob-hat/keyfob-interface",
-                        "hardware/accessories/keyfob-hat/keyfob-hat-install",
-                        "hardware/accessories/keyfob-hat/keyfob-hat-pinout"
-                    ], 
-                    "label": "Keyfob Hat",
+                        "hardware/accessories/doip-hat/doip-install",
+                        "hardware/accessories/doip-hat/doip-intro"
+                    ],
+                    "label": "Doip Hat",
                     "type": "category"
                 },
                 {
                     "items": [
-                        "hardware/accessories/doip-hat/doip-intro",
-                        "hardware/accessories/doip-hat/doip-install",
+                        "hardware/accessories/keyfob-hat/keyfob-intro",
+                        "hardware/accessories/keyfob-hat/keyfob-interface",
+                        "hardware/accessories/keyfob-hat/keyfob-hat-install",
+                        "hardware/accessories/keyfob-hat/keyfob-hat-pinout"
                     ],
-                    "label": "DOIP Hat",
+                    "label": "Keyfob Hat",
                     "type": "category"
                 },
                 "hardware/accessories/device_mounts"
             ],
             "label": "Accessories",
-            "type": "category"  
-        },
-        {
-            "items": [
-                "hardware/autopi_tmu_cm4/autopi-cm4-intro",
-                "hardware/autopi_tmu_cm4/device_dimensions",
-                "hardware/autopi_tmu_cm4/device_specifications",
-                "hardware/autopi_tmu_cm4/installing_external_antennas",
-                "hardware/autopi_tmu_cm4/installing-heatsink",
-                "hardware/autopi_tmu_cm4/led-and-button",
-                "hardware/autopi_tmu_cm4/mounting_holes",
-                "hardware/autopi_tmu_cm4/obd-connector-pinout",
-                "hardware/autopi_tmu_cm4/using-hat",
-                "hardware/autopi_tmu_cm4/replacing-cm4"
-            ],
-            "label": "AutoPi TMU CM4",
             "type": "category"
         },
         {
             "items": [
-                "hardware/autopi_tmu_socketcan/SocketCAN-intro",
-                "hardware/autopi_tmu_socketcan/connection-overview",
-                "hardware/autopi_tmu_socketcan/device_dimensions",
-                "hardware/autopi_tmu_socketcan/installing_external_antennas",
-                "hardware/autopi_tmu_socketcan/mounting_holes",
-                "hardware/autopi_tmu_socketcan/obd-connector-pinout"
+                "hardware/autopi_dongle/gen-2-intro",
+                "hardware/autopi_dongle/connection-overview",
+                "hardware/autopi_dongle/obd-connector-pinout",
+                "hardware/autopi_dongle/setup-your-gen-2-diy-edition",
+                "hardware/autopi_dongle/update-firmware-of-eg25-g-module",
+                "hardware/autopi_dongle/using-gpio-and-hdmi-with-the-gen-2",
+                "hardware/autopi_dongle/using-the-rpi3-adapter"
             ],
-            "label": "AutoPi TMU SocketCAN",
-            "type": "category"
-        },
-        {
-            "items": [
-                "hardware/autopi_tmu_can_fd/gen-3.5-intro",
-                "hardware/autopi_tmu_can_fd/connection-overview",
-                "hardware/autopi_tmu_can_fd/device_dimensions",
-                "hardware/autopi_tmu_can_fd/installing-external-antennas",
-                "hardware/autopi_tmu_can_fd/mounting_holes",
-                "hardware/autopi_tmu_can_fd/obd-connector-pinout"
-            ],
-            "label": "AutoPi TMU CAN-FD",
+            "label": "AutoPi Dongle",
             "type": "category"
         },
         {
@@ -318,15 +306,49 @@ module.exports = {
         },
         {
             "items": [
-                "hardware/autopi_dongle/gen-2-intro",
-                "hardware/autopi_dongle/connection-overview",
-                "hardware/autopi_dongle/obd-connector-pinout",
-                "hardware/autopi_dongle/setup-your-gen-2-diy-edition",
-                "hardware/autopi_dongle/update-firmware-of-eg25-g-module",
-                "hardware/autopi_dongle/using-gpio-and-hdmi-with-the-gen-2",
-                "hardware/autopi_dongle/using-the-rpi3-adapter"
+                "hardware/autopi_mini/autopi-mini-intro"
             ],
-            "label": "AutoPi Dongle",
+            "label": "AutoPi Mini",
+            "type": "category"
+        },
+        {
+            "items": [
+                "hardware/autopi_tmu_can_fd/gen-3.5-intro",
+                "hardware/autopi_tmu_can_fd/connection-overview",
+                "hardware/autopi_tmu_can_fd/device_dimensions",
+                "hardware/autopi_tmu_can_fd/installing-external-antennas",
+                "hardware/autopi_tmu_can_fd/mounting_holes",
+                "hardware/autopi_tmu_can_fd/obd-connector-pinout"
+            ],
+            "label": "AutoPi TMU CAN-FD",
+            "type": "category"
+        },
+        {
+            "items": [
+                "hardware/autopi_tmu_cm4/autopi-cm4-intro",
+                "hardware/autopi_tmu_cm4/device_dimensions",
+                "hardware/autopi_tmu_cm4/device_specifications",
+                "hardware/autopi_tmu_cm4/installing_external_antennas",
+                "hardware/autopi_tmu_cm4/installing-heatsink",
+                "hardware/autopi_tmu_cm4/led-and-button",
+                "hardware/autopi_tmu_cm4/mounting_holes",
+                "hardware/autopi_tmu_cm4/obd-connector-pinout",
+                "hardware/autopi_tmu_cm4/replacing-cm4",
+                "hardware/autopi_tmu_cm4/using-hat"
+            ],
+            "label": "AutoPi TMU CM4",
+            "type": "category"
+        },
+        {
+            "items": [
+                "hardware/autopi_tmu_socketcan/SocketCAN-intro",
+                "hardware/autopi_tmu_socketcan/connection-overview",
+                "hardware/autopi_tmu_socketcan/device_dimensions",
+                "hardware/autopi_tmu_socketcan/installing_external_antennas",
+                "hardware/autopi_tmu_socketcan/mounting_holes",
+                "hardware/autopi_tmu_socketcan/obd-connector-pinout"
+            ],
+            "label": "AutoPi TMU SocketCAN",
             "type": "category"
         }
     ]
