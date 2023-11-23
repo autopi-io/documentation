@@ -30,7 +30,6 @@ locations shown below:**
 
 ![AutoPi.io - OBD port location](/img/guides/getting_started/TMU_placement_dashboard_v1_finecut-01.jpg)
 
-
 ## 3. Orientation
 
 When installing the AutoPi, always make sure that your device faces upwards.
@@ -45,6 +44,6 @@ This is the relocator cable:
 
 ![AutoPi.io - Relocator cable](/img/guides/getting_started/relocator_cable2.jpg)
 
-## 5. Finalization
+## 5. Finished
 
-Your device is now online and connected to the AutoPi Cloud.
+Your device is now online, connected to AutoPi Cloud, and ready to be used.

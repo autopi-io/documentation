@@ -15,6 +15,10 @@ Clicking on the 'Create' button will open a new window, that looks like the foll
 
 ![Create PID Logger Window](/img/guides/create_mini_loggers/AutoPiMiniLogger.png)
 
+:::note
+The 'Restore default', as the name suggests, deletes the current loggers and applies default loggers.
+:::
+
 Let's look through the fields available:
 
 **Parameter**: This is the parameter you would like to use.
