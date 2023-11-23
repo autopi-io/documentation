@@ -189,6 +189,19 @@ module.exports = {
         "guides/guides-intro",
         {
             "items": [
+                "guides/Mini/mini-guides-intro",
+                "guides/Mini/create-mini-loggers"
+            ],
+            "label": "Mini",
+            "type": "category"
+        },
+        {
+            "items": [],
+            "label": "TMU",
+            "type": "category"
+        },
+        {
+            "items": [
                 "guides/api/how-to-change-your-devices-settings-from-api",
                 "guides/api/how-to-export-data-from-api",
                 "guides/api/send-device-data-to-own-server"
@@ -208,7 +221,6 @@ module.exports = {
                 "guides/obd-ii/obd-ii-intro",
                 "guides/obd-ii/can-bus-configuration",
                 "guides/obd-ii/create-can-signal-loggers",
-                "guides/obd-ii/create-mini-loggers",
                 "guides/obd-ii/create-pid-loggers",
                 "guides/obd-ii/debug-raw-pid-queries",
                 "guides/obd-ii/how-to-use-the-car-explorer-feature",
@@ -241,7 +253,6 @@ module.exports = {
         "guides/j1939-getting-started-guide",
         "guides/jumpers",
         "guides/local-development-workflow",
-        "guides/mini-guides-intro",
         "guides/power-cycle-for-electric-vehicles",
         "guides/reflashing-your-device",
         "guides/remotely-waking-up-your-device",

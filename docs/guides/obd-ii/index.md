@@ -96,11 +96,6 @@ In the following couple of guides we will explore how you can create [PID Logger
 and [CAN Signal Loggers](/guides/obd-ii/create_can_signal_loggers.md).
 
 
-:::note
-Since the introduction of the AutoPi Mini, we have introduced a new type of loggers for the Mini devices. A guide to setup loggers on the Autopi Mini can be accessed through [Mini Loggers](/guides/obd-ii/create_mini_loggers.md)
-:::
-
-
 ## Conclusion
 To finalize this introduction, we now know there are two major types of communication that can
 happen on a CAN bus - there's the PIDs and CAN messages. PIDs are less chatty on the CAN bus, they follow the
