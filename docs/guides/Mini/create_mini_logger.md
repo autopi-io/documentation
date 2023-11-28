@@ -29,10 +29,11 @@ Note that, some parameter share the same name but can be distinguished by the gr
 
 **Event on**: Should a records be made on a specific event.
 Select an event that should trigger a record in the dropdown list.
+When selection an event, new options appear, to configure how that event behaves.
+As an example, when selecting `Ranges Both` contains a range start and range end field, which allows to configure the range that `Ranges Both` should generate records based on, this can also be seen in the following image:
 
-:::note
-When selection an event, new options appear, to configure how that event behaves, e.g., 'Ranges Both' contains a range start and range end field, which allows to configure the range the 'Ranges Both' should generate records based on.
-:::
+![Create PID Logger Window](/img/guides/create_mini_loggers/AutoPiMiniLogger2.png)
+
 
 **Advanced**: In the advanced section you can modify the sampling rate, which controls how long a value should remain the same before changing.
 
