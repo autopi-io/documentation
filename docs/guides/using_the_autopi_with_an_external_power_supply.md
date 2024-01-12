@@ -19,7 +19,7 @@ is prepend the `autopi` command, like `autopi power.status`. This works for ever
 command.
 
 3. The AutoPi auto powers down when voltage is below 12.2V. This is to prevent draining the vehicle
-battery. Power it with at least 12.5V when in a lab.
+battery. Power it with at least 12.5V when in a lab. We also recommend that your power supply can output at least 2.5A.
 
 4. There is a trigger (sleep timer) on the device, that will initiate if there is no communication
 to the car, more specifically, its CAN bus. You can see sleep timers by running the
