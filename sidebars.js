@@ -317,7 +317,8 @@ module.exports = {
         },
         {
             "items": [
-                "hardware/autopi_mini/autopi-mini-intro"
+                "hardware/autopi_mini/autopi-mini-intro",
+                "hardware/autopi_mini/device_specifications"
             ],
             "label": "AutoPi Mini",
             "type": "category"
