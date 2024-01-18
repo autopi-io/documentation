@@ -139,7 +139,9 @@ To verify that these changes have been saved, you can run the following two comm
 `grains.get qmi:mtu`  
 `cmd.run "cat /etc/udhcpc/qmi.override"`
 
-**NOTE**: For US Verizon customers, please try this MTU: 1428.
+**NOTE:**
+- For US Verizon customers, please try this MTU: 1428.     
+- For other customer, please try this MTU: 1280.
 
 If the connection is still not online, then please contact support@autopi.io for additional help.
 
