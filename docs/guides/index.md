@@ -129,6 +129,10 @@ usually get these from your network carrier. On this pane, you can directly sele
 trouble finding it from your carrier. Please select your carrier or fill out the information
 manually.
 
+:::note
+If you have purchased a device with a preinstalled SIM card, the recommended APN string is **nxt20.net** 
+:::
+
 Once the information is saved, it will be applied to the device and you should see a
 notification when successfully saved.
 
