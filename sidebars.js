@@ -59,6 +59,7 @@ module.exports = {
             "items": [
                 "cloud/fleet/fleet-intro",
                 "cloud/fleet/device-install-procedure",
+                "cloud/fleet/nested-customers",
                 "cloud/fleet/fleet-overview",
                 "cloud/fleet/fleet-wakeup",
                 "cloud/fleet/fleet-templates"
@@ -193,11 +194,6 @@ module.exports = {
                 "guides/Mini/create-mini-loggers"
             ],
             "label": "Mini",
-            "type": "category"
-        },
-        {
-            "items": [],
-            "label": "TMU",
             "type": "category"
         },
         {
