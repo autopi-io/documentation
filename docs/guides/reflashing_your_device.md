@@ -19,7 +19,16 @@ The process for reflashing an AutoPi device differs a little depending on the de
 
 ### 1. Download the AutoPi OS image
 
-Make sure that you select the right image for your device: 
+Make sure that you select the right image for your device. You can check what version your device is by finding `board version` in
+settings:
+
+![settings button location](/img/guides/reflashing_your_device/settings_button_location.jpg)
+
+Once there, find the board version.
+
+![board version](/img/guides/reflashing_your_device/board_version.jpg)
+
+Once you have the board version, see which image you need from the table below and download it.
 
 | Generation | Board Version | Release Page                                                    | Image Link                                                                                                                     |
 |------------|------------|-----------------------------------------------------------------|
@@ -38,7 +47,7 @@ Make sure that you select the right image for your device:
 |      4     | 7.0        | [v1.22.9](https://github.com/autopi-io/autopi-core/releases/tag/v1.22.9) |
 
 
-You may also check the [autopi-core releases page](https://github.com/autopi-io/autopi-core/releases) for a newer compatible image.
+You may also check the [autopi-core releases page](https://github.com/autopi-io/autopi-core/releases) for a newer **board-version-compatible** image.
 
 ### 2. Set up Balena Ethcher (or alternative)
 
@@ -120,7 +129,8 @@ This step is required only if your company is using a dedicated environment. You
 
 ### 6. Set up the device
 Next, you will need to have the device re-accepted in the AutoPi Cloud. To do
-so, you need to first have the device boot up and connect to the internet. After that, log in to
+so, you need to first have the device boot up and connect to the internet. If you're using an AutoPi-provided SIM card, 
+you must set the APN to `nxt.net`. After that, log in to
 [my.autopi.io](https://my.autopi.io). You should immediately see a notification letting you know
 that the device's key isn't accepted.
 
