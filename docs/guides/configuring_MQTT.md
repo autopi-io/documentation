@@ -15,7 +15,7 @@ Install the broker:
 
 Set up the broker to allow non-protected connections. When releasing to production, make sure to change these settings, as running an open MQTT broker is a major security risk.
     
-    $ sudo echo -e 'allow_anonymous true\nlistener 1883 0.0.0.0' > /etc/mosquitto/conf.d/mosquitto.conf
+    $ sudo sh -c "echo 'allow_anonymous true\nlistener 1883 0.0.0.0' > /etc/mosquitto/conf.d/mosquitto.conf"
 
 Restart to load new configuration
     
