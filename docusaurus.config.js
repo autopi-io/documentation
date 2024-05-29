@@ -22,6 +22,11 @@ module.exports = {
       trackingID: 'G-DB2BZPKYN9',      
       anonymizeIP: false,
     },
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     navbar: {
       logo: {
         alt: 'AutoPi Documentation Logo',
