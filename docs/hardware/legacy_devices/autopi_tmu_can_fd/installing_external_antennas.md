@@ -31,7 +31,7 @@ We recommend using [**this**](https://shop.autopi.io/en/products/external-antenn
 		<strong>Step 1: </strong>
 		Get the rear shield, spacers, lock rings, nuts and external antennas and position them like so.
 	</p>
-	<img alt="Step 1" src={useBaseUrl('/img/hardware/autopi_tmu_can_fd/installing_external_antennas/v1.jpg')}/>
+	<img alt="Step 1" src={useBaseUrl('/img/hardware/legacy_devices/autopi_tmu_can_fd/installing_external_antennas/v1.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -40,7 +40,7 @@ We recommend using [**this**](https://shop.autopi.io/en/products/external-antenn
 		<strong>Step 2: </strong>
 		Insert the antennas in each hole.
 	</p>
-	<img alt="Step 2" src={useBaseUrl('/img/hardware/autopi_tmu_can_fd/installing_external_antennas/v2.jpg')}/>
+	<img alt="Step 2" src={useBaseUrl('/img/hardware/legacy_devices/autopi_tmu_can_fd/installing_external_antennas/v2.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -55,7 +55,7 @@ We recommend using [**this**](https://shop.autopi.io/en/products/external-antenn
 		First, attach the spacers with the teeth facing inwards. 
 	</p>
 </div>
-	<img alt="Step 3" src={useBaseUrl('/img/hardware/autopi_tmu_can_fd/installing_external_antennas/v3.jpg')}/>
+	<img alt="Step 3" src={useBaseUrl('/img/hardware/legacy_devices/autopi_tmu_can_fd/installing_external_antennas/v3.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -66,7 +66,7 @@ We recommend using [**this**](https://shop.autopi.io/en/products/external-antenn
 		that no space is left between the lock ring and the nut (Please note that the order of the components is crucial
 		in the last three steps).
 	</p>
-	<img alt="Step 4" src={useBaseUrl('/img/hardware/autopi_tmu_can_fd/installing_external_antennas/v4.jpg')}/>
+	<img alt="Step 4" src={useBaseUrl('/img/hardware/legacy_devices/autopi_tmu_can_fd/installing_external_antennas/v4.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -76,7 +76,7 @@ We recommend using [**this**](https://shop.autopi.io/en/products/external-antenn
 		Now, take your AutoPi and flip it so you can face the bottom of the device. Next, unscrew the bottom cover of
 		the device and get out the shield that was previously installed.
 	</p>
-	<img alt="Step 5" src={useBaseUrl('/img/hardware/autopi_tmu_can_fd/installing_external_antennas/v5.jpg')}/>
+	<img alt="Step 5" src={useBaseUrl('/img/hardware/legacy_devices/autopi_tmu_can_fd/installing_external_antennas/v5.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -85,7 +85,7 @@ We recommend using [**this**](https://shop.autopi.io/en/products/external-antenn
 		<strong>Step 6: </strong>
 		Unscrew the bottom cover of the device and get out the shield that was previously installed.
 	</p>
-	<img alt="Step 6" src={useBaseUrl('/img/hardware/autopi_tmu_can_fd/installing_external_antennas/v6.jpg')}/>
+	<img alt="Step 6" src={useBaseUrl('/img/hardware/legacy_devices/autopi_tmu_can_fd/installing_external_antennas/v6.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -95,7 +95,7 @@ We recommend using [**this**](https://shop.autopi.io/en/products/external-antenn
 		Grab the rear shield that you have assembled with the installed antennas. Note that the cables of the antennas
 		need to be facing the internals of the AutoPi device.
 	</p>
-	<img alt="Step 7" src={useBaseUrl('/img/hardware/autopi_tmu_can_fd/installing_external_antennas/v7.jpg')}/>
+	<img alt="Step 7" src={useBaseUrl('/img/hardware/legacy_devices/autopi_tmu_can_fd/installing_external_antennas/v7.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -118,7 +118,7 @@ We recommend using [**this**](https://shop.autopi.io/en/products/external-antenn
 			interior of the device.
 		</p>
 	</div>
-	<img alt="Step 8" src={useBaseUrl('/img/hardware/autopi_tmu_can_fd/installing_external_antennas/v8.jpg')}/>
+	<img alt="Step 8" src={useBaseUrl('/img/hardware/legacy_devices/autopi_tmu_can_fd/installing_external_antennas/v8.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -128,7 +128,7 @@ We recommend using [**this**](https://shop.autopi.io/en/products/external-antenn
 		Screw back in the four metal screws that you took out in the beginning. You don’t have to worry about where to
 		put them as they all have the same dimensions.
 	</p>
-	<img alt="Step 9" src={useBaseUrl('/img/hardware/autopi_tmu_can_fd/installing_external_antennas/v9.jpg')}/>
+	<img alt="Step 9" src={useBaseUrl('/img/hardware/legacy_devices/autopi_tmu_can_fd/installing_external_antennas/v9.jpg')}/>
 </SideBySide>
 <br/>
 
@@ -137,7 +137,7 @@ We recommend using [**this**](https://shop.autopi.io/en/products/external-antenn
 		<strong>Step 10: </strong>
 		You can now screw in the 4G antennas and the External GPS antenna like in the following image.
 	</p>
-	<img alt="Step 10" src={useBaseUrl('/img/hardware/autopi_tmu_can_fd/installing_external_antennas/v10.jpg')}/>
+	<img alt="Step 10" src={useBaseUrl('/img/hardware/legacy_devices/autopi_tmu_can_fd/installing_external_antennas/v10.jpg')}/>
 </SideBySide>
 
 ### Disscussion

@@ -329,7 +329,7 @@ module.exports = {
                 "hardware/legacy_devices/autopi_dongle/using-gpio-and-hdmi-with-the-gen-2",
                 "hardware/legacy_devices/autopi_dongle/using-the-rpi3-adapter"
               ],
-              "label": "AutoPi Dongle test",
+              "label": "AutoPi Dongle",
               "type": "category"
             },
             {

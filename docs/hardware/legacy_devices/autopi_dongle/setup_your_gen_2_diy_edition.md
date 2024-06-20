@@ -16,19 +16,19 @@ This guide is for Gen 2 DiY boards. For Gen 3 (TMU) DiY boards, take a look at
 Here is a small guide on connecting a RPi Zero to you AutoPi.
 
 1. Get your Raspberry Pi Zero and the 40-pin header that came with your AutoPi:
-![rpi_zero_pinless](/img/hardware/autopi_dongle/setup_your_gen_2_diy_edition/rpi_zero_pinless.jpeg) 
+![rpi_zero_pinless](/img/hardware/legacy_devices/autopi_dongle/setup_your_gen_2_diy_edition/rpi_zero_pinless.jpeg) 
 
 2. Solder the pin header to the Raspberry Pi:
-![rpi_zero_pins_attached](/img/hardware/autopi_dongle/setup_your_gen_2_diy_edition/rpi_zero_pins_attached.jpeg) 
+![rpi_zero_pins_attached](/img/hardware/legacy_devices/autopi_dongle/setup_your_gen_2_diy_edition/rpi_zero_pins_attached.jpeg) 
 
 3. Connect the flat micro-USB cable that came with your AutoPi. One end needs to be connected to the
 vertical USB connector on the AutoPi board and the other end needs to be connected to the USB out on
 the Raspberry Pi: 
-![connect_diy_board_usb](/img/hardware/autopi_dongle/setup_your_gen_2_diy_edition/connect_diy_board_usb.jpeg) 
+![connect_diy_board_usb](/img/hardware/legacy_devices/autopi_dongle/setup_your_gen_2_diy_edition/connect_diy_board_usb.jpeg) 
 
 4. Mount the Raspberry Pi on the AutoPi. Use the screws that came with your AutoPi, to fasten the
 Raspberry Pi: 
-![fasten_rpi_with_diy_board](/img/hardware/autopi_dongle/setup_your_gen_2_diy_edition/fasten_rpi_with_diy_board.jpeg) 
+![fasten_rpi_with_diy_board](/img/hardware/legacy_devices/autopi_dongle/setup_your_gen_2_diy_edition/fasten_rpi_with_diy_board.jpeg) 
 
 ## Connecting to the Cloud
 Should you want to use the AutoPi Cloud, then you can use this image found here to setup your device:

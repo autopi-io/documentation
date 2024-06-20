@@ -34,7 +34,7 @@ The AutoPi has three IO ports:
 2. **HDMI**, which you can use to connect a monitor to your AutoPi.
 3. **Audio jack**, which you can use for headphones or speakers.
 
-![available I/O](/img/hardware/autopi_dongle_gen3/developer_kit/available-io.jpg)
+![available I/O](/img/hardware/legacy_devices/autopi_dongle_gen3/developer_kit/available-io.jpg)
 
 
 ## Antennas
@@ -46,12 +46,12 @@ to place the GPS antenna as close to a window as possible.
 The GPS antenna port is located in the middle, between two 4G/LTE antenna ports. Here is an image
 that shows those ports.
 
-![antenna port locations](/img/hardware/autopi_dongle_gen3/developer_kit/antennas-pre-setup.jpg)
+![antenna port locations](/img/hardware/legacy_devices/autopi_dongle_gen3/developer_kit/antennas-pre-setup.jpg)
 
 In the middle port, connect the GPS antenna. On the two ports on the side, connect the 4G/LTE
 antennas. After you're done, your device should look a bit like the following:
 
-![complete dev kit](/img/hardware/autopi_dongle_gen3/developer_kit/finished-dev-kit.jpg)
+![complete dev kit](/img/hardware/legacy_devices/autopi_dongle_gen3/developer_kit/finished-dev-kit.jpg)
 
 ## Need help?
 

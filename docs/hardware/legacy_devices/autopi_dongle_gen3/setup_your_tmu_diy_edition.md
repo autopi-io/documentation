@@ -16,20 +16,20 @@ This guide is for TMU (Gen 3) DiY boards. For Gen 2 DiY boards, take a look at
 The steps you need to take are very simple. In this case, we are using a Raspberry Pi 3 A+,
 however this can work with a Raspberry Pi 3 B+ or a Raspberry Pi 4.
 
-![autopi_board_and_raspberry](/img/hardware/autopi_dongle_gen3/setup_your_tmu_diy_edition/autopi_board_and_raspberry.jpg)
+![autopi_board_and_raspberry](/img/hardware/legacy_devices/autopi_dongle_gen3/setup_your_tmu_diy_edition/autopi_board_and_raspberry.jpg)
 
 1. Mount the Raspberry Pi on the AutoPi, connecting the pins of the Raspberry to the open holes in the
 AutoPi board.
 
-![autopi_board_and_raspberry_connected](/img/hardware/autopi_dongle_gen3/setup_your_tmu_diy_edition/autopi_board_and_raspberry_connected.jpg)
+![autopi_board_and_raspberry_connected](/img/hardware/legacy_devices/autopi_dongle_gen3/setup_your_tmu_diy_edition/autopi_board_and_raspberry_connected.jpg)
 
 2. Connect the USB cable that's attached to the AutoPi board to one of the open USB ports of your Raspberry Pi
 
-![board_cable_connected_to_raspberry](/img/hardware/autopi_dongle_gen3/setup_your_tmu_diy_edition/board_cable_connected_to_raspberry.jpg)
+![board_cable_connected_to_raspberry](/img/hardware/legacy_devices/autopi_dongle_gen3/setup_your_tmu_diy_edition/board_cable_connected_to_raspberry.jpg)
 
 3. Lastly, place the four screws to secure the two boards fastly together.
 
-![screw_board](/img/hardware/autopi_dongle_gen3/setup_your_tmu_diy_edition/screw_board.jpg)
+![screw_board](/img/hardware/legacy_devices/autopi_dongle_gen3/setup_your_tmu_diy_edition/screw_board.jpg)
 
 ## Connecting to the Cloud
 Should you want to use the AutoPi Cloud solution, you can use the image found in [this](https://github.com/autopi-io/autopi-core/releases) link to flash an SD card. Make sure to download the correct image for
