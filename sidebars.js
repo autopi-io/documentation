@@ -14,6 +14,77 @@ module.exports = {
         },
         {
           "items": [
+            "cloud/fleet/fleet-intro",
+            "cloud/fleet/device-install-procedure",
+            "cloud/fleet/fleet-overview",
+            {
+              "items": [
+                "cloud/fleet/dashboard/dashboard-intro",
+                "cloud/fleet/dashboard/adding-a-new-widget-from-scratch",
+              ],
+              "label": "Dashboard",
+              "type": "category"
+            },
+            {
+              "items": [
+                "cloud/fleet/trips/introduction",
+                "cloud/fleet/trips/automatic-exports"
+              ],
+              "label": "Trips",
+              "type": "category"
+            },
+            "cloud/fleet/geofences",
+            {
+              "items": [
+                "cloud/fleet/triggers/fleet-wakeup",
+                "cloud/fleet/triggers/cloud-triggers",
+                "cloud/fleet/triggers/a-guide-to-triggers",
+              ],
+              "label": "Triggers",
+              "type": "category"
+            },
+            "cloud/fleet/fleet-alerts",
+            "cloud/fleet/nested-customers",
+            "cloud/fleet/fleet-templates",
+            "cloud/fleet/cloud-jobs",
+          ],
+          "label": "Fleet",
+          "type": "category"
+        },
+        {
+          "items": [
+
+          ],
+          "label": "Device Management",
+          "type": "category"
+        },
+        {
+          "items": [
+
+          ],
+          "label": "OBD-II",
+          "type": "category"
+        },
+        {
+          "items": [
+
+          ],
+          "label": "OBD Library",
+          "type": "category"
+        }
+      ],
+      "Old Cloud": [
+        "cloud/cloud-intro",
+        {
+          "items": [
+            "cloud/api/api-intro",
+            "cloud/api/command-webhook-callbacks"
+          ],
+          "label": "API",
+          "type": "category"
+        },
+        {
+          "items": [
             {
               "items": [
                 "cloud/configuration/TMU/cloud-config-intro",
@@ -64,20 +135,20 @@ module.exports = {
             "cloud/fleet/device-install-procedure",
             "cloud/fleet/nested-customers",
             "cloud/fleet/fleet-overview",
-            "cloud/fleet/fleet-wakeup",
+            // "cloud/fleet/fleet-wakeup",triggers
             "cloud/fleet/fleet-templates"
           ],
           "label": "Fleet",
           "type": "category"
         },
-        {
-          "items": [
-            "cloud/trips/introduction",
-            "cloud/trips/automatic-exports"
-          ],
-          "label": "Trips",
-          "type": "category"
-        },
+        // {
+        //   "items": [
+        //     "cloud/trips/introduction",
+        //     "cloud/trips/automatic-exports"
+        //   ],
+        //   "label": "Trips",
+        //   "type": "category"
+        // },
         {
           "items": [
             "cloud/user-manual/user-manual-intro",
@@ -93,9 +164,6 @@ module.exports = {
           "label": "User Manual",
           "type": "category"
         },
-        "cloud/geofences",
-        "cloud/cloud-jobs",
-        "cloud/cloud-triggers"
       ],
       "Core": [
         "core/core-intro",
@@ -240,8 +308,8 @@ module.exports = {
           "type": "category"
         },
         "guides/4g-internet-setup-troubleshooting",
-        "guides/a-guide-to-triggers",
-        "guides/adding-a-new-widget-from-scratch",
+        // "guides/a-guide-to-triggers",
+        // "guides/adding-a-new-widget-from-scratch",
         "guides/automatic-obd-logger-pausing",
         "guides/autopi-logs",
         "guides/configuring-mqtt",
