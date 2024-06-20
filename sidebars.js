@@ -265,14 +265,7 @@ module.exports = {
         {
           "items": [
             "hardware/accessories/accessories-intro",
-            {
-              "items": [
-                "hardware/accessories/doip-hat/doip-install",
-                "hardware/accessories/doip-hat/doip-intro"
-              ],
-              "label": "Doip Hat",
-              "type": "category"
-            },
+            "hardware/accessories/doip-install",
             {
               "items": [
                 "hardware/accessories/keyfob-hat/keyfob-intro",
@@ -280,7 +273,7 @@ module.exports = {
                 "hardware/accessories/keyfob-hat/keyfob-hat-install",
                 "hardware/accessories/keyfob-hat/keyfob-hat-pinout"
               ],
-              "label": "Keyfob Hat",
+              "label": "Keyfob HAT",
               "type": "category"
             },
             "hardware/accessories/device_mounts"      
