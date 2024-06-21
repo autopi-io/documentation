@@ -3,7 +3,7 @@ id: create-pid-loggers
 title: Create PID Loggers
 ---
 
-As explained in the [introduction](/guides/obd-ii/index.md), PIDs are used to request and receive
+As explained in the [introduction](index.md), PIDs are used to request and receive
 data from the vehicle. It can be real-time data, such as RPM, Speed, Fuel Level and so on, but it
 can also be in the form of Diagnostic Trouble Codes (DTCs) and other troubleshooting data useful to
 vehicle technicians.
@@ -150,7 +150,7 @@ but to an ELM327 specification.
 
 Before working with the CAN Flow Control Enhanced PID settings, it is highly recommended that you understand how the 
 `can_flow_control_` prefixed parameters work on the obd.query command. This is explained in
-[non-OBD2 queries](/guides/obd-ii/using-the-can-bus-commands/#non-obd2-queries). The Enhanced PID
+[non-OBD2 queries](using_the_can_bus_commands.mdx#non-obd2-queries). The Enhanced PID
 section essentially allows you to enrich your loggers with the same functionality. The filter and
 mask correspond to the `can_flow_control_filter` parameter's 2 comma seperated values in that order. The
 same applies to the Transmitter ID and Receiver ID.
@@ -179,7 +179,7 @@ to the supported vehicle busses when editing the PID itself.
 
 **Interval**: How often should the PID be queried (in seconds)?
 
-**Advanced**: If you are familiar with [AutoPi services](/guides/services/index.md), you might
+**Advanced**: If you are familiar with [AutoPi services](index.md), you might
 recognize these options - the advanced options are going to be set on the pid_logger worker
 responsible for querying the CAN bus.
   - **Converter**: The converter that should be used to convert the response from the PID Logger.
@@ -194,7 +194,7 @@ been synchronized to your device, your device will start sending PID requests on
 the provided parameters and you should start receiving data.
 
 If for some reason, you aren't getting any data back from the logger, you can take a look at the
-log files for some clues about what's going wrong. Take a look [here](/guides/autopi_logs.md) for
+log files for some clues about what's going wrong. Take a look [here](../../guides/autopi_logs.md) for
 more information on how to view those logs.
 
 You can also take a look at the obd_manager workers(Advanced > Services > obd_manager > Workers).

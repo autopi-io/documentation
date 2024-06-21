@@ -17,7 +17,7 @@ The table shows the settings currently associated to the template, and clicking 
 Modules are created the same way for templates as they are for normal devices; chose a type depending on what you need the module for, and when creating a custom module of type service, it will automatically create a custom service for you and associate that to the same template.
 
 ### Services
-[Read more here](/guides/services/index.md).
+[Read more here](../device_management/services/index.md).
 
 #### Creating custom services
 Creating a custom service does not not autocreate a custom module as of now, so if you want to create a custom service, you should instead go create a custom module of the type service, then a service will be automatically created.
@@ -69,7 +69,7 @@ You'll be presented with a window similar to this:
 
   ![Logger buses](/img/cloud/fleet/template_create_pid_logger.png)
 
-Most of this is identical to what you'd see when [creating PID loggers for devices](/guides/obd-ii/create_pid_loggers.md/#creating-the-logger), with
+Most of this is identical to what you'd see when [creating PID loggers for devices](../obd-ii/create_pid_loggers.md/#creating-the-logger), with
 the exception of Bus settings. Take a look at the [templated CAN loggers section](/cloud/fleet/templates.md/#templated-can-loggers) to get
 an idea of how they work. A notable difference here is that for PID loggers, the Bus is optional. If one's not specified, the PID will be logged
 using the vehicle's default bus.

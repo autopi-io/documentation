@@ -1,6 +1,6 @@
 ---
 id: create-can-signal-loggers
-title: Create CAN Signal Loggers (Coming Soon)
+title: Create CAN Signal Loggers
 ---
 
 # Create CAN Signal Loggers

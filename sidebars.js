@@ -125,14 +125,22 @@ module.exports = {
         },
         {
           "items": [
-
+            "cloud/obd-ii/obd-ii-intro",
+            "cloud/obd-ii/can-bus-configuration",
+            "cloud/obd-ii/create-pid-loggers",
+            "cloud/obd-ii/create-can-signal-loggers",
+            "cloud/obd-ii/debug-raw-pid-queries",
+            "cloud/obd-ii/log-raw-can-messages",
+            "cloud/obd-ii/using-the-can-bus-commands",
+            "cloud/obd-ii/automatic-obd-logger-pausing",
           ],
           "label": "OBD-II",
           "type": "category"
         },
         {
           "items": [
-
+            "cloud/obd_library/car-explorer-library-manual",
+            "cloud/obd_library/community_library",
           ],
           "label": "OBD Library",
           "type": "category"
@@ -250,21 +258,7 @@ module.exports = {
           "label": "API",
           "type": "category"
         },
-        {
-          "items": [
-            "guides/obd-ii/obd-ii-intro",
-            "guides/obd-ii/can-bus-configuration",
-            "guides/obd-ii/create-pid-loggers",
-            "guides/obd-ii/debug-raw-pid-queries",
-            "guides/obd-ii/how-to-use-the-car-explorer-feature",
-            "guides/obd-ii/log-raw-can-messages",
-            "guides/obd-ii/using-the-can-bus-commands"
-          ],
-          "label": "OBD-II",
-          "type": "category"
-        },
         "guides/4g-internet-setup-troubleshooting",
-        "guides/automatic-obd-logger-pausing",
         "guides/autopi-logs",
         "guides/configuring-mqtt",
         "guides/enabling_bluetooth_on_TMU_devices",
