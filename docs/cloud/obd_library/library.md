@@ -7,7 +7,7 @@ In this page we go through the Library section of our Cloud. Below is a screensh
 Library that is already filled with some PIDs and CAN messages. Open the screenshot in a
 new tab to get a better overview of the whole page.
 
-![Full library screenshot](/img/user-manual/car-explorer/library/full-screenshot.jpg)
+![Full library screenshot](/img/cloud/obd_library/library/full-screenshot.jpg)
 
 We will start off this guide by going through some of the basic actions that you can do in the
 library page, including a section on how to use the Community Library to find new PIDs and CAN
@@ -45,7 +45,7 @@ are a business customer, you won't see any of the community shared library on yo
 server.
 :::
 
-![Community library screenshot](/img/user-manual/car-explorer/library/community-library.jpg)
+![Community library screenshot](/img/cloud/obd_library/library/community-library.jpg)
 
 :::note
 There is a slight difference between the two types - *OBD-II PID* and *Proprietary PID*. Items that
@@ -60,7 +60,7 @@ of search results. You can browse through them and if you find one that you woul
 experiment with you can add it to your library. By clicking on the item you're interested in, a
 pop-out window similar to the one below will show up:
 
-![Community library view window](/img/user-manual/car-explorer/library/community-library-view-window.jpg)
+![Community library view window](/img/cloud/obd_library/library/community-library-view-window.jpg)
 
 On that window, you can see details such as the exact parameters for the PID like the **header**,
 **mode** and PID **code** that it uses, the **formula** that parses the raw bytes into human
@@ -91,7 +91,7 @@ at the top-right section of the page). Clicking on that button will show a dropd
 options, PID and CAN - select the PID one. This will bring up the following window (the fields in
 the screenshot are already filled up, so that it's easier for me to describe them after):
 
-![Creating a PID](/img/user-manual/car-explorer/library/creating-a-pid.jpg)
+![Creating a PID](/img/cloud/obd_library/library/creating-a-pid.jpg)
 
 Let's go through the fields that are available and how to fit the raw PID we see above into the
 PID form.
@@ -155,7 +155,7 @@ To start creating a new CAN message, you will need to click the '*+ Create*' but
 section of the page. From the dropdown that shows up from clicking on the button, select CAN. This
 will bring up the following window (again, it is pre-filled for the purposes of this guide):
 
-![Creating a CAN message](/img/user-manual/car-explorer/library/creating-a-canmsg.jpg)
+![Creating a CAN message](/img/cloud/obd_library/library/creating-a-canmsg.jpg)
 
 >**Name:** Short name of the CAN message that's being created.
 >
@@ -235,7 +235,7 @@ CM_ SG_ 1 LEFT_SEAT_TEMP "Temperature of the front left seat";
 
 ### First import
 When you first select a file for import, you will be presented with options looking like this:
-  ![File options](/img/user-manual/car-explorer/library/file_options.png) 
+  ![File options](/img/cloud/obd_library/library/file_options.png) 
 
 Here you can select whether the file's contents are CAN messages & signals or PIDs. You can also set a
 namespace, which will prefix all the imported items with the selected Name string. This can help when you need to
@@ -244,8 +244,8 @@ sent for validation. Once that's done, you'll be able to review all the messages
 You can also ignore messages and signals, which you'd like to not be imported. For this example, we're ignoring the left
 seat's temperature.
 
-  ![Imported and validated messages](/img/user-manual/car-explorer/library/imported_messages.png) 
-  ![Imported and validated signals](/img/user-manual/car-explorer/library/imported_signals.png) 
+  ![Imported and validated messages](/img/cloud/obd_library/library/imported_messages.png) 
+  ![Imported and validated signals](/img/cloud/obd_library/library/imported_signals.png) 
 
 ### Adding signals to existing messages
 Once you've selected what to create and what to ignore, click on the upload button and the messages will be created. If
@@ -253,8 +253,8 @@ you now try to import the same file with the same options, you'll see that front
 its signals, is unchanged. Front left, however, is shown as changed, since we ignored one of its signals. Now we have the
 option to update the Front Left message by creating the Left Seat Temperature signal.
 
-  ![Library view](/img/user-manual/car-explorer/library/post_import_messages.png) 
-  ![Library view](/img/user-manual/car-explorer/library/post_import_signals.png) 
+  ![Library view](/img/cloud/obd_library/library/post_import_messages.png) 
+  ![Library view](/img/cloud/obd_library/library/post_import_signals.png) 
 
 ### Updating message and signal properties
 To update a value, all you need to do is change it in the imported file and import it again with the same options. For this
@@ -267,7 +267,7 @@ After:  SG_ RIGHT_SEAT_TEMP: 0|8@1+ (1,0) [0|0] "f" ECU1
 
 After uploading the file and validating, the signal shows as changed and the changed property's new and old values can be seen.
 
-  ![Library view](/img/user-manual/car-explorer/library/updating_a_signal.png) 
+  ![Library view](/img/cloud/obd_library/library/updating_a_signal.png) 
 
 :::note
 Setting a message's Option to 'Ignore' will force 'Ignore' to all its child signals.
@@ -287,7 +287,7 @@ BO_ 937 FRONT_RIGHT: 4 IO
   SG_ RIGHT_SEAT_TEMP: 0|8@1+ (1,0) [0|0] "f" ECU1
 ```
 
-  ![Library view](/img/user-manual/car-explorer/library/deleting_a_signal.png) 
+  ![Library view](/img/cloud/obd_library/library/deleting_a_signal.png) 
 
 ### Working with PIDs
 
@@ -340,7 +340,7 @@ that you need to follow. This is an example PID JSON file:
 
 ## Legacy importer
 
-  ![Library view](/img/user-manual/car-explorer/library/import_file_button.png) 
+  ![Library view](/img/cloud/obd_library/library/import_file_button.png) 
 
 Depending on what version you are using, you might see multiple "Import" buttons in the library. This is
 because there are 2 versions of the importer: the new and the legacy. The legacy importer was able to
@@ -352,10 +352,10 @@ section we are going to review how you can import these files in your Library, h
 to date, how to improve their readability and how you can share them with the rest of the community.
 
 1. Go to **Car Explorer** > **Library** and click on the Import button:
-  ![Import button](/img/user-manual/car-explorer/library/import-button-location.jpg) 
+  ![Import button](/img/cloud/obd_library/library/import-button-location.jpg) 
 2. Select DBC from the dropdown menu that shows up and select the file from your filesystem.
 3. A list of the imported CAN signals will show up in your library.
-  ![Library view](/img/user-manual/car-explorer/library/library_view.png) 
+  ![Library view](/img/cloud/obd_library/library/library_view.png) 
 
 ## Adding Descriptions for Better Readability
 
@@ -368,9 +368,9 @@ window (like the one from the previous section) will pop out. In this window you
 the CAN message at the top with all CAN signals associated with it in a list below. The CAN signal
 that you clicked on will be already expanded and highlighted in yellow.
 
-![Editing a CAN message](/img/user-manual/car-explorer/library/editing_a_can_message.png)
+![Editing a CAN message](/img/cloud/obd_library/library/editing_a_can_message.png)
 
 Edit the description field of the signal and click Save. You can also associate that CAN message
 with a vehicle CAN bus. You should see the CAN signal update with the new description:
 
-![ABS Malfunction example](/img/user-manual/car-explorer/library/abs_malfunction_example.png)
+![ABS Malfunction example](/img/cloud/obd_library/library/abs_malfunction_example.png)
