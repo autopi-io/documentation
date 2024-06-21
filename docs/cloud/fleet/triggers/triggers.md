@@ -17,7 +17,7 @@ _Webhooks_ are supported so you can integrate with almost any service or system.
 </p>
 
 :::note
-For more information on how to setup triggers in the AutoPi Cloud please see [this guide](../../../guides/a_guide_to_triggers.md)
+For more information on how to setup triggers in the AutoPi Cloud please see [this guide](a_guide_to_triggers.md)
 :::
 
 :::tip

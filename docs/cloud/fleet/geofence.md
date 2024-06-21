@@ -19,5 +19,5 @@ This events are triggered on the device, and then uploaded to the cloud.
 This means that you are able to both create triggers in the cloud, but also configure reactors directly on the device that can react to this event, like playing a sound, sending a HTTP request or maybe publish a message on a MQTT broker.
 
 :::note
-[Click here](../../guides/a_guide_to_triggers.md) to see the guide about how triggers work. 
+[Click here](triggers/a_guide_to_triggers.md) to see the guide about how triggers work. 
 :::

@@ -46,14 +46,13 @@ module.exports = {
             "cloud/fleet/fleet-alerts",
             "cloud/fleet/nested-customers",
             "cloud/fleet/fleet-templates",
-            "cloud/fleet/cloud-jobs",
           ],
           "label": "Fleet",
           "type": "category"
         },
         {
           "items": [
-
+            "cloud/device_management/cloud-jobs",
           ],
           "label": "Device Management",
           "type": "category"
