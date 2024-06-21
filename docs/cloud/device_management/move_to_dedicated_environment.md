@@ -1,6 +1,6 @@
 ---
 id: move-to-dedicated-environment
-title: Move a device to a dedicated environment
+title: Move Device to a Dedicated Environment
 ---
 
 Hello everyone!

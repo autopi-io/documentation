@@ -66,10 +66,10 @@ using the events or by running a command.
 #### Events
 
 One of the ways to determine if the device is being updated right now is to check the Events page
-under Advanced > Events. Here, we're looking for [`system/release/*`](/cloud/events/system.md#release-events)
+under Advanced > Events. Here, we're looking for [`system/release/*`](../device_management/events/system.md#release-events)
 events, more specifically the `system/release/pending`, `system/release/retrying` or `system/release/forcing`
 events. All of those events signify that the device had started an update attempt. If you see a
-`system/release/failed`, `system/release/updated` or an event that means the device [shut down](/cloud/events/system.md#power-events),
+`system/release/failed`, `system/release/updated` or an event that means the device [shut down](../device_management/events/system.md#power-events),
 then the device has likely stopped updating.
 
 **It is also possible to fetch the events from the reactor cache with the following command, directly on the device**

@@ -61,4 +61,4 @@ will try to apply the settings again and they should be applied on the retry.
 
 Once you've setup your RFID reader, you can start using it with chips or cards. The device will report events whenever
 an RFID chip/card was held close to the reader and will also report authorized or rejected events based on the
-Authorized Tokens setting we discussed above. You can view those events [here](/cloud/events/system.md#rfid-events).
+Authorized Tokens setting we discussed above. You can view those events [here](../cloud/device_management/events/system.md#rfid-events).

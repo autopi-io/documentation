@@ -52,7 +52,73 @@ module.exports = {
         },
         {
           "items": [
+            {
+              "items": [
+                "cloud/device_management/events/cloud-events-intro",
+                "cloud/device_management/events/cloud-events-system",
+                "cloud/device_management/events/cloud-events-vehicle"
+              ],
+              "label": "Events",
+              "type": "category"
+            },
+            {
+              "items": [
+                "cloud/device_management/services/services-intro",
+                "cloud/device_management/services/create-custom-returners",
+                "cloud/device_management/services/create-custom-services",
+                "cloud/device_management/services/create-custom-triggers",
+                "cloud/device_management/services/create-custom-workers"
+              ],
+              "label": "Services",
+              "type": "category"
+            },
+            {
+              "items": [
+              
+              ],
+              "label": "Services",
+              "type": "category"
+            },
             "cloud/device_management/cloud-jobs",
+            {
+              "items": [
+                {
+                  "items": [
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-intro",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-accelerometer",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-alerts",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-audio",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-bluetooth",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-charging-session",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-cloud-storage",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-docker",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-key-fob",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-mqtt",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-obd",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-power",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-rfid",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-system",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-tracking",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-trip",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-update-release",
+                    "cloud/device_management/advanced_settings/TMU/cloud-config-wifi"
+                  ],
+                  "label": "AutoPi TMU CM4",
+                  "type": "category"
+                },
+                {
+                  "items": [
+                    "cloud/device_management/advanced_settings/mini/cloud-config-mini-intro"
+                  ],
+                  "label": "AutoPi Mini",
+                  "type": "category"
+                }
+              ],
+              "label": "Advanced Settings",
+              "type": "category"
+            },
+            "cloud/device_management/software-updates",
+            "cloud/device_management/move-to-dedicated-environment"
           ],
           "label": "Device Management",
           "type": "category"
@@ -70,99 +136,8 @@ module.exports = {
           ],
           "label": "OBD Library",
           "type": "category"
-        }
-      ],
-      "Old Cloud": [
-        "cloud/cloud-intro",
-        {
-          "items": [
-            "cloud/api/api-intro",
-            "cloud/api/command-webhook-callbacks"
-          ],
-          "label": "API",
-          "type": "category"
         },
-        {
-          "items": [
-            {
-              "items": [
-                "cloud/configuration/TMU/cloud-config-intro",
-                "cloud/configuration/TMU/cloud-config-accelerometer",
-                "cloud/configuration/TMU/cloud-config-alerts",
-                "cloud/configuration/TMU/cloud-config-audio",
-                "cloud/configuration/TMU/cloud-config-bluetooth",
-                "cloud/configuration/TMU/cloud-config-charging-session",
-                "cloud/configuration/TMU/cloud-config-cloud-storage",
-                "cloud/configuration/TMU/cloud-config-docker",
-                "cloud/configuration/TMU/cloud-config-key-fob",
-                "cloud/configuration/TMU/cloud-config-mqtt",
-                "cloud/configuration/TMU/cloud-config-obd",
-                "cloud/configuration/TMU/cloud-config-power",
-                "cloud/configuration/TMU/cloud-config-rfid",
-                "cloud/configuration/TMU/cloud-config-system",
-                "cloud/configuration/TMU/cloud-config-tracking",
-                "cloud/configuration/TMU/cloud-config-trip",
-                "cloud/configuration/TMU/cloud-config-update-release",
-                "cloud/configuration/TMU/cloud-config-wifi"
-              ],
-              "label": "TMU",
-              "type": "category"
-            },
-            {
-              "items": [
-                "cloud/configuration/mini/cloud-config-mini-intro"
-              ],
-              "label": "Mini",
-              "type": "category"
-            }
-          ],
-          "label": "Configuration",
-          "type": "category"
-        },
-        {
-          "items": [
-            "cloud/events/cloud-events-intro",
-            "cloud/events/cloud-events-system",
-            "cloud/events/cloud-events-vehicle"
-          ],
-          "label": "Events",
-          "type": "category"
-        },
-        {
-          "items": [
-            "cloud/fleet/fleet-intro",
-            "cloud/fleet/device-install-procedure",
-            "cloud/fleet/nested-customers",
-            "cloud/fleet/fleet-overview",
-            // "cloud/fleet/fleet-wakeup",triggers
-            "cloud/fleet/fleet-templates"
-          ],
-          "label": "Fleet",
-          "type": "category"
-        },
-        // {
-        //   "items": [
-        //     "cloud/trips/introduction",
-        //     "cloud/trips/automatic-exports"
-        //   ],
-        //   "label": "Trips",
-        //   "type": "category"
-        // },
-        {
-          "items": [
-            "cloud/user-manual/user-manual-intro",
-            {
-              "items": [
-                "cloud/user-manual/car-explorer/car-explorer-library-manual"
-              ],
-              "label": "Car Explorer",
-              "type": "category"
-            },
-            "cloud/user-manual/software-updates"
-          ],
-          "label": "User Manual",
-          "type": "category"
-        },
+        "cloud/accounts"
       ],
       "Core": [
         "core/core-intro",
@@ -277,13 +252,6 @@ module.exports = {
         },
         {
           "items": [
-            "guides/business/move-to-dedicated-environment"
-          ],
-          "label": "Business",
-          "type": "category"
-        },
-        {
-          "items": [
             "guides/obd-ii/obd-ii-intro",
             "guides/obd-ii/can-bus-configuration",
             "guides/obd-ii/create-pid-loggers",
@@ -295,20 +263,7 @@ module.exports = {
           "label": "OBD-II",
           "type": "category"
         },
-        {
-          "items": [
-            "guides/services/services-intro",
-            "guides/services/create-custom-returners",
-            "guides/services/create-custom-services",
-            "guides/services/create-custom-triggers",
-            "guides/services/create-custom-workers"
-          ],
-          "label": "Services",
-          "type": "category"
-        },
         "guides/4g-internet-setup-troubleshooting",
-        // "guides/a-guide-to-triggers",
-        // "guides/adding-a-new-widget-from-scratch",
         "guides/automatic-obd-logger-pausing",
         "guides/autopi-logs",
         "guides/configuring-mqtt",
