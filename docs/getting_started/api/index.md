@@ -12,7 +12,7 @@ will always be up to date, but being auto-generated it unfortunately also does s
 are working to improve this. And if you find something that you feel is not adequately documented, please let us know.
 :::
 
-![api_frontpage](/img/cloud/api_intro/api_frontpage.jpg) 
+![api_frontpage](/img/getting_started/api/api_intro/api_frontpage.jpg) 
 
 ## Authentication
 If you want to test the endpoints, you can authenticate in the API documentation portal by setting the token to use
@@ -36,11 +36,11 @@ Authorization: APIToken YOUR_TOKEN
 
 You can **generate the new API Token** in the AutoPi [Cloud](https://my.autopi.io). Clicking on the in the *Account tab* in the side menu gets you to the *Account Page*.
 
-![account_showcase](/img/cloud/api_intro/account_showcase.jpg) 
+![account_showcase](/img/getting_started/api/api_intro/account_showcase.jpg) 
 
 On the *Account* Page you may see an API Tokens *tab* which gets you to the API Token creation part. Here you are able to create a new API Token by giving it a name and there is an *option* to set an expiration date for the token if you need and clicking the *Create* button.
 
-![account_page](/img/cloud/api_intro/account_page.jpg) 
+![account_page](/img/getting_started/api/api_intro/account_page.jpg) 
 
 ### JWT Token
 

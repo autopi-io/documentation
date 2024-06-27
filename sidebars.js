@@ -2,16 +2,22 @@ module.exports = {
   "sidebar": [
     "index", 
     {
-      "Cloud": [
-        "cloud/cloud-intro",
+      "Getting Started": [
+      "getting_started/landing_page",
         {
           "items": [
-            "cloud/api/api-intro",
-            "cloud/api/command-webhook-callbacks"
+            "getting_started/api/api-intro",
+            "getting_started/api/command-webhook-callbacks",
+            "getting_started/api/change-device-settings-from-api",
+            "getting_started/api/export-data-from-api",
+            "getting_started/api/send-device-data-to-own-server"
           ],
           "label": "API",
           "type": "category"
         },
+      ],
+      "Cloud": [
+        "cloud/cloud-intro",
         {
           "items": [
             "cloud/fleet/fleet-intro",
@@ -247,15 +253,6 @@ module.exports = {
             "guides/Mini/create-mini-loggers"
           ],
           "label": "Mini",
-          "type": "category"
-        },
-        {
-          "items": [
-            "guides/api/how-to-change-your-devices-settings-from-api",
-            "guides/api/how-to-export-data-from-api",
-            "guides/api/send-device-data-to-own-server"
-          ],
-          "label": "API",
           "type": "category"
         },
         "guides/4g-internet-setup-troubleshooting",
