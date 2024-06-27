@@ -1,6 +1,6 @@
 ---
 id: guides-intro
-title: Getting started
+title: Getting Started
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

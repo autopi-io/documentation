@@ -6,6 +6,12 @@ module.exports = {
       "getting_started/landing_page",
         {
           "items": [
+          ],
+          "label": "Getting Started",
+          "type": "category"
+        },
+        {
+          "items": [
             "getting_started/api/api-intro",
             "getting_started/api/command-webhook-callbacks",
             "getting_started/api/change-device-settings-from-api",
@@ -13,6 +19,24 @@ module.exports = {
             "getting_started/api/send-device-data-to-own-server"
           ],
           "label": "API",
+          "type": "category"
+        },
+        {
+          "items": [
+            "getting_started/developer_guides/developer-guides-intro",
+            "getting_started/developer_guides/configuring-mqtt",
+            "getting_started/developer_guides/how-to-ssh-to-your-device",
+            "getting_started/developer_guides/local-development-workflow",
+            "getting_started/developer_guides/reflashing-your-device",
+            "getting_started/developer_guides/remotely-waking-up-your-device",
+            "getting_started/developer_guides/rfid-integartion",
+            "getting_started/developer_guides/upgrading-your-raspberry-pi",
+            "getting_started/developer_guides/jumpers",
+            "getting_started/developer_guides/installing-a-camera-on-your-autopi",
+            "getting_started/developer_guides/enabling_bluetooth_on_TMU_devices",
+            "getting_started/developer_guides/setting-up-a-device-with-verizon-wireless",
+          ],
+          "label": "Developer Guides",
           "type": "category"
         },
       ],
@@ -257,20 +281,9 @@ module.exports = {
         },
         "guides/4g-internet-setup-troubleshooting",
         "guides/autopi-logs",
-        "guides/configuring-mqtt",
-        "guides/enabling_bluetooth_on_TMU_devices",
-        "guides/how-to-ssh-to-your-device",
-        "guides/installing-a-camera-on-your-autopi",
         "guides/j1939-getting-started-guide",
-        "guides/jumpers",
-        "guides/local-development-workflow",
         "guides/power-cycle-for-electric-vehicles",
-        "guides/reflashing-your-device",
-        "guides/remotely-waking-up-your-device",
-        "guides/rfid-integartion",
         "guides/setting-up-docker",
-        "guides/setting-up-our-device-with-verizon-wireless",
-        "guides/upgrading-your-raspberry-pi",
         "guides/using-the-autopi-with-an-external-power-supply"
       ],
       "Hardware": [

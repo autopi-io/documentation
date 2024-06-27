@@ -1,6 +1,6 @@
 ---
 id: using-the-autopi-with-an-external-power-supply
-title: Using the AutoPi with an external power supply
+title: Using the AutoPi With an External Power Supply
 ---
 
 The device you have is pre-configured to work directly in your car. When working it in a lab

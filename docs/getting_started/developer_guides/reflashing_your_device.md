@@ -1,6 +1,6 @@
 ---
 id: reflashing-your-device
-title: Reflashing your device
+title: Reflashing Your Device
 ---
 
 ## Reflashing Workflow
@@ -22,11 +22,11 @@ The process for reflashing an AutoPi device differs a little depending on the de
 Make sure that you select the right image for your device. You can check what version your device is by finding `board version` in
 settings:
 
-![settings button location](/img/guides/reflashing_your_device/settings_button_location.jpg)
+![settings button location](/img/getting_started/developer_guides/reflashing_your_device/settings_button_location.jpg)
 
 Once there, find the board version.
 
-![board version](/img/guides/reflashing_your_device/board_version.jpg)
+![board version](/img/getting_started/developer_guides/reflashing_your_device/board_version.jpg)
 
 Once you have the board version, see which image you need from the table below and download it.
 
@@ -97,7 +97,7 @@ Follow the setup steps in the [Raspberry Pi usbboot documentation](https://githu
 Once you've started the rpiboot utility, your computer will start looking for a connected Compute Module
 device. The setup should look something like pictured below:
 
-![rpiboot setup](/img/guides/reflashing_your_device/rpiboot_setup.png)
+![rpiboot setup](/img/getting_started/developer_guides/reflashing_your_device/rpiboot_setup.png)
 
 ##### 3.b.2. Put the device into the EMMC FLASHING state
 To do this, your device will need to be receiving power from either a vehicle, or a power supply with an adapter cable (the USB port can not be used for power). Details for button location and state transitions can be found in the [AutoPi CM4 TMU documentation](https://docs.autopi.io/hardware/autopi_tmu_cm4/led-and-button/). 
@@ -108,14 +108,14 @@ To put the task in more simple terms: press the button (located in one of the ho
 
 Once you have both the rpiboot utility running on your computer and the device is in the correct state, you can connect the 2. Plug the micro-USB end of the cable into the exposed micro-USB port on the side of the device (the regular USB type-A ports on the back of the device can not be used for flashing), and the other end into your computer. If everything has gone according to plan, the rpiboot utiliy has now detected the device and mounted the device partitions if there are any. That should look something like pictured below:
 
-![device detected output](/img/guides/reflashing_your_device/device_detected.png)
+![device detected output](/img/getting_started/developer_guides/reflashing_your_device/device_detected.png)
 
 At this point you can access the internal file system of the AutoPi's Raspberry Pi through the mounted drives. On this Linux distribution the mounting points are `/media/<user>/boot` and `/media/<user>/rootfs`. On Windows you should be able to see at least one of the partitions in the File Explorer.
 
 ### 4. Flashing the device
 Using Balena Etcher or alternative, select the image file you downloaded earlier, and the storage device. Once that's done, click flash and wait for it to complete. It's worth noting, that if it fails on the first try, try again. 
 
-![balena configured with image and device](/img/guides/reflashing_your_device/configured_balena.png)
+![balena configured with image and device](/img/getting_started/developer_guides/reflashing_your_device/configured_balena.png)
 
 :::warning
 It is unsafe to remove the device from power while it is on or booting. The safest point when to unplug the device from power is right after unmounting.
@@ -134,13 +134,13 @@ you must set the APN. See the **Setup APN** in the [Getting Started](/guides/ind
 [my.autopi.io](https://my.autopi.io). You should immediately see a notification letting you know
 that the device's key isn't accepted.
 
-![Not accepted notification](/img/guides/reflashing_your_device/not_accepted_notification.png)
+![Not accepted notification](/img/getting_started/developer_guides/reflashing_your_device/not_accepted_notification.png)
 
 Another way of accepting the key is to go to the Settings page and navigating to your device's
 general settings. There you should be able to see that the "Key state" field says unaccepted and a
 green "Accept" button should be showing. Clicking on the button, accepts the key.
 
-![Accept device button](/img/guides/reflashing_your_device/accept_device.png)
+![Accept device button](/img/getting_started/developer_guides/reflashing_your_device/accept_device.png)
 
 When your device comes online the first time, the WiFi hotspot will have the following setup:
 

@@ -33,7 +33,7 @@ In terminal 2:
 
 Expected result:
 
-![publish_subsribe_server_test_expected_result](/img/guides/configuring_MQTT/pub_sub_server_test.png)
+![publish_subsribe_server_test_expected_result](/img/getting_started/developer_guides/configuring_MQTT/pub_sub_server_test.png)
 
 ## Device setup
 
@@ -43,7 +43,7 @@ While direct-connect mode is easier to set up, it's worth noting that in case th
 
 
 ### Direct-connect mode
-![direct_connect_diagram](/img/guides/configuring_MQTT/direct-connect_diagram.png)
+![direct_connect_diagram](/img/getting_started/developer_guides/configuring_MQTT/direct-connect_diagram.png)
 
 On the AutoPi cloud portal (my.autopi.io for private customers, <company_name>.autopi.io for business customers) go to [Advanced > Settings > MQTT]. Modify the following settings:
 
@@ -54,7 +54,7 @@ On the AutoPi cloud portal (my.autopi.io for private customers, <company_name>.a
 Now set up an mqtt returner on a data point you know you're getting data from (voltage readings or GPS for example). See below on how to do this. After you've done this, you should be seeing data on your MQTT broker. 
 
 ### Broker-bridge mode
-![broker_bridge_diagram](/img/guides/configuring_MQTT/broker-bridge_diagram.png)
+![broker_bridge_diagram](/img/getting_started/developer_guides/configuring_MQTT/broker-bridge_diagram.png)
 On the AutoPi cloud portal (my.autopi.io for private customers, <company_name>.autopi.io for business customers) go to [Advanced > Settings > MQTT]. Note that the settings under [Broker > ...] **effect only the broker, and not the client**, so if you are trying to set up direct-connect mode, these are not the settings you are looking for. Modify the following settings:
 
 - Broker > Install: Mosquitto v1.x  (Or newer if available)
@@ -80,14 +80,14 @@ Some of these settings are not a necessity, but these are the settings we've see
 :::
 
 **Example**:
-![publish_from_cloud](/img/guides/configuring_MQTT/mqtt_settings_example.png)
+![publish_from_cloud](/img/getting_started/developer_guides/configuring_MQTT/mqtt_settings_example.png)
 
 Save and sync. Once synced, test if the connection has been made correctly. Run the following command in the cloud terminal:
 
     $ cmd.run 'mosquitto_pub -h localhost -t test/my_topic -m "my test data"' 
 
 
-![publish_from_cloud](/img/guides/configuring_MQTT/pub_from_cloud.png)
+![publish_from_cloud](/img/getting_started/developer_guides/configuring_MQTT/pub_from_cloud.png)
 
 If the data can be seen in the shell where you've subscribed to the topic, then the bridge has been configured correctly.
 
@@ -96,7 +96,7 @@ If the command is not found, it can be installed from apt (it is not used outsid
 
     $ cmd.run "apt install -y mosquitto-clients"
 
-![installinging_through_apt](/img/guides/configuring_MQTT/installing_mosq_clients.png)
+![installinging_through_apt](/img/getting_started/developer_guides/configuring_MQTT/installing_mosq_clients.png)
 :::
 
 ## Adding MQTT as a returner to Data Sources
@@ -119,18 +119,18 @@ Go to [Car Explorer > Loggers]
 
 For each logger of Type "OBD-II PID" add the mqtt returner by selecting the logger, clicking Advanced, and selecting mqtt in the Returner dropdown. Then click save.
 
-![setup_pid_mqtt_returner](/img/guides/configuring_MQTT/pid_mqtt_setup.png)
+![setup_pid_mqtt_returner](/img/getting_started/developer_guides/configuring_MQTT/pid_mqtt_setup.png)
 
 ### Services
 A service can serve as a data source in 2 ways: through workers and through reactors. Most commonly you'll want to retrieve CAN data. For this, go to [Advanced > Services] and add the mqtt returner to the obd_manager's can_logger worker, as shown below:
 
-![can_mqtt_setup_step_1](/img/guides/configuring_MQTT/can_mqtt_setup_1.png)
+![can_mqtt_setup_step_1](/img/getting_started/developer_guides/configuring_MQTT/can_mqtt_setup_1.png)
 
-![can_mqtt_setup_step_2](/img/guides/configuring_MQTT/can_mqtt_setup_2.png)
+![can_mqtt_setup_step_2](/img/getting_started/developer_guides/configuring_MQTT/can_mqtt_setup_2.png)
 
-![can_mqtt_setup_step_3](/img/guides/configuring_MQTT/can_mqtt_setup_3.png)
+![can_mqtt_setup_step_3](/img/getting_started/developer_guides/configuring_MQTT/can_mqtt_setup_3.png)
 
-![can_mqtt_setup_step_4](/img/guides/configuring_MQTT/can_mqtt_setup_4.png)
+![can_mqtt_setup_step_4](/img/getting_started/developer_guides/configuring_MQTT/can_mqtt_setup_4.png)
 
 The other Service sourced data points and their locations can be found in the following table. The steps described for CAN data can be repeated for each of these.
 
@@ -145,11 +145,11 @@ The other Service sourced data points and their locations can be found in the fo
 ### Jobs
 Go to [Advanced > Jobs] and set returner to each job as mqtt. As of time of writing, it is only possible to to have a single returner per job, so it's not possible to send the data to both MQTT and the AutoPi Cloud.
 
-![rpi_temp_job_with_mqtt_returner](/img/guides/configuring_MQTT/rpi_temp_job_with_mqtt_returner.png)
+![rpi_temp_job_with_mqtt_returner](/img/getting_started/developer_guides/configuring_MQTT/rpi_temp_job_with_mqtt_returner.png)
 
 ## Final result
 
 If everything is working correctly, you should be receiving data on your broker now:
 
-![final_expected_result](/img/guides/configuring_MQTT/final_result.png)
+![final_expected_result](/img/getting_started/developer_guides/configuring_MQTT/final_result.png)
 

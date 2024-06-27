@@ -1,6 +1,6 @@
 ---
 id: setting-up-docker
-title: Setting up Docker on your device
+title: Setting Up Docker on Your Device
 ---
 
 ## Overview
