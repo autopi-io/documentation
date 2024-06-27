@@ -7,7 +7,7 @@ The fleet overview section allows you to monitor the entire fleet of vehicles, a
 
 All devices with a known position is shown in the map, and each device can be highlighted by clicking the device in the table.
 
-![fleetoverview](../../../static/img/cloud/fleet/fleet-overview.jpg)
+![fleet overview](/img/cloud/fleet/overview/fleet-overview.jpg)
 
 ### Available columns
 The fleet overview can be customized to show the columns that you need, by clicking the three dots in the top of the fleet overview table.
@@ -15,7 +15,7 @@ The fleet overview can be customized to show the columns that you need, by click
 #### Online
 
 Indicates if the device has been online in the last 5 minutes, to get a realtime indication you will need to use the ping function by clicking the globe while the device is active.
-This column also allows the use of the [remote wake up functionality](triggers/fleet-wakeup)
+This column also allows the use of the [remote wake up functionality](/cloud/fleet/triggers/remote-wakeup.md).
 
 :::note active
 An active device means that it has been selected as the device that you're working on. You can verify which device you have active by looking at the top-right corner of the web page.

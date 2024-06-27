@@ -99,7 +99,7 @@ Let's create the RPM PID that we've examined in the previous section. Firstly, w
 the Car Explorer > Library > My Library page. On that page, you will see a '+ Create' button. One
 of the options should be PID - select that one. The following pop-out window should show up:
 
-![Create a PID window](/img/guides/create_pid_loggers/create_pid_window.jpg)
+![Create a PID window](/img/cloud/obd_ii/create_pid_loggers/create_pid_window.jpg)
 
 Let's go through the different fields that are available in this view:
 
@@ -139,7 +139,7 @@ button and move on to the next section.
 
 ### Enhanced PID
 
-![Enhanced PID drowdown](/img/guides/create_pid_loggers/enhanced_pid_dropdown.png)
+![Enhanced PID drowdown](/img/cloud/obd_ii/create_pid_loggers/enhanced_pid_dropdown.png)
 
 **Frames**: how many frames the message is expected to consist of
 
@@ -169,7 +169,7 @@ Open up the Car Explorer > Loggers page. You will see a page with a '+ Create' b
 right-hand side. Click on that button and select the PID option. A new window should show up that
 looks like the following screenshot:
 
-![Create PID Logger Window](/img/guides/create_pid_loggers/create_pid_logger_window.jpg)
+![Create PID Logger Window](/img/cloud/obd_ii/create_pid_loggers/create_pid_logger_window.jpg)
 
 Let's look through the fields available:
 
@@ -194,7 +194,7 @@ been synchronized to your device, your device will start sending PID requests on
 the provided parameters and you should start receiving data.
 
 If for some reason, you aren't getting any data back from the logger, you can take a look at the
-log files for some clues about what's going wrong. Take a look [here](../../guides/autopi_logs.md) for
+log files for some clues about what's going wrong. Take a look [here](/guides/autopi_logs.md) for
 more information on how to view those logs.
 
 You can also take a look at the obd_manager workers(Advanced > Services > obd_manager > Workers).

@@ -36,7 +36,7 @@ Under normal circumstances, the device will boot for the first time and will try
 protocol automatically, then send the results back to us, where we create a CAN Bus for your device,
 flagged as autodetected.
 
-![Alt text](/img/guides/can_bus_configuration/autodetected_bus.png)
+![Autodetect bus](/img/cloud/obd_ii/can_bus_configuration/autodetected_bus.png)
 
 Sometimes, this will not happen. This can be because of multiple reasons:
 - The device is in an incorrect state
@@ -67,7 +67,7 @@ there's a good enough connection for commands to be received by the device, and 
 the command results back. If you get a response that looks something like the screenshot below, you may
 move on further. Otherwise, check out the [4G Troubleshooting Guide](/guides/4g_internet_setup_troubleshooting.md).
 
-![Alt text](/img/guides/can_bus_configuration/test_true.png)
+![True response](/img/cloud/obd_ii/can_bus_configuration/test_true.png)
 
 ### The vehicle supports OBD-II, but the ECUs are not running
 This is the most probable explanation. Most ECUs will not be running while the vehicle is off, therefore,

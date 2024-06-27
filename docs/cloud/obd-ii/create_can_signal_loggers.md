@@ -13,18 +13,18 @@ Before you can log anything, you need a CAN signal to monitor. CAN signals are n
 
 Identification and Documentation: Use vehicle documentation or tools to identify the CAN signal. This may involve using a DBC file or capturing and analyzing traffic on the CAN network to find the signals relevant to your needs.
 
-Creation: Once identified, you can create a representation of this signal in [link to CAN Signals](https://docs.autopi.io/guides/obd-ii/obd-ii-intro/#can-messages-and-can-signals)
+Creation: Once identified, you can create a representation of this signal in [CAN Signals](/cloud/obd-ii/index.md/#can-messages-and-can-signals)
 
 
 **Step 2: Navigate to Your Device's Logger Section**
 
 With your CAN signal defined, the next step involves setting up the environment to log this signal.
 - Access: Log into your device's management interface and navigate to the 'Loggers' section.
-![Screenshot from 2024-04-23 15-21-57](https://github.com/autopi-io/documentation/assets/71709943/4ec08a06-7bc9-427a-8f2e-b76c2dbb2103)
+![Loggers overview](/img/cloud/obd_ii/create_can_signal_loggers/logger_overview.png)
 
   
 - New Logger: Look for an option to create a new logger.
-![Screenshot from 2024-04-23 15-25-19](https://github.com/autopi-io/documentation/assets/71709943/aff983ae-664e-44fb-8346-40f3fcfbd0b8)
+![Logger overview create](/img/cloud/obd_ii/create_can_signal_loggers/logger_overview_create.png)
 
 
 **Step 3: Configure the Logger**
@@ -36,7 +36,7 @@ The creation of a logger involves specifying which signals to log and other para
 - Bus Selection: Specify the CAN bus on which your signal is present. Vehicles often have multiple CAN buses for different systems (e.g., powertrain, chassis). Ensure you select the correct one for your signal.
 
 - Name Override: You can specify a different name for your logger here, otherwise its name remains the same as the Signals.
-![Screenshot from 2024-04-23 15-24-24](https://github.com/autopi-io/documentation/assets/71709943/94f0f152-9f02-4b4e-a379-e9f9aa972fb7)
+![Create logger](/img/cloud/obd_ii/create_can_signal_loggers/create_logger.png)
 
 
 **Step 4: Create the Logger**

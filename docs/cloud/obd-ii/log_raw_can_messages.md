@@ -32,7 +32,7 @@ hooks to transform the data and finally return the data to the cloud, or save it
 For greater performance read on to the `obd.export` handler. The image below shows an example
 setup for an `obd.monitor` worker.
 
-![obd_monitor_worker](/img/guides/log_raw_can_messages/obd_monitor_worker.png)
+![obd_monitor_worker](/img/cloud/obd_ii/log_raw_can_messages/obd_monitor_worker.png)
 
 ### `obd.export`
 [`obd.export`](/core/services/obd_manager.md/#export) is basically
@@ -52,7 +52,7 @@ the protocol number for your vehicle. In that directory you will be able to see 
 files which contain the raw data that has been recorded by the handler. An example setup for a
 workflow can be seen below.
 
-![obd_export_worker](/img/guides/log_raw_can_messages/obd_export_worker.png)
+![obd_export_worker](/img/cloud/obd_ii/log_raw_can_messages/obd_export_worker.png)
 
 ### `obd.import`
 In order to actually be able to use the recorded data by `obd.export` within the AutoPi Core system,
@@ -63,7 +63,7 @@ It is simply a workflow enabler, meaning that after you read the data, you can t
 way you'd like, execute any triggers and use a returner to save the data on the cloud or a local
 file, just like with `obd.monitor`.
 
-![obd_import_worker](/img/guides/log_raw_can_messages/obd_import_worker.png)
+![obd_import_worker](/img/cloud/obd_ii/log_raw_can_messages/obd_import_worker.png)
 
 ## Making sense of raw CAN data
 
