@@ -12,9 +12,7 @@ _Webhooks_ are supported so you can integrate with almost any service or system.
   - [Slack](https://slack.com)
   - [IFTFT](https://ifttt.com)
 
-<p align="center">
-  <img src={useBaseUrl('/img/cloud/triggers.jpg')} alt="AutoPi Cloud Triggers"/>
-</p>
+![AutoPi Cloud Triggers](/img/cloud/fleet/triggers/intro/triggers.jpg)
 
 :::note
 For more information on how to setup triggers in the AutoPi Cloud please see [this guide](a_guide_to_triggers.md)

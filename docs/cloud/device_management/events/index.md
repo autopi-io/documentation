@@ -15,7 +15,5 @@ All events are divided into two top level areas:
 
 Each event consist of a timestamp, a tag and some additional data fields.
 
+![AutoPi Cloud Events](/img/cloud/device_management/events/events.jpg)
 
-<p align="center">
-  <img src={useBaseUrl('/img/cloud/events.jpg')} alt="AutoPi Cloud Events"/>
-</p>

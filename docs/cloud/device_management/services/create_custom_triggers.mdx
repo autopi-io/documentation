@@ -19,7 +19,7 @@ on the other hand respond to events emited by the device **on the server side**.
 1. Let's start by creating a custom code module with the name *my_triggers* of type *Execution*. We
   can do that by going over to **Advanced** > **Custom Code**:
 
-  ![Editing custom code](/img/guides/create_custom_triggers/editing_custom_code.png) 
+  ![Editing custom code](/img/cloud/device_management/services/create_custom_triggers/editing_custom_code.png) 
 
   Here is the code in plain text for easy copy and paste:
 
@@ -73,12 +73,12 @@ on the other hand respond to events emited by the device **on the server side**.
   need to register it in the OBD service named **obd_manager**. Go to **Advanced** > **Services** >
   **obd_manager** > **Hooks** > **Create**:
 
-  ![Creating a custom hook](/img/guides/create_custom_triggers/creating_a_custom_hook.png) 
+  ![Creating a custom hook](/img/cloud/device_management/services/create_custom_triggers/creating_a_custom_hook.png) 
 
 4. We now need to use the newly registered trigger hook by adding it to a workflow in a worker.
   Go to **Advanced** > **Services** > **obd_manager** > **Workers** > **Create**:
 
-  ![Creating a new worker](/img/guides/create_custom_triggers/creating_a_new_worker.png) 
+  ![Creating a new worker](/img/cloud/device_management/services/create_custom_triggers/creating_a_new_worker.png) 
 
   When the above changes have been successfully synchronised to your device, it will start checking
   the speed of your vehicle and play a single beep sound when exceeding 50km/h.

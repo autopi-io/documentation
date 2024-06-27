@@ -11,7 +11,7 @@ yourselves. First off we're going to explore what can workers be used for and la
 we're going to go through creating an example worker that is going to fetch OBD data and save that
 data to a file. Let's get started!
 
-![Service list](/img/guides/create_custom_workers/service_list.png) 
+![Service list](/img/cloud/device_management/services/create_custom_workers/service_list.png) 
 
 ## Workers
 Now, the real deal - workers. Workers are simply a process that is going to be executed by a
@@ -19,7 +19,7 @@ manager in a specific [workflow](/core/services/index.md) that is going to event
 desired output. Workflows are a number of steps that are going to be executed in order to create
 that desired output:
 
-![Worker list](/img/guides/create_custom_workers/worker_list.png) 
+![Worker list](/img/cloud/device_management/services/create_custom_workers/worker_list.png) 
 
 ### Let's Create a Worker
 First off, you'll need to decide which manager to use. That really depends on the use case you
@@ -34,11 +34,11 @@ obd_manager entry on the screen.
 The new page that opens up is the home page for the obd_manager where all of its workers reside.
 We will create a new worker now. Click on the '+ Create' button to open up the creation window.
 
-![Create button](/img/guides/create_custom_workers/create_button.png) 
+![Create button](/img/cloud/device_management/services/create_custom_workers/create_button.png) 
 
 You'll be presented with the following window:
 
-![Create empty worker](/img/guides/create_custom_workers/create_worker_empty.png) 
+![Create empty worker](/img/cloud/device_management/services/create_custom_workers/create_worker_empty.png) 
 
 Let's now get familiar with the interface. There are a few fields that need filling out and then
 we will move on to the workflows:
@@ -131,7 +131,7 @@ depending on your needs. Most of you would want to have some way of saving the d
 which you can use a returner. You can view a guide about that [here](https://community.autopi.io/t/custom-code-redirect-logged-data-and-store-it-in-a-file-or-anywhere/1521).
 Here's the final result:
 
-![Create worker completed](/img/guides/create_custom_workers/create_worker_completed.png)
+![Create worker completed](/img/cloud/device_management/services/create_custom_workers/create_worker_completed.png)
 
 The last thing you need to do is to hit Save and let the device sync up with the new changes. After
 a service restart, the device should be executing your new service worker.

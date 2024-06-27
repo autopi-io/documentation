@@ -15,9 +15,7 @@ Job execution is scheduled with standard _cron_ expressions for the ease of use 
 
 > Simply put, _cron_ is a basic utility available on Linux systems. It enables users to schedule tasks to run periodically at a specified date/time or interval.
 
-<p align="center">
-  <img src={useBaseUrl('/img/cloud/jobs.jpg')} alt="AutoPi Cloud Jobs"/>
-</p>
+![AutoPi Cloud Jobs](/img/cloud/device_management/jobs/jobs.jpg)
 
 :::tip
 Like any AutoPi cloud functionality, jobs can be managed programmatically through the AutoPi REST

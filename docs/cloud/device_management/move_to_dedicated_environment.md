@@ -56,7 +56,7 @@ already.
 
 Once you have it registered and you have brought the device online, accept the key.
 
-![Key state denied](../../../static/img/guides/move_to_dedicated_environment/key_state_denied.jpg)
+![Key state denied](/img/cloud/device_management/move_to_dedicated_environment/key_state_denied.jpg)
 
 :::tip
 When accepting the key you might receive a 404 error saying that the key for that device was not

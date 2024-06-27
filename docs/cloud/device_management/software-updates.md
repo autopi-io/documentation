@@ -19,7 +19,7 @@ with the device nicely. To update the device, we will first navigate over to the
 of the Cloud ([my.autopi.io](https://my.autopi.io)). There you'll see a page similar to the screenshot
 below.
 
-![software-updates-page](/img/user-manual/software-updates/software-updates-page.jpg)
+![software-updates-page](/img/cloud/device_management/software-updates/software-updates-page.jpg)
 
 On the right-hand side, at the top of the page, there is the 'Queue Update' button. If your device
 doesn't have automatic updates enabled (which is the default behavior), you'll need to manually
@@ -139,7 +139,7 @@ procedure, which operations (states) have been completed successfully and which 
 three times of operations (states) that you can see in an update release run - successful, changed
 and failed.
 
-![update-release-run](/img/user-manual/software-updates/viewing-update-release-run.jpg)
+![update-release-run](/img/cloud/device_management/software-updates/viewing-update-release-run.jpg)
 
 * Successful states are states that have been executed without error, but have made no changes on
   the device.
