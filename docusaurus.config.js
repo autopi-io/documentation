@@ -35,6 +35,11 @@ module.exports = {
       },
       items: [
         {
+          to: 'getting_started/landing_page',
+          label: 'Getting Started',
+          position: 'left',
+        }, 
+        {
           to: 'cloud/cloud-intro',
           label: 'Cloud',
           position: 'left',
@@ -48,12 +53,7 @@ module.exports = {
           to: 'hardware/hardware-intro',
           label: 'Hardware',
           position: 'left',
-        },
-        {
-          to: 'guides/guides-intro',
-          label: 'Guides',
-          position: 'left',
-        },        
+        },      
         {
           to: 'https://api.autopi.io/',
           label: 'API',
