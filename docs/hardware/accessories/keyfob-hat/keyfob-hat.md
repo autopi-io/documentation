@@ -22,7 +22,6 @@ The keyless entry solution described here only works with the AutoPi TMU CM4 and
 <img src="/img/hardware/accessories/keyfob/keyfob_components.jpg" alt="Keyfob HAT components" width="60%" />
 </p>
 
-
 ## Step-by-step guide
 
 ### Step 1
@@ -36,19 +35,15 @@ Start preparing the BLE hat by screwing one 6.5 mm spacer in each hole of the PC
 
 <img alt="Step 2" src={useBaseUrl('/img/hardware/accessories/keyfob/install_step1.jpg')}/>
 
-
-
 ### Step 3
 Connect the BLE hat with the AutoPi board through the 40 pin headers. Verify that the connectors are properly connected.
 
 <img alt="Step 3" src={useBaseUrl('/img/hardware/accessories/keyfob/install_step2.jpg')}/>
 
-
 ### Step 4
 Reasemble the device using the new AutoPi BLE side shield, giving access to two new Keyfob control ports on the side.
 
 <img alt="Step 4" src={useBaseUrl('/img/hardware/accessories/keyfob/keyfob_ports.jpg')}/>
-
 
 ## Disscussion
 <p>

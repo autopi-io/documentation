@@ -22,6 +22,11 @@ module.exports = {
       trackingID: 'G-DB2BZPKYN9',      
       anonymizeIP: false,
     },
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
+    },
     navbar: {
       logo: {
         alt: 'AutoPi Documentation Logo',
@@ -29,6 +34,11 @@ module.exports = {
         srcDark: 'img/logo_trans_doc_dark.png',
       },
       items: [
+        {
+          to: 'getting_started/landing_page',
+          label: 'Getting Started',
+          position: 'left',
+        }, 
         {
           to: 'cloud/cloud-intro',
           label: 'Cloud',
@@ -43,12 +53,7 @@ module.exports = {
           to: 'hardware/hardware-intro',
           label: 'Hardware',
           position: 'left',
-        },
-        {
-          to: 'guides/guides-intro',
-          label: 'Guides',
-          position: 'left',
-        },        
+        },      
         {
           to: 'https://api.autopi.io/',
           label: 'API',
@@ -89,6 +94,10 @@ module.exports = {
               to: 'https://my.autopi.io',
             },
             {
+              label: 'AutoPi Demo Environment',
+              to: 'https://demo.autopi.io'
+            },
+            {
               label: 'Shop',
               to: 'https://shop.autopi.io',
             },
@@ -103,12 +112,12 @@ module.exports = {
           items: [
             {
               label: 'AutoPi Community',
-              href: 'https://community.autopi.io/',
+              to: 'https://community.autopi.io/',
             },
             {
               label: 'GitHub - AutoPi Core',
-              href: 'https://github.com/autopi-io',
-            },            
+              to: 'https://github.com/autopi-io',
+            },
           ],
         },
         {
@@ -116,23 +125,23 @@ module.exports = {
           items: [           
             {
               label: 'Reddit',
-              href: 'https://www.reddit.com/r/autopi/',
+              to: 'https://www.reddit.com/r/autopi/',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/autopi_io',
+              to: 'https://twitter.com/autopi_io',
             },
             {
               label: 'Facebook',
-              href: 'https://www.facebook.com/autopi.io/',
+              to: 'https://www.facebook.com/autopi.io/',
             },
             {
               label: 'LinkedIn',
-              href: 'https://www.linkedin.com/company/autopi.io',
+              to: 'https://www.linkedin.com/company/autopi.io',
             },
             {
               label: 'Youtube',
-              href: 'https://www.youtube.com/channel/UCH50VR17emPVVfnIWlGMLig',
+              to: 'https://www.youtube.com/channel/UCH50VR17emPVVfnIWlGMLig',
             },
           ],
         },

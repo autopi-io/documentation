@@ -1,6 +1,6 @@
 ---
 id: nested-customers
-title: Nested customers
+title: Nested Customers
 ---
 
 The account section allows an account administrator to manage nested customers, which makes it possible to create an isolated account, assign devices and users to it, so that a customer can manage a fleet of devices, and it's own users.

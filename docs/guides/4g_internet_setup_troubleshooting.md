@@ -1,6 +1,6 @@
 ---
 id: 4g-internet-setup-troubleshooting
-title: 4G internet setup troubleshooting
+title: 4G Internet Setup Troubleshooting
 ---
 
 You are experiencing issues connecting to the internet, when connected to the WiFi hotspot on the AutoPi Dongle. 

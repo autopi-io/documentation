@@ -27,10 +27,10 @@ Eventually, when the vehicle has turned off, a sleep timer is scheduled that wil
 
 #### Sleeping
 The `Sleeping` state is a state where the device is powered off for a certain period of time. Before the device goes to sleep, there is always setup
-an interval until it will wake up again ([configuration here](/cloud/configuration/TMU/power.md/#sleep-timer)). When the [`Modem > Power Save`](/cloud/configuration/TMU/power.md/#modem) option is disabled, the modem is kept powered on while sleeping. This makes it possible to wake the device by sending an SMS to it, if it is within mobile network range.
+an interval until it will wake up again ([configuration here](../../cloud/device_management/advanced_settings/TMU/power.md/#sleep-timer)). When the [`Modem > Power Save`](../../cloud/device_management/advanced_settings/TMU/power.md/#modem) option is disabled, the modem is kept powered on while sleeping. This makes it possible to wake the device by sending an SMS to it, if it is within mobile network range.
 
 There are generally two reasons for a device to go to the `On` state while sleeping:
-1. **The vehicle's engine turns on.** More precisely, the vehicle's battery voltage raises above a [specified threshold](/cloud/configuration/TMU/power.md/#wake-trigger).
+1. **The vehicle's engine turns on.** More precisely, the vehicle's battery voltage raises above a [specified threshold](../../cloud/device_management/advanced_settings/TMU/power.md/#wake-trigger).
 2. **The sleep timer's sleep period passes.** When the device goes to sleep, a wake timer is being setup based on the inactivity setting.
 
 We will take a look at example scenarios which will further describe the power cycle of the device.
