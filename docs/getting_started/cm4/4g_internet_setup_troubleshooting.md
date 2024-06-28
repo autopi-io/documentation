@@ -25,7 +25,7 @@ In the terminal on the WiFi, check that the modem has been found. This can be do
 
 The output of the command should be similar to this:
 
-![lsusb](../../static/img/guides/4g_internet_setup_troubleshooting/lsusb.jpg)
+![lsusb](/img/getting_started/cm4/4g_internet_setup_troubleshooting/lsusb.jpg)
 
 The important part to look for is the Modem. The ID will be different depending on which modem your device is equipped with:
 
@@ -113,7 +113,7 @@ The device contains a software manager, which ensure stable connection to the in
 
 The output should be similar what you can see in the image below:
 
-![qmistatus](../../static/img/guides/4g_internet_setup_troubleshooting/qmistatus.jpg)
+![qmistatus](/img/getting_started/cm4/4g_internet_setup_troubleshooting/qmistatus.jpg)
 
 ### Further checking of network
 

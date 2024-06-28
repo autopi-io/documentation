@@ -35,7 +35,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'getting_started/landing_page',
+          to: 'getting_started/guides-intro',
           label: 'Getting Started',
           position: 'left',
         }, 

@@ -21,7 +21,7 @@ Firstly, we need to make sure that the device will connect to your own server. F
 be changed from the [AutoPi Cloud](https://my.autopi.io) website. You need to navigate to Advanced > Settings > Cloud API where
 you will be able to see a screen like the following:
 
-![cloud_api_uri](/img/getting_started/send_device_data_to_own_server/cloud_api_url.png) 
+![cloud_api_uri](/img/getting_started/api/send_device_data_to_own_server/cloud_api_url.png) 
 
 The Url field on that page points to where the device should send data. By default, obviously, it points to AutoPi's servers. You need to point
 instead to a URL that is resolvable from your AutoPi device.

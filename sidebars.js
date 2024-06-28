@@ -3,11 +3,27 @@ module.exports = {
     "index", 
     {
       "Getting Started": [
-      "getting_started/landing_page",
         {
           "items": [
+            "getting_started/guides-intro",
+            "getting_started/cm4/4g-internet-setup-troubleshooting",
           ],
-          "label": "Getting Started",
+          "label": "AutoPi TMU CM4",
+          "type": "category"
+        },
+        {
+          "items": [
+            "getting_started/mini/mini-guides-intro",
+            "getting_started/mini/create-mini-loggers"
+          ],
+          "label": "AutoPi Mini",
+          "type": "category"
+        },
+        {
+          "items": [
+            "getting_started/heavy_duty_vehicles/j1939-getting-started-guide",
+          ],
+          "label": "Heavy Duty Vehicles",
           "type": "category"
         },
         {
@@ -270,18 +286,7 @@ module.exports = {
         }
       ],
       "Guides": [
-        "guides/guides-intro",
-        {
-          "items": [
-            "guides/Mini/mini-guides-intro",
-            "guides/Mini/create-mini-loggers"
-          ],
-          "label": "Mini",
-          "type": "category"
-        },
-        "guides/4g-internet-setup-troubleshooting",
         "guides/autopi-logs",
-        "guides/j1939-getting-started-guide",
         "guides/power-cycle-for-electric-vehicles",
         "guides/setting-up-docker",
         "guides/using-the-autopi-with-an-external-power-supply"

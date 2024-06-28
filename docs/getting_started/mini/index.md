@@ -1,6 +1,6 @@
 ---
 id: mini-guides-intro
-title: Getting started with the Mini
+title: Getting Started With the Mini
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -21,14 +21,14 @@ Next step is to locate your OBD port in your car, it is usually found underneath
 
 <div style={{textAlign: 'center'}}>
 
-  ![AutoPi.io - OBD port](/img/guides/getting_started/obd_location.jpg)
+  ![AutoPi.io - OBD port](/img/getting_started/getting_started/obd_location.jpg)
 
 </div>
 
 **The location of the OBD port varies from make and model, but is typically fund in one of the
 locations shown below:**
 
-![AutoPi.io - OBD port location](/img/guides/getting_started/TMU_placement_dashboard_v1_finecut-01.jpg)
+![AutoPi.io - OBD port location](/img/getting_started/getting_started/TMU_placement_dashboard_v1_finecut-01.jpg)
 
 ## 3. Orientation
 
@@ -42,7 +42,7 @@ You can also place it in an holder or purchase a velcro strip to secure it on th
 
 This is the relocator cable:
 
-![AutoPi.io - Relocator cable](/img/guides/getting_started/relocator_cable2.jpg)
+![AutoPi.io - Relocator cable](/img/getting_started/getting_started/relocator_cable2.jpg)
 
 ## 5. Finished
 

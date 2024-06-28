@@ -34,7 +34,7 @@ The start and end of the recording are indicated audibly with loud beep sounds p
 
 _Example_:
 
-![j1939_can_sniffer](../../static/img/guides/j1939_getting_started_guide/j1939_can_sniffer.png)
+![j1939_can_sniffer](/img/getting_started/heavy_duty_vehicles/j1939_getting_started_guide/j1939_can_sniffer.png)
 
 If no data is returned, try:
   1. Change the protocol and/or baud rate combinations.
@@ -61,7 +61,7 @@ Next the J1939 request message must be specififed. It consists of a header and a
 
 _Example_:
 
-![j1939_pgn_query](../../static/img/guides/j1939_getting_started_guide/j1939_pgn_query.png) 
+![j1939_pgn_query](/img/getting_started/heavy_duty_vehicles/j1939_getting_started_guide/j1939_pgn_query.png) 
 
 In above screenshot we query PGN 61444 (Electronic Engine Controller 1) which among other values contains SPN 190 (Engine Speed).
 
@@ -73,7 +73,7 @@ Go to _Account_ > _Vehicles_ and click on _Create_ button below _CAN Buses_. Fil
 
 _Example_:
 
-![create_j1939_vehicle_bus](../../static/img/guides/j1939_getting_started_guide/create_j1939_vehicle_bus.png)
+![create_j1939_vehicle_bus](/img/getting_started/heavy_duty_vehicles/j1939_getting_started_guide/create_j1939_vehicle_bus.png)
 
 
 ## Register PID for Request PGN
@@ -85,7 +85,7 @@ Enter the informations previously verified using the _PID Tester_.
 
 _Example_:
 
-![create_pid_for_j1939_request_pgn](../../static/img/guides/j1939_getting_started_guide/create_pid_for_j1939_request_pgn.png)
+![create_pid_for_j1939_request_pgn](/img/getting_started/heavy_duty_vehicles/j1939_getting_started_guide/create_pid_for_j1939_request_pgn.png)
 
 #### PID Details
 
@@ -141,7 +141,7 @@ To create a mapping for a CAN message to be be decoded go to _Car Explorer_ > _L
 
 _Example_:
 
-![create_j1939_can_message](../../static/img/guides/j1939_getting_started_guide/create_j1939_can_message.png) 
+![create_j1939_can_message](/img/getting_started/heavy_duty_vehicles/j1939_getting_started_guide/create_j1939_can_message.png) 
 
 In above screenshot, we register a CAN message mapping for PGN 61444 (Electronic Engine Controller 1):
 
@@ -225,7 +225,7 @@ obd.manage run handler="query" args="['EEC1']" kwargs="{'mode': '00', 'pid': 'F0
 
 _Example_:
 
-![create_pid_for_j1939_request_pgn](../../static/img/guides/j1939_getting_started_guide/run_j1939_query_workflow.png)
+![create_pid_for_j1939_request_pgn](/img/getting_started/heavy_duty_vehicles/j1939_getting_started_guide/run_j1939_query_workflow.png)
 
 #### Command Breakdown
 
