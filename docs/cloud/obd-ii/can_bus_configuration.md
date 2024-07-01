@@ -1,6 +1,6 @@
 ---
 id: can-bus-configuration
-title: CAN Bus configuration
+title: CAN Bus Configuration
 ---
 
 This page describes what to do if you've tried autodetecting the CAN bus, and this has not worked.

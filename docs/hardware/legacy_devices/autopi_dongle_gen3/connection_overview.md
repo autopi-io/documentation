@@ -1,6 +1,6 @@
 ---
 id: connection-overview
-title: Connection overview
+title: Connection Overview
 ---
 
 ## Connectivity

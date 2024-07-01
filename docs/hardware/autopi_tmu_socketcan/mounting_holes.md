@@ -1,6 +1,6 @@
 ---
 id: mounting_holes
-title: Mounting holes
+title: Mounting Holes
 ---
 
 

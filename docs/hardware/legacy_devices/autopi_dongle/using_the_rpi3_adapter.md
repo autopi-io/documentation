@@ -1,6 +1,6 @@
 ---
 id: using-the-rpi3-adapter
-title: Using the RPi3 adapter
+title: Using the RPi3 Adapter
 ---
 
 **Please note:** The AutoPi always needs power through the OBD connector, to function properly. Powering the board through the micro usb power plug on the Raspberry Pi could damage your board. If you need to test the AutoPi in a lab environment, we encourage you to get the OBD power connector from the shop.

@@ -1,6 +1,6 @@
 ---
 id: automatic-exports
-title: Automatic exports
+title: Automatic Exports
 ---
 
 # Automatic Exporting

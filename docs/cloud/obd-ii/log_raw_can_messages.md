@@ -1,6 +1,6 @@
 ---
 id: log-raw-can-messages
-title: Log raw CAN messages
+title: Log Raw CAN Messages
 ---
 
 It is possible to listen for raw CAN data on the OBD port. There are a couple of

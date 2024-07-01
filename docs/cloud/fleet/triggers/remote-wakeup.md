@@ -1,6 +1,6 @@
 ---
 id: fleet-wakeup
-title: Remote wake up
+title: Remote Wake Up
 ---
 
 The remote wake up feature allows your to trigger devices to be awoken remotely either from the API or from the cloud frontend.

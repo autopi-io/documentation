@@ -1,6 +1,6 @@
 ---
 id: keyfob-interface
-title: Keyless interface specification
+title: Keyless Interface Specification
 ---
 
 :::caution
