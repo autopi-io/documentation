@@ -5,7 +5,7 @@ module.exports = {
       "Getting Started": [
         {
           "items": [
-            "getting_started/guides-intro",
+            "getting_started/cm4/guides-intro",
             "getting_started/cm4/4g-internet-setup-troubleshooting",
           ],
           "label": "AutoPi TMU CM4",

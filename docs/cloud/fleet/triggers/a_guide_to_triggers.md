@@ -7,7 +7,7 @@ The possibilities are endless with the AutoPi device. This guide will be introdu
 triggers with your device. Triggers will allow you to get notifications both based on events from the device, but also all the
 various data points, that are logged from the car.
 
-![intro_pic](../../../../static/img/cloud/fleet/triggers/a_guide_to_triggers/intro_pic.png) 
+![intro_pic](/img/cloud/fleet/triggers/a_guide_to_triggers/intro_pic.png) 
 
 ## What are triggers?
 
@@ -29,15 +29,15 @@ is fired when the vehicle's engine is started.
 
 ## Here's how to start
 
-Once, you have received your AutoPi device, and you have registered it (click [HERE](https://www.autopi.io/getting-started/) to see
-the getting started guide, if you have not already done so) and you are all set to go and can begin creating your own triggers.
+Once, you have received your AutoPi device, and you have registered it (click [here](/getting_started/cm4/index.md) to see
+the getting started guide) and you are all set to go and can begin creating your own triggers.
 Let's get started with the guide.
 
 1. Firstly, we need to go over to the Triggers page. You can find it by logging into https://my.autopi.io and selecting the
 "Triggers" option from the menu. There, you'll see a "Create" button. When you press that button a pop-up window will show up with
 the form to create a trigger.
 
-![create_trigger_form](../../../../static/img/cloud/fleet/triggers/a_guide_to_triggers/create_trigger_form.jpg)
+![create_trigger_form](/img/cloud/fleet/triggers/a_guide_to_triggers/create_trigger_form.jpg)
 
 2. Next, let's fill out that form. We'll go through the options that are available in the form and explain each one of them.
 
@@ -106,15 +106,15 @@ types. For example, you would probably not use the comparison operators (greater
 (Remember all times are UTC, so keep that in mind when creating the conditions. So if your timezone is UTC+2, the below conditions will in
 reality match between 03:00:00 to 08:00:00 local time.)
 
-![conditions_example_1](../../../../static/img/cloud/fleet/triggers/a_guide_to_triggers/conditions_example_1.jpg) 
+![conditions_example_1](/img/cloud/fleet/triggers/a_guide_to_triggers/conditions_example_1.jpg) 
 
 **Notify on device update (No conditions)**
 
-![conditions_example_2](../../../../static/img/cloud/fleet/triggers/a_guide_to_triggers/conditions_example_2.jpg) 
+![conditions_example_2](/img/cloud/fleet/triggers/a_guide_to_triggers/conditions_example_2.jpg) 
 
 **Notify on all events (will only execute once every minute no matter how many events are received)**
 
-![conditions_example_3](../../../../static/img/cloud/fleet/triggers/a_guide_to_triggers/conditions_example_3.jpg) 
+![conditions_example_3](/img/cloud/fleet/triggers/a_guide_to_triggers/conditions_example_3.jpg) 
 
 ## Actions
 
@@ -189,15 +189,15 @@ is the `vehicle/battery/discharging` event which has an `event.vehicle.battery.l
 
 **Send email**
 
-![actions_example_1](../../../../static/img/cloud/fleet/triggers/a_guide_to_triggers/actions_example_1.jpg)
+![actions_example_1](/img/cloud/fleet/triggers/a_guide_to_triggers/actions_example_1.jpg)
 
 Here is how an example email from a trigger looks:
 
-![actions_example_email](../../../../static/img/cloud/fleet/triggers/a_guide_to_triggers/actions_example_email.jpg) 
+![actions_example_email](/img/cloud/fleet/triggers/a_guide_to_triggers/actions_example_email.jpg) 
 
 **Send webhook request**
 
-![actions_example_2](../../../../static/img/cloud/fleet/triggers/a_guide_to_triggers/actions_example_2.png)  
+![actions_example_2](/img/cloud/fleet/triggers/a_guide_to_triggers/actions_example_2.png)  
 
 Address: Your unique Slack webhook address  
 Payload: 
@@ -217,7 +217,7 @@ a string of the field name that you would like to get. In the above example, we 
 
 You can check out Slack's [documentation](https://api.slack.com/incoming-webhooks) for more information on what fields they accept.
 
-![actions_example_3](../../../../static/img/cloud/fleet/triggers/a_guide_to_triggers/actions_example_3.png)
+![actions_example_3](/img/cloud/fleet/triggers/a_guide_to_triggers/actions_example_3.png)
 
 
 **Send MQTT message via webhook (home assistant etc)**  

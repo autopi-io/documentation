@@ -25,8 +25,8 @@ next to which is written 'FORCE 5V'.
 
 To see how you can attach a jumper to your specific device view the following pages for:
 
-* [Generation 2 devices](../hardware/legacy_devices/autopi_dongle/index.md/#jumper)
-* [Generation 3 devices](../hardware/legacy_devices/autopi_dongle_gen3/index.md/#jumper)
+* [Generation 2 devices](/hardware/legacy_devices/autopi_dongle/index.md/#jumper)
+* [Generation 3 devices](/hardware/legacy_devices/autopi_dongle_gen3/index.md/#jumper)
 
 ## Need help?
 

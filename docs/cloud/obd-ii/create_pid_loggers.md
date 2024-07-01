@@ -194,7 +194,7 @@ been synchronized to your device, your device will start sending PID requests on
 the provided parameters and you should start receiving data.
 
 If for some reason, you aren't getting any data back from the logger, you can take a look at the
-log files for some clues about what's going wrong. Take a look [here](/guides/autopi_logs.md) for
+log files for some clues about what's going wrong. Take a look [here](/getting_started/developer_guides/autopi_logs.md) for
 more information on how to view those logs.
 
 You can also take a look at the obd_manager workers(Advanced > Services > obd_manager > Workers).

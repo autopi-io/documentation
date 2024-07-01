@@ -41,7 +41,7 @@ with a window like this:
   ![Create can logger](/img/cloud/fleet/templates/template_create_can_logger.png)
 
 Here you will need to select the CAN signal you'd like to log, and set the bus configuration. In a guide on 
-[importing CAN messages and signals through DBC files](/cloud/user-manual/car-explorer/car-explorer-library-manual#importing-library-items-from-files) 
+[importing CAN messages and signals through DBC files](/cloud/obd_library/library.md#importing-library-items-from-files) 
 we imported some signals related to the seat temperatures. Here we can see those:
 
   ![Select logged signal](/img/cloud/fleet/templates/template_select_logged_signal.png)

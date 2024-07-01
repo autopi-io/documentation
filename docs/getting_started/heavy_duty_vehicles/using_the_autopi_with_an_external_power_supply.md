@@ -14,7 +14,7 @@ things you should be aware of, before connecting your device:
 2. The AutoPi has several commands that can be run from the local terminal. Commands like
 [`power.status`](/core/commands/power.md/#powerstatus) should be written out on the local terminal
 as you see them in our [commands documentation](/core/commands/index.md). All terminal commands
-can also be run when logged in via [SSH](/guides/how_to_ssh_to_your_device.mdx). All you need to do
+can also be run when logged in via [SSH](/getting_started/developer_guides/how_to_ssh_to_your_device.mdx). All you need to do
 is prepend the `autopi` command, like `autopi power.status`. This works for every AutoPi Core
 command.
 

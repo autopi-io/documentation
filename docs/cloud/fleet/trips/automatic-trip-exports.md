@@ -36,7 +36,7 @@ This can also be managed automatically for the entire fleet by using a template.
    It also means that if a trip is reopened a number of times, it can execute multiple exports, each one overwriting the last.
    It will not schedule a new export if another is already running.
    
-   Read more about how trips works [here](/cloud/trips/introduction).
+   Read more about how trips works [here](/cloud/fleet/trips/introduction).
 
 3. When a trip export is scheduled, you can see the status with the tasks endpoint `tasks/`
    Where you can also see the ID and the trip ID of the trip being exported.

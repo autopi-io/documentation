@@ -65,7 +65,7 @@ before checking for any of the further issues. Try running the following command
 cloud portal: `test.ping`. Note that just because you see some data in the dashboard, doesn't mean that 
 there's a good enough connection for commands to be received by the device, and for it to be able to send
 the command results back. If you get a response that looks something like the screenshot below, you may
-move on further. Otherwise, check out the [4G Troubleshooting Guide](/guides/4g_internet_setup_troubleshooting.md).
+move on further. Otherwise, check out the [4G Troubleshooting Guide](/getting_started/cm4/4g_internet_setup_troubleshooting.md).
 
 ![True response](/img/cloud/obd_ii/can_bus_configuration/test_true.png)
 
@@ -100,7 +100,7 @@ this can help you find out what protocol it is actually using.
 what works on one car from the manufacturer will work for another.
 - Contact the manufacturer to find out how the ECUs expect to be communicated with.
 - Try and reverse engineer the bus yourself. This can be a tedious and time consuming task. Depending on your 
-preferred workflow, you may prefer to [ssh into the device](/guides/how_to_ssh_to_your_device.mdx) and use the Linux 
+preferred workflow, you may prefer to [ssh into the device](/getting_started/developer_guides/how_to_ssh_to_your_device.mdx) and use the Linux 
 [can-utils command line utility](https://manpages.debian.org/testing/can-utils/index.html). The most notable commands
 in this are *candump* and *cansend*. To change the configuration of the CAN connection, you can use the 
 [socketcan.up and socketcan.down](/core/commands/socketcan.md) commands. 

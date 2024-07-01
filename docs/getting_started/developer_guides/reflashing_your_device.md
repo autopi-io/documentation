@@ -64,7 +64,7 @@ an .AppImage file is available on [Balena's website](https://www.balena.io/).
 #### 3.a. Pre-CM4 devices
 Your device contains an SD card with the AutoPi Core preinstalled. The SD card is located inside
 the device. You will need to unscrew the device to access and remove the SD card. For that you can follow
-the [Upgrade/Replace Your Raspberry Pi Computer guide](https://docs.autopi.io/guides/upgrading-your-raspberry-pi/). Once you have the
+the [Upgrade/Replace Your Raspberry Pi Computer guide](/getting_started/developer_guides/upgrading_your_raspberrypi.mdx). Once you have the
 SD card in hand, place it in an SD card reader and connect it to your computer.
 
 #### 3.b. CM4 devices
@@ -125,12 +125,12 @@ Once the flashing is complete, unmount the storage device. After that you can re
 AutoPi device. If using a CM4 device, unplug the CM4 device's USB cable and press the button to put the device into hibernation, then a short press to start up the device. 
 
 ### 5. Ensure your device is connecting to the correct environment
-This step is required only if your company is using a dedicated environment. You can find out whether this is the case by checking what website you're going to to access your device. If it's different from my.autopi.io, for example my_company.autopi.io, then this is a dedicated environment and you need to follow this [Guide: Move to a dedicated environment](/guides/business/move_to_dedicated_environment.md/).
+This step is required only if your company is using a dedicated environment. You can find out whether this is the case by checking what website you're going to to access your device. If it's different from my.autopi.io, for example my_company.autopi.io, then this is a dedicated environment and you need to follow this [Guide: Move to a dedicated environment](/cloud/device_management/move_to_dedicated_environment.md/).
 
 ### 6. Set up the device
 Next, you will need to have the device re-accepted in the AutoPi Cloud. To do
 so, you need to first have the device boot up and connect to the internet. If you're using an AutoPi-provided SIM card, 
-you must set the APN. See the **Setup APN** in the [Getting Started](/guides/index.md/#8-setup-apn) guide. After that, log in to
+you must set the APN. See the **Setup APN** in the [Getting Started](/getting_started/cm4/index.md/#8-setup-apn) guide. After that, log in to
 [my.autopi.io](https://my.autopi.io). You should immediately see a notification letting you know
 that the device's key isn't accepted.
 

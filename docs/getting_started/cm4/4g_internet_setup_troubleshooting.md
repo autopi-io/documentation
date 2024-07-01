@@ -6,9 +6,7 @@ title: 4G Internet Setup Troubleshooting
 You are experiencing issues connecting to the internet, when connected to the WiFi hotspot on the AutoPi Dongle. 
 
 ### Prerequisites:
-Before following this guide, you must have completed the initial setup guide found here:
-
-https://www.autopi.io/getting-started
+Before following this guide, you must have completed the initial [setup guide](/getting_started/cm4/index.md).
 
 ### Check SIM card
 

@@ -11,7 +11,7 @@ we will also explore how you can make sense of this raw data after it has been r
 It is important to note that the monitoring tools can only be used as a part of an
 [OBD service](/core/services/obd_manager.md) workflow. We won't get into details about how
 you can create a service worker in this guide, however we do have the
-[Create Service Workers](/guides/services/index.md) guide which you can take a look at
+[Create Service Workers](/cloud/device_management/services/create_custom_workers.mdx) guide which you can take a look at
 for more details on how to create a worker and setup its workflow.
 
 ## Reading raw CAN data
@@ -80,5 +80,5 @@ be of type CAN. There are a few guides that you can take a look at to get them u
 
 1. [How to setup power cycle for an electric vehicle](https://community.autopi.io/t/guide-how-to-setup-power-cycle-for-an-electric-vehicle/1668)
 
-2. [How to import custom DBC files](/cloud/user-manual/car-explorer/car-explorer-library-manual/#importing-library-items-from-files)
+2. [How to import custom DBC files](/cloud/obd_library/library.md/#importing-library-items-from-files)
 

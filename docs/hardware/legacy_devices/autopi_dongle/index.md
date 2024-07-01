@@ -28,6 +28,6 @@ our community page dedicated for this guide:
 ## Jumper
 
 This is a picture of the location of the 5V FORCE pins. You can put a jumper on these pins to
-prevent the AutoPi from going to hibernation. More info [here](../../../guides/jumpers.md).
+prevent the AutoPi from going to hibernation. More info [here](/getting_started/developer_guides/jumpers.md).
 
 ![Second generation AutoPi Jumper location](/img/hardware/legacy_devices/autopi_dongle/jumper.jpg)

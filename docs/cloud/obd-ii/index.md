@@ -92,8 +92,8 @@ CAN messages and CAN signals. We will take a look at those in a different guide.
 With your AutoPi device you are able to setup loggers that will communicate on the CAN bus and extract data for you to view on demand in the Cloud's dashboard.
 You can setup loggers with PIDs or with CAN messages, depending on what your vehicle's type of communication is.
 
-In the following couple of guides we will explore how you can create [PID Loggers](/guides/obd-ii/create_pid_loggers.md)
-and [CAN Signal Loggers](/guides/obd-ii/create_can_signal_loggers.md).
+In the following couple of guides we will explore how you can create [PID Loggers](/cloud/obd-ii/create_pid_loggers.md)
+and [CAN Signal Loggers](/cloud/obd-ii/create_can_signal_loggers.md).
 
 
 ## Conclusion

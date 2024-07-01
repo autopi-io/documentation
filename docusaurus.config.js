@@ -35,7 +35,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'getting_started/guides-intro',
+          to: 'getting_started/cm4/guides-intro',
           label: 'Getting Started',
           position: 'left',
         }, 
