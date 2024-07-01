@@ -24,7 +24,7 @@ title: Setting Up Docker on Your Device
 
   This will cause the device to retrieve the active release associated to it, and perform the following actions.
 
-![Docker state flow](/img/guides/setting_up_docker/docker_flow.png)
+![Docker state flow](/img/getting_started/developer_guides/setting_up_docker/docker_flow.png)
 
 ## Endpoints
 The CRUD endpoints all return “201 Created” or “200 OK” when an entity is created or modified, and the body of the response will contain the created or modified entity.

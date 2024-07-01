@@ -35,7 +35,7 @@ The PID must be named 'RPM' or else the `rpm_motor_event` trigger will skip chec
 Go to **Car Explorer** > **Loggers** > **Create** > **PID**. Choose your RPM PID and be sure to
 select the *rpm_motor_event* trigger.
 
-![Setting up RPM based PID logger](/img/guides/power_cycle_for_electric_vehicles/setting_up_rpm_based_pid_logger.png) 
+![Setting up RPM based PID logger](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/setting_up_rpm_based_pid_logger.png) 
 
 After the logger has been synced to your device, and the service has been restarted, you should
 start seeing motor events in the **Advanced** > **Events** page.
@@ -57,7 +57,7 @@ when the vehicle is inactive. If you do not know any PID to use, you can always 
 Go to **Car Explorer** > **Loggers** > **Create** > **PID**. Choose your arbitrary PID and be sure
 to select the `communication_event` trigger.
 
-![Setting up communication based PID logger](/img/guides/power_cycle_for_electric_vehicles/setting_up_communication_based_pid_logger.png) 
+![Setting up communication based PID logger](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/setting_up_communication_based_pid_logger.png) 
 
 [Click here for documentation on communication events](../cloud/device_management/events/vehicle.md/#communication-events).
 
@@ -73,11 +73,11 @@ values:
 
 As shown below:
 
-![Change events 1](/img/guides/power_cycle_for_electric_vehicles/change_events_1.png) 
+![Change events 1](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/change_events_1.png) 
 
 ...
 
-![Change events 2](/img/guides/power_cycle_for_electric_vehicles/change_events_2.png) 
+![Change events 2](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/change_events_2.png) 
 
 After all the changes have been synced to your device, and the service has been restarted, you
 should start seeing communication events and also `system/sleep_timer` events in the
@@ -108,7 +108,7 @@ on https://my.autopi.io.
 The following example shows how an RPM signal can be found in the *Community Library* for a Renault
 Zoe. Go to **Car Explorer** > **Library** > **Community Library** and specify *Make* and *Model*:
 
-![Community library screenshot](/img/guides/power_cycle_for_electric_vehicles/community_library_screenshot.png) 
+![Community library screenshot](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/community_library_screenshot.png) 
 
 Click on the *RPM* signal and in the pop-up window click on the button *Add to my library*. You have
 now added the CAN message to your library, and you can use it for logging.
@@ -116,7 +116,7 @@ now added the CAN message to your library, and you can use it for logging.
 Next step is to setup a CAN logger for the RPM signal. Go to **Car Explorer** > **Loggers** >
 **Create** > **CAN** and choose the RPM signal:
 
-![Setting up CAN signal logger](/img/guides/power_cycle_for_electric_vehicles/setting_up_can_signal_logger.png) 
+![Setting up CAN signal logger](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/setting_up_can_signal_logger.png) 
 
 :::note Important
 The CAN signal must be named 'RPM' or else the `rpm_engine_event` trigger will skip checking the

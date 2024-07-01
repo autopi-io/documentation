@@ -25,7 +25,7 @@ $ minionutil.last_startup
 ```
 
 These functions can also take various parameters. You can check the documentation for those commands
-[here](../core/commands/minionutil.md) or by running the following command:
+[here](/core/commands/minionutil.md) or by running the following command:
 
 ```
 $ minionutil.help
@@ -66,7 +66,7 @@ IP address instead: http://192.168.4.1.
 Once you've opened the local admin page, on the right-hand side, you should see a list of the log
 files available for downloading. Click on the one you'd like to download.
 
-![local_admin_log_files](/img/guides/autopi_logs/local_admin_log_files.jpg)
+![local_admin_log_files](/img/getting_started/developer_guides/autopi_logs/local_admin_log_files.jpg)
 
 ### SCP (SSH copy)
 
@@ -96,7 +96,7 @@ file uploaded:
 1. Create a Dropbox app by going here and input like so:
   [https://www.dropbox.com/developers/apps/create](https://www.dropbox.com/developers/apps/create)
 
-  ![dropbox_create_app](/img/guides/autopi_logs/dropbox_create_app.png) 
+  ![dropbox_create_app](/img/getting_started/developer_guides/autopi_logs/dropbox_create_app.png) 
 
 2. Go to the Permissions tab and make sure that the **files.content.write** permission is enabled.
 
