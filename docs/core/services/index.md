@@ -46,12 +46,12 @@ Each step in a workflow has a defined area of responsibility:
 | Step | Description | Example |
 | ------ | ------ | ------ |
 | _`validator`_ | Validates the request and decide whether or not to proceed to the handler. | - |
-| __`handler`__ | Produces a result typically by interacting with an external device or system. | [See](obd_manager.md#handlers) |
-| _`converter`_ | Converts the result returned from the handler into a more usable format. | [See](obd_manager.md#converters) |
-| _`trigger`_ | Decides whether to trigger an event based on the result. | [See](obd_manager.md#triggers) |
-| _`filter`_ | Filters out result if insignificant. | [See](obd_manager.md#filters) |
-| _`enricher`_ | Enriches result with additional information. Could for example be calculations. | [See](acc_manager.md#enrichers) |
-| _`returner`_ | Returns the final result to an external system or service. | [See](../returners/index.md) |
+| __`handler`__ | Produces a result typically by interacting with an external device or system. | [See](/core/services/obd_manager.md#handlers) |
+| _`converter`_ | Converts the result returned from the handler into a more usable format. | [See](/core/services/obd_manager.md#converters) |
+| _`trigger`_ | Decides whether to trigger an event based on the result. | [See](/core/services/obd_manager.md#triggers) |
+| _`filter`_ | Filters out result if insignificant. | [See](/core/services/obd_manager.md#filters) |
+| _`enricher`_ | Enriches result with additional information. Could for example be calculations. | [See](/core/services/acc_manager.md#enrichers) |
+| _`returner`_ | Returns the final result to an external system or service. | [See](/core/returners/index.md) |
 
 
 
