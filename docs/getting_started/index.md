@@ -167,7 +167,7 @@ When installing the device in the car, there is a few tips on how to get the bes
 	<p>
 		<strong>Hint 1: </strong>Try to avoid installing the device in direct sun. Direct sun will heat up the device and in the summertime this can cause the CPU to throttle down, if the temperature gets too hot. 
 	</p>
-	<img alt="Hint 2" src={require('@site/static/img/user-manual/usage_avoid_direct_sun.png').default}/>
+	<img alt="Hint 2" src={require('@site/static/img/shared/user-manual/usage_avoid_direct_sun.png').default}/>
 </SideBySide>
 
 <br/>
@@ -176,7 +176,7 @@ When installing the device in the car, there is a few tips on how to get the bes
 	<p>
 		<strong>Hint 2: </strong>The device contains a GPS antenna inside. Make sure that there is no metal covering the device as this can affect the performance of the device. 
 	</p>
-	<img alt="Hint 2" src={require('@site/static/img/user-manual/usage_avoid_metal.png').default}/>
+	<img alt="Hint 2" src={require('@site/static/img/shared/user-manual/usage_avoid_metal.png').default}/>
 </SideBySide>
 
 <br/>
@@ -185,7 +185,7 @@ When installing the device in the car, there is a few tips on how to get the bes
 	<p>
 		<strong>Hint 3: </strong>The GPS antenna is located close the the logo on the device. To ensure the best performance of your device, make sure the logo side of the device is facing the sky.
 	</p>
-	<img alt="Hint 3" src={require('@site/static/img/user-manual/usage_gps_antenna_orientation.png').default}/>
+	<img alt="Hint 3" src={require('@site/static/img/shared/user-manual/usage_gps_antenna_orientation.png').default}/>
 </SideBySide>
 
 <br/>
@@ -194,7 +194,7 @@ When installing the device in the car, there is a few tips on how to get the bes
 	<p>
 		<strong>Hint 4: </strong>When powering the device, make sure you only power it through the OBD connector. The device can not be powered through any of the other ports.
 	</p>
-	<img alt="Hint 4" src={require('@site/static/img/user-manual/usage_how_to_power.png').default}/>
+	<img alt="Hint 4" src={require('@site/static/img/shared/user-manual/usage_how_to_power.png').default}/>
 </SideBySide>
 
 

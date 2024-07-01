@@ -4,12 +4,12 @@ module.exports = {
   url: 'https://docs.autopi.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/shared/favicon.ico',
   organizationName: 'autopi-io', // Usually your GitHub org/user name.
   projectName: 'documentation', // Usually your repo name.
   trailingSlash: true,
   themeConfig: {
-    image: 'img/favicon-194x194.png',
+    image: 'img/shared/favicon-194x194.png',
     metadatas: [
       { property: 'og:type', content: 'website' },
     ],
@@ -30,8 +30,8 @@ module.exports = {
     navbar: {
       logo: {
         alt: 'AutoPi Documentation Logo',
-        src: 'img/logo_trans_doc.png',
-        srcDark: 'img/logo_trans_doc_dark.png',
+        src: 'img/shared/logo_trans_doc.png',
+        srcDark: 'img/shared/logo_trans_doc_dark.png',
       },
       items: [
         {
