@@ -9,14 +9,14 @@ In this short guide we will talk about how you can move your device from the def
 environment to your dedicated environment provided by AutoPi. Unfortunately, this process moves
 only one device at a time, so you will need to repeat the steps for each device you need to move.
 
-## 1. First we need to change the host to which the device connects.
+## 1. First We Need to Change the Host to Which the Device Connects.
 How this is done depends on what version of the core you have on your device.
 
 :::tip
 Find the version currently deployed on your device by going to the "Software Updates" page.
 :::
 
-### A. For versions **AFTER** 2021.08.05
+### A. For Versions **AFTER** 2021.08.05
 
 For all versions after **2021.08.05**, you will only need to run the *change_master* command.
 
@@ -28,7 +28,7 @@ $ minionutil.change_master yourcompany.autopi.io confirm=True
 $ minionutil.restart
 ```
 
-### B. For versions **BEFORE** 2021.08.05
+### B. For Versions **BEFORE** 2021.08.05
 
 This version of the core also requires you to modify the `/boot/host.aliases` file to
 point to your dedicated environment. Firstly, we need to change the master URL to point to your
@@ -48,7 +48,7 @@ $ minionutil.change_master hub confirm=True
 The above command will ensure the salt-minion configuration is set correctly and restart the
 salt-minion.
 
-## 2. Accepting the device in the dedicated environment.
+## 2. Accepting the Device In the Dedicated Environment.
 
 Lastly, we need to accept the new device's keys. You can do that by logging in to your
 webpage (https://dedicated.autopi.io/#account/devices) and registering your device if it isn't
@@ -75,7 +75,7 @@ $ sudo systemctl restart salt-minion
 $ minionutil.restart
 ```
 
-## 3. Re-applying any custom settings.
+## 3. Re-Applying Any Custom Settings.
 
 Since you just moved the device from one environment to another, it is important that you recognize that any settings that was applied on the old environment, will not be migrated automatically unless we explicitly let you know this has been done.
 

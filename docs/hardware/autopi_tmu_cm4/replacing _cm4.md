@@ -19,7 +19,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 - You can buy the new CM4 from: https://www.raspberrypi.com/products/compute-module-4/?variant=raspberry-pi-cm4001000
 :::
 
-### Step-by-step guide
+### Step-by-Step Guide
 
 <SideBySide>
 	<p>

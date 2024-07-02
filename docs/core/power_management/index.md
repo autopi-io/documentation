@@ -41,7 +41,7 @@ of the functionalities of the AutoPi leaving only one power-cheap component on -
 voltage so that it can trigger an `On` state. This will happen when the vehicle is powered on, so this is the moment the battery will
 start to charge up again.
 
-### Walk-through
+### Walk-Through
 
 Let us now walk through an example of the power cycle. We will begin with the device being unplugged and the vehicle's engine not running.
 If we plug in a device in the vehicle's OBD-II port the following steps will occur:

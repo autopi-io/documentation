@@ -7,8 +7,8 @@ import { Discussion } from '/src/components/Discussion.jsx';
 
 The API has endpoints that allows the user to retrieve all the telemetry data from devices.
 There is two different endpoint available.
-​
-## Aggregated data
+
+## Aggregated Data
 This data is aggregated by interval and a method (average, min, max), and is among other
 things used for the charts in our frontend dashboard.
 
@@ -82,7 +82,7 @@ This is the list of data types currently available from a standard device.
 | rpi.temp |
 | track.pos |
 ​
-## Raw data
+## Raw Data
 The raw data is not aggregated or treated in any way, it is in the same format as it was when it was sent by the device. Remember to keep the time frame of your search narrows to be sure you'll get data back.
 
 ```
@@ -110,7 +110,7 @@ GET logbook/storage/raw/
     &end_utc=2020-11-24T11:07:07.177850Z
 ```
 
-## How to export trips
+## How to Export Trips
 
 To get trips data you will have to first retrieve the list of trips, and then retrieve the data
 that you need for the duration of the trip.

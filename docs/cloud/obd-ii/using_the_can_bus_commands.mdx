@@ -63,12 +63,12 @@ autopi obd.query test mode=01 pid=0C
 ```
 :::
 
-## The CAN interface
+## The CAN Interface
 The CAN interface is somewhat different than just sending standard PID's. It relies more on
 parcing the full data stream on the CAN bus. This is far more advanced, but it also opens up to a
 whole new level of fun. 
 
-### Setting the protocol
+### Setting the Protocol
 
 The AutoPi is able to support a wide range of protocols. When you insert it into your vehicle it
 will try to autodetect the protocol used by the vehicle. It is not always going to be the case that
@@ -89,7 +89,7 @@ obd.protocol set=<num>
 
 Where `<num>` is the protocol number.
 
-### Dumping/reading data from the CAN bus
+### Dumping/Reading Data From the CAN Bus
 
 The new interface opens up for dumping data from the CAN bus on the protocol selected. This can be
 done using the [`obd.dump`](/core/commands/obd.md/#obddump) command. Using the command is very easy:
@@ -106,7 +106,7 @@ This will dump a list of messages recorded within 5 seconds of starting the exec
 command. Those messages might not make much sense at first glance, but that's okay. Usually, DBC
 files are used to parse those messages into human readable data.
 
-### Playback of a recorded file
+### Playback of a Recorded File
 
 A file recorded with the ``obd.dump`` command can be played/replayed to the vehicle using the
 [`obd.play`](/core/commands/obd.md/#obdplay) command. Here's an example usage:
@@ -140,7 +140,7 @@ filters you can remove data that you know is not relevant for finding your speci
 data that appears a lot). With the slice parameter you can use the "divide and conquer" technique
 to find the specific command. 
 
-### Sending a single message
+### Sending a Single Message
 
 The `obd.dump` and the `obd.play` commands is typically used for finding a single specific
 command you want to send to the car. This can be lock/unlock or something else controlling your
@@ -157,7 +157,7 @@ The first part before the # is the ECU number (the header) and the last part is 
 You may need to remove the `expect_response` if the ECU doesn't respond on the message you've
 send.
 
-### Non-OBD2 queries
+### Non-OBD2 Queries
 Sometimes a vehicle supports non-OBD-2 queries. An example of this is manufacturer proprietary
 protocols. When this is the case, you need to enrich the queries with CAN Flow Control parameters.
 

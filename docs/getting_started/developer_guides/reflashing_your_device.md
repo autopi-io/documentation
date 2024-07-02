@@ -17,7 +17,7 @@ The process for reflashing an AutoPi device differs a little depending on the de
 6. Ensure your device is connecting to the correct environment
 5. Set up the device
 
-### 1. Download the AutoPi OS image
+### 1. Download the AutoPi OS Image
 
 Make sure that you select the right image for your device. You can check what version your device is by finding `board version` in
 settings:
@@ -49,7 +49,7 @@ Once you have the board version, see which image you need from the table below a
 
 You may also check the [autopi-core releases page](https://github.com/autopi-io/autopi-core/releases) for a newer **board-version-compatible** image.
 
-### 2. Set up Balena Ethcher (or alternative)
+### 2. Set up Balena Ethcher (or Alternative)
 
 We recommend using [Etcher](https://etcher.io) for flashing - it will take the GZ image directly and flash it. If using Windows, the 
 installation can be done through a regular .exe file. For Linux, follow the steps on [Balena's Etcher repository](https://github.com/balena-io/etcher?d_id=fae0960a-c0ca-432e-af94-7e81c00d32a9&s_id=1677580787961#debian-and-ubuntu-based-package-repository-gnulinux-x86x64). We've noticed that the first command does not always work on the first try. If that happens, update your package list through `sudo apt update` and try again. 
@@ -59,15 +59,15 @@ On Linux, we are installing by adding the Balena package repository and installi
 an .AppImage file is available on [Balena's website](https://www.balena.io/).
 :::
 
-### 3. Connect the device storage media
+### 3. Connect the Device Storage Media
 
-#### 3.a. Pre-CM4 devices
+#### 3.a. Pre-CM4 Devices
 Your device contains an SD card with the AutoPi Core preinstalled. The SD card is located inside
 the device. You will need to unscrew the device to access and remove the SD card. For that you can follow
 the [Upgrade/Replace Your Raspberry Pi Computer guide](/getting_started/developer_guides/upgrading_your_raspberrypi.mdx). Once you have the
 SD card in hand, place it in an SD card reader and connect it to your computer.
 
-#### 3.b. CM4 devices
+#### 3.b. CM4 Devices
 On Compute Module 4 devices there is no SD card. The Operating System is stored on a flash chip embedded on
 the Raspberry Pi board. This means that reflashing is a little more complicated than just taking an SD
 card out of the AutoPi device and flashing it through an SD card reader. These are the steps you'll need to take:
@@ -99,12 +99,12 @@ device. The setup should look something like pictured below:
 
 ![rpiboot setup](/img/getting_started/developer_guides/reflashing_your_device/rpiboot_setup.png)
 
-##### 3.b.2. Put the device into the EMMC FLASHING state
+##### 3.b.2. Put the Device Into the EMMC FLASHING State
 To do this, your device will need to be receiving power from either a vehicle, or a power supply with an adapter cable (the USB port can not be used for power). Details for button location and state transitions can be found in the [AutoPi CM4 TMU documentation](https://docs.autopi.io/hardware/autopi_tmu_cm4/led-and-button/). 
 
 To put the task in more simple terms: press the button (located in one of the holes on the side of the device) until the blue LED starts flashing very fast. If you've just plugged your device into power, wait until the blue LED turns solid. Then do a short press of the button, to do a gentle shutdown. Once the blue LED turns dim, it has gone into hibernation. From here long press the button until the LED starts flashing slowly (approx 1 flash per second). The device is now in the USER SETUP state. After another long press, the LED should start flashing rapidly, at which point the device is in the correct EMMC FLASHING state. 
 
-##### 3.b.3. Connect the device with a Micro-USB cable
+##### 3.b.3. Connect the Device With a Micro-USB Cable
 
 Once you have both the rpiboot utility running on your computer and the device is in the correct state, you can connect the 2. Plug the micro-USB end of the cable into the exposed micro-USB port on the side of the device (the regular USB type-A ports on the back of the device can not be used for flashing), and the other end into your computer. If everything has gone according to plan, the rpiboot utiliy has now detected the device and mounted the device partitions if there are any. That should look something like pictured below:
 
@@ -112,7 +112,7 @@ Once you have both the rpiboot utility running on your computer and the device i
 
 At this point you can access the internal file system of the AutoPi's Raspberry Pi through the mounted drives. On this Linux distribution the mounting points are `/media/<user>/boot` and `/media/<user>/rootfs`. On Windows you should be able to see at least one of the partitions in the File Explorer.
 
-### 4. Flashing the device
+### 4. Flashing The Device
 Using Balena Etcher or alternative, select the image file you downloaded earlier, and the storage device. Once that's done, click flash and wait for it to complete. It's worth noting, that if it fails on the first try, try again. 
 
 ![balena configured with image and device](/img/getting_started/developer_guides/reflashing_your_device/configured_balena.png)
@@ -124,10 +124,10 @@ It is unsafe to remove the device from power while it is on or booting. The safe
 Once the flashing is complete, unmount the storage device. After that you can remove the SD card from its reader and put it back into the 
 AutoPi device. If using a CM4 device, unplug the CM4 device's USB cable and press the button to put the device into hibernation, then a short press to start up the device. 
 
-### 5. Ensure your device is connecting to the correct environment
+### 5. Ensure Your Device is Connecting to the Correct Environment
 This step is required only if your company is using a dedicated environment. You can find out whether this is the case by checking what website you're going to to access your device. If it's different from my.autopi.io, for example my_company.autopi.io, then this is a dedicated environment and you need to follow this [Guide: Move to a dedicated environment](/cloud/device_management/move_to_dedicated_environment.md/).
 
-### 6. Set up the device
+### 6. Setup the Device
 Next, you will need to have the device re-accepted in the AutoPi Cloud. To do
 so, you need to first have the device boot up and connect to the internet. If you're using an AutoPi-provided SIM card, 
 you must set the APN. See the **Setup APN** in the [Getting Started](/getting_started/cm4/index.md/#8-setup-apn) guide. After that, log in to

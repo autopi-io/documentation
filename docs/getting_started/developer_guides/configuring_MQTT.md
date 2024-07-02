@@ -6,7 +6,7 @@ title: Configuring MQTT
 ## Contents
 This guide covers configuring a basic MQTT broker on your Linux server, as well as configuring an AutoPi device to use MQTT as a data returner. 
 
-## Setting up your endpoint broker
+## Setting up Your Endpoint Broker
 This step covers installing and configuring a broker on your server instance. This guide uses a 3-rd party hosted Virtual Machine running Debian 11.
 
 Install the broker:
@@ -35,14 +35,14 @@ Expected result:
 
 ![publish_subsribe_server_test_expected_result](/img/getting_started/developer_guides/configuring_MQTT/pub_sub_server_test.png)
 
-## Device setup
+## Device Setup
 
 Generally, there are 2 ways in which you might be setting up your device. Either in direct-connect mode, or in broker-bridge mode. Direct-connect mode is what you might imagine a basic client-server setup, where a client sends/publishes data to a server. Broker-bridge mode is a bit more complicated, since it includes another MQTT broker running on the device, connected to your server through a bridge.
 
 While direct-connect mode is easier to set up, it's worth noting that in case the device loses internet connectivity, the data generated during that time will be lost. This is not the case with the broker-bridge mode, which will buffer the data, until the connectivity is restored.
 
 
-### Direct-connect mode
+### Direct-Connect Mode
 ![direct_connect_diagram](/img/getting_started/developer_guides/configuring_MQTT/direct-connect_diagram.png)
 
 On the AutoPi cloud portal (my.autopi.io for private customers, <company_name>.autopi.io for business customers) go to [Advanced > Settings > MQTT]. Modify the following settings:
@@ -53,7 +53,7 @@ On the AutoPi cloud portal (my.autopi.io for private customers, <company_name>.a
 
 Now set up an mqtt returner on a data point you know you're getting data from (voltage readings or GPS for example). See below on how to do this. After you've done this, you should be seeing data on your MQTT broker. 
 
-### Broker-bridge mode
+### Broker-Bridge Mode
 ![broker_bridge_diagram](/img/getting_started/developer_guides/configuring_MQTT/broker-bridge_diagram.png)
 On the AutoPi cloud portal (my.autopi.io for private customers, <company_name>.autopi.io for business customers) go to [Advanced > Settings > MQTT]. Note that the settings under [Broker > ...] **effect only the broker, and not the client**, so if you are trying to set up direct-connect mode, these are not the settings you are looking for. Modify the following settings:
 
@@ -99,7 +99,7 @@ If the command is not found, it can be installed from apt (it is not used outsid
 ![installinging_through_apt](/img/getting_started/developer_guides/configuring_MQTT/installing_mosq_clients.png)
 :::
 
-## Adding MQTT as a returner to Data Sources
+## Adding MQTT As a Returner to Data Sources
 
 This section covers adding the MQTT returner to the 3 main data sources: loggers, services and jobs. Which data points can be retrieved from each source can be seen in the following table.
 
@@ -147,7 +147,7 @@ Go to [Advanced > Jobs] and set returner to each job as mqtt. As of time of writ
 
 ![rpi_temp_job_with_mqtt_returner](/img/getting_started/developer_guides/configuring_MQTT/rpi_temp_job_with_mqtt_returner.png)
 
-## Final result
+## Final Result
 
 If everything is working correctly, you should be receiving data on your broker now:
 

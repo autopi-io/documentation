@@ -18,7 +18,7 @@ or `obd.query` you will receive an error.
 Passively listening (also known as sniffing) on the CAN bus is still allowed though.
 :::
 
-## How does it work?
+## How Does it Work?
 
 The Automatic OBD Logger Pausing feature works by using the data from the accelerometer integrated into the AutoPi. The
 accelerometer will detect motion and trigger events based on the motion detected. The three events that
@@ -36,7 +36,7 @@ Keep in mind that the `vehicle/motion/jolting` event is not used to determine th
 Pausing feature.
 :::
 
-## How to set it up?
+## How to Set It Up?
 
 To enable the Automatic OBD Logger Pausing functionality, you will need to ensure the following advanced settings are
 set on your device:

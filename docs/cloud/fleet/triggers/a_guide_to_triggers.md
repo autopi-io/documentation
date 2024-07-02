@@ -9,7 +9,7 @@ various data points, that are logged from the car.
 
 ![intro_pic](/img/cloud/fleet/triggers/a_guide_to_triggers/intro_pic.png) 
 
-## What are triggers?
+## What are Triggers?
 
 Triggers are a way to receive notifications when specific events occur on the device. Conditions can also be set on the triggers so
 that the notifications are only sent when those conditions have been met.
@@ -27,7 +27,7 @@ In this guide we will explore how you can setup a trigger on your own. We will c
 vehicle has been started outside of specified hours - 8 PM until 8 AM. We will make use of the event `vehicle/engine/running`, which
 is fired when the vehicle's engine is started.
 
-## Here's how to start
+## Here is How to Start
 
 Once, you have received your AutoPi device, and you have registered it (click [here](/getting_started/cm4/index.md) to see
 the getting started guide) and you are all set to go and can begin creating your own triggers.

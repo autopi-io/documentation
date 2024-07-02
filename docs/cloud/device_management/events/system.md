@@ -182,7 +182,7 @@ These events apply depending on which peripherals are installed inside the dongl
 | `product` | Text | The product's hexadecimal number/ID of the device. | 0002 |
 | `name` | Text | The device's name. | Linux Foundation 2.0 root hub |
 
-## Docker events
+## Docker Events
 
 We pass through the following docker events from the docker instance event stream.
 * start

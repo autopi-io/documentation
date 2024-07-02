@@ -5,7 +5,7 @@ title: Device Install Procedure
 
 This is a detailed description of how to infleet new devices to any fleet, how to pair devices to vehicles and how to assigne devices to templates. 
 
-## Procedure for Pairing a device and vehicle. 
+## Procedure for Pairing a Device and Vehicle. 
 In this section we will go over the process of a device with either an existing vehicle or creating a new vehicle. 
 
 1. Login to your fleet managment cloud service such as cloud.autopi.io
@@ -48,7 +48,7 @@ In this section we will go over the process of a device with either an existing 
     ![device_settings_select_vehicle](/img/cloud/fleet/device_install_procedure/device_settings_select_vehicle.png)
 7. The device is now paired to a vehicle.
 
-## Procedure for assigning devices to templates. 
+## Procedure for Assigning Devices to Templates. 
 
 1. Login to your fleet management cloud service such as cloud.autopi.io
 
@@ -74,7 +74,7 @@ In this section we will go over the process of a device with either an existing 
 
 7. You've now assigned one or more devices to a template and applied that template to the device.
 
-### What are templates?
+### What are Templates?
 Templates are a feature the allows for the setup and configuration of several devices quickly and easily. 
 Once a template has been defined it is as simple as assigning a device to template and the configurations, custom code,
 services, and much more can be applied to all the devices by the click of a button.   
@@ -82,7 +82,7 @@ services, and much more can be applied to all the devices by the click of a butt
 Templates are customizable to make as many or as few changes to the devices as needed if you are interested in learning more about how to create templates you can read more about here: [Templates](/cloud/fleet/templates.md)
 
 
-## Update devices and clear pending syncs from fleet mangement.
+## Update Devices and Clear Pending Syncs From Fleet Management.
 
 1. Login to your fleet management cloud service such as cloud.autopi.io
 
@@ -110,20 +110,20 @@ still the syncing process if the devices is connected to the cloud.
 
 9. You have now made sure the device is up to date and any changes have been synced ot the device. 
 
-### What pending syncs 
+### What Pending Syncs 
 Pending Syncs are changes made to a device from a cloud service such as the cloud.autopi.io or my.autopi.io that 
    needs to be applied to the devices before they take effect.   
 The Pending sync will automatically be applied the next time it starts or when manually asked to sync
    if the device is online while changes are being made. 
 
 
-## Check list for setting up a new car.
+## Check List for Setting Up a New Car.
 1.	Ensure that the device is assigned to the correct template and that the template has been applied to the device. 
 2.	Make sure the device is paired with the correct vehicle.
 3.	Update the device to the latest version. 
 4.	Clear any pending syncs. 
 
-## Procedure for changing vehicle assigned to a device.
+## Procedure for Changing Vehicle Assigned to a Device.
 1.	Make sure that the template that is assigned is appropriate for the new vehicle, if not then assign the device   
     to a template that is appropriate for the new vehicle.
 2.	create a new vehicle to connect the device to if it hasn’t already been created.

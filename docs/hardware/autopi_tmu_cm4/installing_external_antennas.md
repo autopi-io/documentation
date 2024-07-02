@@ -18,7 +18,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 - External antennas kit provided by AutoPi
 :::
 
-### Step-by-step guide
+### Step-by-Step Guide
 
 <SideBySide>
 	<p>

@@ -13,7 +13,7 @@ It is possible to get notified via webhook when a command completes on a device.
 
 Note that if the device responds with a command result after the timeout, it will still send the `COMMAND_EXECUTED` payload, even after the `TIMEOUT` payload has been sent.
 
-### 1. Executing a command with callback
+### 1. Executing a Command With Callback
 The way this works is that if you specify the `callback_url` field when sending a request to the `/dongle/devices/{id}/execute/` or `/dongle/devices/{id}/execute_raw/` endpoint, the server will send a callback to the requested url when the server receives the response from the device.
 
 :::note
@@ -42,7 +42,7 @@ POST /dongle/devices/{DEVICE_ID}/execute[_raw]/
 }
 ```
 
-### 2. Getting notified by the webhook request.
+### 2. Getting Notified by the Webhook Request.
 
 The request sent to your server looks like this.
 
@@ -77,7 +77,7 @@ BODY
 }
 ```
 
-#### Verifying the requests using the HMAC signature.
+#### Verifying the Requests Using the HMAC Signature.
 
 The response contains a HMAC sign in the `X-Request-Signature` header that can be used to verify the integrity of the webhook request.
 The response json is signed with HMAC SHA-256 using the Authorization header used for executing the command (Without the 'APIToken' or 'Bearer' part).
@@ -100,7 +100,7 @@ valid = hmac.compare_digest(calculated_signature, webhook_signature)
 Each response always includes a unique job id, so no two request signatures are the same.
 :::
 
-### 3. Debugging: Getting information about the scheduled callback
+### 3. Debugging: Getting Information About the Scheduled Callback
 
 The `/dongle/devices/{DEVICE_ID}/callback/{JOB_ID}/` endpoint allows you to get the callback object from our system.
 

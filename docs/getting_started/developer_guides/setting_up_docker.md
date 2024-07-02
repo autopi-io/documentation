@@ -4,7 +4,7 @@ title: Setting Up Docker on Your Device
 ---
 
 ## Overview
-### Deploying docker containers on devices
+### Deploying Docker Containers on Devices
   **1.	Create the release. **
 
   The way this will work is that a Release endpoint will be implemented where each release will contain the following information
@@ -158,14 +158,14 @@ Both endpoints returns device object(s)
  
 ## Modules
 Highlighted modules for performing various actions on a running device docker instance.
-### Executing module commands
+### Executing Module Commands
 Module commands is executed on the device through the execute endpoint. 
 See documentation here: https://api.autopi.io/#/dongle/dongle_devices_execute_command
 
 When executing commands remotely, you must execute the command async via the execute endpoint, and then use the https://api.autopi.io/#/dongle/dongle_devices_retrieve_command_result endpoint to poll for the result from the device.
 
 Example payloads for REST API are included below.
-#### Executing commands locally on the device
+#### Executing Commands Locally On the Device
 The above commands can also be executed directly on the device with the following endpoint
 
 ```
@@ -221,11 +221,13 @@ Example payload for executing via REST API
 }
 ```
 
-## Production environment
+## Production Environment
 The production environment is located at: my.autopi.io
+
 ### REST API
 The API can be accessed here api.autopi.io along with the API documentation.
-#### Authenticate using API token
+
+#### Authenticate Using API Token
 Authentication should be done with the API tokens. 
 These tokens can be generated in the account page. The expire date is optional.
 The tokens can then be used in external systems to authenticate the requests.

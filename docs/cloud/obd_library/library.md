@@ -216,7 +216,7 @@ right-hand side of the Edit CAN Message window. You will need to select (tick) t
 community* checkbox.
 
 
-## Importing library items from files
+## Importing Library Items From Files
 The Library supports importing both CAN messages and signals through DBC files, as well as PIDs through
 JSON files. As an example, let's use this simple DBC file:
 ```
@@ -233,7 +233,7 @@ BO_ 937 FRONT_RIGHT: 4 IO
 CM_ SG_ 1 LEFT_SEAT_TEMP "Temperature of the front left seat";
 ```
 
-### First import
+### First Import
 When you first select a file for import, you will be presented with options looking like this:
   ![File options](/img/cloud/obd_library/library/file_options.png) 
 
@@ -247,7 +247,7 @@ seat's temperature.
   ![Imported and validated messages](/img/cloud/obd_library/library/imported_messages.png) 
   ![Imported and validated signals](/img/cloud/obd_library/library/imported_signals.png) 
 
-### Adding signals to existing messages
+### Adding Signals to Existing Messages
 Once you've selected what to create and what to ignore, click on the upload button and the messages will be created. If
 you now try to import the same file with the same options, you'll see that front right seat, which we imported with all
 its signals, is unchanged. Front left, however, is shown as changed, since we ignored one of its signals. Now we have the
@@ -256,7 +256,7 @@ option to update the Front Left message by creating the Left Seat Temperature si
   ![Library view](/img/cloud/obd_library/library/post_import_messages.png) 
   ![Library view](/img/cloud/obd_library/library/post_import_signals.png) 
 
-### Updating message and signal properties
+### Updating Message and Signal Properties
 To update a value, all you need to do is change it in the imported file and import it again with the same options. For this
 example, we're changing the unit of the Right Seat Temperature from Celsius to Fahrenheit. 
 
@@ -273,7 +273,7 @@ After uploading the file and validating, the signal shows as changed and the cha
 Setting a message's Option to 'Ignore' will force 'Ignore' to all its child signals.
 :::
 
-### Deleting signals
+### Deleting Signals
 You can delete signals by removing them from the DBC file, then importing the file. In this example, we're deleting the Right Seat's
 Backrest's Temperature. 
 ```
@@ -289,7 +289,7 @@ BO_ 937 FRONT_RIGHT: 4 IO
 
   ![Library view](/img/cloud/obd_library/library/deleting_a_signal.png) 
 
-### Working with PIDs
+### Working With PIDs
 
 Unlike CAN messages and signals, there's no industry standard file format for PIDs. Therefore, there's a custom JSON based format 
 that you need to follow. This is an example PID JSON file:
@@ -338,7 +338,7 @@ that you need to follow. This is an example PID JSON file:
 ]
 ```
 
-## Legacy importer
+## Legacy Importer
 
   ![Library view](/img/cloud/obd_library/library/import_file_button.png) 
 

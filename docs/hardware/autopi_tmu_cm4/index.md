@@ -10,7 +10,7 @@ Some of the knowledge may be transferrable to previous generation devices.
 <img src="/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png" alt="AutoPi TMU CM4" width="60%" />
 </p>
 
-## Key benefits
+## Key Benefits
 - **4G/LTE with global coverage:** The integrated modem with worldwide coverage. 
 - **Built in 2x CAN interface:** Automotive connection with dual CAN. 
 - **Factory integrated unit or aftermarket add-on:** Use as a factory integrated OEM device or aftermarket add-on. 
@@ -21,13 +21,13 @@ Some of the knowledge may be transferrable to previous generation devices.
 - **Automotive certified (CE/FCC):** Certified to automotive standards for global usage. 
 - **Security element:** Secure and encrypt your data
 
-### Upgraded automotive interface
+### Upgraded Automotive Interface
 The device comes with a 2x CAN interface and can be further expanded with additional CAN interfaces. Support for Diagnostics over IP (DoIP)
 
 ### Runs LINUX OS
 AutoPi Core is based on a full LINUX OS (Raspberry Pi OS), with endless possibilities for extensions and integrations. Well proven and tested OS, with high endurance.
 
-### Open source-software
+### Open Source-Software
 The device runs on an open source-software, which allows users to build a custom code on top of that. All drivers and implementations in AutoPi Core is available from our GitHub repository.
 
 ###  Computing Power

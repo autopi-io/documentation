@@ -8,21 +8,21 @@ The template functionality makes it possible for a user to manage the configurat
 ## Features
 A template can contain the following configurations.
 
-### Advanced configuration
+### Advanced Configuration
 Most [advanced configuration settings](/cloud/device_management/advanced_settings/TMU/index.md) are available to be specified for a template. Options that aren't available for templates have been removed because they are too specific for each device and it doesn't make sense to set in a template.
 
 The table shows the settings currently associated to the template, and clicking the edit button will open the settings UI, with all available settings.
 
-### Modules (custom code)
+### Modules (Custom Code)
 Modules are created the same way for templates as they are for normal devices; chose a type depending on what you need the module for, and when creating a custom module of type service, it will automatically create a custom service for you and associate that to the same template.
 
 ### Services
 [Read more here](/cloud/device_management/services/index.md).
 
-#### Creating custom services
+#### Creating Custom Services
 Creating a custom service does not not autocreate a custom module as of now, so if you want to create a custom service, you should instead go create a custom module of the type service, then a service will be automatically created.
 
-#### Overriding default services
+#### Overriding Default Services
 To override a default engine, like the obd_manager from a template, you can simply create a new service which has the same name as the default service.
 
 ### Triggers and Jobs
@@ -34,7 +34,7 @@ More info about [Jobs](/cloud/device_management/jobs.md) and [Triggers](cloud/fl
 Loggers are created similarly to how they are for regular devices. They are a little different since creating loggers on a template will create buses
 as well. A prerequisite to setting up Tempalted Loggers is to have already created some CAN Messages and CAN Signals or PIDs in the Library.
 
-#### Templated CAN loggers
+#### Templated CAN Loggers
 To create a templated CAN logger, find the `Loggers` tab in the template you would like to edit, click `Create`, and `CAN`. You will be presented
 with a window like this:
 

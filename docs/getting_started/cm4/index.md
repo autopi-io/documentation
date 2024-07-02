@@ -23,7 +23,7 @@ interface to your car and communicates with the ECU in your car.
 5. When inserting the device for the first time, make sure the vehicle is powered off.
 :::
 
-## 1. Setting up user account
+## 1. Setting Up User Account
 
 First step is to associate the AutoPi Telematics Unit with your user account. This is done by going
 to [my.autopi.io](https://my.autopi.io/) and following the signup guide here. Please have your
@@ -65,7 +65,7 @@ Here's a list of the US based SIM providers that we recommend to be used with th
 2. T-Mobile
 3. Any MVNO provider that is roaming the networks of the providers above
 
-## 3. Locate OBD port
+## 3. Locate OBD Port
 
 Next step is to locate your OBD port in your car, it is usually found underneath the dashboard and
 looks something like this:
@@ -87,7 +87,7 @@ When installing the AutoPi, always make sure that your device faces upwards. The
 the sky, due to the GPS antenna in the AutoPi Telematics Unit, otherwise there is a chance you
 won’t have a good GPS signal.
 
-## 5. Relocator cable
+## 5. Relocator Cable
 
 If the port is located in an inconvenient place or is in the way of your legs, you can purchase a
 relocator cable for your AutoPi to keep it in more convenient area. You can also place it in an
@@ -108,7 +108,7 @@ see a blue light on the side indicating power.
 
 For a full description of the two status LED's, please see [this](/core/power_management/index.md/#status-leds).
 
-## 7. Connect to local administration
+## 7. Connect to Local Administration
 
 Once connected to the WiFi hotspot, you need to configure your APN settings for the SIM card
 inserted. To do so, go to [my.autopi.io](https://my.autopi.io/). Click on the "Go local" button at
@@ -139,8 +139,6 @@ notification when successfully saved.
 4G/LTE Settings | 
 - |
 ![AutoPi.io - Settings Page](/img/getting_started/getting_started/apn_settings.png)
-
-##
 
 APN Presets List |
 - |

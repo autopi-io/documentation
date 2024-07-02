@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The DOIP solution described here only works with the AutoPi TMU CM4 and newer editions
 :::
 
-## DOIP introduction
+## DOIP Introduction
 This guide provides a general technical overview of the AutoPi DOIP solution. 
 
 DOIP stands for "Diagnostic over Internet Protocol." It is a communication protocol used in the automotive industry for diagnostic and programming tasks. DOIP enables the exchange of diagnostic information between a vehicle's electronic control units (ECUs) and diagnostic tools over an IP-based network, such as Ethernet.
@@ -26,7 +26,7 @@ DOIP stands for "Diagnostic over Internet Protocol." It is a communication proto
 </p>
 
 
-## Step-by-step guide
+## Step-by-Step Guide
 
 ### Step 1
 Open up the AutoPi device by unscrewing the four screws at the bottom. 

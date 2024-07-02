@@ -21,7 +21,7 @@ The keyless entry solution described here only works with the AutoPi TMU CM4 and
 <img src="/img/hardware/accessories/keyfob/keyfob_components.jpg" alt="Keyfob HAT components" width="60%" />
 </p>
 
-## Step-by-step guide
+## Step-by-Step Guide
 
 ### Step 1
 Open up the AutoPi device by unscrewing the four screws at the bottom. 

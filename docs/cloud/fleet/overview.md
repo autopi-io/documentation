@@ -9,7 +9,7 @@ All devices with a known position is shown in the map, and each device can be hi
 
 ![fleet overview](/img/cloud/fleet/overview/fleet-overview.jpg)
 
-### Available columns
+### Available Columns
 The fleet overview can be customized to show the columns that you need, by clicking the three dots in the top of the fleet overview table.
 
 #### Online

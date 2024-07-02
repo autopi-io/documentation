@@ -14,7 +14,7 @@ you can create a service worker in this guide, however we do have the
 [Create Service Workers](/cloud/device_management/services/create_custom_workers.mdx) guide which you can take a look at
 for more details on how to create a worker and setup its workflow.
 
-## Reading raw CAN data
+## Reading Raw CAN Data
 
 Firstly, we will explore how to read the CAN messages that are visible on the CAN bus. These
 messages will be raw, meaning that they will simply be binary data that is structured in a
@@ -65,7 +65,7 @@ file, just like with `obd.monitor`.
 
 ![obd_import_worker](/img/cloud/obd_ii/log_raw_can_messages/obd_import_worker.png)
 
-## Making sense of raw CAN data
+## Making Sense of Raw CAN Data
 
 A key converter that can be used in the workflows described above is the
 [CAN converter](/core/services/obd_manager.md/#can). It is able

@@ -35,7 +35,7 @@ In case you *have* enabled automatic updates for your device, then the device wi
 updates as soon as they are available based on the setting you've set. That can either be "Before
 sleep" or "At start (or before sleep)".
 
-### Update with a command
+### Update With a Command
 
 :::tip
 Be careful with this update procedure. If you're trying to update your device, we recommend that you
@@ -132,7 +132,7 @@ returned above and it is the one that triggers the update as well. Notice the `a
 which signifies the device is most likely attempting the update right now. This type of response is usually seen
 when the device has been "forced" to update or it has been setup to attempt updates right before shutting down.
 
-## Viewing update attempts
+## Viewing Update Attempts
 
 You are able to review the update release attempts (aka Update Release Runs). They show the update
 procedure, which operations (states) have been completed successfully and which haven't. There are

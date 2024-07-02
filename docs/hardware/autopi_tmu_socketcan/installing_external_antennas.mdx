@@ -24,7 +24,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 We recommend using [**this**](https://shop.autopi.io/products/3in1-external-antenna-kit) antenna kit for expanding your AutoPi.
 :::
 
-### Step-by-step guide
+### Step-by-Step Guide
 
 <SideBySide>
 	<p>

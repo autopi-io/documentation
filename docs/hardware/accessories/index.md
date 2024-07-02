@@ -6,7 +6,7 @@ title: Accessories Overview
 This section contains a description of addons avaible for the AutoPi devices. 
 
 
-## Keyless entry
+## Keyless Entry
 This is a description for the hardware addon for AutoPi keyless entry solution. The solution currently only works together with the AutoPi TMU CM4 generation devices.
 
 <p align="center">

@@ -7,13 +7,13 @@ In this guide we will talk about how you can manage your AutoPi's logs. The topi
 cover are how you can view your device's logs and how you can download the log files to your
 computer.
 
-## Viewing logs
+## Viewing Logs
 
 There are two primary methods for viewing your AutoPi's logs. The first method uses some commands
 that you can write in the web terminal from the [Cloud](https://my.autopi.io) or the local admin
 for your device. The second method retrieves the log files directly from the device through SSH.
 
-### Viewing logs from the Cloud
+### Viewing Logs From the Cloud
 
 To retrieve the primary logs from the device, we have some terminal commands that can be executed
 (on [my.autopi.io](https://my.autopi.io/) and [local.autopi.io](http://local.autopi.io/)):
@@ -31,7 +31,7 @@ These functions can also take various parameters. You can check the documentatio
 $ minionutil.help
 ```
 
-### Viewing logs directly on the device
+### Viewing Logs Directly On the Device
 
 If you are logged onto the system using SSH ([How to SSH to your device](how_to_ssh_to_your_device.mdx))
 you can view the log file by running the following command:
@@ -44,7 +44,7 @@ $ less /var/log/salt/minion
 Remember that the timestamps in the log files are in UTC.
 :::
 
-## Downloading logs
+## Downloading Logs
 
 Sometimes, if we're having a back and forth on our support channel (support@autopi.io), we might
 ask you to provide some log files from your device. Most of the time, it will be the minion log
@@ -53,7 +53,7 @@ There are three ways that you can download log files from your device: downloadi
 from the local admin page ([local.autopi.io](http://local.autopi.io)), copying it to your own computer with
 the `scp` command or by uploading it to your dropbox account.
 
-### Local admin page download
+### Local Admin Page Download
 
 To download the log files from the local admin page, you will need to connect to the device's WiFi
 hotspot first. After you've done that, you can navigate your browser to http://local.autopi.io.
@@ -68,7 +68,7 @@ files available for downloading. Click on the one you'd like to download.
 
 ![local_admin_log_files](/img/getting_started/developer_guides/autopi_logs/local_admin_log_files.jpg)
 
-### SCP (SSH copy)
+### SCP (SSH Copy)
 
 You are able to download the minion log file using the `scp` command from your computer. First,
 you'll need to have the file in the home directory of the `pi` user. The first two commands should
@@ -87,7 +87,7 @@ scp pi@local.autopi.io:~/minion ./
 
 After executing those commands, you should have a minion file in your current working directory.
 
-### Uploading the log file to your dropbox
+### Uploading the Log File to Your Dropbox
 
 If you're not familiar with SSH or you don't have access to it at the moment, you can instead
 upload the log file to your dropbox account. Here are the steps you need to take to get the log
@@ -142,7 +142,7 @@ Remember to replace the YOUR_ACCESS_TOKEN with the actual token you received in 
   cmd.run 'curl -X POST https://content.dropboxapi.com/2/files/upload --header "Authorization: Bearer YOUR_ACCESS_TOKEN" --header "Dropbox-API-Arg: {\"path\": \"/minion.gz\"}" --header "Content-Type: application/octet-stream" --data-binary @/var/log/salt/minion.gz'
   ```
 
-## Log rotation
+## Log Rotation
 Every so often the logs on your AutoPi device will [rotate](https://en.wikipedia.org/wiki/Log_rotation).
 This essentially means that the current log files will be compressed and renmaed so that a new log
 file can start being used. This is done in order to keep the size of the log files relatively small.

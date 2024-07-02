@@ -53,7 +53,7 @@ antennas. After you're done, your device should look a bit like the following:
 
 ![complete dev kit](/img/hardware/legacy_devices/autopi_dongle_gen3/developer_kit/finished-dev-kit.jpg)
 
-## Need help?
+## Need Help?
 
 If you have any questions, requests to improve the documentation or any feedback, don't hesitate
 to reach out to us by sending us an email to support@autopi.io.

@@ -165,7 +165,7 @@ puts the device to sleep after the hour from the suppress schedule passes.
 
 ## Troubleshooting
 
-### My device is constantly shutting down, even though my vehicle is on and driving
+### My Device is Constantly Shutting Down, Even Though My Vehicle is On and Driving
 
 It's important to remember that the AutoPi device will automatically setup sleep timers in an attempt to protect your
 vehicle's battery. This will happen even if there are no custom configurations setup or without any interference by the

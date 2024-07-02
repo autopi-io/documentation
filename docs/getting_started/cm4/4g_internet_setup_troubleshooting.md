@@ -8,7 +8,7 @@ You are experiencing issues connecting to the internet, when connected to the Wi
 ### Prerequisites:
 Before following this guide, you must have completed the initial [setup guide](/getting_started/cm4/index.md).
 
-### Check SIM card
+### Check SIM Card
 
 1. Your SIM card must be setup for data. To check this, insert the SIM into another device, like a smartphone or similar. When inserted in the other device you must be able to browse the web.
 
@@ -104,7 +104,7 @@ Incase the FWSWITCH does not start with 40 or net_conf is not global this can be
 
 `modem.connection execute AT#FWSWITCH=40,1`
 
-### Checking qmi-manager status
+### Checking qmi-manager Status
 The device contains a software manager, which ensure stable connection to the internet. This is called qmi-manager. To check status, please write the following command in the terminal:
 
 `cmd.run "qmi-manager status"`
@@ -113,7 +113,7 @@ The output should be similar what you can see in the image below:
 
 ![qmistatus](/img/getting_started/cm4/4g_internet_setup_troubleshooting/qmistatus.jpg)
 
-### Further checking of network
+### Further Checking of Network
 
 If your device still isn't online, you can try running the following two commands. They will tell you a bit more about why the network manager fails:
 

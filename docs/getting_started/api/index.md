@@ -50,11 +50,11 @@ This token is the one used by the frontend when logging in.
 
 You can get the JWT token in two different ways:
 
-#### 1. Capture the token by using the browser developer tools.
+#### 1. Capture the Token by Using the Browser Developer Tools.
 The easiest way is to capture the token by logging into the Cloud, with the developer tools open in your favourite
 browser, with the network tab open, and then skip to step 6 in the below step by step guide.
 
-#### 2. Manually call the auth endpoint to get the token.
+#### 2. Manually Call the Auth Endpoint to get the Token.
 You can follow the steps below to call the login endpoint manually.
 
 1. Click the "auth" app to fold out the available endpoints.
@@ -79,7 +79,7 @@ Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6
 
 8. After clicking close, you should now be able to call the other authenticated endpoints.
 
-## Sending the requests manually using Postman or similar
+## Sending the Requests Manually Using Postman or Similar
 Alternatively, if you are unable to use the above portal, or if you'd rather use something like Postman or similar,
 you can still see the requests and parameters in the portal, but to call them manually, see the below steps.
 

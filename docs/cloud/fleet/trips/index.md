@@ -11,11 +11,11 @@ It is fully customizeable what events trigger a new trip to be created and it ca
 You can check the events page on my.autopi.io to see all events logged from your device. When troubleshooting it is one of the first places to check if you are unsure why something happened. By looking at the events you can usually get a really good idea about why the device did something.
 :::
 
-## Trip generation
+## Trip Generation
 
 When the server receives the start|stop trip events it will do the following.
 
-#### On start trip event (default: `vehicle/engine/running`)
+#### On Start Trip Event (Default: `vehicle/engine/running`)
    * If closed trip exists, the end time will be checked:
      * If older than N minutes (default: 10), a new trip will be created, with the start_time set to the timestamp of the event.
      * If not older than N minutes, it will not create a new trip.
@@ -23,7 +23,7 @@ When the server receives the start|stop trip events it will do the following.
      * If older than N minutes, a new trip will be created.
      * If not older than N minutes, it will ignore the event, and just keep using the trip from before.
 
-#### On stop trip event (default: `vehicle/engine/not_running`|`vehicle/engine/stopped`)
+#### On Stop Trip Event (Default: `vehicle/engine/not_running`|`vehicle/engine/stopped`)
    * Check if a trip is currently in progress using the timestamp of the event.
      * If it can find one, it will close it.
      * If it can't find one, the event will be ignored.

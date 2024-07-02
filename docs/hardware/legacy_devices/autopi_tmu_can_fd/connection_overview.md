@@ -5,7 +5,7 @@ title: Connection Overview
 
 ## Connectivity
 
-### Front side
+### Front Side
 
 This diagram shows the 3.5 CAN-FD generation frontside connections possibilities
 
@@ -21,7 +21,7 @@ This diagram shows the 3.5 CAN-FD generation frontside connections possibilities
 
 ![connection overview front](/img/hardware/legacy_devices/autopi_tmu_can_fd/connection_overview/side1.png)
 
-### Back side
+### Back Side
 
 This diagram shows the 3.5 CAN-FD generation backside connections possibilities
 

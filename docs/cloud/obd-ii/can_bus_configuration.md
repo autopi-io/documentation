@@ -10,7 +10,7 @@ monitoring.
 
 <!-- ## CAN Concepts
 
-### WIP, the same concept on the cloud means a different thing on the device
+### WIP, the Same Concept On the Cloud Means a Different Thing On the Device
 
 General concepts:
 - Protocol - a numbered set of configurations, which specify a CAN interface, default baudrate, 
@@ -31,7 +31,7 @@ Core concepts:
 - CAN Interface/Channel
 - Header Length -->
 
-## Common causes of failures, and how to troubleshoot
+## Common Causes of Failures and How to Troubleshoot
 Under normal circumstances, the device will boot for the first time and will try to autodetect the
 protocol automatically, then send the results back to us, where we create a CAN Bus for your device,
 flagged as autodetected.
@@ -47,7 +47,7 @@ Sometimes, this will not happen. This can be because of multiple reasons:
 - The vehicle uses a configuration, which is not checked by the autodetect
 - A combination of 2 or more of the above 
 
-### The device is in an incorrect state
+### The Device is in an Incorrect State
 Whenever an AutoPi device is powered on, sleep timers are created, which will turn the device off in a few
 minutes. Check the status of the LEDs on the side of the device to make sure the device has not gone to sleep.
 Both the green and blue LEDs should be lit constant and bright. If the blue LED is breathing (varying in its 
@@ -58,7 +58,7 @@ from the OBD-II port, and reconnect. Wait until both LEDs are solid, then move o
 You can learn more about the power cycle on the [Power Management Documentation](/core/power_management/index.md).
 :::
 
-### Internet connectivity issues
+### Internet Connectivity Issues
 These can make it seem like the autodetect is not working. Unless you're connecting to the device through 
 its Wireless Access Point and running commands from its local terminal, you should test the connectivity
 before checking for any of the further issues. Try running the following command from the terminal in the
@@ -69,12 +69,12 @@ move on further. Otherwise, check out the [4G Troubleshooting Guide](/getting_st
 
 ![True response](/img/cloud/obd_ii/can_bus_configuration/test_true.png)
 
-### The vehicle supports OBD-II, but the ECUs are not running
+### The Vehicle Supports OBD-II, but the ECUs are Not Running
 This is the most probable explanation. Most ECUs will not be running while the vehicle is off, therefore,
 if you're trying to run the autodetect with the engine turned off, you're almost sure to not succeed.
 The fix for this is to turn the ignition on.
 
-### The vehicle does not support OBD-II
+### The Vehicle Does Not Support OBD-II
 This is the simplest explination of why autodetect is not working. In the section 
 "[How Bus Autodetection Works](#how-bus-autodetection-works)", we explain that the feature relies on
 responses to a specific OBD-II query that should be supported by all OBD-II compliant vehicles.
@@ -83,7 +83,7 @@ If this seems to be the case, all is not lost yet. It is likely that the vehicle
 like J1939, UDS or something proprietary to that manufacturer. Check out the section
 on non-OBD-II queries (COMING SOON) and [Passive CAN Traffic](#passive-can-traffic).
 
-### The vehicle supports OBD-II, the ECUs are on, but they are not active
+### The Vehicle Supports OBD-II, the ECUs are On, but They are Not Active
 This is the most complicated case. There's multiple ways this issue can present itself:
 1. The bus is autodetected, but the vehicle is periodically not responding to queries that have worked before
 2. Manufacturer-made OBD-II scanners work, however, the AutoPi can not read the same data
@@ -105,18 +105,18 @@ preferred workflow, you may prefer to [ssh into the device](/getting_started/dev
 in this are *candump* and *cansend*. To change the configuration of the CAN connection, you can use the 
 [socketcan.up and socketcan.down](/core/commands/socketcan.md) commands. 
 
-### The vehicle supports OBD-II, but the vehicle uses a configuration, which is not checked by the autodetect
+### The Vehicle Supports OBD-II, but the Vehicle Uses a Configuration, Which is Not Checked by the Autodetect
 If you take a look at the [how bus autodetection works](#passive-can-traffic) section, you'll learn that the
 device checks a pre-defined list of configurations. It's possible that your vehicle uses one that is not in this list.
 Check the [Finding configuration manually](#finding-configuration-manually) section to see further steps.
 
-## How bus autodetection works 
+## How Vus Autodetection Works 
 The easiest way to run autodetection is through the cloud portal from the Vehicles Editor. This will do 2 things.
 First it will try to find the correct configuration for CAN connectivity (see 
 [Finding Configuration Manually](#finding-configuration-manually) for an explanation). Second, it will try to find
 the supported OBD-2 PIDs and create them in your Library.
 
-### Automatic autodetection flow
+### Automatic Autodetection Flow
 
 When first installing a device, an autodetect will be run automatically for cars, which would normally 
 support the OBD-II protocol. Expressed programmatically, this set of conditions must be met for automatic 
@@ -142,7 +142,7 @@ using the just found configuration.
 1. The backend uses this to create a bus for the device's currently assigned vehicle, creates OBD-II 
 PIDs in your library and adds the most common ones to the bus
 
-### Protcol autodetection flow
+### Protcol Autodetection Flow
 When autodetection is invoked, it will first try to find the correct interface and baudrate, then the 
 set of supported PIDs. To find the interface and baudrate, the device goes through the following flow:
 1. Destroy the current connection if one exists
@@ -152,7 +152,7 @@ set of supported PIDs. To find the interface and baudrate, the device goes throu
 out of configurations to try.
 5. If we get a response, that's the valid protol. 
 
-## Finding configuration manually
+## Finding Configuration Manually
 Protocol determines which bus (HSCAN or MSCAN) and what bitrate is being used:
 - 31 - HSCAN (can0), 11-bit
 - 32 - HSCAN (can0), 29-bit
@@ -198,7 +198,7 @@ supported:
 ```
 
 
-### Passive CAN traffic
+### Passive CAN Traffic
 :::important
 From Core sofware version 1.24.0, the obd.monitor command will show both 11-bit header and 29-bit header messages, no
 matter if the selected protocol is 11-bit or 29-bit. When setting up CAN Signal loggers, the bus' default protocol must

@@ -5,7 +5,7 @@ title: Connection Overview
 
 ## Connectivity
 
-### Front side
+### Front Side
 
 This diagram shows the 3<sup>rd</sup> generation frontside connections possibilities
 
@@ -21,7 +21,7 @@ This diagram shows the 3<sup>rd</sup> generation frontside connections possibili
 
 ![connection overview front](/img/hardware/legacy_devices/autopi_dongle_gen3/connection_overview/side1.png)
 
-### Back side
+### Back Side
 
 This diagram shows the 3<sup>rd</sup> generation backside connections possibilities
 

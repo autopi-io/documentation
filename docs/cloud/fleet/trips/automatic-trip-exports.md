@@ -10,7 +10,7 @@ When enabled for a device, it will automatically trigger exports when a trip end
 Contact sales@autopi.io to get more information.
 :::
 
-## Endpoints overview
+## Endpoints Overview
 
 * `GET tasks/` 
 Returns all tasks for the current customer
@@ -18,12 +18,12 @@ Returns all tasks for the current customer
 * `GET tasks/{task_id}/remove_result/` Removed the exported data
 * `GET logbook/trips/?device=device_id` Returns all trips for the specific device. (device querystring can be omitted, to show all trips for customer)
 
-## How to enable the automatic trip export functionality
+## How to Enable the Automatic Trip Export Functionality
 
 The setting should be enabled per device, and this is done in Settings > Advanced > Trip > Auto Export
 This can also be managed automatically for the entire fleet by using a template.
 
-## Overview - step by step
+## Overview - Step by Step
 
 1. The device sends an event that causes the server to trigger the trip_end event.
    This can be configured in the advanced settings.
@@ -62,7 +62,7 @@ To use this new API token, simply set the following header on the request.
 Authorization: APIToken TOKEN
 ~~~
 
-## Data structure
+## Data Structure
 The trip + any uploaded data is exported as json lines - this means that every line has a valid json object, see more here: http://jsonlines.org/
 
 The data is sorted in ascending order.
@@ -83,7 +83,7 @@ Example:
 {"@vid": VEHICLE_ID, "@uid": "DEVICE_UNIT_ID", "@ts": "2020-01-01T08:16:53.107849Z", "@t": "obd.coolant_temp", "obd.coolant_temp.value": 19, "obd.coolant_temp.unit": "degC", "@rec": "2020-01-01T08:17:56.128149Z"}
 ~~~
 
-## Manually executing trip export task
+## Manually Executing Trip Export Task
 
 After a while the trip export will no longer be present on the server, and if a new export is needed, you can re-run the export for an old trip, depending on the data retention conditions for the specific environment, using the `tasks` endpoing like so.
 
@@ -101,7 +101,7 @@ After a while the trip export will no longer be present on the server, and if a 
 This will return a new task object, and using the task id you can retrieve the result using the above mentioned `tasks/ID/result/` endpoint, when the task has completed.
 
 
-## Manually retrieving trip-export task results
+## Manually Retrieving Trip Export Task Results
 
 To retrieve the exported data, you can retrieve a list of the tasks, and get the task ids from there.
 
