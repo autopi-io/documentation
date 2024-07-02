@@ -32,17 +32,17 @@ Open up the AutoPi device by unscrewing the four screws at the bottom.
 ### Step 2
 Start preparing the BLE hat by screwing one 6.5 mm spacer in each hole of the PCB as seen in the pictures.
 
-<img alt="Step 2" src={useBaseUrl('/img/hardware/accessories/keyfob/install_step1.jpg')}/>
+![Step 2](/img/hardware/accessories/keyfob/install_step1.jpg)
 
 ### Step 3
 Connect the BLE hat with the AutoPi board through the 40 pin headers. Verify that the connectors are properly connected.
 
-<img alt="Step 3" src={useBaseUrl('/img/hardware/accessories/keyfob/install_step2.jpg')}/>
+![Step 3](/img/hardware/accessories/keyfob/install_step2.jpg)
 
 ### Step 4
 Reasemble the device using the new AutoPi BLE side shield, giving access to two new Keyfob control ports on the side.
 
-<img alt="Step 4" src={useBaseUrl('/img/hardware/accessories/keyfob/keyfob_ports.jpg')}/>
+![Step 4](/img/hardware/accessories/keyfob/keyfob_ports.jpg)
 
 ## Disscussion
 <p>

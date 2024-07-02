@@ -37,20 +37,17 @@ Open up the AutoPi device by unscrewing the four screws at the bottom.
 ### Step 2
 Start preparing the DOIP hat by screwing one 6.5 mm spacer in each hole of the DOIP hat PCB as seen in the pictures.
 
-<img src="/img/hardware/accessories/doip/doip3.jpg" alt="Keyfob flow"  />
-
+![Keyfob flow](/img/hardware/accessories/doip/doip3.jpg)
 
 ### Step 3
 Connect the BLE hat with the AutoPi board through the 40 pin headers. Verify that the connectors are properly connected.
 
-<img src="/img/hardware/accessories/doip/doip8.jpg" alt="Keyfob flow"  />
-
+![Keyfob flow](/img/hardware/accessories/doip/doip8.jpg)
 
 ### Step 4
 Reasemble the device using the new AutoPi BLE side shield, giving access to two new Keyfob control ports on the side.
 
-<img src="/img/hardware/accessories/doip/side.jpg" alt="Keyfob flow"  />
-
+![Keyfob flow](/img/hardware/accessories/doip/side.jpg)
 
 ## Disscussion
 <p>
