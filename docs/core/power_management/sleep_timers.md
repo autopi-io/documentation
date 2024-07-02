@@ -8,7 +8,7 @@ limiting the amount of power required by the device when it's plugged into a veh
 you can work with the sleep timers using a command and look over some of the configuration options that are available
 to manipulate how sleep timers are added and cleared from the device.
 
-## The `power.sleep_timer` Command\../\../
+## The `power.sleep_timer` Command
 
 Let us start by going through the command that you can use to view, set and clear sleep timers. The command is
 [`power.sleep_timer`](core/commands/power.md#powersleep_timer). If you execute the command on its own, it will return

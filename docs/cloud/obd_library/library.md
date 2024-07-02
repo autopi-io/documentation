@@ -29,7 +29,7 @@ these actions in the following sections.
 
 :::tip
 If you're unsure of the difference between *PIDs* and *CAN message signals*, you can take a look
-at our [OBD-II introduction](../obd-ii/index.md) guide, which goes into more details about
+at our [OBD-II introduction](/cloud/obd-ii/index.md) guide, which goes into more details about
 that.
 :::
 
@@ -83,7 +83,7 @@ The most noticeable element is the hash sign (`#`). This sign separates the PID'
 PID's body. The header in this case is `7DF`. Next, the first byte of the PID body shows the data
 length, in this case, we only have two bytes that need to be read, so the body length is `02`. Next,
 the mode is `01` and the code is `0C`. These two values are predefined by the OBD-II standard. More
-detailed information can be found in [this guide](../obd-ii/create_pid_loggers.md).
+detailed information can be found in [this guide](/cloud/obd-ii/create_pid_loggers.md).
 
 Now, let's shift our focus on the next task - we need to create the PID in the system. Firstly, we
 will need to go back to our own library and find the '*+ Create*' button (which should be located
@@ -144,7 +144,7 @@ called '*Community Sharing*'. You need to select (tick) the '*Share with communi
 ## Creating CAN Messages
 
 Let's try to also create a CAN message in our Library. It is a bit different comparing it to
-creating a PID because, as it is mentioned in the [OBD-II introduction guide](../obd-ii/index.md),
+creating a PID because, as it is mentioned in the [OBD-II introduction guide](/cloud/obd-ii/index.md),
 PIDs are a simple request sent on the CAN bus, that the vehicle accepts and then returns data
 specific for the PID requested. CAN messages, on the other hand, are continuously broadcasted on
 the CAN bus and do not require any requests to be made. However, to be able to make any sense of
