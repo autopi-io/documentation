@@ -3,7 +3,6 @@ id: keyfob-hat-install
 title: Keyfob HAT Install
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import SideBySide from '@site/src/components/SideBySide';
 
 :::caution Before proceeding with the install
 The keyless entry solution described here only works with the AutoPi TMU CM4 and newer editions

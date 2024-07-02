@@ -3,7 +3,6 @@ id: keyfob-hat-pinout
 title: Keyfob HAT Pinout
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import SideBySide from '@site/src/components/SideBySide';
 
 :::note
 The keyless entry solution described here only works with the AutoPi TMU CM4 and newer editions
