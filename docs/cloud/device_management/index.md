@@ -17,3 +17,7 @@ customers keep their devices up to date.
 Within the overview, you can see how many of your devices are currently updated,
 how many have failed to update, and how many are waiting for updates.
 
+Selecting a device allows you to view all of thhe details and manage them individually.
+
+![Device management device](/img/cloud/device_management/device_management_device_overview.png)
+
