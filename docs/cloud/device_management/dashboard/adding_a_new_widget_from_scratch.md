@@ -8,9 +8,9 @@ over the steps of adding a new widget based on data you discovered from your OBD
 depend on data from your vehicle. So, lets get an overview of how data is retrieved from your
 vehicle and added to your widgets.
 
-![Create widget steps](/img/cloud/fleet/dashboard/adding_a_new_widget_from_scratch/create_widget_steps.jpeg) 
+![Create widget steps](/img/cloud/device_management/dashboard/adding_a_new_widget_from_scratch/create_widget_steps.jpeg) 
 
-Creating a new widget consists of the 3 steps shown above. Let go over them.
+Creating a new widget consists of the 3 steps shown above. Lets go over them.
 
 ## Library - Discover PID's
 
@@ -26,15 +26,15 @@ Since you can only create loggers for commands that are located in your own libr
 is important. You will need to add commands from the community library to your own to use them.
 :::
 
-![Add command](/img/cloud/fleet/dashboard/adding_a_new_widget_from_scratch/add_command.jpeg) 
+![Add command](/img/cloud/device_management/dashboard/adding_a_new_widget_from_scratch/add_command.jpeg) 
 
 ## Loggers - What Should be Logged
 
 Now that you have found out what should be logged, you need to setup the device to log it. This is
-done under the Loggers section (Car Explorer > Loggers). To create a new logger, just press the
+done under the Loggers section (Devices > select device > Loggers). To create a new logger, just press the
 "Create" button and you will get this screen:
 
-![Create logger](/img/cloud/fleet/dashboard/adding_a_new_widget_from_scratch/create_logger.jpeg) 
+![Create logger](/img/cloud/device_management/dashboard/adding_a_new_widget_from_scratch/create_logger.jpeg) 
 
 From the PID list we simply select the PID you want to start logging. The list contains all the
 PID located in your library and only those you've moved to your library. Secondly you enter the
@@ -50,7 +50,7 @@ do that on the dashboard using widgets.
 Go to the dashboard and press the "Add widget" button. Then select one of the custom widgets, as
 you are creating a new widget. 
 
-![Create widget](/img/cloud/fleet/dashboard/adding_a_new_widget_from_scratch/create_widget.jpeg) 
+![Create widget](/img/cloud/device_management/dashboard/adding_a_new_widget_from_scratch/create_widget.jpeg) 
 
 Give your new widget a title and select the type of visualization you want. The "Field" contains
 the data you want to visualize. The "Field" is the name of the Logger that you created in the

@@ -17,7 +17,22 @@ customers keep their devices up to date.
 Within the overview, you can see how many of your devices are currently updated,
 how many have failed to update, and how many are waiting for updates.
 
-Selecting a device allows you to view all of thhe details and manage them individually.
+## Device List
+In this view, you have access to a list of all your devices, including their names, statuses, unit IDs, types, last communication timestamps, and update statuses. 
+You can customize this view using the 'Edit Columns' feature, allowing you to include other essential identifying factors like alerts or VIN numbers.
+For a faster search of your desired device, use the 'Search for Vehicle' feature at the top of the page to filter your view based on specific criteria. 
+For more detailed information about a particular device, simply click on the chosen device.
+
+![Device management device](/img/cloud/device_management/device_management_device_list.png)
+
+## Device Overview
+Once you have selected a device for viewing or editing, you will be directed to a dedicated page for that specific device. 
+At the top of the page, you will find the device's name, its most recent activity timestamp, and the device it is assigned to. 
+You can edit this information in the 'Settings' located on the right side of the page. 
+
+On this page you can see a concise summary of essential information about your device. 
+This includes details like its last communication, installed software version, and device specifications. 
+You will also find information about the vehicle to which the device is connected, including its CAN bus, make, model, year and engine.
 
 ![Device management device](/img/cloud/device_management/device_management_device_overview.png)
 

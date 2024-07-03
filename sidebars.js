@@ -75,14 +75,6 @@ module.exports = {
             "cloud/fleet/fleet-overview",
             {
               "items": [
-                "cloud/fleet/dashboard/dashboard-intro",
-                "cloud/fleet/dashboard/adding-a-new-widget-from-scratch",
-              ],
-              "label": "Dashboard",
-              "type": "category"
-            },
-            {
-              "items": [
                 "cloud/fleet/trips/introduction",
                 "cloud/fleet/trips/automatic-exports"
               ],
@@ -109,6 +101,14 @@ module.exports = {
         {
           "items": [
             "cloud/device_management/device-management-intro",
+            {
+              "items": [
+                "cloud/device_management/dashboard/dashboard-intro",
+                "cloud/device_management/dashboard/adding-a-new-widget-from-scratch",
+              ],
+              "label": "Dashboard",
+              "type": "category"
+            },
             {
               "items": [
                 "cloud/device_management/events/cloud-events-intro",
