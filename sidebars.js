@@ -84,9 +84,8 @@ module.exports = {
             "cloud/fleet/geofences",
             {
               "items": [
-                "cloud/fleet/triggers/fleet-wakeup",
-                "cloud/fleet/triggers/cloud-triggers",
                 "cloud/fleet/triggers/a-guide-to-triggers",
+                "cloud/fleet/triggers/fleet-wakeup",
               ],
               "label": "Triggers",
               "type": "category"

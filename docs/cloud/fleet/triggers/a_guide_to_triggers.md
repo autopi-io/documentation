@@ -3,11 +3,16 @@ id: a-guide-to-triggers
 title: A Guide to Triggers
 ---
 
-The possibilities are endless with the AutoPi device. This guide will be introducing and explaining how to use, create and edit
-triggers with your device. Triggers will allow you to get notifications both based on events from the device, but also all the
-various data points, that are logged from the car.
+This guide will be introducing and explaining how to use, create and edit triggers with your device. 
+Triggers empower you to receive notifications based on events from your device, as well as the various data points logged from your vehicle. 
+triggers offer you flexibility in managing your notifications, which can be send via email or a webhook request.
 
-![intro_pic](/img/cloud/fleet/triggers/a_guide_to_triggers/intro_pic.png) 
+![intro_pic](/img/cloud/fleet/triggers/a_guide_to_triggers/triggers_example.png) 
+
+_Webhooks_ are supported so you can integrate with almost any service or system. Popular examples are:
+
+  - [Slack](https://slack.com)
+  - [IFTFT](https://ifttt.com)
 
 ## What are Triggers?
 
@@ -231,6 +236,10 @@ Payload:
 **Trigger IFTTT applet via webhook**  
 Address: Find on https://ifttt.com/services/maker_webhooks/settings  
 Payload: optional and custom based on the IFTTT applet.  
+
+:::tip
+Like any AutoPi cloud functionality, triggers can be managed programmatically through the AutoPi REST API. For more information see: [API Documentation](https://api.autopi.io/#automation)
+:::
 
 ## Discussion
 If you'd like to discuss this topic with us or other fellow community members, you can do so on our community page dedicated
