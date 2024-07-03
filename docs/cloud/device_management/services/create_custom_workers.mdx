@@ -28,13 +28,11 @@ If on the other hand you would like to execute some AT command that isn't implem
 the ec2x_manager is the one you'd be looking at.
 
 For the purposes of this guide, we will create a worker inside the obd_manager that will be
-fetching some data. We will navigate to the services page (Advanced > Services) and select the
+fetching some data. We will navigate to the services page (Select device > Services) and select the
 obd_manager entry on the screen.
 
 The new page that opens up is the home page for the obd_manager where all of its workers reside.
 We will create a new worker now. Click on the '+ Create' button to open up the creation window.
-
-![Create button](/img/cloud/device_management/services/create_custom_workers/create_button.png) 
 
 You'll be presented with the following window:
 
@@ -137,7 +135,7 @@ The last thing you need to do is to hit Save and let the device sync up with the
 a service restart, the device should be executing your new service worker.
 
 ### Hooks
-You can create your own custom hooks by creating a new custom module (Advanced > Custom Code) with
+You can create your own custom hooks by creating a new custom module (Select device > Custom Code) with
 an execution type, but you have to register them to each individual service through the Hooks tab.
 Each hook needs to have this specific signature:
 
