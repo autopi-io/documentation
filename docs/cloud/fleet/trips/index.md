@@ -3,9 +3,17 @@ id: introduction
 title: Introduction
 ---
 
-Trips are automatically detected based on the events sent from the device, by default the [engine events](/cloud/device_management/events/vehicle.md#engine-events) are used. 
+The Trips section provides in-depth information about the vehicle's trips. 
+Trips are automatically detected based on the events sent from the device, by default the 
+[engine events](/cloud/device_management/events/vehicle.md#engine-events) are used, these can be customized in the 
+[advanced settings](/cloud/device_management/advanced_settings/TMU/trip.md#event).
 
-It is fully customizeable what events trigger a new trip to be created and it can be changed in the [advanced settings](/cloud/device_management/advanced_settings/TMU/trip.md#event).
+This will display the trip route on a map along with the starting and ending addresses, duration, and distance travelled. 
+Additionally, you can review events that occurred during each trip, such as 'engine running/stopped' and 'position moving/standstill'
+and filter trips based on the desired date range. 
+You also have the option to categorize trips as either personal or business and, if necessary, export trip data." 
+
+![Trip example](/img/cloud/fleet/trips/intro/trip_demo_example_1.png)
 
 :::tip
 You can check the events page on my.autopi.io to see all events logged from your device. When troubleshooting it is one of the first places to check if you are unsure why something happened. By looking at the events you can usually get a really good idea about why the device did something.
