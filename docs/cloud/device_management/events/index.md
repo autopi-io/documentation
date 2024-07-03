@@ -3,17 +3,21 @@ id: cloud-events-intro
 title: Introduction
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+In the Events section, you will find records of specific state changes or
+conditions encountered by the device. The system running on the device is capable of
+monitoring and responding to these events, performing additional actions when they
+occur. Each Event includes a timestamp, a tag, and additional data fields.
 
-An event describes a specific state change or condition encountered on the device.
-The system running on the device may listen and respond to events and perform additional actions when they occur. Events are also transferred to the cloud where they can be used in triggers, historic logging etc.
+Events play a crucial role in setting up triggers and are also available for
+historical reference. Events are categorized into two areas: 'System' and 'Vehicle'.
+In the Device Management section of the platform, you can access both System and
+Vehicle events. However, in the Fleet Management section, you will find only Vehicle
+Events.
 
-All events are divided into two top level areas:
+For detailed information about Events and their settings, please take a look at the documentation below:
 
   - [System](system.md)
   - [Vehicle](vehicle.md)
 
-Each event consist of a timestamp, a tag and some additional data fields.
-
-![AutoPi Cloud Events](/img/cloud/device_management/events/events.jpg)
+![AutoPi Cloud Events](/img/cloud/device_management/events/intro/events_example.png)
 
