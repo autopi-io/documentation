@@ -108,6 +108,7 @@ module.exports = {
         },
         {
           "items": [
+            "cloud/device_management/device-management-intro",
             {
               "items": [
                 "cloud/device_management/events/cloud-events-intro",
