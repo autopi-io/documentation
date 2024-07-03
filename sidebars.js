@@ -29,6 +29,7 @@ module.exports = {
         },
         {
           "items": [
+            "getting_started/electric_vehicles/electric-vehicles-intro",
             "getting_started/electric_vehicles/power-cycle-for-electric-vehicles",
           ],
           "label": "Electric Vehicles",
