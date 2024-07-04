@@ -28,7 +28,7 @@ To override a default engine, like the obd_manager from a template, you can simp
 ### Triggers and Jobs
 Triggers and Jobs are created the same way for templates as they are for normal devices.
 
-More info about [Jobs](/cloud/device_management/jobs.md) and [Triggers](cloud/fleet/triggers/triggers.md)
+More info about [Jobs](/cloud/device_management/jobs.md) and [Triggers](/cloud/fleet/triggers/a_guide_to_triggers.md)
 
 ### Loggers
 Loggers are created similarly to how they are for regular devices. They are a little different since creating loggers on a template will create buses
