@@ -1,6 +1,6 @@
 ---
 id: using-gpio-and-hdmi-with-the-gen-2
-title: Using GPIO and HDMI with the Gen 2 AutoPi
+title: Using GPIO and HDMI
 ---
 
 This is a step-by-step guide on how to access the HDMI on your dongle. 

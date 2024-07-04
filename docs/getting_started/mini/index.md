@@ -1,6 +1,6 @@
 ---
 id: mini-guides-intro
-title: Getting Started With the Mini
+title: Getting Started
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

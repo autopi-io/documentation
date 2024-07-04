@@ -1,6 +1,6 @@
 ---
 id: j1939-getting-started-guide
-title: J1939 Getting Started Guide
+title: Getting Started
 ---
 
 This guide will show how to retrieve data from a vehicle supporting the J1939 protocol. To read more background information about J1939 please see the blog post: [J1939 Explained](https://www.autopi.io/blog/j1939-explained/)

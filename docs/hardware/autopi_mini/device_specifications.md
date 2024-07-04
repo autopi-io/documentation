@@ -1,6 +1,6 @@
 ---
 id: device_specifications
-title: Mini Specifications
+title: Specifications
 ---
 
 Download the official datasheet here: <br/>

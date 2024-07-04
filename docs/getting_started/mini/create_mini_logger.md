@@ -1,6 +1,6 @@
 ---
 id: create-mini-loggers
-title: Create Mini Loggers
+title: Create Loggers
 ---
 
 Compared to other AutoPi devices, the Mini only supports a predefined list of PID and CAN loggers (It also support listening on some system Autopi Mini system changes, like the current sleep condition).
