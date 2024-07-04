@@ -22,7 +22,6 @@ module.exports = {
         {
           "items": [
             "getting_started/heavy_duty_vehicles/j1939-getting-started-guide",
-            "getting_started/heavy_duty_vehicles/using-the-autopi-with-an-external-power-supply"
           ],
           "label": "Heavy Duty Vehicles",
           "type": "category"
@@ -62,6 +61,7 @@ module.exports = {
             "getting_started/developer_guides/setting-up-a-device-with-verizon-wireless",
             "getting_started/developer_guides/autopi-logs",
             "getting_started/developer_guides/setting-up-docker",
+            "getting_started/developer_guides/using-the-autopi-with-an-external-power-supply",
           ],
           "label": "Developer Guides",
           "type": "category"

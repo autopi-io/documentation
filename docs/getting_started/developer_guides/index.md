@@ -20,3 +20,7 @@ By delving into these and more topics, we hope that you will be equipped to unlo
 potential of the AutoPi solution. As always let us know if you have any questions or feedback
 at <a href="mailto:support@autopi.io">support@autopi.io</a>.
 
+<p align="center">
+    <img src="/img/getting_started/developer_guides/intro/developer_guide_graphic.jpg" alt="Developer guide graphic" width="60%" />
+</p>
+
