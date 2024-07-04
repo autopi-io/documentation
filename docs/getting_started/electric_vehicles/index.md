@@ -16,3 +16,7 @@ Please follow the guides below to get started:
 
 ![Electric vehicle graphic](/img/getting_started/electric_vehicles/intro/electric_vehicle_graphic.png)
 
+### Customer Support
+If you are facing issues or have questions, please make sure to check our
+documentation and guides available. If you can’t find your answers here, do not
+hesitate to reach out to us at <a href="mailto:support@autopi.io">support@autopi.io</a>
