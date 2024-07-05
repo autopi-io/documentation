@@ -255,6 +255,26 @@ module.exports = {
             to: '/getting_started/developer_guides/using-the-autopi-with-an-external-power-supply/',
             from: '/guides/using-the-autopi-with-an-external-power-supply/',
           },
+          {
+            to: '/cloud/fleet/geofences/',
+            from: '/cloud/geofences/',
+          },
+          {
+            to: '/cloud/fleet/triggers/a-guide-to-triggers/',
+            from: '/guides/a-guide-to-triggers/',
+          },
+          {
+            to: '/cloud/fleet/triggers/fleet-wakeup/',
+            from: '/cloud/fleet/fleet-wakeup/',
+          },
+          {
+            to: '/cloud/device_management/dashboard/adding-a-new-widget-from-scratch/',
+            from: '/guides/adding-a-new-widget-from-scratch/',
+          },
+          {
+            to: '/cloud/device_management/cloud-jobs/',
+            from: '/cloud/cloud-jobs/',
+          },
         ],
         createRedirects(existingPath) {
           if (existingPath.includes('/getting_started/mini/')) {
@@ -266,6 +286,21 @@ module.exports = {
             return [
               existingPath.replace('/getting_started/api/', '/cloud/api/'),
               existingPath.replace('/getting_started/api/', '/guides/api/'),
+            ];
+          }
+          if (existingPath.includes('/cloud/fleet/trips/')) {
+            return [
+              existingPath.replace('/cloud/fleet/trips/', '/cloud/trips/'),
+            ];
+          }
+          if (existingPath.includes('/cloud/device_management/events/')) {
+            return [
+              existingPath.replace('/cloud/device_management/events/', '/cloud/events/'),
+            ];
+          }
+          if (existingPath.includes('/cloud/device_management/services/')) {
+            return [
+              existingPath.replace('/cloud/device_management/services/', '/guides/services/'),
             ];
           }
           return undefined; 
