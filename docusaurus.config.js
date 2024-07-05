@@ -177,9 +177,99 @@ module.exports = {
         redirects: [
           {
             to: '/getting_started/cm4/guides-intro/',
-            from: ['/guides/guides-intro/'],
+            from: '/guides/guides-intro/',
+          },
+          {
+            to: '/getting_started/cm4/4g-internet-setup-troubleshooting/',
+            from: '/guides/4g-internet-setup-troubleshooting/',
+          },
+          {
+            to: '/getting_started/heavy_duty_vehicles/j1939-getting-started-guide/',
+            from: '/guides/j1939-getting-started-guide/',
+          },
+          {
+            to: '/getting_started/electric_vehicles/power-cycle-for-electric-vehicles/',
+            from: '/guides/power-cycle-for-electric-vehicles/',
+          },
+          {
+            to: '/getting_started/api/change-device-settings-from-api/',
+            from: '/guides/api/how-to-change-your-devices-settings-from-api/',
+          },
+          {
+            to: '/getting_started/api/export-data-from-api/',
+            from: '/guides/api/how-to-export-data-from-api/',
+          },
+          {
+            to: '/getting_started/developer_guides/autopi-logs/',
+            from: '/guides/autopi-logs/',
+          },
+          {
+            to: '/getting_started/developer_guides/configuring-mqtt/',
+            from: '/guides/configuring-mqtt/',
+          },
+          {
+            to: '/getting_started/developer_guides/enabling_bluetooth_on_TMU_devices/',
+            from: '/guides/enabling_bluetooth_on_TMU_devices/',
+          },
+          {
+            to: '/getting_started/developer_guides/how-to-ssh-to-your-device/',
+            from: '/guides/how-to-ssh-to-your-device/',
+          },
+          {
+            to: '/getting_started/developer_guides/installing-a-camera-on-your-autopi/',
+            from: '/guides/installing-a-camera-on-your-autopi/',
+          },
+          {
+            to: '/getting_started/developer_guides/jumpers/',
+            from: '/guides/jumpers/',
+          },
+          {
+            to: '/getting_started/developer_guides/local-development-workflow/',
+            from: '/guides/local-development-workflow/',
+          },
+          {
+            to: '/getting_started/developer_guides/reflashing-your-device/',
+            from: '/guides/reflashing-your-device/',
+          },
+          {
+            to: '/getting_started/developer_guides/remotely-waking-up-your-device/',
+            from: '/guides/remotely-waking-up-your-device/',
+          },
+          {
+            to: '/getting_started/developer_guides/rfid-integartion/',
+            from: '/guides/rfid-integartion/',
+          },
+          {
+            to: '/getting_started/developer_guides/setting-up-docker/',
+            from: '/guides/setting-up-docker/',
+          },
+          {
+            to: '/getting_started/developer_guides/setting-up-a-device-with-verizon-wireless/',
+            from: '/guides/setting-up-our-device-with-verizon-wireless/',
+          },
+          {
+            to: '/getting_started/developer_guides/upgrading-your-raspberry-pi/',
+            from: '/guides/upgrading-your-raspberry-pi/',
+          },
+          {
+            to: '/getting_started/developer_guides/using-the-autopi-with-an-external-power-supply/',
+            from: '/guides/using-the-autopi-with-an-external-power-supply/',
           },
         ],
+        createRedirects(existingPath) {
+          if (existingPath.includes('/getting_started/mini/')) {
+            return [
+              existingPath.replace('/getting_started/mini/', '/guides/Mini/'),
+            ];
+          }
+          if (existingPath.includes('/getting_started/api/')) {
+            return [
+              existingPath.replace('/getting_started/api/', '/cloud/api/'),
+              existingPath.replace('/getting_started/api/', '/guides/api/'),
+            ];
+          }
+          return undefined; 
+        },
       },
     ]
   ]
