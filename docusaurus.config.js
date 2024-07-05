@@ -171,5 +171,16 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: '/getting_started/cm4/guides-intro/',
+            from: ['/guides/guides-intro/'],
+          },
+        ],
+      },
+    ]
   ]
 };
