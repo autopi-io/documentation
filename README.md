@@ -66,6 +66,31 @@ There are a few conventions that should be followed when working with the docume
   1. Lines shouldn't be longer than 120 characters
   2. Indented lines are 2 spaces
 
+### Changing Docs Structure
+
+To ensure backwards compatibility, all changes to the path of any existing docs, needs to redirect the old URL to the new.
+This is done in ```docusaurus.config.js``` under plugin-client-redirects, here the old links can be mapped to the new.
+Below is an example:
+
+```
+{
+    to: '/getting_started/cm4/guides-intro/', # New path
+    from: '/guides/guides-intro/', # Old path
+},
+```
+For multiple redirects to the same URL arrays can be utilised as seen in the documentation [here](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-client-redirects#ex-config).
+
+If entire subdirectories are moved, the path can be sustituted for the whole directory. In the example below all URLs with the '/guides/obd-ii/' URL
+will be changed to '/cloud/obd-ii/' and avoid changing it for individually for each of the files in the directory.
+
+```
+if (existingPath.includes('/cloud/obd-ii/')) {
+    return [
+        existingPath.replace('/cloud/obd-ii/', '/guides/obd-ii/'),
+    ];
+}
+```
+
 ## Deployment
 
 ```console
