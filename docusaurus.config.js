@@ -295,6 +295,10 @@ module.exports = {
             to: '/cloud/obd_library/community_library/',
             from: '/guides/obd-ii/how-to-use-the-car-explorer-feature/',
           },
+          {
+            to: '/hardware/accessories/doip-install/',
+            from: '/hardware/accessories/doip-hat/doip-install/',
+          },
         ],
         createRedirects(existingPath) {
           if (existingPath.includes('/getting_started/mini/')) {
@@ -336,6 +340,21 @@ module.exports = {
           if (existingPath.includes('/cloud/obd-ii/')) {
             return [
               existingPath.replace('/cloud/obd-ii/', '/guides/obd-ii/'),
+            ];
+          }
+          if (existingPath.includes('/hardware/legacy_devices/autopi_dongle/')) {
+            return [
+              existingPath.replace('/hardware/legacy_devices/autopi_dongle/', '/hardware/autopi_dongle/'),
+            ];
+          }
+          if (existingPath.includes('/hardware/legacy_devices/autopi_dongle_gen3/')) {
+            return [
+              existingPath.replace('/hardware/legacy_devices/autopi_dongle_gen3/', '/hardware/autopi_dongle_gen3/'),
+            ];
+          }
+          if (existingPath.includes('/hardware/legacy_devices/autopi_tmu_can_fd/')) {
+            return [
+              existingPath.replace('/hardware/legacy_devices/autopi_tmu_can_fd/', '/hardware/autopi_tmu_can_fd/'),
             ];
           }
           return undefined; 
