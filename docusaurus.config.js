@@ -275,6 +275,26 @@ module.exports = {
             to: '/cloud/device_management/cloud-jobs/',
             from: '/cloud/cloud-jobs/',
           },
+          {
+            to: '/cloud/device_management/software-updates/',
+            from: '/cloud/user-manual/software-updates/',
+          },
+          {
+            to: '/cloud/device_management/move-to-dedicated-environment/',
+            from: '/guides/business/move-to-dedicated-environment/',
+          },
+          {
+            to: '/cloud/obd-ii/automatic-obd-logger-pausing/',
+            from: '/guides/automatic-obd-logger-pausing/',
+          },
+          {
+            to: '/cloud/obd_library/car-explorer-library-manual/',
+            from: '/cloud/user-manual/car-explorer/car-explorer-library-manual/',
+          },
+          {
+            to: '/cloud/obd_library/community_library/',
+            from: '/guides/obd-ii/how-to-use-the-car-explorer-feature/',
+          },
         ],
         createRedirects(existingPath) {
           if (existingPath.includes('/getting_started/mini/')) {
@@ -301,6 +321,21 @@ module.exports = {
           if (existingPath.includes('/cloud/device_management/services/')) {
             return [
               existingPath.replace('/cloud/device_management/services/', '/guides/services/'),
+            ];
+          }
+          if (existingPath.includes('/cloud/device_management/advanced_settings/TMU/')) {
+            return [
+              existingPath.replace('/cloud/device_management/advanced_settings/TMU/', '/cloud/configuration/TMU/'),
+            ];
+          }
+          if (existingPath.includes('/cloud/device_management/advanced_settings/mini/')) {
+            return [
+              existingPath.replace('/cloud/device_management/advanced_settings/mini/', '/cloud/configuration/mini/'),
+            ];
+          }
+          if (existingPath.includes('/cloud/obd-ii/')) {
+            return [
+              existingPath.replace('/cloud/obd-ii/', '/guides/obd-ii/'),
             ];
           }
           return undefined; 
