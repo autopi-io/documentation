@@ -171,5 +171,195 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: '/getting_started/cm4/guides-intro/',
+            from: '/guides/guides-intro/',
+          },
+          {
+            to: '/getting_started/cm4/4g-internet-setup-troubleshooting/',
+            from: '/guides/4g-internet-setup-troubleshooting/',
+          },
+          {
+            to: '/getting_started/heavy_duty_vehicles/j1939-getting-started-guide/',
+            from: '/guides/j1939-getting-started-guide/',
+          },
+          {
+            to: '/getting_started/electric_vehicles/power-cycle-for-electric-vehicles/',
+            from: '/guides/power-cycle-for-electric-vehicles/',
+          },
+          {
+            to: '/getting_started/api/change-device-settings-from-api/',
+            from: '/guides/api/how-to-change-your-devices-settings-from-api/',
+          },
+          {
+            to: '/getting_started/api/export-data-from-api/',
+            from: '/guides/api/how-to-export-data-from-api/',
+          },
+          {
+            to: '/getting_started/developer_guides/autopi-logs/',
+            from: '/guides/autopi-logs/',
+          },
+          {
+            to: '/getting_started/developer_guides/configuring-mqtt/',
+            from: '/guides/configuring-mqtt/',
+          },
+          {
+            to: '/getting_started/developer_guides/enabling_bluetooth_on_TMU_devices/',
+            from: '/guides/enabling_bluetooth_on_TMU_devices/',
+          },
+          {
+            to: '/getting_started/developer_guides/how-to-ssh-to-your-device/',
+            from: '/guides/how-to-ssh-to-your-device/',
+          },
+          {
+            to: '/getting_started/developer_guides/installing-a-camera-on-your-autopi/',
+            from: '/guides/installing-a-camera-on-your-autopi/',
+          },
+          {
+            to: '/getting_started/developer_guides/jumpers/',
+            from: '/guides/jumpers/',
+          },
+          {
+            to: '/getting_started/developer_guides/local-development-workflow/',
+            from: '/guides/local-development-workflow/',
+          },
+          {
+            to: '/getting_started/developer_guides/reflashing-your-device/',
+            from: '/guides/reflashing-your-device/',
+          },
+          {
+            to: '/getting_started/developer_guides/remotely-waking-up-your-device/',
+            from: '/guides/remotely-waking-up-your-device/',
+          },
+          {
+            to: '/getting_started/developer_guides/rfid-integartion/',
+            from: '/guides/rfid-integartion/',
+          },
+          {
+            to: '/getting_started/developer_guides/setting-up-docker/',
+            from: '/guides/setting-up-docker/',
+          },
+          {
+            to: '/getting_started/developer_guides/setting-up-a-device-with-verizon-wireless/',
+            from: '/guides/setting-up-our-device-with-verizon-wireless/',
+          },
+          {
+            to: '/getting_started/developer_guides/upgrading-your-raspberry-pi/',
+            from: '/guides/upgrading-your-raspberry-pi/',
+          },
+          {
+            to: '/getting_started/developer_guides/using-the-autopi-with-an-external-power-supply/',
+            from: '/guides/using-the-autopi-with-an-external-power-supply/',
+          },
+          {
+            to: '/cloud/fleet/geofences/',
+            from: '/cloud/geofences/',
+          },
+          {
+            to: '/cloud/fleet/triggers/a-guide-to-triggers/',
+            from: '/guides/a-guide-to-triggers/',
+          },
+          {
+            to: '/cloud/fleet/triggers/fleet-wakeup/',
+            from: '/cloud/fleet/fleet-wakeup/',
+          },
+          {
+            to: '/cloud/device_management/dashboard/adding-a-new-widget-from-scratch/',
+            from: '/guides/adding-a-new-widget-from-scratch/',
+          },
+          {
+            to: '/cloud/device_management/cloud-jobs/',
+            from: '/cloud/cloud-jobs/',
+          },
+          {
+            to: '/cloud/device_management/software-updates/',
+            from: '/cloud/user-manual/software-updates/',
+          },
+          {
+            to: '/cloud/device_management/move-to-dedicated-environment/',
+            from: '/guides/business/move-to-dedicated-environment/',
+          },
+          {
+            to: '/cloud/obd-ii/automatic-obd-logger-pausing/',
+            from: '/guides/automatic-obd-logger-pausing/',
+          },
+          {
+            to: '/cloud/obd_library/car-explorer-library-manual/',
+            from: '/cloud/user-manual/car-explorer/car-explorer-library-manual/',
+          },
+          {
+            to: '/cloud/obd_library/community_library/',
+            from: '/guides/obd-ii/how-to-use-the-car-explorer-feature/',
+          },
+          {
+            to: '/hardware/accessories/doip-install/',
+            from: '/hardware/accessories/doip-hat/doip-install/',
+          },
+        ],
+        createRedirects(existingPath) {
+          if (existingPath.includes('/getting_started/mini/')) {
+            return [
+              existingPath.replace('/getting_started/mini/', '/guides/Mini/'),
+            ];
+          }
+          if (existingPath.includes('/getting_started/api/')) {
+            return [
+              existingPath.replace('/getting_started/api/', '/cloud/api/'),
+              existingPath.replace('/getting_started/api/', '/guides/api/'),
+            ];
+          }
+          if (existingPath.includes('/cloud/fleet/trips/')) {
+            return [
+              existingPath.replace('/cloud/fleet/trips/', '/cloud/trips/'),
+            ];
+          }
+          if (existingPath.includes('/cloud/device_management/events/')) {
+            return [
+              existingPath.replace('/cloud/device_management/events/', '/cloud/events/'),
+            ];
+          }
+          if (existingPath.includes('/cloud/device_management/services/')) {
+            return [
+              existingPath.replace('/cloud/device_management/services/', '/guides/services/'),
+            ];
+          }
+          if (existingPath.includes('/cloud/device_management/advanced_settings/TMU/')) {
+            return [
+              existingPath.replace('/cloud/device_management/advanced_settings/TMU/', '/cloud/configuration/TMU/'),
+            ];
+          }
+          if (existingPath.includes('/cloud/device_management/advanced_settings/mini/')) {
+            return [
+              existingPath.replace('/cloud/device_management/advanced_settings/mini/', '/cloud/configuration/mini/'),
+            ];
+          }
+          if (existingPath.includes('/cloud/obd-ii/')) {
+            return [
+              existingPath.replace('/cloud/obd-ii/', '/guides/obd-ii/'),
+            ];
+          }
+          if (existingPath.includes('/hardware/legacy_devices/autopi_dongle/')) {
+            return [
+              existingPath.replace('/hardware/legacy_devices/autopi_dongle/', '/hardware/autopi_dongle/'),
+            ];
+          }
+          if (existingPath.includes('/hardware/legacy_devices/autopi_dongle_gen3/')) {
+            return [
+              existingPath.replace('/hardware/legacy_devices/autopi_dongle_gen3/', '/hardware/autopi_dongle_gen3/'),
+            ];
+          }
+          if (existingPath.includes('/hardware/legacy_devices/autopi_tmu_can_fd/')) {
+            return [
+              existingPath.replace('/hardware/legacy_devices/autopi_tmu_can_fd/', '/hardware/autopi_tmu_can_fd/'),
+            ];
+          }
+          return undefined; 
+        },
+      },
+    ]
   ]
 };

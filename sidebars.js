@@ -129,13 +129,6 @@ module.exports = {
               "label": "Services",
               "type": "category"
             },
-            {
-              "items": [
-              
-              ],
-              "label": "Services",
-              "type": "category"
-            },
             "cloud/device_management/cloud-jobs",
             {
               "items": [
