@@ -8,7 +8,7 @@ over the steps of adding a new widget based on data you discovered from your OBD
 depend on data from your vehicle. So, lets get an overview of how data is retrieved from your
 vehicle and added to your widgets.
 
-![Create widget steps](/img/cloud/device_management/dashboard/adding_a_new_widget_from_scratch/create_widget_steps.jpeg) 
+![Create widget steps](/img/cloud/device_management/dashboard/adding_a_new_widget_from_scratch/create_widget_steps.png)
 
 Creating a new widget consists of the 3 steps shown above. Lets go over them.
 
@@ -16,7 +16,8 @@ Creating a new widget consists of the 3 steps shown above. Lets go over them.
 
 Use the library to discover what data you want to log. The library consists of data automatically
 extracted from your vehicle, but also contains data created by other users. The library is divided
-into two parts - your own library and the community library. The community library contains all
+into two parts - your own [library](/cloud/obd_library/library.md) and the 
+[community library](/cloud/obd_library/community_library.mdx). The community library contains all
 commands globally available in the AutoPi system and your own library contains all the commands
 specifically releated to your vehicle. If you find commands in the global library that work for
 your vehicle, you can add them to your own library.
@@ -26,7 +27,7 @@ Since you can only create loggers for commands that are located in your own libr
 is important. You will need to add commands from the community library to your own to use them.
 :::
 
-![Add command](/img/cloud/device_management/dashboard/adding_a_new_widget_from_scratch/add_command.jpeg) 
+![Add command](/img/cloud/device_management/dashboard/adding_a_new_widget_from_scratch/add_command.jpeg)
 
 ## Loggers - What Should be Logged
 
