@@ -70,7 +70,7 @@ create for this template, you can choose to fill these fields using the bus that
 The process for creating templated PID loggers is very similar as for CAN loggers. Go to the template's `Loggers` tab, click `Create`, then `PID`. 
 You'll be presented with a window similar to this:
 
-![Logger buses](/img/cloud/fleet/templates/template_create_pid_logger.png)
+[Logger buses](/img/cloud/fleet/templates/template_create_pid_logger.png)
 
 Most of this is identical to what you'd see when [creating PID loggers for devices](/cloud/obd-ii/create_pid_loggers.md/#creating-the-logger), with
 the exception of Bus settings. Take a look at the [templated CAN loggers section](/cloud/fleet/templates.md/#templated-can-loggers) to get

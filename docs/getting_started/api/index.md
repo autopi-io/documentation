@@ -36,11 +36,10 @@ Authorization: APIToken YOUR_TOKEN
 
 You can **generate the new API Token** in the AutoPi [Cloud](https://my.autopi.io). Clicking on the in the *Account tab* in the side menu gets you to the *Account Page*.
 
-![account_showcase](/img/getting_started/api/api_intro/account_showcase.jpg) 
+On the *Account* Page you may see an API Tokens *tab* which gets you to the API Token creation part. 
+Here you are able to create a new API Token by giving it a name and there is an *option* to set an expiration date for the token if you need and clicking the *Create* button.
 
-On the *Account* Page you may see an API Tokens *tab* which gets you to the API Token creation part. Here you are able to create a new API Token by giving it a name and there is an *option* to set an expiration date for the token if you need and clicking the *Create* button.
-
-![account_page](/img/getting_started/api/api_intro/account_page.jpg) 
+![account_page](/img/getting_started/api/api_intro/account_overview.png)
 
 ### JWT Token
 

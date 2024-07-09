@@ -18,12 +18,12 @@ installed on your workstation. You can download the full NodeJS package from [he
 
 ## Set Device's Cloud API Url
 Firstly, we need to make sure that the device will connect to your own server. For this, we do have a very neat option that can
-be changed from the [AutoPi Cloud](https://my.autopi.io) website. You need to navigate to Advanced > Settings > Cloud API where
+be changed from the [AutoPi Cloud](https://my.autopi.io) website. You need to navigate to Devices > Select Device > Advance Settings > Cloud Storage where
 you will be able to see a screen like the following:
 
 ![cloud_api_uri](/img/getting_started/api/send_device_data_to_own_server/cloud_api_url.png) 
 
-The Url field on that page points to where the device should send data. By default, obviously, it points to AutoPi's servers. You need to point
+The Url field, under the Endpoint subsection, points to where the device should send data. By default, obviously, it points to AutoPi's servers. You need to point
 instead to a URL that is resolvable from your AutoPi device.
 
 ## Device Communication
