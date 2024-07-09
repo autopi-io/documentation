@@ -5,9 +5,7 @@ title: Community Library
 
 import { Discussion } from '/src/components/Discussion.jsx';
 
-![Community library overview](/img/cloud/obd_library/community_library/community_library_overview.png) 
-
-This guide will give an overview of the Car Explorer feature, which is a way to discover the
+This guide will give an overview of the OBD My Library feature, which is a way to discover the
 available PID's in your car, both hidden and public/default OBD-II, and sharing them with the
 community.
 
@@ -18,6 +16,8 @@ We will go over the following topics in this guide.
 * How to create (and share) proprietary PID's.
 * Troubleshooting if no PID's are reported from the device.
 
+![Community library overview](/img/cloud/obd_library/community_library/updated_overview.png) 
+
 ## How And When The Device Reports The Supported PID's
 When the device connects to the server, it will check the for the following:
 
@@ -27,10 +27,10 @@ When the device connects to the server, it will check the for the following:
 * That the engine has been started since the update. It will only be able to detect the supported
   commands when it is connected to the bus and the engine is running.
 
-You can see what busses are registered in Account > Vehicles > CAN Busses.
+You can see what busses are registered in Accounts > Devices > Select Device > Vehicles Editor > CAN Busses.
 
 Then the device will know to report the supported PID's. After the device has reported to the cloud
-with the supported PID's, they will show up in the "My Library" tab in the "Car Explorer" section.
+with the supported PID's, they will show up in the "My Library" tab in the "OBD Library" section.
 
 ![My library overview](/img/cloud/obd_library/community_library/my_library_overview.png) 
 
@@ -131,8 +131,8 @@ Min and max are also used when storing and displaying the data.
 **Bus**  
 To use a PID, you need to associate it to one of the busses on your vehicle. It may be as simple as
 associating it to the auto detected one, but you may also want to create a custom one. This can be
-done in the Account > Vehicles > CAN Busses. You don't have to associate the PID with a bus
-straight away.
+done in the Accounts > Devices > Select Device > Vehicles Editor > CAN Busses. You don't have to 
+associate the PID with a bus straight away.
 
 Now click save, and your new PID is created, and can be found in **My Library**.
 If you want to share the PID, it needs to be associated to at least one bus, when you have done
@@ -151,6 +151,6 @@ If your PID's aren't listed in **My Library**, check the following things.
 See [this guide](/getting_started/developer_guides/autopi_logs.md) if you are unsure how to get the logs from the device.
 
 <Discussion
-  title="How to use the 'Car Explorer' feature"
+  title="How to use the 'OBD Library' feature"
   url="https://community.autopi.io/t/how-to-use-the-car-explorer-feature/960"
 /> 

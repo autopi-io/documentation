@@ -7,7 +7,7 @@ In this page we go through the Library section of our Cloud. Below is a screensh
 Library that is already filled with some PIDs and CAN messages. Open the screenshot in a
 new tab to get a better overview of the whole page.
 
-![Full library screenshot](/img/cloud/obd_library/library/full-screenshot.jpg)
+![Full library screenshot](/img/cloud/obd_library/library/updated/library_overview.png)
 
 We will start off this guide by going through some of the basic actions that you can do in the
 library page, including a section on how to use the Community Library to find new PIDs and CAN
@@ -45,7 +45,7 @@ are a business customer, you won't see any of the community shared library on yo
 server.
 :::
 
-![Community library screenshot](/img/cloud/obd_library/library/community-library.jpg)
+![Community library screenshot](/img/cloud/obd_library/community_library/updated_overview.png)
 
 :::note
 There is a slight difference between the two types - *OBD-II PID* and *Proprietary PID*. Items that
@@ -351,11 +351,11 @@ what CAN messages they can send, the messages' signals and details about how to 
 section we are going to review how you can import these files in your Library, how to keep them up 
 to date, how to improve their readability and how you can share them with the rest of the community.
 
-1. Go to **Car Explorer** > **Library** and click on the Import button:
-  ![Import button](/img/cloud/obd_library/library/import-button-location.jpg) 
+1. Go to **OBD Library** > **My Library** and click on the Import button:
+  ![Import button](/img/cloud/obd_library/library/updated/library_import.png) 
 2. Select DBC from the dropdown menu that shows up and select the file from your filesystem.
 3. A list of the imported CAN signals will show up in your library.
-  ![Library view](/img/cloud/obd_library/library/library_view.png) 
+  ![Library view](/img/cloud/obd_library/library/updated/library_imported.png) 
 
 ## Adding Descriptions for Better Readability
 

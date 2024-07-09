@@ -9,7 +9,7 @@ In this guide, we will take a look on how we can create loggers for the AutoPi M
 
 ## Creating a Mini Logger
 Let's create a logger for your AutoPi Mini.
-Open up the Autopi Mini device view and head over to the loggers page.
+Open up the AutoPi Mini device view and head over to the loggers page.
 Here, you will see a 'Create' and a 'Restore default' button on the left-hand side.
 Clicking on the 'Create' button will open a new window, that looks like the following screenshot:
 
