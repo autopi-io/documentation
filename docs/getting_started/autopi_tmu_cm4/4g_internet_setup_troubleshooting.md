@@ -6,7 +6,7 @@ title: 4G Internet Setup Troubleshooting
 You are experiencing issues connecting to the internet, when connected to the WiFi hotspot on the AutoPi Dongle. 
 
 ### Prerequisites:
-Before following this guide, you must have completed the initial [setup guide](/getting_started/cm4/index.md).
+Before following this guide, you must have completed the initial [setup guide](/getting_started/autopi_tmu_cm4/index.md).
 
 ### Check SIM Card
 
@@ -23,7 +23,7 @@ In the terminal on the WiFi, check that the modem has been found. This can be do
 
 The output of the command should be similar to this:
 
-![lsusb](/img/getting_started/cm4/4g_internet_setup_troubleshooting/lsusb.jpg)
+![lsusb](/img/getting_started/autopi_tmu_cm4/4g_internet_setup_troubleshooting/lsusb.jpg)
 
 The important part to look for is the Modem. The ID will be different depending on which modem your device is equipped with:
 
@@ -111,7 +111,7 @@ The device contains a software manager, which ensure stable connection to the in
 
 The output should be similar what you can see in the image below:
 
-![qmistatus](/img/getting_started/cm4/4g_internet_setup_troubleshooting/qmistatus.jpg)
+![qmistatus](/img/getting_started/autopi_tmu_cm4/4g_internet_setup_troubleshooting/qmistatus.jpg)
 
 ### Further Checking of Network
 

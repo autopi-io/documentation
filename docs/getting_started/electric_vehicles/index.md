@@ -10,8 +10,8 @@ supported library of EVs can be found here: [supported EVs](https://www.autopi.i
 Getting started with AutpPi devices on EVs follow the same setup as Internal combustion engine vehicles.
 Please follow the guides below to get started:
 
-- AutoPi TMU CM4: [getting started guide](/getting_started/cm4/index.md).
-- AutoPi mini: [getting started guide](/getting_started/mini/index.md).
+- AutoPi TMU CM4: [getting started guide](/getting_started/autopi_tmu_cm4/index.md).
+- AutoPi mini: [getting started guide](/getting_started/autopi_mini/index.md).
 
 
 ![Electric vehicle graphic](/img/getting_started/electric_vehicles/intro/electric_vehicle_graphic.png)

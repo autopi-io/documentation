@@ -34,7 +34,7 @@ is fired when the vehicle's engine is started.
 
 ## Here is How to Start
 
-Once, you have received your AutoPi device, and you have registered it (click [here](/getting_started/cm4/index.md) to see
+Once, you have received your AutoPi device, and you have registered it (click [here](/getting_started/autopi_tmu_cm4/index.md) to see
 the getting started guide) and you are all set to go and can begin creating your own triggers.
 Let's get started with the guide.
 

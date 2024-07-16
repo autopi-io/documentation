@@ -5,16 +5,16 @@ module.exports = {
       "Getting Started": [
         {
           "items": [
-            "getting_started/cm4/guides-intro",
-            "getting_started/cm4/4g-internet-setup-troubleshooting",
+            "getting_started/autopi_tmu_cm4/guides-intro",
+            "getting_started/autopi_tmu_cm4/4g-internet-setup-troubleshooting",
           ],
           "label": "AutoPi TMU CM4",
           "type": "category"
         },
         {
           "items": [
-            "getting_started/mini/mini-guides-intro",
-            "getting_started/mini/create-mini-loggers"
+            "getting_started/autopi_mini/mini-guides-intro",
+            "getting_started/autopi_mini/create-mini-loggers"
           ],
           "label": "AutoPi Mini",
           "type": "category"
@@ -134,31 +134,31 @@ module.exports = {
               "items": [
                 {
                   "items": [
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-intro",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-accelerometer",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-alerts",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-audio",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-bluetooth",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-charging-session",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-cloud-storage",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-docker",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-key-fob",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-mqtt",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-obd",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-power",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-rfid",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-system",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-tracking",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-trip",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-update-release",
-                    "cloud/device_management/advanced_settings/TMU/cloud-config-wifi"
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-intro",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-accelerometer",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-alerts",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-audio",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-bluetooth",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-charging-session",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-cloud-storage",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-docker",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-key-fob",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-mqtt",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-obd",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-power",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-rfid",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-system",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-tracking",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-trip",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-update-release",
+                    "cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-wifi"
                   ],
                   "label": "AutoPi TMU CM4",
                   "type": "category"
                 },
                 {
                   "items": [
-                    "cloud/device_management/advanced_settings/mini/cloud-config-mini-intro"
+                    "cloud/device_management/advanced_settings/autopi_mini/cloud-config-mini-intro"
                   ],
                   "label": "AutoPi Mini",
                   "type": "category"

@@ -130,7 +130,7 @@ This step is required only if your company is using a dedicated environment. You
 ### 6. Setup the Device
 Next, you will need to have the device re-accepted in the AutoPi Cloud. To do
 so, you need to first have the device boot up and connect to the internet. If you're using an AutoPi-provided SIM card, 
-you must set the APN. See the **Setup APN** in the [Getting Started](/getting_started/cm4/index.md/#8-setup-apn) guide. After that, log in to
+you must set the APN. See the **Setup APN** in the [Getting Started](/getting_started/autopi_tmu_cm4/index.md/#8-setup-apn) guide. After that, log in to
 [my.autopi.io](https://my.autopi.io). You should immediately see a notification letting you know
 that the device's key isn't accepted.
 

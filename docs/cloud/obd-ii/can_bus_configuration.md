@@ -65,7 +65,7 @@ before checking for any of the further issues. Try running the following command
 cloud portal: `test.ping`. Note that just because you see some data in the dashboard, doesn't mean that 
 there's a good enough connection for commands to be received by the device, and for it to be able to send
 the command results back. If you get a response that looks something like the screenshot below, you may
-move on further. Otherwise, check out the [4G Troubleshooting Guide](/getting_started/cm4/4g_internet_setup_troubleshooting.md).
+move on further. Otherwise, check out the [4G Troubleshooting Guide](/getting_started/autopi_tmu_cm4/4g_internet_setup_troubleshooting.md).
 
 ![True response](/img/cloud/obd_ii/can_bus_configuration/test_true.png)
 

@@ -13,7 +13,7 @@ Open up the AutoPi Mini device view and head over to the loggers page.
 Here, you will see a 'Create' and a 'Restore default' button on the left-hand side.
 Clicking on the 'Create' button will open a new window, that looks like the following screenshot:
 
-![Create PID Logger Window](/img/getting_started/mini/create_mini_loggers/AutoPiMiniLogger.png)
+![Create PID Logger Window](/img/getting_started/autopi_mini/create_mini_loggers/AutoPiMiniLogger.png)
 
 :::note
 The 'Restore default', as the name suggests, deletes the current loggers and applies default loggers.
@@ -32,7 +32,7 @@ Select an event that should trigger a record in the dropdown list.
 When selection an event, new options appear, to configure how that event behaves.
 As an example, when selecting `Ranges Both` contains a range start and range end field, which allows to configure the range that `Ranges Both` should generate records based on, this can also be seen in the following image:
 
-![Create PID Logger Window](/img/getting_started/mini/create_mini_loggers/AutoPiMiniLogger2.png)
+![Create PID Logger Window](/img/getting_started/autopi_mini/create_mini_loggers/AutoPiMiniLogger2.png)
 
 
 **Advanced**: In the advanced section you can modify the sampling rate, which controls how long a value should remain the same before changing.

@@ -6,7 +6,7 @@ title: Introduction
 The Trips section provides in-depth information about the vehicle's trips. 
 Trips are automatically detected based on the events sent from the device, by default the 
 [engine events](/cloud/device_management/events/vehicle.md#engine-events) are used, these can be customized in the 
-[advanced settings](/cloud/device_management/advanced_settings/TMU/trip.md#event).
+[advanced settings](/cloud/device_management/advanced_settings/autopi_tmu_cm4/trip.md#event).
 
 This will display the trip route on a map along with the starting and ending addresses, duration, and distance travelled. 
 Additionally, you can review events that occurred during each trip, such as 'engine running/stopped' and 'position moving/standstill'

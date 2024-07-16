@@ -80,13 +80,13 @@ first how to automate setting of sleep timers (i.e. when the device should go to
 also look into how we can automate the clearing of sleep timers.
 
 :::note
-You can see all available power configuration options [here](/cloud/device_management/advanced_settings/TMU/power.md).
+You can see all available power configuration options [here](/cloud/device_management/advanced_settings/autopi_tmu_cm4/power.md).
 :::
 
 
 ### Power > Sleep Timer
 
-The [sleep timer](/cloud/device_management/advanced_settings/TMU/power.md#sleep-timer) section of the Advanced Power settings allows you to
+The [sleep timer](/cloud/device_management/advanced_settings/autopi_tmu_cm4/power.md#sleep-timer) section of the Advanced Power settings allows you to
 configure how the device behaves in terms of setting and clearing sleep timers automatically. The `Event Driven`,
 `Inactivity After Sleep` and `Inactivity Fallback` settings configure how the device goes to sleep, while the `Suppress`
 section configures the device on how to stay awake.

@@ -35,7 +35,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'getting_started/cm4/guides-intro',
+          to: 'getting_started/autopi_tmu_cm4/guides-intro',
           label: 'Getting Started',
           position: 'left',
         }, 
@@ -176,11 +176,11 @@ module.exports = {
       {
         redirects: [
           {
-            to: '/getting_started/cm4/guides-intro/',
+            to: '/getting_started/autopi_tmu_cm4/guides-intro/',
             from: '/guides/guides-intro/',
           },
           {
-            to: '/getting_started/cm4/4g-internet-setup-troubleshooting/',
+            to: '/getting_started/autopi_tmu_cm4/4g-internet-setup-troubleshooting/',
             from: '/guides/4g-internet-setup-troubleshooting/',
           },
           {
@@ -301,9 +301,9 @@ module.exports = {
           },
         ],
         createRedirects(existingPath) {
-          if (existingPath.includes('/getting_started/mini/')) {
+          if (existingPath.includes('/getting_started/autopi_mini/')) {
             return [
-              existingPath.replace('/getting_started/mini/', '/guides/Mini/'),
+              existingPath.replace('/getting_started/autopi_mini/', '/guides/Mini/'),
             ];
           }
           if (existingPath.includes('/getting_started/api/')) {
@@ -327,14 +327,14 @@ module.exports = {
               existingPath.replace('/cloud/device_management/services/', '/guides/services/'),
             ];
           }
-          if (existingPath.includes('/cloud/device_management/advanced_settings/TMU/')) {
+          if (existingPath.includes('/cloud/device_management/advanced_settings/autopi_tmu_cm4/')) {
             return [
-              existingPath.replace('/cloud/device_management/advanced_settings/TMU/', '/cloud/configuration/TMU/'),
+              existingPath.replace('/cloud/device_management/advanced_settings/autopi_tmu_cm4/', '/cloud/configuration/TMU/'),
             ];
           }
-          if (existingPath.includes('/cloud/device_management/advanced_settings/mini/')) {
+          if (existingPath.includes('/cloud/device_management/advanced_settings/autopi_mini/')) {
             return [
-              existingPath.replace('/cloud/device_management/advanced_settings/mini/', '/cloud/configuration/mini/'),
+              existingPath.replace('/cloud/device_management/advanced_settings/autopi_mini/', '/cloud/configuration/mini/'),
             ];
           }
           if (existingPath.includes('/cloud/obd-ii/')) {

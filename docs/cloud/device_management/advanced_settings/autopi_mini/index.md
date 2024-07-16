@@ -14,4 +14,4 @@ Like any AutoPi cloud functionality, configuration settings can be changed progr
 
 You can control a lot of different things on the device. Each of the settings is explained in details on the following pages. (WIP)
 
-![AutoPi Cloud Configuration](/img/cloud/device_management/advanged_settings/mini/configuration_mini.png)
+![AutoPi Cloud Configuration](/img/cloud/device_management/advanced_settings/autopi_mini/configuration_mini.png)

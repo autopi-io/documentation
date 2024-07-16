@@ -74,7 +74,7 @@ Below is an example:
 
 ```
 {
-    to: '/getting_started/cm4/guides-intro/', # New path
+    to: '/getting_started/autopi_tmu_cm4/guides-intro/', # New path
     from: '/guides/guides-intro/', # Old path
 },
 ```

@@ -13,7 +13,7 @@ See all the available power commands [here](/core/commands/power.md).
 
 ## Configuration
 
-See all the available power configuration options [here](/cloud/device_management/advanced_settings/TMU/power.md).
+See all the available power configuration options [here](/cloud/device_management/advanced_settings/autopi_tmu_cm4/power.md).
 
 ## Events
 

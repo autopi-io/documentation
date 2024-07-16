@@ -12,7 +12,7 @@ setting up a template with the required functionality, and then applying that to
 A template can contain the following configurations.
 
 ### Advanced Configuration
-Most [advanced configuration settings](/cloud/device_management/advanced_settings/TMU/index.md) are available to be specified for a template. Options that aren't available for templates have been removed because they are too specific for each device and it doesn't make sense to set in a template.
+Most [advanced configuration settings](/cloud/device_management/advanced_settings/autopi_tmu_cm4/index.md) are available to be specified for a template. Options that aren't available for templates have been removed because they are too specific for each device and it doesn't make sense to set in a template.
 
 The table shows the settings currently associated to the template, and clicking the edit button will open the settings UI, with all available settings.
 
