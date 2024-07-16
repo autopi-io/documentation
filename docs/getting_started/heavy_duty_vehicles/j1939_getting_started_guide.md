@@ -18,7 +18,7 @@ Before proceeding the AutoPi device must be:
 ## Check for Broadcast Data
 As most J1939 messages are broadcast we start by checking if we can see any data on the CAN bus.
 
-On https://my.autopi.io go to _Car Explorer_ > _CAN Analyzer_ > _Sniffer_.
+On https://my.autopi.io go to _Devices_ > _Select Device_ > _CAN Analyzer_ > _Sniffer_.
 
 Select one of the following J1939 protocols that fits your vehicle in regards to 11bit or 29bit header:
   - `[41] J1939 (11bit, 250kbps)`
@@ -69,7 +69,7 @@ In above screenshot we query PGN 61444 (Electronic Engine Controller 1) which am
 ## Register Vehicle Bus
 Once a J1939 bus has been identified and tested, it is recommended to register it on the vehicle's profile.
 
-Go to _Account_ > _Vehicles_ and click on _Create_ button below _CAN Buses_. Fill in the relevant values for name, protocol and baud rate.
+Go to _Devices_ > _Select Device_ > _Settings_ > _Vehicles Editor_ and click on _Create_ button below _CAN Buses_. Fill in the relevant values for name, protocol and baud rate.
 
 _Example_:
 
@@ -77,9 +77,10 @@ _Example_:
 
 
 ## Register PID for Request PGN
-This section may be skipped if you only receive broadcast J1939 messages. But if you need to query for a specific PGN it is recommended to register the request PGN as a PID in the _Car Explorer_ library. It can then later be used to easily set up loggers.
+This section may be skipped if you only receive broadcast J1939 messages. But if you need to query for a specific PGN 
+it is recommended to register the request PGN as a PID in the _OBD Library_. It can then later be used to easily set up loggers.
 
-Go to _Car Explorer_ > _Library_ > _Create_ > _PID_.
+Go to _OBD Library_ > _Create_ > _PID_.
 
 Enter the informations previously verified using the _PID Tester_.
 
@@ -137,7 +138,7 @@ When all (or only a few selected) CAN messages have be defined they will need to
 
 ### Create Mapping 
 
-To create a mapping for a CAN message to be be decoded go to _Car Explorer_ > _Library_ > _Create_ > _CAN_.
+To create a mapping for a CAN message to be be decoded go to _OBD Library_ > _Create_ > _CAN_.
 
 _Example_:
 
@@ -211,7 +212,8 @@ A separate DBC file is created on the device for each associated vehicle bus pro
 In the above example, protocol `[42] J1939 (29bit, 250kbps)` is used. Therefore, the synchronized DBC file will be found at: `/opt/autopi/obd/can/db/protocol_42.dbc`
 
 :::note
-As default, all created CAN messages and associated CAN signals are synchronized to the DBC file. But if one or more CAN signals are used in loggers (_Car Explorer_ > _Library_) only the used CAN signals and CAN messages are included in the DBC file.
+As default, all created CAN messages and associated CAN signals are synchronized to the DBC file. But if one or more CAN signals
+are used in loggers only the used CAN signals and CAN messages are included in the DBC file.
 :::
 
 
@@ -243,4 +245,5 @@ _Example_:
 
 ## Setup Loggers
 
-To receive the J1939 data in the cloud, loggers must first be set up on the device. Go to _Car Explorer_ > _Loggers_ and create loggers for the respective PIDs and or CAN messages. After a logger has been created, it must be synchronized to the AutoPi device, just like any other change.
+To receive the J1939 data in the cloud, loggers must first be set up on the device. Go to _Device_ > _Loggers_ and create loggers 
+for the respective PIDs and or CAN messages. After a logger has been created, it must be synchronized to the AutoPi device, just like any other change.

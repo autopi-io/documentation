@@ -40,7 +40,7 @@ aren't sure if AutoPi devices will work well with those.
 
 3. **Type in the RFID reader's information in the Cloud**  
    Now, it's time we enable the RFID reader from the Cloud. Navigate to [my.autopi.io](https://my.autopi.io) and go to
-   the Advanced > Settings > RFID page.
+   the Device > Advanced Settings > RFID page.
 
    :::note
    If you don't see the RFID section in the Advanced Settings, you should reach out to our sales department by writing

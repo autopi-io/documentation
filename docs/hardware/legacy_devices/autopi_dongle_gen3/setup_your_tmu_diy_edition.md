@@ -78,7 +78,7 @@ should work as well.
 
 Once you've purchased your modem, you will need to install it in the modem slot on the back of the
 AutoPi board. Once you've done that, you will need to set one of the system settings to enable the
-`ec2x` manager. You can do that by going over to the Advanced Settings > System page and looking
+`ec2x` manager. You can do that by going over to the Device > Advanced Settings > System page and looking
 for the Setup > Mpcie > Module setting. There you can select the `ec2x` option which will install
 the driver for the modem.
 

@@ -6,7 +6,7 @@ title: Introduction
 A variety of services are running on the device, each having its own specific area of responsibility. Most services are built around the same structure and using the same concepts which are described below.
 
 :::note
-Services can be setup and configured from the AutoPi Cloud. When logged in go to: _Advanced_ -> _Services_
+Services can be setup and configured from the AutoPi Cloud. When logged in go to: _Device_ > _Services_
 :::
 
 ## Settings

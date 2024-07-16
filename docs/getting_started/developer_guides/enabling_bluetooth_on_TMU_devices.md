@@ -49,15 +49,15 @@ be kept running despite the STN chip's absence.
   ```
 
 2. **Disable obd_manager**  
-  Next, the obd_manager needs to be disabled. You can do that by going over to Advanced > Services
+  Next, the obd_manager needs to be disabled. You can do that by going over to Device > Services
   and selecting the obd_manager entry. The page that opens up should include a tab called
   "Settings" - click on it. On the panel that opens up, there should be a checkbox that's called
-  Enable Service - uncheck that box. You don't need to synchronize the changes yet, as we will be
+  Enabled - uncheck that box. You don't need to synchronize the changes yet, as we will be
   making another change in the next step.
 
 3. **Enable Bluetooth**  
-  Finally, you need to enable Bluetooth on the device. You can do that by going over to Advanced >
-  Settings > Bluetooth and changing the Mode field from `disable` to `miniuart`. After synchronizing
+  Finally, you need to enable Bluetooth on the device. You can do that by going over to Device >
+  Advanced Settings > Bluetooth and changing the Mode field from `disable` to `miniuart`. After synchronizing
   the changes, the Cloud will ask you to reboot the device. After the reboot you should be able to
   start using the Bluetooth on the AutoPi. Use the `bluetoothctl` command to work with Bluetooth on
   the device.

@@ -11,7 +11,7 @@ you are unsure of what a PID is you can start by reading
 
 First step is to enable debug logging on your AutoPi device:
 
-* On [my.autopi.io](https://my.autopi.io) go to **Settings** > **Advanced**
+* On [my.autopi.io](https://my.autopi.io) go to **Device > Advanced Settings**
 * Next choose **System** and go to section **Logging** > **Level**
 * Choose value `debug` and press *Save* (the minion process must be restarted for the change to
   take effect)
@@ -34,7 +34,7 @@ sudo tail -f /var/log/salt/minion | grep obd
 
 In the example log output below we will look at the PID query for **speed**. In order to see this
 log output on your device it is required to have a *PID Logger* setup for PID **speed**. Take a
-look at the ['How to Use the "Car Explorer" Feature'](/cloud/obd_library/community_library.mdx)
+look at the ['Community Library'](/cloud/obd_library/community_library.mdx)
 guide on more information about how to set those up.
 
 ```

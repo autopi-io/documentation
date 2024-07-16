@@ -20,7 +20,7 @@ Returns all tasks for the current customer
 
 ## How to Enable the Automatic Trip Export Functionality
 
-The setting should be enabled per device, and this is done in Settings > Advanced > Trip > Auto Export
+The setting should be enabled per device, and this is done in Device > Advanced Settings > Trip > Auto Export
 This can also be managed automatically for the entire fleet by using a template.
 
 ## Overview - Step by Step

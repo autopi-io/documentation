@@ -17,7 +17,7 @@ on the other hand respond to events emited by the device **on the server side**.
 :::
 
 1. Let's start by creating a custom code module with the name *my_triggers* of type *Execution*. We
-  can do that by going over to **Select device** > **Custom Code**:
+  can do that by going over to **Device** > **Custom Code**:
 
   ![Editing custom code](/img/cloud/device_management/services/create_custom_triggers/editing_custom_code.png) 
 
@@ -70,13 +70,13 @@ on the other hand respond to events emited by the device **on the server side**.
   is offline the changes will automatically be synchronised on next start-up.
 
 2. Next, we need to register that trigger in the service that it'll be used. For this guide, we
-  need to register it in the OBD service named **obd_manager**. Go to **Select device** > **Services** >
+  need to register it in the OBD service named **obd_manager**. Go to **Device** > **Services** >
   **obd_manager** > **Hooks** > **Create**:
 
   ![Creating a custom hook](/img/cloud/device_management/services/create_custom_triggers/creating_a_custom_hook.png) 
 
 4. We now need to use the newly registered trigger hook by adding it to a workflow in a worker.
-  Go to **Select device** > **Services** > **obd_manager** > **Workers** > **Create**:
+  Go to **Device** > **Services** > **obd_manager** > **Workers** > **Create**:
 
   ![Creating a new worker](/img/cloud/device_management/services/create_custom_triggers/creating_a_new_worker.png) 
 
@@ -135,7 +135,7 @@ def speed_warning_event(result):
 The code here is esentially the same as the one presented above. The only difference is that
 the AutoPi will fire an event internally instead of playing a beeping sound. This event can then
 be used in the **event_reactor** service to perform other actions. Also, the event will be uploaded
-to the cloud and be visible from **Select device** > **Events**.
+to the cloud and be visible from **Device** > **Events**.
 
 <Discussion
   title="Write custom trigger to play beep sound when speeding"

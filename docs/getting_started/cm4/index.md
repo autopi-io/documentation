@@ -30,7 +30,7 @@ to [my.autopi.io](https://my.autopi.io/) and following the signup guide here. Pl
 Unit ID ready. Your unit ID is printed on the side of your device, but also part of the
 documentation sent to you per email.
 
-When your device is associated to your account, go to **Device -> Advanced Settings -> WiFi** to see the
+When your device is associated to your account, go to **Device > Advanced Settings > WiFi** to see the
 WiFi hotspot password and SSID.
 
 You will need these later.

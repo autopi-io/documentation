@@ -18,7 +18,7 @@ installed on your workstation. You can download the full NodeJS package from [he
 
 ## Set Device's Cloud API Url
 Firstly, we need to make sure that the device will connect to your own server. For this, we do have a very neat option that can
-be changed from the [AutoPi Cloud](https://my.autopi.io) website. You need to navigate to Devices > Select Device > Advance Settings > Cloud Storage where
+be changed from the [AutoPi Cloud](https://my.autopi.io) website. You need to navigate to Devices > Select Device > Advanced Settings > Cloud Storage where
 you will be able to see a screen like the following:
 
 ![cloud_api_uri](/img/getting_started/api/send_device_data_to_own_server/cloud_api_url.png) 
@@ -150,7 +150,7 @@ app.listen(/* ... */);
 ## Authentication
 Of course, it would be nice if there is some type of authentication happening, instead of letting everyone send data over to your server.
 You can do that by adding a middleware function that will authenticate based on the token that is being sent by the device. You can find the token
-your device uses by navigating over to [AutoPi Cloud](https://my.autopi.io) > Advanced > Settings > Cloud API. One of the first fields there should be the
+your device uses by navigating over to [AutoPi Cloud](https://my.autopi.io) > Device > Advanced Settings > Cloud Storage. One of the first fields there should be the
 Auth Token field. The token will be sent in the `Authorization` HTTP header in the following format:
 
 ```

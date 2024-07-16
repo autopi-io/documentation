@@ -74,8 +74,8 @@ data that has been passed to it into a more sensible format. Both `obd.monitor` 
 use the CAN converter in the workflows to sanitize the data.
 
 It is important to note however, that the DBC (CAN database) file would only be available if you have
-setup CAN loggers for your device. In the [AutoPi Cloud](https://my.autopi.io) navigate to Car
-Explorer > Loggers where you'll be able to see all the loggers you currently have. They need to
+setup CAN loggers for your device. In the [AutoPi Cloud](https://my.autopi.io) navigate to 
+Device > Loggers where you'll be able to see all the loggers you currently have. They need to
 be of type CAN. There are a few guides that you can take a look at to get them up an running:
 
 1. [How to setup power cycle for an electric vehicle](https://community.autopi.io/t/guide-how-to-setup-power-cycle-for-an-electric-vehicle/1668)

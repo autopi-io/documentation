@@ -96,7 +96,7 @@ AutoPi device.
 
 ### Creating the PID
 Let's create the RPM PID that we've examined in the previous section. Firstly, we will need to open
-the Car Explorer > Library > My Library page. On that page, you will see a '+ Create' button. One
+the OBD Library > My Library page. On that page, you will see a '+ Create' button. One
 of the options should be PID - select that one. The following pop-out window should show up:
 
 ![Create a PID window](/img/cloud/obd_ii/create_pid_loggers/create_pid_window.jpg)
@@ -165,7 +165,7 @@ If you're using your AutoPi with an internal combustion engine vehicle, you shou
 loggers setup for you already.
 :::
 
-Open up the Car Explorer > Loggers page. You will see a page with a '+ Create' button on the
+Open up the Device > Loggers page. You will see a page with a '+ Create' button on the
 right-hand side. Click on that button and select the PID option. A new window should show up that
 looks like the following screenshot:
 
@@ -197,7 +197,7 @@ If for some reason, you aren't getting any data back from the logger, you can ta
 log files for some clues about what's going wrong. Take a look [here](/getting_started/developer_guides/autopi_logs.md) for
 more information on how to view those logs.
 
-You can also take a look at the obd_manager workers(Advanced > Services > obd_manager > Workers).
+You can also take a look at the obd_manager workers(Device > Services > obd_manager > Workers).
 There, you can notice that a new worker was created: pid_logger_10sec. If you view that worker
 you'll see that the parameters setup for the PID are also available there. We discourage you to
 make changes directly on the worker, as the worker is auto-generated based on what parameters are

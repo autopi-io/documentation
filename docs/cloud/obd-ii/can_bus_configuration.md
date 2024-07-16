@@ -110,7 +110,7 @@ If you take a look at the [how bus autodetection works](#passive-can-traffic) se
 device checks a pre-defined list of configurations. It's possible that your vehicle uses one that is not in this list.
 Check the [Finding configuration manually](#finding-configuration-manually) section to see further steps.
 
-## How Vus Autodetection Works 
+## How Bus Autodetection Works 
 The easiest way to run autodetection is through the cloud portal from the Vehicles Editor. This will do 2 things.
 First it will try to find the correct configuration for CAN connectivity (see 
 [Finding Configuration Manually](#finding-configuration-manually) for an explanation). Second, it will try to find

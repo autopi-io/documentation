@@ -45,17 +45,19 @@ While direct-connect mode is easier to set up, it's worth noting that in case th
 ### Direct-Connect Mode
 ![direct_connect_diagram](/img/getting_started/developer_guides/configuring_MQTT/direct-connect_diagram.png)
 
-On the AutoPi cloud portal (my.autopi.io for private customers, <company_name>.autopi.io for business customers) go to [Advanced > Settings > MQTT]. Modify the following settings:
+On the AutoPi cloud portal (my.autopi.io for private customers, <company_name>.autopi.io for business customers) go to Device > Advanced Settings > MQTT. Modify the following settings:
 
 - Returner > Enabled: True
 - Returner > host: <host\>
 - Returner > port: <port\>
 
-Now set up an mqtt returner on a data point you know you're getting data from (voltage readings or GPS for example). See below on how to do this. After you've done this, you should be seeing data on your MQTT broker. 
+Now set up an MQTT returner on a data point you know you're getting data from (voltage readings or GPS for example). See below on how to do this. After you've done this, you should be seeing data on your MQTT broker. 
 
 ### Broker-Bridge Mode
 ![broker_bridge_diagram](/img/getting_started/developer_guides/configuring_MQTT/broker-bridge_diagram.png)
-On the AutoPi cloud portal (my.autopi.io for private customers, <company_name>.autopi.io for business customers) go to [Advanced > Settings > MQTT]. Note that the settings under [Broker > ...] **effect only the broker, and not the client**, so if you are trying to set up direct-connect mode, these are not the settings you are looking for. Modify the following settings:
+On the AutoPi cloud portal (my.autopi.io for private customers, <company_name>.autopi.io for business customers) go to Device > Advanced Settings > MQTT. 
+Note that the settings under Broker > ... **effect only the broker, and not the client**, so if you are trying to set up direct-connect mode, 
+these are not the settings you are looking for. Modify the following settings:
 
 - Broker > Install: Mosquitto v1.x  (Or newer if available)
 - Broker > Custom > Configuration:
@@ -76,7 +78,7 @@ On the AutoPi cloud portal (my.autopi.io for private customers, <company_name>.a
 - Returner > Enabled: True
 
 :::note
-Some of these settings are not a necessity, but these are the settings we've seen provide best reliability and performance. The meaning of these settings can be found on the [Eclipse Mosquitto website](https://mosquitto.org/man/mosquitto-conf-5.html). The settings you add in [Broker > Custom > Configuration] go directly into a Mosquitto configuration file: /etc/mosquitto/conf.d/custom.conf.
+Some of these settings are not a necessity, but these are the settings we've seen provide best reliability and performance. The meaning of these settings can be found on the [Eclipse Mosquitto website](https://mosquitto.org/man/mosquitto-conf-5.html). The settings you add in Broker > Custom > Configuration go directly into a Mosquitto configuration file: /etc/mosquitto/conf.d/custom.conf.
 :::
 
 **Example**:
@@ -115,14 +117,15 @@ This section covers adding the MQTT returner to the 3 main data sources: loggers
 
 ### Loggers
 
-Go to [Car Explorer > Loggers]
+Go to Device > Loggers
 
-For each logger of Type "OBD-II PID" add the mqtt returner by selecting the logger, clicking Advanced, and selecting mqtt in the Returner dropdown. Then click save.
+For each logger of Type "OBD-II PID" add the MQTT returner by selecting the logger, clicking Advanced, and selecting MQTT in the Returner dropdown. Then click save.
 
 ![setup_pid_mqtt_returner](/img/getting_started/developer_guides/configuring_MQTT/pid_mqtt_setup.png)
 
 ### Services
-A service can serve as a data source in 2 ways: through workers and through reactors. Most commonly you'll want to retrieve CAN data. For this, go to [Advanced > Services] and add the mqtt returner to the obd_manager's can_logger worker, as shown below:
+A service can serve as a data source in 2 ways: through workers and through reactors. Most commonly you will want to retrieve CAN data. 
+For this, go to Device > Services and add the MQTT returner to the obd_manager's can_logger worker, as shown below:
 
 ![can_mqtt_setup_step_1](/img/getting_started/developer_guides/configuring_MQTT/can_mqtt_setup_1.png)
 
@@ -143,7 +146,8 @@ The other Service sourced data points and their locations can be found in the fo
 | Events                 | event_reactor > reactors > cache_events  |
 
 ### Jobs
-Go to [Advanced > Jobs] and set returner to each job as mqtt. As of time of writing, it is only possible to to have a single returner per job, so it's not possible to send the data to both MQTT and the AutoPi Cloud.
+Go to Device > Jobs and set returner to each job as MQTT. As of time of writing, it is only possible to to have a 
+single returner per job, so it's not possible to send the data to both MQTT and the AutoPi Cloud.
 
 ![rpi_temp_job_with_mqtt_returner](/img/getting_started/developer_guides/configuring_MQTT/rpi_temp_job_with_mqtt_returner.png)
 

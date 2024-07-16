@@ -32,7 +32,7 @@ is important. You will need to add commands from the community library to your o
 ## Loggers - What Should be Logged
 
 Now that you have found out what should be logged, you need to setup the device to log it. This is
-done under the Loggers section (Devices > select device > Loggers). To create a new logger, just press the
+done under the Loggers section (Devices > Loggers). To create a new logger, just press the
 "Create" button and you will get this screen:
 
 ![Create logger](/img/cloud/device_management/dashboard/adding_a_new_widget_from_scratch/create_logger.jpeg) 

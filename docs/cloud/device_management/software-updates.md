@@ -66,7 +66,7 @@ using the events or by running a command.
 #### Events
 
 One of the ways to determine if the device is being updated right now is to check the Events page
-under Advanced > Events. Here, we're looking for [`system/release/*`](/cloud/device_management/events/system.md#release-events)
+under Device > Events. Here, we're looking for [`system/release/*`](/cloud/device_management/events/system.md#release-events)
 events, more specifically the `system/release/pending`, `system/release/retrying` or `system/release/forcing`
 events. All of those events signify that the device had started an update attempt. If you see a
 `system/release/failed`, `system/release/updated` or an event that means the device [shut down](/cloud/device_management/events/system.md#power-events),
