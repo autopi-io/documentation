@@ -12,6 +12,14 @@ Queries a given connection class command.
   - **`cmd`** (str): The command to query.
 
 
+:::note
+When `modem.connection execute` is used with a command like `AT$GPSACP` from bash on device, the `$` must be escaped
+with a `\`, so `AT\$GPSACP`. Otherwise, the `$GPSACP` is interpreted as a bash variable.
+
+Example whole command:
+`autopi modem.connection execute AT\$GPSACP`
+:::
+
 ----
 ## `modem.help`
 
