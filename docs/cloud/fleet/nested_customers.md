@@ -1,6 +1,6 @@
 ---
 id: nested-customers
-title: Nested customers
+title: Nested Customers
 ---
 
 The account section allows an account administrator to manage nested customers, which makes it possible to create an isolated account, assign devices and users to it, so that a customer can manage a fleet of devices, and it's own users.
@@ -24,7 +24,7 @@ The permissions model follows a top down appreoach, and only in that direction, 
 
 So in the example above, `user A` can only see devices in the `nested customer A` account, and the same for `user B`, but the `admin` user can see devices from both the top account, and any nested customers.
 
-## Managing nested customers
+## Managing Nested Customers
 
 The typical steps are
 
@@ -34,12 +34,12 @@ The typical steps are
 
 All interaction with this happens in the `Account` page.
 
-#### Create a nested customer
+#### Create a Nested Customer
 1. Click the `Customers` tab
 2. Click the `Create` button
 3. Fill out the settings and click `Create`
 
-#### Assign some devices to the new customer
+#### Assign Some Devices to the New Customer
 5. Click `Devices`
 6. Click `Manage devices`
 7. Click the newly created customer
@@ -47,7 +47,7 @@ All interaction with this happens in the `Account` page.
 9. Now click `Process`
 10. The devices are now re-assigned to the new customer
 
-#### Create an administrator user on the new account
+#### Create an Administrator User On the New Account
 11. Now click the `Customers` tab
 12. Click the customer that was created
 13. Click `Users` to manage the users for the customer

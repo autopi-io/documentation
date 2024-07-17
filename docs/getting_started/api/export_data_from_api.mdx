@@ -1,0 +1,132 @@
+---
+id: export-data-from-api
+title: Export Data from API
+---
+
+import { Discussion } from '/src/components/Discussion.jsx';
+
+The API has endpoints that allows the user to retrieve all the telemetry data from devices.
+There is two different endpoint available.
+
+## Aggregated Data
+This data is aggregated by interval and a method (average, min, max), and is among other
+things used for the charts in our frontend dashboard.
+
+The aggregated data can be retrieved by using this endpoint:
+
+```
+GET /logbook/storage/read/
+```
+
+Additional API documentation here:
+
+https://api.autopi.io/#/logbook/logbook_storage_read_list
+
+The endpoint takes the following parameters
+
+| Parameter | Description  |
+| -------------: | :---------- |
+|  device_id | ID of the device **(not the unit_id)** |
+|  field | The field that the value should be retrieved from. See 'Field' below |
+|  field_type | The type of the field. See 'Field' below. [float, geo_point, string, long] |
+|  from_utc | From time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
+|  to_utc | To time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
+|  interval | This is the interval to use when aggregating. ie. data for 24 hour queried with interval set to '1h' will return 24 data points, one for each hour. Ignored when aggregation is set to 'none' |
+|  aggregation | Method used when aggregating data into the specified interval. [average, min, max, none]. |
+|  size | Only used when aggregation is set to 'none', and will then return non aggregated values. |
+
+### Example 
+How get logged altitude aggregated into 1 minute average values
+
+```
+GET /logbook/storage/read/
+    ?device_id=6a6c53b5-e18e-4301-9c95-2516006bf7c6
+    &field=track.pos.alt
+    &field_type=float
+    &aggregation=avg
+    &from_utc=2020-07-06T10:03:36.352Z
+    &to_utc=2020-07-06T12:18:14.050Z
+    &interval=1m
+```
+
+### Field
+
+To know which fields you can retrieve data from, you can get the list from the following endpoint:
+
+https://api.autopi.io/#/logbook/logbook_storage_fields_list
+
+This will return all the available fields that can be queried, including the type of the field.
+The data type can be derived from the fields, like so:
+
+| Field | Datatype |
+| :---- | :------- |
+| obd.speed.value | obd.speed |
+| obd.bat.level | obd.bat |
+
+etc.
+
+This is the list of data types currently available from a standard device.
+
+| Datatype       | 
+| :------------- |
+| acc.xyz |
+| ec2x.data_usage |
+| obd.ambiant_air_temp |
+| obd.bat |
+| obd.coolant_temp |
+| obd.engine_load |
+| obd.fuel_level |
+| obd.intake_temp |
+| obd.rpm |
+| obd.speed |
+| rpi.temp |
+| track.pos |
+​
+## Raw Data
+The raw data is not aggregated or treated in any way, it is in the same format as it was when it was sent by the device. Remember to keep the time frame of your search narrows to be sure you'll get data back.
+
+```
+GET /logbook/storage/raw/
+```
+
+https://api.autopi.io/#/logbook/logbook_storage_raw_list
+
+| Parameter       | Description  |
+| -------------: | :---------- |
+|  device_id | ID of the device **(not the unit id)** |
+|  data_type | Optional. The datatype to retrieve. Will return all datatypes of omitted. See 'Field' above. |
+|  start_utc | From time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
+|  end_utc | To time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
+|  use_upload_time | Optional. If false (default), *start_utc* and *end_utc* will mean 'period when the data was **recorded**'. If true, *start_utc* and *end_utc* will mean 'period when the data was **uploaded**'. |
+
+### Example 
+How get logged position objects raw
+
+```
+GET logbook/storage/raw/
+    ?device_id=6a6c53b5-e18e-4301-9c95-2516006bf7c6
+    &data_type=track.pos
+    &start_utc=2020-11-24T10:13:21.276594Z
+    &end_utc=2020-11-24T11:07:07.177850Z
+```
+
+## How to Export Trips
+
+To get trips data you will have to first retrieve the list of trips, and then retrieve the data
+that you need for the duration of the trip.
+
+The trips endpoint here can give you the trips. (The trips can also be exported to excel/csv
+format from the trips page) https://api.autopi.io/#/logbook/logbook_trips_list
+
+The reason that there is no single endpoint way to retrieve all data for a specific trip is because
+there can be a lot of data for trips, and our system can query and filter very large amounts of data
+very very fast, but the downside is that it is not really geared towards downloading large amounts
+of data in one go.
+
+For enterprise customers we also support automatic exporting of trips which will call a webhook on
+an external system signalling that an export can be downloaded.
+
+<Discussion
+  title="Exporting telemetry data"
+  url="https://community.autopi.io/t/exporting-telemetry-data/2458/1"
+/>

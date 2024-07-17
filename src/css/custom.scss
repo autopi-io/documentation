@@ -153,7 +153,11 @@ html[data-theme=light] {
 
 /* Global dark themed styles */
 html[data-theme=dark] {
-  h1 {
+  h1, h2, h3, h4, h5, h6 {
+    color: #ddd;
+  }
+
+  body, input, textarea, select, button {
     color: #ddd;
   }
 

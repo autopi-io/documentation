@@ -85,15 +85,29 @@ def generate_sidebars(src_dir):
     # begin function execution here
     sidebars = {}
 
-    # generate top-level sidebars
+    # generate top-level sidebar items
     for base_dir_entry in os.scandir(src_dir):
+        print(base_dir_entry)
         if base_dir_entry.is_file():
             continue
         
-        sidebarName = "{}Sidebar".format(base_dir_entry.name)
+        sidebarName = base_dir_entry.name.title().replace("_", " ")
         sidebars[sidebarName] = build_entry(base_dir_entry, base_entry=True)
 
-    return sidebars
+    # insert top-level sidebar items into single sidebar
+    sidebar = {
+        "sidebar": [
+            "index",
+            sidebars,
+            {
+              "type": "link",
+              "label": "API",
+              "href": "https://api.autopi.io/"
+            },
+        ]
+    }
+
+    return sidebar
 
 
 def main():
@@ -102,7 +116,7 @@ def main():
 
     # Write side bars JS file
     with open(os.path.join("..", "sidebars.js"), "w") as fp:
-        fp.write("module.exports = {:};".format(json.dumps(sidebars, indent=4, sort_keys=True)))
+        fp.write("module.exports = {:};".format(json.dumps(sidebars, indent=2, sort_keys=True)))
 
 
 if __name__ == "__main__":

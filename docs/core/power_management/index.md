@@ -10,8 +10,8 @@ For power cycle, LED and button information on the AutoPi TMU CM4, please see [c
 
 The power management of the device consists of a low- and high-level layer. For further details please see: 
 
-1. [Low-level](low_level.md)
-1. [High-level](high_level.md)
+1. [Low-level](/core/power_management/low_level.md)
+1. [High-level](/core/power_management/high_level.md)
 
 
 ## Power Cycle
@@ -27,10 +27,10 @@ Eventually, when the vehicle has turned off, a sleep timer is scheduled that wil
 
 #### Sleeping
 The `Sleeping` state is a state where the device is powered off for a certain period of time. Before the device goes to sleep, there is always setup
-an interval until it will wake up again ([configuration here](/cloud/configuration/TMU/power.md/#sleep-timer)). When the [`Modem > Power Save`](/cloud/configuration/TMU/power.md/#modem) option is disabled, the modem is kept powered on while sleeping. This makes it possible to wake the device by sending an SMS to it, if it is within mobile network range.
+an interval until it will wake up again ([configuration here](/cloud/device_management/advanced_settings/autopi_tmu_cm4/power.md/#sleep-timer)). When the [`Modem > Power Save`](/cloud/device_management/advanced_settings/autopi_tmu_cm4/power.md/#modem) option is disabled, the modem is kept powered on while sleeping. This makes it possible to wake the device by sending an SMS to it, if it is within mobile network range.
 
 There are generally two reasons for a device to go to the `On` state while sleeping:
-1. **The vehicle's engine turns on.** More precisely, the vehicle's battery voltage raises above a [specified threshold](/cloud/configuration/TMU/power.md/#wake-trigger).
+1. **The vehicle's engine turns on.** More precisely, the vehicle's battery voltage raises above a [specified threshold](/cloud/device_management/advanced_settings/autopi_tmu_cm4/power.md/#wake-trigger).
 2. **The sleep timer's sleep period passes.** When the device goes to sleep, a wake timer is being setup based on the inactivity setting.
 
 We will take a look at example scenarios which will further describe the power cycle of the device.
@@ -41,7 +41,7 @@ of the functionalities of the AutoPi leaving only one power-cheap component on -
 voltage so that it can trigger an `On` state. This will happen when the vehicle is powered on, so this is the moment the battery will
 start to charge up again.
 
-### Walk-through
+### Walk-Through
 
 Let us now walk through an example of the power cycle. We will begin with the device being unplugged and the vehicle's engine not running.
 If we plug in a device in the vehicle's OBD-II port the following steps will occur:
@@ -120,19 +120,19 @@ Status LEDs are only available on the AutoPi Telematics Unit.
 
 ### Blue LED
 
-The blue LED indicates the current state of the [low-level ](low_level.md) SPM system.
+The blue LED indicates the current state of the [low-level ](/core/power_management/low_level.md) SPM system.
 
 | LED State | Description |
 | ------ | ------ |
-| Turned off | SPM is in [OFF](low_level.md#off) state. |
-| Flashing brightly | SPM is in [BOOTING](low_level.md#booting) state. |
-| Constantly bright | SPM is in [ON](low_level.md#on) state. |
-| Breathing effect | SPM is in [SLEEPING](low_level.md#sleeping) state. |
-| Constantly dimmed | SPM is in [HIBERNATING](low_level.md#hibernating) state. |
+| Turned off | SPM is in [OFF](/core/power_management/low_level.md#off) state. |
+| Flashing brightly | SPM is in [BOOTING](/core/power_management/low_level.md#booting) state. |
+| Constantly bright | SPM is in [ON](/core/power_management/low_level.md#on) state. |
+| Breathing effect | SPM is in [SLEEPING](/core/power_management/low_level.md#sleeping) state. |
+| Constantly dimmed | SPM is in [HIBERNATING](/core/power_management/low_level.md#hibernating) state. |
 
 ### Green LED
 
-The green LED indicates the current state of the [high-level](high_level.md) system.
+The green LED indicates the current state of the [high-level](/core/power_management/high_level.md) system.
 
 | LED State | Description |
 | ------ | ------ |

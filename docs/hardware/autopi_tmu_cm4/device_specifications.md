@@ -1,6 +1,6 @@
 ---
 id: device_specifications
-title: CM4 Technical Specifications
+title: Technical Specifications
 ---
 
 Download the official datasheet here: <br/>

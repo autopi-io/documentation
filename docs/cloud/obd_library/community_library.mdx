@@ -1,0 +1,156 @@
+---
+id: community_library
+title: Community Library
+---
+
+import { Discussion } from '/src/components/Discussion.jsx';
+
+This guide will give an overview of the OBD My Library feature, which is a way to discover the
+available PID's in your car, both hidden and public/default OBD-II, and sharing them with the
+community.
+
+We will go over the following topics in this guide.
+* How and when the car reports the supported PIDS.
+* How to find PID's in the Community Library.
+* How to add a PID to your library.
+* How to create (and share) proprietary PID's.
+* Troubleshooting if no PID's are reported from the device.
+
+![Community library overview](/img/cloud/obd_library/community_library/updated_overview.png) 
+
+## How And When The Device Reports The Supported PID's
+When the device connects to the server, it will check the for the following:
+
+* Is it updated to the most recent version?
+* If the active vehicle has no autodetected busses associated.
+* OR if the autodetected bus has no PID's associated.
+* That the engine has been started since the update. It will only be able to detect the supported
+  commands when it is connected to the bus and the engine is running.
+
+You can see what busses are registered in Accounts > Devices > Select Device > Vehicles Editor > CAN Busses.
+
+Then the device will know to report the supported PID's. After the device has reported to the cloud
+with the supported PID's, they will show up in the "My Library" tab in the "OBD Library" section.
+
+![My library overview](/img/cloud/obd_library/community_library/my_library_overview.png) 
+
+## How to Find And Use PID's
+You can also browse the community library, where all PID's are available and searchable.
+The filters will default to the model, make and year of the vehicle configured on your active
+device. The PID's that are shown here are all the PID's that are reported as supported by the makes
+and models of the AutoPi users. Please note that the number of PID's visible here will go up once
+devices are updated and reports the supported PID's or if people create and share proprietary PID's.
+
+If you change the filter to only include the type "Proprietary", it will only show the PID's that
+are created by other AutoPi users, and who has chosen to share it with the community. In time these
+proprietary PID's are very likely where you will find the most interesting PID's for your vehicle.
+
+## How to Add a PID to Your Library
+When you find a PID you'd like to try, you can view it, and in the right side, there is a preview
+of the command needed to execute the PID on your car. But the PID may be associated to a specific
+bus that your car does not have, so unless you are filtering on your specific car make and model,
+it will most likely not work, at least not without some changes.
+
+By clicking the **Add to library** button, the PID will be associated to the bus on your active
+vehicle. If no bus exists that matches the bus info in the selected PID, it will be created. As
+mentioned above, unless you filter on your specific make and model, even if the PID is supported by
+your vehicle, you may need to do some fiddling before it will work, which can be done by running
+the PID directly in the terminal. Keep in mind that the engine may need to be running for it to
+respond to PID's.
+
+Now the PID should be available in **My Library**.
+
+After adding the PID, it is available in the **Logging** section, so you can now set up a logger
+that runs every N interval, and logs data by executing the specific PID.
+
+![Creating a new logger](/img/cloud/obd_library/community_library/creating_a_new_logger.png)
+
+## How to Create And Share Proprietary PID's
+To create a new PID, click the "Create" button in "My Library".
+
+![Creating a new PID](/img/cloud/obd_library/community_library/creating_a_new_pid.png) 
+
+You will now need to fill out the following fields:
+
+**Name**  
+A slug with the name of your PID - it must be unique as it is used by the device when sending the
+logged value to the cloud (if used in a logger).
+
+**Description**  
+If you want to share the PID, a proper description is really nice, and if not, it's still very
+useful to describe or maybe add a link to where the PID originates from.
+
+**Mode and Code**  
+These two values together is the PID.
+
+**Header**  
+The default *7DF* value means a Request message. The default should be used unless you need
+another for some proprietary magic.
+
+**Bytes**  
+This is the expected length of the response.
+
+**Formula**  
+The formula is executed on the device, and takes a byte array from one or more response messages,
+and translates it to the actual value, like temperature, speed etc.
+
+You may notice that none of the standard PID's has a formula specified. This is because all the
+default PID's are identified by their name, and the code that translates the byte response to a
+value, is already embedded in the [library (py-obd)](https://github.com/autopi-io/py-obd) we use
+for communicating with the car. This is only the case for the standard PIDS.
+
+The formula is plain python with some added helper functions:
+* bytes_to_int
+* bytes_to_hex
+* twos_comp
+
+[More info here](https://github.com/autopi-io/py-obd/blob/master/obd/utils.py#L109).
+So to convert a temperature response one would write the following formula:
+
+```
+bytes_to_int(message.data[2:])-40
+```
+
+**NOTE: Remember to use the data attribute on the message object**
+The above example is the short "formula" way to write the following
+[decoder function](https://github.com/autopi-io/py-obd/blob/master/obd/decoders.py#L110)
+You can also find more examples in the above link.
+
+:::tip
+For prototyping, you can execute the PID on your device by using the terminal, then copy the byte
+response into a python terminal, insert the above helper functions, to be able to test the parsing
+directly in the terminal.
+:::
+
+**Unit, Min and Max**  
+Select a unit that matches your data or write your own.
+Like the name, this unit is used when the device stores the response value of the PID, for easier
+parsing and displaying of the value in the dashboard widgets.
+Min and max are also used when storing and displaying the data.
+
+**Bus**  
+To use a PID, you need to associate it to one of the busses on your vehicle. It may be as simple as
+associating it to the auto detected one, but you may also want to create a custom one. This can be
+done in the Accounts > Devices > Select Device > Vehicles Editor > CAN Busses. You don't have to 
+associate the PID with a bus straight away.
+
+Now click save, and your new PID is created, and can be found in **My Library**.
+If you want to share the PID, it needs to be associated to at least one bus, when you have done
+that, and saved the PID, you can now click the **Share with community**, after which the PID will
+be discoverable in the **Community Library**, and other users can find it. You can also verify that
+it looks correct, and has the right make and model by searching for the PID.
+
+## Troubleshooting if No PID's are Visible
+If your PID's aren't listed in **My Library**, check the following things.
+* That your device is updated to the most recent version.
+* That the device has been online since the update.
+* That the engine has been running for a little while since the update.
+* That the vehicle associated to your device, has the correct make and model specified.
+* That you have no errors in the log on the device.
+
+See [this guide](/getting_started/developer_guides/autopi_logs.md) if you are unsure how to get the logs from the device.
+
+<Discussion
+  title="How to use the 'OBD Library' feature"
+  url="https://community.autopi.io/t/how-to-use-the-car-explorer-feature/960"
+/> 

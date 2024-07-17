@@ -1,0 +1,57 @@
+---
+id: local-development-workflow
+title: Local Development Workflow
+---
+
+import { Discussion } from '/src/components/Discussion.jsx';
+
+When doing development with the AutoPi, it is possible to do it all through the Cloud.
+
+1. Make changes
+2. Push changes to device
+3. Restart services
+4. Execute module
+5. Go to step 1
+
+But while this process can be used, it is much too slow for actual development. So the Cloud should
+be used for management and to push out code when the development has finished, and not in the
+actual development workflow.
+
+Fortunately, there are other much faster alternatives, here are a few ways to do it.
+
+## Development on RPI With Screen and Keyboard or SSH
+You could instead SSH into the device and edit the files directly. When syncing from the cloud,
+the modules will be put in the following directories, based on the type:
+
+* /opt/autopi/salt/modules
+* /opt/autopi/salt/returners
+* /opt/autopi/salt/utils
+* /opt/autopi/salt/engines
+* /opt/autopi/salt/states
+
+So you can simply edit/create the files directly, but make sure to avoid clashes with the cloud
+synced modules, to prevent losing work if you sync the module from the cloud, as that will, without
+asking, overwrite the file on the device, even if you have made local changes to it.
+
+When you make changes to the files, to make sure that the minion process picks up on the change,
+you can either restart the `salt-minion` service, or run this command `saltutil.refresh_modules`
+which reloads the external modules, i.e. your code.
+
+## Remote Development on Dev Machine
+Alternatively, another workflow can be to have a script on your development machine that copies
+the files to the device via [`scp`](https://www.computerhope.com/unix/scp.htm), that way you can
+make the changes in your favorite editor. Remember to have the script also either restart the
+minion service or run the `refresh_modules` command as noted above. Doing development on the local
+machine is preferable for many, and is also the way we do development in office as it has the
+benefit of the above solution, but also allows the user to be as productive as possible by in their
+preferred development environment.
+
+We hope this helps you get started developing with our device and platform.
+
+Remember that we also offer additional more in-depth paid support to get you started with your
+project: https://shop.autopi.io/products/development-voucher
+
+<Discussion
+  title="Local Development Workflow"
+  url="https://community.autopi.io/t/guide-local-development-workflow/1800"
+/>

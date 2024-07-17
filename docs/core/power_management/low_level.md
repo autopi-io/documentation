@@ -13,14 +13,14 @@ The SPM (Smart Power Management) is an embedded system that controls the low-lev
 | Modem | Installed modem module can trigger wake up on received SMS or dial up call. |
 | [STN](#stn) | Built-in chipset triggers power on and off based on voltage level changes. |
 
-Finally the Raspberry Pi communicates directly with the SPM and performs power state changes based on more [high-level](high_level.md) decisions.  
+Finally the Raspberry Pi communicates directly with the SPM and performs power state changes based on more [high-level](/core/power_management/high_level.md) decisions.  
 
 ### States
 
 Below diagram shows an overview of all possible SPM states and the transitions between.
 
 
-import StatesSvg from '../../../static/img/states.svg';
+import StatesSvg from '/img/core/power_management/low_level/states.svg';
 
 <StatesSvg />
 
@@ -86,4 +86,4 @@ Everything is shut down for maximum power saving.
 
 ## STN
 
-See the STN command for available power trigger options [here](../commands/stn.md).
+See the STN command for available power trigger options [here](core/commands/stn.md).

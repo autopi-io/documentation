@@ -19,7 +19,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 - You can buy the new CM4 from: https://www.raspberrypi.com/products/compute-module-4/?variant=raspberry-pi-cm4001000
 :::
 
-### Step-by-step guide
+### Step-by-Step Guide
 
 <SideBySide>
 	<p>
@@ -112,9 +112,10 @@ Please take note of the orientation of the CM4 while detaching it from the AutoP
 
 <p>
 		<strong>Step 8: </strong>
-		To flash or reflash your AutoPi CM4 device, it is recommended to refer to the official manual provided with the device. The manual will contain specific instructions tailored to your AutoPi CM4 model, ensuring the proper and safe execution of the flashing process. Please consult the manual for detailed step-by-step guidance on how to flash or reflash your AutoPi CM4 device. <br/><br/>
-		<strong><a href="https://docs.autopi.io/guides/reflashing-your-device/">Reflashing your device</a>.</strong>
-</p>		
+		To flash or reflash your AutoPi CM4 device, it is recommended to refer to the official manual provided with the device. The manual will contain specific instructions tailored to your AutoPi CM4 model, ensuring the proper and safe execution of the flashing process. Please consult the manual for detailed step-by-step guidance on how to flash or reflash your AutoPi CM4 device. <br/>
+</p>
+
+[Reflashing your device](/getting_started/developer_guides/reflashing_your_device.md)
 
 ### Disscussion
 

@@ -80,13 +80,13 @@ first how to automate setting of sleep timers (i.e. when the device should go to
 also look into how we can automate the clearing of sleep timers.
 
 :::note
-You can see all available power configuration options [here](cloud/configuration/TMU/power.md).
+You can see all available power configuration options [here](/cloud/device_management/advanced_settings/autopi_tmu_cm4/power.md).
 :::
 
 
 ### Power > Sleep Timer
 
-The [sleep timer](cloud/configuration/TMU/power.md#sleep-timer) section of the Advanced Power settings allows you to
+The [sleep timer](/cloud/device_management/advanced_settings/autopi_tmu_cm4/power.md#sleep-timer) section of the Advanced Power settings allows you to
 configure how the device behaves in terms of setting and clearing sleep timers automatically. The `Event Driven`,
 `Inactivity After Sleep` and `Inactivity Fallback` settings configure how the device goes to sleep, while the `Suppress`
 section configures the device on how to stay awake.
@@ -105,8 +105,8 @@ Now, let's discuss the functionalities each one brings to the table:
 
 - **Event Driven** - The `Even Driven` sleep timer get's set when the event defined in its `Event Regex` option is
   triggered by the device. This event can either be one of the default ones (like
-  [Engine events](cloud/events/vehicle.md#engine-events) such as `vehicle/engine/stopped` or
-  [Communication events](cloud/events/vehicle.md#communication-events) such as `vehicle/communication/disconnected`).
+  [Engine events](/cloud/device_management/events/vehicle.md#engine-events) such as `vehicle/engine/stopped` or
+  [Communication events](/cloud/device_management/events/vehicle.md#communication-events) such as `vehicle/communication/disconnected`).
   The purpose of this sleep timer is to put the device to sleep when we have detected that the vehicle is no longer
   being used (hence the engine/stopped instead of engine/running, which we will see in the suppress settings further
   down).
@@ -135,8 +135,8 @@ will clear all sleep timers that have been setup on the device. It also prevents
 another event is seen (specifically, the `Event Regex` from the `Event Driven` sleep timer).
 
 Common examples here are using the opposite events from the `Event Driven` sleep timer:
-[Engine events](cloud/events/vehicle.md#engine-events) like `vehicle/engine/started` or
-[Communication events](cloud/events/vehicle.md#communication-events) like `vehicle/communication/established`. Note that
+[Engine events](/cloud/device_management/events/vehicle.md#engine-events) like `vehicle/engine/started` or
+[Communication events](/cloud/device_management/events/vehicle.md#communication-events) like `vehicle/communication/established`. Note that
 here, we are looking for an event that shows the vehicle is now being driven, so we want to clear the sleep timers as
 we don't want the device to go to sleep, but instead record all of our data.
 
@@ -165,7 +165,7 @@ puts the device to sleep after the hour from the suppress schedule passes.
 
 ## Troubleshooting
 
-### My device is constantly shutting down, even though my vehicle is on and driving
+### My Device is Constantly Shutting Down, Even Though My Vehicle is On and Driving
 
 It's important to remember that the AutoPi device will automatically setup sleep timers in an attempt to protect your
 vehicle's battery. This will happen even if there are no custom configurations setup or without any interference by the

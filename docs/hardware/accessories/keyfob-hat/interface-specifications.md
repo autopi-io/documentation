@@ -1,6 +1,6 @@
 ---
 id: keyfob-interface
-title: Keyless interface specification
+title: Keyless Interface Specification
 ---
 
 :::caution
@@ -10,21 +10,21 @@ The keyless entry solution described here only works with the AutoPi TMU CM4 and
 This section descripes the interface for the keyless keyfob solution provided through the BLE extension available through AutoPi. The BLE extension is a small extension board, which makes it possible to wake the AutoPi through a BLE connection and then send BLE commands to control a keyfob through the same interface. The BLE connection makes it possible to unlock/lock the car in areas where there is no internet connection. 
 
 
-## API for Key controls
+## API for Key Controls
 Commands can be sent from another system to the AutoPi server and there on to control the vehicle. 
 
 <p align="center">
 <img src="/img/hardware/accessories/keyfob/command_flow_1.jpg" alt="Keyfob command flow" width="60%" />
 </p>
 
-## Power Settings to optimize sleep scheduling
+## Power Settings to Optimize Sleep Scheduling
 It is possible to upload booking schedules to the AutoPi backend. These will be transformed into sleeping schedules for the AutoPi to ensure that the device is powered on at the correct times.
 
 <p align="center">
 <img src="/img/hardware/accessories/keyfob/power_settings_1.jpg" alt="Keyfob power settings control" width="60%" />
 </p>
 
-## Offline mode
+## Offline Mode
 When the device is offline (not connected to LTE/GSM network), it is important that the user can still control the car. Therefore, a set of offline functions will be available through Bluetooth. 
 
 

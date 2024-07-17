@@ -27,7 +27,8 @@ npm install
 npm start
 ```
 
-This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
+This command starts a local development server and open up a browser window. 
+Most changes are reflected live without having to restart the server (redirects needs build to work locally).
 
 ```console
 npm run gensidebars
@@ -35,10 +36,12 @@ npm run gensidebars
 
 If you add new pages to the docs, you can run the above script to generate the configuration for the sidebar of the website.
 
+**Running this scripts will change the layout of the documentation, instead add new docs manually in sidebars.js**.
+
 ## Build
 
 ```console
-npm build
+npm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
@@ -65,6 +68,31 @@ There are a few conventions that should be followed when working with the docume
 3. Try to have consistent spacing:
   1. Lines shouldn't be longer than 120 characters
   2. Indented lines are 2 spaces
+
+### Changing Docs Structure
+
+To ensure backwards compatibility, all changes to the path of any existing docs, needs to redirect the old URL to the new.
+This is done in ```docusaurus.config.js``` under plugin-client-redirects, here the old links can be mapped to the new.
+Below is an example:
+
+```
+{
+    to: '/getting_started/autopi_tmu_cm4/guides-intro/', # New path
+    from: '/guides/guides-intro/', # Old path
+},
+```
+For multiple redirects to the same URL arrays can be utilised as seen in the documentation [here](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-client-redirects#ex-config).
+
+If entire subdirectories are moved, the path can be sustituted for the whole directory. In the example below all URLs with the '/guides/obd-ii/' URL
+will be changed to '/cloud/obd-ii/' and avoid changing it for individually for each of the files in the directory.
+
+```
+if (existingPath.includes('/cloud/obd-ii/')) {
+    return [
+        existingPath.replace('/cloud/obd-ii/', '/guides/obd-ii/'),
+    ];
+}
+```
 
 ## Deployment
 
