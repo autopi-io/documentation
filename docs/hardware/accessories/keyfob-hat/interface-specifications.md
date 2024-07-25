@@ -41,5 +41,5 @@ To ensure security, the device will have a rolling key pair needed for smartphon
 </p>
 
 :::note
-For a more detailed description of the interface, please contact support@autop.io for full documentation. 
+For a more detailed description of the interface, please contact support@autopi.io for full documentation. 
 :::
