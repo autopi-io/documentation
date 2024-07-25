@@ -49,8 +49,7 @@ Reasemble the device using the new AutoPi BLE side shield, giving access to two 
 	You have now successfully installed the keyless entry solution to the device.
 </p>
 
-<p>
-	In case you have any questions about installing additional components onto the AutoPi device, don't hesitate to
-	shoot us an email at <a href="mailto:support@autopi.io">support@autopi.io</a>. We usually respond back in 24 hours
-	on working days.
-</p>
+:::note
+In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
+:::
+

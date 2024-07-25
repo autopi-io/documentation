@@ -175,5 +175,6 @@ The cause for this is usually because the device hasn't been setup to listen to 
 to suppress (aka clear) sleep timers when the vehicle is being driven. If the device is plugged into an electric vehicle
 that can be a bit more difficult to accomplish.
 
-If you need help to set this up, reach out to us to support@autopi.io and we will do what we can to help you set your
-device's configuration.
+:::note
+In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
+:::

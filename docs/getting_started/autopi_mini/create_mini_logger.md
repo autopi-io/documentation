@@ -40,8 +40,6 @@ As an example, when selecting `Ranges Both` contains a range start and range end
 Once you save the Mini Logger, you will see it appear in the Loggers page.
 Once the settings have ben synchronized to your device, your device will start sending the newly created logger.
 
-## Conclusion
-In this guide we showed how to setup loggers for your AutoPi Mini device.
-If you need some help with setting a logger up, feel free to reach out to us by writing us a mail
-to support@autopi.io\. We also are very happy to receive any feedback, so don't hesitate to let us
-know your thoughts.
+:::note
+In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
+:::

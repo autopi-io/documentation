@@ -210,6 +210,6 @@ In this guide we talked more in-depth about PIDs and PID Loggers. We setup a cus
 then used to create a PID Logger and got a very small insight into the automated processes that
 exist in the AutoPi ecosystem.
 
-If you need some help with setting a logger up, feel free to reach out to us by writing us a mail
-to support@autopi.io\. We also are very happy to receive any feedback, so don't hesitate to let us
-know your thoughts.
+:::note
+In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
+:::

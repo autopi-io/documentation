@@ -68,7 +68,7 @@ the form to create a trigger.
     7. *Actions* - This is where you specify the actions that are to be executed when the trigger is fired. You can choose from two
     options as of now: sending an email and sending a webhook request. For this guide, we will use only the sending an email option
     to send an email to support@autopi.io (which is also the email you should use if you have any questions for this or any other
-    guide 😉).  We will review the different options that you have when sending a webhook request further into this guide.
+    guide).  We will review the different options that you have when sending a webhook request further into this guide.
 
 3. Finally, let's click on the create button to create our new trigger.
 

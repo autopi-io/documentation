@@ -145,8 +145,6 @@ We recommend using [**this**](https://shop.autopi.io/products/3in1-external-ante
 	You have now successfully installed an external antenna kit onto your Gen3.5 CAN-FD Autopi device.
 </p>
 
-<p>
-	In case you have any questions about installing additional components onto the AutoPi device, don't hesitate to
-	shoot us an email at <a href="mailto:support@autopi.io">support@autopi.io</a>. We usually respond back in 24 hours
-	on working days.
-</p>
+:::note
+In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
+:::

@@ -117,14 +117,10 @@ Please take note of the orientation of the CM4 while detaching it from the AutoP
 
 [Reflashing your device](/getting_started/developer_guides/reflashing_your_device.md)
 
-### Disscussion
-
 <p>
 	You have now successfully replaced your Raspberry Pi CM4 in your AutoPi TMU CM4 device.
 </p>
 
-<p>
-	In case you have any questions about installing additional components onto the AutoPi device, don't hesitate to
-	shoot us an email at <a href="mailto:support@autopi.io">support@autopi.io</a>. We usually respond back in 24 hours
-	on working days.
-</p>
+:::note
+In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
+:::

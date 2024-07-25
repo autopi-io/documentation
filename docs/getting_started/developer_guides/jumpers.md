@@ -28,7 +28,6 @@ To see how you can attach a jumper to your specific device view the following pa
 * [Generation 2 devices](/hardware/legacy_devices/autopi_dongle/index.md/#jumper)
 * [Generation 3 devices](/hardware/legacy_devices/autopi_dongle_gen3/index.md/#jumper)
 
-## Need Help?
-
-If you have any questions, can't get the jumper to work properly or have any feedback, don't
-hesitate to reach out to us by sending an email to support@autopi.io.
+:::note
+In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
+:::

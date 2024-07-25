@@ -83,4 +83,7 @@ This means that you must ensure that the device is using the right settings for 
 To make sure that the device has all the right configuration applied (They might differ between environments), you should go to the `Software Updates` page, and reapply the current version, by clicking `enqueue update`, that way you ensure that the device is fully in sync with the current environment.
 
 You should now be able to make configuration changes, execute commands and so on.
-If you experience any issues with the process, please send a mail to our support team over at support@autopi.io.
+
+:::note
+In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
+:::
