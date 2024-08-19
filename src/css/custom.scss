@@ -1,5 +1,6 @@
 /* Global styles */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root {
   --ifm-color-primary: #005afa;
@@ -30,10 +31,17 @@ body, input, textarea, select, button {
 	-moz-font-feature-settings: 'kern';
 	font-feature-settings: 'kern';
 
-  font-size: 1rem;
+  font-size: 0.96rem;
   line-height: 1.5;
-  letter-spacing: -0.02em;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  letter-spacing: -0.025em;
+
+    /*font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-display: swap;*/
+  /*font-family: "Inter", sans-serif;*/
+  font-family: Inter var, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-optical-sizing: auto;
+  /*font-weight: 500;*/
+  font-style: normal;  
   font-display: swap;
   font-weight: 400;  
   color: #212529;
