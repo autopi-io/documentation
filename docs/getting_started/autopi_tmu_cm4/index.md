@@ -179,7 +179,9 @@ has a monthly data cap, so it's recommended to limit the use of the device’s h
 for connecting your phone or notebook.
 :::
 
-If you need to know the APN string for the pre-installed SIM card, it is nxt20.net. 
+:::note
+If you need to know the APN string for the pre-installed SIM card, it is **nxt20.net**. 
+:::
 
 If you are using your own SIM card, you may need to configure the APN settings after 
 connecting to the device’s Wi-Fi hotspot to ensure a seamless 4G/LTE connection. 
