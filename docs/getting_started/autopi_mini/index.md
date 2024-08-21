@@ -42,7 +42,7 @@ You can also place it in an holder or purchase a velcro strip to secure it on th
 
 This is the relocator cable:
 
-![AutoPi.io - Relocator cable](/img/getting_started/getting_started/relocator_cable2.jpg)
+![AutoPi.io - Relocator cable](/img/getting_started/getting_started/relocator_cable.png)
 
 ## 5. Finished
 
