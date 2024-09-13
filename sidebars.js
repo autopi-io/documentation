@@ -7,6 +7,7 @@ module.exports = {
           "items": [
             "getting_started/autopi_tmu_cm4/guides-intro",
             "getting_started/autopi_tmu_cm4/4g-internet-setup-troubleshooting",
+            "getting_started/autopi_tmu_cm4/cm4-data-troubleshooting",
           ],
           "label": "AutoPi TMU CM4",
           "type": "category"
@@ -14,7 +15,8 @@ module.exports = {
         {
           "items": [
             "getting_started/autopi_mini/mini-guides-intro",
-            "getting_started/autopi_mini/create-mini-loggers"
+            "getting_started/autopi_mini/create-mini-loggers",
+            "getting_started/autopi_mini/mini-data-troubleshooting",
           ],
           "label": "AutoPi Mini",
           "type": "category"
@@ -33,7 +35,7 @@ module.exports = {
           ],
           "label": "Electric Vehicles",
           "type": "category"
-        },       
+        },
         {
           "items": [
             "getting_started/api/api-intro",
