@@ -12,6 +12,32 @@ Please read the **whole guide** in order to have a good understanding of how all
 You need to be careful not to tear or damange some of the cables when handling the casing of the device.
 :::
 
+If you've purchased the [Antenna Kit](https://shop.autopi.io/products/3in1-external-antenna-kit) 
+alongside your AutoPi TMU CM4, this guide will help you through the 
+installation process. The kit allows you to boost 4G/LTE connectivity and 
+GPSsignal strength, which is especially useful if you frequently drive
+in areas with weak signal reception. 
+
+**What's included:** 
+- **3x SMA adapter cables** (for internal installation) 
+- **1x 4G/LTE & GPS combo antenna** (with 3M adhesive pad and 300cm cable) 
+- **1x Rear shield** (for 3x SMA connectors) 
+
+### Pre-installed Antennas
+If you opted for pre-installed antennas through our shop or by contacting our 
+sales team, your device will arrive with the antennas already in place. All that's
+left to do is connect the cables to the corresponding antenna ports. Please refer
+to the image below for guidance. 
+
+![Device with antenna](/img/hardware/autopi_tmu_cm4/installing_external_antennas/antenna_device.png)
+
+Then all you need to do is to connect the device to the vehicle’s OBD-II and place
+the adhesive pad on the dashboard or other suitable place.  
+
+### Installing the Antennas: 
+
+If you are installing the antennas yourself, follow the Step-by-Step guide.
+
 :::success
 **Prerequesites** for this guide:
 - An AutoPi TMU CM4 device
