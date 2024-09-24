@@ -78,7 +78,7 @@ displayed in the form of widgets on the Dashboard by navigating to Vehicles > Da
 
 ### 5. Configuring Widgets
 
-![Configurinyyg widget](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/configuration_widget.png)
+![Successful dashboard](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/successful_data_dashboard.png)
 
 After setting up your loggers, you'll be able to view your data on the dashboard.
 Each widget in the dashboard offers controls in the top-right corner: 
@@ -87,7 +87,7 @@ Each widget in the dashboard offers controls in the top-right corner:
 - **Three dots icon**: Opens the configuration options for the widget. 
 - **X icon**: Removes the widget. Feel free to remove any default widgets that aren't relevant to you.
 
-![Widget actions](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/widget_action.png)
+![Configurinyyg widget](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/configuration_widget.png)
 
 To customize how your data is displayed, click the three dots on a widget. 
 This will take you to the configuration settings, where you can choose different 
@@ -105,7 +105,7 @@ the circle icon to check if data appears. If you see the data, the configuration
 is correct. To make sure your changes are saved for future use, click 
 **Widget Actions** and select **Save**.
 
-![Successful dashboard](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/successful_data_dashboard.png)
+![Widget actions](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/widget_action.png)
 
 To add a new widget to your dashboard, go to **Widget Actions** and choose 
 **Add Widget**. Remember, a logger must be set up beforehand, or the widget 
