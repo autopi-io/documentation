@@ -32,7 +32,7 @@ LEDs on the side of the device to confirm it’s communicating with the Cloud an
 
 For more details on LED status meanings, refer to [this guide](/core/power_management/core-power-intro/#status-leds).
 
-<!-- TODO: insert picture here -->
+![CM4 LED status meaning](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/cm4_light_placements_01.png)
 
 ### 2. Internet Connectivity Issues 
 

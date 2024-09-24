@@ -45,7 +45,7 @@ If either LED is not behaving as expected, it could be a sign of connectivity or
 hardware issues that need attention. Try to disconnect it from the OBD-II port, 
 then reconnect it. Wait until both lights are green and blinking.  
 
-<!-- TODO: add picture  -->
+![AutoPi Mini LED meaning](/img/getting_started/autopi_mini/data_troubleshooting/mini_light_placements_01.png)
 
 ### 2. Logger Creation
 
