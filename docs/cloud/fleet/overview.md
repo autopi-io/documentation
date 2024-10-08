@@ -3,61 +3,87 @@ id: fleet-overview
 title: Overview
 ---
 
-The fleet overview section allows you to monitor the entire fleet of vehicles, and get a quick overview of the status of each vehicle.
+import SideBySide from '@site/src/components/SideBySide';
 
-All devices with a known position is shown in the map, and each device can be highlighted by clicking the device in the table.
+![Fleet map overview](/img/cloud/fleet/overview/Fleet_overview_world_map.png)
 
-![fleet overview](/img/cloud/fleet/overview/fleet-overview.jpg)
+This section provides an overview of your entire fleet, showcasing all vehicles 
+associated with your account. With access to real-time data and advanced fleet 
+management tools, you can efficiently manage, monitor, and optimize your fleet’s 
+operations. 
 
-### Available Columns
-The fleet overview can be customized to show the columns that you need, by clicking the three dots in the top of the fleet overview table.
+## Fleet Tracking
 
-#### Online
+The first thing you’ll notice is a world map displaying all your vehicles as icons,
+each positioned based on their latest known location and their last online status.
+If you set-up geofences and locations, you’ll see them on the map as well. You can
+edit the map view from the top right corner and choose what do want to see on the 
+map. You can zoom in and out of the map, and each vehicle is marked with a colored
+circle that indicates its current state:
+- Green: Driving
+- Orange: Idling
+- Red: Engine off 
+- Grey: Offline 
 
-Indicates if the device has been online in the last 5 minutes, to get a realtime indication you will need to use the ping function by clicking the globe while the device is active.
-This column also allows the use of the [remote wake up functionality](/cloud/device_management/triggers/remote-wakeup.md).
+<p align="center">
+    <img src="/img/cloud/fleet/overview/Fleet_managment_vehicle_state.png" alt="Fleet overview vehicles status" width="50%" />
+</p>
 
-:::note active
-An active device means that it has been selected as the device that you're working on. You can verify which device you have active by looking at the top-right corner of the web page.
-:::
+When you hover over a vehicle icon, detailed information about the vehicle will 
+be shown. This includes the vehicle’s name, model, VIN, license plate, speed over
+ground (while driving), distance traveled since the trip began, and the last 
+communication timestamp (showing when it was last online). 
 
-#### Display
-The display name of the device, it will show the following values in order of availability.
-device name > vehicle name > Last 12 characters of the Unit ID.
+If you're zoomed out, you may see an icon showing two cars, indicating that 
+multiple vehicles are close together. Hovering over this cluster icon will 
+provide details on the number of vehicles in the group, along with their 
+respective states, color-coded for quick identification. 
 
-#### Vehicle
-The name of the vehicle currently assigned to the device
+Clicking on a vehicle icon will zoom the map into that vehicle’s precise location. 
 
-#### Unit ID
-The unit id of the device. This ID is also printed on the device, so this makes it possible to correlate which device you are working on.
+<div class="image-container">
+    <img src="/img/cloud/fleet/overview/Map_overlay_options.png" class="image-margin" alt="Fleet map overlay" width="30%" />
+    <img src="/img/cloud/fleet/overview/Map_options.png" class="image-margin" alt="Fleet map options" width="30%" />
+</div>
 
-#### IMEI
-The IMEI number of the modem installed in the device.
+In the map’s right corner, you can choose to check mark options you want to see 
+on the map. If you only want to view vehicles, or only geofences or location or 
+everything, you have the option to choose your map view.  
 
-#### Open Alerts
-The number and distribution of alerts on the device, is used to signal that various issues are found.
+In the bottom right corner of the map, you can customize your view by selecting 
+which elements to display. You can opt to view only vehicles, geofences, 
+locations, tailoring the map to your preferences. 
 
-#### Last Communication
-When the device has last sent data to the cloud, or communicated with the master server.
+## Fleet Overview
 
-#### Template
-What template is associated to the device.
+![Fleet map overview](/img/cloud/fleet/overview/Fleet_overview_widgets.png)
 
-#### Is Updated
-Indicates if the device has a pending update.
+Here you can find widgets that provide statistics and insights into your fleet. 
+In “Fleet Total” section you will see the total number of all your vehicles. 
+Clicking “Show” will take you to the Vehicle section, where you can get more 
+detailed information about each vehicle.
 
-#### Data Usage
-Shows the current data usage. 
+Next to it, you will find widgets for **Driving Now**, **Driven Today** and two 
+widgets providing insight on vehicles **Driven in the last 30 days** and 
+**Not Driven in the last 30 days**. These insights can help fleet managers 
+understand vehicle usage and identify underutilized vehicles. Clicking Show 
+within a widget will take you to a vehicle table, offering a detailed view of 
+the relevant vehicles. For example, if you want to see which vehicles were not 
+driven in the in the last 30 days, simply click on the widget, and you will be 
+redirected to the filtered vehicle table displaying those specific vehicles. 
 
-Data usage can exceed the default allowed limit, as the limit is pooled across all devices, ie. if 10 devices can use 1GB of data, but if 5 of them are not using anything, the other 5 can use 200mb each before reaching the limit.
+<!--TODO add link to Locations when it has been made! -->
+There are also widgets for **Off Location** and **On Location**. Each vehicle can
+be assigned to a predefined location, allowing you to track how many vehicles are
+outside or inside their assigned locations. This information will be useful to get
+a better overview of your vehicle's locations. Clicking show within a widget will
+take you to a filtered vehicle view for more detailed analysis. 
 
-Currently only available for customers which are using our SIM solution.
+In the **Time and Distance** section, you can view the average time and distance
+driven by both individual vehicles and the entire fleet for today and for the 
+current month.  
 
-#### Phone Number
-Shows the phone number associated to the device. 
+The Location widget will display your top five locations – the ones with the most
+vehicles associated to the location. It shows how many vehicles are on and off 
+the location. To view all your locations, click on **View Locations**. 
 
-Currently only available for customers which are using our SIM solution.
-
-:::tip
-Contact sales@autopi.io to get more information.
-:::

@@ -244,3 +244,15 @@ html[data-theme=dark] {
   background-color: #0f4ab1;
   border-color: #0e46a6;
 }
+
+.image-container {
+  display: flex;
+  justify-content: center; 
+  width: 100%;    
+  margin: 0 auto; 
+}
+
+.image-margin {
+    margin: 0 10px;
+}
+
