@@ -9,7 +9,7 @@ The remote wake up feature allows your to trigger devices to be awoken remotely 
 
 The feature is available in the fleet overview, and can be used by clicking the ON icon to the left of the device.
 
-![fleetoverview wakeup](/img/cloud/fleet/triggers/remote_wakeup/fleet-overview-wakeup.jpg)
+![fleetoverview wakeup](/img/cloud/device_management/triggers/remote_wakeup/fleet-overview-wakeup.jpg)
 
 The functionality is included in the fleet management add-on when using our SIM solution.
 

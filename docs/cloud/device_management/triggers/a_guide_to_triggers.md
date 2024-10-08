@@ -7,7 +7,7 @@ This guide will be introducing and explaining how to use, create and edit trigge
 Triggers empower you to receive notifications based on events from your device, as well as the various data points logged from your vehicle. 
 triggers offer you flexibility in managing your notifications, which can be send via email or a webhook request.
 
-![intro_pic](/img/cloud/fleet/triggers/a_guide_to_triggers/triggers_example.png) 
+![intro_pic](/img/cloud/device_management/triggers/a_guide_to_triggers/triggers_example.png) 
 
 _Webhooks_ are supported so you can integrate with almost any service or system. Popular examples are:
 
@@ -42,7 +42,7 @@ Let's get started with the guide.
 "Triggers" option from the menu. There, you'll see a "Create" button. When you press that button a pop-up window will show up with
 the form to create a trigger.
 
-![create_trigger_form](/img/cloud/fleet/triggers/a_guide_to_triggers/create_trigger_form.jpg)
+![create_trigger_form](/img/cloud/device_management/triggers/a_guide_to_triggers/create_trigger_form.jpg)
 
 2. Next, let's fill out that form. We'll go through the options that are available in the form and explain each one of them.
 
@@ -111,15 +111,15 @@ types. For example, you would probably not use the comparison operators (greater
 (Remember all times are UTC, so keep that in mind when creating the conditions. So if your timezone is UTC+2, the below conditions will in
 reality match between 03:00:00 to 08:00:00 local time.)
 
-![conditions_example_1](/img/cloud/fleet/triggers/a_guide_to_triggers/conditions_example_1.jpg) 
+![conditions_example_1](/img/cloud/device_management/triggers/a_guide_to_triggers/conditions_example_1.jpg) 
 
 **Notify on device update (No conditions)**
 
-![conditions_example_2](/img/cloud/fleet/triggers/a_guide_to_triggers/conditions_example_2.jpg) 
+![conditions_example_2](/img/cloud/device_management/triggers/a_guide_to_triggers/conditions_example_2.jpg) 
 
 **Notify on all events (will only execute once every minute no matter how many events are received)**
 
-![conditions_example_3](/img/cloud/fleet/triggers/a_guide_to_triggers/conditions_example_3.jpg) 
+![conditions_example_3](/img/cloud/device_management/triggers/a_guide_to_triggers/conditions_example_3.jpg) 
 
 ## Actions
 
@@ -194,15 +194,15 @@ is the `vehicle/battery/discharging` event which has an `event.vehicle.battery.l
 
 **Send email**
 
-![actions_example_1](/img/cloud/fleet/triggers/a_guide_to_triggers/actions_example_1.jpg)
+![actions_example_1](/img/cloud/device_management/triggers/a_guide_to_triggers/actions_example_1.jpg)
 
 Here is how an example email from a trigger looks:
 
-![actions_example_email](/img/cloud/fleet/triggers/a_guide_to_triggers/actions_example_email.jpg) 
+![actions_example_email](/img/cloud/device_management/triggers/a_guide_to_triggers/actions_example_email.jpg) 
 
 **Send webhook request**
 
-![actions_example_2](/img/cloud/fleet/triggers/a_guide_to_triggers/actions_example_2.png)  
+![actions_example_2](/img/cloud/device_management/triggers/a_guide_to_triggers/actions_example_2.png)  
 
 Address: Your unique Slack webhook address  
 Payload: 
@@ -222,7 +222,7 @@ a string of the field name that you would like to get. In the above example, we 
 
 You can check out Slack's [documentation](https://api.slack.com/incoming-webhooks) for more information on what fields they accept.
 
-![actions_example_3](/img/cloud/fleet/triggers/a_guide_to_triggers/actions_example_3.png)
+![actions_example_3](/img/cloud/device_management/triggers/a_guide_to_triggers/actions_example_3.png)
 
 
 **Send MQTT message via webhook (home assistant etc)**  

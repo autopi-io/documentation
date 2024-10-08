@@ -15,7 +15,7 @@ The fleet overview can be customized to show the columns that you need, by click
 #### Online
 
 Indicates if the device has been online in the last 5 minutes, to get a realtime indication you will need to use the ping function by clicking the globe while the device is active.
-This column also allows the use of the [remote wake up functionality](/cloud/fleet/triggers/remote-wakeup.md).
+This column also allows the use of the [remote wake up functionality](/cloud/device_management/triggers/remote-wakeup.md).
 
 :::note active
 An active device means that it has been selected as the device that you're working on. You can verify which device you have active by looking at the top-right corner of the web page.

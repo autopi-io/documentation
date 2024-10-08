@@ -74,7 +74,6 @@ module.exports = {
         {
           "items": [
             "cloud/fleet/fleet-intro",
-            "cloud/fleet/device-install-procedure",
             "cloud/fleet/fleet-overview",
             {
               "items": [
@@ -84,18 +83,9 @@ module.exports = {
               "label": "Trips",
               "type": "category"
             },
-            "cloud/fleet/geofences",
-            {
-              "items": [
-                "cloud/fleet/triggers/a-guide-to-triggers",
-                "cloud/fleet/triggers/fleet-wakeup",
-              ],
-              "label": "Triggers",
-              "type": "category"
-            },
+            "cloud/fleet/geofences", 
             "cloud/fleet/fleet-alerts",
             "cloud/fleet/nested-customers",
-            "cloud/fleet/fleet-templates",
           ],
           "label": "Fleet",
           "type": "category"
@@ -103,6 +93,7 @@ module.exports = {
         {
           "items": [
             "cloud/device_management/device-management-intro",
+            "cloud/device_management/device-install-procedure",
             {
               "items": [
                 "cloud/device_management/dashboard/dashboard-intro",
@@ -169,8 +160,17 @@ module.exports = {
               "label": "Advanced Settings",
               "type": "category"
             },
+            {
+              "items": [
+                "cloud/device_management/triggers/a-guide-to-triggers",
+                "cloud/device_management/triggers/fleet-wakeup",
+              ],
+              "label": "Triggers",
+              "type": "category"
+            },
             "cloud/device_management/software-updates",
-            "cloud/device_management/move-to-dedicated-environment"
+            "cloud/device_management/move-to-dedicated-environment",
+            "cloud/device_management/templates",
           ],
           "label": "Device Management",
           "type": "category"

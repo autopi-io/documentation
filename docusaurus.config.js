@@ -260,12 +260,12 @@ module.exports = {
             from: '/cloud/geofences/',
           },
           {
-            to: '/cloud/fleet/triggers/a-guide-to-triggers/',
-            from: '/guides/a-guide-to-triggers/',
+            to: '/cloud/device_management/triggers/a-guide-to-triggers/',
+            from: ['/guides/a-guide-to-triggers/', '/cloud/fleet/triggers/a-guide-to-triggers/'],
           },
           {
-            to: '/cloud/fleet/triggers/fleet-wakeup/',
-            from: '/cloud/fleet/fleet-wakeup/',
+            to: '/cloud/device_management/triggers/fleet-wakeup/',
+            from: ['/cloud/fleet/fleet-wakeup/', '/cloud/fleet/triggers/fleet-wakeup/'],
           },
           {
             to: '/cloud/device_management/dashboard/adding-a-new-widget-from-scratch/',
@@ -294,6 +294,14 @@ module.exports = {
           {
             to: '/cloud/obd_library/community_library/',
             from: '/guides/obd-ii/how-to-use-the-car-explorer-feature/',
+          },
+          {
+            to: '/cloud/device_management/templates/',
+            from: '/cloud/fleet/fleet-templates/',
+          },
+          {
+            to: '/cloud/device_management/device-install-procedure/',
+            from: '/cloud/fleet/device-install-procedure/',
           },
           {
             to: '/hardware/accessories/doip-install/',
