@@ -85,7 +85,6 @@ module.exports = {
             },
             "cloud/fleet/geofences", 
             "cloud/fleet/fleet-alerts",
-            "cloud/fleet/nested-customers",
           ],
           "label": "Fleet",
           "type": "category"
@@ -170,6 +169,7 @@ module.exports = {
             },
             "cloud/device_management/software-updates",
             "cloud/device_management/move-to-dedicated-environment",
+            "cloud/device_management/nested-customers",
             "cloud/device_management/templates",
           ],
           "label": "Device Management",
