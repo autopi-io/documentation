@@ -308,6 +308,14 @@ module.exports = {
             from: '/cloud/fleet/device-install-procedure/',
           },
           {
+            to: '/cloud/fleet_management/trips/introduction/',
+            from: '/cloud/trips/introduction/',
+          },
+          {
+            to: '/cloud/fleet_management/trips/automatic-exports/',
+            from: '/cloud/trips/automatic-exports/',
+          },
+          {
             to: '/hardware/accessories/doip-install/',
             from: '/hardware/accessories/doip-hat/doip-install/',
           },
@@ -324,9 +332,9 @@ module.exports = {
               existingPath.replace('/getting_started/api/', '/guides/api/'),
             ];
           }
-          if (existingPath.includes('/cloud/fleet/trips/')) {
+          if (existingPath.includes('/cloud/fleet_management/')) {
             return [
-              existingPath.replace('/cloud/fleet/trips/', '/cloud/trips/'),
+              existingPath.replace('/cloud/fleet_management/', '/cloud/fleet/'),
             ];
           }
           if (existingPath.includes('/cloud/device_management/events/')) {

@@ -19,7 +19,7 @@ Its various features are designed to make it easier to:
 - **Track real time vehicle data** 
 
 <p align="center">
-    <img src="/img/cloud/fleet/introduction/AutoPI_CTA_23-24_GeoMap_01_Flat.png" alt="Fleet intro graphics" width="70%" />
+    <img src="/img/cloud/fleet_management/introduction/AutoPI_CTA_23-24_GeoMap_01_Flat.png" alt="Fleet intro graphics" width="70%" />
 </p>
 
 :::tip

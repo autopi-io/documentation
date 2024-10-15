@@ -73,18 +73,18 @@ module.exports = {
         "cloud/cloud-intro",
         {
           "items": [
-            "cloud/fleet/fleet-intro",
-            "cloud/fleet/fleet-overview",
+            "cloud/fleet_management/fleet-intro",
+            "cloud/fleet_management/fleet-overview",
             {
               "items": [
-                "cloud/fleet/trips/introduction",
-                "cloud/fleet/trips/automatic-exports"
+                "cloud/fleet_management/trips/introduction",
+                "cloud/fleet_management/trips/automatic-exports"
               ],
               "label": "Trips",
               "type": "category"
             },
           ],
-          "label": "Fleet",
+          "label": "Fleet Management",
           "type": "category"
         },
         {

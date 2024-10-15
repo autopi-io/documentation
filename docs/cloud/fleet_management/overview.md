@@ -5,7 +5,7 @@ title: Overview
 
 import SideBySide from '@site/src/components/SideBySide';
 
-![Fleet map overview](/img/cloud/fleet/overview/Fleet_overview_world_map.png)
+![Fleet map overview](/img/cloud/fleet_management/overview/Fleet_overview_world_map.png)
 
 This section provides an overview of your entire fleet, showcasing all vehicles 
 associated with your account. With access to real-time data and advanced fleet 
@@ -26,7 +26,7 @@ circle that indicates its current state:
 - Grey: Offline 
 
 <p align="center">
-    <img src="/img/cloud/fleet/overview/Fleet_managment_vehicle_state.png" alt="Fleet overview vehicles status" width="50%" />
+    <img src="/img/cloud/fleet_management/overview/Fleet_managment_vehicle_state.png" alt="Fleet overview vehicles status" width="50%" />
 </p>
 
 When you hover over a vehicle icon, detailed information about the vehicle will 
@@ -42,8 +42,8 @@ respective states, color-coded for quick identification.
 Clicking on a vehicle icon will zoom the map into that vehicle’s precise location. 
 
 <div class="image-container">
-    <img src="/img/cloud/fleet/overview/Map_overlay_options.png" class="image-margin" alt="Fleet map overlay" width="30%" />
-    <img src="/img/cloud/fleet/overview/Map_options.png" class="image-margin" alt="Fleet map options" width="30%" />
+    <img src="/img/cloud/fleet_management/overview/Map_overlay_options.png" class="image-margin" alt="Fleet map overlay" width="30%" />
+    <img src="/img/cloud/fleet_management/overview/Map_options.png" class="image-margin" alt="Fleet map options" width="30%" />
 </div>
 
 In the map’s right corner, you can choose to check mark options you want to see 
@@ -56,7 +56,7 @@ locations, tailoring the map to your preferences.
 
 ## Fleet Overview
 
-![Fleet map overview](/img/cloud/fleet/overview/Fleet_overview_widgets.png)
+![Fleet map overview](/img/cloud/fleet_management/overview/Fleet_overview_widgets.png)
 
 Here you can find widgets that provide statistics and insights into your fleet. 
 In “Fleet Total” section you will see the total number of all your vehicles. 
