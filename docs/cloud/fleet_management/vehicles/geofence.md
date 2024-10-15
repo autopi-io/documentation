@@ -3,7 +3,7 @@ id: fleet-geofences
 title: Geofences
 ---
 
-![Geofence page](/img/cloud/fleet_management/geofences/geofence_opening_page.png)
+![Geofence page](/img/cloud/fleet_management/vehicles/geofences/geofence_opening_page.png)
 
 In the second subsection on the Vehicle Tab, you will find **Geofences**. This 
 feature allows you to create and manage geofences, which define specific 
@@ -15,7 +15,7 @@ geofences that have been created.
 
 ### How to Create a Geofence
 
-![Create geofence](/img/cloud/fleet_management/geofences/create_geofence.png)
+![Create geofence](/img/cloud/fleet_management/vehicles/geofences/create_geofence.png)
 
 1. Click **Create** to start creating a geofence. Under the headline 
    **Create Geofence** you’ll see three columns – Details, Groups, Vehicles.  
@@ -37,7 +37,7 @@ geofences that have been created.
 
 4. **Add Vehicle groups to the Geofence:**
     - In the second column under Create Geofence you can add vehicle groups to the geofence.
-    - If you have created a vehicle group (more info here), <!-- TODO Insert link to Vehicle groups -->
+    - If you have created a vehicle group (more info [here](/cloud/fleet_management/vehicles/groups.md)),
       you can apply the geofence to the desired group of vehicles. 
       Find the group in the list or search for it using the filtering option.  
     - View group details including name, number of vehicles, notification channels, 
@@ -47,7 +47,7 @@ geofences that have been created.
       selected notification channels, enable or disable all selected groups.
     - You can save time editing chosen groups using Actions, just make sure to 
       check-mark the groups to access Actions, see image below.
-      ![Create geofence groups](/img/cloud/fleet_management/geofences/creating_geofence_groups.png)
+      ![Create geofence groups](/img/cloud/fleet_management/vehicles/geofences/creating_geofence_groups.png)
     - Enabling desired groups means all the vehicles in the vehicle Groups will 
       be under this geofence.    
     - When you are making changes to the Groups or Vehicles you might see an 

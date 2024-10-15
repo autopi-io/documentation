@@ -1,9 +1,9 @@
 ---
-id: vehicles-list
+id: list
 title: Vehicles List
 ---
 
-![Vehicles list](/img/cloud/fleet_management/vehicles_list/vehicles_opening_page.png)
+![Vehicles list](/img/cloud/fleet_management/vehicles/list/vehicles_opening_page.png)
 
 In the Vehicle section you can see all your vehicles, paired with a map showing 
 their latest known position and geofences.
@@ -19,14 +19,14 @@ identifying information. There are also **Filters** options for things like Open
 Alerts, Last Communication or others. These filters help provide a clearer 
 overview of your fleet. 
 
-![Vehicles top view](/img/cloud/fleet_management/vehicles_list/vehicles_top_view.png)
+![Vehicles top view](/img/cloud/fleet_management/vehicles/list/vehicles_top_view.png)
 
 Back on the vehicle overview, you will see different widgets with information 
 about the vehicle, the fleet it is assigned to, the vehicle’s open alerts, 
 geofences, and locations. You can also view data about the time and distance the 
 vehicle has driven.
 
-![Vehicles widgets](/img/cloud/fleet_management/vehicles_list/vehicles_widgets.png)
+![Vehicles widgets](/img/cloud/fleet_management/vehicles/list/vehicles_widgets.png)
 
 <!-- TODO Insert picture here, whet Stephen is done -->
 

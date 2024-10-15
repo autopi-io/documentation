@@ -3,7 +3,7 @@ id: fleet-groups
 title: Groups
 ---
 
-![Vehicle groups](/img/cloud/fleet_management/groups/vehicles_groups.png)
+![Vehicle groups](/img/cloud/fleet_management/vehicles/groups/vehicles_groups.png)
 
 Within the Vehicle tab, we have three subsections. One of our new features for 
 improved fleet management is the ability to create vehicle groups.  This tool 

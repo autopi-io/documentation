@@ -75,9 +75,15 @@ module.exports = {
           "items": [
             "cloud/fleet_management/fleet-intro",
             "cloud/fleet_management/fleet-overview",
-            "cloud/fleet_management/vehicles-list",
-            "cloud/fleet_management/fleet-geofences",
-            "cloud/fleet_management/fleet-groups",
+            {
+              "items": [
+                "cloud/fleet_management/vehicles/list",
+                "cloud/fleet_management/vehicles/fleet-geofences",
+                "cloud/fleet_management/vehicles/fleet-groups",
+              ],
+              "label": "Vehicles",
+              "type": "category",
+            },
             {
               "items": [
                 "cloud/fleet_management/trips/introduction",
