@@ -257,11 +257,7 @@ module.exports = {
           },
           {
             to: '/cloud/device_management/geofences/',
-            from: '/cloud/geofences/',
-          },
-          {
-            to: '/cloud/device_management/geofences/',
-            from: '/cloud/fleet/geofences/',
+            from: ['/cloud/fleet/geofences/', '/cloud/geofences/'],
           },
           {
             to: '/cloud/device_management/triggers/a-guide-to-triggers/',
