@@ -76,6 +76,7 @@ module.exports = {
             "cloud/fleet_management/fleet-intro",
             "cloud/fleet_management/fleet-overview",
             "cloud/fleet_management/vehicles-list",
+            "cloud/fleet_management/fleet-geofences",
             {
               "items": [
                 "cloud/fleet_management/trips/introduction",
