@@ -83,8 +83,6 @@ module.exports = {
               "label": "Trips",
               "type": "category"
             },
-            "cloud/fleet/geofences", 
-            "cloud/fleet/fleet-alerts",
           ],
           "label": "Fleet",
           "type": "category"
@@ -169,6 +167,7 @@ module.exports = {
             },
             "cloud/device_management/software-updates",
             "cloud/device_management/move-to-dedicated-environment",
+            "cloud/device_management/geofences", 
             "cloud/device_management/nested-customers",
             "cloud/device_management/templates",
           ],

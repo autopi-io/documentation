@@ -256,8 +256,12 @@ module.exports = {
             from: '/guides/using-the-autopi-with-an-external-power-supply/',
           },
           {
-            to: '/cloud/fleet/geofences/',
+            to: '/cloud/device_management/geofences/',
             from: '/cloud/geofences/',
+          },
+          {
+            to: '/cloud/device_management/geofences/',
+            from: '/cloud/fleet/geofences/',
           },
           {
             to: '/cloud/device_management/triggers/a-guide-to-triggers/',
