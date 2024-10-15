@@ -72,12 +72,12 @@ the relevant vehicles. For example, if you want to see which vehicles were not
 driven in the in the last 30 days, simply click on the widget, and you will be 
 redirected to the filtered vehicle table displaying those specific vehicles. 
 
-<!--TODO add link to Locations when it has been made! -->
 There are also widgets for **Off Location** and **On Location**. Each vehicle can
-be assigned to a predefined location, allowing you to track how many vehicles are
-outside or inside their assigned locations. This information will be useful to get
-a better overview of your vehicle's locations. Clicking show within a widget will
-take you to a filtered vehicle view for more detailed analysis. 
+be assigned to a predefined [location](/cloud/fleet_management/locations.md), 
+allowing you to track how many vehicles are outside or inside their assigned 
+locations. This information will be useful to get a better overview of your 
+vehicle's locations. Clicking show within a widget will take you to a 
+filtered vehicle view for more detailed analysis. 
 
 In the **Time and Distance** section, you can view the average time and distance
 driven by both individual vehicles and the entire fleet for today and for the 

@@ -84,6 +84,7 @@ module.exports = {
               "label": "Vehicles",
               "type": "category",
             },
+            "cloud/fleet_management/locations",
             {
               "items": [
                 "cloud/fleet_management/trips/introduction",
