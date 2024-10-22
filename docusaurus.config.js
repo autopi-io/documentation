@@ -309,11 +309,11 @@ module.exports = {
           },
           {
             to: '/cloud/fleet_management/vehicles/trips/introduction/',
-            from: ['/cloud/trips/introduction/', '/cloud/fleet_management/trips/introduction/'],
+            from: ['/cloud/trips/introduction/', '/cloud/fleet/trips/introduction/', '/cloud/fleet_management/trips/introduction/'],
           },
           {
             to: '/cloud/fleet_management/vehicles/trips/automatic-exports/',
-            from: ['/cloud/trips/automatic-exports/', '/cloud/fleet_management/trips/automatic-exports/'],
+            from: ['/cloud/trips/automatic-exports/', '/cloud/fleet/trips/automatic-exports/', '/cloud/fleet_management/trips/automatic-exports/'],
           },
           {
             to: '/hardware/accessories/doip-install/',
