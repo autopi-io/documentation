@@ -88,6 +88,7 @@ module.exports = {
             {
               "items": [
                 "cloud/fleet_management/configurations/notification-channels",
+                "cloud/fleet_management/configurations/vehicle-states",
               ],
               "label": "Configurations",
               "type": "category",

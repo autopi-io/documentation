@@ -4,7 +4,7 @@ title: Notificaiton Channels
 ---
 
 <p align="center">
-    <img src="/img/cloud/fleet_management/configurations/configurations.png" alt="Configurations"  />
+    <img src="/img/cloud/fleet_management/configurations/notification_channels/configurations.png" alt="Configurations"  />
 </p>
 
 Under configuration you can find Notification Channels. Here you can create a 
