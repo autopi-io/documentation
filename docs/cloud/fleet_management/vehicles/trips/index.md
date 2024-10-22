@@ -13,7 +13,7 @@ Additionally, you can review events that occurred during each trip, such as 'eng
 and filter trips based on the desired date range. 
 You also have the option to categorize trips as either personal or business and, if necessary, export trip data." 
 
-![Trip example](/img/cloud/fleet_management/trips/intro/trip_demo_example_1.png)
+![Trip example](/img/cloud/fleet_management/vehicles/trips/intro/trip_demo_example_1.png)
 
 :::tip
 You can check the events page on my.autopi.io to see all events logged from your device. When troubleshooting it is one of the first places to check if you are unsure why something happened. By looking at the events you can usually get a really good idea about why the device did something.

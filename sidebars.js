@@ -81,6 +81,14 @@ module.exports = {
                 "cloud/fleet_management/vehicles/vehicle-details",
                 "cloud/fleet_management/vehicles/fleet-geofences",
                 "cloud/fleet_management/vehicles/fleet-groups",
+                {
+                  "items": [
+                    "cloud/fleet_management/vehicles/trips/introduction",
+                    "cloud/fleet_management/vehicles/trips/automatic-exports"
+                  ],
+                  "label": "Trips",
+                  "type": "category"
+                },
               ],
               "label": "Vehicles",
               "type": "category",
@@ -93,14 +101,6 @@ module.exports = {
               ],
               "label": "Configurations",
               "type": "category",
-            },
-            {
-              "items": [
-                "cloud/fleet_management/trips/introduction",
-                "cloud/fleet_management/trips/automatic-exports"
-              ],
-              "label": "Trips",
-              "type": "category"
             },
           ],
           "label": "Fleet Management",

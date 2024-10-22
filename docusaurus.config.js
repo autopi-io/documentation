@@ -308,12 +308,12 @@ module.exports = {
             from: '/cloud/fleet/device-install-procedure/',
           },
           {
-            to: '/cloud/fleet_management/trips/introduction/',
-            from: '/cloud/trips/introduction/',
+            to: '/cloud/fleet_management/vehicles/trips/introduction/',
+            from: ['/cloud/trips/introduction/', '/cloud/fleet_management/trips/introduction/'],
           },
           {
-            to: '/cloud/fleet_management/trips/automatic-exports/',
-            from: '/cloud/trips/automatic-exports/',
+            to: '/cloud/fleet_management/vehicles/trips/automatic-exports/',
+            from: ['/cloud/trips/automatic-exports/', '/cloud/fleet_management/trips/automatic-exports/'],
           },
           {
             to: '/hardware/accessories/doip-install/',
