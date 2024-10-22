@@ -3,8 +3,7 @@ id: locations
 title: Locations
 ---
 
-<!-- TODO Add image when Steffen is done with it -->
-<!-- ![Locations overview](/img/cloud/fleet_management/locations/---.png) -->
+![Locations overview](/img/cloud/fleet_management/locations/locations_overview.jpg)
 
 The **Locations** feature enables you to create and manage various operational 
 areas related to your company, such as your US office, EU office, headquarters, 
@@ -29,7 +28,7 @@ To create a new location:
    You may also include additional information such as a phone number, address, 
    or notes to further describe the location. 
 
-#### Creating a Geofence
+### Creating a Geofence
 
 To set up a geofence: 
 
@@ -40,14 +39,14 @@ To set up a geofence:
 4. Once you're satisfied with the outline, click **Submit**. You can also choose 
    a color for the geofence if desired. 
 
-#### Managing Locations
+### Managing Locations
 
 After creating a location, it will appear in the list along with the details you 
 provided. To make changes, click **Actions** and select the three dots to either 
 edit or delete the location. If you have multiple locations, use the 
 **Search for Location** filter to quickly find specific ones. 
 
-#### Assigning Vehicles to a Location
+### Assigning Vehicles to a Location
 
 To assign vehicles to a location:
 
@@ -66,7 +65,7 @@ To assign vehicles to a location:
 9. Click **Save & Exit** to complete the process. A notification will confirm 
    that the changes have been successfully saved. 
 
-#### Viewing Associated Vehicles 
+### Viewing Associated Vehicles 
 
 Back on the Locations list, the **Vehicles** column will be updated to show the 
 number of vehicles associated with each location. Clicking on this number will 

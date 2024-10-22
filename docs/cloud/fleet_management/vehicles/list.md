@@ -28,12 +28,12 @@ vehicle has driven.
 
 ![Vehicles widgets](/img/cloud/fleet_management/vehicles/list/vehicles_widgets.png)
 
-<!-- TODO Insert picture here, whet Stephen is done -->
-
 Next to Overview you’ll find the **Trips** section. This section provides detailed
 information about the vehicle’s trips, displaying the trip route on a map along 
 with the starting and ending addresses, duration, and distance traveled. You can 
 also categorize trips as personal or business and, if necessary, export trip data.  
+
+![Vehicles widgets](/img/cloud/fleet_management/vehicles/list/vehicle_trips.jpg)
 
 Above the map, you have filtering options for the trips, choose a week, last month
 or a custom range you would like to view, and it will show you a list of all the 

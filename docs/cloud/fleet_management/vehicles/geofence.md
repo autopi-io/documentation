@@ -25,7 +25,8 @@ geofences that have been created.
 
 2. **Configure Notifications:**
     - In the **Default Notification** section, specify who will receive 
-      notifications. Ensure you have created notification channels (learn how here). <!-- TODO Insert link to notification channels -->
+      notifications. Ensure you have created notification channels (learn how 
+      [here](/cloud/fleet_management/configurations/notification_channels.md)).
     - Choose a channel to receive notifications when vehicles enter and/or exit 
       the geofence. You can select multiple notification channels.
 

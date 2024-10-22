@@ -87,6 +87,13 @@ module.exports = {
             "cloud/fleet_management/locations",
             {
               "items": [
+                "cloud/fleet_management/configurations/notification-channels",
+              ],
+              "label": "Configurations",
+              "type": "category",
+            },
+            {
+              "items": [
                 "cloud/fleet_management/trips/introduction",
                 "cloud/fleet_management/trips/automatic-exports"
               ],
