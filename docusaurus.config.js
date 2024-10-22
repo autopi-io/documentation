@@ -316,6 +316,10 @@ module.exports = {
             from: ['/cloud/trips/automatic-exports/', '/cloud/fleet/trips/automatic-exports/', '/cloud/fleet_management/trips/automatic-exports/'],
           },
           {
+            to: '/cloud/fleet_management/vehicles/fleet-geofences/',
+            from: '/cloud/fleet/geofences/',
+          },
+          {
             to: '/hardware/accessories/doip-install/',
             from: '/hardware/accessories/doip-hat/doip-install/',
           },
