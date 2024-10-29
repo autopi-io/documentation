@@ -1,6 +1,6 @@
 ---
 id: notification-channels
-title: Notificaiton Channels
+title: Notification Channels
 ---
 
 <p align="center">
