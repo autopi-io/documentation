@@ -60,12 +60,6 @@ module.exports = {
           position: 'left',          
         },
         {
-          to: 'https://demo.autopi.io/',
-          label: 'Online Demo',
-          position: 'right',
-          className: 'btn-primary cta-btn',
-        },
-        {
           to: 'https://my.autopi.io/',
           label: 'My Cloud',
           position: 'right',
@@ -92,10 +86,6 @@ module.exports = {
             {
               label: 'My AutoPi Cloud',
               to: 'https://my.autopi.io',
-            },
-            {
-              label: 'AutoPi Demo Environment',
-              to: 'https://demo.autopi.io'
             },
             {
               label: 'Shop',
