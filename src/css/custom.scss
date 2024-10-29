@@ -256,3 +256,14 @@ html[data-theme=dark] {
     margin: 0 10px;
 }
 
+details {
+  border: 0px none transparent !important;
+  background-color: transparent !important;
+}
+
+details summary {
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: bold;
+}
+
