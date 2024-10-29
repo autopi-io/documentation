@@ -53,7 +53,12 @@ module.exports = {
           to: 'hardware/hardware-intro',
           label: 'Hardware',
           position: 'left',
-        },      
+        },
+        {
+          to: 'releases/releases',
+          label: 'Releases',
+          position: 'left',
+        },
         {
           to: 'https://api.autopi.io/',
           label: 'API',
