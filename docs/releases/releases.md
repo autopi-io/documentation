@@ -77,4 +77,19 @@ This page documents the release history of the different AutoPi systems
 
 ## Releases 2023
 
+### December
+
+<details>
+  <summary>Releases December</summary>
+
+
+</details>
+
+### November
+
+<details>
+  <summary>Releases November</summary>
+
+
+</details>
 
