@@ -54,9 +54,9 @@ Lastly, we need to accept the new device's keys. You can do that by logging in t
 webpage (https://dedicated.autopi.io/#account/devices) and registering your device if it isn't
 already.
 
-Once you have it registered and you have brought the device online, accept the key.
+Once you have it registered and you have brought the device online, accept the key under the device settings.
 
-![Key state denied](/img/cloud/device_management/move_to_dedicated_environment/key_state_denied.jpg)
+![Key state denied](/img/cloud/device_management/move_to_dedicated_environment/key_state_denied.png)
 
 :::tip
 When accepting the key you might receive a 404 error saying that the key for that device was not
