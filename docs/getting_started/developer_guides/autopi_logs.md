@@ -158,8 +158,3 @@ By default, the syslog file is being rotated every day. Also by default, there w
 versions of the log file that will be kept on the SD card before being removed. You can double check
 those defaults if you read the `/etc/logrotate.d/rsyslog` file which has those definitions.
 
-## Discussion
-If you'd like to discuss this topic with us or other fellow community members, you can do so on
-our community pages dedicated for this guide:
-[Guide: How to retrieve logs from your device](https://community.autopi.io/t/guide-how-to-retrieve-logs-from-your-device/551) and
-[Tip: Send device logfile to dropbox with one command](https://community.autopi.io/t/tip-send-device-logfile-to-dropbox-with-one-command/1159).

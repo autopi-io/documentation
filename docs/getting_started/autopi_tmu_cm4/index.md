@@ -257,9 +257,6 @@ get the most out of your AutoPi experience:
 - **Explore the AutoPi Cloud**: Dive into the AutoPi Cloud platform to explore all 
   the features available to you, such as real-time vehicle monitoring, 
   advanced analytics, and customizable alerts. 
-- **Join the Community**: Connect with other AutoPi users by joining our 
-  [AutoPi Community](https://community.autopi.io/). 
-  Share experiences, ask questions, and learn from fellow users. 
 - **Check Out Our Documentation**: Our [documentation page](https://docs.autopi.io/) 
   is a great resource for learning more about advanced features, troubleshooting, 
   and getting the most out of your device. 

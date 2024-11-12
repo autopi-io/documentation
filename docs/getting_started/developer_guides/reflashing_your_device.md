@@ -153,7 +153,3 @@ the configuration values are properly configured (like the WiFi, SSID and passwo
 device has the correct authentication token for uploading data to the cloud.
 :::
 
-## Discussion
-If you'd like to discuss this topic with us or other fellow community members, you can do so on
-our community page dedicated for this guide:
-[Guide: Reflashing your device](https://community.autopi.io/t/guide-reflashing-your-device/668)

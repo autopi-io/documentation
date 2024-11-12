@@ -78,7 +78,7 @@ setup CAN loggers for your device. In the [AutoPi Cloud](https://my.autopi.io) n
 Device > Loggers where you'll be able to see all the loggers you currently have. They need to
 be of type CAN. There are a few guides that you can take a look at to get them up an running:
 
-1. [How to setup power cycle for an electric vehicle](https://community.autopi.io/t/guide-how-to-setup-power-cycle-for-an-electric-vehicle/1668)
+1. [How to setup power cycle for an electric vehicle](/getting_started/electric_vehicles/power-cycle-for-electric-vehicles/)
 
 2. [How to import custom DBC files](/cloud/obd_library/library.md/#importing-library-items-from-files)
 

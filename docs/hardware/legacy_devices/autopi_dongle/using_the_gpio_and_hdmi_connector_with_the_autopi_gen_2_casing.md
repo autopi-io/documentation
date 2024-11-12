@@ -38,7 +38,3 @@ This guide does require that you have a little bit of DIY abilities/skills, but 
 ![final_result_2](/img//hardware/legacy_devices/autopi_dongle/using_gpio_and_hdmi_with_the_gen_2/final_result_2.jpg)
 ![final_result_3](/img//hardware/legacy_devices/autopi_dongle/using_gpio_and_hdmi_with_the_gen_2/final_result_3.jpg)
 
-### Discussion
-
-If you'd like to discuss this topic with us or other fellow community members, you can do so on our community page dedicated for this guide:
-[Using the GPIO and HDMI Connector with the AutoPi Gen 2 casing](https://community.autopi.io/t/using-the-gpio-and-hdmi-connector-with-the-autopi-gen-2-casing/374)

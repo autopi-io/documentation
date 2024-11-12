@@ -101,10 +101,6 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'AutoPi Community',
-              to: 'https://community.autopi.io/',
-            },
-            {
               label: 'GitHub - AutoPi Core',
               to: 'https://github.com/autopi-io',
             },

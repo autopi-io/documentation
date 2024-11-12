@@ -19,12 +19,6 @@ All other pins are free and their functionality follows that of the Raspberry Pi
 
 ![Second generation AutoPi GPIO Pinout](/img/hardware/legacy_devices/autopi_dongle/gpio_pinout.jpg)
 
-:::note
-If you'd like to discuss this topic with us or other fellow community members, you can do so on
-our community page dedicated for this guide:
-[AutoPi GPIO Pinout](https://community.autopi.io/t/autopi-gpio-pinout/271)
-:::
-
 ## Jumper
 
 This is a picture of the location of the 5V FORCE pins. You can put a jumper on these pins to

@@ -3,8 +3,6 @@ id: debug-raw-pid-queries
 title: Debug Raw PID Queries
 ---
 
-import { Discussion } from '/src/components/Discussion.jsx';
-
 If you want to investigate the raw request and response messages of PID queries, keep reading. If
 you are unsure of what a PID is you can start by reading
 [this wikipedia page](https://en.wikipedia.org/wiki/OBD-II_PIDs).
@@ -57,11 +55,6 @@ And the raw response message sent from the STN/vehicle to the Raspberry Pi is:
 ```
 
 If a PID is queried that is not supported by the vehicle a `NO DATA` response is found instead.
-
-<Discussion
-  title="Debug Raw PID Queries"
-  url="https://community.autopi.io/t/guide-debug-raw-pid-queries/2034"
-/>
 
 :::note
 In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).

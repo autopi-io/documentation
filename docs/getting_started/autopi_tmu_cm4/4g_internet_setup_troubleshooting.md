@@ -153,7 +153,3 @@ You can also check the connection to the autopi cloud service by running the fol
 
 `cmd.run "curl -v my.autopi.io"`
 
-### Discussion
-
-If you'd like to discuss this topic with us or other fellow community members, you can do so on our community page dedicated for this guide:
-[4G internet setup troubleshooting](https://community.autopi.io/t/4g-internet-setup-troubleshooting/235)

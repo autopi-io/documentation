@@ -47,7 +47,7 @@ This means that a typical trip generation lifecycle can look like this
 
 :::tip
 For EV's it's possible to set up new events so that the trip generation works as expected.
-See more here: [Setup power cycle for an electric vehicle](https://community.autopi.io/t/guide-how-to-setup-power-cycle-for-an-electric-vehicle/1668)
+See more here: [Setup power cycle for an electric vehicle](/getting_started/electric_vehicles/power-cycle-for-electric-vehicles/)
 :::
 
 :::note

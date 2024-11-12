@@ -82,6 +82,3 @@ AutoPi board. Once you've done that, you will need to set one of the system sett
 for the Setup > Mpcie > Module setting. There you can select the `ec2x` option which will install
 the driver for the modem.
 
-## Discussion
-If you'd like to discuss this topic with us or other fellow community members, you can do so on our community
-page dedicated for this guide: [Getting started with your DiY Edition](https://community.autopi.io/t/getting-started-with-your-diy-edition/428).

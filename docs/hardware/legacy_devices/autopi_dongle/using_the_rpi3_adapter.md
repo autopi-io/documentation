@@ -79,6 +79,3 @@ The final result should look something similar to this.
 
 ![final_result_3](/img/hardware/legacy_devices/autopi_dongle/using_the_rpi3_adapter/final_result_3.jpg)
 
-### Discussion
-If you'd like to discuss this topic with us or other fellow community members, you can do so on our community page dedicated for this guide:
-[Using the RPi3 Adapter](https://community.autopi.io/t/using-the-rpi3-adapter/293)

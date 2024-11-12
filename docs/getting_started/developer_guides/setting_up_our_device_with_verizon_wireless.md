@@ -16,6 +16,3 @@ This is a verified method of setting it up:
 
 This should be all.
 
-### Discussion
-If you'd like to discuss this topic with us or other fellow community members, you can do so on our community
-page dedicated for this guide: [Setting up our device with Verizon Wireless](https://community.autopi.io/t/setting-up-our-device-with-verizon-wireless/420).

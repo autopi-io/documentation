@@ -241,6 +241,3 @@ Payload: optional and custom based on the IFTTT applet.
 Like any AutoPi cloud functionality, triggers can be managed programmatically through the AutoPi REST API. For more information see: [API Documentation](https://api.autopi.io/#automation)
 :::
 
-## Discussion
-If you'd like to discuss this topic with us or other fellow community members, you can do so on our community page dedicated
-for this guide: [A Guide to Triggers](https://community.autopi.io/t/a-guide-to-triggers/429).

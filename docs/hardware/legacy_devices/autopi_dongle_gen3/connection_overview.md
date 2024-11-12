@@ -45,13 +45,6 @@ All other pins are free and their functionality follows that of the Raspberry Pi
 
 ![Third generation AutoPi GPIO Pinout](/img/hardware/legacy_devices/autopi_dongle_gen3/connection_overview/gpio_pinout_gen3.png)
 
-:::note
-If you'd like to discuss this topic with us or other fellow community members, you can do so on
-our community page dedicated for this guide:
-[AutoPi GPIO Pinout](https://community.autopi.io/t/autopi-gpio-pinout/271)
-:::
-
-
 ### AutoPi Extension Port 1
 
 ![AP EXT 1 connector pinout](/img/hardware/legacy_devices/autopi_dongle_gen3/connection_overview/AP_EXT1.png)

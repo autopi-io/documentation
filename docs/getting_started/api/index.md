@@ -119,6 +119,3 @@ issues, you can send us an email to support@autopi.io
 
 Happy developing, and as always, if you run into issues, exceptions, have suggestions etc, please let us know.
 
-## Discussion
-If you'd like to discuss this topic with us or other fellow community members, you can do so on our community
-page dedicated for this guide: [Guide: Getting started with the AutoPi REST API](https://community.autopi.io/t/guide-getting-started-with-the-autopi-rest-api/497).

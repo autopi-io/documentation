@@ -108,9 +108,8 @@ sleep after the sleep timer is triggered.
 
 :::caution
 For OBD-II non-compliant vehicles additional configuration may be required to ensure a well-functioning power cycle.
-For EVs please see this [guide](https://community.autopi.io/t/guide-how-to-setup-power-cycle-for-an-electric-vehicle/).
+For EVs please see this [guide](/getting_started/electric_vehicles/power-cycle-for-electric-vehicles/).
 :::
-
 
 ## Status LEDs
 

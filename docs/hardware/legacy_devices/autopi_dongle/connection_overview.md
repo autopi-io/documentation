@@ -15,7 +15,3 @@ This is a diagram shows the connection possibilities of the second generation Au
 
 ![connection overview](/img/hardware/legacy_devices/autopi_dongle/connection_overview/connection_overview.jpeg)
 
-## Discussion
-If you'd like to discuss this topic with us or other fellow community members, you can do so on
-our community page dedicated for this guide:
-[AutoPi GEN 2 connection overview](https://community.autopi.io/t/autopi-gen-2-connection-overview/691)

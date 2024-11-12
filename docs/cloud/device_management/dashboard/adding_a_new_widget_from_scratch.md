@@ -67,7 +67,3 @@ logger.
 
 With these three steps you should be able to visualize all data from your vehicle. 
 
-## Discussion
-If you'd like to discuss this topic with us or other fellow community members, you can do so on
-our community page dedicated for this guide:
-[Adding a new widget from scratch](https://community.autopi.io/t/adding-a-new-widget-from-scratch/964)

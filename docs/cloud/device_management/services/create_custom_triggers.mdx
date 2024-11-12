@@ -3,8 +3,6 @@ id: create-custom-triggers
 title: Create Custom Triggers
 ---
 
-import { Discussion } from '/src/components/Discussion.jsx';
-
 In this guide we will explore how you can create a custom trigger for your AutoPi service. The
 example that we will look at is a trigger that will play a beeping sound when the vehicle's speed
 is 50km/h or more. Let's dive straight in.
@@ -136,11 +134,6 @@ The code here is esentially the same as the one presented above. The only differ
 the AutoPi will fire an event internally instead of playing a beeping sound. This event can then
 be used in the **event_reactor** service to perform other actions. Also, the event will be uploaded
 to the cloud and be visible from **Device** > **Events**.
-
-<Discussion
-  title="Write custom trigger to play beep sound when speeding"
-  url="https://community.autopi.io/t/custom-code-write-custom-trigger-to-play-beep-sound-when-speeding/1566"
-/>
 
 :::note
 In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).

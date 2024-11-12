@@ -68,7 +68,3 @@ EG25GGBR07A07M2G_01.002.01.002
   autopi ec2x.query "at+qgmr"
   ```
 
-## Discussion
-If you'd like to discuss this topic with us or other fellow community members, you can do so on
-our community page dedicated for this guide:
-[Update firmware of EG25-G module](https://community.autopi.io/t/update-firmware-of-eg25-g-module/1464)
