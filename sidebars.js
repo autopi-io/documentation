@@ -64,6 +64,7 @@ module.exports = {
             "getting_started/developer_guides/autopi-logs",
             "getting_started/developer_guides/setting-up-docker",
             "getting_started/developer_guides/using-the-autopi-with-an-external-power-supply",
+            "getting_started/developer_guides/how-to-use-bluepy-with-autopi-edge-devices",
           ],
           "label": "Developer Guides",
           "type": "category"

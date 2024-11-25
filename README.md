@@ -3,6 +3,11 @@
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
 ## Installation
+Node issues:
+
+NODE_OPTIONS=--openssl-legacy-provider npm run build
+
+
 
 ### Prerequisites
 
