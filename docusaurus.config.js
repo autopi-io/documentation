@@ -55,6 +55,11 @@ module.exports = {
           position: 'left',
         },      
         {
+          to: 'developer_guides/developer-guides-intro',
+          label: 'Guides',
+          position: 'left',
+        },  
+        {
           to: 'https://api.autopi.io/',
           label: 'API',
           position: 'left',          
@@ -186,59 +191,59 @@ module.exports = {
             from: '/guides/api/how-to-export-data-from-api/',
           },
           {
-            to: '/getting_started/developer_guides/autopi-logs/',
+            to: '/developer_guides/autopi-logs/',
             from: '/guides/autopi-logs/',
           },
           {
-            to: '/getting_started/developer_guides/configuring-mqtt/',
+            to: '/developer_guides/configuring-mqtt/',
             from: '/guides/configuring-mqtt/',
           },
           {
-            to: '/getting_started/developer_guides/enabling_bluetooth_on_TMU_devices/',
+            to: '/developer_guides/enabling_bluetooth_on_TMU_devices/',
             from: '/guides/enabling_bluetooth_on_TMU_devices/',
           },
           {
-            to: '/getting_started/developer_guides/how-to-ssh-to-your-device/',
+            to: '/developer_guides/how-to-ssh-to-your-device/',
             from: '/guides/how-to-ssh-to-your-device/',
           },
           {
-            to: '/getting_started/developer_guides/installing-a-camera-on-your-autopi/',
+            to: '/developer_guides/installing-a-camera-on-your-autopi/',
             from: '/guides/installing-a-camera-on-your-autopi/',
           },
           {
-            to: '/getting_started/developer_guides/jumpers/',
+            to: '/developer_guides/jumpers/',
             from: '/guides/jumpers/',
           },
           {
-            to: '/getting_started/developer_guides/local-development-workflow/',
+            to: '/developer_guides/local-development-workflow/',
             from: '/guides/local-development-workflow/',
           },
           {
-            to: '/getting_started/developer_guides/reflashing-your-device/',
+            to: '/developer_guides/reflashing-your-device/',
             from: '/guides/reflashing-your-device/',
           },
           {
-            to: '/getting_started/developer_guides/remotely-waking-up-your-device/',
+            to: '/developer_guides/remotely-waking-up-your-device/',
             from: '/guides/remotely-waking-up-your-device/',
           },
           {
-            to: '/getting_started/developer_guides/rfid-integartion/',
+            to: '/developer_guides/rfid-integartion/',
             from: '/guides/rfid-integartion/',
           },
           {
-            to: '/getting_started/developer_guides/setting-up-docker/',
+            to: '/developer_guides/setting-up-docker/',
             from: '/guides/setting-up-docker/',
           },
           {
-            to: '/getting_started/developer_guides/setting-up-a-device-with-verizon-wireless/',
+            to: '/developer_guides/setting-up-a-device-with-verizon-wireless/',
             from: '/guides/setting-up-our-device-with-verizon-wireless/',
           },
           {
-            to: '/getting_started/developer_guides/upgrading-your-raspberry-pi/',
+            to: '/developer_guides/upgrading-your-raspberry-pi/',
             from: '/guides/upgrading-your-raspberry-pi/',
           },
           {
-            to: '/getting_started/developer_guides/using-the-autopi-with-an-external-power-supply/',
+            to: '/developer_guides/using-the-autopi-with-an-external-power-supply/',
             from: '/guides/using-the-autopi-with-an-external-power-supply/',
           },
           {

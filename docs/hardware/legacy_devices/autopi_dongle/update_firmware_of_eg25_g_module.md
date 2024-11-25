@@ -40,7 +40,7 @@ EG25GGBR07A07M2G_01.002.01.002
   highly recommended to have the engine running to prevent any sleep timers from powering the
   device off.
 
-2. [Connect via SSH](/getting_started/developer_guides/how_to_ssh_to_your_device.mdx).
+2. [Connect via SSH](/developer_guides/how_to_ssh_to_your_device.mdx).
 
 3. Download the firmware package on the device by running the shell command below (please note that
   the package size is 90MB):

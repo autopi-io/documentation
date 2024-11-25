@@ -13,6 +13,6 @@ Some of the knowledge may be transferrable to second generation devices.
 ## Jumper
 
 This is a picture of the location of the 5V FORCE pins. You can put a jumper on these pins to
-prevent the AutoPi from going to hibernation. More info [here](/getting_started/developer_guides/jumpers.md).
+prevent the AutoPi from going to hibernation. More info [here](/developer_guides/jumpers.md).
 
 ![Third generation AutoPi Jumper location](/img/hardware/autopi_tmu_socketcan/jumper.jpg)

@@ -16,7 +16,7 @@ Key Areas Covered:
 - Building on top of the device
 - Setting up a Development Workflow
 
-By delving into these and more topics, we hope that you will be equipped to unlock the full
+With these and more topics, we hope that you will be equipped to unlock the full
 potential of the AutoPi solution. As always let us know if you have any questions or feedback
 at <a href="mailto:support@autopi.io">support@autopi.io</a>.
 

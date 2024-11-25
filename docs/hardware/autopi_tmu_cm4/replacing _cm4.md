@@ -115,7 +115,7 @@ Please take note of the orientation of the CM4 while detaching it from the AutoP
 		To flash or reflash your AutoPi CM4 device, it is recommended to refer to the official manual provided with the device. The manual will contain specific instructions tailored to your AutoPi CM4 model, ensuring the proper and safe execution of the flashing process. Please consult the manual for detailed step-by-step guidance on how to flash or reflash your AutoPi CM4 device. <br/>
 </p>
 
-[Reflashing your device](/getting_started/developer_guides/reflashing_your_device.md)
+[Reflashing your device](/developer_guides/reflashing_your_device.md)
 
 <p>
 	You have now successfully replaced your Raspberry Pi CM4 in your AutoPi TMU CM4 device.

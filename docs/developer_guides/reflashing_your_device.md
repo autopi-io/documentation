@@ -64,7 +64,7 @@ an .AppImage file is available on [Balena's website](https://www.balena.io/).
 #### 3.a. Pre-CM4 Devices
 Your device contains an SD card with the AutoPi Core preinstalled. The SD card is located inside
 the device. You will need to unscrew the device to access and remove the SD card. For that you can follow
-the [Upgrade/Replace Your Raspberry Pi Computer guide](/getting_started/developer_guides/upgrading_your_raspberrypi.mdx). Once you have the
+the [Upgrade/Replace Your Raspberry Pi Computer guide](/developer_guides/upgrading_your_raspberrypi.mdx). Once you have the
 SD card in hand, place it in an SD card reader and connect it to your computer.
 
 #### 3.b. CM4 Devices

@@ -100,7 +100,7 @@ this can help you find out what protocol it is actually using.
 what works on one car from the manufacturer will work for another.
 - Contact the manufacturer to find out how the ECUs expect to be communicated with.
 - Try and reverse engineer the bus yourself. This can be a tedious and time consuming task. Depending on your 
-preferred workflow, you may prefer to [ssh into the device](/getting_started/developer_guides/how_to_ssh_to_your_device.mdx) and use the Linux 
+preferred workflow, you may prefer to [ssh into the device](/developer_guides/how_to_ssh_to_your_device.mdx) and use the Linux 
 [can-utils command line utility](https://manpages.debian.org/testing/can-utils/index.html). The most notable commands
 in this are *candump* and *cansend*. To change the configuration of the CAN connection, you can use the 
 [socketcan.up and socketcan.down](/core/commands/socketcan.md) commands. 
