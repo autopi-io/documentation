@@ -1,6 +1,6 @@
 ---
 id: installing_external_antennas
-title: Installing External Antennas
+title: Installing 3-in-1 External Antennas
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
