@@ -30,6 +30,10 @@ npm install
 
 ```console
 npm start
+
+or 
+
+NODE_OPTIONS=--openssl-legacy-provider npm start
 ```
 
 This command starts a local development server and open up a browser window. 

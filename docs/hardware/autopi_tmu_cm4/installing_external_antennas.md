@@ -15,13 +15,13 @@ You need to be careful not to tear or damange some of the cables when handling t
 If you've purchased the [Antenna Kit](https://shop.autopi.io/products/3in1-external-antenna-kit) 
 alongside your AutoPi TMU CM4, this guide will help you through the 
 installation process. The kit allows you to boost 4G/LTE connectivity and 
-GPSsignal strength, which is especially useful if you frequently drive
+GPS signal strength, which is especially useful if you frequently drive
 in areas with weak signal reception. 
 
 **What's included:** 
 - **3x SMA adapter cables** (for internal installation) 
 - **1x 4G/LTE & GPS combo antenna** (with 3M adhesive pad and 300cm cable) 
-- **1x Rear shield** (for 3x SMA connectors) 
+- **1x Side shield** (for 3x SMA connectors) 
 
 ### Pre-installed Antennas
 If you opted for pre-installed antennas through our shop or by contacting our 

@@ -333,6 +333,7 @@ module.exports = {
             "hardware/autopi_tmu_cm4/device_dimensions",
             "hardware/autopi_tmu_cm4/device_specifications",
             "hardware/autopi_tmu_cm4/installing_external_antennas",
+            "hardware/autopi_tmu_cm4/installing_4in1_external_antennas",
             "hardware/autopi_tmu_cm4/installing-heatsink",
             "hardware/autopi_tmu_cm4/led-and-button",
             "hardware/autopi_tmu_cm4/mounting_holes",
@@ -350,19 +351,7 @@ module.exports = {
           ],
           "label": "AutoPi Mini",
           "type": "category"
-        },
-        {
-          "items": [
-            "hardware/autopi_tmu_socketcan/SocketCAN-intro",
-            "hardware/autopi_tmu_socketcan/connection-overview",
-            "hardware/autopi_tmu_socketcan/device_dimensions",
-            "hardware/autopi_tmu_socketcan/installing_external_antennas",
-            "hardware/autopi_tmu_socketcan/mounting_holes",
-            "hardware/autopi_tmu_socketcan/obd-connector-pinout"
-          ],
-          "label": "Socket CAN",
-          "type": "category"
-        },
+        },        
         {
           "items": [
             {
@@ -400,6 +389,18 @@ module.exports = {
                 "hardware/legacy_devices/autopi_tmu_can_fd/obd-connector-pinout"
               ],
               "label": "AutoPi TMU CAN-FD",
+              "type": "category"
+            },
+            {
+              "items": [
+                "hardware/autopi_tmu_socketcan/SocketCAN-intro",
+                "hardware/autopi_tmu_socketcan/connection-overview",
+                "hardware/autopi_tmu_socketcan/device_dimensions",
+                "hardware/autopi_tmu_socketcan/installing_external_antennas",
+                "hardware/autopi_tmu_socketcan/mounting_holes",
+                "hardware/autopi_tmu_socketcan/obd-connector-pinout"
+              ],
+              "label": "Socket CAN",
               "type": "category"
             },
           ],
