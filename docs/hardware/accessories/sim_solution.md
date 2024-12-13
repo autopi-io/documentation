@@ -5,7 +5,7 @@ title: Global SIM Card Solution
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Introduction
-AutoPi offers a global SIM card solution. The SIM card solution is mainly targeted for our CAN-FD Pro and TMU CM4 (without simcard) solutions, as these does not come with a SIM card per standard. The solution can be purchased <a href="https://shop.autopi.io/products/global-sim-card-solution">in our webshop.</a>. We offer different package sizes and your monthly data usage is shown from our cloud solution. 
+AutoPi offers a global SIM card solution. The SIM card solution is mainly targeted for our CAN-FD Pro and TMU CM4 (without simcard) solutions, as these does not come with a SIM card per standard. The solution can be purchased <a href="https://shop.autopi.io/products/global-sim-card-solution">in our webshop.</a> We offer different package sizes and your monthly data usage is shown from our cloud solution. 
 
 
 ## Global coverage
