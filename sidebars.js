@@ -311,6 +311,7 @@ module.exports = {
         {
           "items": [
             "hardware/accessories/accessories-intro",
+            "hardware/accessories/sim-solution",
             "hardware/accessories/doip-install",
             {
               "items": [
