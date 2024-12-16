@@ -312,6 +312,7 @@ module.exports = {
           "items": [
             "hardware/accessories/accessories-intro",
             "hardware/accessories/sim-solution",
+            "hardware/accessories/dualdb9-pinout",            
             "hardware/accessories/doip-install",
             {
               "items": [
