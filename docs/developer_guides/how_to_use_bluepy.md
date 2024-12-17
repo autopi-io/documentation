@@ -1,9 +1,9 @@
 ---
 id: how-to-use-bluepy-with-autopi-edge-devices
-title: Using bluepy with AutoPi Edge devices
+title: Using bluepy with AutoPi Edge Devices
 ---
 
-# BluePy BLE Guide for AutoPi Edge devices
+# BluePy BLE Guide for AutoPi Edge Devices
 
 ## Introduction
 AutoPi Core relies on BluePy and Bluez packages built into the Linux core on the device. 
@@ -16,14 +16,14 @@ AutoPi Core relies on BluePy and Bluez packages built into the Linux core on the
 1. Enable bluetooth from Advanced settings:
 ![Enable bluetoth](/img/guides/bluetooth_enable.jpg)
 
-## Using the built-in bluetooth extention
+## Using the Built-in Bluetooth Extention
 
 It is possible to use the [bluetooth.scan](/core/commands/core-commands-bluetooth/#bluetoothscan) command to remote scanning for bluetooth device using the built in cloud terminal.
 
-## Custom software for basic BluePy usage
+## Custom Software for Basic bluepy Usage
 A great example of using the AutoPi edge devices full functionality, is teh usage of [creating custom services](/cloud/device_management/services/create-custom-services/). Using this extendabilty of the devices you utilize the full functionality of the bluepy library on the device.   
 
-### Scanning for Devices - Custom Code example
+### Scanning for Devices - Custom Code Example
 
 ```python
 from bluepy.btle import Scanner, DefaultDelegate
@@ -51,7 +51,7 @@ for dev in devices:
         print(f"  {desc}: {value}")
 ```
 
-### Connecting to a Device - Custom Code example
+### Connecting to a Device - Custom Code Example
 
 ```python
 from bluepy.btle import Peripheral, UUID
@@ -82,7 +82,7 @@ finally:
     device.disconnect()
 ```
 
-### Reading and Writing Characteristics - Custom Code example
+### Reading and Writing Characteristics - Custom Code Example
 
 ```python
 from bluepy.btle import Peripheral, UUID
@@ -128,7 +128,7 @@ if __name__ == "__main__":
         device.disconnect()
 ```
 
-### Handling Notifications - Custom Code example
+### Handling Notifications - Custom Code Example
 
 ```python
 from bluepy.btle import DefaultDelegate, Peripheral
@@ -176,7 +176,7 @@ if __name__ == "__main__":
         device.disconnect()
 ```
 
-### Error Handling - Custom Code example
+### Error Handling - Custom Code Example
 
 ```python
 from bluepy.btle import Peripheral, BTLEDisconnectError, BTLEGattError
@@ -211,7 +211,7 @@ class BLEDeviceManager:
         return None
 ```
 
-## Complete Application - Custom Code example
+## Complete Application - Custom Code Example
 
 ```python
 from bluepy.btle import Scanner, Peripheral, DefaultDelegate, BTLEDisconnectError
