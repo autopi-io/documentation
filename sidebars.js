@@ -200,6 +200,7 @@ module.exports = {
             "cloud/obd-ii/log-raw-can-messages",
             "cloud/obd-ii/using-the-can-bus-commands",
             "cloud/obd-ii/automatic-obd-logger-pausing",
+            "cloud/obd-ii/create-valid-can-dump",
           ],
           "label": "OBD-II",
           "type": "category"
