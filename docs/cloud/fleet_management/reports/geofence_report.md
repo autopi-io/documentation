@@ -20,6 +20,8 @@ predefined geographic areas. This report helps fleet managers:
     - Actions: Download as PDF or delete the report.
 - Click on a report to open its preview.
 
+![Reports overview](/img/cloud/fleet_management/reports/geofence_reports/reports_overview.png)
+
 ## Schedules Tab
 
 - View all scheduled Geofence Reports, including:
@@ -28,6 +30,8 @@ predefined geographic areas. This report helps fleet managers:
     - Schedule type (daily, weekly, or monthly).
     - Frequency (time of day).
     - Actions: Delete a scheduled report.
+
+![Schedules overview](/img/cloud/fleet_management/reports/geofence_reports/schedules_overview.png)
 
 ## Create/Schedule Tab
 
@@ -50,6 +54,8 @@ predefined geographic areas. This report helps fleet managers:
     - **Preview:** Allows you to see how the report will look before saving.
     - **Save:** Saves the report and displays it under the Reports - List section.
 
+![Create geofence report](/img/cloud/fleet_management/reports/geofence_reports/create_reports.png)
+
 ### Scheduling a Geofence Summary Report
 
 1. After generating a Geofence Summary Report, you can schedule it to run at 
@@ -69,6 +75,8 @@ predefined geographic areas. This report helps fleet managers:
         - **Reset:** Clears all configurations you’ve made.
         - **Preview:** Allows you to see how the scheduled report will look.
         - **Save:** Saves the scheduled report and displays it under **Reports - Schedules**.
+
+![Create geofence report schedule](/img/cloud/fleet_management/reports/geofence_reports/create_schedule.png)
 
 ## How fields in the geofence report are calculated
 
@@ -115,6 +123,8 @@ of how each field is calculated:
     - **Parked time** = total time spent in the geofence - (driving time + idling time).
 13. **Distance:** Displays the total distance driven within a specific geofence. 
     This is calculated using GPS points logged while the vehicle was inside the geofence.
+
+![Geofence report example](/img/cloud/fleet_management/reports/geofence_reports/geofence_report_example.png)
 
 :::note
 As new report types become available, additional features and enhancements will 
