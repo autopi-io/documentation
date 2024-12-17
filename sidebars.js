@@ -93,6 +93,14 @@ module.exports = {
             "cloud/fleet_management/locations",
             {
               "items": [
+                "cloud/fleet_management/reports/reports-intro",
+                "cloud/fleet_management/reports/geofence-summary-reports",
+              ],
+              "label": "Reports",
+              "type": "category",
+            },
+            {
+              "items": [
                 "cloud/fleet_management/configurations/notification-channels",
                 "cloud/fleet_management/configurations/vehicle-states",
               ],
