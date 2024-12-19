@@ -52,7 +52,7 @@ To determine whether any of the raw data is J1939, you can do 1 of 2 things:
 ### Determining if the vehicle responds to J1939 VIN queries:
 If you've found the protocol, baudrate combination which works, use the same combination to check for the VIN query. Run the following command. It should return the VIN string for the vehicle:
 
-  - `obd.query vin mode=FEEC pid=00 header=18ea00f9 formula='str(message.data)' verify=false force=true protocol=<PROTOCOL> baudrate=<BAUDRATE>`
+  - `obd.query vin mode=FEEC pid=x00 header=18ea00f9 formula='str(message.data)' verify=false force=true protocol=<PROTOCOL> baudrate=<BAUDRATE>`
 
 ## Check for Broadcast Data via the CAN Bus sniffer
 As most J1939 messages are broadcast we start by checking if we can see any data on the CAN bus.
