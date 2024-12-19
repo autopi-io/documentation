@@ -29,21 +29,21 @@ You need to make sure the device is powered on, have good internet connection an
 
 With these checks passed you can now continue to find the protocol and baudrate settings. With the vehicle's engine running, first try to listen to passive CAN traffic. One of these commands should show some data (raw). Once you find which command returns data, note down the protocol and baudrate for this vehicle:
 
-`$ obd.monitor duration=5 verify=False protocol=32 baudrate=500000`
-`$ obd.monitor duration=5 verify=False protocol=32 baudrate=250000`
-`$ obd.monitor duration=5 verify=False protocol=32 baudrate=125000`
+  - `obd.monitor duration=5 verify=False protocol=32 baudrate=500000`
+  - `obd.monitor duration=5 verify=False protocol=32 baudrate=250000`
+  - `obd.monitor duration=5 verify=False protocol=32 baudrate=125000`
 
-`$ obd.monitor duration=5 verify=False protocol=31 baudrate=500000`
-`$ obd.monitor duration=5 verify=False protocol=31 baudrate=250000`
-`$ obd.monitor duration=5 verify=False protocol=31 baudrate=125000`
+  - `obd.monitor duration=5 verify=False protocol=31 baudrate=500000`
+  - `obd.monitor duration=5 verify=False protocol=31 baudrate=250000`
+  - `obd.monitor duration=5 verify=False protocol=31 baudrate=125000`
 
-`$ obd.monitor duration=5 verify=False protocol=52 baudrate=500000`
-`$ obd.monitor duration=5 verify=False protocol=52 baudrate=250000`
-`$ obd.monitor duration=5 verify=False protocol=52 baudrate=125000`
+  - `obd.monitor duration=5 verify=False protocol=52 baudrate=500000`
+  - `obd.monitor duration=5 verify=False protocol=52 baudrate=250000`
+  - `obd.monitor duration=5 verify=False protocol=52 baudrate=125000`
 
-`$ obd.monitor duration=5 verify=False protocol=51 baudrate=500000`
-`$ obd.monitor duration=5 verify=False protocol=51 baudrate=250000`
-`$ obd.monitor duration=5 verify=False protocol=51 baudrate=125000`
+  - `obd.monitor duration=5 verify=False protocol=51 baudrate=500000`
+  - `obd.monitor duration=5 verify=False protocol=51 baudrate=250000`
+  - `obd.monitor duration=5 verify=False protocol=51 baudrate=125000`
 
 To determine whether any of the raw data is J1939, you can do 1 of 2 things:
   1. Check on the cloud whether there is any data coming in. Note, that you would only be able to see this if the protocol configuration of the device matches that of the vehicle.
@@ -52,7 +52,7 @@ To determine whether any of the raw data is J1939, you can do 1 of 2 things:
 ### Determining if the vehicle responds to J1939 VIN queries:
 If you've found the protocol, baudrate combination which works, use the same combination to check for the VIN query. Run the following command. It should return the VIN string for the vehicle:
 
-`$ obd.query vin mode=FEEC pid=00 header=18ea00f9 formula='str(message.data)' verify=false force=true protocol=<PROTOCOL> baudrate=<BAUDRATE>`
+  - `obd.query vin mode=FEEC pid=00 header=18ea00f9 formula='str(message.data)' verify=false force=true protocol=<PROTOCOL> baudrate=<BAUDRATE>`
 
 ## Check for Broadcast Data via the CAN Bus sniffer
 As most J1939 messages are broadcast we start by checking if we can see any data on the CAN bus.
