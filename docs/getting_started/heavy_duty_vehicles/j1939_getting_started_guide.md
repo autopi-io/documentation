@@ -14,8 +14,47 @@ Before proceeding the AutoPi device must be:
   3. Powered on and online in the AutoPi Cloud at https://my.autopi.io.
   4. Also the ignition of the vehicle must be turned on to ensure the J1939 CAN bus is active.
 
+## Determining the CAN Bus protocol
+First step is the determine the CAN bus protocol used for the connected vehicle (if you dont already know it). A few steps is required here:
 
-## Check for Broadcast Data
+  1. Remove all existing loggers on the device (make sure the loggers chage is synced). This can be done here: https://my.autopi.io go to _Devices_ > _Select Device_ > _Loggers_. You want to remove these, so that they dont interfere with the CAN Bus already.
+  2. Remove all existing CAN busses on the vehicle. From the same page click the _Settings_ button in the top right corner. Click the _Vehicles Editor_ and remove the CAN busses configured in the bottom of the popup. 
+  3. Configure the vehicle for 24V operation (if its a 24V truck). You can do this on the vehicles editor page that you are add, by clicking the _Nominal Voltage_ dropdown. 
+  4. You are now set to start the testing for the right CAN Bus configuration.
+
+You need to make sure the device is powered on, have good internet connection and that the engine of the vehicle is running. You can do so by following these steps:
+
+  1. From terminal in the right hand side screen, run the following command `test.ping`. It should return `true` if the device is online and connected to the Cloud.
+  2. Again from the terminal run the following command `obd.battery`. This command command will return the Voltage of the Auxilirary battery in the vehicle. If its a 24V type of battery you should see a value somewhere between 25-28V. If its close to 25V it means the engine is not running. If its closer to 28V it means the engine is running and ECU's are powered up. A good indicator is a value above 26.5V.
+
+With these checks passed you can now continue to find the protocol and baudrate settings. With the vehicle's engine running, first try to listen to passive CAN traffic. One of these commands should show some data (raw). Once you find which command returns data, note down the protocol and baudrate for this vehicle:
+
+`$ obd.monitor duration=5 verify=False protocol=32 baudrate=500000`
+`$ obd.monitor duration=5 verify=False protocol=32 baudrate=250000`
+`$ obd.monitor duration=5 verify=False protocol=32 baudrate=125000`
+
+`$ obd.monitor duration=5 verify=False protocol=31 baudrate=500000`
+`$ obd.monitor duration=5 verify=False protocol=31 baudrate=250000`
+`$ obd.monitor duration=5 verify=False protocol=31 baudrate=125000`
+
+`$ obd.monitor duration=5 verify=False protocol=52 baudrate=500000`
+`$ obd.monitor duration=5 verify=False protocol=52 baudrate=250000`
+`$ obd.monitor duration=5 verify=False protocol=52 baudrate=125000`
+
+`$ obd.monitor duration=5 verify=False protocol=51 baudrate=500000`
+`$ obd.monitor duration=5 verify=False protocol=51 baudrate=250000`
+`$ obd.monitor duration=5 verify=False protocol=51 baudrate=125000`
+
+To determine whether any of the raw data is J1939, you can do 1 of 2 things:
+  1. Check on the cloud whether there is any data coming in. Note, that you would only be able to see this if the protocol configuration of the device matches that of the vehicle.
+  2. Look for the EEC1 frame. If the vehicle supports J1939, it will almost certainly have this. In the data returned by the monitor command, look for a frame where the 3th to 6th characters are `F004`. For example, if the full frame is `18F0040012AB331288112244`, you can see `F004` at the beginning.
+
+### Determining if the vehicle responds to J1939 VIN queries:
+If you've found the protocol, baudrate combination which works, use the same combination to check for the VIN query. Run the following command. It should return the VIN string for the vehicle:
+
+`$ obd.query vin mode=FEEC pid=00 header=18ea00f9 formula='str(message.data)' verify=false force=true protocol=<PROTOCOL> baudrate=<BAUDRATE>`
+
+## Check for Broadcast Data via the CAN Bus sniffer
 As most J1939 messages are broadcast we start by checking if we can see any data on the CAN bus.
 
 On https://my.autopi.io go to _Devices_ > _Select Device_ > _CAN Analyzer_ > _Sniffer_.
@@ -42,7 +81,7 @@ If no data is returned, try:
   3. Continue to the next section describing how to query for data.
 
 
-## Query for Data
+## Query for Data via PID tester tool
 Some data is only available on request. This means a J1939 request message must be sent in order to get a data response. This can be done using the PID tester tool.
 
 In the _CAN Analyzer_ select the _PID Tester_ tab.
