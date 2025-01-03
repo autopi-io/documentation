@@ -4,7 +4,7 @@ title: Enabling Bluetooth on Legacy Devices With STN Chips
 ---
 
 :::note
-  This guide only works with legacy devices using an STN Chips. No devices sold after February 2021 contains the STN chip. 
+  This guide only works with legacy devices using STN/ELM based chips for automotive interface. No devices sold after February 2021 contains the STN chip. 
 :::
 
 In this guide we will take a look at how you can enable Bluetooth for AutoPi devices that use the
