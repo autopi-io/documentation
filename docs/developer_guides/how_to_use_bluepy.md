@@ -1,6 +1,6 @@
 ---
 id: how-to-use-bluepy-with-autopi-edge-devices
-title: Using bluepy with AutoPi Edge Devices
+title: Enabling Bluetooth - Using bluepy with AutoPi Edge Devices
 ---
 
 # BluePy BLE Guide for AutoPi Edge Devices

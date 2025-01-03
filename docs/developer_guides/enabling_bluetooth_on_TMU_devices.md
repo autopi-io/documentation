@@ -1,7 +1,11 @@
 ---
 id: enabling_bluetooth_on_TMU_devices
-title: Enabling Bluetooth on Devices With STN Chips
+title: Enabling Bluetooth on Legacy Devices With STN Chips
 ---
+
+:::note
+  This guide only works with legacy devices using an STN Chips. No devices sold after February 2021 contains the STN chip. 
+:::
 
 In this guide we will take a look at how you can enable Bluetooth for AutoPi devices that use the
 STN chip. By default the STN chip and Bluetooth don't work well together, so we will need to disable

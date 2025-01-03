@@ -49,8 +49,8 @@ module.exports = {
         },       
       ],
       "Developer Guides": [  
-        "developer_guides/how-to-use-bluepy-with-autopi-edge-devices",  
         "developer_guides/developer-guides-intro",
+        "developer_guides/how-to-use-bluepy-with-autopi-edge-devices",          
         "developer_guides/configuring-mqtt",
         "developer_guides/how-to-ssh-to-your-device",
         "developer_guides/local-development-workflow",
