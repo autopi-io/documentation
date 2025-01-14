@@ -9,7 +9,7 @@ Upon opening the Accounts tab, you will see the account you are currently under,
 along with the associated email. 
 
 In the Customers subsection, click on **Create** to add a new nested customer. 
-Start by entering the company name, main work email, and country. For the Cloud 
+Start by entering the company name, main work email, and country. For the [Cloud](https://www.autopi.io/software-platform/cloud-management) 
 settings, choose a time zone, time format, and units you wish to see the data in.
 Click **Create** to save the changes. A small pop-up will confirm the successful 
 account creation. 

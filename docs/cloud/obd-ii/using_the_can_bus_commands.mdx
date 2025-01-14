@@ -4,7 +4,7 @@ title: Using the CAN Bus Commands
 ---
 
 :::caution
-Working with the CAN bus is on your own risk. Playback and sending commands to the vehicle can be
+Working with the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus is on your own risk. Playback and sending commands to the vehicle can be
 used to control functions in the vehicle affecting the behavior of the vehicle. We recommend that
 you NEVER do testing on a vehicle in motion and that you have the parking brake enabled while you
 test.
@@ -12,22 +12,22 @@ test.
 
 Hello everyone!
 
-In this guide, we will explore how you can communicate and interact with your vehicle's CAN bus.
-Typically, there are two types of CAN busses.
+In this guide, we will explore how you can communicate and interact with your vehicle's [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus.
+Typically, there are two types of [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) busses.
 
 One type responds to requests for data, that is to say, it almost acts like an HTTP server - it
 receives a request for a specific data point (let's say speed or RPM) and it sends the requested
-data back. This type of CAN bus is usually handled with PIDs.
+data back. This type of [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus is usually handled with PIDs.
 
-The second type sends all the vehicle's data on the CAN bus. This means that there is going to be
-large amounts of data being streamed. We call this type of data CAN Messages. Within those CAN
-messages are the so-called CAN signals. Each signal usually represents a specific data point, like
+The second type sends all the vehicle's data on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus. This means that there is going to be
+large amounts of data being streamed. We call this type of data [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Messages. Within those [CAN](https://www.autopi.io/hardware/autopi-canfd-pro)
+messages are the so-called [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals. Each signal usually represents a specific data point, like
 speed or RPM.
 
 ##  Sending PID's
 
 Let's start off with the [`obd.query`](/core/commands/obd.md/#obdquery) command. This command is
-used to query the first type of CAN busses. Let's take a look at an example:
+used to query the first type of [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) busses. Let's take a look at an example:
 
 ```console
 obd.query test mode=01 pid=0C
@@ -61,17 +61,17 @@ autopi obd.query test mode=01 pid=0C
 ```
 :::
 
-## The CAN Interface
+## The [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Interface
 The CAN interface is somewhat different than just sending standard PID's. It relies more on
-parcing the full data stream on the CAN bus. This is far more advanced, but it also opens up to a
+parcing the full data stream on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus. This is far more advanced, but it also opens up to a
 whole new level of fun. 
 
 ### Setting the Protocol
 
-The AutoPi is able to support a wide range of protocols. When you insert it into your vehicle it
+The [AutoPi](https://www.autopi.io) is able to support a wide range of protocols. When you insert it into your vehicle it
 will try to autodetect the protocol used by the vehicle. It is not always going to be the case that
-the same protocol is used for all CAN traffic. In fact, CAN traffic may flow on more than one
-protocol in your vehicle. Switching the protocol on the AutoPi makes it listen for traffic on
+the same protocol is used for all [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) traffic. In fact, [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) traffic may flow on more than one
+protocol in your vehicle. Switching the protocol on the [AutoPi](https://www.autopi.io) makes it listen for traffic on
 different electrical pins. You can check the current protocol settings using this command:
 
 ```
@@ -87,9 +87,9 @@ obd.protocol set=<num>
 
 Where `<num>` is the protocol number.
 
-### Dumping/Reading Data From the CAN Bus
+### Dumping/Reading Data From the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Bus
 
-The new interface opens up for dumping data from the CAN bus on the protocol selected. This can be
+The new interface opens up for dumping data from the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus on the protocol selected. This can be
 done using the [`obd.dump`](/core/commands/obd.md/#obddump) command. Using the command is very easy:
 
 ```
@@ -113,14 +113,14 @@ A file recorded with the ``obd.dump`` command can be played/replayed to the vehi
 obd.play file=<path>
 ```
 
-The will playback the entire file on the CAN bus. 
+The will playback the entire file on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus. 
 
 Optional parameters:
-* `slice=<T|B>`: Slice the list of messages before sending on the CAN bus. Based one the divide
+* `slice=<T|B>`: Slice the list of messages before sending on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus. Based one the divide
   and conquer algorithm. Multiple slice characters can be specified in continuation of each other.
   * `T`: Top half of remaining result.
   * `B`: Bottom half of remaining result.
-* `filter=<expression>`: Filter out messages before sending on the CAN bus. Multiple filters can
+* `filter=<expression>`: Filter out messages before sending on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus. Multiple filters can
   be specified if separated using comma characters.
   * `+[id][#][data]`: Include only messages matching string.
   * `-[id][#][data]`: Exclude messages matching string.
@@ -130,7 +130,7 @@ Optional parameters:
   * `-mutate`: Exclude messages where data mutates.
 * `group=<id|msg>`: How to group the result of sent messages. This only affects the display
   values returned from this command. Default is `id`.
-* `test=<true|false>`: Run command in test-only (dry-run) mode. No data will be sent on CAN bus.
+* `test=<true|false>`: Run command in test-only (dry-run) mode. No data will be sent on [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus.
   Default is `false`.
 
 All the filter parameters can be used to find the specific commands that you are seeking. With
@@ -157,15 +157,15 @@ send.
 
 ### Non-OBD2 Queries
 Sometimes a vehicle supports non-OBD-2 queries. An example of this is manufacturer proprietary
-protocols. When this is the case, you need to enrich the queries with CAN Flow Control parameters.
+protocols. When this is the case, you need to enrich the queries with [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Flow Control parameters.
 
 Let's look at an example of a proprietary query, where the request data is `1AA # 02 00 01 00 00 00 00 00`, 
 and the response is `2AA # 02 XX XX 00 00 00 00 00`, where the `XX` bytes are the data bytes. For 
 the sake of having the example complete, let's assume that this queries for the speed in kph. If 
 we try to do this query as we might with any other OBD-2 PID, we won't get a response. This is 
 because the device does not know how the message looks like. This might seem pointless if these 
-request-response messages are the only traffic on the CAN bus, however, imagine if there are hundreads
-of CAN frames being sent on the bus every second. How is the device to know which CAN frame is the
+request-response messages are the only traffic on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus, however, imagine if there are hundreads
+of [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) frames being sent on the bus every second. How is the device to know which [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) frame is the
 response? We need to specify this manually.  
 
 If you take a look at the [obd.query](/core/commands/obd.md#obdquery) command, you'll notice several
@@ -199,7 +199,7 @@ value: 67
 ```
 
 :::tip
-There are a few quirks to keep in mind when working with these and with CAN bus in general:
+There are a few quirks to keep in mind when working with these and with [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus in general:
 - As long as the vehicle's bus is autodetected, the `obd.query` command will try to verify that the
 protocol is still valid by sending a known valid OBD-2 message onto the bus and waiting for a reply. If
 the vehicle does not support standard OBD-2, this will cause the command to fail. To prevent this, either
@@ -212,29 +212,29 @@ be the `default` protocol.
 :::
 
 :::note
-For those closely familiar with CAN flow control, it might seem confusing that these parameters have
-the can\_flow\_control\_ prefix, as CAN flow control usually refers to multi-frame messages. The naming is
-related to how older versions of the AutoPi communicated on the CAN bus.
+For those closely familiar with [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) flow control, it might seem confusing that these parameters have
+the can\_flow\_control\_ prefix, as [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) flow control usually refers to multi-frame messages. The naming is
+related to how older versions of the [AutoPi](https://www.autopi.io) communicated on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus.
 :::
 
-## Using the Cloud CAN Analyzer
+## Using the [Cloud](https://www.autopi.io/software-platform/cloud-management) [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Analyzer
 All the above commands are how the interface to the vehicle works. We have combined all of this in
-an interactive CAN Analyzer, which is accessible from the AutoPi Cloud in
-Device > CAN Analyzer. If you don't see that menu link, you need to make sure that you've
-installed the CAN Analyzer add-on from the Add-ons page.
+an interactive [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Analyzer, which is accessible from the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) in
+Device > [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Analyzer. If you don't see that menu link, you need to make sure that you've
+installed the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Analyzer add-on from the Add-ons page.
 
-The CAN Analyzer makes working with your car much simpler. To find your specific command follow
+The [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Analyzer makes working with your car much simpler. To find your specific command follow
 these steps:
 
-1. Configure your CAN Bus interface. On the account page under "Vehicles" you can autodetect the
-most common CAN Bus. If you need to work with a special CAN bus, make sure you have the right baud
+1. Configure your [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Bus interface. On the account page under "Vehicles" you can autodetect the
+most common [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Bus. If you need to work with a special [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus, make sure you have the right baud
 rate configured.
 
 2. Select the Bus you want to use and press record. The device will make a "beep" sound when the
-recording begins and another one when the recording ends. Make sure that the CAN command you want
+recording begins and another one when the recording ends. Make sure that the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) command you want
 to record is happening between the two sounds (like door unlock or window control).
 
-3. The recording is now stored on the device and you can play it back immediately using the CAN
+3. The recording is now stored on the device and you can play it back immediately using the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro)
 player on the right-hand side of the screen.
 
 4. You will see that a lot of data is returned from the bus, so to find the specific command for

@@ -5,7 +5,7 @@ title: Setting Up a Device with Verizon Wireless
 
 We have had serveral different users report issues with setting up the 4G Dongle on Verizon Wireless.
 
-The issue is that Verizon requires an IMEI number to register the SIM. And while the AutoPi does have an IMEI, this is just not recognized by Verizon’s system and the setup fails.
+The issue is that Verizon requires an IMEI number to register the SIM. And while the [AutoPi](https://www.autopi.io) does have an IMEI, this is just not recognized by Verizon’s system and the setup fails.
 
 This is a verified method of setting it up:
 

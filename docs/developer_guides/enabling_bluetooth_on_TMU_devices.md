@@ -7,7 +7,7 @@ title: Enabling Bluetooth on Legacy Devices With STN Chips
   This guide only works with legacy devices using STN/ELM based chips for automotive interface. No devices sold after February 2021 contains the STN chip. 
 :::
 
-In this guide we will take a look at how you can enable Bluetooth for AutoPi devices that use the
+In this guide we will take a look at how you can enable Bluetooth for [AutoPi](https://www.autopi.io) devices that use the
 STN chip. By default the STN chip and Bluetooth don't work well together, so we will need to disable
 the STN chip entirely in order to get the Bluetooth functionality to work properly and the device to
 be kept running despite the STN chip's absence.
@@ -25,10 +25,10 @@ be kept running despite the STN chip's absence.
   ```
 
   :::caution
-  If there are any power related pending syncs on the Cloud to the device you're working with the
+  If there are any power related pending syncs on the [Cloud](https://www.autopi.io/software-platform/cloud-management) to the device you're working with the
   settings we just changed might be reverted back to the default. We recommend that you synchronize
   all changes to your device prior to following this guide. Once the obd_manager is disabled though,
-  no settings related to the STN can be changed by the Cloud.
+  no settings related to the STN can be changed by the [Cloud](https://www.autopi.io/software-platform/cloud-management).
   :::
 
   You can confirm if this setting was applied correctly by running the following command and looking
@@ -62,8 +62,8 @@ be kept running despite the STN chip's absence.
 3. **Enable Bluetooth**  
   Finally, you need to enable Bluetooth on the device. You can do that by going over to Device >
   Advanced Settings > Bluetooth and changing the Mode field from `disable` to `miniuart`. After synchronizing
-  the changes, the Cloud will ask you to reboot the device. After the reboot you should be able to
-  start using the Bluetooth on the AutoPi. Use the `bluetoothctl` command to work with Bluetooth on
+  the changes, the [Cloud](https://www.autopi.io/software-platform/cloud-management) will ask you to reboot the device. After the reboot you should be able to
+  start using the Bluetooth on the [AutoPi](https://www.autopi.io). Use the `bluetoothctl` command to work with Bluetooth on
   the device.
 
 ## Direct Communication With the STN Chip

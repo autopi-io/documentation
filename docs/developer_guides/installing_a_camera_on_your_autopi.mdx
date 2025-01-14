@@ -3,11 +3,11 @@ id: installing-a-camera-on-your-autopi
 title: Installing a Camera on Your AutoPi
 ---
 
-This guide will explore how you can attach an external USB camera to your AutoPi device and make some use out of it.
+This guide will explore how you can attach an external USB camera to your [AutoPi](https://www.autopi.io) device and make some use out of it.
 There is one prerequisite however - you need to be able to SSH into your dongle. We already have a guide on that which you can
 take a look at [here](/developer_guides/how-to-ssh-to-your-device/).
 
-Firstly, we need to do some initial setup to get the AutoPi ready to use an external USB web camera. Let's start with the
+Firstly, we need to do some initial setup to get the [AutoPi](https://www.autopi.io) ready to use an external USB web camera. Let's start with the
 software that we're going to use:
 
 1. [motion](https://motion-project.github.io/motion_guide.html) - Motion is a daemon service that is responsible for communicating
@@ -72,7 +72,7 @@ There, one of the inner tabs called System should contain an entry called Networ
 **NOTE**: 8765 is only the default port for MotionEye. If you happen to change the port number, please make sure to add the rule
 with the respective new port number.
 
-What this entry will do is allow all TCP traffic that comes from the AutoPi's WiFi network interface through port 8765 to be accepted.
+What this entry will do is allow all TCP traffic that comes from the [AutoPi](https://www.autopi.io)'s WiFi network interface through port 8765 to be accepted.
 This will allow you to navigate to the following link: local.autopi.io:8765. There you'll finally be able to see the MotionEye frontend interface.
 
 At this point, you should be able to plug in the camera to your device's micro-usb, wait a few seconds and see the video feed on your screen.
@@ -101,7 +101,7 @@ There you're also able to setup a webhook or a command to be called whenever a n
 ### Recording All the Time
 
 Setting up a constantly recording camera is very simple. All you need to do is to go to your motioneye website
-(local.autopi.io:8765 while connected to the AutoPi device hotspot) and open the settings for the camera. In the list there should be a section
+(local.autopi.io:8765 while connected to the [AutoPi](https://www.autopi.io) device hotspot) and open the settings for the camera. In the list there should be a section
 called "Movies". You will need to turn on the movies section (which will enable the camera to record). In the Recording Mode field, select
 "Continuous Recording" (It's of course also possible to have the recording based on motion detection). The rest of the settings can be selected
 based on personal preference. 
@@ -110,7 +110,7 @@ based on personal preference.
 
 Apart from the ability to record only when the camera detects motion, you can also do some other cool things. For example, you
 can set up a mail notification or a webhook to be called whenever there is some motion. There is also the option to execute a
-command on the AutoPi either when a motion is detected or when the motion ends. That is to say, after the camera has started
+command on the [AutoPi](https://www.autopi.io) either when a motion is detected or when the motion ends. That is to say, after the camera has started
 detecting motion, it can also execute a command when there is no more motion detected by it.
 
 You can find those settings under the "Motion Detection" and "Motion Notification" settings. In the Motion Detection section you can

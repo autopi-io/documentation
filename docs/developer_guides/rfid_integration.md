@@ -3,18 +3,18 @@ id: rfid-integartion
 title: RFID Reader Integration
 ---
 
-This is a short guide about how you can integrate an RFID reader with your AutoPi device.
+This is a short guide about how you can integrate an RFID reader with your [AutoPi](https://www.autopi.io) device.
 
 :::tip
-The RFID device that you're using must be connected to the AutoPi through a USB cable and it should be such a reader
+The RFID device that you're using must be connected to the [AutoPi](https://www.autopi.io) through a USB cable and it should be such a reader
 that acts as a keyboard device. It might be possible to use RFID readers that use another connectivity approach, but we
-aren't sure if AutoPi devices will work well with those.
+aren't sure if [AutoPi](https://www.autopi.io) devices will work well with those.
 :::
 
 ## Enabling the RFID Component
 
 1. **Power on the device**  
-   The RFID reader must first be connected to the AutoPi device. Power on the device, as we will need to gather some
+   The RFID reader must first be connected to the [AutoPi](https://www.autopi.io) device. Power on the device, as we will need to gather some
    information for the RFID reader, namely, the vendor and product IDs.
 
 2. **Get the RFID reader's vendor ID and product ID**  
@@ -22,7 +22,7 @@ aren't sure if AutoPi devices will work well with those.
    ```
    $ usbutil.devices
    ```
-   This will show you a list of devices that are currently connected to the AutoPi. There should be a set of devices
+   This will show you a list of devices that are currently connected to the [AutoPi](https://www.autopi.io). There should be a set of devices
    that are always there:
    - Quectel Wireless Solutions modem (not present on DIY devices)
      - vendor: 2c7c
@@ -38,8 +38,8 @@ aren't sure if AutoPi devices will work well with those.
    Note that sometimes the RFID reader might not have a name, similarly to our custom hub. Grab the vendor and product
    values for your RFID reader and note them down for the next step.
 
-3. **Type in the RFID reader's information in the Cloud**  
-   Now, it's time we enable the RFID reader from the Cloud. Navigate to [my.autopi.io](https://my.autopi.io) and go to
+3. **Type in the RFID reader's information in the [Cloud](https://www.autopi.io/software-platform/cloud-management)**  
+   Now, it's time we enable the RFID reader from the [Cloud](https://www.autopi.io/software-platform/cloud-management). Navigate to [my.autopi.io](https://my.autopi.io) and go to
    the Device > Advanced Settings > RFID page.
 
    :::note

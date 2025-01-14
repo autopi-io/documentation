@@ -17,11 +17,11 @@ check if your device is affected, please look in your minion logs for this line:
 Unable to determine GNSS location: {'reason': '505', 'type': 'CME'}
 ```
 
-This firmware update only applies to the 2nd generation 4G/LTE AutoPi dongles with the EG25-G
-module installed. If you are unsure which generation your 4G/LTE AutoPi dongle is then please
+This firmware update only applies to the 2nd generation 4G/LTE [AutoPi](https://www.autopi.io) dongles with the EG25-G
+module installed. If you are unsure which generation your 4G/LTE [AutoPi](https://www.autopi.io) dongle is then please
 contact [support@autopi.io](http://mailto:support@autopi.io) and provide your device ID.
 
-You can always check your current firmware version by running the following command in the Cloud
+You can always check your current firmware version by running the following command in the [Cloud](https://www.autopi.io/software-platform/cloud-management)
 terminal:
 
 ```bash
@@ -36,7 +36,7 @@ EG25GGBR07A07M2G_01.002.01.002
 
 ## Installation Steps
 
-1. Power on the AutoPi Dongle by inserting it into the OBD-II connector of the vehicle. It is
+1. Power on the [AutoPi](https://www.autopi.io) Dongle by inserting it into the OBD-II connector of the vehicle. It is
   highly recommended to have the engine running to prevent any sleep timers from powering the
   device off.
 

@@ -6,7 +6,7 @@ title: Jobs
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Jobs can be scheduled to execute [commands](/core/commands/index.md) on the device and are
-configured from the AutoPi Cloud. The command results can then be uploaded to the AutoPi Cloud or
+configured from the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management). The command results can then be uploaded to the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) or
 other system by using [returners](/core/returners/index.md).
 
 **SCHEDULING**
@@ -18,6 +18,6 @@ Job execution is scheduled with standard _cron_ expressions for the ease of use 
 ![AutoPi Cloud Jobs](/img/cloud/device_management/jobs/jobs.jpg)
 
 :::tip
-Like any AutoPi cloud functionality, jobs can be managed programmatically through the AutoPi REST
+Like any [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) functionality, jobs can be managed programmatically through the [AutoPi](https://www.autopi.io) REST
 API. For more information see: https://api.autopi.io/#dongle
 :::

@@ -3,7 +3,7 @@ id: connection-overview
 title: Connection Overview
 ---
 
-This is a diagram shows the connection possibilities of the second generation AutoPi.
+This is a diagram shows the connection possibilities of the second generation [AutoPi](https://www.autopi.io).
 
 1. Upstream USB connector to RPi
 2. GPIO Jumper to always force 5V on the RPi (disables sleep timers from hardware)

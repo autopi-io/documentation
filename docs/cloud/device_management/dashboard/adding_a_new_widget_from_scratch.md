@@ -18,7 +18,7 @@ Use the library to discover what data you want to log. The library consists of d
 extracted from your vehicle, but also contains data created by other users. The library is divided
 into two parts - your own [library](/cloud/obd_library/library.md) and the 
 [community library](/cloud/obd_library/community_library.mdx). The community library contains all
-commands globally available in the AutoPi system and your own library contains all the commands
+commands globally available in the [AutoPi](https://www.autopi.io) system and your own library contains all the commands
 specifically releated to your vehicle. If you find commands in the global library that work for
 your vehicle, you can add them to your own library.
 
@@ -62,7 +62,7 @@ the back. For example, if you've created a Logger called `RPM` the "Field" shoul
 
 You can only create widgets for data already logged, so you will have to log some data for your new
 logger before you can visualize it. But dont worry, your data is always stored and once it starts
-streaming into the cloud it will be visualized for all previous trips which also used the new
+streaming into the [Cloud](https://www.autopi.io/software-platform/cloud-management) it will be visualized for all previous trips which also used the new
 logger.
 
 With these three steps you should be able to visualize all data from your vehicle. 

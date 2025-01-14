@@ -4,7 +4,7 @@ title: Configuring MQTT
 ---
 
 ## Contents
-This guide covers configuring a basic MQTT broker on your Linux server, as well as configuring an AutoPi device to use MQTT as a data returner. 
+This guide covers configuring a basic MQTT broker on your Linux server, as well as configuring an [AutoPi](https://www.autopi.io) device to use MQTT as a data returner. 
 
 ## Setting up Your Endpoint Broker
 This step covers installing and configuring a broker on your server instance. This guide uses a 3-rd party hosted Virtual Machine running Debian 11.
@@ -45,7 +45,7 @@ While direct-connect mode is easier to set up, it's worth noting that in case th
 ### Direct-Connect Mode
 ![direct_connect_diagram](/img/getting_started/developer_guides/configuring_MQTT/direct-connect_diagram.png)
 
-On the AutoPi cloud portal (my.autopi.io for private customers, <company_name>.autopi.io for business customers) go to Device > Advanced Settings > MQTT. Modify the following settings:
+On the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) portal (my.autopi.io for private customers, <company_name>.autopi.io for business customers) go to Device > Advanced Settings > MQTT. Modify the following settings:
 
 - Returner > Enabled: True
 - Returner > host: <host\>
@@ -55,7 +55,7 @@ Now set up an MQTT returner on a data point you know you're getting data from (v
 
 ### Broker-Bridge Mode
 ![broker_bridge_diagram](/img/getting_started/developer_guides/configuring_MQTT/broker-bridge_diagram.png)
-On the AutoPi cloud portal (my.autopi.io for private customers, <company_name>.autopi.io for business customers) go to Device > Advanced Settings > MQTT. 
+On the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) portal (my.autopi.io for private customers, <company_name>.autopi.io for business customers) go to Device > Advanced Settings > MQTT. 
 Note that the settings under Broker > ... **effect only the broker, and not the client**, so if you are trying to set up direct-connect mode, 
 these are not the settings you are looking for. Modify the following settings:
 
@@ -84,7 +84,7 @@ Some of these settings are not a necessity, but these are the settings we've see
 **Example**:
 ![publish_from_cloud](/img/getting_started/developer_guides/configuring_MQTT/mqtt_settings_example.png)
 
-Save and sync. Once synced, test if the connection has been made correctly. Run the following command in the cloud terminal:
+Save and sync. Once synced, test if the connection has been made correctly. Run the following command in the [Cloud](https://www.autopi.io/software-platform/cloud-management) terminal:
 
     $ cmd.run 'mosquitto_pub -h localhost -t test/my_topic -m "my test data"' 
 
@@ -124,7 +124,7 @@ For each logger of Type "OBD-II PID" add the MQTT returner by selecting the logg
 ![setup_pid_mqtt_returner](/img/getting_started/developer_guides/configuring_MQTT/pid_mqtt_setup.png)
 
 ### Services
-A service can serve as a data source in 2 ways: through workers and through reactors. Most commonly you will want to retrieve CAN data. 
+A service can serve as a data source in 2 ways: through workers and through reactors. Most commonly you will want to retrieve [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) data. 
 For this, go to Device > Services and add the MQTT returner to the obd_manager's can_logger worker, as shown below:
 
 ![can_mqtt_setup_step_1](/img/getting_started/developer_guides/configuring_MQTT/can_mqtt_setup_1.png)
@@ -135,7 +135,7 @@ For this, go to Device > Services and add the MQTT returner to the obd_manager's
 
 ![can_mqtt_setup_step_4](/img/getting_started/developer_guides/configuring_MQTT/can_mqtt_setup_4.png)
 
-The other Service sourced data points and their locations can be found in the following table. The steps described for CAN data can be repeated for each of these.
+The other Service sourced data points and their locations can be found in the following table. The steps described for [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) data can be repeated for each of these.
 
 | **Data point**         | **Source**                               |
 |------------------------|------------------------------------------|
@@ -147,7 +147,7 @@ The other Service sourced data points and their locations can be found in the fo
 
 ### Jobs
 Go to Device > Jobs and set returner to each job as MQTT. As of time of writing, it is only possible to to have a 
-single returner per job, so it's not possible to send the data to both MQTT and the AutoPi Cloud.
+single returner per job, so it's not possible to send the data to both MQTT and the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management).
 
 ![rpi_temp_job_with_mqtt_returner](/img/getting_started/developer_guides/configuring_MQTT/rpi_temp_job_with_mqtt_returner.png)
 

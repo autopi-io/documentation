@@ -5,8 +5,8 @@ title: Key Fob
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
-| EXTENSION PORT | Which user extension port on the AutoPi main board is the key fob connected to? | int | 2 | - |
-| ENABLED | Enable control of a key fob connected to the AutoPi main board. | bool | False | - |
+| EXTENSION PORT | Which user extension port on the [AutoPi](https://www.autopi.io) main board is the key fob connected to? | int | 2 | - |
+| ENABLED | Enable control of a key fob connected to the [AutoPi](https://www.autopi.io) main board. | bool | False | - |
 
 ## Button
 

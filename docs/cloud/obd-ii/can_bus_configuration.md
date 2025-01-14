@@ -3,24 +3,24 @@ id: can-bus-configuration
 title: CAN Bus Configuration
 ---
 
-This page describes what to do if you've tried autodetecting the CAN bus, and this has not worked.
+This page describes what to do if you've tried autodetecting the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus, and this has not worked.
 To be more exact, we'll reiterate on how to use the auto-detect feature, how the feature works and
-how to do what it does manually, how to check whether the vehicle supports passive CAN bus 
+how to do what it does manually, how to check whether the vehicle supports passive [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus 
 monitoring.
 
-<!-- ## CAN Concepts
+<!-- ## [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Concepts
 
 ### WIP, the Same Concept On the Cloud Means a Different Thing On the Device
 
 General concepts:
-- Protocol - a numbered set of configurations, which specify a CAN interface, default baudrate, 
+- Protocol - a numbered set of configurations, which specify a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) interface, default baudrate, 
 extended header flag, data length, data decoding information and others.
 - Baudrate - data transmission speed
-- Autodetection - a process that is invoked manually or automatically, which helps find the CAN Bus
+- Autodetection - a process that is invoked manually or automatically, which helps find the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Bus
 configuration used by your vehicle
 
 Cloud portal concepts:
-- CAN Bus - a collection of configurations including a protocol and baudrate that get translated to
+- [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Bus - a collection of configurations including a protocol and baudrate that get translated to
 device configurations
 - Default bus
 - Autodetected bus
@@ -28,12 +28,12 @@ device configurations
 
 Core concepts:
 - Baudrate
-- CAN Interface/Channel
+- [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Interface/Channel
 - Header Length -->
 
 ## Common Causes of Failures and How to Troubleshoot
 Under normal circumstances, the device will boot for the first time and will try to autodetect the
-protocol automatically, then send the results back to us, where we create a CAN Bus for your device,
+protocol automatically, then send the results back to us, where we create a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Bus for your device,
 flagged as autodetected.
 
 ![Autodetect bus](/img/cloud/obd_ii/can_bus_configuration/autodetected_bus.png)
@@ -48,7 +48,7 @@ Sometimes, this will not happen. This can be because of multiple reasons:
 - A combination of 2 or more of the above 
 
 ### The Device is in an Incorrect State
-Whenever an AutoPi device is powered on, sleep timers are created, which will turn the device off in a few
+Whenever an [AutoPi](https://www.autopi.io) device is powered on, sleep timers are created, which will turn the device off in a few
 minutes. Check the status of the LEDs on the side of the device to make sure the device has not gone to sleep.
 Both the green and blue LEDs should be lit constant and bright. If the blue LED is breathing (varying in its 
 bringtness from dim to bright), it's sleeping. The easiest way to get it to turn back on is to disconnect it
@@ -62,7 +62,7 @@ You can learn more about the power cycle on the [Power Management Documentation]
 These can make it seem like the autodetect is not working. Unless you're connecting to the device through 
 its Wireless Access Point and running commands from its local terminal, you should test the connectivity
 before checking for any of the further issues. Try running the following command from the terminal in the
-cloud portal: `test.ping`. Note that just because you see some data in the dashboard, doesn't mean that 
+[Cloud](https://www.autopi.io/software-platform/cloud-management) portal: `test.ping`. Note that just because you see some data in the dashboard, doesn't mean that 
 there's a good enough connection for commands to be received by the device, and for it to be able to send
 the command results back. If you get a response that looks something like the screenshot below, you may
 move on further. Otherwise, check out the [4G Troubleshooting Guide](/getting_started/autopi_tmu_cm4/4g_internet_setup_troubleshooting.md).
@@ -86,23 +86,23 @@ on non-OBD-II queries (COMING SOON) and [Passive CAN Traffic](#passive-can-traff
 ### The Vehicle Supports OBD-II, the ECUs are On, but They are Not Active
 This is the most complicated case. There's multiple ways this issue can present itself:
 1. The bus is autodetected, but the vehicle is periodically not responding to queries that have worked before
-2. Manufacturer-made OBD-II scanners work, however, the AutoPi can not read the same data
+2. Manufacturer-made OBD-II scanners work, however, the [AutoPi](https://www.autopi.io) can not read the same data
 3. The manufacturer claims to support OBD-II, however, whichever configuration you try, no data can be read
 4. Others not mentioned
 
 In this case, there's a few things you can try:
-- If you've got an OBD-II adapter that's able to read data, you can connect both the adapter and the AutoPi to
-the vehicle's bus and see what the adapter does. One common case is that it sends some CAN frames, 
+- If you've got an OBD-II adapter that's able to read data, you can connect both the adapter and the [AutoPi](https://www.autopi.io) to
+the vehicle's bus and see what the adapter does. One common case is that it sends some [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) frames, 
 which activate the ECUs and they start to respond afterwards. You can then set up workflows that send these same
 frames at startup to active the ECUs. It can also be the case that the vehicle does not support OBD-II and 
 this can help you find out what protocol it is actually using.
-- Browse the internet to see if anyone has already tried reverse engineering the CAN bus on your vehicle. Sometimes,
+- Browse the internet to see if anyone has already tried reverse engineering the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus on your vehicle. Sometimes,
 what works on one car from the manufacturer will work for another.
 - Contact the manufacturer to find out how the ECUs expect to be communicated with.
 - Try and reverse engineer the bus yourself. This can be a tedious and time consuming task. Depending on your 
 preferred workflow, you may prefer to [ssh into the device](/developer_guides/how_to_ssh_to_your_device.mdx) and use the Linux 
 [can-utils command line utility](https://manpages.debian.org/testing/can-utils/index.html). The most notable commands
-in this are *candump* and *cansend*. To change the configuration of the CAN connection, you can use the 
+in this are *candump* and *cansend*. To change the configuration of the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) connection, you can use the 
 [socketcan.up and socketcan.down](/core/commands/socketcan.md) commands. 
 
 ### The Vehicle Supports OBD-II, but the Vehicle Uses a Configuration, Which is Not Checked by the Autodetect
@@ -111,8 +111,8 @@ device checks a pre-defined list of configurations. It's possible that your vehi
 Check the [Finding configuration manually](#finding-configuration-manually) section to see further steps.
 
 ## How Bus Autodetection Works 
-The easiest way to run autodetection is through the cloud portal from the Vehicles Editor. This will do 2 things.
-First it will try to find the correct configuration for CAN connectivity (see 
+The easiest way to run autodetection is through the [Cloud](https://www.autopi.io/software-platform/cloud-management) portal from the Vehicles Editor. This will do 2 things.
+First it will try to find the correct configuration for [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) connectivity (see 
 [Finding Configuration Manually](#finding-configuration-manually) for an explanation). Second, it will try to find
 the supported OBD-2 PIDs and create them in your Library.
 
@@ -163,7 +163,7 @@ The most common baudrates are 125000, 250000 and 500000.
 
 Go through all combinations of these: protocol 31 and baudrate 125000, protocol 31 and baudrate 250000, etc. 
 Once you find a combination that works, note down the protocol number, interface, the header length and the 
-baudrate. You can then create the bus in the Cloud Portal, and set up loggers for it. 
+baudrate. You can then create the bus in the [Cloud](https://www.autopi.io/software-platform/cloud-management) Portal, and set up loggers for it. 
 
 Note that if you run the `obd.protocol` command, you will see many more than the 4 protocols listed above. 
 Some of these are legacy and  are no longer supported by the hardware. However, some add message decoding 
@@ -198,14 +198,14 @@ supported:
 ```
 
 
-### Passive CAN Traffic
+### Passive [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Traffic
 :::important
 From Core sofware version 1.24.0, the obd.monitor command will show both 11-bit header and 29-bit header messages, no
-matter if the selected protocol is 11-bit or 29-bit. When setting up CAN Signal loggers, the bus' default protocol must
+matter if the selected protocol is 11-bit or 29-bit. When setting up [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Signal loggers, the bus' default protocol must
 be of the same header length as the messages being received. 
 :::
 
-Many vehicles nowadays also have ECUs broadcasting data on the CAN bus. To find out if this is the case, you
+Many vehicles nowadays also have ECUs broadcasting data on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus. To find out if this is the case, you
 can follow the same idea as with OBD-II, except you're trying to listen to any data on the bus:
 
 

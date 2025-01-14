@@ -3,13 +3,13 @@ id: how-to-use-bluepy-with-autopi-edge-devices
 title: Enabling Bluetooth - Using bluepy with AutoPi Edge Devices
 ---
 
-# BluePy BLE Guide for AutoPi Edge Devices
+# BluePy BLE Guide for [AutoPi](https://www.autopi.io) Edge Devices
 
 ## Introduction
-AutoPi Core relies on BluePy and Bluez packages built into the Linux core on the device. 
+[AutoPi](https://www.autopi.io) Core relies on BluePy and Bluez packages built into the Linux core on the device. 
 
 ## Prerequisites
-- AutoPi TMU CM4 or AutoPi CAN-FD Pro device
+- AutoPi [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) or AutoPi [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) device
 
 ## Installation and Setup
 
@@ -18,10 +18,10 @@ AutoPi Core relies on BluePy and Bluez packages built into the Linux core on the
 
 ## Using the Built-in Bluetooth Extention
 
-It is possible to use the [bluetooth.scan](/core/commands/core-commands-bluetooth/#bluetoothscan) command to remote scanning for bluetooth device using the built in cloud terminal.
+It is possible to use the [bluetooth.scan](/core/commands/core-commands-bluetooth/#bluetoothscan) command to remote scanning for bluetooth device using the built in [Cloud](https://www.autopi.io/software-platform/cloud-management) terminal.
 
 ## Custom Software for Basic bluepy Usage
-A great example of using the AutoPi edge devices full functionality, is teh usage of [creating custom services](/cloud/device_management/services/create-custom-services/). Using this extendabilty of the devices you utilize the full functionality of the bluepy library on the device.   
+A great example of using the [AutoPi](https://www.autopi.io) edge devices full functionality, is teh usage of [creating custom services](/cloud/device_management/services/create-custom-services/). Using this extendabilty of the devices you utilize the full functionality of the bluepy library on the device.   
 
 ### Scanning for Devices - Custom Code Example
 

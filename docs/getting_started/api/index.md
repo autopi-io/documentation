@@ -50,7 +50,7 @@ This token is the one used by the frontend when logging in.
 You can get the JWT token in two different ways:
 
 #### 1. Capture the Token by Using the Browser Developer Tools.
-The easiest way is to capture the token by logging into the Cloud, with the developer tools open in your favourite
+The easiest way is to capture the token by logging into the [Cloud](https://www.autopi.io/software-platform/cloud-management), with the developer tools open in your favourite
 browser, with the network tab open, and then skip to step 6 in the below step by step guide.
 
 #### 2. Manually Call the Auth Endpoint to get the Token.

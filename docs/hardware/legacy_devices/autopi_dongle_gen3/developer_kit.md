@@ -3,7 +3,7 @@ id: developer-kit
 title: Developer Kit
 ---
 
-In this guide we will explore how you can get started with your AutoPi Developer Kit. We will talk
+In this guide we will explore how you can get started with your [AutoPi](https://www.autopi.io) Developer Kit. We will talk
 about how to get the device some power, what you're able to connect to it and how to get the
 antennas attached.
 
@@ -11,7 +11,7 @@ antennas attached.
 
 Let's start off by getting the power sorted out. Included in your developer kit, you have a power
 cable, one side of that power cable is a female OBD-II port and the other is a female DC connector.
-This is the cable we're going to use to provide power to it. On one side, plug the AutoPi device
+This is the cable we're going to use to provide power to it. On one side, plug the [AutoPi](https://www.autopi.io) device
 (OBD side) and on the other - your DC power supply.
 
 :::tip
@@ -22,16 +22,16 @@ OBD-II port.
 
 :::danger
 NEVER connect a micro-USB power cable to the Raspberry Pi's power input port. The intended way for
-the AutoPi to receive power is through the OBD-II port. Connecting a micro-USB power cable to the
+the [AutoPi](https://www.autopi.io) to receive power is through the OBD-II port. Connecting a micro-USB power cable to the
 Raspberry Pi will likely result in a short-cirtuit.
 :::
 
 ## Connectivity
 
-The AutoPi has three IO ports:
+The [AutoPi](https://www.autopi.io) has three IO ports:
 
-1. **Micro-USB cable**, which you can use to connect any usb device to your AutoPi.
-2. **HDMI**, which you can use to connect a monitor to your AutoPi.
+1. **Micro-USB cable**, which you can use to connect any usb device to your [AutoPi](https://www.autopi.io).
+2. **HDMI**, which you can use to connect a monitor to your [AutoPi](https://www.autopi.io).
 3. **Audio jack**, which you can use for headphones or speakers.
 
 ![available I/O](/img/hardware/legacy_devices/autopi_dongle_gen3/developer_kit/available-io.jpg)

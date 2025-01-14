@@ -3,7 +3,7 @@ id: fleet-wakeup
 title: Remote Wake Up
 ---
 
-The remote wake up feature allows your to trigger devices to be awoken remotely either from the API or from the cloud frontend.
+The remote wake up feature allows your to trigger devices to be awoken remotely either from the API or from the [Cloud](https://www.autopi.io/software-platform/cloud-management) frontend.
 
 > Please note that this feature is not available on devices using a Telit modem.
 

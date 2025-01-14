@@ -3,14 +3,14 @@ id: create-custom-triggers
 title: Create Custom Triggers
 ---
 
-In this guide we will explore how you can create a custom trigger for your AutoPi service. The
+In this guide we will explore how you can create a custom trigger for your [AutoPi](https://www.autopi.io) service. The
 example that we will look at is a trigger that will play a beeping sound when the vehicle's speed
 is 50km/h or more. Let's dive straight in.
 
 :::note
-Service triggers are not to be confused with Cloud triggers. Although they have the same name
+Service triggers are not to be confused with [Cloud](https://www.autopi.io/software-platform/cloud-management) triggers. Although they have the same name
 they have two very different functions. Service triggers work **on the device** and can respond to
-data coming in from a handler in various ways (emiting events, playing audio, etc). Cloud trigers
+data coming in from a handler in various ways (emiting events, playing audio, etc). [Cloud](https://www.autopi.io/software-platform/cloud-management) trigers
 on the other hand respond to events emited by the device **on the server side**.
 :::
 
@@ -131,9 +131,9 @@ def speed_warning_event(result):
 ```
 
 The code here is esentially the same as the one presented above. The only difference is that
-the AutoPi will fire an event internally instead of playing a beeping sound. This event can then
+the [AutoPi](https://www.autopi.io) will fire an event internally instead of playing a beeping sound. This event can then
 be used in the **event_reactor** service to perform other actions. Also, the event will be uploaded
-to the cloud and be visible from **Device** > **Events**.
+to the [Cloud](https://www.autopi.io/software-platform/cloud-management) and be visible from **Device** > **Events**.
 
 :::note
 In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).

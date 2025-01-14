@@ -26,5 +26,5 @@ ec2x.query 'AT+CMGD=1,4'
 ```
 
 
-**Please note:** *Remotely waking up the device is not possible if your device is in hibernation/deep sleep. This will happen if your battery is in poor condition and voltage drops below 12.2V. This is a precausive measure, to ensure that the AutoPi will never drain your battery.*
+**Please note:** *Remotely waking up the device is not possible if your device is in hibernation/deep sleep. This will happen if your battery is in poor condition and voltage drops below 12.2V. This is a precausive measure, to ensure that the [AutoPi](https://www.autopi.io) will never drain your battery.*
 

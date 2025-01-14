@@ -20,10 +20,10 @@ Triggers are a way to receive notifications when specific events occur on the de
 that the notifications are only sent when those conditions have been met.
 
 More specifically, whenever a device recieves an event (e.g. `vehicle/engine/running`) it will push that event and the data that comes
-with it to the Cloud. When the Cloud system receives that data, it'll process it and find out if there are any triggers that need to
+with it to the [Cloud](https://www.autopi.io/software-platform/cloud-management). When the [Cloud](https://www.autopi.io/software-platform/cloud-management) system receives that data, it'll process it and find out if there are any triggers that need to
 be executed based on the event name (also known as a tag) and the conditions for each trigger that matches the tag.
 
-You can set up or edit these triggers on the AutoPi Cloud. As mentioned earlier, triggers are based on event from the device, and
+You can set up or edit these triggers on the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management). As mentioned earlier, triggers are based on event from the device, and
 a trigger can have zero or more conditions that needs to be met before it is triggered. Once the condition(s) have been met, the
 trigger will execute the attached action(s), i.e. a notification will be sent to you notifying you of this event, either via email
 or a webhook request.
@@ -34,7 +34,7 @@ is fired when the vehicle's engine is started.
 
 ## Here is How to Start
 
-Once, you have received your AutoPi device, and you have registered it (click [here](/getting_started/autopi_tmu_cm4/index.md) to see
+Once, you have received your [AutoPi](https://www.autopi.io) device, and you have registered it (click [here](/getting_started/autopi_tmu_cm4/index.md) to see
 the getting started guide) and you are all set to go and can begin creating your own triggers.
 Let's get started with the guide.
 
@@ -238,6 +238,6 @@ Address: Find on https://ifttt.com/services/maker_webhooks/settings
 Payload: optional and custom based on the IFTTT applet.  
 
 :::tip
-Like any AutoPi cloud functionality, triggers can be managed programmatically through the AutoPi REST API. For more information see: [API Documentation](https://api.autopi.io/#automation)
+Like any [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) functionality, triggers can be managed programmatically through the [AutoPi](https://www.autopi.io) REST API. For more information see: [API Documentation](https://api.autopi.io/#automation)
 :::
 

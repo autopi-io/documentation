@@ -19,7 +19,7 @@ title: Accelerometer
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
-| RETURNERS | Which cloud returner(s) should be used? | str |  | - |
+| RETURNERS | Which [Cloud](https://www.autopi.io/software-platform/cloud-management) returner(s) should be used? | str |  | - |
 | FILTER DUPLICATES | Filter out duplicate measurements? | bool | True | - |
 | DECIMALS | More decimals means a lot more data. Be very careful about increasing this value. | int | 2 | - |
 

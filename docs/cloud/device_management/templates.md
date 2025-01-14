@@ -35,15 +35,15 @@ More info about [Jobs](/cloud/device_management/jobs.md) and [Triggers](/cloud/d
 
 ### Loggers
 Loggers are created similarly to how they are for regular devices. They are a little different since creating loggers on a template will create buses
-as well. A prerequisite to setting up Tempalted Loggers is to have already created some CAN Messages and CAN Signals or PIDs in the Library.
+as well. A prerequisite to setting up Tempalted Loggers is to have already created some [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Messages and [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Signals or PIDs in the Library.
 
-#### Templated CAN Loggers
-To create a templated CAN logger, find the `Loggers` tab in the template you would like to edit, click `Create`, and `CAN`. You will be presented
+#### Templated [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Loggers
+To create a templated [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) logger, find the `Loggers` tab in the template you would like to edit, click `Create`, and `CAN`. You will be presented
 with a window like this:
 
 ![Create can logger](/img/cloud/device_management/templates/template_create_can_logger.png)
 
-Here you will need to select the CAN signal you'd like to log, and set the bus configuration. In a guide on 
+Here you will need to select the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal you'd like to log, and set the bus configuration. In a guide on 
 [importing CAN messages and signals through DBC files](/cloud/obd_library/library.md#importing-library-items-from-files) 
 we imported some signals related to the seat temperatures. Here we can see those:
 
@@ -56,7 +56,7 @@ of these buses is selected, it will prefil the Protocol and Baudrate fields (the
 created logger/bus/template).
 
 :::note
-The `Message supported buses` section refers to the `Used by Vehicle(s)` dropdown in the CAN Message edit window in the library.
+The `Message supported buses` section refers to the `Used by Vehicle(s)` dropdown in the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Message edit window in the library.
 
   ![Logger buses](/img/cloud/device_management/templates/template_can_logger_buses.png)
 :::
@@ -67,7 +67,7 @@ create for this template, you can choose to fill these fields using the bus that
 ![Can logger buses with tempalte bus](/img/cloud/device_management/templates/template_can_logger_buses_with_template_bus.png)
 
 #### Templated PIDs
-The process for creating templated PID loggers is very similar as for CAN loggers. Go to the template's `Loggers` tab, click `Create`, then `PID`. 
+The process for creating templated PID loggers is very similar as for [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) loggers. Go to the template's `Loggers` tab, click `Create`, then `PID`. 
 You'll be presented with a window similar to this:
 
 ![Logger buses](/img/cloud/device_management/templates/template_create_pid_logger.png)

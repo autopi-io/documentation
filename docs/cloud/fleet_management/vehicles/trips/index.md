@@ -16,7 +16,7 @@ You also have the option to categorize trips as either personal or business and,
 ![Trip example](/img/cloud/fleet_management/vehicles/trips/intro/trip_demo_example_1.png)
 
 :::tip
-You can check the events page on my.autopi.io to see all events logged from your device. When troubleshooting it is one of the first places to check if you are unsure why something happened. By looking at the events you can usually get a really good idea about why the device did something.
+You can check the events page on [my.autopi.io](https://my.autopi.io) to see all events logged from your device. When troubleshooting it is one of the first places to check if you are unsure why something happened. By looking at the events you can usually get a really good idea about why the device did something.
 :::
 
 ## Trip Generation
@@ -51,5 +51,5 @@ See more here: [Setup power cycle for an electric vehicle](/getting_started/elec
 :::
 
 :::note
-For AutoPi Mini, the start/stop trip events are `trip/start` and `trip/stop`
+For [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini), the start/stop trip events are `trip/start` and `trip/stop`
 :::

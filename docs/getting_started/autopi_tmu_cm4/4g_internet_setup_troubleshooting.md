@@ -3,7 +3,7 @@ id: 4g-internet-setup-troubleshooting
 title: 4G Internet Setup Troubleshooting
 ---
 
-You are experiencing issues connecting to the internet, when connected to the WiFi hotspot on the AutoPi Dongle. 
+You are experiencing issues connecting to the internet, when connected to the WiFi hotspot on the [AutoPi](https://www.autopi.io) Dongle. 
 
 ### Prerequisites:
 Before following this guide, you must have completed the initial [setup guide](/getting_started/autopi_tmu_cm4/index.md).
@@ -12,7 +12,7 @@ Before following this guide, you must have completed the initial [setup guide](/
 
 1. Your SIM card must be setup for data. To check this, insert the SIM into another device, like a smartphone or similar. When inserted in the other device you must be able to browse the web.
 
-1. If you ordered a branded version of the AutoPi (Verizon/AT&T), please verify that the network carrier of the SIM card is the same as the brand of the AutoPi.
+1. If you ordered a branded version of the [AutoPi](https://www.autopi.io) (Verizon/AT&T), please verify that the network carrier of the SIM card is the same as the brand of the [AutoPi](https://www.autopi.io).
 
 1. Verify that the SIM card is not pin locked and if it is that you have entered the pin code in the settings. 
 
@@ -149,7 +149,7 @@ You can to check if the device can connect to the internet though the 4g connect
 
 `cmd.run "ping -c 5 -I wwan0 google.com"`
 
-You can also check the connection to the autopi cloud service by running the following command. 
+You can also check the connection to the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) service by running the following command. 
 
 `cmd.run "curl -v my.autopi.io"`
 

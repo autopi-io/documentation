@@ -6,23 +6,23 @@ title: Data Troubleshooting
 ## Why Am I Not Seeing Any Data? 
 
 If you've followed the [Getting Started Guide](/getting_started/autopi_tmu_cm4/index.md)
-and tested your AutoPi TMU CM4 device during a drive, but aren't seeing any data
-on the AutoPi Cloud, this guide will help you identify and resolve common issues. 
+and tested your [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device during a drive, but aren't seeing any data
+on the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management), this guide will help you identify and resolve common issues. 
 
 This guide is organized as a checklist, detailing potential reasons why your vehicle
-data might not be appearing on the AutoPi Cloud Dashboard. It is intended for the
-AutoPi TMU CM4 device, for AutoPi Mini please see the [Mini guides](/getting_started/autopi_mini/index.md).  
+data might not be appearing on the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) Dashboard. It is intended for the
+[AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device, for [AutoPi](https://www.autopi.io) Mini please see the [Mini guides](/getting_started/autopi_mini/index.md).  
 
 ![Dashboard](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/no_data_dashboard.png)
 
-## Common Causes and Solutions for Data Not Appearing on the Cloud  
+## Common Causes and Solutions for Data Not Appearing on the [Cloud](https://www.autopi.io/software-platform/cloud-management)  
 
 ### 1. Connection Issues 
 
-A common reason for missing data is a communication issue between your AutoPi TMU CM4 
-device and the Cloud. If you’ve followed the Getting Started guide, this should 
+A common reason for missing data is a communication issue between your [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) 
+device and the [Cloud](https://www.autopi.io/software-platform/cloud-management). If you’ve followed the Getting Started guide, this should 
 typically not be a problem. However, it’s important to check the status of the 
-LEDs on the side of the device to confirm it’s communicating with the Cloud and hasn’t entered sleep mode. 
+LEDs on the side of the device to confirm it’s communicating with the [Cloud](https://www.autopi.io/software-platform/cloud-management) and hasn’t entered sleep mode. 
 
 - **LED Status**: Both the green and blue LEDs should be lit solid and bright. 
     If the blue LED is “breathing” (varying brightness from dim to bright), 
@@ -42,7 +42,7 @@ follow the steps outlined in our [4G Internet Setup and Troubleshooting Guide](/
 ### 3. CAN Bus Creation 
 
 When the device boots for the first time, it attempts to autodetect the 
-communication protocol and sends the results back to AutoPi, where a CAN Bus is 
+communication protocol and sends the results back to [AutoPi](https://www.autopi.io), where a CAN Bus is 
 created for your device.
 
 - **Check for CAN Bus**: Go to Vehicles > Choose Device > Settings > Vehicle Editor 
@@ -54,13 +54,13 @@ created for your device.
 
 ### 4. Loggers Creation
 
-To view data on the AutoPi Cloud Dashboard, you need to create Loggers to collect
-the data via your AutoPi device. 
+To view data on the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) Dashboard, you need to create Loggers to collect
+the data via your [AutoPi](https://www.autopi.io) device. 
 
 - **Setting Up Loggers**: Loggers can be configured to communicate on the CAN Bus
     and capture the necessary data. They can be set up using PIDs or CAN messages,
     depending on your vehicle's communication type. 
-- **Accessing Loggers**: Navigate to the Devices section of the AutoPi Cloud, 
+- **Accessing Loggers**: Navigate to the Devices section of the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management), 
     select your device, and find Loggers. Some default loggers may already be 
     available and should display data in the Dashboard widgets. However, 
     depending on your vehicle, you may need to create custom loggers. 
@@ -71,7 +71,7 @@ the data via your AutoPi device.
 
 For more information on creating Loggers, visit our [OBD-II Introduction Guide](/cloud/obd-ii/obd-ii-intro). 
 Additional documentation on CAN and PID configuration can be found under the 
-OBD-II dropdown in the Cloud section of our documentation. 
+OBD-II dropdown in the [Cloud](https://www.autopi.io/software-platform/cloud-management) section of our documentation. 
 
 When everything is configured correctly you should be able to see your data 
 displayed in the form of widgets on the Dashboard by navigating to Vehicles > Dashboard.

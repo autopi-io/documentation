@@ -9,10 +9,10 @@ your device's update attempts.
 ## Updating Your Device
 
 You can update your device in two main ways:
-1. Update through the Cloud
+1. Update through the [Cloud](https://www.autopi.io/software-platform/cloud-management)
 2. Update with a command
 
-### Update Through the Cloud
+### Update Through the [Cloud](https://www.autopi.io/software-platform/cloud-management)
 
 This is the method used most often to update a device, as it allows the rest of the system to interact
 with the device nicely. To update the device, we will first navigate over to the Software Updates page
@@ -39,7 +39,7 @@ sleep" or "At start (or before sleep)".
 
 :::tip
 Be careful with this update procedure. If you're trying to update your device, we recommend that you
-follow the steps above (Update Through the Cloud), as they are the standard way of updating your
+follow the steps above (Update Through the [Cloud](https://www.autopi.io/software-platform/cloud-management)), as they are the standard way of updating your
 devices. However, in certain cases, you might need to manually ask the device to update, which is
 why we have this section here.
 :::

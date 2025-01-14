@@ -37,7 +37,7 @@ predefined geographic areas. This report helps fleet managers:
 
 ### Creating a Geofence Summary Report
 
-1. From the AutoPi Cloud platform, navigate to the **Reports** menu and click 
+1. From the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) platform, navigate to the **Reports** menu and click 
    **Create/Schedule**.
 2. Select **Geofence Summary** from the available options.
 3. Fill out the template:
@@ -128,8 +128,8 @@ of how each field is calculated:
 
 :::note
 As new report types become available, additional features and enhancements will 
-be added to the platform. Stay tuned for updates to make the most of your AutoPi 
-Cloud Reports.
+be added to the platform. Stay tuned for updates to make the most of your [AutoPi](https://www.autopi.io) 
+[Cloud](https://www.autopi.io/software-platform/cloud-management) Reports.
 
 For more information or support, please contact our support team at
 [support@autopi.io](mailto:support@autopi.io).
