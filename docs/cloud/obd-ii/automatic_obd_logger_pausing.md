@@ -3,19 +3,19 @@ id: automatic-obd-logger-pausing
 title: Automatic OBD Logger Pausing
 ---
 
-Automatic OBD Logger Pausing is a feature that enables the AutoPi device to automatically pause any OBD loggers when it
+Automatic OBD Logger Pausing is a feature that enables the [AutoPi](https://www.autopi.io) device to automatically pause any OBD loggers when it
 detects that the vehicle has stopped shaking (which also likely means that the vehicle has stopped moving). This
-feature is useful in situations where the vehicle that the AutoPi is plugged into has a CAN bus protection. Such
-vehicles usually detect CAN bus traffic when the vehicle is locked and in turn trigger the alarm of the vehicle - this
-is done to try and protect the vehicle from being fiddled with externally through the CAN bus. Examples of such
+feature is useful in situations where the vehicle that the AutoPi is plugged into has a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus protection. Such
+vehicles usually detect [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus traffic when the vehicle is locked and in turn trigger the alarm of the vehicle - this
+is done to try and protect the vehicle from being fiddled with externally through the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus. Examples of such
 vehicles are the BMW i3, some Mini Coopers and some Porche models.
 
 :::note
-In fact, not only the loggers are being paused, but in general the device is not allowed to send any CAN frames on the
-CAN bus of the vehicle. This means that if you attempt to manually send a CAN frame with a command such as `obd.send`
+In fact, not only the loggers are being paused, but in general the device is not allowed to send any [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) frames on the
+[CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus of the vehicle. This means that if you attempt to manually send a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) frame with a command such as `obd.send`
 or `obd.query` you will receive an error.
 
-Passively listening (also known as sniffing) on the CAN bus is still allowed though.
+Passively listening (also known as sniffing) on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus is still allowed though.
 :::
 
 ## How Does it Work?
@@ -57,7 +57,7 @@ services:
 ## Troubleshooting
 
 Sometimes, you might notice that even though you have enabled the Automatic OBD Logger Pausing feature, the AutoPi is
-still sending CAN Frames on the CAN bus. This is usually caused by your vehicle being too easy to shake which in turn
+still sending [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Frames on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus. This is usually caused by your vehicle being too easy to shake which in turn
 triggers a `vehicle/motion/shaking` event much more easily (this is the event that reactivates the OBD loggers).
 Depending on the vehicle type that you are using, the driving behavior, road conditions and more the device might think
 that the vehicle is being driven while in fact it isn't or vice versa.

@@ -7,7 +7,7 @@ If you want to investigate the raw request and response messages of PID queries,
 you are unsure of what a PID is you can start by reading
 [this wikipedia page](https://en.wikipedia.org/wiki/OBD-II_PIDs).
 
-First step is to enable debug logging on your AutoPi device:
+First step is to enable debug logging on your [AutoPi](https://www.autopi.io) device:
 
 * On [my.autopi.io](https://my.autopi.io) go to **Device > Advanced Settings**
 * Next choose **System** and go to section **Logging** > **Level**
@@ -20,7 +20,7 @@ lot of system resources. For normal operation use **warning** or **info** log le
 :::
 
 Now that debug logging is enabled we are able to see all raw data transmitted and received between
-the STN-chip (the chip responsible for communication with the CAN bus of the vehicle) and the
+the STN-chip (the chip responsible for communication with the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus of the vehicle) and the
 Raspberry Pi.
 
 When logged on to the system [via SSH](/developer_guides/how_to_ssh_to_your_device.mdx) it is possible to

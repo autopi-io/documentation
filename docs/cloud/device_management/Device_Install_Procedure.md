@@ -8,7 +8,7 @@ This is a detailed description of how to infleet new devices to any fleet, how t
 ## Procedure for Pairing a Device and Vehicle. 
 In this section we will go over the process of a device with either an existing vehicle or creating a new vehicle. 
 
-1. Login to your fleet managment cloud service such as cloud.autopi.io
+1. Login to your fleet managment [Cloud](https://www.autopi.io/software-platform/cloud-management) service such as cloud.autopi.io
 
 2. From the main screen go to Devices. 
 ![main_screen_devices](/img/cloud/device_management/device_install_procedure/main_screen_devices.jpg)
@@ -50,7 +50,7 @@ In this section we will go over the process of a device with either an existing 
 
 ## Procedure for Assigning Devices to Templates. 
 
-1. Login to your fleet management cloud service such as cloud.autopi.io
+1. Login to your fleet management [Cloud](https://www.autopi.io/software-platform/cloud-management) service such as cloud.autopi.io
 
 2. From the main screen go to Templates. 
 ![main_screen_templates](/img/cloud/device_management/device_install_procedure/main_screen_templates.png)
@@ -84,7 +84,7 @@ Templates are customizable to make as many or as few changes to the devices as n
 
 ## Update Devices and Clear Pending Syncs From Fleet Management.
 
-1. Login to your fleet management cloud service such as cloud.autopi.io
+1. Login to your fleet management [Cloud](https://www.autopi.io/software-platform/cloud-management) service such as cloud.autopi.io
 
 2. From the main screen go to Devices. 
 ![main_screen_devices](/img/cloud/device_management/device_install_procedure/main_screen_devices.jpg)
@@ -105,13 +105,13 @@ Templates are customizable to make as many or as few changes to the devices as n
 ![Pending_button_highlighted](/img/cloud/device_management/device_install_procedure/Pending_button_highlighted.png)
 
 8. In the pop-up window, you'll see any changes that are pending sync clicking the sync button will   
-still the syncing process if the devices is connected to the cloud.
+still the syncing process if the devices is connected to the [Cloud](https://www.autopi.io/software-platform/cloud-management).
 ![sync_button_highlighted](/img/cloud/device_management/device_install_procedure/sync_button_highlighted.png)
 
 9. You have now made sure the device is up to date and any changes have been synced ot the device. 
 
 ### What Pending Syncs 
-Pending Syncs are changes made to a device from a cloud service such as the cloud.autopi.io or my.autopi.io that 
+Pending Syncs are changes made to a device from a [Cloud](https://www.autopi.io/software-platform/cloud-management) service such as the cloud.autopi.io or my.autopi.io that 
    needs to be applied to the devices before they take effect.   
 The Pending sync will automatically be applied the next time it starts or when manually asked to sync
    if the device is online while changes are being made. 

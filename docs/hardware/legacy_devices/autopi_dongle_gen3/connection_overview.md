@@ -36,20 +36,20 @@ This diagram shows the 3<sup>rd</sup> generation backside connections possibilit
 
 ### GPIO Pins
 
-This image is an overview of the GPIO pinout of the 3<sup>rd</sup> generation (TMU) AutoPi.
+This image is an overview of the GPIO pinout of the 3<sup>rd</sup> generation (TMU) [AutoPi](https://www.autopi.io).
 
 Pins marked with "in use" cannot be used for anything else. This will interrupt the functionality
-of the AutoPi. This I2C bus is used by the AutoPi, but can be shared with other devices. 
+of the [AutoPi](https://www.autopi.io). This I2C bus is used by the [AutoPi](https://www.autopi.io), but can be shared with other devices. 
 
 All other pins are free and their functionality follows that of the Raspberry Pi.
 
 ![Third generation AutoPi GPIO Pinout](/img/hardware/legacy_devices/autopi_dongle_gen3/connection_overview/gpio_pinout_gen3.png)
 
-### AutoPi Extension Port 1
+### [AutoPi](https://www.autopi.io) Extension Port 1
 
 ![AP EXT 1 connector pinout](/img/hardware/legacy_devices/autopi_dongle_gen3/connection_overview/AP_EXT1.png)
 
-### AutoPi Extension Port 2
+### [AutoPi](https://www.autopi.io) Extension Port 2
 
 ![AP EXT 2 connector pinout](/img/hardware/legacy_devices/autopi_dongle_gen3/connection_overview/AP_EXT2.png)
 

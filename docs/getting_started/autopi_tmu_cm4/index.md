@@ -63,7 +63,7 @@ After clicking the “Register Device” button, the registration tab will appea
 - **Unit ID**: This is the number on the side of your device. You can also find it in the.
     document attached in the email you received when the device was shipped. 
 - **Vehicle Information**: Optionally include the make, model and year of the vehicle.
-- **Vehicle Type**: Choose the type of vehicle (ICE, Battery EV, Hybrid EV, or Plug-in Hybrid EV).
+- **Vehicle Type**: Choose the type of vehicle (ICE, Battery [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), or Plug-in Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)).
 
 Once all information is entered, click the “Register Device”. Your newly registered device 
 will now appear in the list under “Vehicles” in the Fleet Management section and under 

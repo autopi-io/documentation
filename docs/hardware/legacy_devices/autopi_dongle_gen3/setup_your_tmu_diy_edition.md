@@ -3,7 +3,7 @@ id: setup-your-tmu-diy-edition
 title: Setup your TMU DiY Edition
 ---
 
-Congratulations on your AutoPi Device, DiY Edition! We're sure that you have some great plans on how to use
+Congratulations on your [AutoPi](https://www.autopi.io) Device, DiY Edition! We're sure that you have some great plans on how to use
 the device to your liking, but of course, first, you need to set it up. This is a guide that shows the
 steps that need to be taken to get the device in running condition.
 
@@ -18,12 +18,12 @@ however this can work with a Raspberry Pi 3 B+ or a Raspberry Pi 4.
 
 ![autopi_board_and_raspberry](/img/hardware/legacy_devices/autopi_dongle_gen3/setup_your_tmu_diy_edition/autopi_board_and_raspberry.jpg)
 
-1. Mount the Raspberry Pi on the AutoPi, connecting the pins of the Raspberry to the open holes in the
-AutoPi board.
+1. Mount the Raspberry Pi on the [AutoPi](https://www.autopi.io), connecting the pins of the Raspberry to the open holes in the
+[AutoPi](https://www.autopi.io) board.
 
 ![autopi_board_and_raspberry_connected](/img/hardware/legacy_devices/autopi_dongle_gen3/setup_your_tmu_diy_edition/autopi_board_and_raspberry_connected.jpg)
 
-2. Connect the USB cable that's attached to the AutoPi board to one of the open USB ports of your Raspberry Pi
+2. Connect the USB cable that's attached to the [AutoPi](https://www.autopi.io) board to one of the open USB ports of your Raspberry Pi
 
 ![board_cable_connected_to_raspberry](/img/hardware/legacy_devices/autopi_dongle_gen3/setup_your_tmu_diy_edition/board_cable_connected_to_raspberry.jpg)
 
@@ -31,8 +31,8 @@ AutoPi board.
 
 ![screw_board](/img/hardware/legacy_devices/autopi_dongle_gen3/setup_your_tmu_diy_edition/screw_board.jpg)
 
-## Connecting to the Cloud
-Should you want to use the AutoPi Cloud solution, you can use the image found in [this](https://github.com/autopi-io/autopi-core/releases) link to flash an SD card. Make sure to download the correct image for
+## Connecting to the [Cloud](https://www.autopi.io/software-platform/cloud-management)
+Should you want to use the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) solution, you can use the image found in [this](https://github.com/autopi-io/autopi-core/releases) link to flash an SD card. Make sure to download the correct image for
 your device - since you're reading this guide, you are most likely to be needing to download the
 TMU image, instead of the GEN 2 image.
 
@@ -55,29 +55,29 @@ Password: autopi2018
 
 **We highly recommend that you change those settings as soon as you are able to do so.**
 
-### Getting Access to the Cloud
-To get your device on the AutoPi Cloud you need to get the unit ID of your device. You can find out
+### Getting Access to the [Cloud](https://www.autopi.io/software-platform/cloud-management)
+To get your device on the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) you need to get the unit ID of your device. You can find out
 your device's ID by reading out the `/etc/salt/minion_id` file. Once you have that ID, you should write to
 our support team (support@autopi.io) asking for it to be added to the system. Make sure that the dongle has
 been online at least once before doing this.
 
 :::caution
-The AutoPi *always* needs to be powered through the OBD connector to function properly.
+The [AutoPi](https://www.autopi.io) *always* needs to be powered through the OBD connector to function properly.
 Powering the board through the micro usb (or usb-c for RPi 4) power plug on the Raspberry Pi could damage your
-board. If you need to test the AutoPi in a lab environment, we encourage you to get the
+board. If you need to test the [AutoPi](https://www.autopi.io) in a lab environment, we encourage you to get the
 [OBD power connector](https://shop.autopi.io/en/products/obd-ii-power-cable-10/) from our shop.
 :::
 
 ## Get 4G and GPS Connectivity
 If you are looking to use a 4G SIM card or for GPS tracking to be enabled on your device, you will
-have to purchase your own modem, as one isn't included in the DiY Edition of the AutoPi. The modem
+have to purchase your own modem, as one isn't included in the DiY Edition of the [AutoPi](https://www.autopi.io). The modem
 that we assemble the rest of our devices with is the Quectel EG25-G mini PCIe modem. This is the
 modem that we also test all of our devices with and as such is the one, we recommend. However, since
 the modem is based on the Qualcomm chipset, other modems that are also based on the Qualcomm chipset
 should work as well.
 
 Once you've purchased your modem, you will need to install it in the modem slot on the back of the
-AutoPi board. Once you've done that, you will need to set one of the system settings to enable the
+[AutoPi](https://www.autopi.io) board. Once you've done that, you will need to set one of the system settings to enable the
 `ec2x` manager. You can do that by going over to the Device > Advanced Settings > System page and looking
 for the Setup > Mpcie > Module setting. There you can select the `ec2x` option which will install
 the driver for the modem.

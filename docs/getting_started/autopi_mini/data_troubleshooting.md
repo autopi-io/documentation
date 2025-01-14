@@ -6,24 +6,24 @@ title: Data Troubleshooting
 ## Why Am I Not Seeing Any Data? 
 
 If you've followed the [Getting Started Guide](/getting_started/autopi_mini/index.md)
-and tested your AutoPi TMU CM4 device during a drivebut no data is appearing on 
-your AutoPi Cloud Dashboard, this guide will help you identify and resolve common issues.
+and tested your [AutoPi](https://www.autopi.io) TMU CM4 device during a drivebut no data is appearing on 
+your [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) Dashboard, this guide will help you identify and resolve common issues.
 
 Organized as a checklist, this guide outlines potential causes for missing vehicle
-data and offers solutions. It is specifically for the AutoPi Mini device. For 
-AutoPi TMU CM4, please refer to this [guide](/getting_started/autopi_tmu_cm4/index.md).  
+data and offers solutions. It is specifically for the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) device. For 
+[AutoPi](https://www.autopi.io) TMU CM4, please refer to this [guide](/getting_started/autopi_tmu_cm4/index.md).  
 
 ![Dashboard](/img/getting_started/autopi_mini/data_troubleshooting/no_data_dashboard.png)
 
-## Common Causes and Solutions for Data Not Appearing on the Cloud  
+## Common Causes and Solutions for Data Not Appearing on the [Cloud](https://www.autopi.io/software-platform/cloud-management)  
 
 ### 1. Connection Issues 
 
-One common reason for missing data is communication issues within the AutoPi Mini
-or between AutoPi Mini and the Cloud. The SIM card in your AutoPi Mini comes 
+One common reason for missing data is communication issues within the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini)
+or between [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) and the [Cloud](https://www.autopi.io/software-platform/cloud-management). The SIM card in your [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) comes 
 pre-installed and should function out of the box. 
 
-When your AutoPi Mini is connected to your vehicle's OBD-II port, check the 
+When your AutoPi [Mini](https://www.autopi.io/hardware/autopi-mini) is connected to your vehicle's OBD-II port, check the 
 status of the two LEDs on the device: 
 
 1. **Navigation LED(closer to the edge of the device):**
@@ -49,14 +49,14 @@ then reconnect it. Wait until both lights are green and blinking.
 
 ### 2. Logger Creation
 
-Another issue to why you are not seeing data on your AutoPi Cloud Dashboard could
+Another issue to why you are not seeing data on your [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) Dashboard could
 be the configuration of the loggers.  
 
-In order to view data on the AutoPi Cloud Dashboard, you must ensure that loggers
+In order to view data on the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) Dashboard, you must ensure that loggers
 are set up to collect data from your vehicle. While some loggers are created by 
 default, they may not be suitable for your specific vehicle. 
 
-For more detailed instructions on creating loggers for the Mini, refer to our 
+For more detailed instructions on creating loggers for the [Mini](https://www.autopi.io/hardware/autopi-mini), refer to our 
 [Logger Guide](/getting_started/autopi_mini/create-mini-loggers).
 
 ![Loggers configuration](/img/getting_started/autopi_mini/data_troubleshooting/loggers_configuration.png)

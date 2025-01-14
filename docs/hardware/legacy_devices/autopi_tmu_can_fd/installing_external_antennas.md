@@ -21,7 +21,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 - 2x external 4G/LTE antennas
 - 1x external GPS antenna
 
-We recommend using [**this**](https://shop.autopi.io/products/3in1-external-antenna-kit) antenna kit for expanding your AutoPi.
+We recommend using [**this**](https://shop.autopi.io/products/3in1-external-antenna-kit) antenna kit for expanding your [AutoPi](https://www.autopi.io).
 :::
 
 ### Step-by-Step Guide
@@ -73,7 +73,7 @@ We recommend using [**this**](https://shop.autopi.io/products/3in1-external-ante
 <SideBySide>
 	<p>
 		<strong>Step 5: </strong>
-		Now, take your AutoPi and flip it so you can face the bottom of the device. Next, unscrew the bottom cover of
+		Now, take your [AutoPi](https://www.autopi.io) and flip it so you can face the bottom of the device. Next, unscrew the bottom cover of
 		the device and get out the shield that was previously installed.
 	</p>
 	<img alt="Step 5" src={useBaseUrl('/img/hardware/legacy_devices/autopi_tmu_can_fd/installing_external_antennas/v5.jpg')}/>
@@ -93,7 +93,7 @@ We recommend using [**this**](https://shop.autopi.io/products/3in1-external-ante
 	<p>
 		<strong>Step 7: </strong>
 		Grab the rear shield that you have assembled with the installed antennas. Note that the cables of the antennas
-		need to be facing the internals of the AutoPi device.
+		need to be facing the internals of the [AutoPi](https://www.autopi.io) device.
 	</p>
 	<img alt="Step 7" src={useBaseUrl('/img/hardware/legacy_devices/autopi_tmu_can_fd/installing_external_antennas/v7.jpg')}/>
 </SideBySide>
@@ -142,7 +142,7 @@ We recommend using [**this**](https://shop.autopi.io/products/3in1-external-ante
 
 ### Disscussion
 <p>
-	You have now successfully installed an external antenna kit onto your Gen3.5 CAN-FD Autopi device.
+	You have now successfully installed an external antenna kit onto your Gen3.5 CAN-FD [AutoPi](https://www.autopi.io) device.
 </p>
 
 :::note

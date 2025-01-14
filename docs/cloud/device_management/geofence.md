@@ -15,8 +15,8 @@ The events are triggered in two different ways.
 
 2. Whenever a new position is logged, it will check the defined geofences, and if the state of a geofence has changed, ie. you have either exited or entered a geofence, and the next 2 positions (3 total), are the same state, then the device will trigger an event `vehicle/geofence/GEOFENCE_NAME/enter` or `vehicle/geofence/GEOFENCE_NAME/exit`
 
-This events are triggered on the device, and then uploaded to the cloud.
-This means that you are able to both create triggers in the cloud, but also configure reactors directly on the device that can react to this event, like playing a sound, sending a HTTP request or maybe publish a message on a MQTT broker.
+This events are triggered on the device, and then uploaded to the [Cloud](https://www.autopi.io/software-platform/cloud-management).
+This means that you are able to both create triggers in the [Cloud](https://www.autopi.io/software-platform/cloud-management), but also configure reactors directly on the device that can react to this event, like playing a sound, sending a HTTP request or maybe publish a message on a MQTT broker.
 
 :::note
 [Click here](/cloud/device_management/triggers/a_guide_to_triggers.md) to see the guide about how triggers work. 

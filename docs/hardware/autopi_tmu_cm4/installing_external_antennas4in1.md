@@ -13,7 +13,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 :::
 
 If you've purchased the [4-in-1 Antenna Kit](https://shop.autopi.io/products/4-in-1-car-antenna-lte-x2-gps-wifi) 
-alongside your AutoPi TMU CM4, this guide will help you through the 
+alongside your [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4), this guide will help you through the 
 installation process. The kit allows you to boost 4G/LTE connectivity, 
 GPS signal strength and BLE/WiFI signal, which is especially useful if you frequently drive
 in areas with weak signal reception. 
@@ -40,8 +40,8 @@ If you are installing the antennas yourself, follow the Step-by-Step guide.
 
 :::success
 **Prerequesites** for this guide:
-- An AutoPi TMU CM4 device
-- External 4-in-1 antennas kit provided by AutoPi
+- An [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device
+- External 4-in-1 antennas kit provided by [AutoPi](https://www.autopi.io)
 :::
 
 ### Step-by-Step Guide
@@ -49,7 +49,7 @@ If you are installing the antennas yourself, follow the Step-by-Step guide.
 <SideBySide>
 	<p>
 		<strong>Step 1: </strong>
-		Take your AutoPi and flip it so you can face the bottom of the device. Unscrew the bottom cover of the device and get out the shield that was previously installed and disconnect the internal antennas. 
+		Take your [AutoPi](https://www.autopi.io) and flip it so you can face the bottom of the device. Unscrew the bottom cover of the device and get out the shield that was previously installed and disconnect the internal antennas. 
 	</p>
 	<img alt="Step 1" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/installing_4in1_external_antennas/autopi_case_open.jpg')}/>
 </SideBySide>
@@ -102,7 +102,7 @@ If you are installing the antennas yourself, follow the Step-by-Step guide.
 
 ### Disscussion
 <p>
-	You have now successfully installed external antennas in your AutoPi TMU CM4 device.
+	You have now successfully installed external antennas in your [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device.
 </p>
 
 :::note

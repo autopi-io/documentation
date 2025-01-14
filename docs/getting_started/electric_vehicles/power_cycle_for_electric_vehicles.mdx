@@ -9,7 +9,7 @@ running. When the engine is not running, a sleep timer is created to put the don
 
 Behind the scenes this works by using [engine events](/cloud/device_management/events/vehicle.md/#engine-events).
 Engine events are triggered based on the RPM values continuously read from the vehicle. For all
-non-BEVs (Battery Electric Vehicles) this is setup automatically as default because they all
+non-BEVs (Battery [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)s) this is setup automatically as default because they all
 support readout of engine RPM in the same way according to the OBD-II PID standard
 (SAE J1979).
 
@@ -17,7 +17,7 @@ Unfortunately, this is not as simple for BEVs. Here there is no standard and dat
 different ways between makes and models. Two approaches are available:
 
 1. if your vehicle can respond to PID requests and/or 
-2. if your car continuously delivers data on a CAN bus.
+2. if your car continuously delivers data on a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus.
 
 ## Setup a PID Logger Using the `rpm_motor_event` Trigger
 This option can be used if your vehicle can respond to PID queries.
@@ -90,17 +90,17 @@ can fire your own custom events. The setup procedure is the same as in the examp
 that the trigger used is custom. See how to create a custom trigger
 [here](/cloud/device_management/services/create_custom_triggers.mdx).
 
-## Setup a CAN Logger Using the `rpm_engine_event` Trigger
+## Setup a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Logger Using the `rpm_engine_event` Trigger
 
-This option can be used if your vehicle continuously produces data on a CAN bus while
+This option can be used if your vehicle continuously produces data on a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus while
 active/driving.
 
 **Note:** At the time of writing, this approach can only make use of the `rpm_engine_event` trigger
 and thus produce engine events,
 [click here for documentation on engine events](/cloud/device_management/events/vehicle.md/#engine-events).
 
-**Precondition:** A CAN message mapping for your specific vehicle which contains an RPM signal. If
-you do not know any CAN messages for your vehicle, you can always check the *Community Library*
+**Precondition:** A [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message mapping for your specific vehicle which contains an RPM signal. If
+you do not know any [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages for your vehicle, you can always check the *Community Library*
 on https://my.autopi.io.
 
 The following example shows how an RPM signal can be found in the *Community Library* for vehicles of the make Alfa Romeo. 
@@ -109,15 +109,15 @@ Go to **OBD Library** > **Community Library** and specify *Make*:
 ![Community library](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/community_library_screenshot.png) 
 
 Click on the *RPM* signal and in the pop-up window click on the button *Add to my library*. You have
-now added the CAN message to your library, and you can use it for logging.
+now added the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message to your library, and you can use it for logging.
 
-Next step is to setup a CAN logger for the RPM signal. Go to **Device** > **Loggers** >
+Next step is to setup a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) logger for the RPM signal. Go to **Device** > **Loggers** >
 **Create** > **CAN** and choose the RPM signal:
 
 ![Setting up CAN signal logger](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/setting_up_can_signal_logger.png) 
 
 :::note Important
-The CAN signal must be named 'RPM' or else the `rpm_engine_event` trigger will skip checking the
+The [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal must be named 'RPM' or else the `rpm_engine_event` trigger will skip checking the
 value.
 :::
 

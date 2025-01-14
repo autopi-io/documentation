@@ -17,25 +17,25 @@ Check if this returner has expired.
 ----
 ## `cloud_jsonl.returner`
 
-Return a result to cloud jsonl file.
+Return a result to [Cloud](https://www.autopi.io/software-platform/cloud-management) jsonl file.
 
 
 ----
 ## `cloud_jsonl.returner_data`
 
-Return any arbitrary data structure to cloud jsonl file.
+Return any arbitrary data structure to [Cloud](https://www.autopi.io/software-platform/cloud-management) jsonl file.
 
 
 ----
 ## `cloud_jsonl.returner_event`
 
-Return an event to cloud jsonl file.
+Return an event to [Cloud](https://www.autopi.io/software-platform/cloud-management) jsonl file.
 
 
 ----
 ## `cloud_jsonl.returner_job`
 
-Return a Salt job result to cloud jsonl file.
+Return a Salt job result to [Cloud](https://www.autopi.io/software-platform/cloud-management) jsonl file.
 
 
 ----

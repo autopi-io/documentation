@@ -3,9 +3,7 @@ id: send-device-data-to-own-server
 title: Send Device Data to Own Server
 ---
 
-Hey everyone!
-
-Today, in this guide we will explore how you can setup your own server that accepts data from your AutoPi device. We won't get in too many
+In this guide we will explore how you can setup your own server that accepts data from your [AutoPi](https://www.autopi.io) device. We won't get in too many
 details, but we will explore the very basics that are needed, namely:
 
 1. How to setup the device to send data to a server different from the default one
@@ -16,18 +14,18 @@ Since we will be building the server with NodeJS, this guide requires you to hav
 shouldn't be too hard to follow if you have used other programming languages. Also, you will need to have `node` and `npm` command line tools
 installed on your workstation. You can download the full NodeJS package from [here](https://nodejs.org/en/download/).
 
-## Set Device's Cloud API Url
+## Set Device's [Cloud](https://www.autopi.io/software-platform/cloud-management) API Url
 Firstly, we need to make sure that the device will connect to your own server. For this, we do have a very neat option that can
 be changed from the [AutoPi Cloud](https://my.autopi.io) website. You need to navigate to Devices > Select Device > Advanced Settings > Cloud Storage where
 you will be able to see a screen like the following:
 
 ![cloud_api_uri](/img/getting_started/api/send_device_data_to_own_server/cloud_api_url.png) 
 
-The Url field, under the Endpoint subsection, points to where the device should send data. By default, obviously, it points to AutoPi's servers. You need to point
-instead to a URL that is resolvable from your AutoPi device.
+The Url field, under the Endpoint subsection, points to where the device should send data. By default, obviously, it points to [AutoPi](https://www.autopi.io)'s servers. You need to point
+instead to a URL that is resolvable from your [AutoPi](https://www.autopi.io) device.
 
 ## Device Communication
-Before we begin building our server, let's talk about the basic structure of the data that AutoPi devices send out. All data is sent in JSON format.
+Before we begin building our server, let's talk about the basic structure of the data that [AutoPi](https://www.autopi.io) devices send out. All data is sent in JSON format.
 More specifically an array of JSON objects. Let's look at an example:
 
 ```json
@@ -213,7 +211,7 @@ With all this setup, your server should be ready to accept data from your device
 that is being sent from the device, but you are able to manipulate, store or do anything else you'd like with your data the way you prefer to.
 
 ## Final Thoughts
-It should be fairly simple to get a server up and running to accept data from any AutoPi device. This guide went into brief details on how to implement such a
+It should be fairly simple to get a server up and running to accept data from any [AutoPi](https://www.autopi.io) device. This guide went into brief details on how to implement such a
 server in NodeJS, however implementing a REST API server is very simple with any other modern programming language. As usual, if you have any questions in regard
 to this, feel free to contact our support team on support@autopi.io and they will be more than happy to give you guidance.
 
@@ -262,7 +260,7 @@ app.listen(port, () => {
 
 ## Device Data Examples
 
-Following are some example data sets that AutoPi devices send regularly.
+Following are some example data sets that [AutoPi](https://www.autopi.io) devices send regularly.
 
 #### GPS Position
 ```json

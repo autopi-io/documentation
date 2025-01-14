@@ -6,7 +6,7 @@ title: Move Device to a Dedicated Environment
 Hello everyone!
 
 In this short guide we will talk about how you can move your device from the default production
-environment to your dedicated environment provided by AutoPi. Unfortunately, this process moves
+environment to your dedicated environment provided by [AutoPi](https://www.autopi.io). Unfortunately, this process moves
 only one device at a time, so you will need to repeat the steps for each device you need to move.
 
 ## 1. First We Need to Change the Host to Which the Device Connects.

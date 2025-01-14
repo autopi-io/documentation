@@ -7,7 +7,7 @@ title: Automatic Exports
 When enabled for a device, it will automatically trigger exports when a trip ends, and when an export is finished, it will send notifications (mail and/or JSON Http request)
 
 :::tip
-Contact sales@autopi.io to get more information.
+Contact [sales@autopi.io](mailto:support@autopi.io) to get more information.
 :::
 
 ## Endpoints Overview

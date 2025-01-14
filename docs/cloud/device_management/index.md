@@ -3,7 +3,7 @@ id: device-management-intro
 title: Introduction
 ---
 
-This section of our Cloud Platform is dedicated to managing and configuring devices.
+This section of our [Cloud](https://www.autopi.io/software-platform/cloud-management) Platform is dedicated to managing and configuring devices.
 Here, you can monitor and ensure that all devices within your fleet operate optimally,
 maintaining constant communication and data exchange.
 
@@ -32,7 +32,7 @@ You can edit this information in the 'Settings' located on the right side of the
 
 On this page you can see a concise summary of essential information about your device. 
 This includes details like its last communication, installed software version, and device specifications. 
-You will also find information about the vehicle to which the device is connected, including its CAN bus, make, model, year and engine.
+You will also find information about the vehicle to which the device is connected, including its [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus, make, model, year and engine.
 
 ![Device management device](/img/cloud/device_management/device_management_device_overview.png)
 

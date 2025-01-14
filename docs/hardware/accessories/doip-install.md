@@ -5,11 +5,11 @@ title: DOIP HAT Install
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::caution Before proceeding with the install
-The DOIP solution described here only works with the AutoPi TMU CM4 and newer editions
+The DOIP solution described here only works with the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) and newer editions
 :::
 
 ## DOIP Introduction
-This guide provides a general technical overview of the AutoPi DOIP solution. 
+This guide provides a general technical overview of the [AutoPi](https://www.autopi.io) DOIP solution. 
 
 DOIP stands for "Diagnostic over Internet Protocol." It is a communication protocol used in the automotive industry for diagnostic and programming tasks. DOIP enables the exchange of diagnostic information between a vehicle's electronic control units (ECUs) and diagnostic tools over an IP-based network, such as Ethernet.
 
@@ -29,7 +29,7 @@ DOIP stands for "Diagnostic over Internet Protocol." It is a communication proto
 ## Step-by-Step Guide
 
 ### Step 1
-Open up the AutoPi device by unscrewing the four screws at the bottom. 
+Open up the [AutoPi](https://www.autopi.io) device by unscrewing the four screws at the bottom. 
 <p align="center">
 <img alt="Step 2" width="460px" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/installing_external_antennas/ext_ant2.jpg')}/>
 </p>
@@ -40,12 +40,12 @@ Start preparing the DOIP hat by screwing one 6.5 mm spacer in each hole of the D
 ![Keyfob flow](/img/hardware/accessories/doip/doip3.jpg)
 
 ### Step 3
-Connect the BLE hat with the AutoPi board through the 40 pin headers. Verify that the connectors are properly connected.
+Connect the BLE hat with the [AutoPi](https://www.autopi.io) board through the 40 pin headers. Verify that the connectors are properly connected.
 
 ![Keyfob flow](/img/hardware/accessories/doip/doip8.jpg)
 
 ### Step 4
-Reasemble the device using the new AutoPi BLE side shield, giving access to two new Keyfob control ports on the side.
+Reasemble the device using the new [AutoPi](https://www.autopi.io) BLE side shield, giving access to two new Keyfob control ports on the side.
 
 ![Keyfob flow](/img/hardware/accessories/doip/side.jpg)
 

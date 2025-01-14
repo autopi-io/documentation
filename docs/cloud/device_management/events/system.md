@@ -168,8 +168,8 @@ These events apply depending on which peripherals are installed inside the dongl
 
 | Tag | Description | Fields |
 | ------ | ------ | ------ |
-| `system/usb/<vendor_id>/<product_id>/connected` | A USB device was connected to the AutoPi. Run `usbutil.devices` to get a list of currently connected devices. | `bus`, `device`, `name` |
-| `system/usb/<vendor_id>/<product_id>/disconnected` | A USB device has disconnected from the AutoPi. | `bus`, `device`, `name` |
+| `system/usb/<vendor_id>/<product_id>/connected` | A USB device was connected to the [AutoPi](https://www.autopi.io). Run `usbutil.devices` to get a list of currently connected devices. | `bus`, `device`, `name` |
+| `system/usb/<vendor_id>/<product_id>/disconnected` | A USB device has disconnected from the [AutoPi](https://www.autopi.io). | `bus`, `device`, `name` |
 | `system/usb/<vendor_id>/<product_id>/not_connected` | A device with `<vendor_id>` and `<product_id>` has been specified as expected, but was not found to be connected when the device was started. | - |
 
 **FIELD DEFINITIONS**

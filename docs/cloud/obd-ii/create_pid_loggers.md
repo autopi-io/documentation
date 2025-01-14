@@ -9,7 +9,7 @@ can also be in the form of Diagnostic Trouble Codes (DTCs) and other troubleshoo
 vehicle technicians.
 
 In this guide, we will take a deeper look at how PIDs are structured and will also create a custom
-PID Logger for our AutoPi device.
+PID Logger for our [AutoPi](https://www.autopi.io) device.
 
 
 ## Dissecting a PID
@@ -24,7 +24,7 @@ Let's take a deeper look at the PID request that was presented in the introducti
 ```
 
 Let's start with the general structure of the message. Firstly, we have the header (`7DF`). The
-header is a CAN identifier which defines who is sending the message and if it is a request or a
+header is a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) identifier which defines who is sending the message and if it is a request or a
 response. In this case, `7DF` is the header used by external test equipment to make requests towards
 ECUs in the vehicle. The hashtag symbol (#) simply separates the header from the body of the
 request.
@@ -64,7 +64,7 @@ in this case - the total value needs to be divided by 4, making the result:
 
 
 ### Requesting PIDs
-You can send a PID request on the CAN bus manually using one of two commands:
+You can send a PID request on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus manually using one of two commands:
 [`obd.send`](/core/commands/obd.md#obdsend) or [`obd.query`](/core/commands/obd.md#obdquery). Here
 are examples of how to use both of them to send the aforementioned PID.
 
@@ -85,13 +85,13 @@ argument is set to `True` it will automatically calculate the length byte and pr
 body. You can also skip this argument and add the length byte and empty bytes yourself. The
 `expect_response` argument will make sure that you receive a response back from the vehicle, if one
 was provided. If you skip adding the `expect_response` argument, you will only send the PID on the
-CAN bus.
+[CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus.
 
 
 ## Creating a PID Logger
 Let's now create a PID Logger for your vehicle. Firstly, we will create the PID itself, so that it
 is present in your Library. Next, we will use the PID from the Library to create a PID for your
-AutoPi device.
+[AutoPi](https://www.autopi.io) device.
 
 
 ### Creating the PID
@@ -115,7 +115,7 @@ data points for this PID logger, hence will be the name you use to create widget
 **Bytes**: This defines the expected length of the PID response.
 
 **Enhanced PID**: This menu allows you to set some more specific details about how the PID should
-be sent on the CAN bus and how the response should be found. See [Enhanced PID](#enhanced-pid) below.
+be sent on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus and how the response should be found. See [Enhanced PID](#enhanced-pid) below.
 
 **Formula**: This is where any parsing formulas can be inputted. Any valid python code can be
 written in this field and will be evaluated during the execution of a PID Logger.
@@ -125,10 +125,10 @@ written in this field and will be evaluated during the execution of a PID Logger
 **Min and Max**: These two fields define what are the minimum and maximum values that this PID can
 produce.
 
-**Vehicle bus(es)**: In this dropdown menu, you are able to select the CAN busses on which this PID
+**Vehicle bus(es)**: In this dropdown menu, you are able to select the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) busses on which this PID
 is valid.
 
-What means for a PID to be valid in this case? It means that if this PID was sent on the CAN bus of
+What means for a PID to be valid in this case? It means that if this PID was sent on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus of
 a vehicle, the vehicle would recognize it and return a valid response. So now the question is, how
 can we test the PID? On the right hand side of the window, there is a "Run in Terminal" button which
 allows you to run the PID if your device is online and plugged into your vehicle. Remember to have
@@ -148,7 +148,7 @@ button and move on to the next section.
 **CAN Extended Address**: CAN Extended Address byte. Note that this does not refer to 29-bit headers, 
 but to an ELM327 specification. 
 
-Before working with the CAN Flow Control Enhanced PID settings, it is highly recommended that you understand how the 
+Before working with the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Flow Control Enhanced PID settings, it is highly recommended that you understand how the 
 `can_flow_control_` prefixed parameters work on the obd.query command. This is explained in
 [non-OBD2 queries](using_the_can_bus_commands.mdx#non-obd2-queries). The Enhanced PID
 section essentially allows you to enrich your loggers with the same functionality. The filter and
@@ -161,7 +161,7 @@ will report data. Remember that in order to be able to register a PID as a logge
 the device's vehicle bus needs to be added to the PID (look at vehicle busses in the last section).
 
 :::tip
-If you're using your AutoPi with an internal combustion engine vehicle, you should see some default
+If you're using your [AutoPi](https://www.autopi.io) with an internal combustion engine vehicle, you should see some default
 loggers setup for you already.
 :::
 
@@ -181,7 +181,7 @@ to the supported vehicle busses when editing the PID itself.
 
 **Advanced**: If you are familiar with [AutoPi services](index.md), you might
 recognize these options - the advanced options are going to be set on the pid_logger worker
-responsible for querying the CAN bus.
+responsible for querying the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus.
   - **Converter**: The converter that should be used to convert the response from the PID Logger.
   - **Filter**: The filter that should be used to identify if the response should be filtered out.
   Default is `alternating_readout` which filters out consecutive repeating values.
@@ -190,7 +190,7 @@ responsible for querying the CAN bus.
   - **Returner**: Which returner should be used to store the data.
 
 Once you save the PID Logger, you will see it appear in the Loggers page. Once the settings have
-been synchronized to your device, your device will start sending PID requests on the CAN bus using
+been synchronized to your device, your device will start sending PID requests on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus using
 the provided parameters and you should start receiving data.
 
 If for some reason, you aren't getting any data back from the logger, you can take a look at the
@@ -208,7 +208,7 @@ Logger.
 ## Conclusion
 In this guide we talked more in-depth about PIDs and PID Loggers. We setup a custom PID that was
 then used to create a PID Logger and got a very small insight into the automated processes that
-exist in the AutoPi ecosystem.
+exist in the [AutoPi](https://www.autopi.io) ecosystem.
 
 :::note
 In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).

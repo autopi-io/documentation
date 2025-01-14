@@ -48,7 +48,7 @@ we will move on to the workflows:
   able to set the worker to execute multiple times (which is why they're so useful). The interval
   will be the time that it takes between each execution.
 
-4. **Loop**: This is the amount of times the worker will execute within a power cycle of the AutoPi
+4. **Loop**: This is the amount of times the worker will execute within a power cycle of the [AutoPi](https://www.autopi.io)
   device. You can set this to the following values:
 
     1. *less than 0*: The worker will loop forever and execute the workflow every time
@@ -93,7 +93,7 @@ of a workflow. The columns in the table are as follows:
 8. **Returner** - returners are responsible for returning the result somewhere. For example,
   [saving the result on a file](/cloud/device_management/services/create-custom-returners/)
   or sending it over the internet to some cloud solution. A prime example for a returner is the
-  cloud returner that is responsible for saving the data on my.autopi.io
+  [Cloud](https://www.autopi.io/software-platform/cloud-management) returner that is responsible for saving the data on [my.autopi.io](https://my.autopi.io/).
 
 All of the above (except for args and kwargs) are also called *hooks*. We will look into them in
 the next section.
@@ -152,7 +152,7 @@ an interruption. Even in the case of a thrown exception the trigger will still e
 ### Troubleshooting Your Service
 
 #### My service doesn't start / I dont see any logs from my service
-1. Check that the service is enabled in the cloud, and check that it is part of the engines file in
+1. Check that the service is enabled in the [Cloud](https://www.autopi.io/software-platform/cloud-management), and check that it is part of the engines file in
   `/etc/salt/minion.d/engines.conf`
 2. Check that the associated custom module has valid code
 3. Turn on debug logging on the device (In advanced settings), and restart the salt-minion, and
@@ -168,7 +168,7 @@ sudo tail -f /var/log/salt/minion | grep service_name
 As a closer - workers are extremely powerful if used correctly. They can execute continuously or a
 set amount of times. Workflows within the worker can be set up so that the desired outcome is
 reached without having to write complicated custom code. Use them to your advantage whenever you
-want to communicate something with the hardware components of the AutoPi or with your car directly.
+want to communicate something with the hardware components of the [AutoPi](https://www.autopi.io) or with your car directly.
 
 :::note
 In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).

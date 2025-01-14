@@ -14,7 +14,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 
 :::success
 **Prerequesites** for this guide:
-- An AutoPi TMU CM4 device
+- An [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device
 - New Raspberry Pi CM4
 - You can buy the new CM4 from: https://www.raspberrypi.com/products/compute-module-4/?variant=raspberry-pi-cm4001000
 :::
@@ -24,7 +24,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 <SideBySide>
 	<p>
 		<strong>Step 1: </strong>
-		Take your AutoPi and flip it so you can face the bottom of the device. Unscrew the bottom cover of the device and remove the shields. 
+		Take your [AutoPi](https://www.autopi.io) and flip it so you can face the bottom of the device. Unscrew the bottom cover of the device and remove the shields. 
 	</p>
 	<img alt="Step 1" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/installing_external_antennas/ext_ant3.jpg')}/>
 </SideBySide>
@@ -51,7 +51,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 <SideBySide>
 	<p>
 		<strong>Step 4: </strong>
-		Using a 5mm screwdriver, loosen and remove the four screws that are securing the CM4 to the AutoPi board, as shown in the picture below.	</p>
+		Using a 5mm screwdriver, loosen and remove the four screws that are securing the CM4 to the [AutoPi](https://www.autopi.io) board, as shown in the picture below.	</p>
 	<img alt="Step 4" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/replacing_cm4/replacing5.png')}/>
 </SideBySide>
 <br/>
@@ -59,7 +59,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 <SideBySide>
 	<p>
 		<strong>Step 5: </strong>
-		Gently disconnect the CM4 from the AutoPi board, ensuring to handle both components with care to avoid any damage.
+		Gently disconnect the CM4 from the [AutoPi](https://www.autopi.io) board, ensuring to handle both components with care to avoid any damage.
 	</p>
 	<img alt="Step 5" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/replacing_cm4/replacing6.png')}/>
 </SideBySide>
@@ -67,7 +67,7 @@ You need to be careful not to tear or damange some of the cables when handling t
 
 
 :::caution Before proceeding with the installation of the new CM4
-Please take note of the orientation of the CM4 while detaching it from the AutoPi board. The two connectors on the CM4 doesn't have a symmetrical position in relation to the edge, so be mindful of aligning them correctly to ensure a proper connection.
+Please take note of the orientation of the CM4 while detaching it from the [AutoPi](https://www.autopi.io) board. The two connectors on the CM4 doesn't have a symmetrical position in relation to the edge, so be mindful of aligning them correctly to ensure a proper connection.
 :::
 
 
@@ -87,7 +87,7 @@ Please take note of the orientation of the CM4 while detaching it from the AutoP
 <SideBySide>
 	<p>
 		<strong>Step 7: </strong>
-		Reattach the 4 hexagonal screws that secure the CM4 to the AutoPi board, ensuring a firm and secure connection.	</p>
+		Reattach the 4 hexagonal screws that secure the CM4 to the [AutoPi](https://www.autopi.io) board, ensuring a firm and secure connection.	</p>
 	<img alt="Step 1" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/replacing_cm4/replacing2.png')}/>
 </SideBySide>
 <br/>
@@ -112,13 +112,13 @@ Please take note of the orientation of the CM4 while detaching it from the AutoP
 
 <p>
 		<strong>Step 8: </strong>
-		To flash or reflash your AutoPi CM4 device, it is recommended to refer to the official manual provided with the device. The manual will contain specific instructions tailored to your AutoPi CM4 model, ensuring the proper and safe execution of the flashing process. Please consult the manual for detailed step-by-step guidance on how to flash or reflash your AutoPi CM4 device. <br/>
+		To flash or reflash your [AutoPi](https://www.autopi.io) CM4 device, it is recommended to refer to the official manual provided with the device. The manual will contain specific instructions tailored to your [AutoPi](https://www.autopi.io) CM4 model, ensuring the proper and safe execution of the flashing process. Please consult the manual for detailed step-by-step guidance on how to flash or reflash your [AutoPi](https://www.autopi.io) CM4 device. <br/>
 </p>
 
 [Reflashing your device](/developer_guides/reflashing_your_device.md)
 
 <p>
-	You have now successfully replaced your Raspberry Pi CM4 in your AutoPi TMU CM4 device.
+	You have now successfully replaced your Raspberry Pi CM4 in your [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device.
 </p>
 
 :::note

@@ -25,9 +25,9 @@ When the device connects to the server, it will check the for the following:
 * That the engine has been started since the update. It will only be able to detect the supported
   commands when it is connected to the bus and the engine is running.
 
-You can see what busses are registered in Accounts > Devices > Select Device > Vehicles Editor > CAN Busses.
+You can see what busses are registered in Accounts > Devices > Select Device > Vehicles Editor > [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Busses.
 
-Then the device will know to report the supported PID's. After the device has reported to the cloud
+Then the device will know to report the supported PID's. After the device has reported to the [Cloud](https://www.autopi.io/software-platform/cloud-management)
 with the supported PID's, they will show up in the "My Library" tab in the "OBD Library" section.
 
 ![My library overview](/img/cloud/obd_library/community_library/my_library_overview.png) 
@@ -36,11 +36,11 @@ with the supported PID's, they will show up in the "My Library" tab in the "OBD 
 You can also browse the community library, where all PID's are available and searchable.
 The filters will default to the model, make and year of the vehicle configured on your active
 device. The PID's that are shown here are all the PID's that are reported as supported by the makes
-and models of the AutoPi users. Please note that the number of PID's visible here will go up once
+and models of the [AutoPi](https://www.autopi.io) users. Please note that the number of PID's visible here will go up once
 devices are updated and reports the supported PID's or if people create and share proprietary PID's.
 
 If you change the filter to only include the type "Proprietary", it will only show the PID's that
-are created by other AutoPi users, and who has chosen to share it with the community. In time these
+are created by other [AutoPi](https://www.autopi.io) users, and who has chosen to share it with the community. In time these
 proprietary PID's are very likely where you will find the most interesting PID's for your vehicle.
 
 ## How to Add a PID to Your Library
@@ -72,7 +72,7 @@ You will now need to fill out the following fields:
 
 **Name**  
 A slug with the name of your PID - it must be unique as it is used by the device when sending the
-logged value to the cloud (if used in a logger).
+logged value to the [Cloud](https://www.autopi.io/software-platform/cloud-management) (if used in a logger).
 
 **Description**  
 If you want to share the PID, a proper description is really nice, and if not, it's still very
@@ -129,7 +129,7 @@ Min and max are also used when storing and displaying the data.
 **Bus**  
 To use a PID, you need to associate it to one of the busses on your vehicle. It may be as simple as
 associating it to the auto detected one, but you may also want to create a custom one. This can be
-done in the Accounts > Devices > Select Device > Vehicles Editor > CAN Busses. You don't have to 
+done in the Accounts > Devices > Select Device > Vehicles Editor > [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Busses. You don't have to 
 associate the PID with a bus straight away.
 
 Now click save, and your new PID is created, and can be found in **My Library**.

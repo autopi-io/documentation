@@ -4,7 +4,7 @@ title: Reflashing Your Device
 ---
 
 ## Reflashing Workflow
-The process for reflashing an AutoPi device differs a little depending on the device version you have and the OS you are running. The steps in this guide were tested on Pop-os 6.1 (a Debian-derived Linux distribution) and Windows 10. The general workflow for the reflashing process is:
+The process for reflashing an [AutoPi](https://www.autopi.io) device differs a little depending on the device version you have and the OS you are running. The steps in this guide were tested on Pop-os 6.1 (a Debian-derived Linux distribution) and Windows 10. The general workflow for the reflashing process is:
 
 1. Download the AutoPi OS image
 2. Set up Balena Ethcher (or alternative)
@@ -17,7 +17,7 @@ The process for reflashing an AutoPi device differs a little depending on the de
 6. Ensure your device is connecting to the correct environment
 5. Set up the device
 
-### 1. Download the AutoPi OS Image
+### 1. Download the [AutoPi](https://www.autopi.io) OS Image
 
 Make sure that you select the right image for your device. You can check what version your device is by finding `board version` in
 settings:
@@ -62,15 +62,15 @@ an .AppImage file is available on [Balena's website](https://www.balena.io/).
 ### 3. Connect the Device Storage Media
 
 #### 3.a. Pre-CM4 Devices
-Your device contains an SD card with the AutoPi Core preinstalled. The SD card is located inside
+Your device contains an SD card with the [AutoPi](https://www.autopi.io) Core preinstalled. The SD card is located inside
 the device. You will need to unscrew the device to access and remove the SD card. For that you can follow
 the [Upgrade/Replace Your Raspberry Pi Computer guide](/developer_guides/upgrading_your_raspberrypi.mdx). Once you have the
 SD card in hand, place it in an SD card reader and connect it to your computer.
 
-#### 3.b. CM4 Devices
+#### 3.b. [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) Devices
 On Compute Module 4 devices there is no SD card. The Operating System is stored on a flash chip embedded on
 the Raspberry Pi board. This means that reflashing is a little more complicated than just taking an SD
-card out of the AutoPi device and flashing it through an SD card reader. These are the steps you'll need to take:
+card out of the [AutoPi](https://www.autopi.io) device and flashing it through an SD card reader. These are the steps you'll need to take:
 
 <!-- Although possible to do on a Windows machine, it's highly recommended to use Linux instead, as the utility for accessing the 
 Raspberry Pi's flash memory is easier to set up and is more stable on Linux.  -->
@@ -110,7 +110,7 @@ Once you have both the rpiboot utility running on your computer and the device i
 
 ![device detected output](/img/getting_started/developer_guides/reflashing_your_device/device_detected.png)
 
-At this point you can access the internal file system of the AutoPi's Raspberry Pi through the mounted drives. On this Linux distribution the mounting points are `/media/<user>/boot` and `/media/<user>/rootfs`. On Windows you should be able to see at least one of the partitions in the File Explorer.
+At this point you can access the internal file system of the [AutoPi](https://www.autopi.io)'s Raspberry Pi through the mounted drives. On this Linux distribution the mounting points are `/media/<user>/boot` and `/media/<user>/rootfs`. On Windows you should be able to see at least one of the partitions in the File Explorer.
 
 ### 4. Flashing The Device
 Using Balena Etcher or alternative, select the image file you downloaded earlier, and the storage device. Once that's done, click flash and wait for it to complete. It's worth noting, that if it fails on the first try, try again. 
@@ -122,13 +122,13 @@ It is unsafe to remove the device from power while it is on or booting. The safe
 :::
 
 Once the flashing is complete, unmount the storage device. After that you can remove the SD card from its reader and put it back into the 
-AutoPi device. If using a CM4 device, unplug the CM4 device's USB cable and press the button to put the device into hibernation, then a short press to start up the device. 
+[AutoPi](https://www.autopi.io) device. If using a [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device, unplug the [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device's USB cable and press the button to put the device into hibernation, then a short press to start up the device. 
 
 ### 5. Ensure Your Device is Connecting to the Correct Environment
 This step is required only if your company is using a dedicated environment. You can find out whether this is the case by checking what website you're going to to access your device. If it's different from my.autopi.io, for example my_company.autopi.io, then this is a dedicated environment and you need to follow this [Guide: Move to a dedicated environment](/cloud/device_management/move_to_dedicated_environment.md/).
 
 ### 6. Setup the Device
-Next, you will need to have the device re-accepted in the AutoPi Cloud. To do
+Next, you will need to have the device re-accepted in the AutoPi [Cloud](https://www.autopi.io/software-platform/cloud-management). To do
 so, you need to first have the device boot up and connect to the internet. If you're using an AutoPi-provided SIM card, 
 you must set the APN. See the **Setup APN** in the [Getting Started](/getting_started/autopi_tmu_cm4/index.md/#8-setup-apn) guide. After that, log in to
 [my.autopi.io](https://my.autopi.io). You should immediately see a notification letting you know
@@ -148,8 +148,8 @@ When your device comes online the first time, the WiFi hotspot will have the fol
 **Password**: autopi2018
 
 :::tip
-Remember to update your device from the Cloud after you reflash it, as that will ensure that all
+Remember to update your device from the [Cloud](https://www.autopi.io/software-platform/cloud-management) after you reflash it, as that will ensure that all
 the configuration values are properly configured (like the WiFi, SSID and password), and that the
-device has the correct authentication token for uploading data to the cloud.
+device has the correct authentication token for uploading data to the [Cloud](https://www.autopi.io/software-platform/cloud-management).
 :::
 

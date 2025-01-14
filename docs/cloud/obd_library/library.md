@@ -4,26 +4,26 @@ title: My Library
 ---
 
 In this page we go through the Library section of our Cloud. Below is a screenshot of an example
-Library that is already filled with some PIDs and CAN messages. Open the screenshot in a
+Library that is already filled with some PIDs and [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages. Open the screenshot in a
 new tab to get a better overview of the whole page.
 
 ![Full library screenshot](/img/cloud/obd_library/library/updated/library_overview.png)
 
 We will start off this guide by going through some of the basic actions that you can do in the
-library page, including a section on how to use the Community Library to find new PIDs and CAN
+library page, including a section on how to use the Community Library to find new PIDs and [CAN](https://www.autopi.io/hardware/autopi-canfd-pro)
 messages. Then, we will move on to the process of creating a PID, testing it out and sharing it
-with the community. We'll repeat the process but for CAN messages and their CAN signals instead.
+with the community. We'll repeat the process but for [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages and their [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals instead.
 Lastly, we will show you some quick steps for importing a DBC file.
 
 ## Basic Actions
 
 There are a few buttons that will allow you to accomplish different tasks in the library. The main
-element is the table filled with PIDs and CAN messages. You are able to delete a single entry in
+element is the table filled with PIDs and [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages. You are able to delete a single entry in
 the table by clicking on the trash icon to the far right of each item in the list. You can also
 select multiple items and then execute a specific action from the '*Actions*' dropdown menu on the
 bottom-right of the page. You are also able to filter the items that are shown using the filters
-at the top of the page. You are also able to copy PIDs and CAN messages from the community library.
-You are also able to create new PIDs and CAN messages and can also import external DBC files into
+at the top of the page. You are also able to copy PIDs and [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages from the community library.
+You are also able to create new PIDs and [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages and can also import external DBC files into
 your library which you can later on share with the rest of the community. We are going to review
 these actions in the following sections.
 
@@ -35,7 +35,7 @@ that.
 
 ## Community Library
 
-The community library tab will show you a list of PIDs or CAN messages available for the vehicle
+The community library tab will show you a list of PIDs or [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages available for the vehicle
 that's assigned to your currently active device. If there is no vehicle assigned at the moment, no
 filters will be applied, so you will need to add them manually for the vehicle you're interested in.
 
@@ -72,7 +72,7 @@ changed.
 ## Creating PIDs
 
 Let's now go through the process of creating a PID in your own library. We will use the standard
-OBD-II RPM PID as an example. Below is the raw PID that would be send on the CAN bus of a vehicle:
+OBD-II RPM PID as an example. Below is the raw PID that would be send on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus of a vehicle:
 
 ```
 7DF # 02 01 0C 00 00 00 00 00
@@ -88,7 +88,7 @@ detailed information can be found in [this guide](/cloud/obd-ii/create_pid_logge
 Now, let's shift our focus on the next task - we need to create the PID in the system. Firstly, we
 will need to go back to our own library and find the '*+ Create*' button (which should be located
 at the top-right section of the page). Clicking on that button will show a dropdown menu with two
-options, PID and CAN - select the PID one. This will bring up the following window (the fields in
+options, PID and [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) - select the PID one. This will bring up the following window (the fields in
 the screenshot are already filled up, so that it's easier for me to describe them after):
 
 ![Creating a PID](/img/cloud/obd_library/library/creating-a-pid.jpg)
@@ -123,17 +123,17 @@ PID form.
 >
 >**Max:** The maximum value that this PID can return.
 >
->**Vehicle Bus(es):** A list of CAN busses that support this PID. If a vehicle is able to recognize
+>**Vehicle Bus(es):** A list of [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) busses that support this PID. If a vehicle is able to recognize
 >this PID and return data back, it is recommended that you add the bus of that vehicle to the list.
 
 ### Testing The PID
 What does it mean for a PID to be supported by a vehicle? It means that if this PID was sent on the
-CAN bus of a vehicle, the vehicle would recognize it and return a valid response. So now the
+[CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus of a vehicle, the vehicle would recognize it and return a valid response. So now the
 question is, how can we test the PID? On the right hand side of the window, there is a '*Run in
 Terminal*' button which allows you to run the PID if your device is online and plugged into your
 vehicle. Remember to have your engine running while you execute the command. You are also able
-to send a PID on the CAN bus using the [`obd.query`](/core/commands/obd.md#obdquery) and
-[`obd.send`](/core/commands/obd.md#obdsend) AutoPi commands.
+to send a PID on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus using the [`obd.query`](/core/commands/obd.md#obdquery) and
+[`obd.send`](/core/commands/obd.md#obdsend) [AutoPi](https://www.autopi.io) commands.
 
 ### Community Sharing
 You're also able to share the PID after you've created it and assigned at least one vehicle bus.
@@ -141,83 +141,83 @@ Once you save the PID, you can re-open it and a new section will show up on the 
 called '*Community Sharing*'. You need to select (tick) the '*Share with community*' checkbox.
 
 
-## Creating CAN Messages
+## Creating [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Messages
 
-Let's try to also create a CAN message in our Library. It is a bit different comparing it to
+Let's try to also create a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message in our Library. It is a bit different comparing it to
 creating a PID because, as it is mentioned in the [OBD-II introduction guide](/cloud/obd-ii/index.md),
-PIDs are a simple request sent on the CAN bus, that the vehicle accepts and then returns data
-specific for the PID requested. CAN messages, on the other hand, are continuously broadcasted on
-the CAN bus and do not require any requests to be made. However, to be able to make any sense of
-the CAN messages, we need to specify which bytes within a message corresponds to which data point
+PIDs are a simple request sent on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus, that the vehicle accepts and then returns data
+specific for the PID requested. [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages, on the other hand, are continuously broadcasted on
+the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus and do not require any requests to be made. However, to be able to make any sense of
+the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages, we need to specify which bytes within a message corresponds to which data point
 from the vehicle.
 
-To start creating a new CAN message, you will need to click the '*+ Create*' button on the top-right
-section of the page. From the dropdown that shows up from clicking on the button, select CAN. This
+To start creating a new [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message, you will need to click the '*+ Create*' button on the top-right
+section of the page. From the dropdown that shows up from clicking on the button, select [CAN](https://www.autopi.io/hardware/autopi-canfd-pro). This
 will bring up the following window (again, it is pre-filled for the purposes of this guide):
 
 ![Creating a CAN message](/img/cloud/obd_library/library/creating-a-canmsg.jpg)
 
->**Name:** Short name of the CAN message that's being created.
+>**Name:** Short name of the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message that's being created.
 >
->**Description:** An optional description for this CAN message.
+>**Description:** An optional description for this [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message.
 >
->**Header:** The hexadecimal representation of the header that this CAN message is recognized by.
+>**Header:** The hexadecimal representation of the header that this [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message is recognized by.
 >
->**Bytes:** How long is the CAN message?
+>**Bytes:** How long is the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message?
 >
->**Sender:** The name of the transmitting node of this CAN message - usually defined inside a DBC
+>**Sender:** The name of the transmitting node of this [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message - usually defined inside a DBC
 >file, but can be any short string.
 >
->**CAN Signals:** This is a list of CAN signals that can be found inside a CAN message. Each CAN
+>**CAN Signals:** This is a list of [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals that can be found inside a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message. Each [CAN](https://www.autopi.io/hardware/autopi-canfd-pro)
 >signal has the same form fields:
 >
->* **Name:** Short name of the CAN signal.
+>* **Name:** Short name of the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal.
 >
->* **Description:** An optional description of this CAN signal.
+>* **Description:** An optional description of this [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal.
 >
->* **Endian:** The endianness of this CAN signal - which is the most significant byte. 
+>* **Endian:** The endianness of this [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal - which is the most significant byte. 
 >
->* **Sign:** Defines if the CAN signal should be treated as a signed or unsigned number.
+>* **Sign:** Defines if the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal should be treated as a signed or unsigned number.
 >
->* **Start:** Defines the starting bit of the CAN signal.
+>* **Start:** Defines the starting bit of the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal.
 >
->* **Length:** How long the CAN signal is.
+>* **Length:** How long the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal is.
 >
->* **Factor:** Used to calculate the real value off of the CAN signal. Formula: `VALUE = (RAW_VALUE * FACTOR) + OFFSET`
+>* **Factor:** Used to calculate the real value off of the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal. Formula: `VALUE = (RAW_VALUE * FACTOR) + OFFSET`
 >
->* **Offset:** Used to calculate the real value off of the CAN signal.
+>* **Offset:** Used to calculate the real value off of the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal.
 >
 >* **Unit:** The unit of the value returned.
 >
->* **Min:** The minimum value possible for this CAN signal.
+>* **Min:** The minimum value possible for this [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal.
 >
->* **Max:** The maximum value possible for this CAN signal.
+>* **Max:** The maximum value possible for this [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal.
 >
->* **Receivers:** The name of the receiving node of this CAN message - usually defined inside a DBC
+>* **Receivers:** The name of the receiving node of this [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message - usually defined inside a DBC
 >file, but can be any short string.
 >
->**Vehicle bus(es):** A list of CAN busses that support this CAN message. If a vehicle continuously
->writes this CAN message on its CAN bus, it is recommended that you add the bus of that vehicle to
+>**Vehicle bus(es):** A list of [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) busses that support this [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message. If a vehicle continuously
+>writes this [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message on its [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus, it is recommended that you add the bus of that vehicle to
 >the list.
 
-### Testing the CAN Message
+### Testing the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Message
 
-It is a bit more difficult to test CAN messages. You will need to create CAN Signal Loggers for your
+It is a bit more difficult to test [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages. You will need to create [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Signal Loggers for your
 device in order to see if they are able to generate the data you're looking for. Another option you
-can try is to use the [`obd.dump`](/core/commands/obd.md#obddump) command to dump all CAN frames
-recorded on the CAN bus and compare the frames received to the definitions that you've made - they
+can try is to use the [`obd.dump`](/core/commands/obd.md#obddump) command to dump all [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) frames
+recorded on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus and compare the frames received to the definitions that you've made - they
 should match on the header at least.
 
 ### Community Sharing
 
-The process of sharing a CAN message is exactly the same as the process for sharing a PID. After
-you assign a bus to the CAN message, you will have the option to share it with the community on the
-right-hand side of the Edit CAN Message window. You will need to select (tick) the '*Share with
+The process of sharing a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message is exactly the same as the process for sharing a PID. After
+you assign a bus to the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message, you will have the option to share it with the community on the
+right-hand side of the Edit [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Message window. You will need to select (tick) the '*Share with
 community* checkbox.
 
 
 ## Importing Library Items From Files
-The Library supports importing both CAN messages and signals through DBC files, as well as PIDs through
+The Library supports importing both [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages and signals through DBC files, as well as PIDs through
 JSON files. As an example, let's use this simple DBC file:
 ```
 VERSION "1.0"
@@ -237,7 +237,7 @@ CM_ SG_ 1 LEFT_SEAT_TEMP "Temperature of the front left seat";
 When you first select a file for import, you will be presented with options looking like this:
   ![File options](/img/cloud/obd_library/library/file_options.png) 
 
-Here you can select whether the file's contents are CAN messages & signals or PIDs. You can also set a
+Here you can select whether the file's contents are [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages & signals or PIDs. You can also set a
 namespace, which will prefix all the imported items with the selected Name string. This can help when you need to
 manage multiple files, which have conflicting signal or PID names. Once you've set these options, the file will be 
 sent for validation. Once that's done, you'll be able to review all the messages and signals that will be imported.
@@ -291,7 +291,7 @@ BO_ 937 FRONT_RIGHT: 4 IO
 
 ### Working With PIDs
 
-Unlike CAN messages and signals, there's no industry standard file format for PIDs. Therefore, there's a custom JSON based format 
+Unlike [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages and signals, there's no industry standard file format for PIDs. Therefore, there's a custom JSON based format 
 that you need to follow. This is an example PID JSON file:
 
 ```json
@@ -344,10 +344,10 @@ that you need to follow. This is an example PID JSON file:
 
 Depending on what version you are using, you might see multiple "Import" buttons in the library. This is
 because there are 2 versions of the importer: the new and the legacy. The legacy importer was able to
-import CAN messages and signals, but could not handle updates, deleted items or PIDs.
+import [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages and signals, but could not handle updates, deleted items or PIDs.
 
-DBC files describe the CAN network traffic of a vehicle. It specifies what modules are within it,
-what CAN messages they can send, the messages' signals and details about how to parse them. In this
+DBC files describe the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) network traffic of a vehicle. It specifies what modules are within it,
+what [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages they can send, the messages' signals and details about how to parse them. In this
 section we are going to review how you can import these files in your Library, how to keep them up 
 to date, how to improve their readability and how you can share them with the rest of the community.
 
@@ -363,14 +363,14 @@ Some signal names can be very self explanatory. However others might be harder t
 can add descriptions to those messages to make it easier to recognize them in the future or for
 other fellow users, if you decide to share those signals with the community.
 
-To add a description for a signal, click on the signal you want to edit. A CAN message editing
+To add a description for a signal, click on the signal you want to edit. A [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message editing
 window (like the one from the previous section) will pop out. In this window you'll be able to see
-the CAN message at the top with all CAN signals associated with it in a list below. The CAN signal
+the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message at the top with all [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals associated with it in a list below. The [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal
 that you clicked on will be already expanded and highlighted in yellow.
 
 ![Editing a CAN message](/img/cloud/obd_library/library/editing_a_can_message.png)
 
-Edit the description field of the signal and click Save. You can also associate that CAN message
-with a vehicle CAN bus. You should see the CAN signal update with the new description:
+Edit the description field of the signal and click Save. You can also associate that [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message
+with a vehicle [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus. You should see the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal update with the new description:
 
 ![ABS Malfunction example](/img/cloud/obd_library/library/abs_malfunction_example.png)
