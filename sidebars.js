@@ -421,6 +421,13 @@ module.exports = {
       ],
     },
     {
+      "items": [
+        "releases/releases",
+      ],
+      "label": "Releases",
+      "type": "category",
+    },
+    {
       "type": "link",
      "label": "API",
       "href": "https://api.autopi.io/"
