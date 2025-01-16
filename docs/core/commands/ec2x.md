@@ -2,6 +2,8 @@
 id: core-commands-ec2x
 title: Ec2X
 ---
+Prerequisites
+:::note Important The EC2X commands listed in this documentation are only compatible with the EC2X series of modems and require a board version of 6.0 or below. Ensure that your hardware meets these requirements before attempting to use these commands. ::
 
 ## `ec2x.cell_location`
 
