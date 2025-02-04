@@ -123,6 +123,14 @@ Let's take a look at an actual example:
     "9ae810c7-9069-4f7c-83b5-5f88f50aba4a": "debug"
 }
 ```
+```curl
+curl -X POST "https://api.autopi.io/dongle/settings/?device_id=YOUR_DEVICE_ID" \
+     -H "Authorization: APIToken YOUR_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{
+          "9ae810c7-9069-4f7c-83b5-5f88f50aba4a": "debug"
+     }'
+```
 
 This will ask the server to update the `system.logging.level` setting to a `debug` level. If we now
 query the current settings for our device we can see that the data for that setting has changed:
