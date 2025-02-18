@@ -3,6 +3,10 @@ id: keyfob-interface
 title: Keyless Interface Specification
 ---
 
+:::warning
+This solution has been discontinued and is no longer supported by the platform. 
+:::
+
 :::caution
 The keyless entry solution described here only works with the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) and newer editions
 :::
