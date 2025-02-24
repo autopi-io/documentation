@@ -3,8 +3,9 @@ id: accessories-intro
 title: Accessories Overview
 ---
 
-:::Need Custome Intergrations?
-[Contact](mailto:support@autopi.io) our team to discuss tailored solutions for your business. 
+:::note
+**Need Custom Integrations?**  
+[Contact](mailto:support@autopi.io) our team to discuss tailored solutions for your business.  
 :::
 
 This section contains a description of addons avaible for the [AutoPi](https://www.autopi.io) devices. 
