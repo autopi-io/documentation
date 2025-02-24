@@ -3,8 +3,14 @@ id: accessories-intro
 title: Accessories Overview
 ---
 
+:::Need Custome Intergrations?
+[Contact](mailto:support@autopi.io) our team to discuss tailored solutions for your business. 
+:::
+
 This section contains a description of addons avaible for the [AutoPi](https://www.autopi.io) devices. 
 
+Learn how to create and integrate various accessories with your AutoPi device to unlock its full potential. 
+These add-ons enhance functionality, allowing you to customize your setup and optimize data management. Explore the possibilities and make the most of your AutoPi experience.
 
 ## Keyless Entry
 This is a description for the hardware addon for [AutoPi](https://www.autopi.io) keyless entry solution. The solution currently only works together with the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) generation devices.
