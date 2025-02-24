@@ -39,7 +39,7 @@ device directly through the [Cloud](https://www.autopi.io/software-platform/clou
 
 In this documentation website you will be able to find everything you need to start working with
 [AutoPi](https://autopi.io). If you already have a device and you're looking to set it up, a very
-good starting point for you is our [Getting started guide](/getting_started/autopi_tmu_cm4/guides_intro.md).
+good starting point for you is our [Getting started guide](/getting_started/autopi_tmu_cm4/).
 
 
 ## Get Your Device Today and Get Started!

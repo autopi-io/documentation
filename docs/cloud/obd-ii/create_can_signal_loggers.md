@@ -13,7 +13,7 @@ Before you can log anything, you need a [CAN](https://www.autopi.io/hardware/aut
 
 Identification and Documentation: Use vehicle documentation or tools to identify the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal. This may involve using a DBC file or capturing and analyzing traffic on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) network to find the signals relevant to your needs.
 
-Creation: Once identified, you can create a representation of this signal in [CAN Signals](/cloud/obd-ii/index.md/#can-messages-and-can-signals)
+Creation: Once identified, you can create a representation of this signal in [CAN Signals](/cloud/obd-ii/#can-messages-and-can-signals)
 
 
 **Step 2: Navigate to Your Device's Logger Section**

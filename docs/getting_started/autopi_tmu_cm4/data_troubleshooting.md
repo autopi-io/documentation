@@ -30,7 +30,7 @@ LEDs on the side of the device to confirm it’s communicating with the [Cloud](
 - **To Resolve**: Disconnect the device from the OBD-II port, then reconnect it.
     Wait until both LEDs are solid before proceeding.
 
-For more details on LED status meanings, refer to [this guide](/core/power_management/core-power-intro/#status-leds).
+For more details on LED status meanings, refer to [this guide](/core/power_management/#status-leds).
 
 ![CM4 LED status meaning](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/cm4_light_placements_01.png)
 
@@ -69,7 +69,7 @@ the data via your [AutoPi](https://www.autopi.io) device.
 
 ![Create Loggers](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/loggers.png)
 
-For more information on creating Loggers, visit our [OBD-II Introduction Guide](/cloud/obd-ii/obd-ii-intro). 
+For more information on creating Loggers, visit our [OBD-II Introduction Guide](/cloud/obd-ii/). 
 Additional documentation on CAN and PID configuration can be found under the 
 OBD-II dropdown in the [Cloud](https://www.autopi.io/software-platform/cloud-management) section of our documentation. 
 

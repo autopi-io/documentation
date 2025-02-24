@@ -167,7 +167,7 @@ When the device is powered on, a blue light will appear on the side, indicating
 that it has power. When the device successfully connects to the AutoPi Cloud, 
 a green light will be visible. If the device is not connected, the light will be flashing. 
 
-For a detailed description of the two status LEDs, please refer to the [full description](/core/power_management/index.md/#status-leds).
+For a detailed description of the two status LEDs, please refer to the [full description](/core/power_management/#status-leds).
 
 ## 7. Connect to Local Administration
 

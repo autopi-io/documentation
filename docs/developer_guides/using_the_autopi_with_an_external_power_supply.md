@@ -12,7 +12,7 @@ things you should be aware of, before connecting your device:
   your [AutoPi](https://www.autopi.io) device.
 
 2. The [AutoPi](https://www.autopi.io) has several commands that can be run from the local terminal. Commands like
-[`power.status`](/core/commands/power.md/#powerstatus) should be written out on the local terminal
+[`power.status`](/core/commands/core-commands-power/#powerstatus) should be written out on the local terminal
 as you see them in our [commands documentation](/core/commands/index.md). All terminal commands
 can also be run when logged in via [SSH](/developer_guides/how_to_ssh_to_your_device.mdx). All you need to do
 is prepend the `autopi` command, like `autopi power.status`. This works for every [AutoPi](https://www.autopi.io) Core
@@ -23,7 +23,7 @@ battery. Power it with at least 12.5V when in a lab. We also recommend that your
 
 4. There is a trigger (sleep timer) on the device, that will initiate if there is no communication
 to the car, more specifically, its [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus. You can see sleep timers by running the
-[`power.sleep_timer`](/core/commands/power.md/#powersleep-timer) command and you can clear them
+[`power.sleep_timer`](/core/commands/core-commands-power/#powersleep_timer) command and you can clear them
 by running `power.sleep_timer clear=*`.
 
 We recommend getting the OBD power cable from our shop, to ease the connection to any external

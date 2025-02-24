@@ -7,7 +7,7 @@ The AutoPi dongle is initially configured to be powered on when the engine of th
 running. When the engine is not running, a sleep timer is created to put the dongle to sleep after
 5 minutes or whatever configured.
 
-Behind the scenes this works by using [engine events](/cloud/device_management/events/vehicle.md/#engine-events).
+Behind the scenes this works by using [engine events](/cloud/device_management/events/cloud-events-vehicle/#engine-events).
 Engine events are triggered based on the RPM values continuously read from the vehicle. For all
 non-BEVs (Battery [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)s) this is setup automatically as default because they all
 support readout of engine RPM in the same way according to the OBD-II PID standard
@@ -38,7 +38,7 @@ select the *rpm_motor_event* trigger.
 After the logger has been synced to your device, and the service has been restarted, you should
 start seeing motor events in the **Device** > **Events** page.
 
-[Click here for documentation on motor events](/cloud/device_management/events/vehicle.md/#motor-events).
+[Click here for documentation on motor events](/cloud/device_management/events/cloud-events-vehicle/#motor-events).
 
 ## Setup a PID Logger Using the `communication_event` Trigger
 
@@ -57,7 +57,7 @@ to select the `communication_event` trigger.
 
 ![Setting up communication based PID logger](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/setting_up_communication_based_pid_logger.png) 
 
-[Click here for documentation on communication events](/cloud/device_management/events/vehicle.md/#communication-events).
+[Click here for documentation on communication events](/cloud/device_management/events/cloud-events-vehicle/#communication-events).
 
 Next step is to re-configure the sleep timer functionality to use communication events instead of
 the default engine/motor events. Go to **Device** > **Advanced Settings** > **Power** and change the three
@@ -88,7 +88,7 @@ should start seeing communication events and also `system/sleep_timer` events in
 Instead of using one of the built-in triggers you can provide your own implementation which also
 can fire your own custom events. The setup procedure is the same as in the example above except
 that the trigger used is custom. See how to create a custom trigger
-[here](/cloud/device_management/services/create_custom_triggers.mdx).
+[here](/cloud/device_management/services/create-custom-triggers/).
 
 ## Setup a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Logger Using the `rpm_engine_event` Trigger
 
@@ -97,7 +97,7 @@ active/driving.
 
 **Note:** At the time of writing, this approach can only make use of the `rpm_engine_event` trigger
 and thus produce engine events,
-[click here for documentation on engine events](/cloud/device_management/events/vehicle.md/#engine-events).
+[click here for documentation on engine events](/cloud/device_management/events/cloud-events-vehicle/#engine-events).
 
 **Precondition:** A [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message mapping for your specific vehicle which contains an RPM signal. If
 you do not know any [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages for your vehicle, you can always check the *Community Library*

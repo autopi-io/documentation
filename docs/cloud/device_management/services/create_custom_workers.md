@@ -101,7 +101,7 @@ the next section.
 Different services have different defaults handlers. The best place to take a look at those
 handlers is [the services page](/core/services/index.md). Since the idea we're going for in this
 guide is to invoke continuous OBD query commands, we're going to be using the
-[query](/core/services/obd_manager.md/#query) handler.
+[query](/core/services/core-services-obd-manager/#query) handler.
 
 The arguments (args) and key-word arguments (kwargs) are specified in JSON format (this means
 double quotes instead of single quotes, it took me a while to figure that out the other day). We

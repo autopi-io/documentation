@@ -210,7 +210,7 @@ minionutil.last_logs
 
 
 See documentation site for all parameters
-[`minionutil.last_logs`](/core/commands/minionutil.md/#minionutillast_logs)
+[`minionutil.last_logs`](/core/commands/core-commands-minionutil/#minionutillast_logs)
 
 Example payload for executing via REST API
 ```

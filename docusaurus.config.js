@@ -3,7 +3,7 @@ module.exports = {
   tagline: 'Documentation and Guides for AutoPi Cloud, Core and Devices',
   url: 'https://docs.autopi.io',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   favicon: 'img/shared/favicon.ico',
   organizationName: 'autopi-io', // Usually your GitHub org/user name.
   projectName: 'documentation', // Usually your repo name.
@@ -31,27 +31,27 @@ module.exports = {
       },
       items: [
         {
-          to: 'getting_started/autopi_tmu_cm4/guides-intro',
+          to: 'getting_started/autopi_tmu_cm4/',
           label: 'Getting Started',
           position: 'left',
         }, 
         {
-          to: 'cloud/cloud-intro',
+          to: 'cloud/',
           label: 'Cloud',
           position: 'left',
         },
         {
-          to: 'core/core-intro',
+          to: 'core/',
           label: 'Core',
           position: 'left',
         },                
         {
-          to: 'hardware/hardware-intro',
+          to: 'hardware/',
           label: 'Hardware',
           position: 'left',
         },      
         {
-          to: 'developer_guides/developer-guides-intro',
+          to: 'developer_guides/',
           label: 'Guides',
           position: 'left',
         },  
@@ -113,15 +113,7 @@ module.exports = {
             {
               label: 'Reddit',
               to: 'https://www.reddit.com/r/autopi/',
-            },
-            {
-              label: 'Twitter',
-              to: 'https://twitter.com/autopi_io',
-            },
-            {
-              label: 'Facebook',
-              to: 'https://www.facebook.com/autopi.io/',
-            },
+            },       
             {
               label: 'LinkedIn',
               to: 'https://www.linkedin.com/company/autopi.io',

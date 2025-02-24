@@ -32,12 +32,12 @@ This way data can be kept private if needed. It possible to manage and maintain 
 ### Fleet Management
 The [Cloud](https://www.autopi.io/software-platform/cloud-management) also allows you to view data that has been recorded from your vehicle. There is a dashboard that
 shows past OBD-II data like RPM, speed and fuel level. The device also sends back information about
-[trips](/cloud/fleet_management/vehicles/trips/introduction), which are also viewable. The [Cloud](https://www.autopi.io/software-platform/cloud-management) also keeps track of the
+[trips](/cloud/fleet_management/vehicles/trips/), which are also viewable. The [Cloud](https://www.autopi.io/software-platform/cloud-management) also keeps track of the
 [events](/cloud/device_management/events/index.md) that were triggered on your device. In the events page, you are
 able to view all events and filter them by date or tag.
 
 ### [Cloud](https://www.autopi.io/software-platform/cloud-management) API
-The [API](/getting_started/api/api-intro) gives you acccess to all the same functionalities you see in the [Cloud](https://www.autopi.io/software-platform/cloud-management). Through the API it is possible to extend the features to your own systems or APP solution and thereby build on top of the platform. 
+The [API](/getting_started/api/) gives you acccess to all the same functionalities you see in the [Cloud](https://www.autopi.io/software-platform/cloud-management). Through the API it is possible to extend the features to your own systems or APP solution and thereby build on top of the platform. 
 
 ## Links
   - Read more about our [product](https://autopi.io)

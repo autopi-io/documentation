@@ -26,7 +26,7 @@ speed or RPM.
 
 ##  Sending PID's
 
-Let's start off with the [`obd.query`](/core/commands/obd.md/#obdquery) command. This command is
+Let's start off with the [`obd.query`](/core/commands/core-commands-obd/#obdquery) command. This command is
 used to query the first type of [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) busses. Let's take a look at an example:
 
 ```console
@@ -90,7 +90,7 @@ Where `<num>` is the protocol number.
 ### Dumping/Reading Data From the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Bus
 
 The new interface opens up for dumping data from the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus on the protocol selected. This can be
-done using the [`obd.dump`](/core/commands/obd.md/#obddump) command. Using the command is very easy:
+done using the [`obd.dump`](/core/commands/core-commands-obd/#obddump) command. Using the command is very easy:
 
 ```
 obd.dump duration=5
@@ -107,7 +107,7 @@ files are used to parse those messages into human readable data.
 ### Playback of a Recorded File
 
 A file recorded with the ``obd.dump`` command can be played/replayed to the vehicle using the
-[`obd.play`](/core/commands/obd.md/#obdplay) command. Here's an example usage:
+[`obd.play`](/core/commands/core-commands-obd/#obdplay) command. Here's an example usage:
 
 ```
 obd.play file=<path>
@@ -145,7 +145,7 @@ command you want to send to the car. This can be lock/unlock or something else c
 vehicle. 
 
 When you have the specific command, you can send it directly using the
-[`obd.send`](/core/commands/obd.md/#obdsend) command. Here's an example:
+[`obd.send`](/core/commands/core-commands-obd/#obdsend) command. Here's an example:
 
 ```
 obd.send 2101#280000000003E800 expect_response=True auto_format=True
@@ -168,7 +168,7 @@ request-response messages are the only traffic on the [CAN](https://www.autopi.i
 of [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) frames being sent on the bus every second. How is the device to know which [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) frame is the
 response? We need to specify this manually.  
 
-If you take a look at the [obd.query](/core/commands/obd.md#obdquery) command, you'll notice several
+If you take a look at the [obd.query](/core/commands/core-commands-obd/#obdquery) command, you'll notice several
 arguments dedicated to can flow control. The 2 relevant ones are **`can_flow_control_filter`** and
 **`can_flow_control_id_pair`**. 
 

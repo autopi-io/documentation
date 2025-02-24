@@ -11,7 +11,7 @@ we will also explore how you can make sense of this raw data after it has been r
 It is important to note that the monitoring tools can only be used as a part of an
 [OBD service](/core/services/obd_manager.md) workflow. We won't get into details about how
 you can create a service worker in this guide, however we do have the
-[Create Service Workers](/cloud/device_management/services/create_custom_workers.mdx) guide which you can take a look at
+[Create Service Workers](/cloud/device_management/services/create_custom_workers.md) guide which you can take a look at
 for more details on how to create a worker and setup its workflow.
 
 ## Reading Raw [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Data
@@ -24,7 +24,7 @@ for your vehicle.
 
 ### `obd.monitor`
 The first and simplest way to monitor [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) data is with the
-[`obd.monitor`](/core/services/obd_manager.md/#monitor) handler.
+[`obd.monitor`](/core/services/core-services-obd-manager/#monitor) handler.
 This handler will continuously listen on the OBD port looking for any data. This data
 will then be transported down the workflow and there you will be able to use the different
 hooks to transform the data and finally return the data to the [Cloud](https://www.autopi.io/software-platform/cloud-management), or save it to a file.
@@ -35,7 +35,7 @@ setup for an `obd.monitor` worker.
 ![obd_monitor_worker](/img/cloud/obd_ii/log_raw_can_messages/obd_monitor_worker.png)
 
 ### `obd.export`
-[`obd.export`](/core/services/obd_manager.md/#export) is basically
+[`obd.export`](/core/services/core-services-obd-manager/#export) is basically
 `obd.monitor` on steroids. It is much faster than it's python counterpart and doesn't clog up the
 [AutoPi](https://www.autopi.io)'s resources as much. It starts up a separate process that does the monitoring,
 instead of running as a part of the salt-minion process.
@@ -57,7 +57,7 @@ workflow can be seen below.
 ### `obd.import`
 In order to actually be able to use the recorded data by `obd.export` within the [AutoPi](https://www.autopi.io) Core system,
 we need to somehow import it. This is where
-[`obd.import`](/core/services/obd_manager.md/#import) comes in -
+[`obd.import`](/core/services/core-services-obd-manager/#import) comes in -
 it reads the data that was written to the log files by `obd.export` and passes it down the workflow.
 It is simply a workflow enabler, meaning that after you read the data, you can transform it in any
 way you'd like, execute any triggers and use a returner to save the data on the [Cloud](https://www.autopi.io/software-platform/cloud-management) or a local
@@ -68,7 +68,7 @@ file, just like with `obd.monitor`.
 ## Making Sense of Raw [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Data
 
 A key converter that can be used in the workflows described above is the
-[CAN converter](/core/services/obd_manager.md/#can). It is able
+[CAN converter](/core/services/core-services-obd-manager/#can). It is able
 to read the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) database file that you have for your vehicle's protocol and transform the binary
 data that has been passed to it into a more sensible format. Both `obd.monitor` and `obd.import`
 use the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) converter in the workflows to sanitize the data.
@@ -80,5 +80,5 @@ be of type [CAN](https://www.autopi.io/hardware/autopi-canfd-pro). There are a f
 
 1. [How to setup power cycle for an electric vehicle](/getting_started/electric_vehicles/power-cycle-for-electric-vehicles/)
 
-2. [How to import custom DBC files](/cloud/obd_library/library.md/#importing-library-items-from-files)
+2. [How to import custom DBC files](/cloud/obd_library/car-explorer-library-manual/#importing-library-items-from-files)
 

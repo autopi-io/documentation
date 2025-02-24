@@ -72,8 +72,8 @@ You'll be presented with a window similar to this:
 
 ![Logger buses](/img/cloud/device_management/templates/template_create_pid_logger.png)
 
-Most of this is identical to what you'd see when [creating PID loggers for devices](/cloud/obd-ii/create_pid_loggers.md/#creating-the-logger), with
-the exception of Bus settings. Take a look at the [templated CAN loggers section](/cloud/device_management/templates.md/#templated-can-loggers) to get
+Most of this is identical to what you'd see when [creating PID loggers for devices](/cloud/obd-ii/create-pid-loggers/#creating-the-logger), with
+the exception of Bus settings. Take a look at the [templated CAN loggers section](/cloud/device_management/templates/#templated-can-loggers) to get
 an idea of how they work. A notable difference here is that for PID loggers, the Bus is optional. If one's not specified, the PID will be logged
 using the vehicle's default bus.
 
