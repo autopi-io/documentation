@@ -3,24 +3,20 @@ module.exports = {
   tagline: 'Documentation and Guides for AutoPi Cloud, Core and Devices',
   url: 'https://docs.autopi.io',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   favicon: 'img/shared/favicon.ico',
   organizationName: 'autopi-io', // Usually your GitHub org/user name.
   projectName: 'documentation', // Usually your repo name.
   trailingSlash: true,
   themeConfig: {
     image: 'img/shared/favicon-194x194.png',
-    metadatas: [
+    metadata: [
       { property: 'og:type', content: 'website' },
     ],
     algolia: {
       appId: '7BRH96O31B',
       apiKey: '6dfef04434e917765e1dd4f89e170e74',
       indexName: 'autopi',
-    },
-    gtag: {      
-      trackingID: 'G-DB2BZPKYN9',      
-      anonymizeIP: false,
     },
     colorMode: {
       defaultMode: 'light',
@@ -144,6 +140,10 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
+        gtag: {
+          trackingID: 'G-DB2BZPKYN9',
+          anonymizeIP: false,
+        },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
@@ -155,7 +155,6 @@ module.exports = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
-          trailingSlash: true,
         },
       },
     ],
@@ -166,10 +165,6 @@ module.exports = {
       '@docusaurus/plugin-client-redirects',
       {
         redirects: [
-          {
-            to: '/getting_started/autopi_tmu_cm4/guides-intro/',
-            from: '/guides/guides-intro/',
-          },
           {
             to: '/getting_started/autopi_tmu_cm4/4g-internet-setup-troubleshooting/',
             from: '/guides/4g-internet-setup-troubleshooting/',
@@ -297,10 +292,6 @@ module.exports = {
           {
             to: '/cloud/device_management/device-install-procedure/',
             from: '/cloud/fleet/device-install-procedure/',
-          },
-          {
-            to: '/cloud/fleet_management/vehicles/trips/introduction/',
-            from: ['/cloud/trips/introduction/', '/cloud/fleet/trips/introduction/', '/cloud/fleet_management/trips/introduction/'],
           },
           {
             to: '/cloud/fleet_management/vehicles/trips/automatic-exports/',

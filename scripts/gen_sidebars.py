@@ -47,8 +47,8 @@ def generate_sidebars(src_dir):
         if "index.md" in files:
             index_file = files[files.index("index.md")]
 
-        elif "index.mdx" in files:
-            index_file = files[files.index("index.mdx")]
+        elif "index.md" in files:
+            index_file = files[files.index("index.md")]
         
         if index_file:
             index_entry_name = get_file_entry_name(dir_path, index_file, src_dir)
@@ -60,7 +60,7 @@ def generate_sidebars(src_dir):
         # get all the rest of the files, put them last
         for f in files:
             # skip intro file
-            if f in ["index.md", "index.mdx"]:
+            if f in ["index.md", "index.md"]:
                 continue
 
             file_entry_name = get_file_entry_name(dir_path, f, src_dir)

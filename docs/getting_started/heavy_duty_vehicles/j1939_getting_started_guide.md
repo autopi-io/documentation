@@ -260,9 +260,13 @@ are used in loggers only the used [CAN](https://www.autopi.io/hardware/autopi-ca
 
 To easily test [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message conversion with a DBC file, the following terminal command can be executed. It performs a single workflow that queries a PGN and then converts the raw response message using the DBC file.
 
-```
-obd.manage run handler="query" args="['EEC1']" kwargs="{'mode': '00', 'pid': 'F004', 'header': '18EA00F9', 'force': true}" converter="can"
-```
+```sh
+obd.manage run handler="query" \
+args="['EEC1']" \
+kwargs='{"mode": "00", "pid": "F004", "header": "18EA00F9", "force": true}' \
+converter="can"
+
+
 
 _Example_:
 
@@ -278,7 +282,7 @@ _Example_:
 >
 >_**args="['EEC1']"**_ specifices the arguments of the handler. The value consists of an embedded JSON array.
 >
->_**kwargs="{'mode': '00', 'pid': 'F004', 'header': '18EA00F9', 'force': true}"**_ specifices the keyword arguments of the handler. The value consists of an embedded JSON dictionary.
+>_**kwargs={{"mode": "00", "pid": "F004", "header": "18EA00F9", "force": true}}**_ specifices the keyword arguments of the handler. The value consists of an embedded JSON dictionary.
 >
 >_**converter="can"**_ specifies a converter in the workflow to be called after the handler. Here we use the [CAN](/core/services/core-services-obd-manager/#can) converter.
 

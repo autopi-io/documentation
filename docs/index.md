@@ -39,7 +39,7 @@ device directly through the [Cloud](https://www.autopi.io/software-platform/clou
 
 In this documentation website you will be able to find everything you need to start working with
 [AutoPi](https://autopi.io). If you already have a device and you're looking to set it up, a very
-good starting point for you is our [Getting started guide](/getting_started/autopi_tmu_cm4/index.md).
+good starting point for you is our [Getting started guide](/getting_started/autopi_tmu_cm4/guides_intro.md).
 
 
 ## Get Your Device Today and Get Started!
@@ -63,15 +63,15 @@ Explore our documentation by area.
 
 <CardGrid home>
 
-[![](/img/shared/favicon-194x194.png) **Core Documentation** Understand how the AutoPi Core works.](/core/index.mdx)
+[![](/img/shared/favicon-194x194.png) **Core Documentation** Understand how the AutoPi Core works.](/core/index.md)
 
 
-[![](/img/shared/laptop_autopi_3_scaled.png) **Cloud Documentation** Learn how to make the most of your AutoPi Cloud Solution.](/cloud/index.mdx)
+[![](/img/shared/laptop_autopi_3_scaled.png) **Cloud Documentation** Learn how to make the most of your AutoPi Cloud Solution.](/cloud/index.md)
 
 
 [![](/img/shared/guides_trans.png) **Guides** Get inspiration from our rich set of guides.](/getting_started/autopi_tmu_cm4/index.md)
 
-[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **Hardware** View hardware specific documentation.](/hardware/index.mdx)
+[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **Hardware** View hardware specific documentation.](/hardware/index.md)
 
 [![](/img/getting_started/api/api_intro/api_frontpage.jpg) **API** Explore our rich API.](https://api.autopi.io/)
 

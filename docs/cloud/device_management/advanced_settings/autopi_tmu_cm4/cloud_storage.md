@@ -44,7 +44,7 @@ title: Cloud Storage
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
-| FILENAME FORMAT | How should the JSONL files be named? | str | {now:%y%m%d%H%M%S}_{pid}.jsonl | - |
+| FILENAME FORMAT | How should the JSONL files be named? | str | `{now:%y%m%d%H%M%S}_{pid}.jsonl` | - |
 | DIRECTORY | In which directory should the JSONL files be stored? | str | /opt/autopi/data | - |
 | FILE MODE | In which mode should new files be opened? | str | a | - |
 

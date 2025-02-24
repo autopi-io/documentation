@@ -51,7 +51,8 @@ You need to be careful not to tear or damange some of the cables when handling t
 <SideBySide>
 	<p>
 		<strong>Step 4: </strong>
-		Using a 5mm screwdriver, loosen and remove the four screws that are securing the CM4 to the [AutoPi](https://www.autopi.io) board, as shown in the picture below.	</p>
+		Using a 5mm screwdriver, loosen and remove the four screws that are securing the CM4 to the [AutoPi](https://www.autopi.io) board, as shown in the picture below.	
+	</p>
 	<img alt="Step 4" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/replacing_cm4/replacing5.png')}/>
 </SideBySide>
 <br/>
@@ -87,7 +88,8 @@ Please take note of the orientation of the CM4 while detaching it from the [Auto
 <SideBySide>
 	<p>
 		<strong>Step 7: </strong>
-		Reattach the 4 hexagonal screws that secure the CM4 to the [AutoPi](https://www.autopi.io) board, ensuring a firm and secure connection.	</p>
+		Reattach the 4 hexagonal screws that secure the CM4 to the [AutoPi](https://www.autopi.io) board, ensuring a firm and secure connection.	
+	</p>
 	<img alt="Step 1" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/replacing_cm4/replacing2.png')}/>
 </SideBySide>
 <br/>
@@ -96,7 +98,8 @@ Please take note of the orientation of the CM4 while detaching it from the [Auto
 	<p>
 		<strong>Step 8: </strong>
  		Securely reattach the heatsink to the CM4 using the 4 screws and plastic washers provided. Ensure that each screw is tightened firmly for optimal heat dissipation. <br/><br/>
-		When reattaching the heatsink, ensure that you align the cut in the heatsink with the SMA connector of the CM4.	</p>
+		When reattaching the heatsink, ensure that you align the cut in the heatsink with the SMA connector of the CM4.	
+	</p>
 	<img alt="Step 1" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/replacing_cm4/replacing8.png')}/>
 </SideBySide>
 <br/>
@@ -105,7 +108,8 @@ Please take note of the orientation of the CM4 while detaching it from the [Auto
 	<p>
 		<strong>Step 8: </strong>
  		Carefully position the shield over the designated holes and insert it securely. Once the shields are in place, position the bottom case over the board, ensuring that all the components fit properly. Press down gently to ensure a snug fit between the bottom case and the board. <br/><br/>
-		Using the 4 black hex screws provided, securely fasten the bottom case to the board. Tighten the screws firmly, but be careful not to overtighten and risk damaging the components.	</p>
+		Using the 4 black hex screws provided, securely fasten the bottom case to the board. Tighten the screws firmly, but be careful not to overtighten and risk damaging the components.	
+	</p>
 	<img alt="Step 1" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/replacing_cm4/replacing12.png')}/>
 </SideBySide>
 <br/>

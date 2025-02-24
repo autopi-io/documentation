@@ -45,25 +45,25 @@ While direct-connect mode is easier to set up, it's worth noting that in case th
 ### Direct-Connect Mode
 ![direct_connect_diagram](/img/getting_started/developer_guides/configuring_MQTT/direct-connect_diagram.png)
 
-On the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) portal (my.autopi.io for private customers, <company_name>.autopi.io for business customers) go to Device > Advanced Settings > MQTT. Modify the following settings:
+On the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) portal (my.autopi.io for private customers, <company_name>.autopi.io</company_name> for business customers) go to Device > Advanced Settings > MQTT. Modify the following settings:
 
 - Returner > Enabled: True
-- Returner > host: <host\>
-- Returner > port: <port\>
+- Returner > host: <host></host>
+- Returner > port: <port></port>
 
 Now set up an MQTT returner on a data point you know you're getting data from (voltage readings or GPS for example). See below on how to do this. After you've done this, you should be seeing data on your MQTT broker. 
 
 ### Broker-Bridge Mode
 ![broker_bridge_diagram](/img/getting_started/developer_guides/configuring_MQTT/broker-bridge_diagram.png)
-On the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) portal (my.autopi.io for private customers, <company_name>.autopi.io for business customers) go to Device > Advanced Settings > MQTT. 
+On the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) portal (my.autopi.io for private customers, <company_name>.autopi.io</company_name> for business customers) go to Device > Advanced Settings > MQTT. 
 Note that the settings under Broker > ... **effect only the broker, and not the client**, so if you are trying to set up direct-connect mode, 
 these are not the settings you are looking for. Modify the following settings:
 
 - Broker > Install: Mosquitto v1.x  (Or newer if available)
 - Broker > Custom > Configuration:
-    - connection <connection_name>
-    - address <host\>:<port\>
-    - topic # out 1 "" <topic_name\>/
+    - connection <connection_name></connection_name>
+    - address <host></host>:<port></port>
+    - topic # out 1 "" <topic_name></topic_name>/
     - bridge_attempt_unsubscribe false
     - keepalive_interval 15
     - notifications false
@@ -107,8 +107,8 @@ This section covers adding the MQTT returner to the 3 main data sources: loggers
 
 | **Data point**         | **Source** |**MQTT Topic**      |
 |------------------------|------------|--------------------|
-| PID data               | Loggers    |obd/<LOGGER_NAME\>  |
-| CAN data               | Service    |obd/<LOGGER_NAME\>  |
+| PID data               | Loggers    |obd/`<LOGGER_NAME>`  |
+| CAN data               | Service    |obd/`<LOGGER_NAME>`  |
 | GPS location           | Service    |track/pos           |
 | Accelerometer readings | Service    |acc/xyz             |
 | Voltage                | Service    |spm/bat             |

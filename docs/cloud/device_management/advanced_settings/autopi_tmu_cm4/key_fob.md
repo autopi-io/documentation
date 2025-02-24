@@ -12,7 +12,17 @@ title: Key Fob
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
-| ACTIONS | Define available actions corresponding to the key fob buttons. | json | {"duration": 0.25, "name": "green", "pin": {"initial": true, "wire": "green"}}, {"duration": 0.25, "name": "white", "pin": {"initial": true, "wire": "white"}}, {"duration": 0.25, "name": "grey", "pin": {"initial": true, "wire": "grey"}}, {"duration": 0.25, "name": "red", "pin": {"initial": true, "wire": "red"}}, {"duration": 0.25, "name": "black", "pin": {"initial": true, "wire": "black"}} | - |
+| ACTIONS | Define available actions corresponding to the key fob buttons. | json | See below | - |
+
+```json
+[
+  {"duration": 0.25, "name": "green", "pin": {"initial": true, "wire": "green"}},
+  {"duration": 0.25, "name": "white", "pin": {"initial": true, "wire": "white"}},
+  {"duration": 0.25, "name": "grey", "pin": {"initial": true, "wire": "grey"}},
+  {"duration": 0.25, "name": "red", "pin": {"initial": true, "wire": "red"}},
+  {"duration": 0.25, "name": "black", "pin": {"initial": true, "wire": "black"}}
+]
+
 
 ## Pins
 

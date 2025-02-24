@@ -62,7 +62,9 @@ If you are installing the antennas yourself, follow the Step-by-Step guide.
 		 <ul>
 		 	<li>The GPS antenna (the one that is separated) should be connected to the left side connector of the modem</li> 
 		 	<li>The middle antenna (Main 4G) should be connected to the middle connector of the modem</li>
-			<li>The right antenna (Alt. 4G) should be connected to the right connector of the modem</li></ul><br/>
+			<li>The right antenna (Alt. 4G) should be connected to the right connector of the modem</li>
+			</ul>
+			<br/>
 			<strong>Note: </strong>
 			Please make sure that the antennas are not stuck in between the casings or that they are accidentally screwed in when you put back the screws in the casing. Once installed,
 			don't tighten the SMA nut anymore because the cables will twist and be damaged in the interior of the device.

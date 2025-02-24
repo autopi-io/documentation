@@ -71,7 +71,8 @@ If you are installing the antennas yourself, follow the Step-by-Step guide.
 		 <ul>
 		 	<li>The GPS antenna should be connected to the left side connector of the modem</li> 
 		 	<li>The middle antenna (Main 4G) should be connected to the middle connector of the modem</li>
-			<li>The right antenna (Alt. 4G) should be connected to the right connector of the modem</li></ul><br/>			
+			<li>The right antenna (Alt. 4G) should be connected to the right connector of the modem</li>
+		</ul>			
 	</p>
 	<img class="zoomable" alt="Step 3" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/installing_4in1_external_antennas/autopi_connecting_modem.jpg')}/>
 </SideBySide>
