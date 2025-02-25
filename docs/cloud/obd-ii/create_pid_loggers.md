@@ -150,7 +150,7 @@ but to an ELM327 specification.
 
 Before working with the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Flow Control Enhanced PID settings, it is highly recommended that you understand how the 
 `can_flow_control_` prefixed parameters work on the obd.query command. This is explained in
-[non-OBD2 queries](using_the_can_bus_commands.mdx#non-obd2-queries). The Enhanced PID
+[non-OBD2 queries](using_the_can_bus_commands.md#non-obd2-queries). The Enhanced PID
 section essentially allows you to enrich your loggers with the same functionality. The filter and
 mask correspond to the `can_flow_control_filter` parameter's 2 comma seperated values in that order. The
 same applies to the Transmitter ID and Receiver ID.
