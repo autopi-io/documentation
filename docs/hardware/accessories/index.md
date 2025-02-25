@@ -1,6 +1,7 @@
 ---
 id: accessories-intro
 title: Accessories Overview
+description: Explore a range of compatible accessories to enhance your AutoPi device. Find the right add-ons to maximize functionality and improve data management.  
 ---
 
 :::info Need Custom Integrations?
