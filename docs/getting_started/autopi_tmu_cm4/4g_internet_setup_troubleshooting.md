@@ -157,35 +157,5 @@ You can also check the connection to the [AutoPi](https://www.autopi.io) [Cloud]
 
 `cmd.run "curl -v my.autopi.io"`
 
-<div style="
-  display: flex; 
-  align-items: center; 
-  background: #f8f9fa; 
-  padding: 20px; 
-  border-radius: 10px; 
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
-  max-width: 600px; 
-  margin: 20px auto;
-  padding: 15px;
-">
-
-  <img src="/img/Kopi-af-UGE-46.png" alt="AutoPi Device" style="width: 150px; margin-right: 20px; border-radius: 5px;" />
-
-  <div>
-    <h2>Experience the capabilities</h2>
-    <p>of AutoPi Devices relevant for your operations.</p>
-    <a href="/schedule-demo" style="
-      display: inline-block; 
-      padding: 10px 20px; 
-      background: #4c8bf5; 
-      color: #fff; 
-      text-decoration: none; 
-      font-weight: bold; 
-      border-radius: 5px; 
-      transition: background 0.3s ease;
-    ">Schedule Demo</a>
-  </div>
-
-</div>
 
 
