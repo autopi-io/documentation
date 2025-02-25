@@ -1,9 +1,14 @@
 ---
 id: 4g-internet-setup-troubleshooting
 title: 4G Internet Setup Troubleshooting
+description: Facing issues connecting to the internet? 
 ---
 
-You are experiencing issues connecting to the internet, when connected to the WiFi hotspot on the [AutoPi](https://www.autopi.io) Dongle. 
+You are experiencing issues connecting to the internet, when connected to the WiFi hotspot on the [AutoPi](https://www.autopi.io) Dongle. These instructions help you step-by-step to identify and resolve common problems related to SIM card setup, modem recognition, and network configurations. By following these guidelines, you can ensure a stable 4G internet connection for your AutoPi device. 
+
+:::tip Our support team is here to help you.
+Get in touch here or send an email to support@autopi.io
+:::
 
 ### Prerequisites:
 Before following this guide, you must have completed the initial [setup guide](/getting_started/autopi_tmu_cm4/index.md).
@@ -104,10 +109,9 @@ Incase the FWSWITCH does not start with 40 or net_conf is not global this can be
 
 `modem.connection execute AT#FWSWITCH=40,1`
 
+
 ### Checking qmi-manager Status
 The device contains a software manager, which ensure stable connection to the internet. This is called qmi-manager. To check status, please write the following command in the terminal:
-
-`cmd.run "qmi-manager status"`
 
 The output should be similar what you can see in the image below:
 
@@ -152,4 +156,36 @@ You can to check if the device can connect to the internet though the 4g connect
 You can also check the connection to the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) service by running the following command. 
 
 `cmd.run "curl -v my.autopi.io"`
+
+<div style="
+  display: flex; 
+  align-items: center; 
+  background: #f8f9fa; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+  max-width: 600px; 
+  margin: 20px auto;
+  padding: 15px;
+">
+
+  <img src="/img/Kopi-af-UGE-46.png" alt="AutoPi Device" style="width: 150px; margin-right: 20px; border-radius: 5px;" />
+
+  <div>
+    <h2>Experience the capabilities</h2>
+    <p>of AutoPi Devices relevant for your operations.</p>
+    <a href="/schedule-demo" style="
+      display: inline-block; 
+      padding: 10px 20px; 
+      background: #4c8bf5; 
+      color: #fff; 
+      text-decoration: none; 
+      font-weight: bold; 
+      border-radius: 5px; 
+      transition: background 0.3s ease;
+    ">Schedule Demo</a>
+  </div>
+
+</div>
+
 
