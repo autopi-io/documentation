@@ -85,7 +85,7 @@ typically found in one of the locations shown below:
 
 ![AutoPi.io - OBD port location](/img/getting_started/getting_started/TMU_placement_dashboard_v1_finecut-01.jpg)
 
-## 3. Installation
+## 4. Installation
 
 When installing the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini), make sure the device is positioned with the 
 logo facing upwards toward the sky. This is important because the GPS antenna is 
@@ -98,7 +98,7 @@ to place your [AutoPi](https://www.autopi.io) in a more convenient location.
 This is the OBD-II extension cable: 
 ![AutoPi.io - Relocator cable](/img/getting_started/getting_started/relocator_cable.png)
 
-## 4. No data from your AutoPi mini (EV users)
+## 5. No data from your AutoPi mini (EV users)
 
 If your [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) is not sending data to the cloud and you have an electric vehicle (EV), the issue may be due to the device not being able to autodetect the VIN. Unlike internal combustion engine (ICE) vehicles, some EVs do not support automatic VIN detection, which can prevent the device from reading data properly. To resolve this, follow these steps to adjust the advanced settings for EV compatibility. 
 
