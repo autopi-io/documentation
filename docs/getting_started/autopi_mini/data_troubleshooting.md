@@ -106,6 +106,36 @@ won't have any data to display. 
 When you're satisfied with your dashboard configuration, save your layout via 
 **Widget Actions** to keep your settings for future sessions.  
 
+
+## 4. No data from your AutoPi mini (EV users)
+
+If your [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) is not sending data to the cloud and you have an electric vehicle (EV), the issue may be due to the device not being able to autodetect the VIN. Unlike internal combustion engine (ICE) vehicles, some EVs do not support automatic VIN detection, which can prevent the device from reading data properly. To resolve this, follow these steps to adjust the advanced settings for EV compatibility. 
+
+![AutoPi.io - Relocator cable](/img/getting_started/autopi_mini/mini_advanced_settings.png)
+
+Recommended advanced settings for Electric Vehicle:
+
+**Option 1: Adjust OBD Feature, this setting ensures the device correctly communicates with your EV.**
+
+1. Go to: Advanced settings → Obd Settings → Obd Feature.
+2. Select: Non-OBD Compliant.
+3. Press: Save.
+
+**Option 2: Manually enter your VIN (if not detected automatically).**
+
+1. Go to: Advanced settings → Obd Vin Settings.
+2. Set Vin: enter your 17-character VIN (digits and capital letters).
+3. Pick Vin Source: select Manual.
+4. Press: Save.
+
+**Option 3: Set Ignition detection for EVs to properly detect when your EV is on or off.**
+1. Go to: Advanced settings →System -> Ignition Settings.
+2. Select: Accelerometer.
+3. Press: Save.
+
+After making these adjustments, check the 'Change History' tab to confirm that your settings were applied successfully.
+
+
 ## Need Further Assistance? 
 
 If you’ve gone through these steps and are still not seeing any data, or if you 
