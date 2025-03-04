@@ -33,8 +33,9 @@ The endpoint takes the following parameters
 |  aggregation | Method used when aggregating data into the specified interval. [average, min, max, none]. |
 |  size | Only used when aggregation is set to 'none', and will then return non aggregated values. |
 
-### Example 
-How get logged altitude aggregated into 1 minute average values
+### Examples
+
+#### How get logged altitude aggregated into 1 minute average values
 
 ```
 GET /logbook/storage/read/
@@ -45,6 +46,17 @@ GET /logbook/storage/read/
     &from_utc=2020-07-06T10:03:36.352Z
     &to_utc=2020-07-06T12:18:14.050Z
     &interval=1m
+```
+
+#### How get latest value (set aggregation = none, and to_utc can be omitted.
+
+```
+GET /logbook/storage/read/
+    ?device_id=6a6c53b5-e18e-4301-9c95-2516006bf7c6
+    &field=track.pos.alt
+    &field_type=float
+    &aggregation=none
+    &from_utc=2020-07-06T10:03:36.352Z
 ```
 
 ### Field
