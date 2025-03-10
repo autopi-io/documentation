@@ -1,17 +1,19 @@
 ---
 id: doip-install
-title: DOIP HAT Install
+title: DoIP HAT Install
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::caution Before proceeding with the install
-The DOIP solution described here only works with the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) and newer editions
+The DoIP solution described here only works with the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) and newer editions. 
+
+Please note, its possible to order the DoIP solution pre-installed in the devices.
 :::
 
-## DOIP Introduction
-This guide provides a general technical overview of the [AutoPi](https://www.autopi.io) DOIP solution. 
+## DoIP Introduction
+This guide provides a walk-through of how to install the [AutoPi](https://www.autopi.io) DoIP solution in the AutoPi devices. For a guide on how to get started using the DoIP solution, [`see here`](/developer_guides/setting-up-doip/).
 
-DOIP stands for "Diagnostic over Internet Protocol." It is a communication protocol used in the automotive industry for diagnostic and programming tasks. DOIP enables the exchange of diagnostic information between a vehicle's electronic control units (ECUs) and diagnostic tools over an IP-based network, such as Ethernet.
+DoIP stands for "Diagnostic over Internet Protocol." It is a communication protocol used in the automotive industry for diagnostic and programming tasks. DOIP enables the exchange of diagnostic information between a vehicle's electronic control units (ECUs) and diagnostic tools over an IP-based network, such as Ethernet.
 
 :::note
 **Prerequesites** for this guide:
@@ -35,7 +37,7 @@ Open up the [AutoPi](https://www.autopi.io) device by unscrewing the four screws
 </p>
 
 ### Step 2
-Start preparing the DOIP hat by screwing one 6.5 mm spacer in each hole of the DOIP hat PCB as seen in the pictures.
+Start preparing the DoIP hat by screwing one 6.5 mm spacer in each hole of the DoIP hat PCB as seen in the pictures.
 
 ![Keyfob flow](/img/hardware/accessories/doip/doip3.jpg)
 
@@ -51,7 +53,7 @@ Reasemble the device using the new [AutoPi](https://www.autopi.io) BLE side shie
 
 ## Disscussion
 <p>
-	You have now successfully installed the DOIP solution to the device.
+	You have now successfully installed the DoIP solution to the device.
 </p>
 
 :::note
