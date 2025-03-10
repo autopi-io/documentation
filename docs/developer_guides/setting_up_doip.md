@@ -55,3 +55,6 @@ After the upgrade four pins are used for Ethernet and one pin is used for activa
 ### Controlling the DoIP port
 From the AutoPi Core software, it is possible to control the pinout variant to be used.
 
+## Using the DoIP software
+
+The AutoPi DoIP integration is based on the [udsoncan library](https://github.com/autopi-io/py-udsoncan). The integration implements all the services and helper classes from the [library](https://udsoncan.readthedocs.io/en/latest/) and thereby also support UDS. 
