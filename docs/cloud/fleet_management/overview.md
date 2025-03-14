@@ -5,12 +5,15 @@ title: Overview
 
 import SideBySide from '@site/src/components/SideBySide';
 
-![Fleet map overview](/img/cloud/fleet_management/overview/Fleet_overview_world_map.png)
+
 
 This section provides an overview of your entire fleet, showcasing all vehicles 
 associated with your account. With access to real-time data and advanced fleet 
 management tools, you can efficiently manage, monitor, and optimize your fleet’s 
 operations. 
+
+![Fleet map overview](/img/cloud/fleet_management/overview/Fleet_overview_world_map.png)
+
 
 ## Fleet Tracking
 
