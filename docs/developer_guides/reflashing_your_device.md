@@ -2,6 +2,11 @@
 id: reflashing-your-device
 title: Reflashing Your Device
 ---
+import CardGrid from "/components/CardGrid"
+
+:::warning
+Please only follow this guide if you’re confident in what you’re doing. Reflashing shouldn’t be done on a fully operational device. If you’re unsure or have any questions, feel free to reach out to our [Support team](mailto:support@autopi.io) for help. 
+:::
 
 ## Reflashing Workflow
 The process for reflashing an [AutoPi](https://www.autopi.io) device differs a little depending on the device version you have and the OS you are running. The steps in this guide were tested on Pop-os 6.1 (a Debian-derived Linux distribution) and Windows 10. The general workflow for the reflashing process is:
@@ -152,4 +157,20 @@ Remember to update your device from the [Cloud](https://www.autopi.io/software-p
 the configuration values are properly configured (like the WiFi, SSID and password), and that the
 device has the correct authentication token for uploading data to the [Cloud](https://www.autopi.io/software-platform/cloud-management).
 :::
+
+<br>
+</br>
+
+### Let's keep in touch!
+<CardGrid home>
+
+[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **Buy AutoPi device** Check out our shop .](https://shop.autopi.io)
+
+[![](/img/shared/autopi_devices_trans.png) **Learn more** Check which device fits your requirements .](https://www.autopi.io/hardware/compare/)
+
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
 

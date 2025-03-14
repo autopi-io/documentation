@@ -96,4 +96,6 @@ Want to dig right into the source code? Get full access here:
 
   - Read more about our [product](https://autopi.io)
   - Buy the device in our [shop](https://shop.autopi.io)
+  - Contact our [sales team ](https://www.autopi.io/contact/)
+  - Get help from our [support team ](https://www.autopi.io/support/)
 

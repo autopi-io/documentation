@@ -42,4 +42,5 @@ The [API](/getting_started/api/) gives you acccess to all the same functionaliti
 ## Links
   - Read more about our [product](https://autopi.io)
   - Buy the device in our [shop](https://shop.autopi.io)
-
+  - Contact our [sales team ](https://www.autopi.io/contact/)
+  - Get help from our [support team ](https://www.autopi.io/support/)
