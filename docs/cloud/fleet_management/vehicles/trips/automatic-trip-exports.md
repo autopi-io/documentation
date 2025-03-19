@@ -2,6 +2,7 @@
 id: automatic-exports
 title: Automatic Exports
 ---
+import CardGrid from "/components/CardGrid" ;
 
 # Automatic Exporting
 When enabled for a device, it will automatically trigger exports when a trip ends, and when an export is finished, it will send notifications (mail and/or JSON Http request)
@@ -124,3 +125,18 @@ In the response for each task you can see the task ID, and which trip ID it was 
 Now you can use the task ID to retrieve the result, in this case: 100
 
 `GET tasks/100/result/`
+
+
+
+<br>
+</br>
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
