@@ -2,15 +2,10 @@
 id: api-intro
 title: Introduction
 ---
+import CardGrid from "/components/CardGrid" ;
 
 You are able to use the [AutoPi REST API](https://api.autopi.io) with your browser, which will display our
 auto-generated documentation portal.
-
-:::note
-The documentation is auto-generated from our API, which means that the documentation will always reflect the API and
-will always be up to date, but being auto-generated it unfortunately also does sacrifice some readability, but we
-are working to improve this. And if you find something that you feel is not adequately documented, please let us know.
-:::
 
 ![api_frontpage](/img/getting_started/api/api_intro/api_frontpage.jpg) 
 
@@ -19,14 +14,11 @@ If you want to test the endpoints, you can authenticate in the API documentation
 when authenticating. In the picture above you can see there is a green 'Authorize' button which you need to press.
 This is where you'll be pasting your token.
 
-It is possible to authenticate using two different tokens.
+It is possible to authenticate using two different tokens or sending the request manually using Postman (or similar).
 
-### API Tokens
+### 1. API Tokens
 
-It is specifically made for users who want to make requests to the API, and is the recommended way to make
-authenticated requests to the API.
-
-To use the token, send an authorization header like this, in all requests:
+Authentication should be done with the API tokens. These tokens can be generated in the account page. The expire date is optional. The tokens can then be used in external systems to authenticate the requests. To use the token, you simply set the Authorization header to the following value, when sending HTTP requests to the API:
 
 ```
 Authorization: APIToken YOUR_TOKEN
@@ -41,49 +33,43 @@ Here you are able to create a new API Token by giving it a name and there is an 
 
 ![account_page](/img/getting_started/api/api_intro/account_overview.png)
 
-### JWT Token
+### 2. JWT Token
 
-This token is the one used by the frontend when logging in.
-* It expires relatively shortly.
-* You need to enter you username and password to acquire the token.
+This token is the one used by the frontend when logging in. It expires relatively shortly and you need to enter you username and password to acquire the token.
+
+#### Receiving the JWT Token
 
 You can get the JWT token in two different ways:
 
-#### 1. Capture the Token by Using the Browser Developer Tools.
-The easiest way is to capture the token by logging into the [Cloud](https://www.autopi.io/software-platform/cloud-management), with the developer tools open in your favourite
-browser, with the network tab open, and then skip to step 6 in the below step by step guide.
+    * **Capture the Token by Using the Browser Developer Tools** - the easiest way is to capture the token by logging into the [Cloud](https://www.autopi.io/software-platform/cloud-management), with the developer tools open in your favourite
+    browser, with the network tab open, and then skip to step 6 in the below step by step guide.
+    * **Manually Call the Auth Endpoint to get the Token.** - you can follow the steps below to call the login endpoint manually.
 
-#### 2. Manually Call the Auth Endpoint to get the Token.
-You can follow the steps below to call the login endpoint manually.
+        * Click the "auth" app to fold out the available endpoints.
+        * Click the "/auth/login/".
+        * Click the "try it out" button to the right.
+        * Change the payload to look like this (remove the username field, and fill out the email and password fields, like so:
+            ```
+            {
+                "email": "your_email",
+                "password": "your_insanely_complex_password"
+            }
+            ```
+        * Click the blue "execute" button.
+        * Now you can copy the entire token.
+        * Now click the green "Authorize" button in the top right of the page and paste the token in the field. Remember to write "Bearer" in front of the token - like so:
 
-1. Click the "auth" app to fold out the available endpoints.
-2. Click the "/auth/login/".
-3. Click the "try it out" button to the right.
-4. Change the payload to look like this (remove the username field, and fill out the email and password fields, like so:
-```
-   {
-      "email": "your_email",
-      "password": "your_insanely_complex_password"
-   }
-```
-5. Click the blue "execute" button.
-6. Now you can copy the entire token.
-7. Now click the green "Authorize" button in the top right of the page and paste the token in the field.
+            ```
+            Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.4pXwtyQKCwSrYfcj9O7MGVv5ustPbx0GmYY7jHZL8es
+            ```
 
-Remember to write "Bearer" in front of the token - like so:
+        * After clicking close, you should now be able to call the other authenticated endpoints.
 
-```
-Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.4pXwtyQKCwSrYfcj9O7MGVv5ustPbx0GmYY7jHZL8es
-```
-
-8. After clicking close, you should now be able to call the other authenticated endpoints.
-
-## Sending the Requests Manually Using Postman or Similar
+### 3. Sending the Requests Manually Using Postman or Similar
 Alternatively, if you are unable to use the above portal, or if you'd rather use something like Postman or similar,
 you can still see the requests and parameters in the portal, but to call them manually, see the below steps.
 
-**Authenticating manually w/o interactive API documentation portal**
-You can do the above steps manually by following these steps:
+**Authenticating manually w/o interactive API documentation portal** - you can do the above steps manually by following these steps:
 
 1. Authentication
     To obtain an authentication token, send a post request to https://api.autopi.io/auth/login/
@@ -102,20 +88,110 @@ You can do the above steps manually by following these steps:
 
 2. To request data from our API, the authorization header should be set.
 
-    You will need to set the "Authorization" header on the requests. To set the header, use the below values:
+    You will need to set the "Authorization" header on the requests. To set the header, use the below values.
 
+    * If you're using a JWT token: 
     ```
-    # if you're using a JWT token
     Authorization: Bearer YOUR_TOKEN
+    ```
 
-    # if you're using an API token
+    * If you're using an API token: 
+    ```
     Authorization: APIToken YOUR_TOKEN
     ```
+<br>
+</br>
 
-**Using developer tools to see how endpoints are used**
+:::tip
 If you find something where you are unsure how to proceed, you can log in to my.autopi.io and use the developer tools
 of your favourite browser to see the requests and parameters sent by the application, and if you are still experiencing
 issues, you can send us an email to support@autopi.io
+:::
 
-Happy developing, and as always, if you run into issues, exceptions, have suggestions etc, please let us know.
+## Telemetry data examples
+Accessing data from a device is done by calling the logbook endpoint.
 
+**Logbook Storage Read Parameters:**
+* **device_id:** ID of the device you want to retrieve data from.
+* **field:** Name of the field you want to retrieve the value from.
+* **field_type:** type of the field
+* **from_utc:** ISO Datetime string
+* **to_utc:** ISO Datetime string
+* **aggregation:** Aggregation method (AVG, MIN, MAX, SUM)
+* **interval:** Data is aggregated based on the aggregation method specified, the interval specifies how many groups the data is grouped into. For example, getting data for a 10 hour period, with the interval set to 1h, you will get back 10 values, one value per hour.
+
+### 1.Getting positions
+    ```
+    GET /logbook/storage/read/
+    ?device_id=DEVICE_ID
+    &field=track.pos.loc
+    &field_type=geo_point
+    &from_utc=2020-01-01T00:00:00.000Z
+    &to_utc=2020-01-01T01:00:00.000Z
+    ```
+
+Example response:
+        ```
+        [
+            {
+                    "ts": "2020-07-09T10:11:53.811839Z",
+                    "location": {
+                            "lat": 57.04699,
+                            "lon": 9.93909
+                    }
+            },
+            {
+                    "ts": "2020-07-09T10:11:59.248421Z",
+                    "location": {
+                            "lat": 57.04697,
+                            "lon": 9.93808
+                    }
+            }
+        ]
+        ```
+
+### 2. Battery Voltage readings
+```
+GET /logbook/storage/read/
+?device_id=DEVICE_ID
+&field=obd.bat.voltage
+&field_type=float
+&aggregation=avg
+&from_utc=2020-01-01T00:00:00.000Z
+&to_utc=2020-01-01T01:00:00.000Z
+&interval=10m
+```
+
+Example response:
+```
+[
+	{
+    	    "max_ts": 1594289021415,
+    	    "ts": "2020-07-09T10:03:37.566Z",
+    	    "value": 13.5
+	},
+	{
+    	    "max_ts": 1594289026525,
+    	    "ts": "2020-07-09T10:13:45.378Z",
+    	    "value": 13.600000381469727
+	}
+]
+```
+
+
+<br>
+</br>
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+
+[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **Buy AutoPi device** Check out our shop .](https://shop.autopi.io)
+
+[![](/img/shared/autopi_devices_trans.png) **Learn more** Check which device fits your requirements .](https://www.autopi.io/hardware/compare/)
+
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
