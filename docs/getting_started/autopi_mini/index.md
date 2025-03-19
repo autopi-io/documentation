@@ -5,6 +5,7 @@ title: Getting Started
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SideBySide from '@site/src/components/SideBySide';
+import CardGrid from "/components/CardGrid" ;
 
 Welcome to [AutoPi](https://www.autopi.io)! 
 
@@ -109,11 +110,19 @@ it to the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software
 data, enabling you to take full advantage of the powerful features [AutoPi](https://www.autopi.io) offers. 
 Take your device for a trip to start gathering data. 
 
-**Need Help?**
+<br>
+</br>
 
-If you encounter any issues or have questions, don't hesitate to reach out to 
-our support team at [support@autopi.io](mailto:support@autopi.io). 
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your new device! 
+<CardGrid home>
 
-Thank you for choosing [AutoPi](https://www.autopi.io). We're excited to see what you’ll achieve with your new device! 
+[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **Buy AutoPi device** Check out our shop .](https://shop.autopi.io)
 
-The [AutoPi](https://www.autopi.io) Team 
+[![](/img/shared/autopi_devices_trans.png) **Learn more** Check which device fits your requirements .](https://www.autopi.io/hardware/compare/)
+
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
