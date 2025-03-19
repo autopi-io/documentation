@@ -45,7 +45,7 @@ good starting point for you is our [Getting started guide](/getting_started/auto
 ## Get Your Device Today and Get Started!
 
 <p align="center">
-  <img src={useBaseUrl('img/shared/comparison_devices.png')} alt="AutoPi GEN3" width="600"/>
+  <img src={useBaseUrl('img/shared/autopi_devices_trans.png')} alt="AutoPi GEN3" width="600"/>
 </p>
 
 <CardGrid home>
@@ -53,6 +53,8 @@ good starting point for you is our [Getting started guide](/getting_started/auto
 [![](/img/hardware/autopi_mini/AutoPi_Mini_5_Top_right.png) **AutoPi Mini** Build for fleet volume scaling and ease of install. CAN bus ready with support for legacy protocols. Support wide range of OEM Parameters. Comes with connectivity built-in. See price.](https://shop.autopi.io/products/autopi-mini)
 
 [![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **AutoPi TMU CM4** Based on Raspberry Pi Compute Module 4. Best for custom solutions requiring large computation power and expansion options. Comes with connectivity built-in. See price.](https://shop.autopi.io/products/autopi-telematics-unit-cm4-4g-lte-edition)
+
+[![](/img/hardware/autopi_canfd_pro/canfd_pro_trans.png) **AutoPi CAN-FD Pro** Based on Raspberry Pi Compute Module 4. Our most powerful device to date, designed for full speed automotive datalogging of dual CAN-FD channels. See price.](https://shop.autopi.io/products/autopi-can-fd-pro)
 
 </CardGrid>
 
