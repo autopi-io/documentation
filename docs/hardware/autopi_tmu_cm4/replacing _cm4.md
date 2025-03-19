@@ -5,6 +5,7 @@ title: Replacing the CM4
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SideBySide from '@site/src/components/SideBySide';
+import CardGrid from "/components/CardGrid" ;
 
 :::caution Before proceeding with the upgrade
 Please read the **whole guide** in order to have a good understanding of how all the components fit together.
@@ -125,6 +126,12 @@ Please take note of the orientation of the CM4 while detaching it from the [Auto
 	You have now successfully replaced your Raspberry Pi CM4 in your [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device.
 </p>
 
-:::note
-In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
-:::
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

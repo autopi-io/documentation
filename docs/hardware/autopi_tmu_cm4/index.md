@@ -2,6 +2,7 @@
 id: autopi-cm4-intro
 title: Introduction
 ---
+import CardGrid from "/components/CardGrid" ;
 
 This section has a few guides written out that are specifically for the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) devices.
 Some of the knowledge may be transferrable to previous generation devices.
@@ -35,4 +36,20 @@ Broadcom BCM2711 Quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz provides incr
 
 
 
+<br>
+</br>
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+
+[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **Buy AutoPi device** Check out our shop .](https://shop.autopi.io)
+
+[![](/img/shared/autopi_devices_trans.png) **Learn more** Check which device fits your requirements .](https://www.autopi.io/hardware/compare/)
+
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
 

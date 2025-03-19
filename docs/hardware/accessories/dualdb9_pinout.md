@@ -3,6 +3,8 @@ id: dualdb9-pinout
 title: OBD-II to dual DB9 pinout
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CardGrid from "/components/CardGrid";
+
 
 ## Introduction
 This page describes the pinout of our OBD-II to dual DB9 pinout cable:
@@ -33,6 +35,14 @@ The following is the size and dimensions:
 | HAT Pin 8 | Pin 2                | NC           | Pin 9 (LIN2 VBat)  |
 
 
-:::note
-In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
-:::
+<br>
+</br>
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

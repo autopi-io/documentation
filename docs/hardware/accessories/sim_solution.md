@@ -3,11 +3,15 @@ id: sim-solution
 title: Global SIM Card Solution
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CardGrid from "/components/CardGrid" ;
 
 ## Introduction
 [AutoPi](https://www.autopi.io) offers a global SIM card solution. The SIM card solution is mainly targeted for our [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) and [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) (without simcard) solutions, as these does not come with a SIM card per standard. 
 The solution can be purchased <a href="https://shop.autopi.io/products/global-sim-card-solution">in our webshop.</a> We offer different package sizes and your monthly data usage is shown from our [Cloud](https://www.autopi.io/software-platform/cloud-management) solution. 
 
+:::tip
+In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
+:::
 
 ## Global coverage
 
@@ -87,6 +91,16 @@ Our SIM solution offers coverage in 188 countries. This is a list of our support
 | Vietnam                | VNPT, Viettel                                 |
 | Zambia                 | MTN Zambia Limited, Airtel Zambia             |
 
-:::note
-In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
-:::
+
+
+<br>
+</br>
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

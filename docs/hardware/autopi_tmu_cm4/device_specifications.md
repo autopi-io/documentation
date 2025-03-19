@@ -2,6 +2,9 @@
 id: device_specifications
 title: Technical Specifications
 ---
+import CardGrid from "/components/CardGrid" ;
+
+This guide contains everything you need to know about the AutoPi TMU CM4 device's technical specifications. You can also read more on how to [Get started with AutoPi TMU CM4](https://docs.autopi.io/getting_started/autopi_tmu_cm4/). 
 
 Download the official datasheet here: <br/>
 [TMU CM4 Datasheet](https://www.autopi.io/static/pdf/autopi_TMU_CM4_datasheet.pdf)
@@ -27,3 +30,22 @@ Download the official datasheet here: <br/>
 |   Video Out    |  HDMI @ 1080P60 Video Output      |   
 |   Absolute Maximum <br/> Operating Environment    |  **Operating Temperature:** -20° TO 70° C (-4° TO 158° F) <br/> **Relative Humidity:** 0% TO 75% Noncondensing      |  
 |   Operating System    |  Raspbian OS with preconfigured AutoPi Core      |  
+
+
+<br>
+</br>
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+
+[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **Buy AutoPi device** Check out our shop .](https://shop.autopi.io)
+
+[![](/img/shared/autopi_devices_trans.png) **Learn more** Check which device fits your requirements .](https://www.autopi.io/hardware/compare/)
+
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
+

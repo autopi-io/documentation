@@ -2,6 +2,7 @@
 id: device_specifications
 title: Specifications
 ---
+import CardGrid from "/components/CardGrid" ;
 
 Download the official datasheet here: <br/>
 [Autopi Mini Datasheet](https://www.autopi.io/static/pdf/autopi_mini_datasheet.pdf)
@@ -21,3 +22,17 @@ Download the official datasheet here: <br/>
 |   Data parameters support   |   **30+ Parameters from OBD port** <br/> Mileage / Fuel / RPM / Speed / Engine temperature / DTC / Engine load value / Coolant temperature / Short and long term fuel trim bank / Fuel pressure / Intake MAP / Engine RPM / Vehicle speed / Timing advance / Intake air temperature / MAF throttle position / Run time since engine start / Fuel rail pressure relative / Fuel rail pressure direct / Commanded EGR / EGR error / Fuel level / Distance traveled codes cleared / Barometric pressure / Control module voltage / Absolute load value / OBD Ambient air temperature / Time since codes cleared / Absolute fuel rail pressure / Hybrid battery pack remaining life / Engine oil temperature / Fuel injector timing / Fuel rate / VIN / DTC value / Distance and time traveled since Malfunction Indicator Lamp ON/ EV Milage / EV Range / EV Battery level / Ignition status     |  
 |   Input slots     |  **SIM Card:** Nano SIM – Comes with SIM card and subscription pre-installed      |   
 |   Absolute Maximum <br/> Operating Environment    |  **Operating Temperature:** -40° to +85° C (-40° to +185° F) <br/> **Relative Humidity:** 5% to 95% Noncondensing      |  
+
+
+
+<br>
+</br>
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
