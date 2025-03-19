@@ -3,10 +3,11 @@ id: export-data-from-api
 title: Export Data from API
 ---
 
-The API has endpoints that allows the user to retrieve all the telemetry data from devices.
-There is two different endpoint available.
+Our <a href="https://api.autopi.io/" target="_blank">REST API</a> offers endpoints that let you retrieve all telemetry data from your device in the format that suits you best:
+1. Aggregated Data – Simplified, high-level summaries for easier analysis.
+2. Raw Data – Detailed, unprocessed data for deeper insights and customization.
 
-## Aggregated Data
+## 1. Aggregated Data
 This data is aggregated by interval and a method (average, min, max), and is among other
 things used for the charts in our frontend dashboard.
 
@@ -16,11 +17,9 @@ The aggregated data can be retrieved by using this endpoint:
 GET /logbook/storage/read/
 ```
 
-Additional API documentation here:
+Additional API documentation can be find here: <a href="https://api.autopi.io/#/logbook/logbook_storage_read_list" target="_blank">Logbook - storage read list</a>
 
-https://api.autopi.io/#/logbook/logbook_storage_read_list
-
-The endpoint takes the following parameters
+The endpoint takes the following parameters:
 
 | Parameter | Description  |
 | -------------: | :---------- |
@@ -59,11 +58,40 @@ GET /logbook/storage/read/
     &from_utc=2020-07-06T10:03:36.352Z
 ```
 
-### Field
+## 2. Raw Data
+The raw data is not aggregated or treated in any way, it is in the same format as it was when it was sent by the device. Remember to keep the time frame of your search narrowed to be sure you'll get data back.
 
-To know which fields you can retrieve data from, you can get the list from the following endpoint:
+The aggregated data can be retrieved by using this endpoint:
+```
+GET /logbook/storage/raw/
+```
+Additional API documentation can be find here: <a href="https://api.autopi.io/#/logbook/logbook_storage_raw_list" target="_blank">Logbook - storage raw list</a>
 
-https://api.autopi.io/#/logbook/logbook_storage_fields_list
+The endpoint takes the following parameters:
+| Parameter       | Description  |
+| -------------: | :---------- |
+|  device_id | ID of the device **(not the unit id)** |
+|  data_type | Optional. The datatype to retrieve. Will return all datatypes of omitted. See 'Field' below. |
+|  start_utc | From time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
+|  end_utc | To time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
+|  use_upload_time | Optional. If false (default), *start_utc* and *end_utc* will mean 'period when the data was **recorded**'. If true, *start_utc* and *end_utc* will mean 'period when the data was **uploaded**'. |
+
+### Example 
+How get logged position objects raw
+
+```
+GET logbook/storage/raw/
+    ?device_id=6a6c53b5-e18e-4301-9c95-2516006bf7c6
+    &data_type=track.pos
+    &start_utc=2020-11-24T10:13:21.276594Z
+    &end_utc=2020-11-24T11:07:07.177850Z
+```
+
+
+## Field
+
+To know which fields you can retrieve data from, you can get the list from the following endpoint <a href="https://api.autopi.io/#/logbook/logbook_storage_fields_list" target="_blank">Logbook - storage fields list</a>
+
 
 This will return all the available fields that can be queried, including the type of the field.
 The data type can be derived from the fields, like so:
@@ -75,7 +103,7 @@ The data type can be derived from the fields, like so:
 
 etc.
 
-This is the list of data types currently available from a standard device.
+**This is the list of data types currently available from a standard device:**
 
 | Datatype       | 
 | :------------- |
@@ -92,47 +120,3 @@ This is the list of data types currently available from a standard device.
 | rpi.temp |
 | track.pos |
 ​
-## Raw Data
-The raw data is not aggregated or treated in any way, it is in the same format as it was when it was sent by the device. Remember to keep the time frame of your search narrows to be sure you'll get data back.
-
-```
-GET /logbook/storage/raw/
-```
-
-https://api.autopi.io/#/logbook/logbook_storage_raw_list
-
-| Parameter       | Description  |
-| -------------: | :---------- |
-|  device_id | ID of the device **(not the unit id)** |
-|  data_type | Optional. The datatype to retrieve. Will return all datatypes of omitted. See 'Field' above. |
-|  start_utc | From time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
-|  end_utc | To time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
-|  use_upload_time | Optional. If false (default), *start_utc* and *end_utc* will mean 'period when the data was **recorded**'. If true, *start_utc* and *end_utc* will mean 'period when the data was **uploaded**'. |
-
-### Example 
-How get logged position objects raw
-
-```
-GET logbook/storage/raw/
-    ?device_id=6a6c53b5-e18e-4301-9c95-2516006bf7c6
-    &data_type=track.pos
-    &start_utc=2020-11-24T10:13:21.276594Z
-    &end_utc=2020-11-24T11:07:07.177850Z
-```
-
-## How to Export Trips
-
-To get trips data you will have to first retrieve the list of trips, and then retrieve the data
-that you need for the duration of the trip.
-
-The trips endpoint here can give you the trips. (The trips can also be exported to excel/csv
-format from the trips page) https://api.autopi.io/#/logbook/logbook_trips_list
-
-The reason that there is no single endpoint way to retrieve all data for a specific trip is because
-there can be a lot of data for trips, and our system can query and filter very large amounts of data
-very very fast, but the downside is that it is not really geared towards downloading large amounts
-of data in one go.
-
-For enterprise customers we also support automatic exporting of trips which will call a webhook on
-an external system signalling that an export can be downloaded.
-
