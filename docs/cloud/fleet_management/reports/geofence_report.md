@@ -2,6 +2,7 @@
 id: geofence-summary-reports
 title: Geofence Summary Report
 ---
+import CardGrid from "/components/CardGrid" ;
 
 The **Geofence Report** provides detailed insights into vehicle activity within 
 predefined geographic areas. This report helps fleet managers:
@@ -130,8 +131,18 @@ of how each field is calculated:
 As new report types become available, additional features and enhancements will 
 be added to the platform. Stay tuned for updates to make the most of your [AutoPi](https://www.autopi.io) 
 [Cloud](https://www.autopi.io/software-platform/cloud-management) Reports.
-
-For more information or support, please contact our support team at
-[support@autopi.io](mailto:support@autopi.io).
 :::
 
+
+<br>
+</br>
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
