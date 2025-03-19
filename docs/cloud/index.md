@@ -3,7 +3,7 @@ id: cloud-intro
 title: Introduction
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import useBaseUrl from '@docusaurus/useBaseUrl'; import CardGrid from "/components/CardGrid" ;
 
 This section is all about the [Cloud](https://www.autopi.io/software-platform/cloud-management) system. It goes over details, such as the different configuration
 options that can be set, the events that can be seen from the device. More complex functionalities
@@ -38,6 +38,23 @@ able to view all events and filter them by date or tag.
 
 ### [Cloud](https://www.autopi.io/software-platform/cloud-management) API
 The [API](/getting_started/api/) gives you acccess to all the same functionalities you see in the [Cloud](https://www.autopi.io/software-platform/cloud-management). Through the API it is possible to extend the features to your own systems or APP solution and thereby build on top of the platform. 
+
+
+## Get Your Device Today and Get Started!
+
+<p align="center">
+  <img src={useBaseUrl('img/shared/autopi_devices_trans.png')} alt="AutoPi devices" width="600"/>
+</p>
+
+<CardGrid home>
+
+[![](/img/hardware/autopi_mini/AutoPi_Mini_5_Top_right.png) **AutoPi Mini** Build for fleet volume scaling and ease of install. CAN bus ready with support for legacy protocols. Support wide range of OEM Parameters. Comes with connectivity built-in. See price.](https://shop.autopi.io/products/autopi-mini)
+
+[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **AutoPi TMU CM4** Based on Raspberry Pi Compute Module 4. Best for custom solutions requiring large computation power and expansion options. Comes with connectivity built-in. See price.](https://shop.autopi.io/products/autopi-telematics-unit-cm4-4g-lte-edition)
+
+[![](/img/hardware/autopi_canfd_pro/canfd_pro_trans.png) **AutoPi CAN-FD Pro** Based on Raspberry Pi Compute Module 4. Our most powerful device to date, designed for full speed automotive datalogging of dual CAN-FD channels. See price.](https://shop.autopi.io/products/autopi-can-fd-pro)
+
+</CardGrid>
 
 ## Links
   - Read more about our [product](https://autopi.io)
