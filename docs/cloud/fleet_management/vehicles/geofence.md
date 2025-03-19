@@ -2,8 +2,7 @@
 id: fleet-geofences 
 title: Geofences
 ---
-
-![Geofence page](/img/cloud/fleet_management/vehicles/geofences/geofence_opening_page.png)
+import CardGrid from "/components/CardGrid" ;
 
 In the second subsection on the Vehicle Tab, you will find **Geofences**. This 
 feature allows you to create and manage geofences, which define specific 
@@ -12,6 +11,8 @@ events within those boundaries. For example, you can get notification when a
 vehicle enters or exits a designated geofence.  
 Click on the Geofences tab to see the world map under which is a list of any 
 geofences that have been created.
+
+![Geofence tab](/img/cloud/fleet_management/vehicles/geofences/geofence_tab.png)
 
 ### How to Create a Geofence
 
@@ -69,3 +70,16 @@ geofences that have been created.
     - Once satisfied, click **Create**. You can always add more vehicles or 
       change details later.
     - A notification will confirm that the geofence was successfully created. 
+
+<br>
+</br>
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
+
