@@ -43,6 +43,8 @@ $ less /var/log/salt/minion
 :::tip
 Remember that the timestamps in the log files are in UTC.
 :::
+<br>
+</br>
 
 ## Downloading Logs
 
@@ -53,7 +55,7 @@ There are three ways that you can download log files from your device: downloadi
 from the local admin page ([local.autopi.io](http://local.autopi.io)), copying it to your own computer with
 the `scp` command or by uploading it to your dropbox account.
 
-### Local Admin Page Download
+### 1. Local Admin Page Download
 
 To download the log files from the local admin page, you will need to connect to the device's WiFi
 hotspot first. After you've done that, you can navigate your browser to http://local.autopi.io.
@@ -68,7 +70,7 @@ files available for downloading. Click on the one you'd like to download.
 
 ![local_admin_log_files](/img/getting_started/developer_guides/autopi_logs/local_admin_log_files.jpg)
 
-### SCP (SSH Copy)
+### 2. SCP (SSH Copy)
 
 You are able to download the minion log file using the `scp` command from your computer. First,
 you'll need to have the file in the home directory of the `pi` user. The first two commands should
@@ -87,7 +89,7 @@ scp pi@local.autopi.io:~/minion ./
 
 After executing those commands, you should have a minion file in your current working directory.
 
-### Uploading the Log File to Your Dropbox
+### 3. Uploading the Log File to Your Dropbox
 
 If you're not familiar with SSH or you don't have access to it at the moment, you can instead
 upload the log file to your dropbox account. Here are the steps you need to take to get the log
@@ -135,8 +137,10 @@ Remember to replace the YOUR_ACCESS_TOKEN with the actual token you received in 
   --data-binary @/var/log/salt/minion.gz'
   ```
 
-  **NOTE**: If the above command does not work, you can try this one instead (*Same command on a
+  :::note
+   If the above command does not work, you can try this one instead (*Same command on a
   single line, without the slashes*)
+  :::
 
   ```bash
   cmd.run 'curl -X POST https://content.dropboxapi.com/2/files/upload --header "Authorization: Bearer YOUR_ACCESS_TOKEN" --header "Dropbox-API-Arg: {\"path\": \"/minion.gz\"}" --header "Content-Type: application/octet-stream" --data-binary @/var/log/salt/minion.gz'
