@@ -2,6 +2,7 @@
 id: locations
 title: Locations
 ---
+import CardGrid from "/components/CardGrid" ;
 
 ![Locations overview](/img/cloud/fleet_management/locations/locations_overview.jpg)
 
@@ -65,11 +66,38 @@ To assign vehicles to a location:
 9. Click **Save & Exit** to complete the process. A notification will confirm 
    that the changes have been successfully saved. 
 
-### Viewing Associated Vehicles 
-
+:::tip
 Back on the Locations list, the **Vehicles** column will be updated to show the 
 number of vehicles associated with each location. Clicking on this number will 
 take you to the Vehicle section, where you can view the specific vehicles 
 assigned to that location. You can always edit the location details by selecting 
 the **Actions** column.
+:::
 
+
+### Assigning Users to a Location
+
+You can assign users to Locations if 
+you have created any, read more on how to [Assign users to a location](https://docs.autopi.io/cloud/accounts/#assigning-locations-to-users). To save the edits, click
+Create. A notification table in the right corner will confirm the successful 
+user creation. You can now find the user in the list with their e-mail address, 
+username, assigned customer, location, last login, permissions group, active 
+status either with green check mark or red cross. You can delete the user with 
+the last bin icon.  
+
+![Assign locations](/img/cloud/accounts/assign_locations.png)
+
+
+
+
+<br>
+</br>
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
