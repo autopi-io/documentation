@@ -2,6 +2,7 @@
 id: j1939-getting-started-guide
 title: Getting Started
 ---
+import CardGrid from "/components/CardGrid" ;
 
 This guide will show how to retrieve data from a vehicle supporting the J1939 protocol. To read more background information about J1939 please see the blog post: [J1939 Explained](https://www.autopi.io/blog/j1939-explained/)
 
@@ -260,12 +261,12 @@ are used in loggers only the used [CAN](https://www.autopi.io/hardware/autopi-ca
 
 To easily test [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message conversion with a DBC file, the following terminal command can be executed. It performs a single workflow that queries a PGN and then converts the raw response message using the DBC file.
 
-```sh
+```
 obd.manage run handler="query" \
 args="['EEC1']" \
 kwargs='{"mode": "00", "pid": "F004", "header": "18EA00F9", "force": true}' \
 converter="can"
-
+```
 
 
 _Example_:
@@ -273,7 +274,7 @@ _Example_:
 ![create_pid_for_j1939_request_pgn](/img/getting_started/heavy_duty_vehicles/j1939_getting_started_guide/run_j1939_query_workflow.png)
 
 #### Command Breakdown
-
+```
 >_**obd.manage**_ is the [command](/core/commands/core-commands-obd/#obdmanage) to execute.
 >
 >_**run**_ a [workflow](/core/services/core-services-intro/#workflows) directly.
@@ -285,8 +286,27 @@ _Example_:
 >_**kwargs={{"mode": "00", "pid": "F004", "header": "18EA00F9", "force": true}}**_ specifices the keyword arguments of the handler. The value consists of an embedded JSON dictionary.
 >
 >_**converter="can"**_ specifies a converter in the workflow to be called after the handler. Here we use the [CAN](/core/services/core-services-obd-manager/#can) converter.
+```
 
 ## Setup Loggers
 
 To receive the J1939 data in the [Cloud](https://www.autopi.io/software-platform/cloud-management), loggers must first be set up on the device. Go to _Device_ > _Loggers_ and create loggers 
 for the respective PIDs and or [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages. After a logger has been created, it must be synchronized to the [AutoPi](https://www.autopi.io) device, just like any other change.
+
+<br>
+</br>
+
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your new device! 
+<CardGrid home>
+
+[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **Buy AutoPi device** Check out our shop .](https://shop.autopi.io)
+
+[![](/img/shared/autopi_devices_trans.png) **Learn more** Check which device fits your requirements .](https://www.autopi.io/hardware/compare/)
+
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
+
