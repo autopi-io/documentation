@@ -2,6 +2,7 @@
 id: reports-intro
 title: Introduction
 ---
+import CardGrid from "/components/CardGrid" ;
 
 The Reports feature in the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) platform is designed to empower fleet 
 managers with insights to monitor fleet performance and driver behavior 
@@ -26,7 +27,8 @@ enabling data-driven decision-making to optimize operations and improve safety.
 Reports can be accessed directly through the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) or downloaded as PDF 
 files for offline use.
 
-Report types: 
+## Report types:
+
 - Geofence report - available 
 - Location Compliance -coming soon
 - Connected Vehicles -coming soon
@@ -37,7 +39,17 @@ Report types:
 As new report types become available, additional features and enhancements will 
 be added to the platform. Stay tuned for updates to make the most of your [AutoPi](https://www.autopi.io) 
 [Cloud](https://www.autopi.io/software-platform/cloud-management) Reports.
-
-For more information or support, please contact our support team at
-[support@autopi.io](mailto:support@autopi.io).
 :::
+
+<br>
+</br>
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
