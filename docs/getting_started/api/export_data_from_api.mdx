@@ -2,6 +2,7 @@
 id: export-data-from-api
 title: Export Data from API
 ---
+import CardGrid from "/components/CardGrid" ;
 
 Our <a href="https://api.autopi.io/" target="_blank">REST API</a> offers endpoints that let you retrieve all telemetry data from your device in the format that suits you best:
 1. Aggregated Data – Simplified, high-level summaries for easier analysis.
@@ -58,6 +59,46 @@ GET /logbook/storage/read/
     &from_utc=2020-07-06T10:03:36.352Z
 ```
 
+### Importing JSON file
+As mentioned above, you can get data from our <a href="https://api.autopi.io/" target="_blank">REST API</a>, in order for you to download them, you can use this Python 3 example: 
+```
+import requests # remember to install this package!
+import json
+
+# Define the endpoint and parameters
+url = "https://api.autopi.io/logbook/storage/read/"
+params = {
+    "device_id": "6a6c53b5-e18e-4301-9c95-2516006bf7c6",
+    "field": "track.pos.alt",
+    "field_type": "float",
+    "aggregation": "avg",
+    "from_utc": "2020-07-06T10:03:36.352Z",
+    "to_utc": "2020-07-06T12:18:14.050Z",
+    "interval": "1m"
+}
+
+# Define the headers with the Authorization token
+headers = {
+    "Authorization": "Bearer YOUR_TOKEN_HERE"  # Replace with your actual token
+}
+
+# Make the GET request
+response = requests.get(url, headers=headers, params=params)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Parse the JSON response
+    data = response.json()
+
+    # Save the JSON data to a file
+    with open("response_data.json", "w") as json_file:
+        json.dump(data, json_file, indent=4)
+
+    print("Data successfully saved to response_data.json")
+else:
+    print(f"Failed to retrieve data: {response.status_code}")
+```
+
 ## 2. Raw Data
 The raw data is not aggregated or treated in any way, it is in the same format as it was when it was sent by the device. Remember to keep the time frame of your search narrowed to be sure you'll get data back.
 
@@ -87,6 +128,42 @@ GET logbook/storage/raw/
     &end_utc=2020-11-24T11:07:07.177850Z
 ```
 
+### Importing JSON file
+As mentioned above, you can get data from our <a href="https://api.autopi.io/" target="_blank">REST API</a>, in order for you to download them, you can use this Python 3 example: 
+```
+import requests # remember to install this package!
+import json
+
+# Define the endpoint and parameters
+url = "https://api.autopi.io/logbook/storage/raw/"
+params = {
+    "device_id": "6a6c53b5-e18e-4301-9c95-2516006bf7c6",
+    "data_type": "track.pos",
+    "start_utc": "2020-11-24T10:13:21.276594Z",
+    "end_utc": "2020-11-24T11:07:07.177850Z"
+}
+
+# Define the headers with the Authorization token
+headers = {
+    "Authorization": "Bearer YOUR_TOKEN_HERE"  # Replace with your actual token
+}
+
+# Make the GET request
+response = requests.get(url, headers=headers, params=params)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Parse the JSON response
+    data = response.json()
+
+    # Save the JSON data to a file
+    with open("raw_data.json", "w") as json_file:
+        json.dump(data, json_file, indent=4)
+
+    print("Data successfully saved to raw_data.json")
+else:
+    print(f"Failed to retrieve data: {response.status_code}")
+ ```   
 
 ## Field
 
@@ -120,3 +197,16 @@ etc.
 | rpi.temp |
 | track.pos |
 ​
+
+<br>
+</br>
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
