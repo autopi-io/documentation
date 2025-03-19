@@ -12,10 +12,13 @@ associated with your account. With access to real-time data and advanced fleet
 management tools, you can efficiently manage, monitor, and optimize your fleet’s 
 operations. 
 
-![Fleet map overview](/img/cloud/fleet_management/overview/Fleet_overview_world_map.png)
+<p align="center">
+    <img src="/img/cloud/fleet_management/overview/overview_page.png" alt="Overview page" width="100%" />
+</p>
 
 
 ## Fleet Tracking
+![Fleet map overview](/img/cloud/fleet_management/overview/Fleet_overview_world_map.png)
 
 The first thing you’ll notice is a world map displaying all your vehicles as icons,
 each positioned based on their latest known location and their last online status.
@@ -58,8 +61,10 @@ which elements to display. You can opt to view only vehicles, geofences,
 locations, tailoring the map to your preferences. 
 
 ## Fleet Overview
+<p align="center">
+ <img src="/img/cloud/fleet_management/overview/new_overview_widgets.png" alt="New overview widgets" width="50%" />
+</p>
 
-![Fleet map overview](/img/cloud/fleet_management/overview/Fleet_overview_widgets.png)
 
 Here you can find widgets that provide statistics and insights into your fleet. 
 In “Fleet Total” section you will see the total number of all your vehicles. 
@@ -90,3 +95,9 @@ The Location widget will display your top five locations – the ones with the m
 vehicles associated to the location. It shows how many vehicles are on and off 
 the location. To view all your locations, click on **View Locations**. 
 
+
+## Links
+  - Read more about our [product](https://autopi.io)
+  - Buy the device in our [shop](https://shop.autopi.io)
+  - Contact our [sales team ](https://www.autopi.io/contact/)
+  - Get help from our [support team ](https://www.autopi.io/support/)
