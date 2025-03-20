@@ -2,6 +2,7 @@
 id: rfid-integartion
 title: RFID Reader Integration
 ---
+import CardGrid from "/components/CardGrid";
 
 This is a short guide about how you can integrate an RFID reader with your [AutoPi](https://www.autopi.io) device.
 
@@ -62,3 +63,13 @@ will try to apply the settings again and they should be applied on the retry.
 Once you've setup your RFID reader, you can start using it with chips or cards. The device will report events whenever
 an RFID chip/card was held close to the reader and will also report authorized or rejected events based on the
 Authorized Tokens setting we discussed above. You can view those events [here](/cloud/device_management/events/system.md#rfid-events).
+
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

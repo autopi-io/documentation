@@ -2,7 +2,7 @@
 id: setting-up-doip
 title: Setting up DoIP
 ---
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import useBaseUrl from '@docusaurus/useBaseUrl'; import CardGrid from "/components/CardGrid" ;
 
 :::caution Before proceeding with the install
 The DoIP solution described here only works with the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) and newer editions.
@@ -58,3 +58,13 @@ From the AutoPi Core software, it is possible to control the pinout variant to b
 ## Using the DoIP software
 
 The AutoPi DoIP integration is based on the [udsoncan library](https://github.com/autopi-io/py-udsoncan). The integration implements all the services and helper classes from the [library](https://udsoncan.readthedocs.io/en/latest/) and thereby also support UDS. 
+
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

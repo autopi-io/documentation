@@ -2,6 +2,7 @@
 id: autopi-logs
 title: AutoPi Logs
 ---
+import CardGrid from "/components/CardGrid";
 
 In this guide we will talk about how you can manage your AutoPi's logs. The topics that we will
 cover are how you can view your device's logs and how you can download the log files to your
@@ -162,3 +163,12 @@ By default, the syslog file is being rotated every day. Also by default, there w
 versions of the log file that will be kept on the SD card before being removed. You can double check
 those defaults if you read the `/etc/logrotate.d/rsyslog` file which has those definitions.
 
+
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

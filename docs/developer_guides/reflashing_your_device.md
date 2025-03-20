@@ -24,14 +24,9 @@ The process for reflashing an [AutoPi](https://www.autopi.io) device differs a l
 
 ### 1. Download the [AutoPi](https://www.autopi.io) OS Image
 
-Make sure that you select the right image for your device. You can check what version your device is by finding `board version` in
-settings:
-
-![settings button location](/img/getting_started/developer_guides/reflashing_your_device/settings_button_location.jpg)
-
-Once there, find the board version.
-
-![board version](/img/getting_started/developer_guides/reflashing_your_device/board_version.jpg)
+:::warning
+Make sure that you select **the correct image** for your device. You can check what version your device is by finding `Board Version` under Device -> Overview -> Device Specifications -> Board Version.
+:::
 
 Once you have the board version, see which image you need from the table below and download it.
 

@@ -2,6 +2,7 @@
 id: configuring-mqtt
 title: Configuring MQTT
 ---
+import CardGrid from "/components/CardGrid" ;
 
 ## Contents
 This guide covers configuring a basic MQTT broker on your Linux server, as well as configuring an [AutoPi](https://www.autopi.io) device to use MQTT as a data returner. 
@@ -157,3 +158,13 @@ If everything is working correctly, you should be receiving data on your broker 
 
 ![final_expected_result](/img/getting_started/developer_guides/configuring_MQTT/final_result.png)
 
+
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

@@ -2,6 +2,7 @@
 id: jumpers
 title: Jumpers
 ---
+import CardGrid from "/components/CardGrid";
 
 Jumpers are a very small devices which are used to jump the electrical current from one pin to
 another. In this guide, we will talk about jumpers. More specifically, we'll talk about what they
@@ -28,6 +29,12 @@ To see how you can attach a jumper to your specific device view the following pa
 * [Generation 2 devices](/hardware/legacy_devices/autopi_dongle/#jumper)
 * [Generation 3 devices](/hardware/legacy_devices/autopi_dongle_gen3/#jumper)
 
-:::note
-In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
-:::
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

@@ -2,6 +2,7 @@
 id: setting-up-a-device-with-verizon-wireless
 title: Setting Up a Device with Verizon Wireless
 ---
+import CardGrid from "/components/CardGrid";
 
 We have had serveral different users report issues with setting up the 4G Dongle on Verizon Wireless.
 
@@ -16,3 +17,12 @@ This is a verified method of setting it up:
 
 This should be all.
 
+
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

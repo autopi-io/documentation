@@ -2,6 +2,7 @@
 id: remotely-waking-up-your-device
 title: Remotely Waking up Your Device
 ---
+import CardGrid from "/components/CardGrid";
 
 When your vehicle is parked and ignition is off, your device will go to sleep to save power. But if you are working on a project remotely and want to access your device, its possible to wake up your device from sleep.
 
@@ -28,3 +29,13 @@ ec2x.query 'AT+CMGD=1,4'
 
 **Please note:** *Remotely waking up the device is not possible if your device is in hibernation/deep sleep. This will happen if your battery is in poor condition and voltage drops below 12.2V. This is a precausive measure, to ensure that the [AutoPi](https://www.autopi.io) will never drain your battery.*
 
+
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
