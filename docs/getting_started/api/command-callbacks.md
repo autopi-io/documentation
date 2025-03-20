@@ -2,6 +2,7 @@
 id: command-webhook-callbacks
 title: Command Webhook Callbacks
 ---
+import CardGrid from "/components/CardGrid";
 
 It is possible to get notified via webhook when a command completes on a device.
 
@@ -139,3 +140,14 @@ The response will look different based on what command was executed.
 
 If you execute a module, the response will look like the above, but if you instead trigger a state run, like if you use want to sync the pending changes to the device `state.sls pending`, then the response will include the whole result of the pending states that was executed.
 :::
+
+
+
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

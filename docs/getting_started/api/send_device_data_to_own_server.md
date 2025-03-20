@@ -2,6 +2,7 @@
 id: send-device-data-to-own-server
 title: Send Device Data to Own Server
 ---
+import CardGrid from "/components/CardGrid";
 
 In this guide we will explore how you can setup your own server that accepts data from your [AutoPi](https://www.autopi.io) device. We won't get in too many
 details, but we will explore the very basics that are needed, namely:
@@ -336,3 +337,12 @@ Note that there are some events that do send out some data along, for example:
     // ...
 ]
 ```
+
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

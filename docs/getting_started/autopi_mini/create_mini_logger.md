@@ -2,6 +2,7 @@
 id: create-mini-loggers
 title: Create Loggers
 ---
+import CardGrid from "/components/CardGrid";
 
 Compared to other [AutoPi](https://www.autopi.io) devices, the [Mini](https://www.autopi.io/hardware/autopi-mini) only supports a predefined list of PID and CAN loggers (It also support listening on some system [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) system changes, like the current sleep condition).
 
@@ -40,6 +41,11 @@ As an example, when selecting `Ranges Both` contains a range start and range end
 Once you save the [Mini](https://www.autopi.io/hardware/autopi-mini) Logger, you will see it appear in the Loggers page.
 Once the settings have ben synchronized to your device, your device will start sending the newly created logger.
 
-:::note
-In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
-:::
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

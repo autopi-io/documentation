@@ -3,6 +3,7 @@ id: 4g-internet-setup-troubleshooting
 title: 4G Internet Setup Troubleshooting
 description: Facing issues connecting to the internet? 
 ---
+import CardGrid from "/components/CardGrid"
 
 You are experiencing issues connecting to the internet, when connected to the WiFi hotspot on the [AutoPi](https://www.autopi.io) Dongle. These instructions help you step-by-step to identify and resolve common problems related to SIM card setup, modem recognition, and network configurations. By following these guidelines, you can ensure a stable 4G internet connection for your AutoPi device. 
 
@@ -159,3 +160,11 @@ You can also check the connection to the [AutoPi](https://www.autopi.io) [Cloud]
 
 
 
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
