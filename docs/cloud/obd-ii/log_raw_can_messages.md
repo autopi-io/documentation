@@ -2,6 +2,7 @@
 id: log-raw-can-messages
 title: Log Raw CAN Messages
 ---
+import CardGrid from "/components/CardGrid";
 
 It is possible to listen for raw [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) data on the OBD port. There are a couple of
 ways that this can be accomplished - a slower python implementation and a faster, C implementation.
@@ -82,3 +83,15 @@ be of type [CAN](https://www.autopi.io/hardware/autopi-canfd-pro). There are a f
 
 2. [How to import custom DBC files](/cloud/obd_library/car-explorer-library-manual/#importing-library-items-from-files)
 
+
+<br>
+</br>
+
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

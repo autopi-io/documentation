@@ -2,6 +2,7 @@
 id: car-explorer-library-manual
 title: My Library
 ---
+import CardGrid from "/components/CardGrid";
 
 In this page we go through the Library section of our Cloud. Below is a screenshot of an example
 Library that is already filled with some PIDs and [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages. Open the screenshot in a
@@ -374,3 +375,16 @@ Edit the description field of the signal and click Save. You can also associate 
 with a vehicle [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus. You should see the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal update with the new description:
 
 ![ABS Malfunction example](/img/cloud/obd_library/library/abs_malfunction_example.png)
+
+
+<br>
+</br>
+
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

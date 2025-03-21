@@ -2,6 +2,7 @@
 id: using-the-can-bus-commands
 title: Using the CAN Bus Commands
 ---
+import CardGrid from "/components/CardGrid";
 
 :::caution
 Working with the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus is on your own risk. Playback and sending commands to the vehicle can be
@@ -10,7 +11,6 @@ you NEVER do testing on a vehicle in motion and that you have the parking brake 
 test.
 :::
 
-Hello everyone!
 
 In this guide, we will explore how you can communicate and interact with your vehicle's [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus.
 Typically, there are two types of [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) busses.
@@ -248,6 +248,14 @@ for.
 6. When you have found your command you can always resend it by using the `obd.send` command
 described above.
 
-:::note
-In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
-:::
+<br>
+</br>
+
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

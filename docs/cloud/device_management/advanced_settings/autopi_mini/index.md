@@ -4,6 +4,8 @@ title: Introduction
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CardGrid from "/components/CardGrid";
+
 
 
 The configuration settings controls the behaviour of the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) device.
@@ -58,3 +60,15 @@ If your device cannot automatically detect the VIN, you can enter it manually in
 If you have an ICE vehicle, select Power Voltage or Engine RPM as the ignition detection method.
 If you have an EV, select Accelerometer for ignition detection.
 :::
+
+
+<br>
+</br>
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

@@ -2,6 +2,7 @@
 id: templates
 title: Templates
 ---
+import CardGrid from "/components/CardGrid";
 
 The template functionality makes it possible for a user to manage the configuration of a range of devices by 
 setting up a template with the required functionality, and then applying that to a number of devices.
@@ -89,3 +90,15 @@ To use the templates, the common usage is the following.
 :::tip
 To ensure reproducible behavior, please make sure to keep the configuration on each device as "clean" as possible, as that will make it easier to manage, and try to keep manual changes to devices with a template applied, as few as possible to avoid any colissions between the changes made manual and the changes from the template.
 :::
+
+
+<br>
+</br>
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

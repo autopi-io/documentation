@@ -2,6 +2,7 @@
 id: core-services-intro
 title: Introduction
 ---
+import CardGrid from "/components/CardGrid";
 
 A variety of services are running on the device, each having its own specific area of responsibility. Most services are built around the same structure and using the same concepts which are described below.
 
@@ -57,8 +58,21 @@ Each step in a workflow has a defined area of responsibility:
 
 ## Reactors
 
-_Coming soon..._
+
 
 ## Hooks
 
-_Coming soon..._
+
+
+<br>
+</br>
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

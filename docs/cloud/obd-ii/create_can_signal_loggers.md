@@ -2,6 +2,7 @@
 id: create-can-signal-loggers
 title: Create CAN Signal Loggers
 ---
+import CardGrid from "/components/CardGrid";
 
 # Create [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Signal Loggers
 
@@ -50,3 +51,16 @@ Confirmation: You should receive a confirmation that your logger has been create
 Congratulations! You have now created a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal logger.
 
 This process allows you to monitor and record data from specific [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals on your vehicle, providing valuable insights into its operation. Unlike working with PIDs, which often require working through a vehicle's OBD-II interface and are limited to predefined parameters, logging [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals gives you access to a broader range of data directly from the vehicle's internal networks. This approach can unveil more detailed information and support advanced diagnostics and customization projects.
+
+
+<br>
+</br>
+
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

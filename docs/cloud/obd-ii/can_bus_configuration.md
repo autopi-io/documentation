@@ -2,6 +2,7 @@
 id: can-bus-configuration
 title: CAN Bus Configuration
 ---
+import CardGrid from "/components/CardGrid";
 
 This page describes what to do if you've tried autodetecting the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus, and this has not worked.
 To be more exact, we'll reiterate on how to use the auto-detect feature, how the feature works and
@@ -142,7 +143,7 @@ using the just found configuration.
 1. The backend uses this to create a bus for the device's currently assigned vehicle, creates OBD-II 
 PIDs in your library and adds the most common ones to the bus
 
-### Protcol Autodetection Flow
+### Protocol Autodetection Flow
 When autodetection is invoked, it will first try to find the correct interface and baudrate, then the 
 set of supported PIDs. To find the interface and baudrate, the device goes through the following flow:
 1. Destroy the current connection if one exists
@@ -232,3 +233,16 @@ values:
 
 <!-- ## Stage 5: Acceptance; AKA: Giving Up
 The notion of "giving up" often carries a negative connotation, frequently associated with failure, defeat, or a lack of willpower. However, there's an underrated glory in giving up when it leads to a reevaluation of priorities, the lifting of unnecessary burdens, or the freeing up of energy and resources for more meaningful pursuits. Sometimes, giving up is a courageous act of self-awareness, acknowledging that a path we've started down isn't serving us—or anyone else—well. In such cases, the decision to step back can lead to new opportunities, renewed focus, and the kind of growth that stubborn persistence might never have afforded us. -->
+
+
+<br>
+</br>
+
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

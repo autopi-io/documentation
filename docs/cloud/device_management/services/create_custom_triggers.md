@@ -2,6 +2,7 @@
 id: create-custom-triggers
 title: Create Custom Triggers
 ---
+import CardGrid from "/components/CardGrid";
 
 In this guide we will explore how you can create a custom trigger for your [AutoPi](https://www.autopi.io) service. The
 example that we will look at is a trigger that will play a beeping sound when the vehicle's speed
@@ -135,6 +136,14 @@ the [AutoPi](https://www.autopi.io) will fire an event internally instead of pla
 be used in the **event_reactor** service to perform other actions. Also, the event will be uploaded
 to the [Cloud](https://www.autopi.io/software-platform/cloud-management) and be visible from **Device** > **Events**.
 
-:::note
-In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
-:::
+<br>
+</br>
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
+

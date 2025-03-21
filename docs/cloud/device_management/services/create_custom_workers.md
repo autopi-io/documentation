@@ -2,6 +2,7 @@
 id: create-custom-workers
 title: Create Custom Workers
 ---
+import CardGrid from "/components/CardGrid";
 
 In this guide we are going to take a look at how to create workers for any service that is
 available, be it a default service like the OBD manager or a custom one that you've made for
@@ -170,6 +171,13 @@ set amount of times. Workflows within the worker can be set up so that the desir
 reached without having to write complicated custom code. Use them to your advantage whenever you
 want to communicate something with the hardware components of the [AutoPi](https://www.autopi.io) or with your car directly.
 
-:::note
-In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
-:::
+<br>
+</br>
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

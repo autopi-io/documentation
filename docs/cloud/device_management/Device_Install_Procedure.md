@@ -2,8 +2,9 @@
 id: device-install-procedure
 title: Device Install Procedure 
 ---
+import CardGrid from "/components/CardGrid";
 
-This is a detailed description of how to infleet new devices to any fleet, how to pair devices to vehicles and how to assigne devices to templates. 
+This is a detailed description of how to infleet new devices to any fleet, how to pair devices to vehicles and how to assign devices to templates. 
 
 ## Procedure for Pairing a Device and Vehicle. 
 In this section we will go over the process of a device with either an existing vehicle or creating a new vehicle. 
@@ -130,3 +131,15 @@ The Pending sync will automatically be applied the next time it starts or when m
 3.	Pair the device with the newly created vehicle or from the list of unassigned vehicles.  
 4.	Make sure the device is updated.
 5.	Make sure the has no changes waiting to be synced. 
+
+<br>
+</br>
+
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

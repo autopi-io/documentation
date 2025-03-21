@@ -2,6 +2,7 @@
 id: a-guide-to-triggers
 title: A Guide to Triggers
 ---
+import CardGrid from "/components/CardGrid";
 
 This guide will be introducing and explaining how to use, create and edit triggers with your device. 
 Triggers empower you to receive notifications based on events from your device, as well as the various data points logged from your vehicle. 
@@ -241,3 +242,13 @@ Payload: optional and custom based on the IFTTT applet.
 Like any [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) functionality, triggers can be managed programmatically through the [AutoPi](https://www.autopi.io) REST API. For more information see: [API Documentation](https://api.autopi.io/#automation)
 :::
 
+<br>
+</br>
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

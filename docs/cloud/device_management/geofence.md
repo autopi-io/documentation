@@ -2,6 +2,7 @@
 id: geofences
 title: Geofences
 ---
+import CardGrid from "/components/CardGrid";
 
 Geofences allow you to define a specific are on a map where you want to be notified when a vehicle enters or exits. The way this works is that you visually define an area in the geofence editor, which can be either a polygon shape, or a point with a radius.
 
@@ -21,3 +22,14 @@ This means that you are able to both create triggers in the [Cloud](https://www.
 :::note
 [Click here](/cloud/device_management/triggers/a_guide_to_triggers.md) to see the guide about how triggers work. 
 :::
+
+<br>
+</br>
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

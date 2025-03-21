@@ -4,6 +4,7 @@ title: Jobs
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CardGrid from "/components/CardGrid";
 
 Jobs can be scheduled to execute [commands](/core/commands/index.md) on the device and are
 configured from the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management). The command results can then be uploaded to the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) or
@@ -21,3 +22,14 @@ Job execution is scheduled with standard _cron_ expressions for the ease of use 
 Like any [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) functionality, jobs can be managed programmatically through the [AutoPi](https://www.autopi.io) REST
 API. For more information see: https://api.autopi.io/#dongle
 :::
+
+<br>
+</br>
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

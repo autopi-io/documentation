@@ -2,8 +2,7 @@
 id: move-to-dedicated-environment
 title: Move Device to a Dedicated Environment
 ---
-
-Hello everyone!
+import CardGrid from "/components/CardGrid";
 
 In this short guide we will talk about how you can move your device from the default production
 environment to your dedicated environment provided by [AutoPi](https://www.autopi.io). Unfortunately, this process moves
@@ -84,6 +83,13 @@ To make sure that the device has all the right configuration applied (They might
 
 You should now be able to make configuration changes, execute commands and so on.
 
-:::note
-In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
-:::
+<br>
+</br>
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

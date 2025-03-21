@@ -2,6 +2,7 @@
 id: adding-a-new-widget-from-scratch
 title: Adding a New Widget from Scratch
 ---
+import CardGrid from "/components/CardGrid";
 
 You can easily tie data directly from your vehicle to the dashboard. This guide will go
 over the steps of adding a new widget based on data you discovered from your OBD library. Widgets
@@ -67,3 +68,13 @@ logger.
 
 With these three steps you should be able to visualize all data from your vehicle. 
 
+<br>
+</br>
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

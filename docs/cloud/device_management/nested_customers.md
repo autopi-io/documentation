@@ -2,6 +2,7 @@
 id: nested-customers
 title: Nested Customers
 ---
+import CardGrid from "/components/CardGrid";
 
 The account section allows an account administrator to manage nested customers, 
 which makes it possible to create an isolated account, assign devices and users 
@@ -67,6 +68,13 @@ All interaction with this happens in the `Account` page.
 
 You should now have a nested customer with some devices associated, and a user.
 
-:::tip
-Contact sales@autopi.io to get more information.
-:::
+<br>
+</br>
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

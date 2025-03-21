@@ -2,6 +2,7 @@
 id: accounts
 title: Accounts
 ---
+import CardGrid from "/components/CardGrid";
 
 Welcome to the Accounts guide! This documentation is here to help you easily set up and manage your platform. Whether you’re creating a new customer, adding user accounts, or managing your fleet, we’ll walk you through the process step-by-step. You’ll also learn how to assign the right permissions to each user — making sure everyone gets access to exactly what they need (and nothing they don’t). By the end, you’ll have a fully organized setup that keeps your operations running smoothly and securely. 
 
@@ -139,3 +140,15 @@ account can be seen here and you can also register a new device. You also have a
         - Assign users to locations — make sure they only see the data they need.
         - Keep control — users under a Nested Customer won’t see data from the higher levels.
 :::
+
+<br>
+</br>
+
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

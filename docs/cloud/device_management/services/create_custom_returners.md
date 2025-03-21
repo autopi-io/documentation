@@ -2,6 +2,7 @@
 id: create-custom-returners
 title: Create Custom Returners
 ---
+import CardGrid from "/components/CardGrid";
 
 In this guide we redirect accelerometer data to a file on disk, but the functionality is general,
 and the procedure can also be used for OBD data, GPS data and others.
@@ -33,6 +34,13 @@ command:
 
 `tail -f /tmp/returner_data.txt`
 
-:::note
-In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
-:::
+<br>
+</br>
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

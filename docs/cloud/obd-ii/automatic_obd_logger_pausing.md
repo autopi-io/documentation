@@ -2,6 +2,7 @@
 id: automatic-obd-logger-pausing
 title: Automatic OBD Logger Pausing
 ---
+import CardGrid from "/components/CardGrid";
 
 Automatic OBD Logger Pausing is a feature that enables the [AutoPi](https://www.autopi.io) device to automatically pause any OBD loggers when it
 detects that the vehicle has stopped shaking (which also likely means that the vehicle has stopped moving). This
@@ -66,3 +67,14 @@ For this reason, we have made it possible for you to change and fine-tune the wa
 triggered. You can find the fine-tuning settings in the advanced settings of your device under Accelerometer > Motion
 Events. We suggest that you focus primarily on the Debounce Delay and Shake settings, because the
 `vehicle/motion/jolting` event is not used to reactivate the OBD loggers - only the `vehicle/motion/shaking` event is.
+
+<br>
+</br>
+### Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>

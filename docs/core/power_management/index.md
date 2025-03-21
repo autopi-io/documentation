@@ -2,6 +2,7 @@
 id: core-power-intro
 title: Introduction
 ---
+import CardGrid from "/components/CardGrid";
 
 :::tip
 For power cycle, LED and button information on the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4), please see [configuration here](/hardware/autopi_tmu_cm4/led_and_button.mdx)
@@ -138,3 +139,16 @@ The green LED indicates the current state of the [high-level](/core/power_manage
 | Turned off | Not running or in the process of booting up. |
 | Flashing brightly | Up and running but NOT (yet) connected to the [Cloud](https://www.autopi.io/software-platform/cloud-management). |
 | Constantly bright | Up and running and connected to the [Cloud](https://www.autopi.io/software-platform/cloud-management). |
+
+<br>
+</br>
+
+## Let's keep in touch!
+Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
+<CardGrid home>
+
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
+[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
+
+</CardGrid>
