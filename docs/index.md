@@ -56,6 +56,8 @@ good starting point for you is our [Getting started guide](/getting_started/auto
 
 [![](/img/hardware/autopi_canfd_pro/canfd_pro_trans.png) **AutoPi CAN-FD Pro** Based on Raspberry Pi Compute Module 4. Our most powerful device to date, designed for full speed automotive datalogging of dual CAN-FD channels. See price.](https://shop.autopi.io/products/autopi-can-fd-pro)
 
+[![](/img/shared/autopi_devices_trans.png) **Comparison of all AutoPi devices** Compare our devices and find the best fit for your requirements.](https://www.autopi.io/hardware/compare/)
+
 </CardGrid>
 
 
