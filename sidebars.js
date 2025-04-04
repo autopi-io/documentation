@@ -13,6 +13,15 @@ module.exports = {
           "type": "category"
         },
         {
+            "items": [
+              "getting_started/autopi_canfd_pro/pro-guides-intro",
+              "getting_started/autopi_canfd_pro/how_to_connect_to_tailscale",
+              "getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi",
+            ],
+            "label": "AutoPi CAN-FD Pro",
+            "type": "category"
+        },
+        {
           "items": [
             "getting_started/autopi_mini/mini-guides-intro",
             "getting_started/autopi_mini/create-mini-loggers",
@@ -358,12 +367,21 @@ module.exports = {
         },
         {
           "items": [
+            "hardware/autopi_canfd_pro/autopi-pro-intro",
+            "hardware/autopi_canfd_pro/device_specifications",
+            "hardware/autopi_canfd_pro/device_dimensions"
+          ],
+          "label": "AutoPi CAN-FD Pro",
+          "type": "category"
+        },
+        {
+          "items": [
             "hardware/autopi_mini/autopi-mini-intro",
             "hardware/autopi_mini/device_specifications"
           ],
           "label": "AutoPi Mini",
           "type": "category"
-        },        
+        },
         {
           "items": [
             {
