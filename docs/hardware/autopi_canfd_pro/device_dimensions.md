@@ -9,7 +9,13 @@ Wondering if the [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-
 ### Device dimensions
 See the pictures below for exact measurements: 
 
+<p align="center">
+<img src="/img/hardware/autopi_canfd_pro/canfd_pro_measurements.png" alt="AutoPi CAN-FD Pro" width="60%" />
+</p>
 
+<p align="center">
+<img src="/img/hardware/autopi_canfd_pro/canfd_pro_mounting_holes.png" alt="AutoPi CAN-FD Pro" width="60%" />
+</p>
 
 ### Need more flexibility?
 If you need extra reach or want to place the device somewhere more convenient, we’ve got two handy accessories for you:
@@ -17,7 +23,8 @@ If you need extra reach or want to place the device somewhere more convenient, w
 1. [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable) – Perfect for extending the reach of your device. 
 2. [Dual Lock Extreme Velcro](https://shop.autopi.io/products/dual-lock-extreme-velcro) – For secure, vibration-resistant mounting anywhere you need it. 
 
-
+<br>
+</br>
 Want to dive deeper into setup details? Check out these guides:
 * OBD Connector Pinout: 
 * Mounting holes for using mounts in the vehicle: 
@@ -29,7 +36,9 @@ Want to dive deeper into setup details? Check out these guides:
 Thank you for choosing AutoPi. We're excited to see what you will achieve with your [AutoPi](https://www.autopi.io/) [CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro).
 
 <CardGrid home>
+
 [![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
 [![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
 
 </CardGrid>

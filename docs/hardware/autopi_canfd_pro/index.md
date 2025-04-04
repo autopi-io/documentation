@@ -4,8 +4,12 @@ title: Introduction
 ---
 import CardGrid from "/components/CardGrid"; 
 
-Our most powerful device to date, designed for full speed automotive datalogging of dual CAN-FD channels. The device comes with 32Gb storage, which is extendable with a flashdrive. With a built-in 4G/LTE modem, the device can securely push data to your cloud solution. The device is build on the Raspberry Pi Compute Module. **Software is 100% free and included**, no subscriptions. Use AutoPi Cloud for device management, device diagnostics and device Over-The-Air configuration and updates. 
-![CAN-FD Pro](/img/hardware/autopi_canfd_pro/canfd_pro_trans.png)
+Our most powerful device to date, designed for full speed automotive datalogging of dual CAN-FD channels. The device comes with 32Gb storage, which is extendable with a flashdrive. With a built-in 4G/LTE modem, the device can securely push data to your cloud solution. The device is build on the Raspberry Pi Compute Module. 
+
+<p align="center">
+<img src="/img/hardware/autopi_canfd_pro/canfd_pro_trans.png" alt="AutoPi CAN-FD Pro" width="60%" />
+</p>
+
 
 ### Key benefits
 * 4G/LTE with global coverage: The integrated modem with worldwide coverage.
@@ -34,23 +38,30 @@ Want all details in one place? Download the official datasheet here: [AutoPi CAN
 ### Get the most of your free access to [my.autopi.io](https://my.autopi.io/#/login)
 
 Our advanced device and vehicle management platform lets you control all aspects of your devices. Use our device management platform to deploy advanced software configurations to the edge devices or to record large amounts of data from the vehicle CAN bus. Configure data endpoints, CAN bus loggers and DBC file conversion. Check the status of your current remote CAN Bus data logging session to verify status. All from a single interface.
-![Device setup](/img/cloud/intro/cloud_device_setups_scaled.png)
+
+<p align="center">
+<img src="/img/cloud/intro/cloud_device_setups_scaled.png" alt="Cloud device setup" width="60%" />
+</p>
+
 
 ### Useful links
-
-
+* [Getting started](https://docs.autopi.io/getting_started/autopi_canfd_pro/) - What to do after you receive your device. 
+* [Device Dimensions](https://docs.autopi.io/hardware/autopi_canfd_pro/device_dimensions/) – Ensure the perfect fit for your setup.
+* [Technical Specifications](https://docs.autopi.io/hardware/autopi_canfd_pro/device_specifications/) – Dive into the performance details.
+* LED and Button States – Understand device behavior at a glance.
+* OBD Connector Pinout – Get to know the connection layout.
+* Mounting Holes Guide – Explore mounting options for easy installation.
 * Accessories:
-  
   * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – Add extra reach for flexible placement.
   * [Dual Lock Extreme Velcro Strip](https://shop.autopi.io/products/dual-lock-extreme-velcro) – Secure, vibration-resistant mounting anywhere.
-  * [Global SIM card solution](https://shop.autopi.io/products/global-sim-card-solution)
-  * [DoIP HAT](https://shop.autopi.io/products/doip-hat-v1-3)  
-  * [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable?pr_prod_strat=jac&pr_rec_id=17052e989&pr_rec_pid=8619774050653&pr_ref_pid=8609919074653&pr_seq=uniform)
-  * [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform)
-  * [Tesla OBD-II Adapter Cable for Model 3 and Y](https://shop.autopi.io/products/tesla-obd2-adapter-cable-for-model-3-and-y)
-  * [CAN Bus Testing/Loop Cable](https://shop.autopi.io/products/can-bus-testing-cable)
-  * [Micro USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable)
-  * [OBD-II to dual DB9](https://shop.autopi.io/products/obd2-to-dual-db9)
+  * [Global SIM card solution](https://shop.autopi.io/products/global-sim-card-solution) - Our Global SIM card solution works in 188 countries, providing you with reliable and seamless connectivity wherever your solution is based.
+  * [DoIP HAT](https://shop.autopi.io/products/doip-hat-v1-3) - The DoIP HAT is a highly advanced interface module designed to enhance vehicle diagnostics using the DoIP protocol (Diagnostics over Internet Protocol). 
+  * [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable?pr_prod_strat=jac&pr_rec_id=17052e989&pr_rec_pid=8619774050653&pr_ref_pid=8609919074653&pr_seq=uniform) - Power the AutoPi CAN-FD Pro device with any 12-24 volt DC power supply.
+  * [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform) - Use this Y-splitter cable if you need to connect an additional OBD-II device at the same time as your AutoPi CAN-FD Pro.
+  * [Tesla OBD-II Adapter Cable for Model 3 and Y](https://shop.autopi.io/products/tesla-obd2-adapter-cable-for-model-3-and-y) - Add an OBD-II port to your Tesla Model 3 or Model Y with this adapter cable.
+  * [CAN Bus Testing/Loop Cable](https://shop.autopi.io/products/can-bus-testing-cable) - The CAN Bus Testing Cable is a cable designed for internal communication testing between two CAN bus systems.
+  * [Micro USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable) - This Micro USB to USB-A adapter cable is made to fit perfectly with the external Micro USB port on the AutoPi CAN-FD Pro device.
+  * [OBD-II to dual DB9](https://shop.autopi.io/products/obd2-to-dual-db9) - Connect two CAN bus nodes to the OBD2 port of the AutoPi CAN-FD Pro.
   * [IP67 Aluminum Casing version of the CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro-ip67-casing) – Built tough for rugged environments.
 
 
@@ -60,7 +71,9 @@ Our advanced device and vehicle management platform lets you control all aspects
 Thank you for choosing AutoPi. We're excited to see what you will achieve with your [AutoPi](https://www.autopi.io/) [CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro).
 
 <CardGrid home>
+
 [![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+
 [![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
 
 </CardGrid>

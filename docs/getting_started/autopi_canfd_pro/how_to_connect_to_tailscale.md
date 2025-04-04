@@ -9,7 +9,16 @@ import CardGrid from "/components/CardGrid" ;
 
 Tailscale makes creating software-defined networks easy: securely connecting users, services, and devices. Your [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) has already [Tailscale](https://tailscale.com/) installed, however it is not active just yet. You have full control over this! If you want to connect to Tailscale on your device follow this guide.
 
-You can also use this video for [Tailscale quickstart](https://youtu.be/sPdvyR7bLqI).
+You can also use this video for [**Tailscale quickstart video guide**](https://youtu.be/sPdvyR7bLqI).
+
+### Enable Tailscale on your device
+Steps to enable Tailscale on your device: 
+* Navigate to Devices section on [Autopi cloud](https://my.autopi.io/).
+* Click the device you want to enable Tailscale on.
+* Go to advanced settings -> Tailscale. 
+* Fill out the Auth key and enable Tailscale.
+
+![Tailscale add-on](/img/getting_started/getting_started/tailscale_addon.png)
 
 ### 1. Create a tailnet
 Go to [tailscale.com](https://tailscale.com/) and select Get Started. Alternatively, you can download and install the Tailscale client on your device, then sign up.
@@ -34,7 +43,9 @@ There are few ways on how to open tailscale on your computer:
 * Run up command with auth key: 
 ` cmd.run 'tailscale up --authkey=tskey-KEYKEY-KEYKEYKEYKEY'` 
 
-note: make sure you use the key that was generated in the first point of this section and replace it accordingly in the command with your auth key.
+:::note
+Make sure you use the key that was generated in the first point of this section and replace it accordingly in the command with your auth key.
+:::
 
 
 ### 5. Confirm connection 
@@ -65,12 +76,10 @@ To disconnect from Tailscale:
 * In CLI, run:
 ` tailscale down `
 
-
-That's it! Your [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) is now connected to [Tailscale](https://tailscale.com/). Enjoy secure and remote access to your [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro).
-
-
 <br>
 </br>
+That's it! Your [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) is now connected to [Tailscale](https://tailscale.com/). Enjoy secure and remote access to your [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro).
+
 
 ## Let's keep in touch!
 Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
