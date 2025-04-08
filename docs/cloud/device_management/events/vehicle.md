@@ -46,15 +46,15 @@ These events are calculated from the voltage level measured via the OBD-II conne
 
 | Tag | Description | Fields |
 | ------ | ------ | ------ |
-| `vehicle/bus/<can0|can1|...>/logger/<logger_name>/writing` | The logger is starting to write raw CAN frames to an output file. | `file` |
-| `vehicle/bus/<can0|can1|...>/logger/<logger_name>/rollover` | The logger is performing rollover of the output file. | `source_file`, `destination_file` |
-| `vehicle/bus/<can0|can1|...>/logger/<logger_name>/decoder/<decoder_name>/reading` | The decoder is starting to read raw CAN frames from an input file. | `file` |
-| `vehicle/bus/<can0|can1|...>/logger/<logger_name>/decoder/<decoder_name>/writing` | The decoder is starting to write decoded data to an output file. | `file` |
-| `vehicle/bus/<can0|can1|...>/logger/<logger_name>/decoder/<decoder_name>/rollover` | The decoder is performing rollover of the output file.. | `source_file`, `destination_file` |
-| `vehicle/bus/<can0|can1|...>/logger/<logger_name>/s3_sync/started` | An AWS S3 sync job has started. | - |
-| `vehicle/bus/<can0|can1|...>/logger/<logger_name>/s3_sync/completed` | An AWS S3 sync job has has finished with success. | `uploaded_files` |
-| `vehicle/bus/<can0|can1|...>/logger/<logger_name>/s3_sync/timeout` | An AWS S3 sync job has timed out. | - |
-| `vehicle/bus/<can0|can1|...>/logger/<logger_name>/s3_sync/failed` | An AWS S3 sync job has finished with errors. | `errors`, `uploaded_files` |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/writing` | The logger is starting to write raw CAN frames to an output file. | `file` |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/rollover` | The logger is performing rollover of the output file. | `source_file`, `destination_file` |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/decoder/<decoder_name>/reading` | The decoder is starting to read raw CAN frames from an input file. | `file` |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/decoder/<decoder_name>/writing` | The decoder is starting to write decoded data to an output file. | `file` |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/decoder/<decoder_name>/rollover` | The decoder is performing rollover of the output file.. | `source_file`, `destination_file` |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/s3_sync/started` | An AWS S3 sync job has started. | - |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/s3_sync/completed` | An AWS S3 sync job has has finished with success. | `uploaded_files` |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/s3_sync/timeout` | An AWS S3 sync job has timed out. | - |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/s3_sync/failed` | An AWS S3 sync job has finished with errors. | `errors`, `uploaded_files` |
 
 **FIELD DEFINITIONS**
 
