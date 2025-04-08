@@ -52,7 +52,7 @@ These events are calculated from the voltage level measured via the OBD-II conne
 | `vehicle/bus/<can0\|can1\|...>/logger/<logger_name>/decoder/<decoder_name>/writing` | The decoder is starting to write decoded data to an output file. | `file` |
 | `vehicle/bus/<can0\|can1\|...>/logger/<logger_name>/decoder/<decoder_name>/rollover` | The decoder is performing rollover of the output file.. | `source_file`, `destination_file` |
 | `vehicle/bus/<can0\|can1\|...>/logger/<logger_name>/s3_sync/started` | An AWS S3 sync job has started. | - |
-| `vehicle/bus/<can0\|can1\|...>/logger/<logger_name>/s3_sync/completed` | An AWS S3 sync job has has finished with success. | `uploaded_files` |
+| `vehicle/bus/<can0\|can1\|...>/logger/<logger_name>/s3_sync/completed` | An AWS S3 sync job has finished with success. | `uploaded_files` |
 | `vehicle/bus/<can0\|can1\|...>/logger/<logger_name>/s3_sync/timeout` | An AWS S3 sync job has timed out. | - |
 | `vehicle/bus/<can0\|can1\|...>/logger/<logger_name>/s3_sync/failed` | An AWS S3 sync job has finished with errors. | `errors`, `uploaded_files` |
 
