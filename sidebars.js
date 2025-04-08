@@ -15,8 +15,11 @@ module.exports = {
         {
             "items": [
               "getting_started/autopi_canfd_pro/pro-guides-intro",
+              "getting_started/autopi_canfd_pro/pro-user-guide",
               "getting_started/autopi_canfd_pro/how_to_connect_to_tailscale",
               "getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi",
+              "getting_started/autopi_canfd_pro/pro-data-troubleshooting",
+              "getting_started/autopi_canfd_pro/pro-4g-internet-setup-troubleshooting",
             ],
             "label": "AutoPi CAN-FD Pro",
             "type": "category"
@@ -369,9 +372,19 @@ module.exports = {
           "items": [
             "hardware/autopi_canfd_pro/autopi-pro-intro",
             "hardware/autopi_canfd_pro/device_specifications",
-            "hardware/autopi_canfd_pro/device_dimensions"
+            "hardware/autopi_canfd_pro/device_dimensions",
+            "hardware/autopi_canfd_pro/pro-led-and-button",
+            "hardware/autopi_canfd_pro/mounting_options",
+            "hardware/autopi_canfd_pro/pro-obd-connector-pinout",
           ],
           "label": "AutoPi CAN-FD Pro",
+          "type": "category"
+        },
+        {
+          "items": [
+            "hardware/autopi_canfd_pro_casing/autopi-pro-casing-intro",
+          ],
+          "label": "AutoPi CAN-FD Pro + IP67 casing",
           "type": "category"
         },
         {
@@ -428,7 +441,7 @@ module.exports = {
                 "hardware/autopi_tmu_socketcan/device_dimensions",
                 "hardware/autopi_tmu_socketcan/installing_external_antennas",
                 "hardware/autopi_tmu_socketcan/mounting_holes",
-                "hardware/autopi_tmu_socketcan/obd-connector-pinout"
+                "hardware/autopi_tmu_socketcan/obd-connector-pinout",
               ],
               "label": "Socket CAN",
               "type": "category"
