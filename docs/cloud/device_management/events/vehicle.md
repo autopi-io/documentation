@@ -23,6 +23,23 @@ These events are calculated from the voltage level measured via the OBD-II conne
 | `reason` | Text | The explanatory cause for the event. | - |
 | `level` | Number | Battery level as a percentage. | 90 |
 
+## Battery Nominal Voltage Events
+
+**NOTE**: These events are only available for the Pro edition.
+
+| Tag | Description | Fields |
+| ------ | ------ | ------ |
+| `vehicle/battery/nominal_voltage/unknown` | The battery nominal voltage is unknown. | `reason` |
+| `vehicle/battery/nominal_voltage/autodetected` | The battery nominal voltage is autodetected. | `value` |
+| `vehicle/battery/nominal_voltage/predefined` | The battery nominal voltage is predefined to a fixed value. | `value` |
+
+**FIELD DEFINITIONS**
+
+| Name | Type | Description | Example |
+| ------ | ------ | ------ | ------ |
+| `reason` | Text | The explanatory cause for the event. | `nominal_voltage_absent` |
+| `value` | Number | Battery nominal voltage value. | 12 |
+
 ## Engine Events
 
 These events are fired by the trigger [`rpm_engine_event`](/core/services/core-services-obd-manager/#rpm_engine_event) in the [Obd Manager](/core/services/core-services-obd-manager/) and are only intended for ICE-type cars.
