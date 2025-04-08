@@ -20,6 +20,21 @@ These events apply depending on which peripherals are installed inside the dongl
 | ------ | ------ | ------ | ------ |
 | `reason` | Text | The explanatory cause for the event. | - |
 
+## Disk Housekeeper
+
+**NOTE**: These events are only available for the Pro edition with the _CAN Logging_ feature.
+
+| Tag | Description | Fields |
+| ------ | ------ | ------ |
+| `system/disk_housekeeper/ordinary_purge` | Files have been deleted because the disk usage percentage was exceeded. | `files` |
+| `system/disk_housekeeper/critical_purge` | Files have been deleted because the disk usage percentage exceeded the critical level. | `files` |
+
+**FIELD DEFINITIONS**
+
+| Name | Type | Description | Example |
+| ------ | ------ | ------ | ------ |
+| `files` | List | List of files that have been deleted. | - |
+
 ## Minion Events
 
 | Tag | Description | Fields |
