@@ -11,19 +11,33 @@ Tailscale makes creating software-defined networks easy: securely connecting use
 
 You can also use this video for [**Tailscale quickstart video guide**](https://youtu.be/sPdvyR7bLqI).
 
-### Enable Tailscale on your device
+### 1. Enable Tailscale on your device
 Steps to enable Tailscale on your device: 
 * Navigate to Devices section on [Autopi cloud](https://my.autopi.io/).
 * Click the device you want to enable Tailscale on.
 * Go to advanced settings -> Tailscale. 
-* Fill out the Auth key and enable Tailscale.
-
+<br>
+</br>
 ![Tailscale add-on](/img/getting_started/getting_started/tailscale_addon.png)
 
-### 1. Create a tailnet
+* Check if Tailscale is already enabled on your device. If it is, you're all set! This is how it looks like: 
+<br>
+</br>
+![Tailscale enabled](/img/getting_started/autopi_canfd_pro/enabled_tailscale.png)
+
+* If Tailscale is not enabled, go ahead and enable it.
+Once enabled, your device will create a pending sync. You can check this by clicking the "Pending" icon at the bottom left of the platform. Pending sync look like this: 
+<br>
+</br>
+![Tailscale pending sync](/img/getting_started/autopi_canfd_pro/pending_sync.png)
+
+* Make sure the device has synced the change. You can do that by clicking sync button above the created pending sync. 
+
+
+### 2. Create a tailnet
 Go to [tailscale.com](https://tailscale.com/) and select Get Started. Alternatively, you can download and install the Tailscale client on your device, then sign up.
 
-### 2. Open tailscale on your computer
+### 3. Open tailscale on your computer
 
 There are few ways on how to open tailscale on your computer: 
 * On Windows/macOS/Linux: Open the Tailscale app from the system tray or menu bar.
@@ -31,37 +45,43 @@ There are few ways on how to open tailscale on your computer:
 * On CLI (Linux/macOS/Windows Command Prompt/PowerShell): Open a terminal and type:
 ` tailscale up ` 
 
-### 3. Log in to [Tailscale](https://login.tailscale.com/start) on your computer 
+### 4. Log in to [Tailscale](https://login.tailscale.com/start) on your computer 
 
 * If you're not already logged in, the app will prompt you to authenticate.
 * Click "Log in", and a browser window will open.
 * Choose your authentication method (Google, Microsoft, GitHub, or custom SSO).
 * After logging in, allow the request to connect your device to the network.
 
-### 4. Generate auth key for your device
+### 5. Generate auth key for your device
 * Use this link to generate auth key: [Generate auth key](https://login.tailscale.com/admin/settings/keys)
-* Run up command with auth key: 
+* Option 1: Insert Auth Key in Advanced settings on your device: 
+    - Navigate to Devices section on [Autopi cloud](https://my.autopi.io/)
+    - Click the device you want to insert the auth key on. 
+    - Go to advanced settings -> Tailscale.
+    - Fill out the Auth key. Make sure the tailscale is enabled. 
+
+* Option 2: Run up command with auth key in terminal: 
 ` cmd.run 'tailscale up --authkey=tskey-KEYKEY-KEYKEYKEYKEY'` 
 
 :::note
-Make sure you use the key that was generated in the first point of this section and replace it accordingly in the command with your auth key.
+Make sure you use the key that was generated in the first step of this section and replace it accordingly in the command with your auth key.
 :::
 
 
-### 5. Confirm connection 
+### 6. Confirm connection 
 
 * Once logged in, your device should appear in the [Tailscale admin panel](https://login.tailscale.com/admin/machines)
 * In the Tailscale app, you should see "Connected" with an assigned Tailscale IP (e.g., 100.x.x.x).
 * If using CLI, check your connection with: 
 ` tailscale status ` 
 
-### 6. Test your connection 
+### 7. Test your connection 
 
 * Check your [Tailscale admin panel](https://login.tailscale.com/admin/machines) - to make sure you are able to see both your device and your computer in this list. This gives you an indication that you have everything set up correctly.
 * After finishing the whole process, you can SSH from your computer to a device - this gives you the full access to Tailscale. 
 
 
-### 7. Optional: Enable exit node (if needed)
+### 8. Optional: Enable exit node (if needed)
 
 If you want to route all traffic through another device on your Tailscale network:
 * Open the Tailscale app.
@@ -70,7 +90,7 @@ If you want to route all traffic through another device on your Tailscale networ
 `  tailscale up --exit-node=100.x.x.x ` 
 
 
-### 8. Disconnect when needed
+### 9. Disconnect when needed
 To disconnect from Tailscale:
 * In the Tailscale app, click "Disconnect".
 * In CLI, run:

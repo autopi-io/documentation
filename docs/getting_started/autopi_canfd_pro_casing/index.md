@@ -1,5 +1,5 @@
 ---
-id: pro-guides-intro
+id: pro-casing-guides-intro
 title: Getting started
 ---
 
@@ -7,9 +7,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import SideBySide from '@site/src/components/SideBySide';
 import CardGrid from "/components/CardGrid" ;
 
-This step-by-step guide will help you set up your AutoPi CAN-FD Pro. 
+Need a device that can handle tough environments? The [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro) is packed into a durable, IP67-rated aluminum casing — built to withstand dust, dirt, and water, making it perfect for rugged, outdoor, or industrial installations. This step-by-step guide will help you get started with your new device. The device comes pre-assembled with the SD card inside and requires just a few steps to complete the installation.
+
 :::note
-The device comes pre-assembled with the SD card inside and requires just a few steps to complete the installation.
+**Important Notes Before You Start**
+
+The AutoPi Telematics Unit is a highly customizeable and technical device. It contains a direct
+interface to your car and communicates with the ECU in your car.
 
 1. **Power Off the Vehicle**: When inserting the device for the first time, ensure that the vehicle is powered off.
 2. **Vehicle Must Be Parked**: When working on and customizing your device, make sure your vehicle is in the parked position.
@@ -18,7 +22,6 @@ The device comes pre-assembled with the SD card inside and requires just a few s
      Powering the Raspberry Pi directly is not supported and may cause issues.
 5. **Advanced Settings Caution**: When updating the Advanced settings, ensure you understand what you
      are doing, as changes can affect the performance of your car and its battery.  
-
 :::
 
 ## 1. Setting Up User Account
@@ -54,8 +57,7 @@ After clicking the “Register Device” button, the registration tab will appea
 
 ![Register Device](/img/getting_started/getting_started/register_device.png)
 
-- **Unit ID**: This is the number on the side of your device. You can also find it in the.
-    document attached in the email you received when the device was shipped. 
+- **Unit ID**: This is the number on the side of your casing. You can also find it in the document attached in the email you received when the device was shipped. 
 - **Vehicle Information**: Optionally include the make, model and year of the vehicle.
 - **Vehicle Type**: Choose the type of vehicle (ICE, Battery [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), or Plug-in Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)).
 
@@ -71,14 +73,14 @@ your SIM card is already assembled in the device, so you can skip this step.
 :::
 
 If you have purchased the hardware-only version, you will need to insert your SIM card 
-into your AutoPi before connecting the device to your vehicle. The AutoPi uses nano SIM sizes. 
-The location of the SIM card slot is shown in the picture below.  
+into your AutoPi before connecting the device to your vehicle. The AutoPi uses nano SIM sizes. Getting your SIM card in place is quick and easy:
+Simply open the device’s casing and insert the SIM card as shown in the picture below. 
 
 When inserting the SIM card, it’s important to ensure it is installed correctly. 
 The picture below shows the proper orientation of the SIM card. 
 Please note that the text side of the SIM card must face up and the “triangle” end point into the device. 
 
-![AutoPi.io - SIM card location](/img/getting_started/getting_started/sim_card.png)
+
 
 :::caution
 **Please notice:** When the SIM card is inserted correctly, you will hear a small "click" when the
@@ -118,17 +120,28 @@ When installing the AutoPi, always make sure that the device is positioned with
 the logo facing upwards towards the sky. This orientation is crucial because the GPS antenna 
 is located within the device, and incorrect positioning may result in a weak GPS signal. 
 
-If the OBD port is in an inconvenient spot or gets in the way, 
-you can buy some **Accessories** from our [AutoPi shop](https://shop.autopi.io/): 
-    * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – Add extra reach for flexible placement.
-    * [Dual Lock Extreme Velcro Strip](https://shop.autopi.io/products/dual-lock-extreme-velcro) – Secure, vibration-resistant mounting anywhere.
-    * [DoIP HAT](https://shop.autopi.io/products/doip-hat-v1-3)  
-    * [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable?pr_prod_strat=jac&pr_rec_id=17052e989&pr_rec_pid=8619774050653&pr_ref_pid=8609919074653&pr_seq=uniform)
-    * [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform)
-    * [Tesla OBD-II Adapter Cable for Model 3 and Y](https://shop.autopi.io/products/tesla-obd2-adapter-cable-for-model-3-and-y)
-    * [CAN Bus Testing/Loop Cable](https://shop.autopi.io/products/can-bus-testing-cable)
-    * [Micro USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable)
-    * [OBD-II to dual DB9](https://shop.autopi.io/products/obd2-to-dual-db)
+**Steps for installation:** 
+1. Choose a Mounting Spot: pick a good location in your vehicle where you'd like to mount the device. It should be secure and have a clear view of the sky if possible.
+2. Mount the Device: you can use one of our mounting options, like a homemade bracket or a ready-made bracket.
+    Check out your options [here].
+3. Connect the Antennas: attach the antennas to the device. Please make sure the distance between the antennas and the device is no more than 3 meters—that's the length of the antenna cables.
+4. Need More Cable Length for the OBD II Port? No problem! We offer several extension accessories to match your vehicle type and setup.
+    Browse the Accessories: 
+      * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – Add extra reach for flexible placement.
+      * [Dual Lock Extreme Velcro Strip](https://shop.autopi.io/products/dual-lock-extreme-velcro) – Secure, vibration-resistant mounting anywhere.
+      * [Global SIM card solution](https://shop.autopi.io/products/global-sim-card-solution)
+      * [DoIP HAT](https://shop.autopi.io/products/doip-hat-v1-3)  
+      * [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable?pr_prod_strat=jac&pr_rec_id=17052e989&pr_rec_pid=8619774050653&pr_ref_pid=8609919074653&pr_seq=uniform)
+      * [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform)
+      * [Tesla OBD-II Adapter Cable for Model 3 and Y](https://shop.autopi.io/products/tesla-obd2-adapter-cable-for-model-3-and-y)
+      * [CAN Bus Testing/Loop Cable](https://shop.autopi.io/products/can-bus-testing-cable)
+      * [Micro USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable)
+      * [OBD-II to dual DB9](https://shop.autopi.io/products/obd2-to-dual-db9)
+
+
+**Device dimensions:**
+160mm x 110mm x 60mm (L/W/H)
+picture with dimensions
 
 
 **Tips on getting the best performance of your device**:
@@ -140,9 +153,14 @@ you can buy some **Accessories** from our [AutoPi shop](https://shop.autopi.io/)
 - When powering the device, make sure you only power it through the OBD connector.
   The device cannot be powered through any of the other ports. 
 - Proper installation makes all the difference in performance. Follow the steps above for correct device mounting.
+
+ 
 - The device contains a GPS antenna inside. 
   Make sure there is no metal covering the device as this can affect its performance. 
 
+:::idea
+If you're working with the device during development and have it open on your desk, you can connect a monitor (via HDMI), a keyboard (via USB), and even use an Ethernet cable for internet. This setup helps you see exactly what's happening on the device in real time—ideal for debugging or development sessions.
+:::
 
 ## 6. Connect to WiFi
 
@@ -154,10 +172,10 @@ You can find your Device ID either on the side of the device or in the documenta
 attached to your shipping email. 
 
 Additionally, you can access Wi-Fi information directly from the AutoPi Cloud. 
-To do this, navigate to Devices > Select Your Device > Advanced Settings > Wi-Fi. 
+To do this, navigate to Devices > Select Your Device > Advanced Settings > Wi-Fi > Hotspot. 
 Here, you will find the Wi-Fi hotspot's password and SSID credentials. 
 
-
+new picture
 
 When the device is powered on, a blue light will appear on the side, indicating 
 that it has power. When the device successfully connects to the AutoPi Cloud, 
@@ -165,11 +183,10 @@ a green light will be visible. If the device is not connected, the light will be
 
 For a detailed description of the two status LEDs, please refer to the 
 
-
 ## 7. Connect to Local Administration
 
 :::note
-If you’ve purchased the AutoPi TMU CM4 with a monthly cloud subscription, your SIM card
+If you’ve purchased the AutoPi CAN-FD Pro with a monthly cloud subscription, your SIM card
 is pre-installed in the device, and no additional action is required for SIM connectivity. 
 The APN settings are already configured for you. Please be aware that the SIM card 
 has a monthly data cap, so it's recommended to limit the use of the device’s hotspot 
@@ -207,7 +224,7 @@ see a notification when successfully saved.
 4G/LTE Settings 
 ![AutoPi.io - Settings Page](/img/getting_started/getting_started/apn_settings.png)
 
-APN Presets List 
+APN Presets List
 ![AutoPi.io - Settings Page](/img/getting_started/getting_started/apn_settings_list.png) 
 
 ## 8. Verify Connectivity
@@ -255,8 +272,9 @@ get the most out of your AutoPi experience:
 ### Let's keep in touch!
 Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
 <CardGrid home>
-[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
+[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
 
 [![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
 
 </CardGrid>
+

@@ -21,26 +21,24 @@ import CardGrid from "/components/CardGrid" ;
 
 ### Step 1: Determine the Device’s IP Address  
 Choose your connection method:  
+  * **1. Local WiFi Hotspot**  
+    - Ensure the device is connected to the hotspot.  
+    - The IP is often static (e.g., `192.168.1.1` or `10.0.0.1`).  
 
-#### **1. Local WiFi Hotspot**  
-- Ensure the device is connected to the hotspot.  
-- The IP is often static (e.g., `192.168.1.1` or `10.0.0.1`).  
+  * **2. WiFi Client Network**  
+    - Connect the device and your computer to the same WiFi network.  
+    - Find the device’s IP:  
+      - Check your router’s DHCP client list (e.g., `192.168.0.100`).  
+      - On the AutoPi, run `hostname -I` in the terminal.  
 
-#### **2. WiFi Client Network**  
-- Connect the device and your computer to the same WiFi network.  
-- Find the device’s IP:  
-  - Check your router’s DHCP client list (e.g., `192.168.0.100`).  
-  - On the AutoPi, run `hostname -I` in the terminal.  
+  * **3. Ethernet (Direct Connection)**  
+    - Connect the AutoPi to your computer via Ethernet.  
+    - The IP may be assigned via DHCP (check router) or use a static IP like `169.254.x.x`.  
 
-#### **3. Ethernet (Direct Connection)**  
-- Connect the AutoPi to your computer via Ethernet.  
-- The IP may be assigned via DHCP (check router) or use a static IP like `169.254.x.x`.  
+  * **4. Tailscale (VPN)**  
+    - Ensure Tailscale is installed and activated on both the AutoPi and your computer. You can read more at this guide: [How to connect to Tailscale on your AutoPi device](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
+    - On the AutoPi, run `tailscale ip` to get its Tailscale IP (e.g., `100.x.x.x`).  
 
-#### **4. Tailscale (VPN)**  
-- Ensure Tailscale is installed and activated on both the AutoPi and your computer.  
-- On the AutoPi, run `tailscale ip` to get its Tailscale IP (e.g., `100.x.x.x`).  
-
----
 
 ### Step 2: Connect Using Cyberduck
 1. Open Cyberduck and click **Open Connection**.  
@@ -56,7 +54,6 @@ Choose your connection method:
 
 3. Click **Connect**.  
 
----
 
 ### Step 3: Access Files 
 - After connecting, navigate to:  
