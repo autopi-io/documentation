@@ -46,7 +46,7 @@ These events are calculated from the voltage level measured via the OBD-II conne
 
 | Tag | Description | Fields |
 | ------ | ------ | ------ |
-| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/writing` | The logger is starting to write raw CAN frames to an output file. | `file` |
+| `vehicle/bus/<can0\|can1\|...>/logger/<logger_name>/writing` | The logger is starting to write raw CAN frames to an output file. | `file` |
 | `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/rollover` | The logger is performing rollover of the output file. | `source_file`, `destination_file` |
 | `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/decoder/<decoder_name>/reading` | The decoder is starting to read raw CAN frames from an input file. | `file` |
 | `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/decoder/<decoder_name>/writing` | The decoder is starting to write decoded data to an output file. | `file` |
@@ -61,8 +61,8 @@ These events are calculated from the voltage level measured via the OBD-II conne
 | Name | Type | Description | Example |
 | ------ | ------ | ------ | ------ |
 | `file` | Text | Path of file. | - |
-| `source_file` | Text | Path of file. | - |
-| `destination_file` | Text | Path of file. | - |
+| `source_file` | Text | Path of source file. | - |
+| `destination_file` | Text | Path of destination file. | - |
 | `uploaded_files` | List | List of files that have been uploaded. | - |
 | `errors` | List | List of errors that occurred. | - |
 
