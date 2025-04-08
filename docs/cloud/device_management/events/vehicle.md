@@ -40,6 +40,32 @@ These events are calculated from the voltage level measured via the OBD-II conne
 | `reason` | Text | The explanatory cause for the event. | `nominal_voltage_absent` |
 | `value` | Number | Battery nominal voltage value. | 12 |
 
+## CAN Logging Events
+
+**NOTE**: These events are only available for the Pro edition with the _CAN Logging_ feature.
+
+| Tag | Description | Fields |
+| ------ | ------ | ------ |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/writing` | The logger is starting to write raw CAN frames to an output file. | `file` |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/rollover` | The logger is performing rollover of the output file. | `source_file`, `destination_file` |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/decoder/<decoder_name>/reading` | The decoder is starting to read raw CAN frames from an input file. | `file` |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/decoder/<decoder_name>/writing` | The decoder is starting to write decoded data to an output file. | `file` |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/decoder/<decoder_name>/rollover` | The decoder is performing rollover of the output file.. | `source_file`, `destination_file` |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/s3_sync/started` | An AWS S3 sync job has started. | - |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/s3_sync/completed` | An AWS S3 sync job has has finished with success. | `uploaded_files` |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/s3_sync/timeout` | An AWS S3 sync job has timed out. | - |
+| `vehicle/bus/<can0&#124;can1&#124;...>/logger/<logger_name>/s3_sync/failed` | An AWS S3 sync job has finished with errors. | `errors`, `uploaded_files` |
+
+**FIELD DEFINITIONS**
+
+| Name | Type | Description | Example |
+| ------ | ------ | ------ | ------ |
+| `file` | Text | Path of file. | - |
+| `source_file` | Text | Path of file. | - |
+| `destination_file` | Text | Path of file. | - |
+| `uploaded_files` | List | List of files that have been uploaded. | - |
+| `errors` | List | List of errors that occurred. | - |
+
 ## Engine Events
 
 These events are fired by the trigger [`rpm_engine_event`](/core/services/core-services-obd-manager/#rpm_engine_event) in the [Obd Manager](/core/services/core-services-obd-manager/) and are only intended for ICE-type cars.
