@@ -23,6 +23,14 @@ module.exports = {
             ],
             "label": "AutoPi CAN-FD Pro",
             "type": "category"
+          },
+          {
+              "items": [
+                "getting_started/autopi_canfd_pro_casing/pro-casing-guides-intro",
+              ],
+              "label": "AutoPi CAN-FD Pro + IP67 casing",
+              "type": "category"
+          },
         },
         {
           "items": [
