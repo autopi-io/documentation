@@ -13,24 +13,23 @@ module.exports = {
           "type": "category"
         },
         {
-            "items": [
-              "getting_started/autopi_canfd_pro/pro-guides-intro",
-              "getting_started/autopi_canfd_pro/pro-user-guide",
-              "getting_started/autopi_canfd_pro/how_to_connect_to_tailscale",
-              "getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi",
-              "getting_started/autopi_canfd_pro/pro-data-troubleshooting",
-              "getting_started/autopi_canfd_pro/pro-4g-internet-setup-troubleshooting",
-            ],
-            "label": "AutoPi CAN-FD Pro",
-            "type": "category"
-          },
-          {
-              "items": [
-                "getting_started/autopi_canfd_pro_casing/pro-casing-guides-intro",
-              ],
-              "label": "AutoPi CAN-FD Pro + IP67 casing",
-              "type": "category"
-          },
+          "items": [
+            "getting_started/autopi_canfd_pro/pro-guides-intro",
+            "getting_started/autopi_canfd_pro/pro-user-guide",
+            "getting_started/autopi_canfd_pro/how_to_connect_to_tailscale",
+            "getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi",
+            "getting_started/autopi_canfd_pro/pro-data-troubleshooting",
+            "getting_started/autopi_canfd_pro/pro-4g-internet-setup-troubleshooting",
+          ],
+          "label": "AutoPi CAN-FD Pro",
+          "type": "category"
+        },
+        {
+          "items": [
+            "getting_started/autopi_canfd_pro_casing/pro-casing-guides-intro",
+          ],
+          "label": "AutoPi CAN-FD Pro + IP67 casing",
+          "type": "category"
         },
         {
           "items": [
