@@ -30,7 +30,7 @@ Run the `logger.status` command on the device to see the status of data logger(s
 
 Regardless of which of the above methods you use, you must run the command `logger.status`. The response from this command may look like this:
 
-<INSERT PICTURE HERE>
+INSERT PICTURE HERE
 
 ### 3. CAN bus detection
 
