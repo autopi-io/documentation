@@ -120,45 +120,39 @@ When installing the AutoPi, always make sure that the device is positioned with
 the logo facing upwards towards the sky. This orientation is crucial because the GPS antenna 
 is located within the device, and incorrect positioning may result in a weak GPS signal. 
 
-**Steps for installation:** 
+### Steps for installation:
 1. Choose a Mounting Spot: pick a good location in your vehicle where you'd like to mount the device. It should be secure and have a clear view of the sky if possible.
 2. Mount the Device: you can use one of our mounting options, like a homemade bracket or a ready-made bracket.
     Check out your options [here].
 3. Connect the Antennas: attach the antennas to the device. Please make sure the distance between the antennas and the device is no more than 3 meters—that's the length of the antenna cables.
-4. Need More Cable Length for the OBD II Port? No problem! We offer several extension accessories to match your vehicle type and setup.
-    Browse the Accessories: 
-      * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – Add extra reach for flexible placement.
-      * [Dual Lock Extreme Velcro Strip](https://shop.autopi.io/products/dual-lock-extreme-velcro) – Secure, vibration-resistant mounting anywhere.
-      * [Global SIM card solution](https://shop.autopi.io/products/global-sim-card-solution)
-      * [DoIP HAT](https://shop.autopi.io/products/doip-hat-v1-3)  
-      * [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable?pr_prod_strat=jac&pr_rec_id=17052e989&pr_rec_pid=8619774050653&pr_ref_pid=8609919074653&pr_seq=uniform)
-      * [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform)
-      * [Tesla OBD-II Adapter Cable for Model 3 and Y](https://shop.autopi.io/products/tesla-obd2-adapter-cable-for-model-3-and-y)
-      * [CAN Bus Testing/Loop Cable](https://shop.autopi.io/products/can-bus-testing-cable)
-      * [Micro USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable)
-      * [OBD-II to dual DB9](https://shop.autopi.io/products/obd2-to-dual-db9)
+4. Need More Cable Length for the OBD II Port? No problem! If the OBD port is in an inconvenient spot or gets in the way, 
+you can buy some accessories from our [AutoPi shop](https://shop.autopi.io/): 
+    * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – add extra reach for flexible placement.
+    * [Dual Lock Extreme Velcro Strip](https://shop.autopi.io/products/dual-lock-extreme-velcro) – secure, vibration-resistant mounting anywhere.
+    * [DoIP HAT](https://shop.autopi.io/products/doip-hat-v1-3) - the DoIP HAT is a highly advanced interface module designed to enhance vehicle diagnostics using the DoIP protocol (Diagnostics over Internet Protocol).  
+    * [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable?pr_prod_strat=jac&pr_rec_id=17052e989&pr_rec_pid=8619774050653&pr_ref_pid=8609919074653&pr_seq=uniform) - power the AutoPi CAN-FD Pro device with any 12-24 volt DC power supply.
+    * [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform) - use this Y-splitter cable if you need to connect an additional OBD-II device at the same time as your AutoPi CAN-FD Pro.
+    * [Tesla OBD-II Adapter Cable for Model 3 and Y](https://shop.autopi.io/products/tesla-obd2-adapter-cable-for-model-3-and-y) - add an OBD-II port to your Tesla Model 3 or Model Y with this adapter cable.
+    * [CAN Bus Testing/Loop Cable](https://shop.autopi.io/products/can-bus-testing-cable) - the CAN Bus Testing Cable is a cable designed for internal communication testing between two CAN bus systems.
+    * [Micro USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable)- this Micro USB to USB-A adapter cable is made to fit perfectly with the external Micro USB port on the AutoPi CAN-FD Pro device.
+    * [OBD-II to dual DB9](https://shop.autopi.io/products/obd2-to-dual-db) - connect two CAN bus nodes to the OBD2 port of the AutoPi CAN-FD Pro.
 
 
-**Device dimensions:**
+### Device dimensions:
 160mm x 110mm x 60mm (L/W/H)
-picture with dimensions
+
+![AutoPi CAN-FD Pro](/img/hardware/autopi_canfd_pro/canfd_pro_casing_measurements.png)
 
 
-**Tips on getting the best performance of your device**:
-
+### Tips on getting the best performance of your device:
 - Make sure that the AutoPi logo is facing the sky.
 - Antennas should also face the sky to ensure a strong signal. 
-- Try to avoid installing the device in direct sun. Direct sun will heat up the device and,
-  in the summertime, this can cause the CPU to throttle down, if the temperature gets too hot. 
-- When powering the device, make sure you only power it through the OBD connector.
-  The device cannot be powered through any of the other ports. 
+- Try to avoid installing the device in direct sun. Direct sun will heat up the device and, in the summertime, this can cause the CPU to throttle down, if the temperature gets too hot. 
+- When powering the device, make sure you only power it through the OBD connector. The device cannot be powered through any of the other ports. 
 - Proper installation makes all the difference in performance. Follow the steps above for correct device mounting.
 
- 
-- The device contains a GPS antenna inside. 
-  Make sure there is no metal covering the device as this can affect its performance. 
 
-:::idea
+:::note
 If you're working with the device during development and have it open on your desk, you can connect a monitor (via HDMI), a keyboard (via USB), and even use an Ethernet cable for internet. This setup helps you see exactly what's happening on the device in real time—ideal for debugging or development sessions.
 :::
 
@@ -175,7 +169,7 @@ Additionally, you can access Wi-Fi information directly from the AutoPi Cloud.
 To do this, navigate to Devices > Select Your Device > Advanced Settings > Wi-Fi > Hotspot. 
 Here, you will find the Wi-Fi hotspot's password and SSID credentials. 
 
-new picture
+![Wifi settings](/img/getting_started/getting_started/wifi_settings.png)
 
 When the device is powered on, a blue light will appear on the side, indicating 
 that it has power. When the device successfully connects to the AutoPi Cloud, 
@@ -257,7 +251,7 @@ Take your device for a trip to start gathering data.
 
 Now that your device is up and running, here are a few suggestions to help you 
 get the most out of your AutoPi experience: 
-- **Explore the AutoPi Cloud**: Dive into the AutoPi Cloud platform to explore all 
+- **Explore the AutoPi Cloud**: Dive into the [AutoPi Cloud platform](https://my.autopi.io/#/login) to explore all 
   the features available to you, such as real-time vehicle monitoring, 
   advanced analytics, and customizable alerts. 
 - **Check Out Our Documentation**: Our [documentation page](https://docs.autopi.io/) 

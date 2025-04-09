@@ -23,7 +23,7 @@ Our most powerful device to date, designed for full speed automotive datalogging
 * Security element: Secure and encrypt your data.
 * External antennas: External SMA connector for 2x 4G/LTE. 1x GPS and 1x WiFi/BLE.
 
-Want all details in one place? Download the official datasheet here: [AutoPi CAN-FD Pro Datasheet](https://www.autopi.io/static/pdf/autopi_CAN_FD_Pro_datasheet.pdf)
+Want all details in one place? Download the official datasheet here: [**AutoPi CAN-FD Pro Datasheet**](https://www.autopi.io/static/pdf/autopi_CAN_FD_Pro_datasheet.pdf)
 
 
 ### Highlighted features
@@ -48,9 +48,9 @@ Our advanced device and vehicle management platform lets you control all aspects
 * [Getting started](https://docs.autopi.io/getting_started/autopi_canfd_pro/) - What to do after you receive your device. 
 * [Device Dimensions](https://docs.autopi.io/hardware/autopi_canfd_pro/device_dimensions/) – Ensure the perfect fit for your setup.
 * [Technical Specifications](https://docs.autopi.io/hardware/autopi_canfd_pro/device_specifications/) – Dive into the performance details.
-* LED and Button States – Understand device behavior at a glance.
-* OBD Connector Pinout – Get to know the connection layout.
-* Mounting Holes Guide – Explore mounting options for easy installation.
+* [LED and Button States](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-led-and-button/) – Understand device behavior at a glance.
+* [OBD Connector Pinout](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-obd-connector-pinout/) – Get to know the connection layout.
+* [Mounting Options](https://docs.autopi.io/hardware/autopi_canfd_pro/mounting_options/) – Explore mounting options for easy installation.
 * Accessories:
   * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – Add extra reach for flexible placement.
   * [Dual Lock Extreme Velcro Strip](https://shop.autopi.io/products/dual-lock-extreme-velcro) – Secure, vibration-resistant mounting anywhere.

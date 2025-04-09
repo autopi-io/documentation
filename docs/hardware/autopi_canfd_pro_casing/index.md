@@ -8,25 +8,11 @@ Our most powerful device to date, designed for full speed automotive datalogging
 
 Need a device that can handle tough environments? The [AutoPi](https://www.autopi.io/) [CAN-FD Pro + IP67 Casing](https://shop.autopi.io/products/autopi-can-fd-pro-ip67-casing) is packed into a durable, IP67-rated aluminum casing — built to withstand dust, dirt, and water, making it perfect for rugged, outdoor, or industrial installations.
 
-## Built for performance and protection
-picture
-
-### Rugged, waterproof design
-* IP67 rating — Fully protected against dust and can handle water exposure.
-* Ideal for tough environments: off-road vehicles, fleets, industrial setups, and more.
-
-### External connectivity made easy
-* Power output for easy setup.
-* Automotive interface — ready for vehicle integration.
-* 4 external antenna ports:
-  * 2x LTE for fast, reliable data
-  * 1x GPS for precise tracking
-  * 1x WiFi/BLE for seamless connectivity
-
 ### Device dimensions
-160mm x 110mm x 60mm (L/W/H)
-picture with dimensions
 
+<p align="center">
+<img src="/img/hardware/autopi_canfd_pro/canfd_pro_casing_measurements.png" alt="AutoPi CAN-FD Pro/IP67 casing" width="60%" />
+</p>
 
 ### Key benefits
 * 4G/LTE with global coverage: The integrated modem with worldwide coverage.
@@ -62,6 +48,7 @@ Our advanced device and vehicle management platform lets you control all aspects
 
 
 ### Useful links
+* [Getting started](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/) - What to do after you receive your device. 
 * Accessories:
   * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – Add extra reach for flexible placement.
   * [Dual Lock Extreme Velcro Strip](https://shop.autopi.io/products/dual-lock-extreme-velcro) – Secure, vibration-resistant mounting anywhere.
@@ -83,6 +70,7 @@ Thank you for choosing [AutoPi](https://www.autopi.io/). We're excited to see wh
 <CardGrid home>
 
 [![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
+
 [![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
 
 </CardGrid>

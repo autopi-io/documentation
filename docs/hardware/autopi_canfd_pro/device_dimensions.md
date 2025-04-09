@@ -26,10 +26,8 @@ If you need extra reach or want to place the device somewhere more convenient, w
 <br>
 </br>
 Want to dive deeper into setup details? Check out these guides:
-* OBD Connector Pinout: 
-* Mounting holes for using mounts in the vehicle: 
-* Examples of device mounts: 
-
+* OBD Connector Pinout: read more [here](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-obd-connector-pinout/)   
+* Mounting holes for using mounts in the vehicle and examples of device mounts: read more [here](https://docs.autopi.io/hardware/autopi_canfd_pro/mounting_options/)
 <br>
 </br>
 ### Let's keep in touch!

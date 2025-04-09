@@ -120,18 +120,18 @@ is located within the device, and incorrect positioning may result in a weak GPS
 
 If the OBD port is in an inconvenient spot or gets in the way, 
 you can buy some **Accessories** from our [AutoPi shop](https://shop.autopi.io/): 
-    * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – Add extra reach for flexible placement.
-    * [Dual Lock Extreme Velcro Strip](https://shop.autopi.io/products/dual-lock-extreme-velcro) – Secure, vibration-resistant mounting anywhere.
-    * [DoIP HAT](https://shop.autopi.io/products/doip-hat-v1-3)  
-    * [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable?pr_prod_strat=jac&pr_rec_id=17052e989&pr_rec_pid=8619774050653&pr_ref_pid=8609919074653&pr_seq=uniform)
-    * [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform)
-    * [Tesla OBD-II Adapter Cable for Model 3 and Y](https://shop.autopi.io/products/tesla-obd2-adapter-cable-for-model-3-and-y)
-    * [CAN Bus Testing/Loop Cable](https://shop.autopi.io/products/can-bus-testing-cable)
-    * [Micro USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable)
-    * [OBD-II to dual DB9](https://shop.autopi.io/products/obd2-to-dual-db)
+    * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – add extra reach for flexible placement.
+    * [Dual Lock Extreme Velcro Strip](https://shop.autopi.io/products/dual-lock-extreme-velcro) – secure, vibration-resistant mounting anywhere.
+    * [DoIP HAT](https://shop.autopi.io/products/doip-hat-v1-3) - the DoIP HAT is a highly advanced interface module designed to enhance vehicle diagnostics using the DoIP protocol (Diagnostics over Internet Protocol).  
+    * [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable?pr_prod_strat=jac&pr_rec_id=17052e989&pr_rec_pid=8619774050653&pr_ref_pid=8609919074653&pr_seq=uniform) - power the AutoPi CAN-FD Pro device with any 12-24 volt DC power supply.
+    * [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform) - use this Y-splitter cable if you need to connect an additional OBD-II device at the same time as your AutoPi CAN-FD Pro.
+    * [Tesla OBD-II Adapter Cable for Model 3 and Y](https://shop.autopi.io/products/tesla-obd2-adapter-cable-for-model-3-and-y) - add an OBD-II port to your Tesla Model 3 or Model Y with this adapter cable.
+    * [CAN Bus Testing/Loop Cable](https://shop.autopi.io/products/can-bus-testing-cable) - the CAN Bus Testing Cable is a cable designed for internal communication testing between two CAN bus systems.
+    * [Micro USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable)- this Micro USB to USB-A adapter cable is made to fit perfectly with the external Micro USB port on the AutoPi CAN-FD Pro device.
+    * [OBD-II to dual DB9](https://shop.autopi.io/products/obd2-to-dual-db) - connect two CAN bus nodes to the OBD2 port of the AutoPi CAN-FD Pro.
 
 
-**Tips on getting the best performance of your device**:
+### **Tips on getting the best performance of your device**:
 
 - Make sure that the AutoPi logo is facing the sky.
 - Antennas should also face the sky to ensure a strong signal. 
@@ -148,22 +148,21 @@ you can buy some **Accessories** from our [AutoPi shop](https://shop.autopi.io/)
 
 After installing your AutoPi device into the OBD port, you will need to connect it to the AutoPi Cloud.
 To do this, you will temporarily use the device’s Wi-Fi hotspot. 
-The hotspot is named autopi-XXXX, where "XXXX" represents the unique ID of your device.
-The password for this Wi-Fi hotspot is the first 13 characters of your Device ID. 
-You can find your Device ID either on the side of the device or in the documentation 
-attached to your shipping email. 
 
+The hotspot is named autopi-XXXX, where "XXXX" represents the unique ID of your device.
+The **password** for this Wi-Fi hotspot is the **first 13 characters of your Device ID**. 
+You can find your Device ID either by navigating to Devices > Select your device > Overview: Device specifications; or in the documentation 
+attached to your shipping email. 
 Additionally, you can access Wi-Fi information directly from the AutoPi Cloud. 
 To do this, navigate to Devices > Select Your Device > Advanced Settings > Wi-Fi. 
 Here, you will find the Wi-Fi hotspot's password and SSID credentials. 
-
-
+![Wifi settings](/img/getting_started/getting_started/wifi_settings.png)
 
 When the device is powered on, a blue light will appear on the side, indicating 
 that it has power. When the device successfully connects to the AutoPi Cloud, 
 a green light will be visible. If the device is not connected, the light will be flashing. 
 
-For a detailed description of the two status LEDs, please refer to the 
+For a detailed description of the two status LEDs, please refer to the [LED and Button States on AutoPi CAN-FD Pro](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-led-and-button/).
 
 
 ## 7. Connect to Local Administration
@@ -240,7 +239,7 @@ Take your device for a trip to start gathering data.
 
 Now that your device is up and running, here are a few suggestions to help you 
 get the most out of your AutoPi experience: 
-- **Explore the AutoPi Cloud**: Dive into the AutoPi Cloud platform to explore all 
+- **Explore the AutoPi [Cloud](https://docs.autopi.io/cloud/)**: Dive into the [AutoPi Cloud platform](https://my.autopi.io/) to explore all 
   the features available to you, such as real-time vehicle monitoring, 
   advanced analytics, and customizable alerts. 
 - **Check Out Our Documentation**: Our [documentation page](https://docs.autopi.io/) 
