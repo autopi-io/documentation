@@ -3,14 +3,29 @@ id: core-services-can-manager
 title: Can Manager
 ---
 
+## Converters
+### `can`
+
+Converts raw CAN data using the CAN database available for the current protocol.
+The CAN database file (.dbc) is found on the local file system by the following path expression:
+
+
+/opt/autopi/obd/can/db/protocol_`<PROTOCOL ID>`.dbc
+
 ## Handlers
+### `autodetect`
+
+Autodetection of interfaces and their supported protocols.
+
+
+----
 ### `connection`
 
-Manages the current CAN connection.
+Manages the CAN connections.
 
 **OPTIONAL ARGUMENTS**
 
-  - **`autodetect`** (str): Attempt autodetection of the bus protocol. One or more of the following values can be specified; `passive`, `obd` and/or `j1939`.
+  - **`open`** (bool): Attempt to open connection. Defaults to True if autodetecting, otherwise, don`t change connection state.
 
 
 ----
@@ -27,9 +42,17 @@ Stores messages from the CAN bus to a file until a limit or duration is reached.
   - **`duration`** (int): How many seconds to record data? Default value is `1`.
   - **`limit`** (int): The maximum number of messages to read.
   - **`receive_timeout`** (float): The amount of time in seconds to wait for a reply message. Default value is `0.2`.
-  - **`skip_error_frames`** (bool): Skip any reply message marked as an error frame. Default value is `False`.
+  - **`skip_11bit_ids`** (bools): Skip all messages with 11bit arbitration IDs. Default value is `False`.
+  - **`skip_29bit_ids`** (bools): Skip all messages with 29bit arbitration IDs. Default value is `False`.
+  - **`skip_error_frames`** (bool): Skip all messages marked as error frames. Default value is `False`.
+  - **`skip_remote_frames`** (bool): Skip all messages marked as remote frames. Default value is `False`.
+  - **`skip_normal_frames`** (bool): Skip all messages marked as normal data frames. Default value is `False`.
+  - **`pass_filters`** (list): List of arbitration ID filters which are allowed to be received.
   - **`keep_listening`** (bool): Continue listening for messages in the background? Default value is `False`.
   - **`buffer_size`** (int): The limit of messages that the internal queue can hold. If the value is less than or equal to zero, the queue size is infinite. Default value is `0`.
+  - **`bus`** (str): Name of bus to use. Defaults to can_conn.DefaultBus mapping.
+  - **`conn`** (str): Name of the CAN interface to use. 
+  - **`sanitize`** (bool): Enable/disable input sanitization. Defaults to True.
 
 **OPTIONAL ARGUMENTS FOR ASC AND BLF FILES**
 
@@ -38,7 +61,6 @@ Stores messages from the CAN bus to a file until a limit or duration is reached.
 **OPTIONAL ARGUMENTS FOR CSV FILE**
 
   - **`append`** (bool): Append messages to an existing file where no header line is written or truncate and start with a newly written header line? Default value is `False`.
-
 
 **OPTIONAL ARGUMENTS FOR DB FILE (SQLITE)**
 
@@ -53,11 +75,30 @@ Stores messages from the CAN bus to a file until a limit or duration is reached.
 ----
 ### `filter`
 
-Manages the CAN filters.
+Display and management of CAN filters.
 
-:::note
-For now it is only possible to view the active filters.
-:::
+**ARGUMENTS**
+
+  - **`*channels`** (str): The channel(s) to include in the result. If none defined all channels are included.
+
+**OPTIONAL ARGUMENTS**
+
+  - **`bus`** (str): Name of a specific bus to display or change.
+  - **`add`** (str): The CAN arbitration ID to add as filter.
+  - **`mask`** (str): The bitmask to use with the CAN arbitration ID to perform filtering. If not specified, the value is automatically set to the highest possible, meaning a perfect match with the defined CAN arbitration ID.
+  - **`is_ext_id`** (bool): Explicit indication of whether to use extended CAN arbitration ID or not (29 or 11 bit). If omitted, the value will be inferred automaticlly by the length of the defined CAN arbitration ID.
+  - **`clear`** (bool): Clear any existing filters? This is always done before adding. Default value is `False`.
+
+
+**EXAMPLES**
+
+  - `can.filter can0`
+  - `can.filter can0 bus=dump`
+  - `can.filter can0 bus=dump add=7E0`
+  - `can.filter can0 bus=dump clear=true`
+  - `can.filter can0 bus=dump clear=true add=x7E0`
+  - `can.filter can0 bus=dump clear=true add=x7E0 mask=x7FF`
+  - `can.filter can0 bus=dump clear=true add=x7E0 mask=x7FF is_ext_id=false`
 
 
 ----
@@ -76,17 +117,21 @@ Queries a J1939 PGN on the CAN bus.
   - **`source_address`** (int): The source address of the request message. Default value is `249` (Service Tool).
   - **`auto_filter`** (bool): Ensure to apply filtering to only include reply message for the specific PGN. Default value is `True`.
   - **`auto_filter_mask`** (int): The bitmask to use when the filter is applied. Default value is `0x00FFFF00`.
+  - **`bus`** (str): Name of bus to use. Defaults to can_conn.DefaultBus mapping.
+  - **`conn`** (str): Name of the CAN interface to use. 
+  - **`name`** (str): Name of the command. (E.g. `VehicleSpeed` or `SeatTemperature`)
+  - **`sanitize`** (bool): Enable/disable input sanitization. Defaults to True.
 
 **OPTIONAL ARGUMENTS, GENERAL**
 
   - **`ensure_filtering`** (bool): Ensure that reply messages not matching the filters are excluded. Default value is `True`.
-  - **`flow_control`** (list): List of flow control ID resolvers to enable. Options are `obd` and `custom`. Default value is `False` (disabled).
   - **`replies`** (int): The amount of reply messages to wait for within a timeout.
   - **`skip_error_frames`** (bool): Skip any reply message marked as an error frame. Default value is `True`.
   - **`skip_remote_frames`** (bool): Skip any reply message marked as a remote frame. Default value is `True`.
   - **`strict`** (bool): Raise an error when no reply messages are received or if the amount of expected reply messages is not met within the timeout. Default value is `True`.
   - **`timeout`** (float): The amount of time in seconds to wait for a reply message. Default value is `0.2`.
-  - **`output`** (str): Select `obj`, `dict` or `str` as the output data type of the reply messages. Default value is `str`.
+  - **`output`** (str): Select `obj`, `dict` or `str` as the output data type of the reply messages. Ignored if formula argument is given. Default value is `str`. 
+  - **`formula`** (str): Python code that decodes the raw byte data to a value. 
 
 
 ----
@@ -96,13 +141,19 @@ Monitors messages on the CAN bus until a limit and/or duration is reached.
 
 **OPTIONAL ARGUMENTS**
 
-  - **`duration`** (int): How many seconds to record data? Default value is `1`.
+  - **`duration`** (float): How many seconds to record data? Default value is `1`.
   - **`limit`** (int): The maximum number of messages to read.
   - **`receive_timeout`** (float): The amount of time in seconds to wait for a reply message. Default value is `0.2`.
   - **`skip_error_frames`** (bool): Skip any reply message marked as an error frame. Default value is `False`.
+  - **`bus`** (str): Name of bus to use. Defaults to can_conn.DefaultBus mapping.
+  - **`conn`** (str): Name of the CAN interface to use. 
   - **`keep_listening`** (bool): Continue listening for messages in the background? Default value is `False`.
+  - **`bus_keep_alive`** (bool): Will keep the bus and its settings alive after the handler is finished. Forced to True if keep_listening is set. Default value is `False`.
   - **`buffer_size`** (int): The limit of messages that the internal queue can hold. If the value is less than or equal to zero, the queue size is infinite. Default value is `0`.
-  - **`output`** (str): Select `obj`, `dict` or `str` as the output data type of the reply messages. Default value is `str`.
+  - **`output`** (str): Select `obj`, `dict` or `str` as the output data type of the reply messages. Ignored if `dbc` argument is given. Default value is `str`.
+  - **`dbc`** (str): Path of the can database file (like .dbc) for filtering and decoding. Defaults to None.
+  - **`mask`** (str): Mask to apply to filters and CAN database for decoding. Defaults to None.
+  - **`sanitize`** (bool): Enable/disable input sanitization. Defaults to True.
 
 
 ----
@@ -127,9 +178,13 @@ Queries an OBD-II PID on the CAN bus.
   - **`auto_format`** (bool): Ensure that the PID request message always has a fixed data length of 8 bytes (zero padding). Default value is `True`.
   - **`id`** (int): Use a custom CAN arbitration ID for the PID request message. 
   - **`is_ext_id`** (int): Enforce to use extended CAN arbitration ID or not (29 or 11 bit) for the PID request message.
+  - **`bus`** (str): Name of bus to use. Defaults to can_conn.DefaultBus mapping.
+  - **`conn`** (str): Name of the CAN interface to use. 
+  - **`sanitize`** (bool): Enable/disable input sanitization. Defaults to True.
 
 **OPTIONAL ARGUMENTS, GENERAL**
 
+  - **`formula`** (str): Python code that decodes the raw byte data to a value.
   - **`ensure_filtering`** (bool): Ensure that reply messages not matching the filters are excluded. Default value is `True`.
   - **`flow_control`** (list): List of flow control ID resolvers to enable. Options are `obd` and `custom`. Default value is `False` (disabled).
   - **`replies`** (int): The amount of reply messages to wait for within a timeout.
@@ -154,6 +209,9 @@ Sends all messages from one or more dump files on the CAN bus.
   - **`min_gap`** (float): Minimum time between sent messages in seconds. Default value is `0.0001`.
   - **`skip_gaps_gt`** (float): Skip periods of inactivity greater than this (in seconds). Default value is `86400`.
   - **`include_error_frames`** (bool): Also send messages marked as error frames? Default value is `True`.
+  - **`bus`** (str): Name of bus to use. Defaults to can_conn.DefaultBus mapping.
+  - **`conn`** (str): Name of the CAN interface to use. 
+  - **`sanitize`** (bool): Enable/disable input sanitization. Defaults to True.
 
 
 ----
@@ -163,7 +221,7 @@ Queries by sending one or more request messages on the CAN bus and then waits fo
 
 **ARGUMENTS**
 
-  - **`*messages`** (can.Message): CAN request messages to send.
+  - **`*messages`** (can.Message|str): CAN request messages to send.
 
 **OPTIONAL ARGUMENTS**
 
@@ -175,6 +233,11 @@ Queries by sending one or more request messages on the CAN bus and then waits fo
   - **`strict`** (bool): Raise an error when no reply messages are received or if the amount of expected reply messages is not met within the timeout. Default value is `True`.
   - **`timeout`** (float): The amount of time in seconds to wait for a reply message. Default value is `0.2`.
   - **`output`** (str): Select `obj`, `dict` or `str` as the output data type of the reply messages. Default value is `str`.
+  - **`bus`** (str): Name of bus to use. Defaults to can_conn.DefaultBus mapping.
+  - **`conn`** (str): Name of the CAN interface to use. 
+  - **`formula`** (str): Python code that decodes the raw byte data to a value.
+  - **`name`** (str): Name of the command. (E.g. `VehicleSpeed` or `SeatTemperature`)
+  - **`sanitize`** (bool): Enable/disable input sanitization. Defaults to True.
 
 
 ----
@@ -185,3 +248,9 @@ Sends one or more messages on the CAN bus.
 **ARGUMENTS**
 
   - **`*messages`** (str): CAN messages to send.
+
+**OPTIONAL ARGUMENTS**
+
+  - **`bus`** (str): Name of bus to use. Defaults to can_conn.DefaultBus mapping.
+  - **`conn`** (str): Name of the CAN interface to use. 
+  - **`sanitize`** (bool): Enable/disable input sanitization. Defaults to True.

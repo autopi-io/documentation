@@ -11,18 +11,19 @@ Queries a given connection class command.
 
   - **`cmd`** (str): The command to query.
 
-
 :::note
 When `modem.connection execute` is used with a command like `AT$GPSACP` from bash on device, the `$` must be escaped
 with a `\`, so `AT\$GPSACP`. Otherwise, the `$GPSACP` is interpreted as a bash variable.
 Retrieve GPS Location
 To retrieve the GPS location of the device, use the gnss_location command. This queries the GNSS module for the current geographical position.
 
-
 Example commands:
+
 `autopi modem.connection execute AT\$GPSACP`
 `autopi modem.connection gnss_location`
 :::
+
+
 
 ----
 ## `modem.help`

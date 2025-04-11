@@ -3,6 +3,12 @@ id: core-commands-can
 title: Can
 ---
 
+## `can.autodetect`
+
+Attempts to autodetect the protocol.
+
+
+----
 ## `can.connection`
 
 Manages the current CAN connection.
@@ -196,3 +202,9 @@ Sends one or more messages on the CAN bus.
 **ARGUMENTS**
 
   - **`*messages`** (str): CAN messages to send.
+
+
+----
+## `can.write_stack`
+
+Stores stack to stack file

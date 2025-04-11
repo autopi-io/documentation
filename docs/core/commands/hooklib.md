@@ -21,6 +21,23 @@ Looks for battery results and triggers `vehicle/battery/*` event when voltage ch
 
 
 ----
+## `hooklib.battery_nominal_voltage_event_trigger`
+
+Looks for battery results and triggers `vehicle/battery/nominal_voltage/*` event when the nominal voltage state changes.
+All possible events are:
+
+- vehicle/battery/nominal_voltage/unknown
+- vehicle/battery/nominal_voltage/autodetected
+- vehicle/battery/nominal_voltage/predefined
+
+
+----
+## `hooklib.context_cache_handler`
+
+Manages cached data in the context.
+
+
+----
 ## `hooklib.echo_handler`
 
 Mainly for testing.

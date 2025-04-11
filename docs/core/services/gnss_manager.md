@@ -40,9 +40,9 @@ Filter that only returns significant non duplicated positions.
 
 Queries a given command down to the connection class.
 
-Argumnets:
+**ARGUMENTS**
 
-- cmd (str): The command to query.
+  - **`cmd`** (str): The command to query.
 
 
 ----

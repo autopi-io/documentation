@@ -23,7 +23,17 @@ The CAN database file (.dbc) is found on the local file system by the following 
 ----
 ### `dtc`
 
+Converts Diagnostics Trouble Codes (DTCs) result into a cloud friendly format that will NOT be flattened by the cloud returner.
+
+
+----
+### `dtc_flattening`
+
 Converts Diagnostics Trouble Codes (DTCs) result into a cloud friendly format.
+
+:::note
+This was the old default DTC converter in the past. The new default converter will not be flattening the DTC result.
+:::
 
 
 ----
@@ -41,6 +51,10 @@ Filters out repeating Diagnostics Trouble Codes (DTCs).
 ### `alternating_readout`
 
 Filter that only returns alternating/changed results.
+
+**OPTIONAL ARGUMENTS**
+
+  - **`pass_interval`** (int): Filter passes values only when this many miliseconds have passed between readings, even when the values are different. Default value is `0`.
 
 ## Handlers
 ### `commands`
@@ -255,8 +269,8 @@ Example as command:
 
 ```
 $ obd.query_many \
-  '{"args": ["SPEED"], "kwargs": {"header": "7DF", "mode": "01", "pid": "0D"}}' \
-  '{"args": ["RPM"], "kwargs": {"header": "7DF", "mode": "01", "pid": "0C"}}'
+`{"args": ["SPEED"], "kwargs": {"header": "7DF", "mode": "01", "pid": "0D"}}` \
+`{"args": ["RPM"], "kwargs": {"header": "7DF", "mode": "01", "pid": "0C"}}`
 ```
 
 :::note

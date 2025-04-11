@@ -21,3 +21,9 @@ Return any arbitrary data structure to MQTT.
 ## `mqtt.returner_job`
 
 Return a Salt job result to MQTT.
+
+
+----
+## `mqtt.setup_client`
+
+Sets up a newly created MQTT client based on provided options

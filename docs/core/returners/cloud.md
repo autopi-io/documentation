@@ -8,6 +8,7 @@ title: Cloud
 Return a result to [Cloud](https://www.autopi.io/software-platform/cloud-management) cache.
 
 
+
 ----
 ## `cloud.returner_data`
 
