@@ -151,6 +151,68 @@ curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute/ \
 
 Returns the command output as JSON.
 
+#### Saving and applying WiFi networks
+
+To save WiFi credentials on the device:
+
+**Command:**
+
+```json
+{
+  "command": "grains.set",
+  "arg": ["wpa_supplicant:networks", [
+    { "ssid": "Network-1", "psk": "password1", "priority": 2 },
+    { "ssid": "Network-2", "psk": "password2", "priority": 1 }
+  ]],
+  "kwarg": {
+    "destructive": true,
+    "force": true
+  }
+}
+```
+
+**Curl Example:**
+
+```bash
+curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "command": "grains.set",
+    "arg": ["wpa_supplicant:networks", [
+      { "ssid": "Network-1", "psk": "password1", "priority": 2 },
+      { "ssid": "Network-2", "psk": "password2", "priority": 1 }
+    ]],
+    "kwarg": { "destructive": true, "force": true }
+  }'
+```
+
+Then, to apply the changes and reconfigure the WiFi service:
+
+**Command:**
+
+```json
+{
+  "command": "state.sls",
+  "arg": ["network.wlan.client.config"],
+  "kwarg": {}
+}
+```
+
+**Curl Example:**
+
+```bash
+curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "command": "state.sls",
+    "arg": ["network.wlan.client.config"],
+    "kwarg": {}
+  }'
+```
+:::tip
+The above commands can also be executed in raw format using the below endpoint.
+:::
+
 ---
 
 ### `POST /dongle/<unit_id>/execute_raw/`
