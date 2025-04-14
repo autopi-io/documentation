@@ -167,7 +167,7 @@ When executing commands remotely, you must execute the command async via the exe
 
 Example payloads for REST API are included below.
 #### Executing Commands Locally On the Device
-The above commands can also be executed directly on the device, see the section on [`running commands locally on the device.`](/developer_guides/local-api/)
+The above commands can also be executed directly on the device, see the section on [`running commands locally on the device.`](/developer_guides/local-api-overview/#command-execution)
 
 ### Container Logs
 Logs are retrieved from the containers by using the docker module.
