@@ -167,27 +167,8 @@ When executing commands remotely, you must execute the command async via the exe
 
 Example payloads for REST API are included below.
 #### Executing Commands Locally On the Device
-The above commands can also be executed directly on the device with the following endpoint
+The above commands can also be executed directly on the device, see the section on [`running commands locally on the device.`](/developer_guides/local-api/)
 
-```
-POST localhost:9000/dongle/<uuid:unit_id>/execute/
-```
-
-The body should be the same as the above remote command endpoint.
-
-The unit_id can be retrieved one of the following ways 
-
-A.	Calling the root route
-```
-GET localhost:9000
-```
-
-B.	Reading it from the file 
-```
-/etc/salt/minion_id
-```
-
-The reason that you need the unit_id is because we need to make sure that the request is actually meant for that specific device when using the endpoint from another connected device, like when using the local configuration tool.
 ### Container Logs
 Logs are retrieved from the containers by using the docker module.
 
