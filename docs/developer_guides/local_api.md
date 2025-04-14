@@ -151,7 +151,39 @@ curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute/ \
 
 Returns the command output as JSON.
 
-#### Saving and applying WiFi networks
+:::tip
+The above commands can also be executed in raw format using the below endpoint.
+:::
+
+---
+
+### `POST /dongle/<unit_id>/execute_raw/`
+
+Executes a raw command string.
+
+**Request Body:**
+
+```json
+{
+  "command": "cmd.run ls -l"
+}
+```
+
+**Curl Example:**
+
+```bash
+curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute_raw/ \
+  -H "Content-Type: application/json" \
+  -d '{"command": "cmd.run ls -l"}'
+```
+
+**Response:**
+
+Returns the command output as JSON.
+
+---
+
+### Saving and applying WiFi networks
 
 To save WiFi credentials on the device:
 
@@ -209,35 +241,6 @@ curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute/ \
     "kwarg": {}
   }'
 ```
-:::tip
-The above commands can also be executed in raw format using the below endpoint.
-:::
-
----
-
-### `POST /dongle/<unit_id>/execute_raw/`
-
-Executes a raw command string.
-
-**Request Body:**
-
-```json
-{
-  "command": "cmd.run ls -l"
-}
-```
-
-**Curl Example:**
-
-```bash
-curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute_raw/ \
-  -H "Content-Type: application/json" \
-  -d '{"command": "cmd.run ls -l"}'
-```
-
-**Response:**
-
-Returns the command output as JSON.
 
 ---
 
@@ -294,6 +297,30 @@ curl -X PUT http://<device-ip>:9000/dongle/<unit_id>/settings/apn/ \
 **Response:**
 
 Returns the updated APN configuration.
+
+Then, to apply the changes and reconfigure the QMI service:
+
+**Command:**
+
+```json
+{
+  "command": "state.sls",
+  "arg": ["network.wwan.qmi.config"],
+  "kwarg": {}
+}
+```
+
+**Curl Example:**
+
+```bash
+curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "command": "state.sls",
+    "arg": ["network.wwan.qmi.config"],
+    "kwarg": {}
+  }'
+```
 
 ---
 
