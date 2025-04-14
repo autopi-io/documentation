@@ -49,7 +49,12 @@ module.exports = {
           to: 'hardware/',
           label: 'Hardware',
           position: 'left',
-        },      
+        },
+        {
+          to: 'releases/releases',
+          label: 'Releases',
+          position: 'left',
+        },
         {
           to: 'developer_guides/',
           label: 'Guides',
