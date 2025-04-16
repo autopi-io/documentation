@@ -41,6 +41,18 @@ Our [AutoPi](https://www.autopi.io/) [CAN-FD Pro](https://shop.autopi.io/product
 * **[Tailscale Add-on Pre-Installed](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)**: Our latest feature makes remote access faster and more secure than ever. Troubleshooting on the go? No problem — you’ll be connected in no time.
 :::
 
+### 4-in-1 preinstalled antenna kit
+The 4in1 Antenna Kit is a high-performance solution designed to optimize connectivity for the [AutoPi](https://www.autopi.io/) [CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro). Featuring two LTE antennas, one GPS antenna, and one WiFi antenna, this compact system delivers strong signal reception and reliable communication across multiple wireless standards. Built for demanding environments, the antenna kit ensures stable and long-term performance. 
+
+| **Name** | **Description** |
+|:-----:|--------|
+| Antennas | 2x LTE (main and AUX), 1x GPS, and 1x Wi-Fi | 
+| Wi-Fi Support | Dual-Band (2.4 GHz and 5.8 GHz) | 
+| Connector Types | SMA for LTE and GPS, RP-SMA for Wi-Fi (configurable) | 
+| Cable Lengths | Standard 3m cables and 10 cm U.FL connectors | 
+| Mounting Options | Through-hole, adhesive, or magnetic | 
+| Compatibility | LTE/4G, GSM/3G, Wi-Fi, ISM, M2M, ZigBee, Bluetooth, and more | 
+
 <br>
 </br>
 ### Let's keep in touch!
