@@ -5,8 +5,17 @@ title: Data Troubleshooting
 
 import CardGrid from "/components/CardGrid"
 
-## Why Am I Not Seeing Any Data? 
 
+You are experiencing issues with getting the data out of your [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro)? This guide help you step-by-step to identify and resolve common problems related to wrong configurations on device, configurations to CAN Loggers, verification of CAN channels, nominal voltage detection, and internet connectivity issues. 
+
+:::tip Our support team is here to help you.
+Get in touch here or send an email to support@autopi.io
+:::
+
+### Prerequisites:
+Before following this guide, you must have completed the initial [Setup guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/).
+
+### Why Am I Not Seeing Any Data? 
 If you've followed the [Getting Started Guide](/getting_started/autopi_canfd_pro/index.md)
 and tested your [AutoPi](https://www.autopi.io) [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) device during vehicle operation, but are not recording any data, this guide will help you identify and resolve common issues. 
 

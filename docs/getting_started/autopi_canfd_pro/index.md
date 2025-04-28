@@ -38,14 +38,7 @@ The next step is to register your device to unlock the platform’s full potenti
 
 To add a device to your account, follow one of these methods:  
 
-**Option 1: Via the Accounts Tab**
-1. Navigate to the “Accounts” tab at the bottom of the left side menu on the Platform.
-2. Select “Devices”. 
-3. Locate and click the “Register Device” button in the upper right corner.
-
-![Register Device](/img/getting_started/getting_started/register_device_page.png)
-
-**Option 2: Via Device Management**
+**Option 1: Via Device Management**
 1. See the “Device Management” section of the Platform. 
 2. Click on “Devices”. 
 3. Find and click the “Register Device” button in the upper right corner. 
@@ -62,6 +55,14 @@ After clicking the “Register Device” button, the registration tab will appea
 Once all information is entered, click the “Register Device”. Your newly registered device 
 will now appear in the list under “Vehicles” in the Fleet Management section and under 
 “Devices” in the Device Management section of the Platform.
+
+**Option 2: Via the Accounts Tab**
+1. Navigate to the “Accounts” tab at the bottom of the left side menu on the Platform.
+2. Select “Devices”. 
+3. Locate and click the “Register Device” button in the upper right corner.
+
+![Register Device](/img/getting_started/getting_started/register_device_page.png)
+
 
 ## 3. Ensure SIM Connectivity
 
