@@ -151,7 +151,7 @@ Velcro Strip:
 - When powering the device, make sure you only power it through the OBD connector.
   The device cannot be powered through any of the other ports. 
 
-## 6. Connect to WiFi
+## 6. Connect to device WiFi hotspot
 
 After installing your AutoPi device into the OBD port, you will need to connect it to the AutoPi Cloud.
 To do this, you will temporarily use the device’s Wi-Fi hotspot. 
