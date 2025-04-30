@@ -11,7 +11,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="AutoPi Documentation" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.f833bd2a.css">
-<script src="/assets/js/runtime~main.366f6cb5.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.838ab00b.js" defer="defer"></script>
 <script src="/assets/js/main.3bc1a59c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -93,8 +93,9 @@ This saves time and ensures consistent communication.
 <li><strong>Allow Sending</strong> – Permit sending of CAN frames for this channel. If disabled, an error will be returned when attempting to send a CAN message.</li>
 <li><strong>Receive Own Messages</strong> – Allows the device to also listen to messages it sends (useful for testing/debugging).</li>
 </ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>Make sure you know what you are doing if you are changing the advanced settings, as this will affect the behavior of the device.</p></div></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="loggers">Loggers<a href="#loggers" class="hash-link" aria-label="Direct link to Loggers" title="Direct link to Loggers">​</a></h2>
-<p>A CAN logger records all the CAN bus traffic detected through the can0 and can1 interfaces. This data can be raw or decoded, depending on how you configure the logger.</p>
+<p>Every channels can have one or multiple loggers set up. A CAN logger records all the CAN bus traffic detected through the can0 and can1 interfaces. This data can be raw or decoded, depending on how you configure the logger.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-create-can-logger">How to create CAN Logger?<a href="#how-to-create-can-logger" class="hash-link" aria-label="Direct link to How to create CAN Logger?" title="Direct link to How to create CAN Logger?">​</a></h3>
 <p>Setting up a CAN logger is easy and flexible. We’ve provided default values for most fields, but you can customize everything to match your specific requirements.</p>
 <ul>
@@ -111,9 +112,12 @@ This saves time and ensures consistent communication.
 </ul>
 <p><img decoding="async" loading="lazy" alt="Basic information" src="/assets/images/basic_information-d84ca83b2ff7ab7d226f4899bbc00d39.png" width="1139" height="667" class="img_ev3q"></p>
 <ul>
-<li><strong>2. Filters:</strong> use filters to control which types of CAN frames are logged.<!-- -->
+<li><strong>2. Filters:</strong> use filters to control which types of CAN frames are logged. This settings allow you to filter the type of data you want to be logged for your specific use case.</li>
+</ul>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>If you set up decoder for your CAN logger, the filters are automatically applied even tho they are not visible in this step.</p></div></div>
+<p>Settings for filters:</p>
 <ul>
-<li>Allowed Frame Types: choose from normal, error, and remote frames.</li>
+<li>Allowed Frame Types: choose from normal, error, and remote frames (all of the CAN messages has at least one of these frames).</li>
 <li>Allowed identifier Bits: supports both 11-bit (standard) and 29-bit (extended) identifiers.</li>
 <li>Pass filters: only CAN frames that match these filters will be logged.<!-- -->
 <ul>
@@ -121,48 +125,121 @@ This saves time and ensures consistent communication.
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>If you don&#x27;t know anything about a bit masking, it is better to use the default value inside the Pass Filters (there are different default values for 11 bit and 29 bits).</p></div></div>
 <p><img decoding="async" loading="lazy" alt="Filters" src="/assets/images/filters_tab-190d4a23d266627b445dc9ab12451740.png" width="1143" height="666" class="img_ev3q"></p>
 <ul>
 <li>
-<p><strong>3. Decoders:</strong> this step allows you to decode raw CAN data using Standard decoder or ASAM decoder.</p>
+<p><strong>3. Decoders:</strong> this step allows you to decode (translate) raw CAN data using Standard decoder or ASAM decoder. This step doesn&#x27;t come up with pre set default values, as this is fully customizable for user. User has to import a DBC file and set up some additional settings in order for device to be able to decode the data.</p>
 <ul>
-<li><strong>Add Standard decoder:</strong>
+<li>
+<p><strong>Add Standard decoder:</strong></p>
 <ol>
 <li>Decoder name: name your decoder.</li>
 <li>DBC File Path: provide the DBC file path.</li>
-<li>Select a DBC collection: Select a DBC collection.</li>
+<li>Select a DBC collection: Select a DBC collection from the dropdown where all imported DBC files should be already presented.</li>
+<li>Add a DBC collection: automatically add filters for all DBC message IDs.</li>
+</ol>
+<p>After you choose the DBC file you want to use, you then get presented with all the signals below where you can choose which ones you want to use for decoding. There is also 1 important technical value that needs to be set correctly: Frame ID Mask. Frame ID Mask will help you determine how much needs to match before you have a match.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Frame ID Mask: is a bitmask used to match the CAN message identifiers defined in the DBC file. <strong>If this value is incorrect, no CAN messages will be decoded. For the J1939 protocol the recommended bitmask is ´1FFFFF00´.</strong></p></div></div>
+<p>Extra setting: Automatically add pass filters for all DBC message identifiers - this setting just make sure that all of the data that can not be decoded won&#x27;t be send over.</p>
+</li>
+<li>
+<p><strong>Add ASAM decoder</strong> (capable of doing MDF4 - a binary file format for recording e.g. CAN and CAN FD data):</p>
+<ol>
+<li>Decoder name: name your decoder.</li>
+<li>DBC File Path: provide the DBC file path.</li>
+<li>Select a DBC collection: select a DBC collection from the dropdown where all imported DBC files should be already presented.</li>
 <li>Add a DBC collection: automatically add filters for all DBC message IDs.</li>
 </ol>
 </li>
 </ul>
-<p>Automatically add pass filters for all DBC message identifiers</p>
-<ul>
-<li><strong>Add ASAM decoder:</strong>
-<ol>
-<li>Decoder name</li>
-<li>DBC File Path</li>
-<li>Select a DBC collection</li>
-<li>Add a DBC collection</li>
-</ol>
-</li>
-</ul>
-<p>Automatically add pass filters for all DBC message identifiers
-<img decoding="async" loading="lazy" alt="Decoders" src="/assets/images/decoders_tab-80f0ac8c85b56055d72ad54c348ea688.png" width="1134" height="819" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="Decoders" src="/assets/images/decoders_tab-80f0ac8c85b56055d72ad54c348ea688.png" width="1134" height="819" class="img_ev3q"></p>
+<p><strong>How to import a DBC file:</strong>
+When importing a DBC file, you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated.</p>
 </li>
 <li>
-<p><strong>4. Outputs</strong></p>
+<p><strong>4. Outputs</strong> represent the settings for where do you want the data to be transferred to, at the moment we support upload to AWS S3 bucket.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>If you make 2 identical loggers, you will have 2 identical pairs of the same data. Meaning that you will receive the identical data but more instances are logging the same data at the same time - this could be used for testing purposes.</p></div></div>
+<p>We have 2 different outputs:</p>
+<p><strong>1. Raw data (raw output)</strong></p>
 <ul>
-<li>Raw data</li>
-<li>Decoded data
-<img decoding="async" loading="lazy" alt="Outputs" src="/assets/images/outputs_tab-e54b26a7943571d5b729bf5828582dbb.png" width="1136" height="664" class="img_ev3q"></li>
+<li>
+<p><strong>Local Cache</strong> - raw data are logged on a local disk. Logger will always log to local disk first (not possible to disable). When Disk is running full, Disk Housekeeper is deleting these files (starting with the oldest). You can however configure these settings:</p>
+<ul>
+<li>Folder Pattern - Local folder where the output files containing raw CAN frames are saved to.</li>
+<li>File Name Pattern - The format string used to name the output files in a consistent manner. Raw files will be named with using this pattern. This patern includes the timestamp (year, month, day, hour, minute), and therefore every time new file is made it has the timestamp as a name.</li>
+<li>File Format - by default it is set to log file, however we offer a different file formats to pick from: asc, blf, csv, db and jsonl.</li>
+<li>Max File Size Rollover Trigger - The maximum allowed size before rollover of the output file. In order to avoid having big files, the default size is set - this is a recommended step.</li>
+<li>Max File Age Rollover Trigger - The maximum allowed age before rollover of the output file.</li>
+</ul>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>If you want to access the files through the wifi hotspot, you can follow this guide: <a href="https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/" target="_blank" rel="noopener noreferrer">Accessing files via SFTP/SCP on AutoPi CAN-FD Pro device</a>.</p></div></div>
+<p>If you have enabled the Advanced Settings (in the right upper corner) you will get access to extra settings:</p>
+<ul>
+<li>Worker Interval</li>
+<li>Dump Limit</li>
+<li>Buffer Line Flush Limit</li>
+<li>Buffer Line Size</li>
+</ul>
+</li>
+<li>
+<p><strong>S3</strong> - raw data will be uploaded to a S3 bucket. Settings that you need to set up for device to be able to upload the data to S3 bucket are these:</p>
+<ul>
+<li>Access Key ID - Access key ID of AWS account to be used.</li>
+<li>Access Secret Key - Access secret key for the AWS account.</li>
+<li>Destination Path - URL path to the S3 bucket container for storing output files.</li>
 </ul>
 </li>
 </ul>
-<p>If you enable &quot;show Advanced setttings&quot; in the right top corner, you get access to 1 extra step, frame listeners.</p>
+<p>If you have enabled the Advanced Settings (in the right upper corner) you will get access to extra settings:</p>
 <ul>
-<li><strong>5. Frame listeners</strong></li>
+<li>Exclude Patterns - Rule patterns used to exclude specific files or directories.</li>
+<li>Sync Interval - Time gap between each sync operation, specifying how often files should be synchronized automatically.</li>
+<li>Error Retry Interval - Period of time in seconds that the handler waits before retrying an operation after encountering an error.</li>
+<li>Job Timeout - Maximum duration allowed for the output handler task to run before it is automatically terminated.</li>
+</ul>
+<p><strong>2. Decoded data (decoded output)</strong></p>
+<ul>
+<li>
+<p><strong>Local Cache</strong> - decoded data are also stored on a local disk. Logger will always log to local disk first (not possible to disable). When Disk is running full, Disk Housekeeper is deleting these files (starting with the oldest). You can however configure these settings:</p>
+<ul>
+<li>Folder Pattern - Local folder where the output files containing raw CAN frames are saved to.</li>
+<li>File Name Pattern - The format string used to name the output files in a consistent manner. Decoded files will be named with using this pattern. This patern includes the timestamp (year, month, day, hour, minute), and therefore every time new file is made it has the timestamp as a name.</li>
+<li>File Format - by default it is set to log file, however we offer a different file formats to pick from: csv and jsonl.</li>
+</ul>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>If you want to access the files through the wifi hotspot, you can follow this guide: <a href="https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/" target="_blank" rel="noopener noreferrer">Accessing files via SFTP/SCP on AutoPi CAN-FD Pro device</a>.</p></div></div>
+<p>If you have enabled the Advanced Settings (in the right upper corner) you will get access to extra settings:</p>
+<ul>
+<li>Worker Interval</li>
+<li>Buffer Line Flush Limit</li>
+<li>Buffer Line Size</li>
+<li>Duration Limit</li>
+<li>Message Limit</li>
+<li>Ignore &quot;Message Not Found&quot; in Error File</li>
+<li>Include stacktrace in Error File</li>
+</ul>
+</li>
+<li>
+<p><strong>S3</strong> - decoded data will be uploaded to a S3 bucket. Settings that you need to set up for device to be able to upload the data to S3 bucket are these:</p>
+<ul>
+<li>Access Key ID - Access key ID of AWS account to be used.</li>
+<li>Access Secret Key - Access secret key for the AWS account.</li>
+<li>Destination Path - URL path to the S3 bucket container for storing output files.</li>
+</ul>
+<p>If you have enabled the Advanced Settings (in the right upper corner) you will get access to extra settings:</p>
+<ul>
+<li>Exclude Patterns - Rule patterns used to exclude specific files or directories.</li>
+<li>Sync Interval - Time gap between each sync operation, specifying how often files should be synchronized automatically.</li>
+<li>Error Retry Interval - Period of time in seconds that the handler waits before retrying an operation after encountering an error.</li>
+<li>Job Timeout - Maximum duration allowed for the output handler task to run before it is automatically terminated.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>5. Frame listeners</strong>
+It&#x27;s a way to react on can messages received and possibility to do custom stuff with that.</p>
+<p>If you enable &quot;show Advanced setttings&quot; in the right top corner, you get access to 1 extra step, frame listeners, this tab will rearrange the original steps and becomes the third step in the flow.</p>
+</li>
 </ul>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>This feature is still under development. More will come!</p></div></div>
 <p><img decoding="async" loading="lazy" alt="Frame listeners" src="/assets/images/frame_listeners-0440f4a53a77051dca0797a1c594d1a8.png" width="1139" height="665" class="img_ev3q"></p>
@@ -179,9 +256,17 @@ This saves time and ensures consistent communication.
 </ul>
 <p><img decoding="async" loading="lazy" alt="Editing CAN Logger" src="/assets/images/edit_logger-b27a20ec7d05b142f088aa20e5eaf962.png" width="1401" height="629" class="img_ev3q"></p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="advanced-settings">Advanced settings<a href="#advanced-settings" class="hash-link" aria-label="Direct link to Advanced settings" title="Direct link to Advanced settings">​</a></h2>
-<p>Our newest <a href="https://shop.autopi.io/products/autopi-can-fd-pro" target="_blank" rel="noopener noreferrer">AutoPi CAN-FD Pro</a> device has some additional advanced settings that can be modified. These settings are namely: Can Logging (only available for <a href="https://shop.autopi.io/products/autopi-can-fd-pro" target="_blank" rel="noopener noreferrer">AutoPi CAN-FD Pro</a> ) and Tailscale (available not only for <a href="https://shop.autopi.io/products/autopi-can-fd-pro" target="_blank" rel="noopener noreferrer">AutoPi CAN-FD Pro</a> but also for <a href="https://shop.autopi.io/products/autopi-telematics-unit-cm4-4g-lte-edition" target="_blank" rel="noopener noreferrer">AutoPi TMU CM4</a>.</p>
+<p>Our newest <a href="https://shop.autopi.io/products/autopi-can-fd-pro" target="_blank" rel="noopener noreferrer">AutoPi CAN-FD Pro</a> device has some additional advanced settings that can be modified. These settings are namely: Can Logging (only available for <a href="https://shop.autopi.io/products/autopi-can-fd-pro" target="_blank" rel="noopener noreferrer">AutoPi CAN-FD Pro</a> ) and Tailscale (available not only for <a href="https://shop.autopi.io/products/autopi-can-fd-pro" target="_blank" rel="noopener noreferrer">AutoPi CAN-FD Pro</a> but also for <a href="https://shop.autopi.io/products/autopi-telematics-unit-cm4-4g-lte-edition" target="_blank" rel="noopener noreferrer">AutoPi TMU CM4</a>).</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="advanced-settings-for-disk-housekeeper">Advanced settings for Disk Housekeeper<a href="#advanced-settings-for-disk-housekeeper" class="hash-link" aria-label="Direct link to Advanced settings for Disk Housekeeper" title="Direct link to Advanced settings for Disk Housekeeper">​</a></h3>
+<p>Steps to get into advanced settings for disk housekeeper:</p>
+<ul>
+<li>Go to the Devices section in the menu.</li>
+<li>Select the device you want to work with.</li>
+<li>Click on Advanced settings.</li>
+<li>Click on Can Logging.</li>
+</ul>
 <p><img decoding="async" loading="lazy" alt="Advanced settings for Disk Housekeeper" src="/assets/images/disk_housekeeper-a5bc70be67c13bb1ee30c291c6e7966e.png" width="1355" height="1241" class="img_ev3q"></p>
+<p>Settings for disk housekeeper:</p>
 <ul>
 <li><strong>Critical use limit</strong>: this setting allows you to set an event based on critical use limit (user customizable). Disk usage percentage that is considered critical and which causes an event to be triggered.</li>
 <li><strong>Enabled</strong>: this settings allows you to enable Disk Housekeeper, that prevents your disk from running full with old files. By clicking on True, you enable automatic disk cleanup to prevent the disk from running full. The oldest files will be deleted first.</li>
@@ -196,6 +281,13 @@ This saves time and ensures consistent communication.
 <li>system/disk_housekeeper/critical_purge - this event is triggered when it reaches critical limits (customizable in the advanced settings).</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="advanced-settings-for-output-handler">Advanced settings for Output Handler<a href="#advanced-settings-for-output-handler" class="hash-link" aria-label="Direct link to Advanced settings for Output Handler" title="Direct link to Advanced settings for Output Handler">​</a></h3>
+<p>Steps to get into advanced settings for output handler:</p>
+<ul>
+<li>Go to the Devices section in the menu.</li>
+<li>Select the device you want to work with.</li>
+<li>Click on Advanced settings.</li>
+<li>Click on Can Logging.</li>
+</ul>
 <p><img decoding="async" loading="lazy" alt="Advanced settings for Output Handler" src="/assets/images/output_handler-a870c3261c32057f91b0dffcc71aaead.png" width="1354" height="1237" class="img_ev3q"></p>
 <p>At the moment if you want to use <a href="https://aws.amazon.com/free/?trk=b45f363b-5d02-4b3f-87df-b7b1908ff05c&amp;sc_channel=ps&amp;ef_id=CjwKCAjwktO_BhBrEiwAV70jXi39jOGqTVzMppg3DxhsoIWS-bbtstEGVIVceNP95c9u0Id1n_q5XBoCGkMQAvD_BwE:G:s&amp;s_kwcid=AL!4422!3!536452769228!e!!g!!aws%20s3!12198535626!120978772550&amp;trk=b45f363b-5d02-4b3f-87df-b7b1908ff05c&amp;sc_channel=ps&amp;targetid=kwd-20982008831&amp;gclid=CjwKCAjwktO_BhBrEiwAV70jXi39jOGqTVzMppg3DxhsoIWS-bbtstEGVIVceNP95c9u0Id1n_q5XBoCGkMQAvD_BwE&amp;all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc&amp;awsf.Free%20Tier%20Types=*all&amp;awsf.Free%20Tier%20Categories=*all" target="_blank" rel="noopener noreferrer">AWS S3 Cloud storage</a> as an output handler, you will need to fill out these fields:</p>
 <ul>
@@ -203,6 +295,13 @@ This saves time and ensures consistent communication.
 <li><strong>Worker interval</strong> - time period between each check of the executing AWS S3 sync process. Checking the upload job by default every 10 seconds, making sure the files are uploaded. If the job is hanging, it will close it, to ensure you won&#x27;t loose any data.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="advanced-settings-for-tailscale">Advanced settings for Tailscale<a href="#advanced-settings-for-tailscale" class="hash-link" aria-label="Direct link to Advanced settings for Tailscale" title="Direct link to Advanced settings for Tailscale">​</a></h3>
+<p>Steps to get into advanced settings for Tailscale:</p>
+<ul>
+<li>Go to the Devices section in the menu.</li>
+<li>Select the device you want to work with.</li>
+<li>Click on Advanced settings.</li>
+<li>Click on Tailscale.</li>
+</ul>
 <p><img decoding="async" loading="lazy" alt="Advanced settings for Tailscale" src="/assets/images/tailscale_settings-4d5e8525437d5edb836d06006a7aa62d.png" width="1357" height="1167" class="img_ev3q"></p>
 <p>At the moment if you want to access your device remotely using <a href="https://tailscale.com/" target="_blank" rel="noopener noreferrer">Tailscale</a> you will need to configure these fields:</p>
 <ul>
