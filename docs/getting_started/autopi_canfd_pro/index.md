@@ -7,7 +7,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import SideBySide from '@site/src/components/SideBySide';
 import CardGrid from "/components/CardGrid" ;
 
-This step-by-step guide will help you set up your AutoPi CAN-FD Pro. 
 :::note
 The device comes pre-assembled with the SD card inside and requires just a few steps to complete the installation.
 
@@ -20,6 +19,19 @@ The device comes pre-assembled with the SD card inside and requires just a few s
      are doing, as changes can affect the performance of your car and its battery.  
 
 :::
+
+## [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) Quick Start Summary
+* Step 1: Set up your account on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/#1-setting-up-user-account).
+* Step 2: Register your device on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/#2-register-your-device). 
+* Step 3: SIM card installation (if you did not purchased one from us), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/#3-ensure-sim-connectivity).
+* Step 4: Device installation to your vehicle's OBD-II port, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/#5-installation).
+* Step 5: Connect your device to the [AutoPi Cloud](https://my.autopi.io/) and verify connectivity, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/#6-connect-to-wifi). 
+* Step 6: Change your password, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/#9-finalization).
+* Step 7: Set up output handlers for data (where do you want the captured data to be send to), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-4-outputs).
+* Step 8: Access the files through wifi hotspot, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/).
+
+## Getting started
+This step-by-step guide will help you set up your AutoPi CAN-FD Pro. 
 
 ## 1. Setting Up User Account
 
@@ -132,7 +144,7 @@ you can buy some **Accessories** from our [AutoPi shop](https://shop.autopi.io/)
     * [OBD-II to dual DB9](https://shop.autopi.io/products/obd2-to-dual-db) - connect two CAN bus nodes to the OBD2 port of the AutoPi CAN-FD Pro.
 
 
-### **Tips on getting the best performance of your device**:
+### Tips on getting the best performance of your device:
 
 - Make sure that the AutoPi logo is facing the sky.
 - Antennas should also face the sky to ensure a strong signal. 
@@ -252,7 +264,7 @@ get the most out of your AutoPi experience:
 <br>
 </br>
 
-### Let's keep in touch!
+## Let's keep in touch!
 Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
 <CardGrid home>
 [![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
