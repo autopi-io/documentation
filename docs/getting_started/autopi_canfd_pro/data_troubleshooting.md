@@ -64,6 +64,22 @@ If you want to double check if this feature is enabled, Go to Devices > Choose D
 Ensure your device is connected to the internet. If there are connectivity issues,
 follow the steps outlined in our [4G Internet Setup and Troubleshooting Guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-4g-internet-setup-troubleshooting/).
 
+### 6. Verify Bitrates 
+
+Ensure the correct Bitrate is set for your vehicle, you can follow this guide: [Find the correct Bitrate for your vehicle](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-4-try-bitrates-or-use-fixed-bitrate). 
+
+
+### 7. Make sure you are receiving data
+
+**Step 1: Configure Output Handlers:**
+* To ensure your device sends data to the correct destination, you need to set up output handlers properly. This step is essential for reliable communication between your device and the receiving service.
+* Follow the instructions in the guide here: [How to set up Output Handlers](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-4-outputs). 
+
+**Step 2: Verify File Access via Wi-Fi Hotspot:**
+* Once your output handlers are configured, verify that you can access files from the device over a Wi-Fi hotspot. This is important to confirm your setup is working correctly. 
+* Follow the instructions in the guide here: [Accessing Files via SFTP/SCP on AutoPi](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/)
+
+
 <br>
 </br>
 
