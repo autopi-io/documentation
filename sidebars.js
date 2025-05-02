@@ -112,6 +112,7 @@ module.exports = {
               "type": "category",
             },
             "cloud/fleet_management/locations",
+            "cloud/fleet_management/fleet-alerts",
             {
               "items": [
                 "cloud/fleet_management/reports/reports-intro",
