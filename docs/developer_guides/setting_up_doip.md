@@ -80,13 +80,26 @@ At the moment if you want to enable the DoIP on your Autopi device you will need
 
 ### DoIP activation 
 
-After you have finnished setting up the Advanced settings on your device, you will need to run some commands to activate the DoIP activation pin. You are basically sending a signal to the **DoIP Activation Pin** that you want to activate it and get data. 
+:::note
+This activation needs to be set up every time the device boots up.
+:::
+
+After you have finished setting up the Advanced settings on your device, you will need to run some commands to activate the DoIP activation pin. You are basically sending a signal to the **DoIP Activation Pin** that you want to activate it and get data. 
 
 The DoIP HAT works in conjunction with specific software components on the AutoPi device:​
-* `doip_manager`: A service managed through the AutoPi Cloud that handles DoIP communication.​
-* `doip command`: A command-line tool that allows users to manage DoIP connections and perform diagnostics using Unified Diagnostic Services (UDS).​
+* doip_manager: A service managed through the AutoPi Cloud that handles DoIP communication.​
+* doip command: A command-line tool that allows users to manage DoIP connections and perform diagnostics using Unified Diagnostic Services (UDS).​
 
-These tools enable users to establish TCP socket connections to the vehicle's ECUs, send diagnostic requests, and receive responses, facilitating comprehensive vehicle diagnostics over IP. 
+#### Steps to activate the DoIP interface:
+1. Activate the DoIP interface by running this command: `doip.interface activate`
+2. Connect the DoIP interface by running this command: `doip.interface connect`
+3. Use UDS client (the UDS client works synchronously and can handle a single request/response at a time) and run this command to get more information about which command to use: `doip.uds help`
+4. Once you are able to find the commands you want to use, you can run help command to receive more information, for example: `doip.uds help change_session`
+5. Once you are sure which command to use, you can run it like this: `doip.uds change_session 1`
+
+You can read about more commands in our [DoIP commands guide](https://docs.autopi.io/core/commands/core-commands-doip/). 
+
+
 
 ## Let's keep in touch!
 Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
