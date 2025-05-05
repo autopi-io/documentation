@@ -264,6 +264,7 @@ module.exports = {
             "core/commands/core-commands-cryptoauth",
             "core/commands/core-commands-dac",
             "core/commands/core-commands-disk-housekeeper",
+            "core/commands/core-commands-doip",
             "core/commands/core-commands-ec2x",
             "core/commands/core-commands-file-sync",
             "core/commands/core-commands-fileutil",
