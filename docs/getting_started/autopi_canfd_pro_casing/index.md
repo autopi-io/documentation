@@ -24,6 +24,16 @@ interface to your car and communicates with the ECU in your car.
      are doing, as changes can affect the performance of your car and its battery.  
 :::
 
+## [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) Quick Start Summary
+* Step 1: Set up your account on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/#1-setting-up-user-account).
+* Step 2: Register your device on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/#2-register-your-device). 
+* Step 3: SIM card installation (if you did not purchased one from us), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/#3-ensure-sim-connectivity).
+* Step 4: Device installation to your vehicle's OBD-II port, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/#5-installation).
+* Step 5: Connect your device to the [AutoPi Cloud](https://my.autopi.io/) and verify connectivity, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/#6-connect-to-wifi). 
+* Step 6: Change your password, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/#9-finalization).
+* Step 7: Set up output handlers for data (where do you want the captured data to be send to), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-4-outputs).
+* Step 8: Access the files remotely, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/).
+
 ## 1. Setting Up User Account
 
 Once you have received your AutoPi device it is important to associate it with Cloud Platform.
@@ -251,6 +261,7 @@ Take your device for a trip to start gathering data.
 
 Now that your device is up and running, here are a few suggestions to help you 
 get the most out of your AutoPi experience: 
+- **Read our User guide**: dive into the CAN-FD Pro device and all of its functionalities in our [User guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/). 
 - **Explore the AutoPi Cloud**: Dive into the [AutoPi Cloud platform](https://my.autopi.io/#/login) to explore all 
   the features available to you, such as real-time vehicle monitoring, 
   advanced analytics, and customizable alerts. 

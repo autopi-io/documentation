@@ -28,7 +28,7 @@ The device comes pre-assembled with the SD card inside and requires just a few s
 * Step 5: Connect your device to the [AutoPi Cloud](https://my.autopi.io/) and verify connectivity, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/#6-connect-to-wifi). 
 * Step 6: Change your password, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/#9-finalization).
 * Step 7: Set up output handlers for data (where do you want the captured data to be send to), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-4-outputs).
-* Step 8: Access the files through wifi hotspot, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/).
+* Step 8: Access the files remotely, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/).
 
 ## Getting started
 This step-by-step guide will help you set up your AutoPi CAN-FD Pro. 
