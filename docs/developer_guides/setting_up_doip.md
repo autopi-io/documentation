@@ -59,6 +59,34 @@ From the AutoPi Core software, it is possible to control the pinout variant to b
 
 The AutoPi DoIP integration is based on the [udsoncan library](https://github.com/autopi-io/py-udsoncan). The integration implements all the services and helper classes from the [library](https://udsoncan.readthedocs.io/en/latest/) and thereby also support UDS. 
 
+### Enable the DoIP on your AutoPi device
+
+Before you are able to fully use the DoIP software you need to set up some settings on your AutoPi device. 
+
+Steps to get into advanced settings for DoIP:
+* Go to the Devices section in the menu.
+* Select the device you want to work with.
+* Click on Advanced settings.
+* Click on Doip. 
+
+![DoIP Advanced settings](/img/guides/doip_advanced_settings.png)
+
+At the moment if you want to enable the DoIP on your Autopi device you will need to configure these fields: 
+* **Default Pin Setup** - this setting changes the setup of the Pins. You can read more about [DoIP main pinout](https://docs.autopi.io/developer_guides/setting-up-doip/#doip-main-pinout) and [DoIP alternative pinout](https://docs.autopi.io/developer_guides/setting-up-doip/#doip-alternative-pinout) in this guide above. By default this setting is set to Main pinout as that one is used more frequently. 
+* **Enabled** - this setting allow you to enable the DOIP UDS service. By default it is disabled but if you want to start using DoIP, enable it here. 
+* **Host** - fill out the hostname or IP of the TCP endpoint.
+* **Port** - represents the port number of the TCP endpoint. The default value is set to `13400`. You can however change this if the Port number is different for your TCP endpoint. 
+* **Timeout** - timeout of the TCP connection. The default value is set to `0.1`and should be changed only if you know what you are doing. 
+
+### DoIP activation 
+
+After you have finnished setting up the Advanced settings on your device, you will need to run some commands to activate the DoIP activation pin. You are basically sending a signal to the **DoIP Activation Pin** that you want to activate it and get data. 
+
+The DoIP HAT works in conjunction with specific software components on the AutoPi device:​
+* `doip_manager`: A service managed through the AutoPi Cloud that handles DoIP communication.​
+* `doip command`: A command-line tool that allows users to manage DoIP connections and perform diagnostics using Unified Diagnostic Services (UDS).​
+
+These tools enable users to establish TCP socket connections to the vehicle's ECUs, send diagnostic requests, and receive responses, facilitating comprehensive vehicle diagnostics over IP. 
 
 ## Let's keep in touch!
 Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 

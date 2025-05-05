@@ -3,7 +3,7 @@ id: cloud-intro
 title: Introduction
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl'; import CardGrid from "/components/CardGrid" ;
+import useBaseUrl from '@docusaurus/useBaseUrl'; import CardGrid from "/components/CardGrid" ; 
 
 This section is all about the [Cloud](https://www.autopi.io/software-platform/cloud-management) system. It goes over details, such as the different configuration
 options that can be set, the events that can be seen from the device. More complex functionalities
@@ -63,3 +63,5 @@ The [API](/getting_started/api/) gives you acccess to all the same functionaliti
   - Buy the device in our [shop](https://shop.autopi.io)
   - Contact our [sales team ](https://www.autopi.io/contact/)
   - Get help from our [support team ](https://www.autopi.io/support/)
+
+
