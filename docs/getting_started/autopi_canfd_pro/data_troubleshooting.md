@@ -39,8 +39,72 @@ Run the `logger.status` command on the device to see the status of data logger(s
 2. Or alternatively if you have direct SSH access [How to SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) to the device via LAN or VPN (for Tailscale, you can read more at this guide: [How to connect to Tailscale](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)) you can use the `autopi` terminal command.
 3. Or if you are nearby the device and can connect to it's local WiFi hotspot you can do it from the local admin UI on local.autopi.io. Here is a guide: [Local development workflow](https://docs.autopi.io/developer_guides/local-development-workflow/). 
 
-Regardless of which of the above methods you use, you must run the command `logger.status`. 
+Regardless of which of the above methods you use, you must run the command `logger.status`. Below is an example of the output of the command.
 
+```
+channels:
+  can0:
+    interface:
+      autodetect:
+        in_progress: false
+        last_results:
+          any_passive:
+            bitrate: 500000
+            frames_per_second: 710
+            has_11bit_identifiers: true
+            has_29bit_identifiers: false
+            performed_at: '2025-05-07T09:50:43.347462'
+            success: true
+      bitrate: 500000
+    loggers:
+      raw:
+        current_fps: 584.95
+        decoders:
+          dbc:
+            failed_messages_count: 140000
+            output_file_pattern: /opt/autopi/can0/loggers/raw/decoders/dbc/output/{input:}.jsonl
+            output_handlers:
+            - destination_path: s3://my-datalogger/a1eeabbd-cffa-f7c4-31a5-49b2c2340d3d/can0/decoded
+              uploaded_files_count: 2
+            total_messages_count: 140000
+            type: STANDARD
+        output_file_pattern: /opt/autopi/can0/loggers/raw/output/{ts:%Y%m%d%H%M}.log
+        output_handlers:
+        - destination_path: s3://my-datalogger/a1eeabbd-cffa-f7c4-31a5-49b2c2340d3d/can0/raw
+          uploaded_files_count: 2
+        received_error_frames_count: 613
+        received_frames_count: 111101
+  can1:
+    interface:
+      autodetect:
+        in_progress: false
+        last_results:
+          any_passive:
+            bitrate: 500000
+            frames_per_second: 544
+            has_11bit_identifiers: true
+            has_29bit_identifiers: false
+            performed_at: '2025-05-07T09:50:44.198244'
+            success: true
+      bitrate: 500000
+    loggers:
+      raw:
+        current_fps: 586.66
+        decoders:
+          dbc:
+            output_file_pattern: /opt/autopi/can1/loggers/raw/decoders/dbc/output/{input:}.mf4
+            total_messages_count: 0
+            type: ASAMMDF
+        output_file_pattern: /opt/autopi/can1/loggers/raw/output/{ts:%Y%m%d%H%M}.log
+        received_error_frames_count: 613
+        received_frames_count: 113725
+disks:
+  /:
+    free_space: 3 GB
+    housekeeper:
+      deleted_files_count: 0
+      total_space_freed: 0 bytes
+```
 
 ### 3. CAN bus detection
 
