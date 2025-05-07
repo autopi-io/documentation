@@ -15,7 +15,7 @@ Get in touch here or send an email to support@autopi.io
 ### Prerequisites:
 Before following this guide, you must have completed the initial [Setup guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/).
 
-### Why Am I Not Seeing Any Data? 
+### Why am I not seeing any data? 
 If you've followed the [Getting Started Guide](/getting_started/autopi_canfd_pro/index.md)
 and tested your [AutoPi](https://www.autopi.io) [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) device during vehicle operation, but are not recording any data, this guide will help you identify and resolve common issues. 
 
@@ -23,15 +23,15 @@ This guide is organized as a checklist, detailing potential reasons why your veh
 data might not be recorded. It is only intended for the
 [AutoPi](https://www.autopi.io) [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) device.  
 
-## Common Causes and Solutions for No Data Recorded
+## Common causes and solutions for no data recorded
 
-### 1. Identify the Current State of the Device
+### 1. Identify the current state of the device
 
 Check the two LEDs on the side of the device. Both the green and blue LEDs should be lit. If the green LED is off and the blue LED is “breathing” or fully dimmed the device is either sleeping or hibernating. To resolve this re-plug or push the button on the side of the device to boot it up again.
 
 For more details on LED status meanings, refer to this guide: [LED and button states](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-led-and-button/)
 
-### 2. Check the CAN Loggers
+### 2. Check the CAN loggers
 
 Run the `logger.status` command on the device to see the status of data logger(s).
 
@@ -46,35 +46,35 @@ Regardless of which of the above methods you use, you must run the command `logg
 
 Verify the settings of the CAN channels. Configuration of the device is done through the [AutoPi cloud](https://my.autopi.io/). 
 
-### 4. Nominal Voltage detection
+### 4. Nominal voltage detection
 
-When the device boots for the first time, it attempts to autodetect the nominal voltage and sends the results back to [AutoPi](https://www.autopi.io) [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) device, where a Nominal voltage is set for your vehicle. 
+When the device boots it attempts to autodetect the nominal voltage.
 
-* **Auto-detect Voltage:** This is a new feature that comes enabled by default on all [AutoPi](https://www.autopi.io) [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) devices. That means you don’t need to configure it manually - your device will automatically detect this value the first time it boots up. And the result is shown in Events tab.
+* **Auto-detect voltage:** This is a new feature that comes enabled by default on all [AutoPi](https://www.autopi.io) [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) devices. That means you do not need to configure the nominal voltage manually - your device will automatically detect it. The result of autodetection of nominal voltage is available below the Events tab.
 If you want to double check if this feature is enabled, Go to Devices > Choose Device > Settings > Vehicle Editor to see if the Auto-Detect Voltage is enabled.
 
     ![Autodetect feature](/img/getting_started/autopi_canfd_pro/autodetect_voltage.png)
 
-* **Manual Configuration:** If the device is unable to autodetect the nominal voltage on the vehicle, you might need to configure it manually. Go to Devices > Choose Device > Settings > Vehicle Editor > Nominal Voltage > click on the field and choose from 12V or 24V. Make sure the correct configuration is set from dropdown.  
+* **Manual configuration:** If the device is unable to autodetect the nominal voltage on the vehicle, you might need to configure it manually. Go to Devices > Choose Device > Settings > Vehicle Editor > Nominal Voltage > click on the field and choose from 12V or 24V. Make sure the correct configuration is set from the dropdown.  
 
     ![Manual configuration of nominal voltage](/img/getting_started/autopi_canfd_pro/nominal_voltage.png)
 
-### 5. Internet Connectivity Issues 
+### 5. Internet connectivity issues 
 
 Ensure your device is connected to the internet. If there are connectivity issues,
 follow the steps outlined in our [4G Internet Setup and Troubleshooting Guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-4g-internet-setup-troubleshooting/).
 
-### 6. Verify Bitrates 
+### 6. Verify bitrates 
 
 Ensure the correct Bitrate is set for your vehicle, you can follow this guide: [Find the correct Bitrate for your vehicle](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-4-try-bitrates-or-use-fixed-bitrate). The default list for Try Bitrates includes some of the most common used bitrates to make this process easier for you. This step allows you to make sure that you can receive any data by listening to these settings. 
 * You have 2 options here: 
-  * **1. Try Bitrates (Auto Mode):**
-      If you're unsure about your vehicle’s bitrate, this is the best choice.
+  * **1. Try bitrates (auto mode):**
+      If you are unsure about your vehicle’s bitrate, this is the best choice.
         The device will automatically scan through a list of common CAN 2.0 and CAN FD bitrates.
-  * **2. Fixed Bitrate (Manual Mode):**
-    If you already know the exact bitrates for your vehicle just input them directly. 
+  * **2. Fixed bitrate (manual mode):**
+    If you know the exact bitrate for your vehicle you can input it directly to skip scanning. 
 
-**Autodetect** feature under CAN Channel settings, is used to figure out how to find the correct bitrate using 3 different detection strategies to ensure there is data incoming. You can read more in this guide, on [How to find the correct bitrate](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-3-autodetect-how-to-find-the-correct-bitrate). Every time the Autodetection is used, it triggers an **event** that could be seen in the events section on [AutoPi cloud](https://my.autopi.io/) -> go to devices > pick the device > events. This should help you to understand a little better what is happening on a device. These are some of the examples for the events that can be used for verifying the bitrates: 
+**Autodetect** feature under CAN Channel settings, is used to figure out how to find the correct bitrate using 3 different detection strategies to ensure there is data incoming. You can read more in this guide, on [How to find the correct bitrate](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-3-autodetect-how-to-find-the-correct-bitrate). Every time the autodetection is performed, it triggers an **event** that can be seen in the events section on [AutoPi cloud](https://my.autopi.io/) -> go to devices > pick the device > events. This should help you to understand a little better what is happening on a device. These are some of the examples for the events that can be used for verifying the bitrates: 
 - vehicle/bus/can0/autodetected 
 - vehicle/bus/can0/autodetect/any_passive/successful 
 - vehicle/bus/can0/autodetect/any_passive/unsuccessful 
@@ -82,12 +82,12 @@ Ensure the correct Bitrate is set for your vehicle, you can follow this guide: [
 
 ### 7. Make sure you are receiving data
 
-**Step 1: Configure Output Handlers:**
+**Step 1: Configure output handlers:**
 * To ensure your device sends data to the correct destination, you need to set up output handlers properly. This step is essential for reliable communication between your device and the receiving service.
 * Follow the instructions in the guide here: [How to set up Output Handlers](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-4-outputs). 
 
-**Step 2: Verify File Access via Wi-Fi Hotspot:**
-* Once your output handlers are configured, verify that you can access files from the device over a Wi-Fi hotspot. This is important to confirm your setup is working correctly. 
-* Follow the instructions in the guide here: [Accessing Files via SFTP/SCP on AutoPi](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/)
+**Step 2: Verify file access via Wi-Fi hotspot:**
+* Once your output handlers are configured, verify that you can access the files from the device. This is important to confirm your setup is working correctly.
+* Follow the instructions in the guide here: [Accessing files via SFTP/SCP on AutoPi](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/)
 
 
