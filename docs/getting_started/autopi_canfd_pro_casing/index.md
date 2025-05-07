@@ -86,11 +86,13 @@ If you have purchased the hardware-only version, you will need to insert your SI
 into your AutoPi before connecting the device to your vehicle. The AutoPi uses nano SIM sizes. Getting your SIM card in place is quick and easy:
 Simply open the device’s casing and insert the SIM card as shown in the picture below. 
 
+![Sim card](/img/getting_started/getting_started/sim_pro.jpeg)
+
 When inserting the SIM card, it’s important to ensure it is installed correctly. 
 The picture below shows the proper orientation of the SIM card. 
 Please note that the text side of the SIM card must face up and the “triangle” end point into the device. 
 
-
+![Sim card positioning](/img/getting_started/getting_started/simcard_direction.jpeg)
 
 :::caution
 **Please notice:** When the SIM card is inserted correctly, you will hear a small "click" when the
