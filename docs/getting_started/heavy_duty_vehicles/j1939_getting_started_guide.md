@@ -18,7 +18,7 @@ Before proceeding the [AutoPi](https://www.autopi.io) device must be:
 ## Determining the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Bus protocol
 First step is the determine the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus protocol used for the connected vehicle (if you dont already know it). A few steps is required here:
 
-  1. Remove all existing loggers on the device (make sure the loggers chage is synced). This can be done here: https://my.autopi.io go to _Devices_ > _Select Device_ > _Loggers_. You want to remove these, so that they dont interfere with the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Bus already.
+  1. Remove all existing loggers on the device (make sure the changes are synced to the device). This can be done here: https://my.autopi.io go to _Devices_ > _Select Device_ > _Loggers_. You want to remove these, so that they dont interfere with the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Bus already.
   2. Remove all existing [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) busses on the vehicle. From the same page click the _Settings_ button in the top right corner. Click the _Vehicles Editor_ and remove the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) busses configured in the bottom of the popup. 
   3. Configure the vehicle for 24V operation (if its a 24V truck). You can do this on the vehicles editor page that you are add, by clicking the _Nominal Voltage_ dropdown. 
   4. You are now set to start the testing for the right [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Bus configuration.
