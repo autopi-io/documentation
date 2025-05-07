@@ -100,12 +100,3 @@ To disconnect from Tailscale:
 </br>
 That's it! Your [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) is now connected to [Tailscale](https://tailscale.com/). Enjoy secure and remote access to your [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro).
 
-
-## Let's keep in touch!
-Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
-<CardGrid home>
-[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
-
-[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
-
-</CardGrid>

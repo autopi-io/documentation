@@ -95,9 +95,3 @@ The Location widget will display your top five locations – the ones with the m
 vehicles associated to the location. It shows how many vehicles are on and off 
 the location. To view all your locations, click on **View Locations**. 
 
-
-## Links
-  - Read more about our [product](https://autopi.io)
-  - Buy the device in our [shop](https://shop.autopi.io)
-  - Contact our [sales team ](https://www.autopi.io/contact/)
-  - Get help from our [support team ](https://www.autopi.io/support/)

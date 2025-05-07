@@ -28,15 +28,4 @@ If you need extra reach or want to place the device somewhere more convenient, w
 Want to dive deeper into setup details? Check out these guides:
 * OBD Connector Pinout: read more [here](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-obd-connector-pinout/)   
 * Mounting holes for using mounts in the vehicle and examples of device mounts: read more [here](https://docs.autopi.io/hardware/autopi_canfd_pro/mounting_options/)
-<br>
-</br>
-### Let's keep in touch!
-Thank you for choosing AutoPi. We're excited to see what you will achieve with your [AutoPi](https://www.autopi.io/) [CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro).
 
-<CardGrid home>
-
-[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
-
-[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
-
-</CardGrid>

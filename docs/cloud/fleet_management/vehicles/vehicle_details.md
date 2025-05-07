@@ -53,15 +53,3 @@ The last tab shows **Alerts**. This section displays all important alerts relate
 
 ![Vehicles alerts](/img/cloud/fleet_management/vehicles/vehicle_details/vehicles_alerts.png)
 
-
-<br>
-</br>
-
-## Let's keep in touch!
-Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
-<CardGrid home>
-[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
-
-[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
-
-</CardGrid>

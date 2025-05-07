@@ -98,15 +98,3 @@ scp /local/file.txt pi@[IP_ADDRESS]:/opt/autopi/can1/
 **Security**: For Tailscale, no need to open port 22 on your router—traffic is encrypted through the VPN.  
 **Default Paths**: Double-check `/opt/autopi/can0` or `/can1` for your specific files. 
 :::
-
-<br>
-</br>
-
-## Let's keep in touch!
-Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
-<CardGrid home>
-[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
-
-[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
-
-</CardGrid>

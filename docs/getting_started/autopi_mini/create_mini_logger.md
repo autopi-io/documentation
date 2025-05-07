@@ -39,13 +39,5 @@ As an example, when selecting `Ranges Both` contains a range start and range end
 **Advanced**: In the advanced section you can modify the sampling rate, which controls how long a value should remain the same before changing.
 
 Once you save the [Mini](https://www.autopi.io/hardware/autopi-mini) Logger, you will see it appear in the Loggers page.
-Once the settings have ben synchronized to your device, your device will start sending the newly created logger.
+Once the settings have been synchronized to your device, your device will start sending the newly created logger.
 
-### Let's keep in touch!
-Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
-<CardGrid home>
-[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
-
-[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
-
-</CardGrid>

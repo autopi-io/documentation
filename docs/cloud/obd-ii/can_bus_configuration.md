@@ -234,15 +234,3 @@ values:
 <!-- ## Stage 5: Acceptance; AKA: Giving Up
 The notion of "giving up" often carries a negative connotation, frequently associated with failure, defeat, or a lack of willpower. However, there's an underrated glory in giving up when it leads to a reevaluation of priorities, the lifting of unnecessary burdens, or the freeing up of energy and resources for more meaningful pursuits. Sometimes, giving up is a courageous act of self-awareness, acknowledging that a path we've started down isn't serving us—or anyone else—well. In such cases, the decision to step back can lead to new opportunities, renewed focus, and the kind of growth that stubborn persistence might never have afforded us. -->
 
-
-<br>
-</br>
-
-### Let's keep in touch!
-Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
-<CardGrid home>
-[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
-
-[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
-
-</CardGrid>

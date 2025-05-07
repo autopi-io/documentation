@@ -41,16 +41,3 @@ Don’t want to DIY? We’ve got you covered with pre-designed mounts made speci
 
 ![Device mount for curved surfeces](/img/hardware/accessories/device_mounts/device_mount_curve_1_CutV2.png)
 
-
-<br>
-</br>
-### Let's keep in touch!
-Thank you for choosing AutoPi. We're excited to see what you will achieve with your [AutoPi](https://www.autopi.io/) [CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro).
-
-<CardGrid home>
-
-[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
-
-[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
-
-</CardGrid>

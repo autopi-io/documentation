@@ -245,13 +245,3 @@ Further inspiration on how to write custom services (or engines as they are also
 * [Salt documentation](https://docs.saltstack.com/en/2017.7/topics/engines/index.html)
 * [Examples AutoPi.io on Github](https://github.com/autopi-io/autopi-core/tree/master/src/salt/base/ext/_engines)
 
-<br>
-</br>
-### Let's keep in touch!
-Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
-<CardGrid home>
-[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
-
-[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
-
-</CardGrid>

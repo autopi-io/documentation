@@ -293,20 +293,4 @@ _Example_:
 To receive the J1939 data in the [Cloud](https://www.autopi.io/software-platform/cloud-management), loggers must first be set up on the device. Go to _Device_ > _Loggers_ and create loggers 
 for the respective PIDs and or [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages. After a logger has been created, it must be synchronized to the [AutoPi](https://www.autopi.io) device, just like any other change.
 
-<br>
-</br>
-
-### Let's keep in touch!
-Thank you for choosing AutoPi. We're excited to see what you will achieve with your new device! 
-<CardGrid home>
-
-[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **Buy AutoPi device** Check out our shop .](https://shop.autopi.io)
-
-[![](/img/shared/autopi_devices_trans.png) **Learn more** Check which device fits your requirements .](https://www.autopi.io/hardware/compare/)
-
-[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
-
-[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
-
-</CardGrid>
 

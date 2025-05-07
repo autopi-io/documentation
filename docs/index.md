@@ -93,13 +93,3 @@ Want to dig right into the source code? Get full access here:
 [![](/img/shared/github.png) **AutoPi Documentation Github** Participate in the documentation, it's open-source.](https://github.com/autopi-io/documentation)
 
 </CardGrid>
-
-
-
-## Links
-
-  - Read more about our [product](https://autopi.io)
-  - Buy the device in our [shop](https://shop.autopi.io)
-  - Contact our [sales team ](https://www.autopi.io/contact/)
-  - Get help from our [support team ](https://www.autopi.io/support/)
-

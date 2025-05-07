@@ -37,44 +37,33 @@ the top account, and any nested customers.
 
 The typical steps are
 
-    A. Create a nested customer
-    B. Assign some devices to the new customer
-    C. Create an administrator user on the new account
+    * Create a nested customer
+    * Assign some devices to the new customer
+    * Create an administrator user on the new account
 
 All interaction with this happens in the `Account` page.
 
 #### Create a Nested Customer
-1. Click the `Customers` tab
-2. Click the `Create` button
-3. Fill out the settings and click `Create`
+* Click the `Customers` tab
+* Click the `Create` button
+* Fill out the settings and click `Create`
 
 #### Assign Some Devices to the New Customer
-5. Click `Devices`
-6. Click `Manage devices`
-7. Click the newly created customer
-8. Now select one or more devices in the dropdown, or toggle the mode below the 
+* Click `Devices`
+* Click `Manage devices`
+* Click the newly created customer
+* Now select one or more devices in the dropdown, or toggle the mode below the 
    dropdown to input the `unit id` or `device ids`
-9. Now click `Process`
-10. The devices are now re-assigned to the new customer
+* Now click `Process`
+* The devices are now re-assigned to the new customer
 
 #### Create an Administrator User On the New Account
-11. Now click the `Customers` tab
-12. Click the customer that was created
-13. Click `Users` to manage the users for the customer
-14. Click `Create`
-15. Now create a new user, and remember to set the account to have 
+* Now click the `Customers` tab
+* Click the customer that was created
+* Click `Users` to manage the users for the customer
+* Click `Create`
+* Now create a new user, and remember to set the account to have 
     `Account Administration` rights, this will make the user have access to the
     assigned devices, and also to manage the users on the customer.
 
 You should now have a nested customer with some devices associated, and a user.
-
-<br>
-</br>
-### Let's keep in touch!
-Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
-<CardGrid home>
-[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
-
-[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
-
-</CardGrid>

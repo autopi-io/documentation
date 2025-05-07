@@ -52,16 +52,3 @@ The 4in1 Antenna Kit is a high-performance solution designed to optimize connect
 | Cable Lengths | Standard 3m cables and 10 cm U.FL connectors | 
 | Mounting Options | Through-hole, adhesive, or magnetic | 
 | Compatibility | LTE/4G, GSM/3G, Wi-Fi, ISM, M2M, ZigBee, Bluetooth, and more | 
-
-<br>
-</br>
-### Let's keep in touch!
-Thank you for choosing AutoPi. We're excited to see what you will achieve with your [AutoPi](https://www.autopi.io/) [CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro).
-
-<CardGrid home>
-
-[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
-
-[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
-
-</CardGrid>

@@ -21,13 +21,3 @@ This is an image of the OBD connector pinout. It is valid for the different gene
   * [OBD-II to dual DB9](https://shop.autopi.io/products/obd2-to-dual-db9) - Connect two CAN bus nodes to the OBD2 port of the AutoPi CAN-FD Pro.
   * [IP67 Aluminum Casing version of the CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro-ip67-casing) – Built tough for rugged environments.
  
-
-## Let's keep in touch!
-Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
-<CardGrid home>
-
-[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
-
-[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
-
-</CardGrid>

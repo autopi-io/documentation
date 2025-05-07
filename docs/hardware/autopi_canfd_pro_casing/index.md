@@ -61,16 +61,3 @@ Our advanced device and vehicle management platform lets you control all aspects
   * [Micro USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable) - This Micro USB to USB-A adapter cable is made to fit perfectly with the external Micro USB port on the AutoPi CAN-FD Pro device.
   * [OBD-II to dual DB9](https://shop.autopi.io/products/obd2-to-dual-db9) - Connect two CAN bus nodes to the OBD2 port of the AutoPi CAN-FD Pro.
  
-
-<br>
-</br>
-### Let's keep in touch!
-Thank you for choosing [AutoPi](https://www.autopi.io/). We're excited to see what you will achieve with your [AutoPi](https://www.autopi.io/) [CAN-FD Pro + IP67 Casing](https://shop.autopi.io/products/autopi-can-fd-pro-ip67-casing).
-
-<CardGrid home>
-
-[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi .](https://www.autopi.io/contact/)
-
-[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
-
-</CardGrid>

@@ -38,9 +38,3 @@ Its various features are designed to make it easier to:
 
 </CardGrid>
 
-
-## Links
-  - Read more about our [product](https://autopi.io)
-  - Buy the device in our [shop](https://shop.autopi.io)
-  - Contact our [sales team ](https://www.autopi.io/contact/)
-  - Get help from our [support team ](https://www.autopi.io/support/)

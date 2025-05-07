@@ -82,14 +82,3 @@ This means that you must ensure that the device is using the right settings for 
 To make sure that the device has all the right configuration applied (They might differ between environments), you should go to the `Software Updates` page, and reapply the current version, by clicking `enqueue update`, that way you ensure that the device is fully in sync with the current environment.
 
 You should now be able to make configuration changes, execute commands and so on.
-
-<br>
-</br>
-### Let's keep in touch!
-Thank you for choosing AutoPi. We're excited to see what you will achieve with your AutoPi device! 
-<CardGrid home>
-[![](/img/shared/favicon.ico) **Contact our sales team** You can build on top of AutoPi.](https://www.autopi.io/contact/)
-
-[![](/img/shared/support_icon.png) **Get help from our support team** Let us know about your technical questions.](https://www.autopi.io/support/)
-
-</CardGrid>

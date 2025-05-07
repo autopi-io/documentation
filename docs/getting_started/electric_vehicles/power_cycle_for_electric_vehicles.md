@@ -123,7 +123,3 @@ value.
 
 After the logger has been synced to your device, and the service has been restarted, you should
 start seeing engine events in the **Device** > **Events** page.
-
-:::note
-In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
-:::
