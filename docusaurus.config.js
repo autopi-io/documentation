@@ -152,6 +152,7 @@ module.exports = {
     ],
   ],
   plugins: [
+    ['./src/plugins/tailwind-config.js', {}],
     'docusaurus-plugin-sass',
     [
       '@docusaurus/plugin-client-redirects',
