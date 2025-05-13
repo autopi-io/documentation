@@ -329,5 +329,20 @@ html[data-theme=dark] {
   @apply font-medium text-indigo-600 hover:text-indigo-500 hover:underline transition;
 }
 
+/* Ensure unordered lists show bullets */
+ul {
+  @apply list-disc text-gray-700 mt-4;
+}
+
+/* Optional: Ordered list styling */
+ol {
+  @apply list-decimal text-gray-700 mt-4;
+}
+
+/* Optional: Add spacing between items */
+li {
+  @apply mb-1;
+}
+
 
 

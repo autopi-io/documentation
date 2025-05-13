@@ -210,12 +210,10 @@ From here, you can log in without needing a username or password.
 Once the information is saved, it will be applied to the device, and you should 
 see a notification when successfully saved. 
 
-4G/LTE Settings | 
-- |
+### 4G/LTE Settings
 ![AutoPi.io - Settings Page](/img/getting_started/getting_started/apn_settings.png)
 
-APN Presets List |
-- |
+### APN Presets List
 ![AutoPi.io - Settings Page](/img/getting_started/getting_started/apn_settings_list.png) 
 
 ## 8. Verify Connectivity

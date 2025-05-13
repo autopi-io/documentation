@@ -9,7 +9,7 @@
   
         <div className="container margin-top--lg">
           <div className="row">
-            <div className="col--12">
+            <div className="col--9">
               <div className={styles.customFooter}>
                 <h2>Let's stay in touch!</h2>
                 <p>
