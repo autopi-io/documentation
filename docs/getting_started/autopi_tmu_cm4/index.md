@@ -1,11 +1,16 @@
 ---
 id: guides-intro
 title: Getting Started
+supportedDevices: ['cm4']
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SideBySide from '@site/src/components/SideBySide';
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Welcome to AutoPi! 
  
