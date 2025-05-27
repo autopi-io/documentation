@@ -1,8 +1,13 @@
 ---
 id: community_library
 title: Community Library
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 This guide will give an overview of the OBD My Library feature, which is a way to discover the
 available PID's in your car, both hidden and public/default OBD-II, and sharing them with the

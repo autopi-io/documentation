@@ -1,8 +1,13 @@
 ---
 id: pro-led-and-button
 title: LED and Button States
+supportedDevices: ['pro']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 The [AutoPi](https://www.autopi.io) [CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) comes with an advanced smart power management (SPM) system, which will handle the lifecycle of the device. The status of SPM can be seen from the LEDs on the side of the device and can changed from software or from the Button also located on the side:
 

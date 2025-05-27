@@ -1,9 +1,14 @@
 ---
 id: mounting_options
 title: Mounting Options
+supportedDevices: ['pro']
 ---
 
 import CardGrid from "/components/CardGrid"; 
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Want more flexibility when setting up your [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro)? No worries — we’ve made installation easier than ever.
 

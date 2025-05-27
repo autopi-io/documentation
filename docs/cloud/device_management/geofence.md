@@ -1,8 +1,13 @@
 ---
 id: geofences
 title: Geofences
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Geofences allow you to define a specific are on a map where you want to be notified when a vehicle enters or exits. The way this works is that you visually define an area in the geofence editor, which can be either a polygon shape, or a point with a radius.
 

@@ -1,8 +1,13 @@
 ---
 id: command-webhook-callbacks
 title: Command Webhook Callbacks
+supportedDevices: ['mini','cm4']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 It is possible to get notified via webhook when a command completes on a device.
 

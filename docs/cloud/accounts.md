@@ -1,8 +1,13 @@
 ---
 id: accounts
 title: Accounts
+supportedDevices: ['mini','cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Welcome to the Accounts guide! This documentation is here to help you easily set up and manage your platform. Whether you’re creating a new customer, adding user accounts, or managing your fleet, we’ll walk you through the process step-by-step. You’ll also learn how to assign the right permissions to each user — making sure everyone gets access to exactly what they need (and nothing they don’t). By the end, you’ll have a fully organized setup that keeps your operations running smoothly and securely. 
 

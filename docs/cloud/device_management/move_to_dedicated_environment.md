@@ -1,8 +1,13 @@
 ---
 id: move-to-dedicated-environment
 title: Move Device to a Dedicated Environment
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 In this short guide we will talk about how you can move your device from the default production
 environment to your dedicated environment provided by [AutoPi](https://www.autopi.io). Unfortunately, this process moves

@@ -1,11 +1,16 @@
 ---
 id: setting-up-doip
 title: Setting up DoIP
+supportedDevices: ['cm4']
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl'; import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 :::caution Before proceeding with the install
-The DoIP solution described here only works with the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) and newer editions.
+The DoIP solution described here only works with the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4).
 
 When installed, the Ethernet port on the AutoPi device will internally be used for DoIP. Do not connect anything to the Ethernet port. 
 

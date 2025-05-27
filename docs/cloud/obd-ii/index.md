@@ -1,8 +1,13 @@
 ---
 id: obd-ii-intro
 title: Introduction
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 :::caution
 Working with the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus is on your own risk. Playback and sending commands to the vehicle can be

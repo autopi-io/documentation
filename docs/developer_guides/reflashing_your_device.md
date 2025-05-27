@@ -1,8 +1,13 @@
 ---
 id: reflashing-your-device
 title: Reflashing Your Device
+supportedDevices: ['cm4','pro']
 ---
-import CardGrid from "/components/CardGrid"
+import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 :::warning
 Please only follow this guide if you’re confident in what you’re doing. Reflashing shouldn’t be done on a fully operational device. If you’re unsure or have any questions, feel free to reach out to our [Support team](mailto:support@autopi.io) for help. 
@@ -45,7 +50,7 @@ Once you have the board version, see which image you need from the table below a
 |      3     | 6.2        | [v1.22] | (https://github.com/autopi-io/autopi-core/releases/tag/v1.22)     | 
 |      3     | 6.3        | [v1.22] | (https://github.com/autopi-io/autopi-core/releases/tag/v1.22)     | 
 |      4     | 7.0        | [v1.22.9] | (https://github.com/autopi-io/autopi-core/releases/tag/v1.22.9) |
-
+|      4     | 7.1        | [v1.26.0] | (https://github.com/autopi-io/autopi-core/releases/tag/v1.26.0) |
 
 You may also check the [autopi-core releases page](https://github.com/autopi-io/autopi-core/releases) for a newer **board-version-compatible** image.
 

@@ -1,10 +1,15 @@
 ---
 id: cloud-jobs
 title: Jobs
+supportedDevices: ['cm4','pro']
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Jobs can be scheduled to execute [commands](/core/commands/index.md) on the device and are
 configured from the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management). The command results can then be uploaded to the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) or

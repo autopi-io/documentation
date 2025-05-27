@@ -1,8 +1,13 @@
 ---
 id: log-raw-can-messages
 title: Log Raw CAN Messages
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 It is possible to listen for raw [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) data on the OBD port. There are a couple of
 ways that this can be accomplished - a slower python implementation and a faster, C implementation.

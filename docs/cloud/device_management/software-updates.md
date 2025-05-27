@@ -1,8 +1,13 @@
 ---
 id: software-updates
 title: Software Updates
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 In this section, we'll first review how you can update your device and then will move on to reviewing
 your device's update attempts.

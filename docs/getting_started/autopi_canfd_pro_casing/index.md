@@ -1,11 +1,16 @@
 ---
 id: pro-casing-guides-intro
 title: Getting started
+supportedDevices: ['pro']
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SideBySide from '@site/src/components/SideBySide';
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Need a device that can handle tough environments? The [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro) is packed into a durable, IP67-rated aluminum casing — built to withstand dust, dirt, and water, making it perfect for rugged, outdoor, or industrial installations. This step-by-step guide will help you get started with your new device. The device comes pre-assembled with the SD card inside and requires just a few steps to complete the installation.
 

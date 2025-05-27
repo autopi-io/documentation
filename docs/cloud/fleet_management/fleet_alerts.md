@@ -1,8 +1,13 @@
 ---
 id: fleet-alerts
 title: Alerts
+supportedDevices: ['mini','cm4','pro']
 ---
 import CardGrid from "/components/CardGrid" ; import SideBySide from '@site/src/components/SideBySide';
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 The **Fleet Alerts** page is your centralized place for monitoring all active alerts across your entire fleet. No need to check each vehicle one by one - this view shows you everything that requires attention in one place.This guide should help you quickly assess and manage any issues across your fleet using the Fleet Alerts feauture available on [AutoPi cloud](https://my.autopi.io/#/login). 
 

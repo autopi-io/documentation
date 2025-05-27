@@ -1,8 +1,13 @@
 ---
 id: send-device-data-to-own-server
 title: Send Device Data to Own Server
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 In this guide we will explore how you can setup your own server that accepts data from your [AutoPi](https://www.autopi.io) device. We won't get in too many
 details, but we will explore the very basics that are needed, namely:

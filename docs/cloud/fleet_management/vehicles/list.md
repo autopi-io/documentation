@@ -1,8 +1,13 @@
 ---
 id: list
 title: Vehicles List
+supportedDevices: ['mini','cm4','pro']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 In the Vehicle section you can see all your vehicles, paired with a map showing 
 their latest known position and geofences. In this section, we'll focus on the List tab. The vehicle list displays all 

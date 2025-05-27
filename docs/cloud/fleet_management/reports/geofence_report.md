@@ -1,8 +1,13 @@
 ---
 id: geofence-summary-reports
 title: Geofence Summary Report
+supportedDevices: ['mini','cm4','pro']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 The **Geofence Report** provides detailed insights into vehicle activity within 
 predefined geographic areas. This report helps fleet managers:

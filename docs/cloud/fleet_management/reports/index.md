@@ -1,8 +1,13 @@
 ---
 id: reports-intro
 title: Introduction
+supportedDevices: ['mini','cm4','pro']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 The Reports feature in the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) platform is designed to empower fleet 
 managers with insights to monitor fleet performance and driver behavior 

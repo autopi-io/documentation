@@ -1,8 +1,13 @@
 ---
 id: setting-up-docker
 title: Setting Up Docker on Your Device
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 ## Overview
 ### Deploying Docker Containers on Devices

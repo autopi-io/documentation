@@ -1,8 +1,13 @@
 ---
 id: device_specifications
 title: Technical Specifications
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 This guide contains everything you need to know about the AutoPi TMU CM4 device's technical specifications. You can also read more on how to [Get started with AutoPi TMU CM4](https://docs.autopi.io/getting_started/autopi_tmu_cm4/). 
 

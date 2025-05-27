@@ -1,8 +1,13 @@
 ---
 id: automatic-exports
 title: Automatic Exports
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 # Automatic Exporting
 When enabled for a device, it will automatically trigger exports when a trip ends, and when an export is finished, it will send notifications (mail and/or JSON Http request)

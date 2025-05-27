@@ -1,8 +1,13 @@
 ---
 id: device_specifications
 title: Technical Specifications
+supportedDevices: ['pro']
 ---
 import CardGrid from "/components/CardGrid"; 
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Ready to dive into what makes the [AutoPi](https://www.autopi.io/) [CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) such a powerful tool, designed for full speed automotive datalogging of dual CAN-FD channels? This guide breaks down all the key technical specs — all you need to know.
 

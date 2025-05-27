@@ -1,8 +1,13 @@
 ---
 id: device_dimensions
 title: Device dimensions
+supportedDevices: ['pro']
 ---
 import CardGrid from "/components/CardGrid"; 
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Wondering if the [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) will fit in your vehicle? Don’t worry — we’ve got you covered. This guide provides all the essential dimensions to ensure a smooth, hassle-free fit.
 

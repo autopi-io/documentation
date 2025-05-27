@@ -1,8 +1,13 @@
 ---
 id: create-can-signal-loggers
 title: Create CAN Signal Loggers
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 # Create [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Signal Loggers
 

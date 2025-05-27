@@ -1,9 +1,14 @@
 ---
 id: pro-data-troubleshooting
 title: Data Troubleshooting
+supportedDevices: ['pro']
 ---
 
-import CardGrid from "/components/CardGrid"
+import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 
 You are experiencing issues with getting the data out of your [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro)? This guide help you step-by-step to identify and resolve common problems related to wrong configurations on device, configurations to CAN Loggers, verification of CAN channels, nominal voltage detection, and internet connectivity issues. 

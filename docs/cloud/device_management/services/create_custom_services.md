@@ -1,8 +1,13 @@
 ---
 id: create-custom-services
 title: Create Custom Services
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Sometimes, the pre-defined services won't implement the functionality that you're looking to have
 in your [AutoPi](https://www.autopi.io). It is possible to create custom services that run on the device alongside the rest

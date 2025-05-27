@@ -1,8 +1,13 @@
 ---
 id: device_dimensions
 title: Device Dimensions
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 In this guide, you’ll find all the necessary device dimensions to make sure your device fits seamlessly into your vehicle.
 

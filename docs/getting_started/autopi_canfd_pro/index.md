@@ -1,11 +1,16 @@
 ---
 id: pro-guides-intro
 title: Getting started
+supportedDevices: ['pro']
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SideBySide from '@site/src/components/SideBySide';
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 :::note
 The device comes pre-assembled with the SD card inside and requires just a few steps to complete the installation.

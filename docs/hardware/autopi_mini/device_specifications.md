@@ -1,8 +1,13 @@
 ---
 id: device_specifications
 title: Specifications
+supportedDevices: ['mini']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Download the official datasheet here: <br/>
 [Autopi Mini Datasheet](https://www.autopi.io/static/pdf/autopi_mini_datasheet.pdf)

@@ -1,8 +1,13 @@
 ---
 id: autopi-logs
 title: AutoPi Logs
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 In this guide we will talk about how you can manage your AutoPi's logs. The topics that we will
 cover are how you can view your device's logs and how you can download the log files to your

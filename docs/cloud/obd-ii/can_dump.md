@@ -1,8 +1,13 @@
 ---
 id: create-valid-can-dump
 title: Create a Valid Can Dump
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 The following is a guide to obtain a Valid [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) (Controller Area Network) dump.
 

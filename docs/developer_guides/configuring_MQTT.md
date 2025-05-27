@@ -1,8 +1,13 @@
 ---
 id: configuring-mqtt
 title: Configuring MQTT
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 ## Contents
 This guide covers configuring a basic MQTT broker on your Linux server, as well as configuring an [AutoPi](https://www.autopi.io) device to use MQTT as a data returner. 

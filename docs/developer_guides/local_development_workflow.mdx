@@ -1,8 +1,13 @@
 ---
 id: local-development-workflow
 title: Local Development Workflow
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 When doing development with the [AutoPi](https://www.autopi.io), it is possible to do it all through the [Cloud](https://www.autopi.io/software-platform/cloud-management).
 

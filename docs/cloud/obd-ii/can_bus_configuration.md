@@ -1,8 +1,13 @@
 ---
 id: can-bus-configuration
 title: CAN Bus Configuration
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 This page describes what to do if you've tried autodetecting the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus, and this has not worked.
 To be more exact, we'll reiterate on how to use the auto-detect feature, how the feature works and

@@ -1,8 +1,13 @@
 ---
 id: rfid-integartion
 title: RFID Reader Integration
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 This is a short guide about how you can integrate an RFID reader with your [AutoPi](https://www.autopi.io) device.
 

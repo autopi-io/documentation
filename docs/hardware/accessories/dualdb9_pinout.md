@@ -1,9 +1,14 @@
 ---
 id: dualdb9-pinout
 title: OBD-II to dual DB9 pinout
+supportedDevices: ['mini','cm4','pro']
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 
 ## Introduction

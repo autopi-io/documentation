@@ -1,8 +1,13 @@
 ---
 id: j1939-getting-started-guide
 title: Getting Started
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 This guide will show how to retrieve data from a vehicle supporting the J1939 protocol. To read more background information about J1939 please see the blog post: [J1939 Explained](https://www.autopi.io/blog/j1939-explained/)
 

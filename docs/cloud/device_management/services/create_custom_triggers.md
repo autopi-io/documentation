@@ -1,8 +1,13 @@
 ---
 id: create-custom-triggers
 title: Create Custom Triggers
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 In this guide we will explore how you can create a custom trigger for your [AutoPi](https://www.autopi.io) service. The
 example that we will look at is a trigger that will play a beeping sound when the vehicle's speed

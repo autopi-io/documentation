@@ -1,8 +1,13 @@
 ---
 id: electric-vehicles-intro
 title: Getting Started
+supportedDevices: ['mini','cm4','pro']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 [AutoPi](https://www.autopi.io) supports a wide range of electric vehicles ([Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)s) by providing advanced telematics and
 data analysis capabilities that enhance the functionality and management of [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)s. The

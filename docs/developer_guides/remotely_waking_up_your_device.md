@@ -1,8 +1,13 @@
 ---
 id: remotely-waking-up-your-device
 title: Remotely Waking up Your Device
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 When your vehicle is parked and ignition is off, your device will go to sleep to save power. But if you are working on a project remotely and want to access your device, its possible to wake up your device from sleep.
 

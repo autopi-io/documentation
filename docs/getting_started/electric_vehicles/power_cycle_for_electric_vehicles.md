@@ -1,6 +1,11 @@
 ---
 id: power-cycle-for-electric-vehicles
 title: Power Cycles
+supportedDevices: ['cm4']
+---
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
 The AutoPi dongle is initially configured to be powered on when the engine of the vehicle is

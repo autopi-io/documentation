@@ -1,8 +1,14 @@
 ---
 id: device-install-procedure
 title: Device Install Procedure 
+supportedDevices: ['mini','cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
+
 
 This is a detailed description of how to infleet new devices to any fleet, how to pair devices to vehicles and how to assign devices to templates. 
 

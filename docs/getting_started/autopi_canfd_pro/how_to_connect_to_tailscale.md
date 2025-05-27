@@ -1,11 +1,16 @@
 ---
 id: how_to_connect_to_tailscale
 title: How to connect to Tailscale on your Autopi device
+supportedDevices: ['pro']
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SideBySide from '@site/src/components/SideBySide';
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Tailscale makes creating software-defined networks easy: securely connecting users, services, and devices. Your [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) has already [Tailscale](https://tailscale.com/) installed, however it is not active just yet. You have full control over this! If you want to connect to Tailscale on your device follow this guide.
 

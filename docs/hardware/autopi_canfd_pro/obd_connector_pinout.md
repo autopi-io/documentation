@@ -1,8 +1,13 @@
 ---
 id: pro-obd-connector-pinout
 title: OBD Connector Pinout
+supportedDevices: ['pro']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 This is an image of the OBD connector pinout. It is valid for the different generations of [AutoPi](https://www.autopi.io) devices including the [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro).
 

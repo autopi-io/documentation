@@ -1,8 +1,13 @@
 ---
 id: create-custom-returners
 title: Create Custom Returners
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 In this guide we redirect accelerometer data to a file on disk, but the functionality is general,
 and the procedure can also be used for OBD data, GPS data and others.

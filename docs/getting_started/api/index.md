@@ -1,8 +1,13 @@
 ---
 id: api-intro
 title: Introduction
+supportedDevices: ['mini','cm4']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 You are able to use the [AutoPi REST API](https://api.autopi.io) with your browser, which will display our
 auto-generated documentation portal.

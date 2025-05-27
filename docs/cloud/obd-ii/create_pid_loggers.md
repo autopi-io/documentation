@@ -1,8 +1,13 @@
 ---
 id: create-pid-loggers
 title: Create PID Loggers
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 As explained in the [introduction](index.md), PIDs are used to request and receive
 data from the vehicle. It can be real-time data, such as RPM, Speed, Fuel Level and so on, but it

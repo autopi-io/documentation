@@ -1,8 +1,13 @@
 ---
 id: debug-raw-pid-queries
 title: Debug Raw PID Queries
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 If you want to investigate the raw request and response messages of PID queries, keep reading. If
 you are unsure of what a PID is you can start by reading

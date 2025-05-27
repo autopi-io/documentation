@@ -1,11 +1,16 @@
 ---
 id: replacing-cm4
 title: Replacing the CM4
+supportedDevices: ['cm4']
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SideBySide from '@site/src/components/SideBySide';
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 :::caution Before proceeding with the upgrade
 Please read the **whole guide** in order to have a good understanding of how all the components fit together.

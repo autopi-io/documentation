@@ -1,8 +1,13 @@
 ---
 id: using-the-autopi-with-an-external-power-supply
 title: Using the AutoPi With an External Power Supply
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 The device you have is pre-configured to work directly in your car. When working it in a lab
 environment you may need to supply the [AutoPi](https://www.autopi.io) with a controlled power supply. There are a couple of

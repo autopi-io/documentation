@@ -1,8 +1,13 @@
 ---
 id: automatic-obd-logger-pausing
 title: Automatic OBD Logger Pausing
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Automatic OBD Logger Pausing is a feature that enables the [AutoPi](https://www.autopi.io) device to automatically pause any OBD loggers when it
 detects that the vehicle has stopped shaking (which also likely means that the vehicle has stopped moving). This

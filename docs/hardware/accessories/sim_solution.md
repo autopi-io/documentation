@@ -1,9 +1,14 @@
 ---
 id: sim-solution
 title: Global SIM Card Solution
+supportedDevices: ['mini','cm4','pro']
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 ## Introduction
 [AutoPi](https://www.autopi.io) offers a global SIM card solution. The SIM card solution is mainly targeted for our [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) and [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) (without simcard) solutions, as these does not come with a SIM card per standard. 

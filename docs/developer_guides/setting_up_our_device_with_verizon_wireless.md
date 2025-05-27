@@ -1,8 +1,13 @@
 ---
 id: setting-up-a-device-with-verizon-wireless
 title: Setting Up a Device with Verizon Wireless
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 We have had serveral different users report issues with setting up the 4G Dongle on Verizon Wireless.
 

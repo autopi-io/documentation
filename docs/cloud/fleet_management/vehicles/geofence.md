@@ -1,8 +1,13 @@
 ---
 id: fleet-geofences 
 title: Geofences
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 In the second subsection on the Vehicle Tab, you will find **Geofences**. This 
 feature allows you to create and manage geofences, which define specific 

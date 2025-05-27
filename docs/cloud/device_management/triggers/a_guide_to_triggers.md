@@ -1,8 +1,13 @@
 ---
 id: a-guide-to-triggers
 title: A Guide to Triggers
+supportedDevices: ['mini','cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 This guide will be introducing and explaining how to use, create and edit triggers with your device. 
 Triggers empower you to receive notifications based on events from your device, as well as the various data points logged from your vehicle. 

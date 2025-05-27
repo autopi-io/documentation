@@ -4,6 +4,7 @@ title: Enabling Bluetooth on Legacy Devices With STN Chips
 ---
 import CardGrid from "/components/CardGrid";
 
+
 :::note
   This guide only works with legacy devices using STN/ELM based chips for automotive interface. No devices sold after February 2021 contains the STN chip. 
 :::

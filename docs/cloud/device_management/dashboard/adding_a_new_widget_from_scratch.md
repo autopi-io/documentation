@@ -1,8 +1,13 @@
 ---
 id: adding-a-new-widget-from-scratch
 title: Adding a New Widget from Scratch
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 You can easily tie data directly from your vehicle to the dashboard. This guide will go
 over the steps of adding a new widget based on data you discovered from your OBD library. Widgets

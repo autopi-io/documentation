@@ -1,8 +1,13 @@
 ---
 id: device-management-intro
 title: Introduction
+supportedDevices: ['mini','cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 This section of our [Cloud](https://www.autopi.io/software-platform/cloud-management) Platform is dedicated to managing and configuring devices.
 Here, you can monitor and ensure that all devices within your fleet operate optimally,

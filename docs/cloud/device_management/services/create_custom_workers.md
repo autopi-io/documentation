@@ -1,8 +1,13 @@
 ---
 id: create-custom-workers
 title: Create Custom Workers
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 In this guide we are going to take a look at how to create workers for any service that is
 available, be it a default service like the OBD manager or a custom one that you've made for

@@ -1,8 +1,13 @@
 ---
 id: how-to-use-bluepy-with-autopi-edge-devices
 title: Enabling Bluetooth - Using bluepy with AutoPi Edge Devices
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 # BluePy BLE Guide for [AutoPi](https://www.autopi.io) Edge Devices
 

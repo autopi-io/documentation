@@ -1,8 +1,14 @@
 ---
 id: car-explorer-library-manual
 title: My Library
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
+
 
 In this page we go through the Library section of our Cloud. Below is a screenshot of an example
 Library that is already filled with some PIDs and [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages. Open the screenshot in a

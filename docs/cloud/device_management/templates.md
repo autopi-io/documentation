@@ -1,8 +1,14 @@
 ---
 id: templates
 title: Templates
+supportedDevices: ['mini','cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
+
 
 The template functionality makes it possible for a user to manage the configuration of a range of devices by 
 setting up a template with the required functionality, and then applying that to a number of devices.

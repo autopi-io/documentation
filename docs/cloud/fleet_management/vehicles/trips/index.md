@@ -1,6 +1,11 @@
 ---
 id: introduction
 title: Introduction
+supportedDevices: ['mini','cm4']
+---
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
 The Trips section provides in-depth information about the vehicle's trips. 
@@ -82,6 +87,7 @@ of data in one go.
 :::
 
 :::tip
+If you have our AutoPi TMU CM4 device, you can also set up automatic exporting of trips for your vehicle or fleet. 
 For business customers we also support automatic exporting of trips which will call a webhook on
 an external system signalling that an export can be downloaded. Read more about <a href="https://docs.autopi.io/cloud/fleet_management/vehicles/trips/automatic-exports/" target="_blank">Automatic Exports</a>.
 :::

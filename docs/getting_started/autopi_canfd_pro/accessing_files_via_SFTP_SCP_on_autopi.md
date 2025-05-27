@@ -1,11 +1,16 @@
 ---
 id: accessing-files-via-sftp-on-autopi
 title: Accessing files via SFTP/SCP on AutoPi
+supportedDevices: ['pro']
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SideBySide from '@site/src/components/SideBySide';
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 ## Option 1: Accessing files via SFTP
 

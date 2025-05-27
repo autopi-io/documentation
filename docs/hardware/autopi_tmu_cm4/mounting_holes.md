@@ -1,8 +1,13 @@
 ---
 id: mounting_holes
 title: Mounting Holes
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Mounting holes can be used to create mounts for easier installation in the vehicle. 
 

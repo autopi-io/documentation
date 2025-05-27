@@ -1,8 +1,13 @@
 ---
 id: export-data-from-api
 title: Export Data from API
+supportedDevices: ['mini','cm4']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Our <a href="https://api.autopi.io/" target="_blank">REST API</a> offers endpoints that let you retrieve all telemetry data from your device in the format that suits you best:
 1. Aggregated Data – Simplified, high-level summaries for easier analysis.

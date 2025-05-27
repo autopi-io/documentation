@@ -1,8 +1,13 @@
 ---
 id: nested-customers
 title: Nested Customers
+supportedDevices: ['mini','cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 The account section allows an account administrator to manage nested customers, 
 which makes it possible to create an isolated account, assign devices and users 
