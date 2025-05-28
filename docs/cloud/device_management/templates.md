@@ -9,7 +9,8 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-
+## What are Templates?
+Templates are a feature that allows for the setup and configuration of several devices at once. First you can create a template with all of the configurations you want to have on your device (such as custom codes, services, jobs...) and secondly you simply assign a device/devices to this template. 
 The template functionality makes it possible for a user to manage the configuration of a range of devices by 
 setting up a template with the required functionality, and then applying that to a number of devices.
 
@@ -84,9 +85,24 @@ the exception of Bus settings. Take a look at the [templated CAN loggers section
 an idea of how they work. A notable difference here is that for PID loggers, the Bus is optional. If one's not specified, the PID will be logged
 using the vehicle's default bus.
 
-## Functionality
 
-To use the templates, the common usage is the following.
+## Step by Step Guide on How to Assign Device to Template:
+
+1. **Login** to [AutoPi cloud](https://my.autopi.io/) using your credentials.
+2. From the main screen go to **Templates** tab. 
+![main_screen_templates](/img/cloud/device_management/device_install_procedure/main_screen_templates.png)
+3. **Click on the template** you want to use. 
+![template_screen](/img/cloud/device_management/device_install_procedure/template_screen.png)
+4. To add a device to the template click the **add** button.
+![template_device_add](/img/cloud/device_management/device_install_procedure/template_device_add.png)
+5. In the popup window, **select the device** you want to assign to the template. If you want to add multiple, you have to repeat this process with every device.
+![select_devices_for_template](/img/cloud/device_management/device_install_procedure/select_devices_for_template.png)
+6. Once you have assigned all devices you wanted, click **Apply template** button in the right upper corner and select **Apply all async** - for ; or **Apply all async + all descendants**
+7. You've now assigned one or more devices to a template and applied that template to the device.
+
+## Quick Start with Templates
+
+To use the templates, the common usage is the following:
 
 1. Create a template with a descriptive name.
 2. Make some changes to the template - change configuration, add loggers, custom code, etc.

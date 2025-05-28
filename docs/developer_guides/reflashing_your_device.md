@@ -16,16 +16,17 @@ Please only follow this guide if you’re confident in what you’re doing. Refl
 ## Reflashing Workflow
 The process for reflashing an [AutoPi](https://www.autopi.io) device differs a little depending on the device version you have and the OS you are running. The steps in this guide were tested on Pop-os 6.1 (a Debian-derived Linux distribution) and Windows 10. The general workflow for the reflashing process is:
 
-1. Download the AutoPi OS image
-2. Set up Balena Ethcher (or alternative)
-3. Connect the device storage media
+1. Download the AutoPi OS image.
+2. Set up Balena Ethcher (or alternative).
+3. Connect the device storage media:
     - Pre-CM4 devices (versions 3.0 - 6.3)
     - CM4 devices (version 7.x+)
         - Windows
-        - Linux
-4. Perform the flash
-6. Ensure your device is connecting to the correct environment
-5. Set up the device
+        - Linux.
+4. Perform the flash.
+5. Ensure your device is connecting to the correct environment.
+6. Set up the device.
+7. Update your device.
 
 ### 1. Download the [AutoPi](https://www.autopi.io) OS Image
 
@@ -153,8 +154,13 @@ When your device comes online the first time, the WiFi hotspot will have the fol
 **Password**: autopi2018
 
 :::tip
+For security reasons, we recommend that you **change your password** right away. You can do so by going to Devices > pick a device > Advanced settings > WIFI > Hotspot.
+:::
+
+### 7. Finalization - Update your Device
+
 Remember to update your device from the [Cloud](https://www.autopi.io/software-platform/cloud-management) after you reflash it, as that will ensure that all
 the configuration values are properly configured (like the WiFi, SSID and password), and that the
 device has the correct authentication token for uploading data to the [Cloud](https://www.autopi.io/software-platform/cloud-management).
-:::
 
+You can also read more in this guide: [How to update your device](https://docs.autopi.io/cloud/device_management/software-updates/). 

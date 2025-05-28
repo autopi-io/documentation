@@ -216,3 +216,6 @@ In this guide we talked more in-depth about PIDs and PID Loggers. We setup a cus
 then used to create a PID Logger and got a very small insight into the automated processes that
 exist in the [AutoPi](https://www.autopi.io) ecosystem.
 
+:::tip
+However if you want to learn more about how to set up a widgets for your dashboard using a PID loggers, you can read more in this guide: [Adding widgets to your Dashboard](https://docs.autopi.io/cloud/device_management/dashboard/adding-a-new-widget-from-scratch/). 
+:::
