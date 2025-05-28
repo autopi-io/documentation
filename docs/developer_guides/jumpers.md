@@ -1,8 +1,13 @@
 ---
 id: jumpers
 title: Jumpers
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Jumpers are a very small devices which are used to jump the electrical current from one pin to
 another. In this guide, we will talk about jumpers. More specifically, we'll talk about what they

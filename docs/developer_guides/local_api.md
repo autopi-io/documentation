@@ -1,7 +1,7 @@
 ---
 id: local-api-overview
 title: AutoPi Local API Overview
-supportedDevices: ['cm4']
+supportedDevices: ['cm4','pro']
 ---
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 
