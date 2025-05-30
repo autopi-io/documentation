@@ -6,10 +6,12 @@ import CardGrid from "/components/CardGrid";
 
 Our most powerful device to date, designed for full speed automotive datalogging of dual CAN-FD channels. The device comes with 32Gb storage, which is extendable with a flashdrive. With a built-in 4G/LTE modem, the device can securely push data to your cloud solution. The device is build on the Raspberry Pi Compute Module. 
 
+### Quick Links 
+[Getting started](https://docs.autopi.io/getting_started/autopi_canfd_pro/) | [User Guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/) | [Device Dimensions](https://docs.autopi.io/hardware/autopi_canfd_pro/device_dimensions/) | [Specifications](https://docs.autopi.io/hardware/autopi_canfd_pro/device_specifications/) | [State of a Device](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-led-and-button/) | [OBD Connector Pinout](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-obd-connector-pinout/) | [Use Tailscale for Remote Access](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/) | [Access Files](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/) | [Data Troubleshooting](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-data-troubleshooting/) | [4G Troubleshooting](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-4g-internet-setup-troubleshooting/)
+
 <p align="center">
 <img src="/img/hardware/autopi_canfd_pro/canfd_pro_trans.png" alt="AutoPi CAN-FD Pro" width="60%" />
 </p>
-
 
 ### Key benefits
 * 4G/LTE with global coverage: The integrated modem with worldwide coverage.
@@ -44,18 +46,11 @@ Our advanced device and vehicle management platform lets you control all aspects
 </p>
 
 
-### Useful links
-* [Getting started](https://docs.autopi.io/getting_started/autopi_canfd_pro/) - What to do after you receive your device. 
-* [Device Dimensions](https://docs.autopi.io/hardware/autopi_canfd_pro/device_dimensions/) – Ensure the perfect fit for your setup.
-* [Technical Specifications](https://docs.autopi.io/hardware/autopi_canfd_pro/device_specifications/) – Dive into the performance details.
-* [LED and Button States](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-led-and-button/) – Understand device behavior at a glance.
-* [OBD Connector Pinout](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-obd-connector-pinout/) – Get to know the connection layout.
-* [Mounting Options](https://docs.autopi.io/hardware/autopi_canfd_pro/mounting_options/) – Explore mounting options for easy installation.
-* Accessories:
+### Accessories
+
   * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – Add extra reach for flexible placement.
   * [Dual Lock Extreme Velcro Strip](https://shop.autopi.io/products/dual-lock-extreme-velcro) – Secure, vibration-resistant mounting anywhere.
   * [Global SIM card solution](https://shop.autopi.io/products/global-sim-card-solution) - Our Global SIM card solution works in 188 countries, providing you with reliable and seamless connectivity wherever your solution is based.
-  * [DoIP HAT](https://shop.autopi.io/products/doip-hat-v1-3) - The DoIP HAT is a highly advanced interface module designed to enhance vehicle diagnostics using the DoIP protocol (Diagnostics over Internet Protocol). 
   * [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable?pr_prod_strat=jac&pr_rec_id=17052e989&pr_rec_pid=8619774050653&pr_ref_pid=8609919074653&pr_seq=uniform) - Power the AutoPi CAN-FD Pro device with any 12-24 volt DC power supply.
   * [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform) - Use this Y-splitter cable if you need to connect an additional OBD-II device at the same time as your AutoPi CAN-FD Pro.
   * [Tesla OBD-II Adapter Cable for Model 3 and Y](https://shop.autopi.io/products/tesla-obd2-adapter-cable-for-model-3-and-y) - Add an OBD-II port to your Tesla Model 3 or Model Y with this adapter cable.
