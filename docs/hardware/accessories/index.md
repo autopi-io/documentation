@@ -21,7 +21,7 @@ Our Global SIM card solution works in 188 countries, providing you with reliable
 
 You can read more about coverage and more information in this **guide**: [Global SIM Card Solution](https://docs.autopi.io/hardware/accessories/sim-solution/). 
 
-The solution can be **purchased** in our [AutoPi Webshop - Global SIM Card](https://shop.autopi.io/products/global-sim-card-solution). We offer different package sizes and your monthly data usage is shown from our [AutoPi Cloud solution]((https://my.autopi.io)).
+The solution can be **purchased** in our [AutoPi Webshop - Global SIM Card](https://shop.autopi.io/products/global-sim-card-solution). We offer different package sizes and your monthly data usage is shown from our [AutoPi Cloud solution](https://my.autopi.io).
 
 
 ## OBD-II to dual DB9 pinout Cable
