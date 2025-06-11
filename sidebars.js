@@ -400,6 +400,7 @@ module.exports = {
         {
           "items": [
             "hardware/autopi_canfd_pro_casing/autopi-pro-casing-intro",
+            "hardware/autopi_canfd_pro_casing/pinouts",
           ],
           "label": "AutoPi CAN-FD Pro + IP67 casing",
           "type": "category"
