@@ -39,3 +39,6 @@ The following is the size and dimensions:
 | HAT Pin 5 | Pin 1              | NC                     | Pin 4 (LIN2)     |
 | HAT Pin 8 | Pin 2                | NC           | Pin 9 (LIN2 VBat)  |
 
+:::info
+This adapter cable can be bought through AutoPi shop: [**OBD-II to dual DB9 adapter cable**](https://shop.autopi.io/products/obd2-to-dual-db9). 
+:::
