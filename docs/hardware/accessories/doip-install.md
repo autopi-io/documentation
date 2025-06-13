@@ -26,7 +26,10 @@ DoIP stands for "Diagnostic over Internet Protocol." It is a communication proto
 - 1x DOIP HAT PCB
 - 3x Plastic screw
 - 2x 6.5 mm plastic spacer
+:::
 
+:::info
+DoIP HAT can be bought at AutoPi shop: [DoIP HAT for AutoPi TMU](https://shop.autopi.io/products/doip-hat-v1-3). There is also an option for DoIP HAT to be pre-installed in your AutoPi device. 
 :::
 
 <p align="center">
