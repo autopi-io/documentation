@@ -12,6 +12,7 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 Download the official datasheet here: <br/>
 [Autopi Mini Datasheet](https://www.autopi.io/static/pdf/autopi_mini_datasheet.pdf)
 
+## Device Specifications 
 | **Name** | **Description** |
 |:-----:|--------|
 |   Physical specifications    |   **Weight:** 63 g <br/> **Dimensions:** 67,2 x 49,6 x 25 mm (L x W x H)   | 
@@ -28,4 +29,28 @@ Download the official datasheet here: <br/>
 |   Input slots     |  **SIM Card:** Nano SIM – Comes with SIM card and subscription pre-installed      |   
 |   Absolute Maximum <br/> Operating Environment    |  **Operating Temperature:** -40° to +85° C (-40° to +185° F) <br/> **Relative Humidity:** 5% to 95% Noncondensing      |  
 
+
+## LED Lights of an AutoPi Mini Device
+AutoPi Mini has 2 LED lights: Navigation LED and Status LED. These LED lights helps you understand the status of the GNSS and device's operating status. Both LED lights are described more in depth below: 
+
+1. **Navigation LED(closer to the edge of the device):**
+    
+    This LED indicates the status of the GNSS (Global Navigation Satellite System).
+    - **Green and blinking slowly:** The device is receiving a GNSS signal. 
+    - **Solid green:** The device is not receiving a GNSS signal. 
+    - **Off:** This may indicate the device is either in sleep mode or experiencing an issue. 
+
+2.  **Status LED (farther from the edge of the device):**
+    
+    This LED reflects the device’s operating status.
+    - **Blinking every second:** The device is in normal operating mode. 
+    - **Blinking every 2 seconds:** The device is in sleep mode. 
+    - **Fast blinking:** Indicates modem activity. 
+    - **Off:** This could mean the device is not functioning. 
+
+If either LED is not behaving as expected, it could be a sign of connectivity or 
+hardware issues that need attention. Try to disconnect it from the OBD-II port, 
+then reconnect it. Wait until both lights are green and blinking.  
+
+![AutoPi Mini LED meaning](/img/getting_started/autopi_mini/data_troubleshooting/mini_light_placements_01.png)
 
