@@ -20,7 +20,7 @@ Like any [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-
 This documentation provides an overview of the adjustable settings on the AutoPi Mini device, helping you optimize its functionalities for your vehicle type.
 
 
-![Mini advanced settings](/img/getting_started/autopi_mini/mini_advanced_settings.png)
+![Mini advanced settings](/img/cloud/device_management/advanced_settings/autopi_mini/mini_advanced_settings.png)
 <br>
 </br>
 
@@ -60,6 +60,8 @@ If your device cannot automatically detect the VIN, you can enter it manually in
 If you have an ICE vehicle, select Power Voltage or Engine RPM as the ignition detection method.
 If you have an EV, select Accelerometer for ignition detection.
 :::
+<br>
+</br>
 
 ## Tracking 
 This setting is used to determine if a vehicle has been driven by using these 2 sources: 
