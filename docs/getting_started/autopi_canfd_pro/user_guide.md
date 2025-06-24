@@ -171,6 +171,8 @@ This step allows you to decode (translate) raw CAN data using Standard decoder o
 ##### Step 4: Outputs
 This step represent the settings for the output of your data. You can choose where do you want the data to be transferred to, and adjust the settings. At the moment we support upload to AWS S3 bucket but data are also stored locally on a device. 
 
+Read more here: **[How to set up AWS S3 bucket](https://docs.autopi.io/getting_started/autopi_canfd_pro/set_up_AWS_S3_bucket).**
+
   :::note
   If you make 2 identical loggers, you will have 2 identical pairs of the same data. Meaning that you will receive the identical data but more instances are logging the same data at the same time - this could be used for testing purposes.  
   :::
@@ -196,7 +198,7 @@ At the moment [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-
     * **Buffer Line Flush Limit** 
     * **Buffer Line Size** 
 
-![Raw local data](/img/getting_started/autopi_canfd_pro/user_guide/raw_local.png)
+  ![Output handler for S3](/img/getting_started/autopi_canfd_pro/user_guide/empty_s3.png)
 
        
 
@@ -210,8 +212,6 @@ At the moment [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-
     * **Sync Interval** - Time gap between each sync operation, specifying how often files should be synchronized automatically.
     * **Error Retry Interval** - Period of time in seconds that the handler waits before retrying an operation after encountering an error.
     * **Job Timeout** - Maximum duration allowed for the output handler task to run before it is automatically terminated.
-
-![Raw S3 data](/img/getting_started/autopi_canfd_pro/user_guide/raw_s3.png)
 
 
 **Data format: Decoded data (decoded output)**
@@ -247,7 +247,6 @@ At the moment [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-
     * Error Retry Interval - Period of time in seconds that the handler waits before retrying an operation after encountering an error.
     * Job Timeout - Maximum duration allowed for the output handler task to run before it is automatically terminated.
 
-    ![Decoded S3 data](/img/getting_started/autopi_canfd_pro/user_guide/decoded_s3.png)
 
 ##### Step 5: Frame listeners
 It's a way to react on can messages received and possibility to do custom stuff with that. 
