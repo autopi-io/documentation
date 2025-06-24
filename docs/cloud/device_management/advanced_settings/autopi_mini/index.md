@@ -20,7 +20,7 @@ Like any [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-
 This documentation provides an overview of the adjustable settings on the AutoPi Mini device, helping you optimize its functionalities for your vehicle type.
 
 
-![AutoPi.io - Relocator cable](/img/getting_started/autopi_mini/mini_advanced_settings.png)
+![Mini advanced settings](/img/getting_started/autopi_mini/mini_advanced_settings.png)
 <br>
 </br>
 
@@ -60,4 +60,13 @@ If your device cannot automatically detect the VIN, you can enter it manually in
 If you have an ICE vehicle, select Power Voltage or Engine RPM as the ignition detection method.
 If you have an EV, select Accelerometer for ignition detection.
 :::
+
+## Tracking 
+This setting is used to determine if a vehicle has been driven by using these 2 sources: 
+* Trip start/stop - created events for both trip start and trip stop that can be found under Device > Events; the whole trip taken can be seen in Vehicle > Trips.
+* obd.rpm - values for RPM detected from the vehicle. 
+
+| Name | Description | Default |
+| ------ | ------ | ------ |
+| Source | What data source should be used to determine if a vehicle/asset has been used/driven? Changing this will only apply to new data being logged. | Trip start/stop |
 
