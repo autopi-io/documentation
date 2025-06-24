@@ -18,6 +18,7 @@ module.exports = {
             "getting_started/autopi_canfd_pro/pro-user-guide",
             "getting_started/autopi_canfd_pro/how_to_connect_to_tailscale",
             "getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi",
+            "getting_started/autopi_canfd_pro/set_up_AWS_S3_bucket",
             "getting_started/autopi_canfd_pro/pro-data-troubleshooting",
             "getting_started/autopi_canfd_pro/pro-4g-internet-setup-troubleshooting",
           ],
