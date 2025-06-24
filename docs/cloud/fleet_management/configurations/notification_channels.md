@@ -20,13 +20,12 @@ set for you:
 - Medium Alert - create medium alert under Alerts
 - High Alert - create high alert under Alerts
 - Critical Alert - create critical alert under Alerts
-- Email - send email to Customer's email (learn more about Customers [here](https://docs.autopi.io/cloud/accounts/#create-customer)
+- Email - send email to Customer's email; learn more about Customers [here](https://docs.autopi.io/cloud/accounts/#create-customer)
 
 ## Create new notification channel
 However you can edit these or create new ones based on your preference. To create a notification channel,
 click Create and fill out the information. Choose a name for the notification channel and the type of channel
-that you want to receive the notification on e.g., Alert, email, Discord webhook or SMS. Optionally, add a description to provide more information about the
-channel, then click Confirm to save the changes. 
+that you want to receive the notification on e.g., Alert, email, Discord webhook or SMS. Optionally, add a description to provide more information about the channel, then click Confirm to save the changes. 
 
 <p align="center">
     <img src="/img/cloud/fleet_management/configurations/notification_channels/create_notification_channel.png" alt="Create channel"  />

@@ -154,7 +154,7 @@ Remember to replace the YOUR_ACCESS_TOKEN with the actual token you received in 
 
 ## Log Rotation
 Every so often the logs on your AutoPi device will [rotate](https://en.wikipedia.org/wiki/Log_rotation).
-This essentially means that the current log files will be compressed and renmaed so that a new log
+This essentially means that the current log files will be compressed and renamed so that a new log
 file can start being used. This is done in order to keep the size of the log files relatively small.
 
 #### `/var/log/salt/minion`

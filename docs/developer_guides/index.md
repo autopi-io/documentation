@@ -12,7 +12,7 @@ Whether you are a developer looking to create custom scripts, a data analyst int
 deep vehicle telemetry, or a technical enthusiast aiming to optimize and extend the
 functionalities of your vehicle, this documentation will serve as your detailed roadmap.
 
-Most used **Developer guides**: 
+## Most used Developer guides
 - Use [**DoIP hat**](https://shop.autopi.io/products/doip-hat-v1-3) with your AutoPi device and unlocks more diagnosing and maintenance of your fleet; read more here: [How to set up DoIP](https://docs.autopi.io/developer_guides/setting-up-doip/)
 - Want to **access your device remotely**? No problem, you can [**SSH to your device**](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) or you can [enable **Tailscale**](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
 - Deploying **Docker** containers on your device; read more here: [Setting up Docker on Your Device](https://docs.autopi.io/developer_guides/setting-up-docker/)
