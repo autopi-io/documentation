@@ -38,14 +38,13 @@ synced modules, to prevent losing work if you sync the module from the [Cloud](h
 asking, overwrite the file on the device, even if you have made local changes to it.
 
 When you make changes to the files, to make sure that the minion process picks up on the change,
-you can either restart the `salt-minion` service, or run this command `saltutil.refresh_modules`
-which reloads the external modules, i.e. your code.
+this is done by restarting the service, this can be done with `minionutil.restart`. Some changes can be reloaded with `saltutil.refresh_modules`, but it's generally more safe to restart the minion service instead. To ensure all code is reloaded.
 
 ## Remote Development on Dev Machine
 Alternatively, another workflow can be to have a script on your development machine that copies
 the files to the device via [`scp`](https://www.computerhope.com/unix/scp.htm), that way you can
 make the changes in your favorite editor. Remember to have the script also either restart the
-minion service or run the `refresh_modules` command as noted above. Doing development on the local
+minion service with `minionutil.restart` or run the `saltutil.refresh_modules` command as noted above. Doing development on the local
 machine is preferable for many, and is also the way we do development in office as it has the
 benefit of the above solution, but also allows the user to be as productive as possible by in their
 preferred development environment.
