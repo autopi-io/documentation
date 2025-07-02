@@ -11,7 +11,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="AutoPi Documentation" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.f1af4b3e.css">
-<script src="/assets/js/runtime~main.044a3523.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.c4c52bd2.js" defer="defer"></script>
 <script src="/assets/js/main.a8bd9ec2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -43,13 +43,12 @@ the modules will be put in the following directories, based on the type:</p>
 synced modules, to prevent losing work if you sync the module from the <a href="https://www.autopi.io/software-platform/cloud-management" target="_blank" rel="noopener noreferrer">Cloud</a>, as that will, without
 asking, overwrite the file on the device, even if you have made local changes to it.</p>
 <p>When you make changes to the files, to make sure that the minion process picks up on the change,
-you can either restart the <code>salt-minion</code> service, or run this command <code>saltutil.refresh_modules</code>
-which reloads the external modules, i.e. your code.</p>
+this is done by restarting the service, this can be done with <code>minionutil.restart</code>. Some changes can be reloaded with <code>saltutil.refresh_modules</code>, but it&#x27;s generally more safe to restart the minion service instead. To ensure all code is reloaded.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="remote-development-on-dev-machine">Remote Development on Dev Machine<a href="#remote-development-on-dev-machine" class="hash-link" aria-label="Direct link to Remote Development on Dev Machine" title="Direct link to Remote Development on Dev Machine">​</a></h2>
 <p>Alternatively, another workflow can be to have a script on your development machine that copies
 the files to the device via <a href="https://www.computerhope.com/unix/scp.htm" target="_blank" rel="noopener noreferrer"><code>scp</code></a>, that way you can
 make the changes in your favorite editor. Remember to have the script also either restart the
-minion service or run the <code>refresh_modules</code> command as noted above. Doing development on the local
+minion service with <code>minionutil.restart</code> or run the <code>saltutil.refresh_modules</code> command as noted above. Doing development on the local
 machine is preferable for many, and is also the way we do development in office as it has the
 benefit of the above solution, but also allows the user to be as productive as possible by in their
 preferred development environment.</p>
