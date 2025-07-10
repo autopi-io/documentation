@@ -163,3 +163,8 @@ If everything is working correctly, you should be receiving data on your broker 
 
 ![final_expected_result](/img/getting_started/developer_guides/configuring_MQTT/final_result.png)
 
+## Troubleshooting steps
+
+1. When using the Broker-Bridge Mode with the local mosquitto broker running, invalid configuration can make the mosquitto service not start. This will show up as an error when syncing the configuration. To diagnose this, check the log of the mosquitto service, and/or the mosquitto log in `/var/log/mosquitto/mosquitto.log`.
+2. For connection issues with the remote broker, check the mosquitto log at `/var/log/mosquitto/mosquitto.log`, as that should have all details needed to diagnose the issue.
+
