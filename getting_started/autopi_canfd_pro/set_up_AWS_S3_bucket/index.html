@@ -11,7 +11,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="AutoPi Documentation" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.f1af4b3e.css">
-<script src="/assets/js/runtime~main.f8a607a1.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.6a3b91bf.js" defer="defer"></script>
 <script src="/assets/js/main.a8bd9ec2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -30,6 +30,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-aws-s3">What is AWS S3?<a href="#what-is-aws-s3" class="hash-link" aria-label="Direct link to What is AWS S3?" title="Direct link to What is AWS S3?">​</a></h2>
 <p>Amazon S3 (Simple Storage Service) is a cloud-based storage service offered by Amazon Web Services (AWS). An S3 bucket is essentially a container where you can store and organize files (called &quot;objects&quot;) such as logs, images, videos, backups, and more.
 Each bucket can hold an unlimited number of files and is accessible over the internet, making it ideal for securely storing and retrieving data from anywhere.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>If you need help, this guide can also be helpful: <a href="https://aws.amazon.com/getting-started/" target="_blank" rel="noopener noreferrer">Getting started with AWS</a>.</p></div></div>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="aws-bucket-creation">AWS Bucket Creation<a href="#aws-bucket-creation" class="hash-link" aria-label="Direct link to AWS Bucket Creation" title="Direct link to AWS Bucket Creation">​</a></h2>
 <p>Follow the steps below to create AWS S3 bucket.</p>
@@ -37,7 +38,8 @@ Each bucket can hold an unlimited number of files and is accessible over the int
 <ul>
 <li>Open this link to access: <a href="https://signin.aws.amazon.com/signup?request_type=register" target="_blank" rel="noopener noreferrer">Amazon&#x27;s AWS portal</a>.</li>
 <li>Sign up: fill out your email address and AWS account name and click on &quot;Verify email address&quot;.</li>
-<li>Verification code is included in the auto-generated email and send to the email address you provided; follow the instructions provided in the email to finish the verification process.</li>
+<li>Verification code is included in the auto-generated email and send to the email address you provided;</li>
+<li>To complete the sign up process you need to follow the instructions provided in the email and finish up 5 steps: choose your password, fill in your contact information, fill in your billing information, confirm your identity and lastly select a support plan.</li>
 </ul>
 <p><img decoding="async" loading="lazy" alt="Sign up for AWS" src="/assets/images/sign_up-0725bfcfd70d31bc17fd2ea9c2434420.png" width="1277" height="727" class="img_ev3q"></p>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Once the sign up process is finalized the &quot;root user&quot; is created as an account owner on AWS. Make sure this a correct user as it will allow the user to access all AWS services and resources in the account.</p></div></div>
@@ -45,16 +47,22 @@ Each bucket can hold an unlimited number of files and is accessible over the int
 <ul>
 <li>Sign in to your AWS account.</li>
 <li>Open S3 console by navigating to &quot;Services&quot; and choosing &quot;Storage&quot;.</li>
-<li>Click on &quot;Create bucket&quot; in the upper right corner.
-<img decoding="async" loading="lazy" alt="Create bucket" src="/assets/images/create_bucket-d01602af834dabf8bedb13be9911fe92.png" width="1708" height="1224" class="img_ev3q"></li>
-<li>Fill in all required fields: Bucket name and AWS Region (if not already set).
-<img decoding="async" loading="lazy" alt="Fill out the bucket form" src="/assets/images/create_bucket_form-98b4e8a4efa33638107a10fc6e923441.png" width="1696" height="1194" class="img_ev3q"></li>
-<li>Optionally copy settings from existing bucket.</li>
-<li>Click on &quot;Create bucket&quot; at the bottom of the page.
-<img decoding="async" loading="lazy" alt="Save changes for creating bucket" src="/assets/images/save_bucket-55518353e2dca03f0bd07561d80d6d85.png" width="1691" height="243" class="img_ev3q"></li>
-<li>Once created, the bucket can be seen in the buckets list.
-<img decoding="async" loading="lazy" alt="Buckets list" src="/assets/images/buckets_list-450a58dec5286ced87c1c9d63c3a0c27.png" width="1697" height="569" class="img_ev3q"></li>
+<li>Click on &quot;Create bucket&quot; in the upper right corner.</li>
 </ul>
+<p><img decoding="async" loading="lazy" alt="Create bucket" src="/assets/images/create_bucket-d01602af834dabf8bedb13be9911fe92.png" width="1708" height="1224" class="img_ev3q"></p>
+<ul>
+<li>Fill in all required fields: Bucket name and AWS Region (if not already set).</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="Fill out the bucket form" src="/assets/images/create_bucket_form-98b4e8a4efa33638107a10fc6e923441.png" width="1696" height="1194" class="img_ev3q"></p>
+<ul>
+<li>Optionally copy settings from existing bucket.</li>
+<li>Click on &quot;Create bucket&quot; at the bottom of the page.</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="Save changes for creating bucket" src="/assets/images/save_bucket-55518353e2dca03f0bd07561d80d6d85.png" width="1691" height="243" class="img_ev3q"></p>
+<ul>
+<li>Once created, the bucket can be seen in the buckets list.</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="Buckets list" src="/assets/images/buckets_list-450a58dec5286ced87c1c9d63c3a0c27.png" width="1697" height="569" class="img_ev3q"></p>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Enter a globally unique bucket name following AWS naming conventions. You can read more here: <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html?icmpid=docs_amazons3_console" target="_blank" rel="noopener noreferrer">General purpose bucket naming rules</a>.</p></div></div>
 <div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>(Optional) Upload a Test File: Open your new bucket and click &quot;Upload&quot; to add a file or folder to verify the bucket is working correctly.</p></div></div>
 <hr>
@@ -63,35 +71,54 @@ Each bucket can hold an unlimited number of files and is accessible over the int
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="step-1-create-users-with-correct-permissions">Step 1: Create Users with Correct Permissions<a href="#step-1-create-users-with-correct-permissions" class="hash-link" aria-label="Direct link to Step 1: Create Users with Correct Permissions" title="Direct link to Step 1: Create Users with Correct Permissions">​</a></h3>
 <ul>
 <li>Sign in to an existing AWS account by clicling <a href="https://eu-north-1.signin.aws.amazon.com/oauth?client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&amp;code_challenge=2X8Gz8x64bnC_u1PtIKJ2ho3L1pQzeV000fZ2yzsH_g&amp;code_challenge_method=SHA-256&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26state%3DhashArgsFromTB_eu-north-1_217c4b6452c80190" target="_blank" rel="noopener noreferrer">here</a>.</li>
-<li>Open IAM console by navigating to Services &gt; All services &gt; IAM.
-<img decoding="async" loading="lazy" alt="IAM Console" src="/assets/images/iam_console-f7bd8022aee8ca823fa76c7bcb97ec3c.png" width="1692" height="1073" class="img_ev3q"></li>
+<li>Open IAM console by navigating to Services &gt; All services &gt; IAM.</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="IAM Console" src="/assets/images/iam_console-f7bd8022aee8ca823fa76c7bcb97ec3c.png" width="1692" height="1073" class="img_ev3q"></p>
+<ul>
 <li>Under &quot;Access management&quot; click on &quot;Users&quot;.</li>
 <li>Either select an existing IAM user or create a new one.</li>
 <li>(Optional) To create a new user:<!-- -->
 <ul>
-<li>Click &quot;Create user&quot;.
-<img decoding="async" loading="lazy" alt="IAM users" src="/assets/images/create_user-7bc83f875cb0723cac93fa6c2ed45fb0.png" width="1699" height="876" class="img_ev3q"></li>
-<li>Assign a meaningful user name.</li>
-<li>Click &quot;Next&quot;.</li>
-<li>Assign permissions:<!-- -->
+<li>
+<p>Click &quot;Create user&quot;.
+<img decoding="async" loading="lazy" alt="IAM users" src="/assets/images/create_user-7bc83f875cb0723cac93fa6c2ed45fb0.png" width="1699" height="876" class="img_ev3q"></p>
+</li>
+<li>
+<p>Assign a meaningful user name.</p>
+</li>
+<li>
+<p>Click &quot;Next&quot;.</p>
+</li>
+<li>
+<p>Assign permissions:</p>
 <ul>
 <li>Option A: Add the user to an already existing group with S3 access or create a new group; or copy permissions.</li>
 <li>Option B: Attach policies directly.</li>
 </ul>
 </li>
-<li>Click &quot;Next&quot;.</li>
-<li>Click &quot;Create user&quot;.</li>
-<li>Your user was succesfully created and is now shown in the users list.
-<img decoding="async" loading="lazy" alt="New user created" src="/assets/images/users_list-817a84591897274a822443bbd9c4d357.png" width="1688" height="892" class="img_ev3q"></li>
+<li>
+<p>Click &quot;Next&quot;.</p>
+</li>
+<li>
+<p>Click &quot;Create user&quot;.</p>
+</li>
+<li>
+<p>Your user was succesfully created and is now shown in the users list.
+<img decoding="async" loading="lazy" alt="New user created" src="/assets/images/users_list-817a84591897274a822443bbd9c4d357.png" width="1688" height="892" class="img_ev3q"></p>
+</li>
 </ul>
 </li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="step-2-create-access-key">Step 2: Create Access Key<a href="#step-2-create-access-key" class="hash-link" aria-label="Direct link to Step 2: Create Access Key" title="Direct link to Step 2: Create Access Key">​</a></h3>
 <ul>
-<li>Navigate to Users list and click on the user you want to create access keys for. The new window will open:
-<img decoding="async" loading="lazy" alt="Security credentials" src="/assets/images/security_credentials-cdc0bbbfd0f6eb4ec8fef19965f854e2.png" width="1692" height="950" class="img_ev3q"></li>
-<li>Navigate to Security credentials and click Create access key:
-<img decoding="async" loading="lazy" alt="Create access key" src="/assets/images/create_key-101c6eb57fb82f72cb6a2f804256dc28.png" width="1697" height="1194" class="img_ev3q"></li>
+<li>Navigate to Users list and click on the user you want to create access keys for. The new window will open:</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="Security credentials" src="/assets/images/security_credentials-cdc0bbbfd0f6eb4ec8fef19965f854e2.png" width="1692" height="950" class="img_ev3q"></p>
+<ul>
+<li>Navigate to Security credentials and click Create access key:</li>
+</ul>
+<p><img decoding="async" loading="lazy" alt="Create access key" src="/assets/images/create_key-101c6eb57fb82f72cb6a2f804256dc28.png" width="1697" height="1194" class="img_ev3q"></p>
+<ul>
 <li>&quot;Access key best practises &amp; alternatives&quot; page is open, select &quot;Other&quot; at the bottom of the page.</li>
 <li>(Optional) Specify the description tag.</li>
 <li>Click on &quot;Create access key&quot;.</li>
@@ -114,9 +141,9 @@ Each bucket can hold an unlimited number of files and is accessible over the int
 <img decoding="async" loading="lazy" alt="Output handler for S3" src="/assets/images/empty_s3-932174df78da09464b8958d05df0ec5a.png" width="1426" height="957" class="img_ev3q"></li>
 <li>To upload to AWS S3, fill in the following fields:<!-- -->
 <ul>
-<li><strong>Access Key ID</strong> – your AWS access key.</li>
-<li><strong>Secret Access Key</strong> – your AWS secret key.</li>
-<li><strong>Destination Path</strong> – the URL of your S3 bucket (e.g., s3://your-bucket-name/folder)</li>
+<li>Access Key ID – your AWS access key.</li>
+<li>Secret Access Key – your AWS secret key.</li>
+<li>Destination Path – the URL of your S3 bucket (e.g., s3://your-bucket-name/folder)</li>
 </ul>
 </li>
 <li>(Optional) Configure Advanced Settings:<!-- -->
