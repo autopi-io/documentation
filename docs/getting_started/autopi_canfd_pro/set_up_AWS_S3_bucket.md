@@ -23,6 +23,9 @@ This guide will walk you through on how to create an Amazon Web Services (AWS) S
 Amazon S3 (Simple Storage Service) is a cloud-based storage service offered by Amazon Web Services (AWS). An S3 bucket is essentially a container where you can store and organize files (called "objects") such as logs, images, videos, backups, and more.
 Each bucket can hold an unlimited number of files and is accessible over the internet, making it ideal for securely storing and retrieving data from anywhere.
 
+:::note
+If you need help, this guide can also be helpful: [Getting started with AWS](https://aws.amazon.com/getting-started/).
+:::
 ---
 
 ## AWS Bucket Creation
@@ -33,7 +36,8 @@ Follow the steps below to create AWS S3 bucket.
 
 * Open this link to access: [Amazon's AWS portal](https://signin.aws.amazon.com/signup?request_type=register).
 * Sign up: fill out your email address and AWS account name and click on "Verify email address".
-* Verification code is included in the auto-generated email and send to the email address you provided; follow the instructions provided in the email to finish the verification process.
+* Verification code is included in the auto-generated email and send to the email address you provided; 
+* To complete the sign up process you need to follow the instructions provided in the email and finish up 5 steps: choose your password, fill in your contact information, fill in your billing information, confirm your identity and lastly select a support plan. 
 
 ![Sign up for AWS](/img/getting_started/autopi_canfd_pro/aws_creation/sign_up.png)
 
@@ -47,14 +51,21 @@ Once the sign up process is finalized the "root user" is created as an account o
 * Sign in to your AWS account.
 * Open S3 console by navigating to "Services" and choosing "Storage".
 * Click on "Create bucket" in the upper right corner.
-    ![Create bucket](/img/getting_started/autopi_canfd_pro/aws_creation/create_bucket.png)
+
+![Create bucket](/img/getting_started/autopi_canfd_pro/aws_creation/create_bucket.png)
+
 * Fill in all required fields: Bucket name and AWS Region (if not already set).
-    ![Fill out the bucket form](/img/getting_started/autopi_canfd_pro/aws_creation/create_bucket_form.png)
+
+![Fill out the bucket form](/img/getting_started/autopi_canfd_pro/aws_creation/create_bucket_form.png)
+
 * Optionally copy settings from existing bucket.
 * Click on "Create bucket" at the bottom of the page. 
-    ![Save changes for creating bucket](/img/getting_started/autopi_canfd_pro/aws_creation/save_bucket.png)
+
+![Save changes for creating bucket](/img/getting_started/autopi_canfd_pro/aws_creation/save_bucket.png)
+
 * Once created, the bucket can be seen in the buckets list. 
-    ![Buckets list](/img/getting_started/autopi_canfd_pro/aws_creation/buckets_list.png)
+
+![Buckets list](/img/getting_started/autopi_canfd_pro/aws_creation/buckets_list.png)
 
 :::note
 Enter a globally unique bucket name following AWS naming conventions. You can read more here: [General purpose bucket naming rules](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html?icmpid=docs_amazons3_console).
@@ -71,12 +82,15 @@ In order to allow your AutoPi CAN-FD Pro device to send data to your S3 bucket y
 ### Step 1: Create Users with Correct Permissions
 * Sign in to an existing AWS account by clicling [here](https://eu-north-1.signin.aws.amazon.com/oauth?client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&code_challenge=2X8Gz8x64bnC_u1PtIKJ2ho3L1pQzeV000fZ2yzsH_g&code_challenge_method=SHA-256&response_type=code&redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26state%3DhashArgsFromTB_eu-north-1_217c4b6452c80190).
 * Open IAM console by navigating to Services > All services > IAM. 
+
 ![IAM Console](/img/getting_started/autopi_canfd_pro/aws_creation/iam_console.png)
+
 * Under "Access management" click on "Users".
 * Either select an existing IAM user or create a new one.
 * (Optional) To create a new user: 
      * Click "Create user".
     ![IAM users](/img/getting_started/autopi_canfd_pro/aws_creation/create_user.png)
+
     * Assign a meaningful user name. 
     * Click "Next".
     * Assign permissions: 
@@ -90,9 +104,13 @@ In order to allow your AutoPi CAN-FD Pro device to send data to your S3 bucket y
 
 ### Step 2: Create Access Key
 * Navigate to Users list and click on the user you want to create access keys for. The new window will open: 
+
 ![Security credentials](/img/getting_started/autopi_canfd_pro/aws_creation/security_credentials.png)
+
 * Navigate to Security credentials and click Create access key: 
+
 ![Create access key](/img/getting_started/autopi_canfd_pro/aws_creation/create_key.png)
+
 * "Access key best practises & alternatives" page is open, select "Other" at the bottom of the page.
 * (Optional) Specify the description tag.
 * Click on "Create access key".
@@ -117,9 +135,9 @@ By default, all data is logged and stored locally on the device. However, you ca
 * Navigate to Step 5: Outputs. This is where you define where the logged data should be sent. You can also read more here: [Output handler configuration explained](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-4-outputs). 
 ![Output handler for S3](/img/getting_started/autopi_canfd_pro/user_guide/empty_s3.png)
 * To upload to AWS S3, fill in the following fields:
-    * **Access Key ID** – your AWS access key.
-    * **Secret Access Key** – your AWS secret key.
-    * **Destination Path** – the URL of your S3 bucket (e.g., s3://your-bucket-name/folder)
+    * Access Key ID – your AWS access key.
+    * Secret Access Key – your AWS secret key.
+    * Destination Path – the URL of your S3 bucket (e.g., s3://your-bucket-name/folder)
 * (Optional) Configure Advanced Settings:
     * Exclude Patterns – to filter out specific data
     * Sync Interval – how often the device syncs data
