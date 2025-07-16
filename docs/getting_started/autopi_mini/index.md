@@ -108,6 +108,47 @@ This is the OBD-II extension cable:
 <br>
 </br>
 
+## Electric Vehicle configurations
+
+If your [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) is connected to an Electric Vehicle we recommend to set some extra configurations for your device. Unlike internal combustion engine (ICE) vehicles, some EVs do not support automatic VIN detection, which can prevent the device from reading data properly. To resolve this, follow these steps to adjust the advanced settings for EV compatibility. 
+
+![Mini advanced settings](/img/getting_started/autopi_mini/mini_advanced_settings.png)
+
+Recommended advanced settings for Electric Vehicle:
+
+**Configuration 1: Adjust OBD Feature, this setting ensures the device correctly communicates with your EV.**
+
+1. Go to: Advanced settings → Obd Settings → Obd Feature.
+2. Select: Non-OBD Compliant.
+3. Press: Save.
+
+**Configuration 2: Manually enter your VIN (if not detected automatically).**
+
+1. Go to: Advanced settings → Obd Vin Settings.
+2. Set Vin: enter your 17-character VIN (digits and capital letters).
+3. Pick Vin Source: select Manual.
+4. Press: Save.
+
+**Configuration 3: Set Ignition detection for EVs to properly detect when your EV is on or off.**
+1. Go to: Advanced settings → System -> Ignition Settings.
+2. Select: Accelerometer.
+3. Press: Save.
+
+**Configuration 4: Set Movement source to be more precise when the vehicle is moving.**
+1. Go to: Advanced settings → System -> Movement Source.
+2. Select: Accelerometer.
+3. Press: Save.
+
+**Configuration 5: Set the Accelerometer Delay Settings to ensure rapid response for data reading but also a protection for quick state changes.**
+1. Go to: Advanced settings → System -> Movement start delay.
+2. Select: 5 to 12 seeconds.
+3. Go to: Advanced settings -> System -> Movement stop delay.
+4. Select: 30 to 60 seeconds.
+3. Press: Save.
+
+After making these adjustments, check the 'Change History' tab to confirm that your settings were applied successfully.
+
+
 **You Are All Set!**
 
 Congratulations! You've successfully set up your [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) device and connected 
