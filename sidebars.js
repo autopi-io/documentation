@@ -82,6 +82,7 @@ module.exports = {
         "developer_guides/jumpers",
         "developer_guides/installing-a-camera-on-your-autopi",
         "developer_guides/enabling_bluetooth_on_TMU_devices",
+        "developer_guides/enabling_uart_on_TMU_devices",
         "developer_guides/setting-up-a-device-with-verizon-wireless",
         "developer_guides/autopi-logs",
         "developer_guides/local-api-overview",

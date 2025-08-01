@@ -191,6 +191,10 @@ module.exports = {
             from: '/guides/enabling_bluetooth_on_TMU_devices/',
           },
           {
+            to: '/developer_guides/enabling_uart_on_TMU_devices/',
+            from: '/guides/enabling_uart_on_TMU_devices/',
+          },          
+          {
             to: '/developer_guides/how-to-ssh-to-your-device/',
             from: '/guides/how-to-ssh-to-your-device/',
           },
