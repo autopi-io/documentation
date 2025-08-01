@@ -181,4 +181,4 @@ Use `core_freq_min=250` to keep the UART clock stable during idle throttling, an
 
 * [Raspberry Pi CM4 Datasheet – Alternate‑function table](https://datasheets.raspberrypi.com/cm4/cm4-datasheet.pdf#page=23)
 * [Understanding Device Tree Overlays](https://www.raspberrypi.com/documentation/computers/config_txt.html#device-tree-overlays)
-* [AutoPi TMU CM4 HAT Pinout](../using-hat/)
+* [AutoPi TMU CM4 HAT Pinout](/hardware/autopi_tmu_cm4/using-hat/)
