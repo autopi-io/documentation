@@ -263,38 +263,87 @@ html[data-theme=dark] {
 @custom-variant dark (&:is([data-theme="dark"] *));
 
 /* src/css/customTable.css */
-/* Apply styles to Markdown-rendered tables */
-.markdown table {
-  @apply w-full text-sm text-left text-gray-700 dark:text-gray-400 shadow-md sm:rounded-lg overflow-hidden border;
+/* outer wrapper: clipping, rounding, shadow, ring, and horizontal scroll */
+/* Wrapper around the table */
+.markdown .table-container {
+  overflow-x: auto;
+  overflow: hidden;               /* clip corners and shadow */
+  border-radius: 0.5rem;          /* same as rounded-lg */
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25) !important;
+  border: 1px solid rgba(0,0,0,0.05);
+  background-color: #ffffff;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
+/* Base table styles */
+.markdown table {
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;        /* wrapper provides the white background */
+}
+
+/* Header row */
 .markdown thead {
-  @apply text-xs uppercase text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400;
+  background-color: #f9fafb;      /* gray-50 */
 }
 
 .markdown thead th {
-  @apply px-3 py-2;
+  padding: 0.575rem 0.5rem;      /* py-3.5 px-3 */
+  font-size: 0.8rem;            /* text-sm */
+  font-weight: 600;
+  color: #111827;                 /* gray-900 */
+  text-align: left;
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
+/* Round the top corners */
+.markdown thead th:first-child {
+  border-top-left-radius: 0.5rem;
+}
+.markdown thead th:last-child {
+  border-top-right-radius: 0.5rem;
+}
+
+/* Body rows */
 .markdown tbody {
-  @apply bg-white dark:bg-gray-800;
+  background-color: #ffffff;
 }
 
 .markdown tbody tr {
-  @apply border-b border-gray-200 dark:border-gray-700;
+  border-top: 1px solid #e5e7eb;  /* divide-gray-200 */
 }
 
-.markdown tbody tr:last-child {
-  @apply border-b-0;
-}
-
+.markdown tbody td,
 .markdown tbody th {
-  @apply px-3 py-2 font-medium text-gray-700 whitespace-nowrap dark:text-white;
+  padding: 0.5rem 0.5rem;          /* py-4 px-3 */
+  font-size: 0.8rem;
+  color: #6b7280;                 /* gray-500 */
+  border: 1px solid rgba(0,0,0,0.05);
+  text-align: center;
 }
 
-.markdown tbody td {
-  @apply px-3 py-2;
+/* First column in tbody as row header */
+.markdown tbody th {
+  text-align: left;
+  font-weight: 500;
+  color: #111827;
+  white-space: nowrap;
 }
+
+/* Round the bottom corners */
+.markdown tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 0.5rem;
+}
+.markdown tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 0.5rem;
+}
+
+
 
 // other types in tailwind
 .markdown h1 {
