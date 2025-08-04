@@ -87,6 +87,7 @@ module.exports = {
         "developer_guides/autopi-logs",
         "developer_guides/local-api-overview",
         "developer_guides/setting-up-docker",
+        "developer_guides/how-to-create-custom-event-for-custom-logger",
         "developer_guides/using-the-autopi-with-an-external-power-supply",       
       ],
       "Cloud": [
