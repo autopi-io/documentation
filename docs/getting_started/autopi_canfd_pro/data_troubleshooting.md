@@ -44,7 +44,12 @@ Run the `logger.status` command on the device to see the status of data logger(s
 2. Or alternatively if you have direct SSH access [How to SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) to the device via LAN or VPN (for Tailscale, you can read more at this guide: [How to connect to Tailscale](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)) you can use the `autopi` terminal command.
 3. Or if you are nearby the device and can connect to it's local WiFi hotspot you can do it from the local admin UI on local.autopi.io. Here is a guide: [Local development workflow](https://docs.autopi.io/developer_guides/local-development-workflow/). 
 
-Regardless of which of the above methods you use, you must run the command `logger.status`. Below is an example of the output of the command.
+Regardless of which of the above methods you use, you must run the command: 
+```python 
+logger.status
+```
+
+Below is an example of the output of the command: 
 
 ```
 channels:
@@ -144,9 +149,9 @@ Ensure the correct Bitrate is set for your vehicle, you can follow this guide: [
     If you know the exact bitrate for your vehicle you can input it directly to skip scanning. 
 
 **Autodetect** feature under CAN Channel settings, is used to figure out how to find the correct bitrate using 3 different detection strategies to ensure there is data incoming. You can read more in this guide, on [How to find the correct bitrate](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-3-autodetect-how-to-find-the-correct-bitrate). Every time the autodetection is performed, it triggers an **event** that can be seen in the events section on [AutoPi cloud](https://my.autopi.io/) -> go to devices > pick the device > events. This should help you to understand a little better what is happening on a device. These are some of the examples for the events that can be used for verifying the bitrates: 
-- vehicle/bus/can0/autodetected 
-- vehicle/bus/can0/autodetect/any_passive/successful 
-- vehicle/bus/can0/autodetect/any_passive/unsuccessful 
+- `vehicle/bus/can0/autodetected`
+- `vehicle/bus/can0/autodetect/any_passive/successful` 
+- `vehicle/bus/can0/autodetect/any_passive/unsuccessful` 
 
 
 ### 7. Make sure you are receiving data

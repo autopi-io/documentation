@@ -29,8 +29,9 @@ Before following this guide, you must have completed the initial [setup guide](/
 
 ### Check Modem on Hardware
 In the terminal on the WiFi, check that the modem has been found. This can be done by writing the following command:
-
-`cmd.run "lsusb" `
+```python  
+cmd.run "lsusb" 
+```
 
 The output of the command should be similar to this:
 
@@ -48,76 +49,89 @@ If you ordered a 4G edition and you don't find the modem in your list, then plea
 ### Check Modem Setup
 **Check PDP Context:**  
 If your devices is using a Telit Modem is using software version 1.22.7 or newer,
-There's a command you can run to verify that the modem has been set up correctly. 
-
-`modem.connection pdp_context`
+There's a command you can run to verify that the modem has been set up correctly: 
+```python  
+modem.connection pdp_context
+```
 
 This should return a message that looks like either.
-
-**value:**  
-**- apn: ''**  
-**cid: 1**  
-**pdp_type: IPV4V6**  
+```python  
+value:  
+- apn: ''  
+cid: 1
+pdp_type: IPV4V6 
 
 or  
-**value:**  
-**- apn: ''**  
-**cid: 1**  
-**pdp_type: IPV4V6**  
-**- apn: 'ims'**  
-**cid: 2**  
-**pdp_type: IPV4V6**  
+value: 
+- apn: '' 
+cid: 1
+pdp_type: IPV4V6 
+- apn: 'ims'  
+cid: 2 
+pdp_type: IPV4V6 
+```
 
-Incase your software version is older than 1.22.7, you can run the following command to get the same information. 
+Incase your software version is older than 1.22.7, you can run the following command to get the same information: 
 
-`modem.connection execute AT+CGDCONT?`
+```python  
+modem.connection execute AT+CGDCONT?
+```
+
 
 This should return a message that looks like either. 
-
-**data: '+CGDCONT: 1, "IPV4V6","",0,0,0,0'**  
+```python  
+data: '+CGDCONT: 1, "IPV4V6","",0,0,0,0'  
 or  
-**Data:**   
-**- '+CGDCONT:1,"IPV4V6","",0,0,0,0'**   
-**- '+CGDCONT:2,"IPV4V6","ims","",0,0,0,0'**
+Data:   
+- '+CGDCONT:1,"IPV4V6","",0,0,0,0'   
+- '+CGDCONT:2,"IPV4V6","ims","",0,0,0,0'
+```
 
-If you get the second message after running either command then you can reconfigure the modem by running these three commands.
-
-`cmd.run "systemctl stop qmi-manager"`
-
-`modem.connection execute AT+CGDCONT=2`
-
-`cmd.run "systemctl restart qmi-manager"`
+If you get the second message after running either command then you can reconfigure the modem by running these three commands: 
+```python  
+cmd.run "systemctl stop qmi-manager"
+modem.connection execute AT+CGDCONT=2
+cmd.run "systemctl restart qmi-manager"
+```
 
 After restarting your devices you can run the first command again to verify you get the first message. 
 
 **Check Firmware Switch:**  
 Check if the firmware switch is set correctly by running this command if you are using software version 1.22.7 or newer.
-
-`modem.connection active_firmware_image`  
+```python  
+modem.connection active_firmware_image
+```
 
 this should return a message that looks like this.  
-
-**_stamp: "the curent date"**  
-**_type: active_firmware_image**  
-**net_conf:global**  
-**storage_conf: ram**  
+```python  
+_stamp: "the curent date" 
+_type: active_firmware_image
+net_conf:global
+storage_conf: ram  
+```
 Here we are looking to see if the net_conf is set to global.
 
-Incase your software version is older than 1.22.7, you can run the following command to get the same informaiton.  
+Incase your software version is older than 1.22.7, you can run the following command to get the same information: 
+```python  
+modem.connection execute AT#FWSWITCH?'
+```
 
-`modem.connection execute AT#FWSWITCH?`
+This should return with a message that looks like this: 
+```python  
+Data:'FWSWITCH:40:1'
+``` 
 
-This should return with a message that looks like this. 
-
-**Data:'FWSWITCH:40:1'**  
-
-Incase the FWSWITCH does not start with 40 or net_conf is not global this can be reconfigured manually by running the following command.
-
-`modem.connection execute AT#FWSWITCH=40,1`
+In case the FWSWITCH does not start with 40 or `net_conf` is not global this can be reconfigured manually by running the following command.
+```python  
+modem.connection execute AT#FWSWITCH=40,1
+```
 
 
 ### Checking qmi-manager Status
-The device contains a software manager, which ensure stable connection to the internet. This is called qmi-manager. To check status, please write the following command in the terminal:
+The device contains a software manager, which ensure stable connection to the internet. This is called `qmi-manager`. To check status, please write the following command in the terminal:
+```python  
+cmd.run "qmi-manager status"
+```
 
 The output should be similar what you can see in the image below:
 
@@ -126,9 +140,10 @@ The output should be similar what you can see in the image below:
 ### Further Checking of Network
 
 If your device still isn't online, you can try running the following two commands. They will tell you a bit more about why the network manager fails:
-
-`cmd.run "qmi-manager down"`
-`cmd.run "qmi-manager up"`
+```python  
+cmd.run "qmi-manager down"
+cmd.run "qmi-manager up"
+```
 
 If the last command reports issue with detecting the SIM card, then double check the orientation of the SIM card and try again.
 
@@ -139,28 +154,34 @@ This can be done on the local configuration tool, by connecting to the device ho
 
 From the terminal located in the top right corner on the webpage, you can run the following two commands to update the MTU and save the changes.
 
-`grains.set qmi:mtu xxxx`  
-`state.sls network.wwan.qmi.config`
+```python  
+grains.set qmi:mtu xxxx
+state.sls network.wwan.qmi.config
+```
 
 To verify that these changes have been saved, you can run the following two commands, here you want to check that first command retruns the same value you set, and that the seconed command where mtu= the same value as the one we set.    
 
-`grains.get qmi:mtu`  
-`cmd.run "cat /etc/udhcpc/qmi.override"`
+```python  
+grains.get qmi:mtu
+cmd.run "cat /etc/udhcpc/qmi.override"
+```
 
-**NOTE:**
-- For US Verizon customers, please try this MTU: 1428.     
-- For other customer, please try this MTU: 1280.
+:::note
+- **For US Verizon customers, please try this MTU = 1428.**    
+- **For other customer, please try this MTU = 1280.**
+:::
 
 If the connection is still not online, then please contact support@autopi.io for additional help.
 
 ### Check Connections
 
-You can to check if the device can connect to the internet though the 4g connection you can run the following command.
+You can to check if the device can connect to the internet though the 4g connection you can run the following command: 
+```python  
+cmd.run "ping -c 5 -I wwan0 google.com"
+```
 
-`cmd.run "ping -c 5 -I wwan0 google.com"`
-
-You can also check the connection to the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) service by running the following command. 
-
-`cmd.run "curl -v my.autopi.io"`
-
+You can also check the connection to the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) service by running the following command: 
+```python  
+cmd.run "curl -v my.autopi.io"
+```
 

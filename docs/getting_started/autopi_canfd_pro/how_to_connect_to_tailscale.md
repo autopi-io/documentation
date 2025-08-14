@@ -48,7 +48,9 @@ There are few ways on how to open tailscale on your computer:
 * On Windows/macOS/Linux: Open the Tailscale app from the system tray or menu bar.
 * On Android/iOS: Open the Tailscale app from your app drawer.
 * On CLI (Linux/macOS/Windows Command Prompt/PowerShell): Open a terminal and type:
-` tailscale up ` 
+    ```python 
+    tailscale up 
+    ```
 
 ### 4. Log in to [Tailscale](https://login.tailscale.com/start) on your computer 
 
@@ -66,7 +68,9 @@ There are few ways on how to open tailscale on your computer:
     - Fill out the Auth key. Make sure the tailscale is enabled. 
 
 * Option 2: Run up command with auth key in terminal: 
-` cmd.run 'tailscale up --authkey=tskey-KEYKEY-KEYKEYKEYKEY'` 
+    ```python 
+    cmd.run 'tailscale up --authkey=tskey-KEYKEY-KEYKEYKEYKEY'
+    ```
 
 :::note
 Make sure you use the key that was generated in the first step of this section and replace it accordingly in the command with your auth key.
@@ -78,7 +82,9 @@ Make sure you use the key that was generated in the first step of this section a
 * Once logged in, your device should appear in the [Tailscale admin panel](https://login.tailscale.com/admin/machines)
 * In the Tailscale app, you should see "Connected" with an assigned Tailscale IP (e.g., 100.x.x.x).
 * If using CLI, check your connection with: 
-` tailscale status ` 
+    ```python 
+    tailscale status 
+    ```
 
 ### 7. Test your connection 
 
@@ -92,14 +98,18 @@ If you want to route all traffic through another device on your Tailscale networ
 * Open the Tailscale app.
 * Click "Use Exit Node" and select a device.
 * On CLI, use:
-`  tailscale up --exit-node=100.x.x.x ` 
+    ```python 
+    tailscale up --exit-node=100.x.x.x 
+    ```
 
 
 ### 9. Disconnect when needed
 To disconnect from Tailscale:
 * In the Tailscale app, click "Disconnect".
 * In CLI, run:
-` tailscale down `
+    ```python 
+    tailscale down 
+    ```
 
 <br>
 </br>

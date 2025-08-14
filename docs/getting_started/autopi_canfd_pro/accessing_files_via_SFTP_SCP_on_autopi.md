@@ -34,7 +34,10 @@ Choose your connection method:
     - Connect the device and your computer to the same WiFi network.  
     - Find the device’s IP:  
       - Check your router’s DHCP client list (e.g., `192.168.0.100`).  
-      - On the AutoPi, run `hostname -I` in the terminal.  
+      - In the terminal on AutoPi's cloud, run this command:
+        ```python 
+        hostname -I
+        ```  
 
   * **3. Ethernet (Direct Connection)**  
     - Connect the AutoPi to your computer via Ethernet.  
@@ -92,11 +95,17 @@ scp /local/file.txt pi@[IP_ADDRESS]:/opt/autopi/can1/
 
 - **Connection Failed?**  
   - Verify the AutoPi and your computer are on the same network.  
-  - Ensure SSH is enabled on the AutoPi: `sudo systemctl enable ssh`, or look in Advanced settings.  
+  - Ensure SSH is enabled on the AutoPi by checking the advanced settings or running this command in the terminal:
+    ```python 
+    sudo systemctl enable ssh
+    ```  
   - Check firewall/antivirus settings (allow port 22).  
 - **Tailscale Issues?**  
   - Confirm both devices are logged into the same Tailscale account.  
-  - Restart Tailscale: `sudo systemctl restart tailscaled`.  
+  - Restart Tailscale by running this command: 
+    ```python 
+    sudo systemctl restart tailscaled
+    ``` 
 
 ---
 :::note

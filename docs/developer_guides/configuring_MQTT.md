@@ -13,32 +13,38 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 This guide covers configuring a basic MQTT broker on your Linux server, as well as configuring an [AutoPi](https://www.autopi.io) device to use MQTT as a data returner. 
 
 ## Setting up Your Endpoint Broker
-This step covers installing and configuring a broker on your server instance. This guide uses a 3-rd party hosted Virtual Machine running Debian 11.
+This step covers installing and configuring a broker on your server instance. This guide uses a 3rd party hosted Virtual Machine running Debian 11.
 
-Install the broker:
-    
-    $ sudo apt install mosquitto mosquitto-clients
+### Steps to Install the Broker
+
+Install the broker.
+```python    
+$ sudo apt install mosquitto mosquitto-clients
+```
 
 Set up the broker to allow non-protected connections. When releasing to production, make sure to change these settings, as running an open MQTT broker is a major security risk.
-    
-    $ sudo sh -c "echo 'allow_anonymous true\nlistener 1883 0.0.0.0' > /etc/mosquitto/conf.d/mosquitto.conf"
+```python  
+$ sudo sh -c "echo 'allow_anonymous true\nlistener 1883 0.0.0.0' > /etc/mosquitto/conf.d/mosquitto.conf"
+``` 
 
-Restart to load new configuration
-    
-    $ sudo systemctl restart mosquitto.service
+Restart to load new configuration. 
+```python  
+$ sudo systemctl restart mosquitto.service
+```
 
 Test the configuration locally. Subscribe to the local broker and check if you can see the messages.
 
 In terminal 1:
-
-    $ mosquitto_sub -h localhost -t test/my_topic/#
+```python  
+$ mosquitto_sub -h localhost -t test/my_topic/#
+```
 
 In terminal 2:
-
-    $ mosquitto_pub -h localhost -t test/my_topic -m "Test data from a local source"
+```python  
+$ mosquitto_pub -h localhost -t test/my_topic -m "Test data from a local source"
+```
 
 Expected result:
-
 ![publish_subsribe_server_test_expected_result](/img/getting_started/developer_guides/configuring_MQTT/pub_sub_server_test.png)
 
 ## Device Setup
@@ -84,16 +90,16 @@ these are not the settings you are looking for. Modify the following settings:
 - Returner > Enabled: True
 
 :::note
-Some of these settings are not a necessity, but these are the settings we've seen provide best reliability and performance. The meaning of these settings can be found on the [Eclipse Mosquitto website](https://mosquitto.org/man/mosquitto-conf-5.html). The settings you add in Broker > Custom > Configuration go directly into a Mosquitto configuration file: /etc/mosquitto/conf.d/custom.conf.
+Some of these settings are not a necessity, but these are the settings we've seen provide best reliability and performance. The meaning of these settings can be found on the [Eclipse Mosquitto website](https://mosquitto.org/man/mosquitto-conf-5.html). The settings you add in Broker > Custom > Configuration go directly into a Mosquitto configuration file: `/etc/mosquitto/conf.d/custom.conf`.
 :::
 
 **Example**:
 ![publish_from_cloud](/img/getting_started/developer_guides/configuring_MQTT/mqtt_settings_example.png)
 
 Save and sync. Once synced, test if the connection has been made correctly. Run the following command in the [Cloud](https://www.autopi.io/software-platform/cloud-management) terminal:
-
-    $ cmd.run 'mosquitto_pub -h localhost -t test/my_topic -m "my test data"' 
-
+```python  
+$ cmd.run 'mosquitto_pub -h localhost -t test/my_topic -m "my test data"' 
+```
 
 ![publish_from_cloud](/img/getting_started/developer_guides/configuring_MQTT/pub_from_cloud.png)
 
@@ -101,8 +107,9 @@ If the data can be seen in the shell where you've subscribed to the topic, then 
 
 :::note
 If the command is not found, it can be installed from apt (it is not used outside of this test).
-
-    $ cmd.run "apt install -y mosquitto-clients"
+```python  
+$ cmd.run "apt install -y mosquitto-clients"
+```
 
 ![installinging_through_apt](/img/getting_started/developer_guides/configuring_MQTT/installing_mosq_clients.png)
 :::

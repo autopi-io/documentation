@@ -30,26 +30,33 @@ First step is the determine the [CAN](https://www.autopi.io/hardware/autopi-canf
 
 You need to make sure the device is powered on, have good internet connection and that the engine of the vehicle is running. You can do so by following these steps:
 
-  1. From terminal in the right hand side screen, run the following command `test.ping`. It should return `true` if the device is online and connected to the [Cloud](https://www.autopi.io/software-platform/cloud-management).
-  2. Again from the terminal run the following command `obd.battery`. This command command will return the Voltage of the Auxilirary battery in the vehicle. If its a 24V type of battery you should see a value somewhere between 25-28V. If its close to 25V it means the engine is not running. If its closer to 28V it means the engine is running and ECU's are powered up. A good indicator is a value above 26.5V.
+  1. From terminal in the right hand side screen, run the following command: 
+    ```python 
+    test.ping
+    ```
+  It should return `true` if the device is online and connected to the [Cloud](https://www.autopi.io/software-platform/cloud-management).
+
+  2. Again from the terminal run the following command: 
+    ```python 
+     obd.battery
+     ```
+    This command command will return the Voltage of the Auxilirary battery in the vehicle. If its a 24V type of battery you should see a value somewhere between 25-28V. If its close to 25V it means the engine is not running. If its closer to 28V it means the engine is running and ECU's are powered up. A good indicator is a value above 26.5V.
 
 With these checks passed you can now continue to find the protocol and baudrate settings. With the vehicle's engine running, first try to listen to passive [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) traffic. One of these commands should show some data (raw). Once you find which command returns data, note down the protocol and baudrate for this vehicle:
-
-  - `obd.monitor duration=5 verify=False protocol=32 baudrate=500000`
-  - `obd.monitor duration=5 verify=False protocol=32 baudrate=250000`
-  - `obd.monitor duration=5 verify=False protocol=32 baudrate=125000`
-
-  - `obd.monitor duration=5 verify=False protocol=31 baudrate=500000`
-  - `obd.monitor duration=5 verify=False protocol=31 baudrate=250000`
-  - `obd.monitor duration=5 verify=False protocol=31 baudrate=125000`
-
-  - `obd.monitor duration=5 verify=False protocol=52 baudrate=500000`
-  - `obd.monitor duration=5 verify=False protocol=52 baudrate=250000`
-  - `obd.monitor duration=5 verify=False protocol=52 baudrate=125000`
-
-  - `obd.monitor duration=5 verify=False protocol=51 baudrate=500000`
-  - `obd.monitor duration=5 verify=False protocol=51 baudrate=250000`
-  - `obd.monitor duration=5 verify=False protocol=51 baudrate=125000`
+```python 
+  - obd.monitor duration=5 verify=False protocol=32 baudrate=500000
+  - obd.monitor duration=5 verify=False protocol=32 baudrate=250000
+  - obd.monitor duration=5 verify=False protocol=32 baudrate=125000
+  - obd.monitor duration=5 verify=False protocol=31 baudrate=500000
+  - obd.monitor duration=5 verify=False protocol=31 baudrate=250000
+  - obd.monitor duration=5 verify=False protocol=31 baudrate=125000
+  - obd.monitor duration=5 verify=False protocol=52 baudrate=500000
+  - obd.monitor duration=5 verify=False protocol=52 baudrate=250000
+  - obd.monitor duration=5 verify=False protocol=52 baudrate=125000
+  - obd.monitor duration=5 verify=False protocol=51 baudrate=500000
+  - obd.monitor duration=5 verify=False protocol=51 baudrate=250000
+  - obd.monitor duration=5 verify=False protocol=51 baudrate=125000
+```
 
 To determine whether any of the raw data is J1939, you can do 1 of 2 things:
   1. Check on the [Cloud](https://www.autopi.io/software-platform/cloud-management) whether there is any data coming in. Note, that you would only be able to see this if the protocol configuration of the device matches that of the vehicle.
@@ -57,8 +64,9 @@ To determine whether any of the raw data is J1939, you can do 1 of 2 things:
 
 ### Determining if the vehicle responds to J1939 VIN queries:
 If you've found the protocol, baudrate combination which works, use the same combination to check for the VIN query. Run the following command. It should return the VIN string for the vehicle:
-
-  - `obd.query vin mode=FEEC pid=x00 header=18ea00f9 formula='str(message.data)' verify=false force=true protocol=<PROTOCOL> baudrate=<BAUDRATE>`
+```python 
+obd.query vin mode=FEEC pid=x00 header=18ea00f9 formula='str(message.data)' verify=false force=true protocol=<PROTOCOL> baudrate=<BAUDRATE>
+```
 
 ## Check for Broadcast Data via the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Bus sniffer
 As most J1939 messages are broadcast we start by checking if we can see any data on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus.

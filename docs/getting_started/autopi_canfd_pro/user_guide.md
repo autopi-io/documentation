@@ -66,9 +66,9 @@ By default, can0 and can1 channels are preconfigured with standard values. But y
   :::
 
 Every time the Autodetection is used, it triggers an **events** that could be seen in the events section. This should help users to understand a little better what is happening on a device. These are some of the examples for the events: 
-- vehicle/bus/can0/autodetected 
-- vehicle/bus/can0/autodetect/any_passive/successful 
-- vehicle/bus/can0/autodetect/any_passive/unsuccessful 
+- `vehicle/bus/can0/autodetected`
+- `vehicle/bus/can0/autodetect/any_passive/successful` 
+- `vehicle/bus/can0/autodetect/any_passive/unsuccessful` 
 
 ##### Step 4: Try Bitrates or Use Fixed Bitrate
 * As mentioned above, you need to find the correct bitrate for your vehicle. The deafult list for Try Bitrates includes some of the most common used bitrates to make this process easier for you. This step allows you to make sure that you can receive any data by listening to these settings. 
@@ -294,8 +294,8 @@ Settings for disk housekeeper:
 * **Worker interval**: represent time period between each check for files to cleanup.
 
 Every time the Disk Housekeeper deletes anything, it triggers an event that could be seen in the events section. This should help users to understand a little better what is happening on a device. We have 2 events: 
-* system/disk_housekeeper/ordinary_purge - this event is triggered when it reaches ordinary limits (customizable in the advanced settings).
-* system/disk_housekeeper/critical_purge - this event is triggered when it reaches critical limits (customizable in the advanced settings).
+* `system/disk_housekeeper/ordinary_purge` - this event is triggered when it reaches ordinary limits (customizable in the advanced settings).
+* `system/disk_housekeeper/critical_purge` - this event is triggered when it reaches critical limits (customizable in the advanced settings).
 
 ### Advanced settings for Output Handler 
 Steps to get into advanced settings for output handler: 

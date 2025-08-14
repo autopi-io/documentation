@@ -86,10 +86,6 @@ When setting logger to trigger `Event on` set to `Change`, some of the loggers, 
 Switching these loggers to periodic monitoring helps manage this by reducing unnecessary events and allowing the device to function more efficiently. 
 :::
 
-#### 4. Advanced settings
-In the advanced section you can modify the sampling rate, which controls how long a value should remain the same before changing.
-
-![Set advanced settings](/img/getting_started/autopi_mini/create_mini_loggers/advanced.png)
 
 Once you save the [Mini](https://www.autopi.io/hardware/autopi-mini) Logger, you will see it appear in the Loggers page.
 Once the settings have been synchronized to your device, your device will start sending the newly created logger.
