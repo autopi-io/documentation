@@ -1,9 +1,13 @@
 ---
 id: enabling_uart_on_TMU_devices
 title: Enabling an External UART on AutoPi TMU CM4 Devices
-----------------------------------------------------------
-
+supportedDevices: ['cm4','pro']
+---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 ## Overview
 
