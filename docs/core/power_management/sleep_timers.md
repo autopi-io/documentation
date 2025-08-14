@@ -1,13 +1,22 @@
 ---
 id: core-power-sleep-timers
 title: Sleep Timers
+supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Sleep timers are a functionality built into the [AutoPi](https://www.autopi.io) who's purpose is to protect the battery of your vehicle by
 limiting the amount of power required by the device when it's plugged into a vehicle. On this page, we will explore how
 you can work with the sleep timers using a command and look over some of the configuration options that are available
 to manipulate how sleep timers are added and cleared from the device.
+
+:::note
+Regarding the sleep timers, the device will automatically configure them to help protect your vehicle’s battery. However, this behavior is fully configurable. You can adjust the sleep timer settings by navigating to: Devices → pick the device → Advanced Settings → Power. There, you’ll find all related power and sleep configurations.
+:::
 
 ## The `power.sleep_timer` Command
 
@@ -163,6 +172,23 @@ device will be adjusted to ensure the device will be awake for the desired durat
 the suppress schedule to keep the device up for the next hour. Now, if the device automatically adds a sleep timer, or
 if we add it manually using the `power.sleep_timer` command, the new sleep timer set will be adjusted so that it only
 puts the device to sleep after the hour from the suppress schedule passes.
+
+:::note
+If you're running commands locally on the device, you can use this to disable all active sleep timers:
+```python
+autopi power.sleep_timer clear="*" 
+```
+
+To disable the sleep timers directly on the device, please follow these steps:
+* Navigate to the directory: `/etc/salt/minion.d/`
+* Open the `engines.conf` file
+* Locate and delete the actions related to: `power.sleep_timer`
+* Restart the Salt minion service to apply the changes, run: 
+```python
+sudo systemctl restart salt-minion.service
+```
+
+:::
 
 ## Troubleshooting
 
