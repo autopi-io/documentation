@@ -57,8 +57,50 @@ Each step in a workflow has a defined area of responsibility:
 
 
 ## Reactors
+Reactors in AutoPi are components that listen for specific events and execute predefined actions in response (how device handle the different events). They are integral to automating behaviors based on real-time data from the device.
 
+### Managing Reactors
+Reactors can be managed using the `reactor.manage` command, which provides runtime control over the reactor service.
+
+#### Supported Commands:
+
+```python
+reactor.manage reactor list
+reactor.manage reactor show <name>
+```
+
+**Example Usage:**
+```python
+reactor.manage reactor list
+reactor.manage reactor show enable_obd_on_motion_shaking
+```
+
+* These commands allow you to list all available reactors and view detailed information about a specific reactor.
+
+### Example: Automatic OBD Logger Pausing
+An illustrative use case involves the automatic pausing of the OBD logger based on vehicle motion:
+1. Enable Motion Events: Ensure that motion events are enabled in the device settings.
+2. Configure Reactors: Navigate to Services > event_reactor > Reactors in the AutoPi Cloud interface.
+3. Enable Specific Reactors: Activate the following reactors:
+    * `enable_obd_on_motion_shaking`
+    * `disable_obd_on_motion_steady_or_trip_end`
+        * These reactors respond to motion events, enabling or disabling the OBD logger accordingly.
 
 
 ## Hooks
+Hooks are custom functions that can be integrated into the AutoPi workflow to process data at various stages. They provide flexibility in handling data by allowing custom processing logic to be executed.
+Hooks are the core of how your AutoPi.io device works and we only recommend that you change these if you are sure of what you are doing.
+
+### Creating Custom Hooks
+Steps to create a custom hook:
+* Create a Custom Module: navigate to Device > Custom Code in the AutoPi Cloud interface and create a new module of type Execution.
+* Define the Hook Function.
+* Register the Hook by going to the relevant service's Hooks section (e.g., Services > obd_manager > Hooks) and register the new hook.
+4. Integrate into workflow: edit the desired worker's workflow to include the custom hook in the appropriate step (e.g., as a filter or returner).
+
+
+### Hook Behavior
+* Hooks receive the output from the previous step in the workflow and return a modified result.
+* If a hook returns a falsy value (e.g., None, False), the workflow is halted at that point.
+* Hooks are ideal for data validation, transformation, or conditional processing within the workflow.
 
