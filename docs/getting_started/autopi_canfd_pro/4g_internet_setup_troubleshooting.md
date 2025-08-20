@@ -145,7 +145,7 @@ If the last command reports issue with detecting the SIM card, then double check
 ### Tweaks
 
 If you experience connection issues where the connection drops sometimes and/or if it is online, but not shown as online on my.autopi.io, then you can try to tweak the MTU from the default value: 1500, to a lower value, in increments (ex. 1500 -> 1450 -> etc).
-This can be done on the local configuration tool, by connecting to the device hotspot and opening [local.autopi.io](local.autopi.io) in your browser.
+This can be done on the local configuration tool, by connecting to the device hotspot and opening local autopi on local.autopi.io in your browser.
 
 From the terminal located in the top right corner on the webpage, you can run the following two commands to update the MTU and save the changes: 
 ```python
