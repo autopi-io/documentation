@@ -36,6 +36,6 @@ accelerometer data to the specified file.
 
 When logged onto the device using SSH, it is possible to monitor the data in realtime with the
 command:
-
-`tail -f /tmp/returner_data.txt`
-
+```python 
+tail -f /tmp/returner_data.txt
+```

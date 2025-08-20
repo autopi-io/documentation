@@ -68,7 +68,12 @@ You can learn more about the power cycle on the [Power Management Documentation]
 These can make it seem like the autodetect is not working. Unless you're connecting to the device through 
 its Wireless Access Point and running commands from its local terminal, you should test the connectivity
 before checking for any of the further issues. Try running the following command from the terminal in the
-[Cloud](https://www.autopi.io/software-platform/cloud-management) portal: `test.ping`. Note that just because you see some data in the dashboard, doesn't mean that 
+[Cloud](https://www.autopi.io/software-platform/cloud-management) portal:
+```python 
+test.ping
+```
+
+Note that just because you see some data in the dashboard, doesn't mean that 
 there's a good enough connection for commands to be received by the device, and for it to be able to send
 the command results back. If you get a response that looks something like the screenshot below, you may
 move on further. Otherwise, check out the [4G Troubleshooting Guide](/getting_started/autopi_tmu_cm4/4g_internet_setup_troubleshooting.md).
