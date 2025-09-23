@@ -32,8 +32,9 @@ in areas with weak signal reception.
 ### Pre-installed Antennas
 If you opted for pre-installed antennas through our shop or by contacting our 
 sales team, your device will arrive with the antennas already in place. All that's
-left to do is connect the cables to the corresponding antenna ports. Please refer
+left to do is to connect the cables to the corresponding antenna ports. Please refer
 to the image below for guidance. 
+
 
 ![Device with antenna](/img/hardware/autopi_tmu_cm4/installing_external_antennas/antenna_device.png)
 

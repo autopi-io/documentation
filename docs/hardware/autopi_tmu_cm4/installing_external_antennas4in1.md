@@ -35,7 +35,10 @@ sales team, your device will arrive with the antennas already in place. All that
 left to do is connect the cables to the corresponding antenna ports. Please refer
 to the image below for guidance. 
 
-![Device with antenna](/img/hardware/autopi_tmu_cm4/installing_4in1_external_antennas/autopi_cable_connections.jpg)
+<p align= "center">
+	<img src="/img/hardware/autopi_tmu_cm4/installing_4in1_external_antennas/external_antenna_kit_4in1.png" alt="Device with antenna" width="600" />
+</p>
+
 
 Then all you need to do is to connect the device to the vehicle’s OBD-II and place
 the adhesive pad on the dashboard or other suitable place.  
