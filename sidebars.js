@@ -361,7 +361,8 @@ module.exports = {
                 "hardware/accessories/keyfob-hat/keyfob-intro",
                 "hardware/accessories/keyfob-hat/keyfob-interface",
                 "hardware/accessories/keyfob-hat/keyfob-hat-install",
-                "hardware/accessories/keyfob-hat/keyfob-hat-pinout"
+                "hardware/accessories/keyfob-hat/keyfob-hat-pinout",
+                "hardware/accessories/keyfob-hat/keyfob-cloud-configuration"                
               ],
               "label": "Keyfob HAT",
               "type": "category"
