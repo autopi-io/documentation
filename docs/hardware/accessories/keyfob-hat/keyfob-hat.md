@@ -42,8 +42,10 @@ Connect the BLE hat with the [AutoPi](https://www.autopi.io) board through the 4
 
 ### Step 4
 Reasemble the device using the new [AutoPi](https://www.autopi.io) BLE side shield, giving access to two new Keyfob control ports on the side.
+<p align="center">
+<img src="/img/hardware/accessories/keyfob/keyfob_ports.png" alt="Keyfob HAT pinouts" width="70%" />
+</p>
 
-![Step 4](/img/hardware/accessories/keyfob/keyfob_ports.jpg)
 
 ## Disscussion
 <p>
