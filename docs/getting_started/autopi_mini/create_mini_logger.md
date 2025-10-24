@@ -8,13 +8,14 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
+Logging is one of the core features of the [AutoPi Mini](https://www.autopi.io/hardware/autopi-mini), allowing you to automatically record key data from your device for analysis, monitoring, or integration with other systems. In this guide, you’ll learn how to create and configure loggers for your AutoPi Mini, from understanding what are the available loggers, to setting up your own custom data collection workflows.
 
-Compared to other [AutoPi](https://www.autopi.io) devices, the [Mini](https://www.autopi.io/hardware/autopi-mini) only supports a predefined list of PID and CAN loggers (It also support listening on some system [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) system changes, like the current sleep condition).
+We’ll start with a step-by-step walkthrough on how to create, manage, and verify loggers directly from your AutoPi Cloud, followed by a quick overview of the available loggers and their specifications. Whether you’re setting up your first logger or fine-tuning advanced data capture, this guide will help you get started quickly and confidently.
 
-In this guide, we will take a look on how you can create and edit loggers for the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) but also learn more about the default loggers set on a device. 
+---
 
 ## Default Set of [Mini](https://www.autopi.io/hardware/autopi-mini) Loggers 
-To ensure your [AutoPi Mini](https://www.autopi.io/hardware/autopi-mini) device works right out of the box, we preconfigure it with a set of commonly used loggers based on the most frequently requested data from our users. These default loggers are automatically installed on your device before delivery.
+To ensure your AutoPi mini device works right out of the box, we preconfigure it with a set of commonly used loggers based on the most frequently requested data from our users. These default loggers are automatically installed on your device before delivery.
 
 During the device registration process (covered in Step 2: Registration of the device of [Getting started guide](https://docs.autopi.io/getting_started/autopi_mini/#2-register-your-device)), you’ll be asked to enter your vehicle’s make, model, year, and type. **Vehicle types** include: Internal Combustion Engine (ICE), Battery Electric Vehicle (BEV), Plug-in Hybrid Electric Vehicle (PHEV) or Hybrid Electric Vehicle (HEV).
 
@@ -24,22 +25,6 @@ Once you select your vehicle type, the system automatically adjusts the logger c
 
 
 Once the default setup is complete, you can create additional custom loggers and sync them to your device. Instructions for creating and managing custom loggers can be found in the next section.
-
-### Default Set of Loggers for Internal Combustion Engine (ICE) Vehicle
-
-![Default ICE loggers](/img/getting_started/autopi_mini/create_mini_loggers/ice_default_loggers.png)
-
-### Default Set of Loggers for Battery Electric Vehicle (BEV) Vehicle
-
-![Default BEV loggers](/img/getting_started/autopi_mini/create_mini_loggers/ev_default_loggers.png)
-
-### Default Set of Loggers for Hybrid Electric Vehicle (HEV) Vehicle
-
-![Default HEV loggers](/img/getting_started/autopi_mini/create_mini_loggers/hybrid_default_loggers.png)
-
-### Default Set of Loggers for Plug-in Hybrid Electric Vehicle (PHEV) Vehicle
-
-![Default BEV loggers](/img/getting_started/autopi_mini/create_mini_loggers/plug_hybrid_loggers.png)
 
 ---
 ## Creating a [Mini](https://www.autopi.io/hardware/autopi-mini) Logger
@@ -51,7 +36,7 @@ Clicking on the 'Create' button will open a new window, that looks like the foll
 ![Create PID Logger Window](/img/getting_started/autopi_mini/create_mini_loggers/create_logger.png)
 
 :::note
-The 'Restore default', as the name suggests, deletes the current loggers and applies default loggers.
+The 'Restore default', as the name suggests, deletes the current loggers and applies default loggers based on your vehicle type. 
 :::
 
 ### Configure a Logger Fields
@@ -89,3 +74,47 @@ Switching these loggers to periodic monitoring helps manage this by reducing unn
 
 Once you save the [Mini](https://www.autopi.io/hardware/autopi-mini) Logger, you will see it appear in the Loggers page.
 Once the settings have been synchronized to your device, your device will start sending the newly created logger.
+
+---
+## List of Available Loggers with Specifications 
+Compared to other [AutoPi](https://www.autopi.io) devices, the [Mini](https://www.autopi.io/hardware/autopi-mini) only supports a predefined list of PID and CAN loggers (It also support listening on some system [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) system changes, like the current sleep condition).
+
+Down below, you can find the table of available loggers with specifications:
+
+| Name                                        | Description                                                            | Bytes | Type     | Min     | Max       | Multiplier | Units | 
+|---------------------------------------------|------------------------------------------------------------------------|-------|----------|---------|-----------|------------|-------|
+| Accelerometer Axis X                        | X axis value                                                           | 2     | Signed   | -8000   | 8000      | —          | mG    | -
+| Accelerometer Axis Y                        | Y axis value                                                           | 2     | Signed   | -8000   | 8000      | —          | mG    | -
+| Accelerometer Axis Z                        | Z axis value                                                           | 2     | Signed   | -8000   | 8000      | —          | mG    | -
+| Ambient air temperature                     | Ambient air temperature                                                | 1     | Signed   | -128    | 127       | —          | °C    | -
+| Battery Current                             | Battery current                                                        | 2     | Unsigned | 0       | 65535     | 0.001      | A     | -
+| Battery Level                               | Battery capacity level                                                 | 1     | Unsigned | 0       | 100       |  —         | %     | -
+| Battery Voltage                             | Battery voltage                                                        | 2     | Unsigned | 0       | 65535     | 0.001      | V     | 
+| Engine RPM                                  | Engine RPM                                                             | 2     | Unsigned | 0       | 16384     | —          | rpm   | -
+| Engine Oil Temperature                      | Engine oil temperature                                                 | 1     | Unsigned | 0       | 215       | —          | °C    | -
+| External Voltage                            | External voltage                                                       | 2     | Unsigned | 0       | 65535     | 0.001      | V     | -
+| Fuel level                                  | Fuel level                                                             | 1     | Unsigned | 0       | 100       | —          | %     | 
+| GSM Signal                                  | Value in range 1-5                                                     | 1     | Unsigned | 0       | 5         | —          | —     | - 
+| Ignition                                    | 0 - Ignition Off; 1 - Ignition On                                      | 1     | Unsigned | 0       | 1         | —          | —     | - 
+| Intake air temperature                      | Intake air temperature                                                 | 1     | Signed   | -128    | 127       | —          | °C    | -
+| Network Type                                | 0 - 3G; 1 - GSM; 2 - 4G; 3 - LTE CAT M1; 4 - LTE CAT NB1; 99 - Unknown | 1     | Unsigned | 0       | 1         | —          |  —    | -  
+| Number of DTC                               | Number of DTC                                                          | 1     | Unsigned | 0       | 255       | —          |  —    | -  
+| OBD OEM Total Mileage                       | Total mileage (from OEM PID)                                           | 4     | Unsigned | 0       |  —        | —          | km    | -
+| OBD Vehicle Speed                           | Vehicle speed                                                          | 1     | Unsigned | 0       | 255       | —          | km/h  | -
+| OEM Battery charge level                    | Represents battery charged level                                       | 1     | Unsigned | 0       | 100       | —          | %     | -
+| OEM Battery State Of Health                 | Battery health percentage                                              | 2     | Unsigned | 0       | 65535     | —          | %     | -
+| OEM Battery Temperature                     | Battery pack temperature                                               | 2     | Signed   | -32768  | 32767     | —          | °C    | - 
+| OEM Distance Until Service                  | Distance till next service received by requesting PID                  | 4     | Unsigned | 0       | —         | —          | —     | 
+| OEM HV Battery Current                      | Current used by high-voltage battery                                   | 2     | Unsigned | 0       | 65535     | 0.1        | A     |
+| OEM HV Battery Max Cell Temperature         | Maximum measured cell temperature                                      | 2     | Signed   | -32768  | 32768     | 0.1        | °C    | -
+| OEM HV Battery Max Cell Voltage             | Maximum battery cell voltage                                           | 2     | Unsigned | 0       | 65535     | 0.1        | V     | - 
+| OEM HV Battery Max Energy                   | Maximum energy capacity                                                | 2     | Unsigned | 0       | 65535     | 0.1        | kWh   | -
+| OEM HV Battery Measured Energy              | Measured current energy capacity                                       | 2     | Unsigned | 0       | 65535     | 0.1        | kWh   | -
+| OEM HV Battery Min Cell Temperature         | The lowest measured cell temperature                                   | 2     | Signed   | -32768  | 32768     | 0.1        | °C    | -
+| OEM HV Battery Min Cell Voltage             | Minimum battery cell voltage                                           | 2     | Unsigned | 0       | 65535     | 0.1        | V     | -         
+| OEM HV Battery Current                      | Current used by high-voltage battery                                   | 2     | Signed   | -3276   | 3276      | 0.1        | A     | -  
+| OEM HV Battery Voltage                      | High voltage battery voltage                                           | 2     | Unsigned | 0       | 65535     | 0.1        | kWh   | -
+| Total Odometer                              | Total Odometer value in meters                                         | 4     | Unsigned | 0       | 2147483647| —          |       | - missing unit
+| Trip Odometer                               | Trip odometer value                                                    | 4     | Unsigned | 0       | 2147483647| —          | m     | - 
+| VIN                                         | Vehicle Identification Number                                          | 17    | ASCII    | 0       |  —        | —          | —     | -
+
