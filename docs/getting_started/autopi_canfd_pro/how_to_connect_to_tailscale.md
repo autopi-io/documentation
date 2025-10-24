@@ -1,7 +1,7 @@
 ---
 id: how_to_connect_to_tailscale
 title: How to connect to Tailscale on your Autopi device
-supportedDevices: ['pro']
+supportedDevices: ['cm4','pro']
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -31,7 +31,7 @@ Steps to enable Tailscale on your device:
 ![Tailscale enabled](/img/getting_started/autopi_canfd_pro/enabled_tailscale.png)
 
 * If Tailscale is not enabled, go ahead and enable it.
-Once enabled, your device will create a pending sync. You can check this by clicking the "Pending" icon at the bottom left of the platform. Pending sync look like this: 
+Once enabled, your device will create a pending sync which needs to be synced to a device before the Tailscale is fully enabled. You can check this by clicking the "Pending" icon at the bottom right side of the platform. Pending sync look like this: 
 <br>
 </br>
 ![Tailscale pending sync](/img/getting_started/autopi_canfd_pro/pending_sync.png)
@@ -110,6 +110,22 @@ To disconnect from Tailscale:
     ```python 
     tailscale down 
     ```
+
+:::note
+There is also a way to permanently disable and stop the tailscale service (to prevent the big data usage on your device). This is how you can do so: 
+
+* Disable + stop tailscale service (tailscaled) so it will not automatically start on boot: 
+    ```python
+    cmd.run 'systemctl disable tailscaled'
+    cmd.run 'systemctl stop tailscaled'
+    ```
+
+* Enable + start: 
+    ```python
+    cmd.run 'systemctl enable tailscaled'
+    cmd.run 'systemctl start tailscaled'
+    ```
+:::
 
 <br>
 </br>
