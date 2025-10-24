@@ -26,14 +26,20 @@ The device comes pre-assembled with the SD card inside and requires just a few s
 :::
 
 ## [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) Quick Start Summary
-* Step 1: Set up your account on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/#1-setting-up-user-account).
-* Step 2: Register your device on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/#2-register-your-device). 
-* Step 3: SIM card installation (if you did not purchased one from us), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/#3-ensure-sim-connectivity).
-* Step 4: Device installation to your vehicle's OBD-II port, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/#5-installation).
-* Step 5: Connect your device to the [AutoPi Cloud](https://my.autopi.io/) and verify connectivity, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/#6-connect-to-wifi). 
-* Step 6: Change your password, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/#9-finalization).
-* Step 7: Set up output handlers for data (where do you want the captured data to be send to), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-4-outputs).
-* Step 8: Access the files remotely, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/).
+* Step 1: Set up your account on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#1-setting-up-user-account).
+* Step 2: Register your device on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#2-register-your-device). 
+* Step 3: SIM card installation (if you did not purchased one from us), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#3-ensure-sim-connectivity).
+* Step 4: Attach the External Antenna Kit to your AutoPi CAN-FD Pro device, you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#4-attach-the-external-antenna-kit).
+* Step 5: Locate an OBD port in your vehicle/equipment, you can read more about tips and tricks [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#5-locate-obd-port).
+* Step 6: Device installation to your vehicle's OBD-II port, you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#6-installation).
+* Step 7: Connect your device to the [AutoPi Cloud](https://my.autopi.io/), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#7-connect-to-wifi). 
+* Step 8: Connect to Local Administration on your device, and set up APN User and MTU, you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#8-connect-to-local-administration). 
+* Step 9: Verify connectivity to ensure your APN setting is set properly, you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#9-verify-connectivity). This setting is only for users using their own SIM card, if you have purchased a device with AutoPi SIM, you can skip this step. 
+* Step 10: Change your password, you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#10-finalization).
+* Step 11: Set up output handlers for data (where do you want the captured data to be send to), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-4-outputs).
+* Step 12: Access the files remotely, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/).
+
+
 
 ## Getting started
 This step-by-step guide will help you set up your AutoPi CAN-FD Pro. 
@@ -114,7 +120,27 @@ Here's a list of the US based SIM providers that we recommend to be used with th
 2. T-Mobile
 3. Any MVNO provider that is roaming the networks of the providers above
 
-## 4. Locate OBD Port
+## 4. Attach the External Antenna Kit
+Each device comes with a labeled sticker showing which antenna connects to each port, making installation simple and error-free.
+Your AutoPi CAN-FD Pro includes the following antennas:
+* 2 × 4G antennas
+* 1 × GPS antenna
+* 1 × Wi-Fi antenna
+
+<p align= "center">
+	<img src="/img/hardware/autopi_tmu_cm4/installing_4in1_external_antennas/external_antenna_kit_4in1.png" alt="Device with antenna" width="600" />
+</p>
+
+To attach the antennas, gently screw each one into its corresponding port by hand. There’s no need for tools, just make sure each antenna is firmly and securely fastened.
+Below, you can see examples of the device with and without the external antenna kit installed.
+
+AutoPi CAN-FD Pro without the external antenna kit installed: 
+![Pro without external antenna kit](/img/hardware/autopi_tmu_cm4/installing_4in1_external_antennas/pro_antenna_screws.jpeg)
+
+AutoPi CAN-FD Pro with the external antenna kit installed:
+![Pro wit external antenna kit](/img/hardware/autopi_tmu_cm4/installing_4in1_external_antennas/pro_cables.jpeg)
+
+## 5. Locate OBD Port
 
 Next step is to locate your OBD port in your car, it is usually found underneath the dashboard and
 looks something like this:
@@ -130,7 +156,7 @@ locations shown below:
 
 ![AutoPi.io - OBD port location](/img/getting_started/getting_started/TMU_placement_dashboard_v1_finecut-01.jpg)
 
-## 5. Installation
+## 6. Installation
 
 When installing the AutoPi, always make sure that the device is positioned with 
 the logo facing upwards towards the sky. This orientation is crucial because the GPS antenna 
@@ -162,7 +188,7 @@ you can buy some **Accessories** from our [AutoPi shop](https://shop.autopi.io/)
   Make sure there is no metal covering the device as this can affect its performance. 
 
 
-## 6. Connect to WiFi
+## 7. Connect to WiFi
 
 After installing your AutoPi device into the OBD port, you will need to connect it to the AutoPi Cloud.
 To do this, you will temporarily use the device’s Wi-Fi hotspot. 
@@ -183,7 +209,7 @@ a green light will be visible. If the device is not connected, the light will be
 For a detailed description of the two status LEDs, please refer to the [LED and Button States on AutoPi CAN-FD Pro](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-led-and-button/).
 
 
-## 7. Connect to Local Administration
+## 8. Connect to Local Administration
 
 :::note
 If you’ve purchased the AutoPi TMU CM4 with a monthly cloud subscription, your SIM card
@@ -227,14 +253,14 @@ see a notification when successfully saved.
 APN Presets List 
 ![AutoPi.io - Settings Page](/img/getting_started/getting_started/apn_settings_list.png) 
 
-## 8. Verify Connectivity
+## 9. Verify Connectivity
 
 To verify that you have set up your APN settings correctly, connect your phone 
 to the AutoPi hotspot and use your browser to visit any webpage. 
 If the page loads successfully, it means your device is online and has 
 started uploading data to the AutoPi Cloud.
 
-## 9. Finalization
+## 10. Finalization
 
 Your device is now online and connected to the AutoPi Cloud. After completing 
 the setup, it's important to change your device's WiFi password. 
@@ -244,6 +270,18 @@ AutoPi Cloud by navigating to **Devices** > **Advanced Settings** > **Wi-Fi** > 
 
 To prevent excessive data usage, it's advisable to avoid using the device’s 
 hotspot to connect your phone or tablet after the initial configuration is complete. 
+
+## 11. Set up Output Handlers 
+
+Your device can capture data, but you’ll need to choose where that data should be sent, also known as configuring an output handler. Currently, the AutoPi CAN-FD Pro supports output to an Amazon AWS S3 bucket. Setting this up is quick and straightforward, just follow the step-by-step guide here: [Amazon Web Services (AWS) S3 Bucket Creation](https://docs.autopi.io/getting_started/autopi_canfd_pro/set_up_AWS_S3_bucket/).
+
+
+## 12. Access Files Remotely on AutoPi
+
+You can also view and manage your captured data remotely from your AutoPi device. For detailed instructions on how to access your files using SFTP or SCP, check out this guide: [Accessing files via SFTP/SCP on AutoPi](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/). 
+
+
+
 
 **You Are All Set!**
 
