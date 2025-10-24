@@ -219,6 +219,7 @@ module.exports = {
             "cloud/device_management/geofences", 
             "cloud/device_management/nested-customers",
             "cloud/device_management/templates",
+            "cloud/device_management/global-variables",
           ],
           "label": "Device Management",
           "type": "category"
