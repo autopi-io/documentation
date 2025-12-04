@@ -88,7 +88,8 @@ module.exports = {
         "developer_guides/local-api-overview",
         "developer_guides/setting-up-docker",
         "developer_guides/how-to-create-custom-event-for-custom-logger",
-        "developer_guides/using-the-autopi-with-an-external-power-supply",       
+        "developer_guides/using-the-autopi-with-an-external-power-supply",
+        "developer_guides/accessing-raw-gps-data",       
       ],
       "Cloud": [
         "cloud/cloud-intro",
