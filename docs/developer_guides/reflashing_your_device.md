@@ -1,4 +1,4 @@
-a---
+---
 id: reflashing-your-device
 title: Reflashing Your Device
 supportedDevices: ['cm4','pro']
