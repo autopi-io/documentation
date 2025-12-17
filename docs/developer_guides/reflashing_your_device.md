@@ -1,4 +1,4 @@
----
+a---
 id: reflashing-your-device
 title: Reflashing Your Device
 supportedDevices: ['cm4','pro']
@@ -52,6 +52,7 @@ Once you have the board version, see which image you need from the table below a
 |      3     | 6.3        | [v1.22] | (https://github.com/autopi-io/autopi-core/releases/tag/v1.22)     | 
 |      4     | 7.0        | [v1.22.9] | (https://github.com/autopi-io/autopi-core/releases/tag/v1.22.9) |
 |      4     | 7.1        | [v1.26.0] | (https://github.com/autopi-io/autopi-core/releases/tag/v1.26.0) |
+|      4     | 7.1 (Pro only)    | [v1.28.0] | (https://github.com/autopi-io/autopi-core/releases/tag/v1.28.0) |
 
 You may also check the [autopi-core releases page](https://github.com/autopi-io/autopi-core/releases) for a newer **board-version-compatible** image.
 
