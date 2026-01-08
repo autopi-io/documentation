@@ -282,6 +282,18 @@ You can also view and manage your captured data remotely from your AutoPi device
 
 
 
+:::note
+Remember to adjust the **sleep timers** according to your needs. You can easily change these settings anytime by navigating to:
+Advanced Settings → Power → Sleep Timer.
+
+By default, the device enters sleep mode when it receives the event:
+`^vehicle/battery/(discharging|unknown)`
+
+Sleep is prevented when any of the following events are active:
+`^vehicle/battery/(charging_slow|charging|overcharging)`
+
+:::
+
 
 **You Are All Set!**
 
