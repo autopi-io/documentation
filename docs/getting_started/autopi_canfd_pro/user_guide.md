@@ -108,12 +108,22 @@ Every channels can have one or multiple loggers set up. A CAN logger records all
 ### How to create CAN Logger?
 Setting up a CAN logger is easy and flexible. We’ve provided default values for most fields, but you can customize everything to match your specific requirements.
 
-##### Step 1: Basic information
+  :::note
+  If you make 2 identical loggers, you will have 2 identical pairs of the same data. Meaning that you will receive the identical data but more instances are logging the same data at the same time - this could be used for testing purposes.  
+  :::
+
+##### Step 1: General information
+![General information](/img/getting_started/autopi_canfd_pro/general_information.png)
+
 * Start by entering:
   * **Name** – the name you want to give to this logger.
-  * **Description** – optional, but helpful if you want to add details about its purpose.
+  * **Description** (optional) –  helpful if you want to add details about the logger's purpose.
+  * **Run At** - defines when this logger runs (e.g., at startup, on ignition on, on trip start or manually started).
+  * **Use external dump process** - it is recommended to use the external dump process for improved performance.
+  * **Worker Settings** (advanced) - 
+    * **Interval** - you can specify the time period between reading out received CAN frames from the internal buffer.
+    * **Start Delay** - amount of seconds before the worker starts execution.
 
-![Basic information](/img/getting_started/autopi_canfd_pro/basic_information.png)
 
 
 ##### Step 2: Filters 
@@ -123,49 +133,70 @@ Use filters to control which types of CAN frames are logged. This settings allow
   If you set up decoder for your CAN logger, the filters are automatically applied even tho they are not visible in this step. 
   :::
 
-**Settings for filters:**
-  * **Allowed Frame Types:** choose from normal, error, and remote frames (all of the CAN messages has at least one of these frames). 
-  * **Allowed identifier Bits:** supports both 11-bit (standard) and 29-bit (extended) identifiers. 
-  * **Pass filters:** only CAN frames that match these filters will be logged.
+**Scenario 1** - you have **enabled** the "Use external dump process" in the previous step and therefore your second step: Filters looks like this: 
+![Filters with external dump enabled](/img/getting_started/autopi_canfd_pro/filters_externaldump_enabled.png)
+
+Therefore in this step you can add any Pass and Block Filters: 
+* **Add Pass Filter** - only CAN frames with identifiers that match a pass filter will be included. To add a new pass filter, you'll need to specify the identifier bit length, ID, and a mask. 
+
+* **Add Block Filter** - only CAN frames with identifiers that match a block filter will be excluded. To add a new block filter, you'll need to specify the identifier bit length, ID, and a mask.
+
+
+**Scenario 2** - you have **disabled** the "Use external dump process" in the previous step and therefore your second step: Filters looks like this:
+![Filters with external dump disabled](/img/getting_started/autopi_canfd_pro/filters_externaldump_disabled.png)
+
+Therefore in this step you can specify Allowed frame types and allowed identifier bits as well as add any Pass Filters: 
+* **Allowed Frame Types** - choose from normal, error, and remote frames (all of the CAN messages has at least one of these frames). 
+* **Allowed Identifier Bits** - supports both 11-bit (standard) and 29-bit (extended) identifiers. 
+* **Add Pass Filters** (optional) - only CAN frames that match these filters will be logged.
     * To add a new filter, you'll need to specify the identifier bit length, ID, and a mask.
 
 :::warning
 If you don't know anything about a bit masking, it is better to use the default value inside the Pass Filters (there are different default values for 11 bit and 29 bits). 
 :::
 
-![Filters](/img/getting_started/autopi_canfd_pro/filters_tab.png)
 
 ##### Step 3: Decoders
-This step allows you to decode (translate) raw CAN data using Standard decoder or ASAM decoder. This step doesn't come up with pre set default values, as this is fully customizable for user. User has to import a DBC file and set up some additional settings in order for device to be able to decode the data. 
+This step allows you to decode (translate) raw CAN data using Standard decoder or ASAM decoder. This step doesn't come up with pre-set default values, as this is fully customizable for user. Once you import a DBC file, you can set up some additional settings in order for your device to be able to decode the data based on your requirements. 
 
-  ![Decoders](/img/getting_started/autopi_canfd_pro/decoders_tab.png)
 
-* **Add Standard decoder:** 
-  * **Decoder name:** name your decoder.
-  * **DBC File Path:** provide the DBC file path.
-  * **Select a DBC collection:** Select a DBC collection from the dropdown where all imported DBC files should be already presented. 
-  * **Add a DBC collection:** automatically add filters for all DBC message IDs. 
-  
-  After you **choose the DBC file** you want to use, you then get presented with all the signals below where you can choose which ones you want to use for decoding. There is also 1 important technical value that needs to be set correctly: Frame ID Mask. Frame ID Mask will help you determine how much needs to match before you have a match.
+AutoPi CAN-FD Pro supports **2 types** of decoders: 
+1. Standard decoder - Using the standard decoder is faster than ASAM. Supported formats are CSV, JSONL and LOG. 
+2. ASAM Decoder - The ASAM decoder is slower than the standard. Supported format is MDF4 - a binary file format for recording e.g. CAN and CAN FD data.
+![Types of decoders](/img/getting_started/autopi_canfd_pro/decoders_type.png)
 
-    :::note
-    Frame ID Mask: is a bitmask used to match the CAN message identifiers defined in the DBC file. **If this value is incorrect, no CAN messages will be decoded. For the J1939 protocol the recommended bitmask is ´1FFFFF00´.**
-    :::
 
-    Extra setting: Automatically add pass filters for all DBC message identifiers - this setting just make sure that all of the data that can not be decoded won't be send over. 
+  **Option 1: Add Standard decoder** 
 
-    ![Standard decoder](/img/getting_started/autopi_canfd_pro/user_guide/standard_decoder.png)
+  ![Standard decoder](/img/getting_started/autopi_canfd_pro/standard_decoder.png)
 
-* **Add ASAM decoder** (capable of doing MDF4 - a binary file format for recording e.g. CAN and CAN FD data):
-  * **Decoder name:** name your decoder.
-  * **DBC File Path:** provide the DBC file path.
-  * **Select a DBC collection:** select a DBC collection from the dropdown where all imported DBC files should be already presented. 
-  * **Add a DBC collection:** automatically add filters for all DBC message IDs. 
+    * **Decoder Name** - name your decoder.
+    * **DBC Collection** - select the desired DBC file from the dropdown or use "Import" button to import a new file.
+    * **Frame ID Mask** (optional) - help you determine how much needs to match before you have a match.
+    * **Automatically add pass filters for all DBC message identifiers** (optional) - this setting ensures that all of the data that can not be decoded won't be send over. 
+    * **Library File Path Pattern** (advanced) - the path to the message definition library file used for decoding the raw CAN messages.
+    * **Strict mode** (advanced) - prohibits overlapping fields / multiplexing when rendering DBC file.
+    
+    After you **choose or import the DBC file** you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated. There is also 1 important technical value that needs to be set correctly: Frame ID Mask. Frame ID Mask will help you determine how much needs to match before you have a match.
 
-![ASAM decoder](/img/getting_started/autopi_canfd_pro/user_guide/asam_decoder.png)
+      :::note
+      Frame ID Mask: is a bitmask used to match the CAN message identifiers defined in the DBC file. **If this value is incorrect, no CAN messages will be decoded. For the J1939 protocol the recommended bitmask is ´1FFFFF00´.**
+      :::
 
-* **How to import a DBC file:**
-    When importing a DBC file, you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated. 
+
+
+  **Option 2: Add ASAM decoder** 
+
+    ![ASAM decoder](/img/getting_started/autopi_canfd_pro/asam_decoder.png)
+
+    * **Decoder name** - name your decoder.
+    * **DBC Collection** - select the desired DBC file from the dropdown or use "Import" button to import a new file.
+    * **Automatically add pass filters for all DBC message identifiers** (optional) - this setting ensures that all of the data that can not be decoded won't be send over. 
+    * **Library File Path Pattern** (advanced) - the path to the message definition library file used for decoding the raw CAN messages.
+    * **Strict mode** (advanced) - prohibits overlapping fields / multiplexing when rendering DBC file.
+
+    After you **choose or import the DBC file** you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated. There is also 1 important technical value that needs to be set correctly: Frame ID Mask. Frame ID Mask will help you determine how much needs to match before you have a match.
+
 
 
 ##### Step 4: Outputs
@@ -173,91 +204,74 @@ This step represent the settings for the output of your data. You can choose whe
 
 Read more here: **[How to set up AWS S3 bucket](https://docs.autopi.io/getting_started/autopi_canfd_pro/set_up_AWS_S3_bucket).**
 
-  :::note
-  If you make 2 identical loggers, you will have 2 identical pairs of the same data. Meaning that you will receive the identical data but more instances are logging the same data at the same time - this could be used for testing purposes.  
-  :::
-
 At the moment [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) is capable of getting data in 2 formats: Raw data - everything is logged; and Decoded data - data is translated before being transferred. Within both of these formats, data are logged and accessible locally on a device or could be set up to be transfered to a S3 bucket (read more below). 
 
-**Data format: Raw data (raw output)** 
-* **Local Cache** - raw data are logged on a local disk. Logger will always log to local disk first (not possible to disable). When Disk is running full, Disk Housekeeper is deleting these files (starting with the oldest). You can however configure these settings: 
-  * **Folder Pattern** - Local folder where the output files containing raw CAN frames are saved to. 
-  * **File Name Pattern** - The format string used to name the output files in a consistent manner. Raw files will be named with using this pattern. This patern includes the timestamp (year, month, day, hour, minute), and therefore every time new file is made it has the timestamp as a name. 
-  * File Format - by default it is set to log file, however we offer a different file formats to pick from: asc, blf, csv, db and jsonl. 
-  * Max File Size Rollover Trigger - The maximum allowed size before rollover of the output file. In order to avoid having big files, the default size is set - this is a recommended step. 
-  * Max File Age Rollover Trigger - The maximum allowed age before rollover of the output file.
+![Output types](/img/getting_started/autopi_canfd_pro/outputs_types.png)
 
+
+**Option 1: Raw data** 
+**Raw data accessible locally on the device** - raw data are logged on a local disk. Logger will always log to local disk first (not possible to disable) before transferring the data to any other output. When Local Disk is running full, Disk Housekeeper is deleting these files (starting with the oldest) to free up the memory. 
+
+  * You can however configure these settings: 
+    ![Raw data accessible locally](/img/getting_started/autopi_canfd_pro/raw_local.png)
+
+    * **Folder Pattern** - Local folder where the output files containing raw CAN frames are saved to. 
+    * **File Name Pattern** - The format string used to name the output files in a consistent manner. Raw files will be named with using this pattern. This patern includes the timestamp (year, month, day, hour, minute), and therefore every time new file is made it has the timestamp as a name. 
+    * **File Format** - by default it is set to log file, however we offer a different file formats to pick from: asc, blf, csv, db and jsonl. 
+    * **Max File Size Rollover Trigger** - The maximum allowed size before rollover of the output file. In order to avoid having big files, the default size is set - this is a recommended step. 
+    * **Max File Age Rollover Trigger** - The maximum allowed age before rollover of the output file.
 
   :::note
   If you want to access the files through the wifi hotspot, you can follow this guide: [Accessing files via SFTP/SCP on AutoPi CAN-FD Pro device](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/). 
   :::
 
-  If you have enabled the **Advanced Settings** (in the right upper corner) you will get access to extra settings: 
-    * **Worker Interval** 
-    * **Dump Limit** 
-    * **Buffer Line Flush Limit** 
-    * **Buffer Line Size** 
-
-  ![Output handler for S3](/img/getting_started/autopi_canfd_pro/user_guide/empty_s3.png)
-
        
+**Raw data accessible through Amazon S3 bucket** - raw data will be transferred and uploaded to a S3 bucket. 
+  * Settings for setting up AWS S3 bucket: 
+    ![Raw data accessible through AWS S3](/img/getting_started/autopi_canfd_pro/raw_s3.png)
 
-* **S3** - raw data will be uploaded to a S3 bucket. Settings that you need to set up for device to be able to upload the data to S3 bucket are these: 
-  * **Access Key ID** - Access key ID of AWS account to be used.
-  * **Access Secret Key** - Access secret key for the AWS account.
-  * **Destination Path** - URL path to the S3 bucket container for storing output files. 
-
-  If you have enabled the **Advanced Settings** (in the right upper corner) you will get access to extra settings: 
-    * **Exclude Patterns** - Rule patterns used to exclude specific files or directories.
-    * **Sync Interval** - Time gap between each sync operation, specifying how often files should be synchronized automatically.
-    * **Error Retry Interval** - Period of time in seconds that the handler waits before retrying an operation after encountering an error.
-    * **Job Timeout** - Maximum duration allowed for the output handler task to run before it is automatically terminated.
-
-
-**Data format: Decoded data (decoded output)**
-* **Local Cache** - decoded data are also stored on a local disk. Logger will always log to local disk first (not possible to disable). When Disk is running full, Disk Housekeeper is deleting these files (starting with the oldest). You can however configure these settings: 
-  * **Folder Pattern** - Local folder where the output files containing raw CAN frames are saved to. 
-  * **File Name Pattern** - The format string used to name the output files in a consistent manner. Decoded files will be named with using this pattern. This patern includes the timestamp (year, month, day, hour, minute), and therefore every time new file is made it has the timestamp as a name. 
-  * **File Format** - by default it is set to log file, however we offer a different file formats to pick from: csv and jsonl.
+    * **Access Key ID** - access key ID of AWS account to be used.
+    * **Access Secret Key** - access secret key for the AWS account.
+    * **Destination Path** - URL path to the S3 bucket container for storing output files. 
+    * **Exclude Patterns** (advanced)- rule patterns used to exclude specific files or directories.
+    * **Sync Interval** (advanced)- time gap between each sync operation, specifying how often files should be synchronized automatically.
+    * **Error Retry Interval** (advanced)- period of time in seconds that the handler waits before retrying an operation after encountering an error.
+    * **Job Timeout** (advanced) - maximum duration allowed for the output handler task to run before it is automatically terminated.
 
 
-   :::note
-    If you want to access the files through the wifi hotspot, you can follow this guide: [Accessing files via SFTP/SCP on AutoPi CAN-FD Pro device](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/). 
-    :::
+**Option 2: Decoded data**
 
-  If you have enabled the **Advanced Settings** (in the right upper corner) you will get access to extra settings: 
-    * **Worker Interval** 
-    * **Buffer Line Flush Limit** 
-    * **Buffer Line Size** 
-    * **Duration Limit**
-    * **Message Limit** 
-    * **Ignore "Message Not Found" in Error File** 
-    * **Include stacktrace in Error File**
+**Decoded data accessible locally on a device** - decoded data are also stored on a local disk. Logger will always log to local disk first (not possible to disable). When Disk is running full, Disk Housekeeper is deleting these files (starting with the oldest). 
+  * You can however configure these settings: 
+    ![Decoded data accessible locally](/img/getting_started/autopi_canfd_pro/decoded_local.png)
 
-  ![Decoded local data](/img/getting_started/autopi_canfd_pro/user_guide/decoded_local.png)
+    * **Folder Pattern** - local folder where the output files containing raw CAN frames are saved to. 
+    * **File Name Pattern** - the format string used to name the output files in a consistent manner. Decoded files will be named with using this pattern. This patern includes the timestamp (year, month, day, hour, minute), and therefore every time new file is made it has the timestamp as a name. 
+    * **File Format** - by default it is set to mdf4. 
+    * **Worker Interval** (advanced) - time period between reading out received CAN frames from the internal buffer.
+    * **Rollover Message Limit** (advanced) - the amount of decoded CAN messages before performing rollover of the output file.
+    * **Duration Limit** (advanced) 
+    * **Message Limit** (advanced)  
+    * **Ignore "Message Not Found" in Error File** (advanced) - exclude message in error file when a CAN message is not found in the DBC file?
+    * **Include stacktrace in Error File** (advanced) - also include stackstrace in the error file when decoding of a CAN message fails?
 
-* **S3** - decoded data will be uploaded to a S3 bucket. Settings that you need to set up for device to be able to upload the data to S3 bucket are these: 
-  * **Access Key ID** - Access key ID of AWS account to be used.
-  * **Access Secret Key** - Access secret key for the AWS account.
-  * **Destination Path** - URL path to the S3 bucket container for storing output files. 
-
-  If you have enabled the **Advanced Settings** (in the right upper corner) you will get access to extra settings: 
-    * Exclude Patterns - Rule patterns used to exclude specific files or directories.
-    * Sync Interval - Time gap between each sync operation, specifying how often files should be synchronized automatically.
-    * Error Retry Interval - Period of time in seconds that the handler waits before retrying an operation after encountering an error.
-    * Job Timeout - Maximum duration allowed for the output handler task to run before it is automatically terminated.
+  :::note
+  If you want to access the files through the wifi hotspot, you can follow this guide: [Accessing files via SFTP/SCP on AutoPi CAN-FD Pro device](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/). 
+   :::
 
 
-##### Step 5: Frame listeners
-It's a way to react on can messages received and possibility to do custom stuff with that. 
+**Decoded data accessible through Amazon AWS S3 bucket** - decoded data will be uploaded to a S3 bucket. 
+  * Settings that you need to set up for device to be able to upload the data to S3 bucket are these: 
+    ![Decoded data accessible through AWS S3](/img/getting_started/autopi_canfd_pro/decoded_s3.png)
+    * **Access Key ID** - access key ID of AWS account to be used.
+    * **Access Secret Key** - access secret key for the AWS account.
+    * **Destination Path** - URL path to the S3 bucket container for storing output files. 
+    * **Exclude Patterns** (advanced)- rule patterns used to exclude specific files or directories. Put a comma seperated list or type and press enter to confirm individual strings.
+    * **Sync Interval** (advanced) - time gap between each sync operation, specifying how often files should be synchronized automatically.
+    * **Error Retry Interval** (advanced)- period of time in seconds that the handler waits before retrying an operation after encountering an error.
+    * **Job Timeout** (advanced) - maximum duration allowed for the output handler task to run before it is automatically terminated.
 
-If you enable "show Advanced setttings" in the right top corner, you get access to 1 extra step, frame listeners, this tab will rearrange the original steps and becomes the third step in the flow. 
 
-:::note
-This feature is still under development. More will come!
-:::
-
-![Frame listeners](/img/getting_started/autopi_canfd_pro/frame_listeners.png)
 
 ### How to edit CAN Logger?
 Need to make changes to a CAN logger? No problem, it’s super simple. Just follow these steps:
@@ -267,9 +281,170 @@ Need to make changes to a CAN logger? No problem, it’s super simple. Just foll
 * Under Loggers, find the specific logger you’d like to edit.
 * Click the three dots icon in the top-right corner of that logger.
 * From the dropdown menu, select Edit.
+  ![Editing logger](/img/getting_started/autopi_canfd_pro/editing_logger.png)
 * Make your changes and save when you’re done.
 
-![Editing CAN Logger](/img/getting_started/autopi_canfd_pro/edit_logger.png)
+
+---
+
+## Queries
+
+### How to create Query?
+AutoPi CAN-FD Pro is supporting creation of different types of queries, including: 
+* OBD-II PID 
+* J1939 PGN 
+* Raw
+
+#### Create OBD-II PID Query 
+![Create OBD-II PID Query](/img/getting_started/autopi_canfd_pro/queries_create_obd.png)
+
+*Basic information:* 
+* **Name** - name your query. 
+* **Collection** (optional) - assign this query to a collection to keep related queries organized.
+* **Description** (optional) - helpful if you want to add details about query specifications.
+
+*Request specifications*
+* **PID** - OBD-II Parameter ID
+* **Interval** - amount of seconds between requests.
+* **Run At** (advanced) - defines when this query runs (on startup, on ignition on, on trip start or manually). 
+* **Start Delay** (advanced) - amount of seconds before executing a query.
+* **Loop Count** (advanced) - number of times this query will execute before stopping. Set `-1` for unlimited loops.
+* **Group** (advanced) - logical group that schedules queries sharing the same execution interval.
+
+*Response specifications*
+* **Converter** (advanced) - applies a transformation to the query response.
+* **Triggers** (advanced) - execute actions based on the value received from the converter.
+* **Filter** (advanced) - filter triggers output.
+* **Returners** - execute a function using the value provided from the filter.
+
+
+#### Create J1939 PGN Query
+
+![Create J1939 PGN Query](/img/getting_started/autopi_canfd_pro/queries_create_j1939.png)
+
+*Basic information:* 
+* **Name** - name your query. 
+* **Collection** (optional) - assign this query to a collection to keep related queries organized.
+* **Description** (optional) - helpful if you want to add details about query specifications.
+
+*Request specifications*
+* **PGN** - identifier of the J1939 message (Parameter Group Number). 
+* **Interval** - amount of seconds between requests.
+* **Run At** (advanced) - defines when this query runs (on startup, on ignition on, on trip start or manually). 
+* **Start Delay** (advanced) - amount of seconds before executing a query.
+* **Loop Count** (advanced) - number of times this query will execute before stopping. Set `-1` for unlimited loops.
+* **Group** (advanced) - logical group that schedules queries sharing the same execution interval.
+
+*Response specifications*
+* **Converter** (advanced) - applies a transformation to the query response.
+* **Triggers** (advanced) - execute actions based on the value received from the converter.
+* **Filter** (advanced) - filter triggers output.
+* **Returners** - execute a function using the value provided from the filter.
+
+
+
+#### Create Raw Query
+
+![Create Raw Query](/img/getting_started/autopi_canfd_pro/queries_create_raw.png)
+
+*Basic information:* 
+* **Name** - name your query. 
+* **Collection** (optional) - assign this query to a collection to keep related queries organized.
+* **Description** (optional) - helpful if you want to add details about query specifications.
+
+*Request specifications*
+* Choose between 2 CAN protocols: 
+  * **CAN 2.0 (Standard)** 
+  * **CAN FD (Extended)**
+* **Interval** - amount of seconds between requests.
+* **Group** (optional) - logical group that schedules queries sharing the same execution interval.
+* **Run At** (advanced) - defines when this query runs (on startup, on ignition on, on trip start or manually). 
+* **Start Delay** (advanced) - amount of seconds before executing a query.
+* **Loop Count** (advanced) - number of times this query will execute before stopping. Set `-1` for unlimited loops.
+
+
+*Response specifications*
+* **Receive Frames** (optional) - the specific amount of reply frames to wait for within the timeout period.
+  * **Skip Error Frames** (advanced) 
+  * **Skip Remote Frames** (advanced)
+* **Receive Timeout** - the amount of time in seconds to wait for a reply frame.
+* **Verification** (optional) - raise an error when no reply frames are received or if the amount of expected reply messages is not met within the timeout.
+* **Pass Filters** (advanced) - list of pass filters to use for receiving reply frames.
+* **Flow Control** (advanced) - list of flow control ID resolvers to enable. Options are 'OBD' and 'Custom'.
+* **Result Formula** - python code that decodes the raw byte data to a value.
+* **Converter** (advanced) - applies a transformation to the query response.
+* **Triggers** (advanced) - execute actions based on the value received from the converter.
+* **Filter** (advanced) - filter triggers output.
+* **Returners** - execute a function using the value provided from the filter.
+
+
+
+
+---
+
+## Frame Listeners
+
+The Frame Listeners are a feature that reacts to incoming CAN messages and allows you to define custom matching rules either based on frame data or Python expressions. When a match occurs, it can trigger an event or execute a custom worfklow.
+Frame listeners are highly customizable, giving you control over how CAN messages are processed.
+
+### How to create Frame Listener? 
+
+![Create Frame Listener](/img/getting_started/autopi_canfd_pro/create_frame_listener.png)
+
+*Matching part:*
+* **ID Bits** - pick between 11 and 29 bits. 
+* **ID** - arbitration ID to match against incoming frames.
+* **Mask** - bitmask that determines whether there is a match with the specified arbitration ID. Used to match ranges or groups of IDs.
+* **Also Match on Frame Data** - where you would need to specify **Data** (value to match against the data part of incoming frames) and **Data Mask** (bitmask that determines whether there is a match with the specified data value). 
+* **Also Match on Python Expression** - python expression which is evaluated to determine if there is a match.
+
+
+*Output part:*
+* **Trigger Event** - trigger an event when a match occurs. You can also specify the **Event interval** to further specify the minimum frequency in seconds at which workflow execution is performed.
+* **Perform Action** - specify one or more workflows to perform on a match.
+
+---
+
+## Event Reactors
+
+### How to create Event Reactor?
+
+![Create Event Reactor](/img/getting_started/autopi_canfd_pro/create_event_reactor.png)
+
+* **Add Event Reactor**
+  *  **Description** (optional) - helpful if you want to add details about event reactor specifications.
+* **Match Event Tag** - regular expression to match on an event tag.
+* **Match on Conditions** (optional)- specify additional conditions that must all be met for a match to occur.
+  * **Keyword resolve** - enable resolving of keywords specified in conditions. Examples of keywords are: `$context, $event, $match, $options and $salt`. 
+* **Perform Action on Match** - specify one or more workflows to perform on a match (such as handler, converter, trigger, filter, returner). 
+
+
+:::note
+Make sure you create the Workflow hooks before selecting the Event Reactor. If no hooks exist, the dropdown will be empty and you won’t be able to select one at this step.
+If that happens, you can still save your changes and come back later to edit and complete the configuration.
+:::
+
+
+
+---
+
+## Workflow Hooks
+
+### How to create Workflow Hook?
+
+![Create Workflow Hook](/img/getting_started/autopi_canfd_pro/create_workflow_hook.png)
+
+*Basic information*
+* **Name** - name your workflow hook. 
+* **Description** (optional) - helpful if you want to add details about hook specifications.
+
+*Defining the type of the worflow hook* 
+* **Type** - specify the type of workflow hook, you can pick from: handler, converter, trigger, filter, enricher and returner. 
+  ![Workflow hook types](/img/getting_started/autopi_canfd_pro/workflow_hook_type.png)
+* **Function** - refers to the command aka. execution module to be called. Custom execution modules can be defined via custom code.
+* **Args** (optional) - positional arguments passed to the command.
+* **Kwargs** (optional) - keyword arguments passed to the command.
+
 
 ---
 
@@ -286,12 +461,12 @@ Steps to get into advanced settings for disk housekeeper:
 ![Advanced settings for Disk Housekeeper](/img/getting_started/autopi_canfd_pro/user_guide/disk_housekeeper.png)
 
 Settings for disk housekeeper: 
-* **Critical use limit**: this setting allows you to set an event based on critical use limit (user customizable). Disk usage percentage that is considered critical and which causes an event to be triggered.
-* **Enabled**: this settings allows you to enable Disk Housekeeper, that prevents your disk from running full with old files. By clicking on True, you enable automatic disk cleanup to prevent the disk from running full. The oldest files will be deleted first.
-* **Use limit**: disk usage percentage which is the limit for when file deletion should begin. This means that when this limit is hit or exceeded, the housekeeper starts to clean up and then it cleans up until it reaches 85% (to reach the Use Target - customizable in the setting below). And in order for you to not loose data, it takes always the oldest files first.
-* **Use target**: disk usage percentage which is the target to reach when deleting files.
-* **Worker delay**: represents delay after startup of the device before performing the first check for files to cleanup. This simply means that after device is woken up, it does all the neccesary functions first and Disk housekeeper is delayed by default by 60 seconds to give device enough time to postpone to a little later, the better for the performance and start up time.
-* **Worker interval**: represent time period between each check for files to cleanup.
+* **Critical use limit** - this setting allows you to set an event based on critical use limit (user customizable). Disk usage percentage that is considered critical and which causes an event to be triggered.
+* **Enabled** - this settings allows you to enable Disk Housekeeper, that prevents your disk from running full with old files. By clicking on True, you enable automatic disk cleanup to prevent the disk from running full. The oldest files will be deleted first.
+* **Use limit** - disk usage percentage which is the limit for when file deletion should begin. This means that when this limit is hit or exceeded, the housekeeper starts to clean up and then it cleans up until it reaches 85% (to reach the Use Target - customizable in the setting below). And in order for you to not loose data, it takes always the oldest files first.
+* **Use target** - disk usage percentage which is the target to reach when deleting files.
+* **Worker delay** - represents delay after startup of the device before performing the first check for files to cleanup. This simply means that after device is woken up, it does all the neccesary functions first and Disk housekeeper is delayed by default by 60 seconds to give device enough time to postpone to a little later, the better for the performance and start up time.
+* **Worker interval** - represent time period between each check for files to cleanup.
 
 Every time the Disk Housekeeper deletes anything, it triggers an event that could be seen in the events section. This should help users to understand a little better what is happening on a device. We have 2 events: 
 * `system/disk_housekeeper/ordinary_purge` - this event is triggered when it reaches ordinary limits (customizable in the advanced settings).
