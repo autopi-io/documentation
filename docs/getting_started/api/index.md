@@ -182,3 +182,98 @@ Example response:
 	}
 ]
 ```
+
+## Sending CAN Bus commands examples
+Through the API it's possible to send CAN bus commands directly to the vehicle. See the crude example of how to that:
+
+```
+import os
+import time
+import requests
+from typing import Any, Dict, List, Optional
+
+
+class AutoPiClient:
+    def __init__(self, api_token: str, base_url: str = "https://api.autopi.io"):
+        self.base_url = base_url.rstrip("/")
+        self.session = requests.Session()
+        # AutoPi API token auth header format:
+        # Authorization: APIToken YOUR_TOKEN
+        self.session.headers.update({"Authorization": f"APIToken {api_token}"})
+
+    def list_devices(self) -> List[Dict[str, Any]]:
+        url = f"{self.base_url}/dongle/devices/"
+        r = self.session.get(url, timeout=30)
+        r.raise_for_status()
+        return r.json()
+
+    def execute(
+        self,
+        device_id: str,
+        command: str,
+        arg: Optional[List[Any]] = None,
+        kwarg: Optional[Dict[str, Any]] = None,
+    ) -> Dict[str, Any]:
+        """
+        Executes an AutoPi command on a device via:
+        POST /dongle/devices/{device_id}/execute/
+        Body format follows the standard command envelope:
+          {"command": "...", "arg": [...], "kwarg": {...}}
+        """
+        url = f"{self.base_url}/dongle/devices/{device_id}/execute/"
+        payload = {
+            "command": command,
+            "arg": arg or [],
+            "kwarg": kwarg or {},
+        }
+        r = self.session.post(url, json=payload, timeout=120)
+        r.raise_for_status()
+        return r.json()
+
+
+def non_obd2_can_query_example() -> None:
+    """
+    Example based on the docs' 'Non-OBD2 Queries' obd.query example:
+      obd.query PROPRIETARY_SPEED header=1AA mode=00 pid=01
+        can_flow_control_filter=2AA,7FF
+        can_flow_control_id_pair=1AA,2AA
+        force=True
+        formula='bytes_to_int(message.data)'
+    """
+    api_token = os.environ["AUTOPI_API_TOKEN"]
+    client = AutoPiClient(api_token=api_token)
+
+    devices = client.list_devices()
+    if not devices:
+        raise SystemExit("No devices found on this account.")
+
+    # Pick the first device. Adjust selection logic as needed.
+    device_id = str(devices[0]["id"])
+    print(f"Using device_id={device_id} (unit_id={devices[0].get('unit_id')})")
+
+    # Non-OBD2 query parameters (headers are examples from the docs)
+    result = client.execute(
+        device_id=device_id,
+        command="obd.query",
+        arg=["PROPRIETARY_SPEED"],
+        kwarg={
+            "header": "1AA",
+            "mode": "00",
+            "pid": "01",
+            "can_flow_control_filter": "2AA,7FF",
+            "can_flow_control_id_pair": "1AA,2AA",
+            "force": True,
+            "formula": "bytes_to_int(message.data)",
+        },
+    )
+
+    print("Raw execute response JSON:")
+    print(result)
+
+
+if __name__ == "__main__":
+    # Usage:
+    #   export AUTOPI_API_TOKEN="...your token..."
+    #   python autopi_can_query.py
+    non_obd2_can_query_example()
+```
