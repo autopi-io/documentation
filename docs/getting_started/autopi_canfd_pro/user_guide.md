@@ -62,7 +62,7 @@ By default, can0 and can1 channels are preconfigured with standard values. But y
   ![Autodetect](/img/getting_started/autopi_canfd_pro/autodetect.png)
 
   :::warning 
-  Choose the active strategy (OBD ACTIVE AND J1939 ACTIVE) only if the Passive strategy didn't work. In some edge cases, vehicle can receive warning errors on a dashboard when picking the active strategies. 
+  Choose the active strategy (OBD ACTIVE AND J1939 ACTIVE) only if the Passive strategy didn't work. In some edge cases, vehicle can receive MIL (Malfuncion Indicator Lamp) on your vehicle's dashboard when picking the active strategies. 
   :::
 
 Every time the Autodetection is used, it triggers an **events** that could be seen in the events section. This should help users to understand a little better what is happening on a device. These are some of the examples for the events: 
@@ -91,14 +91,11 @@ You can reorder the bitrate list and add your own based on your specific setup. 
 ![Advanced channel settings](/img/getting_started/autopi_canfd_pro/advanced_channel_settings.png)
 
 Under **Advanced Settings** you’ll find a few more options for extra settings: 
-* **Enable Termination** – Enables physical CAN bus termination of ~120 ohms for this channel. We support this setting to adjust the software. 
+* **Enable Termination** – Enables physical CAN bus termination of ~120 ohms for this channel. 
 * **Allow Changing Interface** – Permit to make changes to the underlying CAN interface? This includes changing the bitrate and bringing the interface up and down etc. If disabled, the CAN interface will be used as is without any prior setup.
 * **Allow Sending** – Permit sending of CAN frames for this channel. If disabled, an error will be returned when attempting to send a CAN message.
 * **Receive Own Messages** – Allows the device to also listen to messages it sends (useful for testing/debugging).
 
-:::warning
-Make sure you know what you are doing if you are changing the advanced settings, as this will affect the behavior of the device.
-:::
 
 ---
 
@@ -108,9 +105,6 @@ Every channels can have one or multiple loggers set up. A CAN logger records all
 ### How to create CAN Logger?
 Setting up a CAN logger is easy and flexible. We’ve provided default values for most fields, but you can customize everything to match your specific requirements.
 
-  :::note
-  If you make 2 identical loggers, you will have 2 identical pairs of the same data. Meaning that you will receive the identical data but more instances are logging the same data at the same time - this could be used for testing purposes.  
-  :::
 
 ##### Step 1: General information
 ![General information](/img/getting_started/autopi_canfd_pro/general_information.png)
@@ -130,7 +124,7 @@ Setting up a CAN logger is easy and flexible. We’ve provided default values fo
 Use filters to control which types of CAN frames are logged. This settings allow you to filter the type of data you want to be logged for your specific use case. 
 
 :::note
-  If you set up decoder for your CAN logger, the filters are automatically applied even tho they are not visible in this step. 
+  If you set up decoder for your CAN logger, the filters are automatically applied even tho they are not visible in this step.For this to work, it requires that it is enabled on the logger: `Automatically add pass filters for all DBC message identifiers`.  
   :::
 
 **Scenario 1** - you have **enabled** the "Use external dump process" in the previous step and therefore your second step: Filters looks like this: 
@@ -217,7 +211,7 @@ At the moment [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-
 
     * **Folder Pattern** - Local folder where the output files containing raw CAN frames are saved to. 
     * **File Name Pattern** - The format string used to name the output files in a consistent manner. Raw files will be named with using this pattern. This patern includes the timestamp (year, month, day, hour, minute), and therefore every time new file is made it has the timestamp as a name. 
-    * **File Format** - by default it is set to log file, however we offer a different file formats to pick from: asc, blf, csv, db and jsonl. 
+    * **File Format** - by default it is set to log file, however we offer a different file formats to pick from: asc, blf, csv, db and jsonl. However, there are less formats available when external dump is enabled. 
     * **Max File Size Rollover Trigger** - The maximum allowed size before rollover of the output file. In order to avoid having big files, the default size is set - this is a recommended step. 
     * **Max File Age Rollover Trigger** - The maximum allowed age before rollover of the output file.
 
@@ -499,4 +493,7 @@ At the moment if you want to access your device remotely using [Tailscale](https
 * **Enabled** - by default this setting is not enabled, but if you want to use Tailscale, you just have to enable it here. 
 
 For more information check out this guide: [How to connect to Tailscale on your AutoPi device](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
+
+### Advanced settings for Vehicle 
+
 
