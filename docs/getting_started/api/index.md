@@ -186,7 +186,7 @@ Example response:
 ## Sending CAN Bus commands examples
 Through the API it's possible to send CAN bus commands directly to the vehicle. See the crude example of how to that:
 
-```
+```python
 import os
 import time
 import requests
