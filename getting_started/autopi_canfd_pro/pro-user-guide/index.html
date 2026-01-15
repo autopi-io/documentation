@@ -11,7 +11,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="AutoPi Documentation" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.018722d2.css">
-<script src="/assets/js/runtime~main.0bfe25db.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.3ef96cf3.js" defer="defer"></script>
 <script src="/assets/js/main.a576696a.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -25,7 +25,7 @@ CAN Logging captures traffic from your vehicle’s CAN bus using two dedicated i
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="channels">Channels<a href="#channels" class="hash-link" aria-label="Direct link to Channels" title="Direct link to Channels">​</a></h2>
 <p>A channel is a pathway through which the device listens to or communicates on the CAN bus. Most vehicles have one or two CAN buses. The <a href="https://shop.autopi.io/products/autopi-can-fd-pro" target="_blank" rel="noopener noreferrer">AutoPi CAN-FD Pro</a> supports two channels out of the box: <strong>can0 and can1</strong>.
-CAN communication is based on an agreed bitrate (speed of the amount of data processed within 1 second). Think of it like tuning two radios to the same frequency—you need to match speeds to understand each other. If you don’t know the bitrate, <a href="https://shop.autopi.io/products/autopi-can-fd-pro" target="_blank" rel="noopener noreferrer">AutoPi CAN-FD Pro</a> device has functionality to <strong>Autodetect</strong> to help you find the correct bitrate - by selecting one or more methods to detect the CAN bus and the active protocol(s). A passive method will only listen for broadcast traffic. An active method will attempt to send a request and then wait for a valid response.</p>
+CAN communication is based on an agreed bitrate (speed of the amount of data processed within one second). Think of it like tuning two radios to the same frequency—you need to match speeds to understand each other. If you don’t know the bitrate, <a href="https://shop.autopi.io/products/autopi-can-fd-pro" target="_blank" rel="noopener noreferrer">AutoPi CAN-FD Pro</a> device has functionality to <strong>Autodetect</strong> to help you find the correct bitrate - by selecting one or more methods to detect the CAN bus and the active protocol(s). A passive method will only listen for broadcast traffic. An active method will attempt to send a request and then wait for a valid response.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-configure-can-channels">How to Configure CAN Channels?<a href="#how-to-configure-can-channels" class="hash-link" aria-label="Direct link to How to Configure CAN Channels?" title="Direct link to How to Configure CAN Channels?">​</a></h3>
 <p>By default, can0 and can1 channels are preconfigured with standard values. But you can fully customize them.</p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="opening-the-configuration-of-the-can-channel">Opening the configuration of the CAN channel<a href="#opening-the-configuration-of-the-can-channel" class="hash-link" aria-label="Direct link to Opening the configuration of the CAN channel" title="Direct link to Opening the configuration of the CAN channel">​</a></h4>
@@ -62,7 +62,7 @@ CAN communication is based on an agreed bitrate (speed of the amount of data pro
 <li><strong>J1939 (active)</strong> – Sends a J1939 PGN request message and waits for a response to detect if the protocol is supported. If the response is received that means that the protocol is supported.</li>
 </ul>
 <p><img decoding="async" loading="lazy" alt="Autodetect" src="/assets/images/autodetect-38aa303fc6a5d65fa0ad92132da52102.png" width="875" height="161" class="img_ev3q"></p>
-<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>Choose the active strategy (OBD ACTIVE AND J1939 ACTIVE) only if the Passive strategy didn&#x27;t work. In some edge cases, vehicle can receive MIL (Malfuncion Indicator Lamp) on your vehicle&#x27;s dashboard when picking the active strategies.</p></div></div>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>In some cases, the vehicle may produce MIL (malfunction indicator lamp) notifications on the dashboard when active strategies are used for protocols that are not supported by the vehicle.</p></div></div>
 </li>
 </ul>
 <p>Every time the Autodetection is used, it triggers an <strong>events</strong> that could be seen in the events section. This should help users to understand a little better what is happening on a device. These are some of the examples for the events:</p>
@@ -124,7 +124,7 @@ Already know the exact bitrates for your CAN 2.0 and/or CAN FD? Just input them 
 </ul>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="step-2-filters">Step 2: Filters<a href="#step-2-filters" class="hash-link" aria-label="Direct link to Step 2: Filters" title="Direct link to Step 2: Filters">​</a></h5>
 <p>Use filters to control which types of CAN frames are logged. This settings allow you to filter the type of data you want to be logged for your specific use case.</p>
-<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>If you set up decoder for your CAN logger, the filters are automatically applied even tho they are not visible in this step.For this to work, it requires that it is enabled on the logger: <code>Automatically add pass filters for all DBC message identifiers</code>.</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>If you set up decoder for your CAN logger, the filters are automatically applied even tho they are not visible in this step. For this to work, it requires that it is enabled on the logger: <code>Automatically add pass filters for all DBC message identifiers</code>.</p></div></div>
 <p><strong>Scenario 1</strong> - you have <strong>enabled</strong> the &quot;Use external dump process&quot; in the previous step and therefore your second step: Filters looks like this:
 <img decoding="async" loading="lazy" alt="Filters with external dump enabled" src="/assets/images/filters_externaldump_enabled-a28ae47ee62f9382c4629bfa9cad3b0e.png" width="1130" height="841" class="img_ev3q"></p>
 <p>Therefore in this step you can add any Pass and Block Filters:</p>
@@ -163,22 +163,22 @@ Already know the exact bitrates for your CAN 2.0 and/or CAN FD? Just input them 
 <li><strong>Decoder Name</strong> - name your decoder.</li>
 <li><strong>DBC Collection</strong> - select the desired DBC file from the dropdown or use &quot;Import&quot; button to import a new file.</li>
 <li><strong>Frame ID Mask</strong> (optional) - help you determine how much needs to match before you have a match.</li>
-<li><strong>Automatically add pass filters for all DBC message identifiers</strong> (optional) - this setting ensures that all of the data that can not be decoded won&#x27;t be send over.</li>
+<li><strong>Automatically add pass filters for all DBC message identifiers</strong> (optional) - this setting adds pass filters to the logger for all the selected CAN messages in the DBC file. This way, only those messages that can be decoded are logged.</li>
 <li><strong>Library File Path Pattern</strong> (advanced) - the path to the message definition library file used for decoding the raw CAN messages.</li>
 <li><strong>Strict mode</strong> (advanced) - prohibits overlapping fields / multiplexing when rendering DBC file.</li>
 </ul>
-<p>After you <strong>choose or import the DBC file</strong> you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated. There is also 1 important technical value that needs to be set correctly: Frame ID Mask. Frame ID Mask will help you determine how much needs to match before you have a match.</p>
+<p>After you <strong>choose or import the DBC file</strong> you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated. There is also one important technical value that needs to be set correctly: Frame ID Mask. Frame ID Mask will help you determine how much needs to match before you have a match.</p>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Frame ID Mask: is a bitmask used to match the CAN message identifiers defined in the DBC file. <strong>If this value is incorrect, no CAN messages will be decoded. For the J1939 protocol the recommended bitmask is ´1FFFFF00´.</strong></p></div></div>
 <p><strong>Option 2: Add ASAM decoder</strong></p>
 <p><img decoding="async" loading="lazy" alt="ASAM decoder" src="/assets/images/asam_decoder-9d84cc4dc69e3f5e9e97d65fdff5c5ea.png" width="1131" height="838" class="img_ev3q"></p>
 <ul>
 <li><strong>Decoder name</strong> - name your decoder.</li>
 <li><strong>DBC Collection</strong> - select the desired DBC file from the dropdown or use &quot;Import&quot; button to import a new file.</li>
-<li><strong>Automatically add pass filters for all DBC message identifiers</strong> (optional) - this setting ensures that all of the data that can not be decoded won&#x27;t be send over.</li>
+<li><strong>Automatically add pass filters for all DBC message identifiers</strong> (optional) - this setting adds pass filters to the logger for all the selected CAN messages in the DBC file. This way, only those messages that can be decoded are logged.</li>
 <li><strong>Library File Path Pattern</strong> (advanced) - the path to the message definition library file used for decoding the raw CAN messages.</li>
 <li><strong>Strict mode</strong> (advanced) - prohibits overlapping fields / multiplexing when rendering DBC file.</li>
 </ul>
-<p>After you <strong>choose or import the DBC file</strong> you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated. There is also 1 important technical value that needs to be set correctly: Frame ID Mask. Frame ID Mask will help you determine how much needs to match before you have a match.</p>
+<p>After you <strong>choose or import the DBC file</strong> you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated. There is also one important technical value that needs to be set correctly: Frame ID Mask. Frame ID Mask will help you determine how much needs to match before you have a match.</p>
 <h5 class="anchor anchorWithStickyNavbar_LWe7" id="step-4-outputs">Step 4: Outputs<a href="#step-4-outputs" class="hash-link" aria-label="Direct link to Step 4: Outputs" title="Direct link to Step 4: Outputs">​</a></h5>
 <p>This step represent the settings for the output of your data. You can choose where do you want the data to be transferred to, and adjust the settings. At the moment we support upload to AWS S3 bucket but data are also stored locally on a device.</p>
 <p>Read more here: <strong><a href="https://docs.autopi.io/getting_started/autopi_canfd_pro/set_up_AWS_S3_bucket" target="_blank" rel="noopener noreferrer">How to set up AWS S3 bucket</a>.</strong></p>
@@ -265,6 +265,7 @@ Already know the exact bitrates for your CAN 2.0 and/or CAN FD? Just input them 
 </ul>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="queries">Queries<a href="#queries" class="hash-link" aria-label="Direct link to Queries" title="Direct link to Queries">​</a></h2>
+<p>Queries allow the vehicle to request specific data points at a defined frequency. You can configure an interval that determines how often the vehicle should ask for and retrieve this data.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-create-query">How to create Query?<a href="#how-to-create-query" class="hash-link" aria-label="Direct link to How to create Query?" title="Direct link to How to create Query?">​</a></h3>
 <p>AutoPi CAN-FD Pro is supporting creation of different types of queries, including:</p>
 <ul>
@@ -292,9 +293,9 @@ Already know the exact bitrates for your CAN 2.0 and/or CAN FD? Just input them 
 <p><em>Response specifications</em></p>
 <ul>
 <li><strong>Converter</strong> (advanced) - applies a transformation to the query response.</li>
-<li><strong>Triggers</strong> (advanced) - execute actions based on the value received from the converter.</li>
-<li><strong>Filter</strong> (advanced) - filter triggers output.</li>
-<li><strong>Returners</strong> - execute a function using the value provided from the filter.</li>
+<li><strong>Triggers</strong> (advanced) - specify one or more triggers that fire events based on the query response or converter result, if specified.</li>
+<li><strong>Filter</strong> (advanced) - a filter can discard unwanted results.</li>
+<li><strong>Returners</strong> - especify one or more returners that deliver results to other systems or services.</li>
 </ul>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="create-j1939-pgn-query">Create J1939 PGN Query<a href="#create-j1939-pgn-query" class="hash-link" aria-label="Direct link to Create J1939 PGN Query" title="Direct link to Create J1939 PGN Query">​</a></h4>
 <p><img decoding="async" loading="lazy" alt="Create J1939 PGN Query" src="/assets/images/queries_create_j1939-c67ae72459c813e18394a78233bb84fa.png" width="894" height="925" class="img_ev3q"></p>
@@ -316,9 +317,9 @@ Already know the exact bitrates for your CAN 2.0 and/or CAN FD? Just input them 
 <p><em>Response specifications</em></p>
 <ul>
 <li><strong>Converter</strong> (advanced) - applies a transformation to the query response.</li>
-<li><strong>Triggers</strong> (advanced) - execute actions based on the value received from the converter.</li>
-<li><strong>Filter</strong> (advanced) - filter triggers output.</li>
-<li><strong>Returners</strong> - execute a function using the value provided from the filter.</li>
+<li><strong>Triggers</strong> (advanced) - specify one or more triggers that fire events based on the query response or converter result, if specified.</li>
+<li><strong>Filter</strong> (advanced) - a filter can discard unwanted results.</li>
+<li><strong>Returners</strong> - specify one or more returners that deliver results to other systems or services.</li>
 </ul>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="create-raw-query">Create Raw Query<a href="#create-raw-query" class="hash-link" aria-label="Direct link to Create Raw Query" title="Direct link to Create Raw Query">​</a></h4>
 <p><img decoding="async" loading="lazy" alt="Create Raw Query" src="/assets/images/queries_create_raw-bb21348c8a224ceef4bc32c5d8bd912f.png" width="894" height="1260" class="img_ev3q"></p>
@@ -356,9 +357,9 @@ Already know the exact bitrates for your CAN 2.0 and/or CAN FD? Just input them 
 <li><strong>Flow Control</strong> (advanced) - list of flow control ID resolvers to enable. Options are &#x27;OBD&#x27; and &#x27;Custom&#x27;.</li>
 <li><strong>Result Formula</strong> - python code that decodes the raw byte data to a value.</li>
 <li><strong>Converter</strong> (advanced) - applies a transformation to the query response.</li>
-<li><strong>Triggers</strong> (advanced) - execute actions based on the value received from the converter.</li>
-<li><strong>Filter</strong> (advanced) - filter triggers output.</li>
-<li><strong>Returners</strong> - execute a function using the value provided from the filter.</li>
+<li><strong>Triggers</strong> (advanced) - specify one or more triggers that fire events based on the query response or converter result, if specified.</li>
+<li><strong>Filter</strong> (advanced) - a filter can discard unwanted results.</li>
+<li><strong>Returners</strong> - specify one or more returners that deliver results to other systems or services.</li>
 </ul>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="frame-listeners">Frame Listeners<a href="#frame-listeners" class="hash-link" aria-label="Direct link to Frame Listeners" title="Direct link to Frame Listeners">​</a></h2>
@@ -381,6 +382,7 @@ Frame listeners are highly customizable, giving you control over how CAN message
 </ul>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="event-reactors">Event Reactors<a href="#event-reactors" class="hash-link" aria-label="Direct link to Event Reactors" title="Direct link to Event Reactors">​</a></h2>
+<p>Event Reactors enable the system to react to incoming data by executing custom actions. For example, they can run a command when the device starts logging data or trigger any custom code based on defined conditions.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-create-event-reactor">How to create Event Reactor?<a href="#how-to-create-event-reactor" class="hash-link" aria-label="Direct link to How to create Event Reactor?" title="Direct link to How to create Event Reactor?">​</a></h3>
 <p><img decoding="async" loading="lazy" alt="Create Event Reactor" src="/assets/images/create_event_reactor-9a8bd9b0ec8be868ae128173a4450f83.png" width="1133" height="1258" class="img_ev3q"></p>
 <ul>
@@ -401,6 +403,8 @@ Frame listeners are highly customizable, giving you control over how CAN message
 If that happens, you can still save your changes and come back later to edit and complete the configuration.</p></div></div>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="workflow-hooks">Workflow Hooks<a href="#workflow-hooks" class="hash-link" aria-label="Direct link to Workflow Hooks" title="Direct link to Workflow Hooks">​</a></h2>
+<p>Workflow Hooks define reusable logic that can be attached to workflows to process, modify, or react to data at specific stages. They act as building blocks that encapsulate commands, custom code, and configuration, making workflows modular and easier to maintain.</p>
+<p>Each Workflow Hook has a defined type (handler, converter, trigger, filter, enricher, or returner) that determines its role in the workflow, along with a function (execution module) to be called. Optional arguments (args and kwargs) can be provided to customize how the function is executed.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-create-workflow-hook">How to create Workflow Hook?<a href="#how-to-create-workflow-hook" class="hash-link" aria-label="Direct link to How to create Workflow Hook?" title="Direct link to How to create Workflow Hook?">​</a></h3>
 <p><img decoding="async" loading="lazy" alt="Create Workflow Hook" src="/assets/images/create_workflow_hook-3dcf81eac16b29df5a837f49f3acfdc8.png" width="709" height="506" class="img_ev3q"></p>
 <p><em>Basic information</em></p>
@@ -412,7 +416,7 @@ If that happens, you can still save your changes and come back later to edit and
 <ul>
 <li><strong>Type</strong> - specify the type of workflow hook, you can pick from: handler, converter, trigger, filter, enricher and returner.
 <img decoding="async" loading="lazy" alt="Workflow hook types" src="/assets/images/workflow_hook_type-4e1f3f5f990b103118252a78a91af5da.png" width="242" height="280" class="img_ev3q"></li>
-<li><strong>Function</strong> - refers to the command aka. execution module to be called. Custom execution modules can be defined via custom code.</li>
+<li><strong>Function</strong> - refers to the command aka execution module to be called. Custom execution modules can be defined via custom code.</li>
 <li><strong>Args</strong> (optional) - positional arguments passed to the command.</li>
 <li><strong>Kwargs</strong> (optional) - keyword arguments passed to the command.</li>
 </ul>
