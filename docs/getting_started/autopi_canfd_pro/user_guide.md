@@ -25,7 +25,7 @@ CAN Logging captures traffic from your vehicle’s CAN bus using two dedicated i
 
 ## Channels
 A channel is a pathway through which the device listens to or communicates on the CAN bus. Most vehicles have one or two CAN buses. The [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) supports two channels out of the box: **can0 and can1**.
-CAN communication is based on an agreed bitrate (speed of the amount of data processed within 1 second). Think of it like tuning two radios to the same frequency—you need to match speeds to understand each other. If you don’t know the bitrate, [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) device has functionality to **Autodetect** to help you find the correct bitrate - by selecting one or more methods to detect the CAN bus and the active protocol(s). A passive method will only listen for broadcast traffic. An active method will attempt to send a request and then wait for a valid response. 
+CAN communication is based on an agreed bitrate (speed of the amount of data processed within one second). Think of it like tuning two radios to the same frequency—you need to match speeds to understand each other. If you don’t know the bitrate, [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) device has functionality to **Autodetect** to help you find the correct bitrate - by selecting one or more methods to detect the CAN bus and the active protocol(s). A passive method will only listen for broadcast traffic. An active method will attempt to send a request and then wait for a valid response. 
 
 
 ### How to Configure CAN Channels?
@@ -62,7 +62,7 @@ By default, can0 and can1 channels are preconfigured with standard values. But y
   ![Autodetect](/img/getting_started/autopi_canfd_pro/autodetect.png)
 
   :::warning 
-  Choose the active strategy (OBD ACTIVE AND J1939 ACTIVE) only if the Passive strategy didn't work. In some edge cases, vehicle can receive MIL (Malfuncion Indicator Lamp) on your vehicle's dashboard when picking the active strategies. 
+  In some cases, the vehicle may produce MIL (malfunction indicator lamp) notifications on the dashboard when active strategies are used for protocols that are not supported by the vehicle.
   :::
 
 Every time the Autodetection is used, it triggers an **events** that could be seen in the events section. This should help users to understand a little better what is happening on a device. These are some of the examples for the events: 
@@ -124,7 +124,7 @@ Setting up a CAN logger is easy and flexible. We’ve provided default values fo
 Use filters to control which types of CAN frames are logged. This settings allow you to filter the type of data you want to be logged for your specific use case. 
 
 :::note
-  If you set up decoder for your CAN logger, the filters are automatically applied even tho they are not visible in this step.For this to work, it requires that it is enabled on the logger: `Automatically add pass filters for all DBC message identifiers`.  
+  If you set up decoder for your CAN logger, the filters are automatically applied even tho they are not visible in this step. For this to work, it requires that it is enabled on the logger: `Automatically add pass filters for all DBC message identifiers`.  
   :::
 
 **Scenario 1** - you have **enabled** the "Use external dump process" in the previous step and therefore your second step: Filters looks like this: 
@@ -167,11 +167,11 @@ AutoPi CAN-FD Pro supports **2 types** of decoders:
     * **Decoder Name** - name your decoder.
     * **DBC Collection** - select the desired DBC file from the dropdown or use "Import" button to import a new file.
     * **Frame ID Mask** (optional) - help you determine how much needs to match before you have a match.
-    * **Automatically add pass filters for all DBC message identifiers** (optional) - this setting ensures that all of the data that can not be decoded won't be send over. 
+    * **Automatically add pass filters for all DBC message identifiers** (optional) - this setting adds pass filters to the logger for all the selected CAN messages in the DBC file. This way, only those messages that can be decoded are logged.
     * **Library File Path Pattern** (advanced) - the path to the message definition library file used for decoding the raw CAN messages.
     * **Strict mode** (advanced) - prohibits overlapping fields / multiplexing when rendering DBC file.
     
-    After you **choose or import the DBC file** you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated. There is also 1 important technical value that needs to be set correctly: Frame ID Mask. Frame ID Mask will help you determine how much needs to match before you have a match.
+    After you **choose or import the DBC file** you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated. There is also one important technical value that needs to be set correctly: Frame ID Mask. Frame ID Mask will help you determine how much needs to match before you have a match.
 
       :::note
       Frame ID Mask: is a bitmask used to match the CAN message identifiers defined in the DBC file. **If this value is incorrect, no CAN messages will be decoded. For the J1939 protocol the recommended bitmask is ´1FFFFF00´.**
@@ -185,11 +185,11 @@ AutoPi CAN-FD Pro supports **2 types** of decoders:
 
     * **Decoder name** - name your decoder.
     * **DBC Collection** - select the desired DBC file from the dropdown or use "Import" button to import a new file.
-    * **Automatically add pass filters for all DBC message identifiers** (optional) - this setting ensures that all of the data that can not be decoded won't be send over. 
+    * **Automatically add pass filters for all DBC message identifiers** (optional) - this setting adds pass filters to the logger for all the selected CAN messages in the DBC file. This way, only those messages that can be decoded are logged.
     * **Library File Path Pattern** (advanced) - the path to the message definition library file used for decoding the raw CAN messages.
     * **Strict mode** (advanced) - prohibits overlapping fields / multiplexing when rendering DBC file.
 
-    After you **choose or import the DBC file** you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated. There is also 1 important technical value that needs to be set correctly: Frame ID Mask. Frame ID Mask will help you determine how much needs to match before you have a match.
+    After you **choose or import the DBC file** you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated. There is also one important technical value that needs to be set correctly: Frame ID Mask. Frame ID Mask will help you determine how much needs to match before you have a match.
 
 
 
@@ -282,6 +282,7 @@ Need to make changes to a CAN logger? No problem, it’s super simple. Just foll
 ---
 
 ## Queries
+Queries allow the vehicle to request specific data points at a defined frequency. You can configure an interval that determines how often the vehicle should ask for and retrieve this data.
 
 ### How to create Query?
 AutoPi CAN-FD Pro is supporting creation of different types of queries, including: 
@@ -307,9 +308,9 @@ AutoPi CAN-FD Pro is supporting creation of different types of queries, includin
 
 *Response specifications*
 * **Converter** (advanced) - applies a transformation to the query response.
-* **Triggers** (advanced) - execute actions based on the value received from the converter.
-* **Filter** (advanced) - filter triggers output.
-* **Returners** - execute a function using the value provided from the filter.
+* **Triggers** (advanced) - specify one or more triggers that fire events based on the query response or converter result, if specified.
+* **Filter** (advanced) - a filter can discard unwanted results.
+* **Returners** - especify one or more returners that deliver results to other systems or services.
 
 
 #### Create J1939 PGN Query
@@ -331,9 +332,9 @@ AutoPi CAN-FD Pro is supporting creation of different types of queries, includin
 
 *Response specifications*
 * **Converter** (advanced) - applies a transformation to the query response.
-* **Triggers** (advanced) - execute actions based on the value received from the converter.
-* **Filter** (advanced) - filter triggers output.
-* **Returners** - execute a function using the value provided from the filter.
+* **Triggers** (advanced) - specify one or more triggers that fire events based on the query response or converter result, if specified.
+* **Filter** (advanced) - a filter can discard unwanted results.
+* **Returners** - specify one or more returners that deliver results to other systems or services.
 
 
 
@@ -367,9 +368,9 @@ AutoPi CAN-FD Pro is supporting creation of different types of queries, includin
 * **Flow Control** (advanced) - list of flow control ID resolvers to enable. Options are 'OBD' and 'Custom'.
 * **Result Formula** - python code that decodes the raw byte data to a value.
 * **Converter** (advanced) - applies a transformation to the query response.
-* **Triggers** (advanced) - execute actions based on the value received from the converter.
-* **Filter** (advanced) - filter triggers output.
-* **Returners** - execute a function using the value provided from the filter.
+* **Triggers** (advanced) - specify one or more triggers that fire events based on the query response or converter result, if specified.
+* **Filter** (advanced) - a filter can discard unwanted results.
+* **Returners** - specify one or more returners that deliver results to other systems or services.
 
 
 
@@ -400,6 +401,7 @@ Frame listeners are highly customizable, giving you control over how CAN message
 ---
 
 ## Event Reactors
+Event Reactors enable the system to react to incoming data by executing custom actions. For example, they can run a command when the device starts logging data or trigger any custom code based on defined conditions.
 
 ### How to create Event Reactor?
 
@@ -423,6 +425,9 @@ If that happens, you can still save your changes and come back later to edit and
 ---
 
 ## Workflow Hooks
+Workflow Hooks define reusable logic that can be attached to workflows to process, modify, or react to data at specific stages. They act as building blocks that encapsulate commands, custom code, and configuration, making workflows modular and easier to maintain.
+
+Each Workflow Hook has a defined type (handler, converter, trigger, filter, enricher, or returner) that determines its role in the workflow, along with a function (execution module) to be called. Optional arguments (args and kwargs) can be provided to customize how the function is executed.
 
 ### How to create Workflow Hook?
 
@@ -435,7 +440,7 @@ If that happens, you can still save your changes and come back later to edit and
 *Defining the type of the worflow hook* 
 * **Type** - specify the type of workflow hook, you can pick from: handler, converter, trigger, filter, enricher and returner. 
   ![Workflow hook types](/img/getting_started/autopi_canfd_pro/workflow_hook_type.png)
-* **Function** - refers to the command aka. execution module to be called. Custom execution modules can be defined via custom code.
+* **Function** - refers to the command aka execution module to be called. Custom execution modules can be defined via custom code.
 * **Args** (optional) - positional arguments passed to the command.
 * **Kwargs** (optional) - keyword arguments passed to the command.
 
