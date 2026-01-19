@@ -1,67 +1,170 @@
 ---
 id: doip-install
-title: DoIP HAT Install
+title: DoIP HAT Installation
 supportedDevices: ['cm4']
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import CardGrid from "/components/CardGrid";
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+
 ---
 
-:::caution Before proceeding with the install
-The DoIP solution described here only works with the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) and newer editions. 
+:::caution Before you begin
+The DoIP solution described in this guide is **only supported on AutoPi TMU CM4–based devices** and newer revisions.
 
-Please note, its possible to order the DoIP solution pre-installed in the devices.
+- DoIP can be ordered **pre-installed** from AutoPi. If your device was delivered with DoIP pre-installed, no hardware installation is required.
+- When the DoIP HAT is installed, the **Ethernet interface on the AutoPi is internally routed to the vehicle**.  
+  **Do not connect anything to the Ethernet port** after installation.
+- **Never install a DoIP-enabled device in a vehicle that does not support DoIP (Ethernet diagnostics).**  
+  Using Ethernet-based diagnostics on a CAN-only vehicle may interfere with vehicle communication and operation.
 :::
 
-## DoIP Introduction
-This guide provides a walk-through of how to install the [AutoPi](https://www.autopi.io) DoIP solution in the AutoPi devices. For a guide on how to get started using the DoIP solution, [`see here`](/developer_guides/setting-up-doip/).
+## Introduction
 
-DoIP stands for "Diagnostic over Internet Protocol." It is a communication protocol used in the automotive industry for diagnostic and programming tasks. DOIP enables the exchange of diagnostic information between a vehicle's electronic control units (ECUs) and diagnostic tools over an IP-based network, such as Ethernet.
+This guide explains how to physically install the **AutoPi DoIP HAT** on an AutoPi TMU CM4 device.
 
-:::note
-**Prerequesites** for this guide:
-- 1x DOIP HAT PCB
-- 3x Plastic screw
-- 2x 6.5 mm plastic spacer
-:::
+The DoIP HAT enables **Diagnostics over IP (DoIP)**, allowing diagnostic and programming communication with vehicle ECUs over Ethernet instead of CAN. This is commonly used for:
+- UDS diagnostics over Ethernet
+- ECU flashing and programming
+- High-bandwidth diagnostic workflows
+- OEM and engineering tools that require DoIP
+
+If you are looking for instructions on **how to use DoIP after installation**, see:  
+[Setting up DoIP on AutoPi](/developer_guides/setting-up-doip/)
+
+## What is DoIP?
+
+DoIP (Diagnostic over Internet Protocol, ISO 13400) is an automotive diagnostic protocol that transports diagnostic messages over IP-based networks, typically Ethernet.
+
+Compared to CAN-based diagnostics, DoIP offers:
+- Higher bandwidth
+- Faster flashing and data transfer
+- Direct compatibility with modern OEM diagnostic tools
+- Ethernet-based ECU access without CAN bottlenecks
+
+## Prerequisites
+
+Before starting, ensure you have the following:
+
+- 1 × AutoPi DoIP HAT PCB
+- 3 × Plastic screws
+- 2 × 6.5 mm plastic spacers
+- AutoPi TMU CM4 device
+- Clean, static-safe workspace
 
 :::info
-DoIP HAT can be bought at AutoPi shop: [DoIP HAT for AutoPi TMU](https://shop.autopi.io/products/doip-hat-v1-3). There is also an option for DoIP HAT to be pre-installed in your AutoPi device. 
+The DoIP HAT can be purchased from the AutoPi Shop:  
+[DoIP HAT for AutoPi TMU CM4](https://shop.autopi.io/products/doip-hat-v1-3)
+
+You can also order AutoPi devices with the DoIP HAT pre-installed.
 :::
 
 <p align="center">
-<img src="/img/hardware/accessories/doip/doip2.jpg" alt="Keyfob flow" width="40%" />
+  <img
+    src="/img/hardware/accessories/doip/doip2.jpg"
+    alt="AutoPi DoIP HAT"
+    width="40%"
+  />
 </p>
 
+## Installation Steps
 
-## Step-by-Step Guide
+### Step 1 – Open the AutoPi enclosure
 
-### Step 1
-Open up the [AutoPi](https://www.autopi.io) device by unscrewing the four screws at the bottom. 
+Place the AutoPi device upside down and remove the four screws on the bottom of the enclosure.
+
+Carefully lift off the top cover to expose the internal PCB.
+
 <p align="center">
-<img alt="Step 2" width="460px" src={useBaseUrl('/img/hardware/autopi_tmu_cm4/installing_external_antennas/ext_ant2.jpg')}/>
+  <img
+    alt="Opening AutoPi enclosure"
+    width="460px"
+    src={useBaseUrl('/img/hardware/autopi_tmu_cm4/installing_external_antennas/ext_ant2.jpg')}
+  />
 </p>
 
-### Step 2
-Start preparing the DoIP hat by screwing one 6.5 mm spacer in each hole of the DoIP hat PCB as seen in the pictures.
+### Step 2 – Prepare the DoIP HAT
 
-![Keyfob flow](/img/hardware/accessories/doip/doip3.jpg)
+Attach the two **6.5 mm plastic spacers** to the DoIP HAT PCB using the provided plastic screws.
 
-### Step 3
-Connect the BLE hat with the [AutoPi](https://www.autopi.io) board through the 40 pin headers. Verify that the connectors are properly connected.
+Ensure the spacers are firmly mounted and aligned with the mounting holes.
 
-![Keyfob flow](/img/hardware/accessories/doip/doip8.jpg)
-
-### Step 4
-Reasemble the device using the new [AutoPi](https://www.autopi.io) BLE side shield, giving access to two new Keyfob control ports on the side.
-
-![Keyfob flow](/img/hardware/accessories/doip/side.jpg)
-
-## Disscussion
-<p>
-	You have now successfully installed the DoIP solution to the device.
+<p align="center">
+  <img
+    src="/img/hardware/accessories/doip/doip3.jpg"
+    alt="Mounting spacers on DoIP HAT"
+    width="460px"
+  />
 </p>
 
+### Step 3 – Mount the DoIP HAT
+
+Carefully align the DoIP HAT with the **40-pin GPIO header** on the AutoPi main board.
+
+Press the HAT straight down until the connector is fully seated.  
+Verify:
+- The HAT is level
+- The GPIO connector is fully engaged
+- No pins are misaligned or bent
+
+<p align="center">
+  <img
+    src="/img/hardware/accessories/doip/doip8.jpg"
+    alt="DoIP HAT connected to AutoPi"
+    width="460px"
+  />
+</p>
+
+### Step 4 – Reassemble the enclosure
+
+Reassemble the device using the **DoIP-compatible side shield**.
+
+This side shield provides the correct cutout and routing for the internal Ethernet interface used by DoIP.
+
+Make sure:
+- No cables are pinched
+- The HAT remains firmly seated
+- All enclosure screws are tightened evenly
+
+<p align="center">
+  <img
+    src="/img/hardware/accessories/doip/side.jpg"
+    alt="AutoPi enclosure with DoIP side shield"
+    width="460px"
+  />
+</p>
+
+## Final Checks
+
+After installation:
+
+- The external Ethernet port on the AutoPi is now **reserved for DoIP**
+- Do not connect external Ethernet cables
+- Install the device **only in vehicles that support DoIP**
+- Proceed with software configuration before attempting diagnostics
+
+## Next Steps
+
+The DoIP hardware installation is now complete.
+
+Continue with the software setup guide to:
+- Enable DoIP services
+- Configure network settings
+- Validate ECU discovery and communication
+
+➡️ [Setting up DoIP on AutoPi](/developer_guides/setting-up-doip/)
+
+## Troubleshooting
+
+If the device does not detect DoIP ECUs after installation:
+
+- Verify the HAT is fully seated on the GPIO header
+- Confirm the vehicle supports DoIP
+- Check that no external Ethernet device is connected
+- Ensure the correct AutoPi OS version is installed
+
+---
+
+You have now successfully installed the AutoPi DoIP HAT.
