@@ -1,7 +1,7 @@
 ---
 id: set_up_AWS_S3_bucket
 title: Amazon Web Services (AWS) S3 Bucket Creation
-supportedDevices: ['pro']
+supportedDevices: ['pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid";
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
@@ -132,8 +132,10 @@ The AutoPi CAN-FD Pro device supports two types of data logging:
 By default, all data is logged and stored locally on the device. However, you can easily configure the device to upload your logged data directly to an AWS S3 bucket (both Raw data and Decoded data). Here’s how to do it:
 * On your Pro device, go to: CAN Logging → Loggers.
 * Create a new logger or edit an existing one.
-* Navigate to Step 5: Outputs. This is where you define where the logged data should be sent. You can also read more here: [Output handler configuration explained](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-4-outputs). 
-![Output handler for S3](/img/getting_started/autopi_canfd_pro/user_guide/empty_s3.png)
+* Navigate to Step 4: Outputs. This is where you define where the logged data should be sent. You can also read more here: [Output handler configuration explained](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-4-outputs). 
+
+![Output handler for S3](/img/getting_started/autopi_canfd_pro/aws_creation/channel_s3_bucket.png)
+
 * To upload to AWS S3, fill in the following fields:
     * Access Key ID – your AWS access key.
     * Secret Access Key – your AWS secret key.

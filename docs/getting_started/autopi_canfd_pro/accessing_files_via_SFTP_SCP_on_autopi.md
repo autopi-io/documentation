@@ -1,7 +1,7 @@
 ---
 id: accessing-files-via-sftp-on-autopi
 title: Accessing files via SFTP/SCP on AutoPi
-supportedDevices: ['pro']
+supportedDevices: ['pro','pro_case']
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,6 +11,10 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
+
+:::note
+If you want to use scp on Windows to download files from the autopi, you need to set up openssl.  
+:::
 
 ## Option 1: Accessing files via SFTP
 
@@ -47,6 +51,9 @@ Choose your connection method:
     - Ensure Tailscale is installed and activated on both the AutoPi and your computer. You can read more at this guide: [How to connect to Tailscale on your AutoPi device](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
     - On the AutoPi, run `tailscale ip` to get its Tailscale IP (e.g., `100.x.x.x`).  
 
+:::note
+If tailscale is setup on the device, you can use the IP address in the tailscale configuration to download from anywhere, this setup is equivalent to using the local IP.
+:::
 
 ### Step 2: Connect Using Cyberduck
 1. Open Cyberduck and click **Open Connection**.  
@@ -58,7 +65,7 @@ Choose your connection method:
    - **Port**: `22` (default for SSH/SCP).  
    - *(Optional)*: Save the password in your keychain.  
 
-   [Cyberduck Documentation](https://docs.cyberduck.io/protocols/sftp/)  
+   Read more here: [Cyberduck Documentation](https://docs.cyberduck.io/protocols/sftp/)  
 
 3. Click **Connect**.  
 

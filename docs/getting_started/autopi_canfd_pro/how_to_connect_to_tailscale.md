@@ -1,7 +1,7 @@
 ---
 id: how_to_connect_to_tailscale
 title: How to connect to Tailscale on your Autopi device
-supportedDevices: ['cm4','pro']
+supportedDevices: ['cm4','pro','pro_case']
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
