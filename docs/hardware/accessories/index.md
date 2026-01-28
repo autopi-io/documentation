@@ -2,9 +2,14 @@
 id: accessories-intro
 title: Accessories Overview
 description: Explore a range of compatible accessories to enhance your AutoPi device. Find the right add-ons to maximize functionality and improve data management.  
+supportedDevices: ['mini','cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid";
 import SideBySide from '@site/src/components/SideBySide'; 
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 :::info Need Custom Integrations?
 [Contact](mailto:support@autopi.io) our team to discuss tailored solutions for your business.

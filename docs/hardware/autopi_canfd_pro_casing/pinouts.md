@@ -1,11 +1,15 @@
 ---
 id: pinouts
 title: Screw terminal pinouts for IP67
+supportedDevices: ['pro_case']
 ---
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SideBySide from '@site/src/components/SideBySide';
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 The [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro) is packed into a durable, IP67-rated aluminum casing — built to withstand dust, dirt, and water, making it perfect for rugged, outdoor, or industrial installations. Inside the device it's possible to access additional GPIO pins for your project. These are conviniently located at a set of screw terminal blocks inside the device. There is 23 connections in total:
 

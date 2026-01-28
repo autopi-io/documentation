@@ -1,7 +1,7 @@
 ---
 id: configuring-mqtt
 title: Configuring MQTT
-supportedDevices: ['cm4']
+supportedDevices: ['cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid" ;
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';

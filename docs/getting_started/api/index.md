@@ -1,7 +1,8 @@
 ---
 id: api-intro
 title: Introduction
-supportedDevices: ['mini','cm4']
+supportedDevices: ['cm4','pro']
+
 ---
 import CardGrid from "/components/CardGrid" ;
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';

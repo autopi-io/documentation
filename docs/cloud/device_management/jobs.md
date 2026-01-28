@@ -1,7 +1,7 @@
 ---
 id: cloud-jobs
 title: Jobs
-supportedDevices: ['cm4','pro']
+supportedDevices: ['cm4','pro','pro_case']
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

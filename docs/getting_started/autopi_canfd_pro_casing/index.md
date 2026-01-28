@@ -1,7 +1,7 @@
 ---
 id: pro-casing-guides-intro
 title: Getting started
-supportedDevices: ['pro']
+supportedDevices: ['pro_case']
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

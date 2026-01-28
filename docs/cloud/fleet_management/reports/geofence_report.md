@@ -1,7 +1,7 @@
 ---
 id: geofence-summary-reports
 title: Geofence Summary Report
-supportedDevices: ['mini','cm4','pro']
+supportedDevices: ['mini','cm4']
 ---
 import CardGrid from "/components/CardGrid" ;
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';

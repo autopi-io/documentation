@@ -1,7 +1,7 @@
 ---
 id: introduction
 title: Introduction
-supportedDevices: ['mini','cm4']
+supportedDevices: ['mini','cm4','pro','pro_case']
 ---
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 

@@ -1,7 +1,7 @@
 ---
 id: accessing-raw-gps-data
 title: Accessing Raw GPS Data (10 Hz)
-supportedDevices: ['cm4','pro']
+supportedDevices: ['cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid";
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';

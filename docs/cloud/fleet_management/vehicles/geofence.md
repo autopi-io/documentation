@@ -1,7 +1,7 @@
 ---
 id: fleet-geofences 
 title: Geofences
-supportedDevices: ['cm4','pro']
+supportedDevices: ['mini','cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid" ;
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';

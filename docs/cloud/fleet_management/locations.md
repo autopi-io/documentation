@@ -1,8 +1,13 @@
 ---
 id: locations
 title: Locations
+supportedDevices: ['mini','cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 ![Locations overview](/img/cloud/fleet_management/locations/locations_overview.jpg)
 

@@ -1,7 +1,7 @@
 ---
 id: geofences
 title: Geofences
-supportedDevices: ['cm4','pro']
+supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid";
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';

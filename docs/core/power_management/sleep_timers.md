@@ -1,7 +1,7 @@
 ---
 id: core-power-sleep-timers
 title: Sleep Timers
-supportedDevices: ['cm4','pro']
+supportedDevices: ['cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid";
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';

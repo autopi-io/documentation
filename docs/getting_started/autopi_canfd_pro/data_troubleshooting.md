@@ -1,7 +1,7 @@
 ---
 id: pro-data-troubleshooting
 title: Data Troubleshooting
-supportedDevices: ['pro']
+supportedDevices: ['pro','pro_case']
 ---
 
 import CardGrid from "/components/CardGrid" ;

@@ -1,8 +1,13 @@
 ---
 id: notification-channels
 title: Notification Channels
+supportedDevices: ['mini','cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
 Under configurations you can find Notification Channels. Here you can create a 
 notification channel, that you can later apply in different parts of the 

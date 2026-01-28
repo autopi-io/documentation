@@ -1,7 +1,7 @@
 ---
 id: fleet-alerts
 title: Alerts
-supportedDevices: ['mini','cm4','pro']
+supportedDevices: ['mini','cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid" ; import SideBySide from '@site/src/components/SideBySide';
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';

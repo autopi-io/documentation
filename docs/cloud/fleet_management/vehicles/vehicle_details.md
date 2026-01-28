@@ -1,8 +1,12 @@
 ---
 id: vehicle-details
 title: Vehicle Details
+supportedDevices: ['mini','cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
 
 This section of AutoPi Cloud provides all the essential information about your vehicles. It includes general details displayed on the dashboard, widgets with real-time data from your vehicle, trip history, and important alerts to monitor. These vehicle insights are designed to help you manage your fleet more effectively and optimize its efficiency.
 

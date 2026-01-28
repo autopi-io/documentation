@@ -1,7 +1,7 @@
 ---
 id: sim-solution
 title: Global SIM Card Solution
-supportedDevices: ['mini','cm4','pro']
+supportedDevices: ['mini','cm4','pro','pro_case']
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CardGrid from "/components/CardGrid" ;

@@ -1,7 +1,7 @@
 ---
 id: move-to-dedicated-environment
 title: Move Device to a Dedicated Environment
-supportedDevices: ['cm4','pro']
+supportedDevices: ['cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid";
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';

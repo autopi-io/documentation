@@ -1,8 +1,12 @@
 ---
 id: fleet-groups
 title: Groups
+supportedDevices: ['mini','cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid" ;
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
 
 Within the Vehicles tab, we have three subsections. One of our new features for 
 improved fleet management is the ability to create vehicle groups.  This tool 

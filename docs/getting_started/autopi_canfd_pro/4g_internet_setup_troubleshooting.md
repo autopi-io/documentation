@@ -1,7 +1,7 @@
 ---
 id: pro-4g-internet-setup-troubleshooting
 title: 4G Internet Setup Troubleshooting
-supportedDevices: ['pro']
+supportedDevices: ['pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid";
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
