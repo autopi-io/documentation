@@ -1,7 +1,7 @@
 ---
 id: pro-user-guide
 title: User guide
-supportedDevices: ['pro']
+supportedDevices: ['pro','pro_case']
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SideBySide from '@site/src/components/SideBySide';
@@ -20,6 +20,82 @@ Our newest [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro
 CAN Logging captures traffic from your vehicle’s CAN bus using two dedicated interfaces: can0 and can1. These logs can include raw or decoded data, depending on your configuration.
 
 ![CAN logging](/img/getting_started/autopi_canfd_pro/can_logging_tab.png)
+
+**`logger.status` command**
+
+This command is a great tool to see the current status of your data logger(s) in real time. You can run this command in 3 ways: 
+* If the device is connected to the internet it can be done through the cloud terminal on AutoPi cloud.
+* If you have direct SSH access to the device via LAN or VPN you can use the autopi terminal command.
+  * You can check out this guide: [How to SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/)
+  * For using Tailscale, you can check out this guide: [How to connect to Tailscale](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
+* If you are nearby the device and can connect to it's local WiFi hotspot you can do it from the local admin UI on local.autopi.io. Here is a guide: [Local development workflow](https://docs.autopi.io/developer_guides/local-development-workflow/)
+
+Below is an example of the output of the command:
+```python
+channels:
+  can0:
+    interface:
+      autodetect:
+        in_progress: false
+        last_results:
+          any_passive:
+            bitrate: 500000
+            frames_per_second: 710
+            has_11bit_identifiers: true
+            has_29bit_identifiers: false
+            performed_at: '2025-05-07T09:50:43.347462'
+            success: true
+      bitrate: 500000
+    loggers:
+      raw:
+        current_fps: 584.95
+        decoders:
+          dbc:
+            failed_messages_count: 140000
+            output_file_pattern: /opt/autopi/can0/loggers/raw/decoders/dbc/output/{input:}.jsonl
+            output_handlers:
+            - destination_path: s3://my-datalogger/a1eeabbd-cffa-f7c4-31a5-49b2c2340d3d/can0/decoded
+              uploaded_files_count: 2
+            total_messages_count: 140000
+            type: STANDARD
+        output_file_pattern: /opt/autopi/can0/loggers/raw/output/{ts:%Y%m%d%H%M}.log
+        output_handlers:
+        - destination_path: s3://my-datalogger/a1eeabbd-cffa-f7c4-31a5-49b2c2340d3d/can0/raw
+          uploaded_files_count: 2
+        received_error_frames_count: 613
+        received_frames_count: 111101
+  can1:
+    interface:
+      autodetect:
+        in_progress: false
+        last_results:
+          any_passive:
+            bitrate: 500000
+            frames_per_second: 544
+            has_11bit_identifiers: true
+            has_29bit_identifiers: false
+            performed_at: '2025-05-07T09:50:44.198244'
+            success: true
+      bitrate: 500000
+    loggers:
+      raw:
+        current_fps: 586.66
+        decoders:
+          dbc:
+            output_file_pattern: /opt/autopi/can1/loggers/raw/decoders/dbc/output/{input:}.mf4
+            total_messages_count: 0
+            type: ASAMMDF
+        output_file_pattern: /opt/autopi/can1/loggers/raw/output/{ts:%Y%m%d%H%M}.log
+        received_error_frames_count: 613
+        received_frames_count: 113725
+disks:
+  /:
+    free_space: 3 GB
+    housekeeper:
+      deleted_files_count: 0
+      total_space_freed: 0 bytes
+```
+
 
 ---
 
@@ -154,6 +230,20 @@ If you don't know anything about a bit masking, it is better to use the default 
 This step allows you to decode (translate) raw CAN data using Standard decoder or ASAM decoder. This step doesn't come up with pre-set default values, as this is fully customizable for user. Once you import a DBC file, you can set up some additional settings in order for your device to be able to decode the data based on your requirements. 
 
 
+**How to setup decoding for your device?**
+
+Follow these steps to configure CAN data decoding:
+* Go to your Device and navigate to CAN Logging tab.
+* Create a new logger or edit an existing one.
+* Navigate to Step 3: Decoders.
+* Select the decoder type you want to use (Standard or ASAM).
+* Import your DBC file.
+  * After importing the DBC file, select only the signals you want to decode from the list. This allows you to pick specific signals without needing to modify or split the DBC file.
+  * Once the data is decoded, it can be accessed either locally on the device, or via an Amazon S3 bucket, depending on how you have configured the Outputs.
+
+![Import DBC file](/img/getting_started/autopi_canfd_pro/user_guide/import_dbc.png)
+
+
 AutoPi CAN-FD Pro supports **2 types** of decoders: 
 1. Standard decoder - Using the standard decoder is faster than ASAM. Supported formats are CSV, JSONL and LOG. 
 2. ASAM Decoder - The ASAM decoder is slower than the standard. Supported format is MDF4 - a binary file format for recording e.g. CAN and CAN FD data.
@@ -190,7 +280,6 @@ AutoPi CAN-FD Pro supports **2 types** of decoders:
     * **Strict mode** (advanced) - prohibits overlapping fields / multiplexing when rendering DBC file.
 
     After you **choose or import the DBC file** you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated. There is also one important technical value that needs to be set correctly: Frame ID Mask. Frame ID Mask will help you determine how much needs to match before you have a match.
-
 
 
 ##### Step 4: Outputs
@@ -398,6 +487,11 @@ Frame listeners are highly customizable, giving you control over how CAN message
 * **Trigger Event** - trigger an event when a match occurs. You can also specify the **Event interval** to further specify the minimum frequency in seconds at which workflow execution is performed.
 * **Perform Action** - specify one or more workflows to perform on a match.
 
+
+**Example Use Case**
+Imagine your AutoPi CAN-FD Pro is configured to collect only a limited set of data parameters at a low frequency (for example, once per hour). If a specific error message appears on the CAN bus, you can use a frame listener to react immediately.
+In this scenario, the frame listener detects the error message and triggers a custom action such as increasing logging frequency or enabling additional loggers. This allows you to capture more detailed data around the issue, making it much easier to investigate and identify the root cause.
+
 ---
 
 ## Event Reactors
@@ -420,7 +514,34 @@ Make sure you create the Workflow hooks before selecting the Event Reactor. If n
 If that happens, you can still save your changes and come back later to edit and complete the configuration.
 :::
 
+### Common event types and examples 
+The Events functionality provides a historical overview of what has been happening on a device over time. Events capture important system and vehicle activities, giving you deeper insight into the device’s behavior and status.
+To view events, navigate to your Device and open the **Events tab**. From there, you can see the full event history and easily filter the results by a specific timeframe or by event tags to focus on what matters most.
 
+:::note
+You can find a complete list of available events and detailed descriptions in our documentation: [AutoPi CAN-FD Pro events](https://docs.autopi.io/cloud/device_management/events/cloud-events-vehicle/#battery-events).
+:::
+
+Some examples of commonly used events include:
+* Battery events: 
+  * For example when the battery voltage has reached a critically low level: `vehicle/battery/critical_level`
+* Battery Nominal Voltage events: 
+  * For example when the AutoPi device was able to autodetect the battery nominal voltage: `vehicle/battery/nominal_voltage/autodetected`
+* CAN Logging Events: 
+  * For example when a logger is writing raw CAN frames to an output file: `vehicle/bus/<can0|can1|...>/logger/<logger_name>/writing`
+  * For example when an AWS S3 sync job has finished with success: `vehicle/bus/<can0|can1|...>/logger/<logger_name>/s3_sync/completed`
+* Engine events: 
+  * For example when the engine is running: `vehicle/engine/running`
+* Motor events: 
+  * For example when the motor is now running: `vehicle/motor/running`
+* Communication events​ (used with EV-type vehicles that are unable to produce motor events):
+  * For example when the communication with the vehicle has been established: `vehicle/communication/established`
+* Position events
+  * For example when the vehicle's current position is not confirmed: `vehicle/position/unknown`
+* Motion events
+  * For example when the accelerometer readings detected a sudden jolt in the device: `vehicle/motion/jolting`
+
+![Example of Pro device events](/img/getting_started/autopi_canfd_pro/user_guide/pro_events.png)
 
 ---
 
@@ -499,6 +620,36 @@ At the moment if you want to access your device remotely using [Tailscale](https
 
 For more information check out this guide: [How to connect to Tailscale on your AutoPi device](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
 
+
+### Advanced settings for Trips
+The Trips feature provides detailed information about each vehicle trip, including the route displayed on a map, start and end addresses, trip duration, and distance traveled. You can also categorize trips as personal or business and export trip data when needed.For your AutoPi CAN-FD Pro device to log trip data, this functionality must be enabled.
+
+#### Enable trip functionality
+Steps to get into advanced settings for trips: 
+* Go to the Devices section in the menu.
+* Select the device you want to work with.
+* Click on Advanced settings.
+* Click on Trip.
+* Set Trip Logic Version to Improved (This is our enhanced trip detection logic, designed to provide more accurate trip mapping.).
+* (Optional) Configure custom start and end event tags for your vehicle. We provide preset primary and secondary events, but if trip detection is not working correctly for your vehicle, you can modify these events to better match your use case.
+
+![Advanced settings for Trip](/img/getting_started/autopi_canfd_pro/user_guide/advanced_settings_trip.png)
+
 ### Advanced settings for Vehicle 
+
+**Logging of all CAN data when a trip is in progress**
+
+To configure your AutoPi device to log all CAN data while a trip is in progress, go to: Device → Advanced Settings → Vehicle → Ignition and Trip Events.
+
+![Advanced settings for Vehicle](/img/getting_started/autopi_canfd_pro/user_guide/advanced_settings_vehicle.png)
+
+In the Trip Event section: 
+* Under Sources, select which data source should be used to trigger trip start and stop events.
+* Adjust the Transition to Start and Transition to Stop settings to fine-tune how trips are detected.
+
+These settings allow you to control exactly when a trip is considered active, ensuring that CAN data logging starts and stops at the appropriate times.
+
+
+
 
 

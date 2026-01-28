@@ -1,7 +1,7 @@
 ---
 id: device_specifications
 title: Technical Specifications
-supportedDevices: ['pro']
+supportedDevices: ['pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid"; 
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
