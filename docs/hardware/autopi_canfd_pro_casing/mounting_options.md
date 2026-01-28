@@ -1,5 +1,5 @@
 ---
-id: mounting_options_pro
+id: mounting-options-pro
 title: Mounting Options
 supportedDevices: ['pro_case']
 ---
