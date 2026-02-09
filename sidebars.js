@@ -218,7 +218,6 @@ module.exports = {
             "cloud/device_management/software-updates",
             "cloud/device_management/move-to-dedicated-environment",
             "cloud/device_management/geofences", 
-            "cloud/device_management/nested-customers",
             "cloud/device_management/templates",
             "cloud/device_management/global-variables",
           ],

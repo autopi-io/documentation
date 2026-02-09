@@ -9,6 +9,10 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
+:::note
+This functionality is only available for the devices that had device geofences set up in the past. Now we have a completely new and improved [Fleet Geofences](https://docs.autopi.io/cloud/fleet_management/vehicles/fleet-geofences/). 
+:::
+
 Geofences allow you to define a specific are on a map where you want to be notified when a vehicle enters or exits. The way this works is that you visually define an area in the geofence editor, which can be either a polygon shape, or a point with a radius.
 
 This geofence is then syncronized to the device, and the device will then behave in the following ways.

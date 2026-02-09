@@ -12,7 +12,6 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 Welcome to the Account Management guide. This section explains how to set up and manage your AutoPi cloud environment, including accounts, customers, users, devices, and access permissions. By the end of this guide, you’ll understand how to organize your platform efficiently while ensuring secure and controlled access for all users.
 
 AutoPi Cloud uses a **multi-tenant architecture**, which means multiple accounts (tenants) share the same platform and infrastructure, while all data, configurations, and user access remain securely isolated.
-Account management 
 
 ---
 
@@ -41,10 +40,30 @@ Example: If your company is called AutoPi, you would create a Customer named A
 ### Nested Customer
 **Nested Customers (Sub-Accounts)** - nested customers are sub-accounts under a main Customer. They are useful for companies with branches, departments, or divisions that need separate environments while remaining under the same main account.
 
-Example:
-* Main Customer: AutoPi HQ.
-* Nested Customer: AutoPi Denmark.
-* Nested Customer 2: Autopi Norway.
+The account section allows an account administrator to manage nested customers, which makes it possible to create an isolated account, assign devices and users to it, so that a customer can manage a fleet of devices, and it's own users.
+
+It makes it possible to have a structure like this: 
+
+```
+Customer
+    users:
+        |_ user admin
+    accounts:
+        |_ nested customer A
+            users:
+                |_ user A
+        |_ nested customer B
+            users:
+                |_ user B
+```
+
+The permissions model follows a top down approach, and only in that direction, this means that any users created on the nested customers, will only ever be able to see the devices directly associated to that account, at most, ie. full device access for a user on a nested account will see only the devices actually associated to the account, and not devices from the parent account / top account.
+
+So in the example above, `user A` can only see devices in the `nested customer A` 
+account, and the same for `user B`, but the `admin` user can see devices from both
+the top account, and any nested customers.
+
+
 
 #### Create customer
 ![Create nested customer](/img/cloud/accounts/create_nested_customer.png)
@@ -58,8 +77,27 @@ To create a new (nested) customer:
 * Confirm by clicking Create.
 * A confirmation pop-up will appear once the customer is created successfully.
 
-Each Nested Customer can manage its own users and data but cannot access data from the parent or sibling customers. For example "AutoPi Denmark" can manage its own users and data but can not access any users or data from "AutoPi Norway". This also means that in this case the main customer "AutoPi HQ" can access all data for both AutoPi Denmark and AutoPi Norway.
 
+#### Assign Devices to the New Customer
+
+Steps to assign devices to a customer: 
+* Click Devices under Accounts page. 
+* Click Manage devices in the upper-right corner.
+* Choose a newly created customer. 
+* Now select one or more devices from the dropdown, or toggle the mode below the dropdown to input the unit id or device ids and find the desired devices.
+* After you are done with choosing devices, click Process. The devices are now re-assigned to the new customer. 
+
+
+#### Create an Administrator User On the New Account
+
+Steps to create an administrator account: 
+* Click the Customers tab. 
+* Click the customer that was created and you want to create an admin for. 
+* Click Users to manage the users for the customer. 
+* Click Create. 
+* Now create a new user, and remember to set the account to have `Account Administrator` group permission, this will make the user have access to the assigned devices, and also to manage the users on the customer.
+
+You should now have a nested customer with some devices associated, and admin user.
 
 
 ## Users

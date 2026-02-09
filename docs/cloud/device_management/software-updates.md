@@ -1,7 +1,7 @@
 ---
 id: software-updates
 title: Software Updates
-supportedDevices: ['cm4','pro','pro_case']
+supportedDevices: ['mini','cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid";
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
@@ -42,6 +42,10 @@ updates as soon as they are available based on the setting you've set. That can 
 sleep" or "At start (or before sleep)".
 
 ### Update With a Command
+
+:::note
+This option is unfortunately not supported on the AutoPi mini devices. 
+:::
 
 :::tip
 Be careful with this update procedure. If you're trying to update your device, we recommend that you

@@ -247,7 +247,6 @@ enabling you to take full advantage of the powerful features AutoPi offers.
 Take your device for a trip to start gathering data.
 
 
-
 :::note
 If you are getting started with you DiY Edition please refer to this guide 
 [Setup Your TMU DIY Edition](/hardware/legacy_devices/autopi_dongle_gen3/setup_your_tmu_diy_edition.md).
@@ -256,6 +255,7 @@ For older, Generation 2 devices, you can find the relevant guide here
 [Setup Your Gen 2 Edition](/hardware/legacy_devices/autopi_dongle/setup_your_gen_2_diy_edition.md).
 :::
 
+---
 **What's Next?**
 
 Now that your device is up and running, here are a few suggestions to help you 
@@ -266,7 +266,8 @@ get the most out of your AutoPi experience:
 - **Check Out Our Documentation**: Our [documentation page](https://docs.autopi.io/) 
   is a great resource for learning more about advanced features, troubleshooting, 
   and getting the most out of your device. 
-- **Stay Updated**: Keep an eye on our blog and newsletters for updates, tips, and new features. 
+- **Build your Nested Accounts and Invite New Users**: AutoPi Cloud uses a multi-tenant architecture, which means multiple accounts (tenants) share the same platform and infrastructure, while all data, configurations, and user access remain securely isolated. You can read more here: [Account management](https://docs.autopi.io/cloud/accounts/). 
+
 
 
 

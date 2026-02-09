@@ -530,12 +530,6 @@ Some examples of commonly used events include:
 * CAN Logging Events: 
   * For example when a logger is writing raw CAN frames to an output file: `vehicle/bus/<can0|can1|...>/logger/<logger_name>/writing`
   * For example when an AWS S3 sync job has finished with success: `vehicle/bus/<can0|can1|...>/logger/<logger_name>/s3_sync/completed`
-* Engine events: 
-  * For example when the engine is running: `vehicle/engine/running`
-* Motor events: 
-  * For example when the motor is now running: `vehicle/motor/running`
-* Communication events​ (used with EV-type vehicles that are unable to produce motor events):
-  * For example when the communication with the vehicle has been established: `vehicle/communication/established`
 * Position events
   * For example when the vehicle's current position is not confirmed: `vehicle/position/unknown`
 * Motion events
@@ -622,7 +616,8 @@ For more information check out this guide: [How to connect to Tailscale on your 
 
 
 ### Advanced settings for Trips
-The Trips feature provides detailed information about each vehicle trip, including the route displayed on a map, start and end addresses, trip duration, and distance traveled. You can also categorize trips as personal or business and export trip data when needed.For your AutoPi CAN-FD Pro device to log trip data, this functionality must be enabled.
+The Trips feature provides detailed information about each vehicle trip, including the route displayed on a map, start and end addresses, trip duration, and distance traveled. You can also categorize trips as personal or business and export trip data when needed. For your AutoPi CAN-FD Pro device you can also tweak some extra settings under Advanced settings -> Trip. 
+
 
 #### Enable trip functionality
 Steps to get into advanced settings for trips: 
@@ -636,10 +631,7 @@ Steps to get into advanced settings for trips:
 ![Advanced settings for Trip](/img/getting_started/autopi_canfd_pro/user_guide/advanced_settings_trip.png)
 
 ### Advanced settings for Vehicle 
-
-**Logging of all CAN data when a trip is in progress**
-
-To configure your AutoPi device to log all CAN data while a trip is in progress, go to: Device → Advanced Settings → Vehicle → Ignition and Trip Events.
+Under this tab, the AutoPi CAN-FD Pro device allows you to tweak some extra settings for Ignition Event and Trip Event. 
 
 ![Advanced settings for Vehicle](/img/getting_started/autopi_canfd_pro/user_guide/advanced_settings_vehicle.png)
 
@@ -648,7 +640,6 @@ In the Trip Event section:
 * Adjust the Transition to Start and Transition to Stop settings to fine-tune how trips are detected.
 
 These settings allow you to control exactly when a trip is considered active, ensuring that CAN data logging starts and stops at the appropriate times.
-
 
 
 

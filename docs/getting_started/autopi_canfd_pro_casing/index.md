@@ -43,6 +43,10 @@ interface to your car and communicates with the ECU in your car.
 * Step 11: Set up output handlers for data (where do you want the captured data to be send to), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-4-outputs).
 * Step 12: Access the files remotely, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/).
 
+---
+## Getting started
+This step-by-step guide will help you set up your AutoPi CAN-FD Pro with the IP67 casing.
+
 ## 1. Setting Up User Account
 
 Once you have received your AutoPi device it is important to associate it with Cloud Platform.
@@ -287,8 +291,6 @@ Your device can capture data, but you’ll need to choose where that data should
 You can also view and manage your captured data remotely from your AutoPi device. For detailed instructions on how to access your files using SFTP or SCP, check out this guide: [Accessing files via SFTP/SCP on AutoPi](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/). 
 
 
-
-
 **You Are All Set!**
 
 Congratulations! You've successfully set up your AutoPi device and connected it 
@@ -296,6 +298,7 @@ to the AutoPi Cloud. Your device is now ready to start gathering and transmittin
 enabling you to take full advantage of the powerful features AutoPi offers. 
 Take your device for a trip to start gathering data.
 
+---
 
 **What's Next?**
 
@@ -308,6 +311,8 @@ get the most out of your AutoPi experience:
 - **Check Out Our Documentation**: Our [documentation page](https://docs.autopi.io/) 
   is a great resource for learning more about advanced features, troubleshooting, 
   and getting the most out of your device. 
-- **Stay Updated**: Keep an eye on our [blog](https://www.autopi.io/blog/) and [subscribe to our newsletters](https://www.autopi.io/) for updates, tips, and new features. 
+- **Build your Nested Accounts and Invite New Users**: AutoPi Cloud uses a multi-tenant architecture, which means multiple accounts (tenants) share the same platform and infrastructure, while all data, configurations, and user access remain securely isolated. You can read more here: [Account management](https://docs.autopi.io/cloud/accounts/). 
+
+
 
 

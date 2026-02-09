@@ -74,7 +74,18 @@ trips made, total distance driven, total duration, and average distance and dura
 </br>
 
 ### Alerts
-The last tab shows **Alerts**. This section displays all important alerts related to your vehicle. You can view their severity, count, and description in the table. Additionally, you have the option to dismiss or resolve them as needed.
+Next tab represents **Alerts**. This section displays all important alerts related to your vehicle. You can view their severity, count, and description in the table. Additionally, you have the option to dismiss or resolve them as needed.
 
 ![Vehicles alerts](/img/cloud/fleet_management/vehicles/vehicle_details/vehicles_alerts.png)
 
+### Diagnostics
+The Diagnostics tab is the last section under the Vehicle view. It displays all diagnostic error codes currently reported by the vehicle.
+
+For each diagnostic code, you can see:
+* The error code itself with description.
+* The first and last occurrence timestamps.
+* Count of how many times the error has occurred.
+
+This allows you to understand not only what the issue is, but also when it started and how frequently it appears. When combined with the **Fault Codes** functionality, the Diagnostics page becomes a powerful tool for real-time monitoring. You can be alerted about critical issues immediately either through cloud notifications or email alerts, so you can react quickly to vehicle problems. Additionaly you can create a custom **Trigger** to perform an action based on any specified code. 
+
+![Vehicle diagnostics](/img/cloud/fleet_management/vehicles/vehicle_details/vehicle_details_diagnostics.png)
