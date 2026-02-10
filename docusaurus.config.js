@@ -267,10 +267,6 @@ module.exports = {
             from: '/guides/business/move-to-dedicated-environment/',
           },
           {
-            to: '/cloud/device_management/nested-customers/',
-            from: '/cloud/fleet/nested-customers/',
-          },
-          {
             to: '/cloud/obd-ii/automatic-obd-logger-pausing/',
             from: '/guides/automatic-obd-logger-pausing/',
           },
