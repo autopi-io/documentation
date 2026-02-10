@@ -9,9 +9,11 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-This guide explains how to create a **CAN bridge over the Internet** using AutoPi devices. It shows how **two AutoPi Pro devices** can be used to securely bridge a vehicle CAN bus to **any third-party CAN or OBD-II diagnostic tool**, regardless of physical location.
+This guide explains how to create a **CAN bridge over the Internet** using AutoPi devices. It shows how **two AutoPi Pro devices** can be used to securely bridge a vehicle CAN bus to **any third-party CAN based diagnostic tool**, regardless of physical location.
 
 A practical example of a remote CAN access setup is demonstrated in our YouTube video: [AutoPi CAN Bridge over the Internet](https://www.youtube.com/watch?v=8bIkRO_IYas).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8bIkRO_IYas?si=3xu2AqqVqQUzovQJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
@@ -64,12 +66,12 @@ Two **AutoPi Pro** devices are used to create a secure CAN bridge:
 * **ON SIDE - AutoPi CAN-FD Pro as remote CAN master:**
     * Installed in the vehicle. 
     * Connected to the vehicle CAN bus.
-    * Reads CAN traffic in real time.
+    * Reads/writes CAN data in real time.
 
 * **REMOTE SIDE - AutoPi CAN-FD Pro as remote CAN slave:**
     * Located with the technician. 
-    * Connected to any third-party CAN or OBD-II diagnostic tool.
-    * Receives CAN frames from the vehicle and presents them locally as if directly connected to the vehicle. 
+    * Connected to any third-party CAN based diagnostic tool.
+    * Transmits/receives CAN frames from the vehicle and presents them locally as if directly connected to the vehicle. 
 
 This setup allows technicians to use **standard third-party tools** such as OBD-II scan tools, CAN analyzers, diagnostic software, or custom test equipment without being physically near the vehicle.
 
@@ -77,7 +79,7 @@ This setup allows technicians to use **standard third-party tools** such as OBD-
 
 ## Supported Vehicles and Protocols
 
-While many CAN solutions focus only on passenger vehicles using OBD-II, AutoPi supports a much wider range of platforms. Thanks to AutoPi hardware and adapter options, a CAN bridge over the Internet can be used with:
+While some CAN solutions focus only on passenger vehicles using OBD-II, AutoPi supports a much wider range of platforms. Thanks to AutoPi hardware and adapter options, a CAN bridge over the Internet can be used with:
 * Passenger vehicles using **OBD-II**. 
 * Commercial and **heavy-duty vehicles**.
 * **J1939 based trucks and machinery**. 
@@ -93,7 +95,7 @@ Before setting up a CAN bridge over the Internet, ensure you have:
 * Two AutoPi CAN-FD Pro devices available on our [Webshop](https://shop.autopi.io/products/autopi-can-fd-pro). 
 * Internet connectivity for both AutoPi devices, we recommend using WiFi connection. 
 * Access to the AutoPi Cloud. 
-* A third-party CAN or OBD-II diagnostic tool. 
+* A third-party CAN based diagnostic tool. 
 
 ![Example Setup of the remote CAN access](/img/guides/remote_can_access/setup_for_remote_can_access.png)
 
@@ -101,7 +103,7 @@ Before setting up a CAN bridge over the Internet, ensure you have:
 
 ## Device Configuration for CAN Bridging
 
-To enable CAN bridging, both AutoPi CAN-FD Pro devices must be configured through **AutoPi Cloud**.
+To enable CAN bridging, both AutoPi CAN-FD Pro devices must be configured through the **AutoPi Cloud**.
 
 > **Note:** Exact configuration options depend on your use case and vehicle platform. The steps below describe the general approach. However, contact our support team for more information at support@autopi.io.
 
@@ -109,7 +111,7 @@ To enable CAN bridging, both AutoPi CAN-FD Pro devices must be configured throug
 
 Using AutoPi Cloud, you can:
 
-* Enable and configure CAN interfaces on each device.
+* Enable and configure the CAN channels on each device.
 * Set CAN bus parameters such as bitrate and interface selection.
 * Define secure communication between the two AutoPi Pro devices.
 * Control how CAN frames are forwarded or logged.
@@ -139,7 +141,7 @@ The key takeaway is that **CAN data can be accessed in real time from anywhere**
 A CAN bridge over the Internet with AutoPi devices enables secure, real-time access to vehicle CAN buses from anywhere in the world. By using two AutoPi Pro devices, you can:
 
 * Bridge a vehicle CAN bus to a remote location.
-* Use any third-party CAN or OBD-II diagnostic tool.
+* Use any third-party CAN based diagnostic tool.
 * Support multiple vehicle types and CAN protocols, including J1939.
 * Eliminate the need for physical access to vehicles.
 
