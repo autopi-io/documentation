@@ -76,7 +76,7 @@ module.exports = {
         "developer_guides/how-to-ssh-to-your-device",
         "developer_guides/local-development-workflow",
         "developer_guides/reflashing-your-device",
-        "developer_guides/remote-can-access",
+        "developer_guides/can-bridge",
         "developer_guides/remotely-waking-up-your-device",
         "developer_guides/rfid-integartion",
         "developer_guides/upgrading-your-raspberry-pi",
