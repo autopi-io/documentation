@@ -26,6 +26,10 @@ This enricher supports both single value results as well as multiple values resu
 
 Filter that only returns alternating/changed results.
 
+**OPTIONAL ARGUMENTS**
+
+  - **`pass_interval`** (int): Filter passes values only when this many miliseconds have passed between readings, even when the values are different. Default value is `0`.
+
 ## Handlers
 ### `connection`
 
@@ -33,7 +37,7 @@ Manages current connection.
 
 **OPTIONAL ARGUMENTS**
 
-  - **`close`** (bool): Close connection? Default value is `False`. 
+  - **`close`** (bool): Close connection? Default value is `False`.
 
 
 ----

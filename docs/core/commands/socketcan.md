@@ -13,6 +13,15 @@ Bring down CAN interface.
 
 
 ----
+## `socketcan.dump`
+
+Run CAN dump.
+
+
+**EXAMPLE** `socketcan.dump can0,18F00000:1FF00000`
+
+
+----
 ## `socketcan.help`
 
 Shows this help information.
@@ -40,3 +49,4 @@ Bring up CAN interface.
   - **`interface`** (str): CAN interface. Default is `can0`.
   - **`bitrate`** (int): Default is `500000`.
   - **`dbitrate`** (int): CAN-FD data bitrate.
+  - **`listen_only`** (bool): Only receive and not transmit CAN messages. Default is `False`.

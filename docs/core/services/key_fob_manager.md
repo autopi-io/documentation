@@ -20,7 +20,7 @@ Powers on/off key fob.
 
 **OPTIONAL ARGUMENTS**
 
-  - **`value`** (bool): Power on or off. 
+  - **`value`** (bool): Power on or off.
 
 
 ----

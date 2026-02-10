@@ -70,7 +70,7 @@ Manages current connection.
 **OPTIONAL ARGUMENTS**
 
   - **`baudrate`** (int): Changes baudrate used to communicate with interface.
-  - **`reset`** (str): Reboots interface and re-initializes connection. 
+  - **`reset`** (str): Reboots interface and re-initializes connection.
 
 
 ----
@@ -213,7 +213,7 @@ Configures protocol or lists all supported.
 **OPTIONAL ARGUMENTS**
 
   - **`set`** (str): Change to protocol with given identifier.
-  - **`baudrate`** (int): Use custom protocol baudrate. 
+  - **`baudrate`** (int): Use custom protocol baudrate.
   - **`verify`** (bool): Verify that OBD-II communication is possible with the desired protocol? Default value is `False`.
 
 

@@ -10,7 +10,7 @@ Manages current connection.
 
 **OPTIONAL ARGUMENTS**
 
-  - **`close`** (bool): Close serial connection? Default value is `False`. 
+  - **`close`** (bool): Close serial connection? Default value is `False`.
 
 
 ----

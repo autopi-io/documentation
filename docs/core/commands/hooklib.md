@@ -7,6 +7,10 @@ title: Hooklib
 
 Filter that only returns alternating/changed results.
 
+**OPTIONAL ARGUMENTS**
+
+  - **`pass_interval`** (int): Filter passes values only when this many miliseconds have passed between readings, even when the values are different. Default value is `0`.
+
 
 ----
 ## `hooklib.battery_converter`
