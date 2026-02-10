@@ -11,6 +11,8 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 
 This guide explains how to create a **CAN bridge over the Internet** using AutoPi devices. It shows how **two AutoPi Pro devices** can be used to securely bridge a vehicle CAN bus to **any third-party CAN based diagnostic tool**, regardless of physical location.
 
+> **Note:** Make sure to contact our sales team at sales@autopi.io in order to have this new add-on "Remote CAN" enabled for your account.
+
 A practical example of a remote CAN access setup is demonstrated in our YouTube video: [AutoPi CAN Bridge over the Internet](https://www.youtube.com/watch?v=8bIkRO_IYas).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8bIkRO_IYas?si=3xu2AqqVqQUzovQJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -68,10 +70,14 @@ Two **AutoPi Pro** devices are used to create a secure CAN bridge:
     * Connected to the vehicle CAN bus.
     * Reads/writes CAN data in real time.
 
+    ![Example of CAN master](/img/guides/remote_can_access/can_master_advanced_settings.png)
+
 * **REMOTE SIDE - AutoPi CAN-FD Pro as remote CAN slave:**
     * Located with the technician. 
     * Connected to any third-party CAN based diagnostic tool.
     * Transmits/receives CAN frames from the vehicle and presents them locally as if directly connected to the vehicle. 
+
+    ![Example of CAN slave](/img/guides/remote_can_access/can_slave_advanced_settings.png)
 
 This setup allows technicians to use **standard third-party tools** such as OBD-II scan tools, CAN analyzers, diagnostic software, or custom test equipment without being physically near the vehicle.
 
