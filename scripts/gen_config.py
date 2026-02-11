@@ -9,7 +9,7 @@ import yaml
 from yaml import CLoader as Loader
 
 
-folder = "../docs/cloud/configuration" 
+folder = "../docs/cloud/device_management/advanced_settings/autopi_tmu_cm4" 
 
 
 class Mock(object):
@@ -35,17 +35,30 @@ environment = jinja2.Environment(loader=jinja2.FileSystemLoader(searchpath="../.
 environment.filters["hash"] = lambda val: abs(hash(value)) % (10 ** 12)  # MBA's hash function
 template = environment.get_template("dongle_config.yml")
 fields = yaml.load(template.render({
-    "settings": Mock({"PUBLIC_API_URL": "https://api.autopi.io"}),
+    "settings": Mock({
+        "PUBLIC_API_URL": "https://api.autopi.io",
+        "ENABLE_TRIPS_HANDLING": True,
+        "TENANT": "",
+        "LOGGING_HOST_NAMES": {},
+        "SMALLSTEP_CA_CONFIGURED": False,
+        "WEB3_OAUTH_CONFIGURED": False,
+        "PUBLIC_URL": "",
+        "PUBLIC_HUB_HOST_NAME_MAP": {}
+    }),
     "device": Mock({
         "id": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
         "unit_id": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
         "token": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
         "vehicle": None,
+        "state": "REGISTERED",
+        "master": "local",
+        "owner": None,
         "created_at": datetime.datetime.utcnow()
     }),
     "owner": None,
     "masterdata": {
-        "hw_board_ver": "5.1"
+        "hw_board_ver": "7.1",
+        "hw_board_ver_as_float": 7.1
     }
 }), Loader=Loader)
 print("[INFO] Loaded {:} fields".format(len(fields)))
@@ -136,7 +149,7 @@ for name, fields in field_files.items():
 
             f.write("| {:} | {:} | {:} | {:} | {:} |\n".format(
                 field["name"].replace("_", " ").upper(),
-                field["desc"].replace("|", "\|"),
+                field["desc"].replace("|", "\\|"),
                 field.get("type", "-"),
                 render_as_string(field.get("default", "-")),
                 field.get("unit", "-"),

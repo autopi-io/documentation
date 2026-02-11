@@ -49,11 +49,18 @@ title: System
 
 ## Network
 
+| Name | Description | Type | Default | Unit |
+| ------ | ------ | ------ | ------ | ------ |
+| TCP MTU DISCOVERY | Configure Packetization Layer Path MTU Discovery (PLPMTUD) through the net.ipv4.tcp_mtu_probing system variable (0 - disabled; 1 - probe only when packets are dropped; 2 - probe always). Active in Core Version 1.24.3+. | int | 0 | - |
+| ENFORCE CELLULAR MTU | Enforce the MTU defined for the cellular connection on all available network interfaces? | bool | False | - |
+| DENY INTERFACES | Specify interfaces to deny in the 'dhcpcd' configuration. Enter 'veth*' to deny any virtual ethernet interfaces. | str | - | - |
+
 #### Ethernet
 
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
 | STATIC IP | Specify a static IP address for the 'eth0' interface, if available. | str | - | - |
+| DHCPCD ENTRIES | Specify additional 'dhcpcd' entries for the 'eth0' interface, if available. | str | ['metric 150'] | - |
 
 #### Firewall
 
