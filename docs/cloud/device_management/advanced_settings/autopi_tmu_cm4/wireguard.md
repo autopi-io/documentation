@@ -16,7 +16,7 @@ title: Wireguard
 | PRIVATE KEY | Enter the generated private key for this interface. | str | - | - |
 | PUBLIC KEY | Enter the generated public key for this interface. | str | - | - |
 | ADDRESS | Specify the IP address of the interface. | str | - | - |
-| MTU | Specify the Maximum Transmission Unit of the interface. It is recommended to verify the MTU with the command: 'ping -M do <Peer IP> -s <MTU>' | int | - | - |
+| MTU | Specify the Maximum Transmission Unit of the interface. It is recommended to verify the MTU with the command: 'ping -M do \<Peer IP\> -s \<MTU\>' | int | - | - |
 
 ## Peer
 

@@ -21,7 +21,7 @@ title: Wifi
 | Name | Description | Type | Default | Unit |
 | ------ | ------ | ------ | ------ | ------ |
 | OVERRIDE | Overwrite all wifi settings that may already be specified on the device itself? | bool | False | - |
-| NETWORK ENTRIES | JSON of wifi network to connect to. This field accepts all options that `wpa_supplicant.conf` for an RPI accepts. Example {'ssid': 'my network', 'pass': 'SuperSecretPass', 'key_mgmt': 'WPA-PSK'}. Required are ssid and pass, rest is optional. Will not be applied to device unless override is set to true. | json | {"ssid": "network1", "pass": "SuperSecretPassword"} | - |
+| NETWORK ENTRIES | JSON of wifi network to connect to. This field accepts all options that `wpa_supplicant.conf` for an RPI accepts. Example \{'ssid': 'my network', 'pass': 'SuperSecretPass', 'key_mgmt': 'WPA-PSK'\}. Required are ssid and pass, rest is optional. Will not be applied to device unless override is set to true. | json | \{"ssid": "network1", "pass": "SuperSecretPassword"\} | - |
 | DHCPCD ENTRIES | Specify additional 'dhcpcd' entries for the 'wlan0' interface, if available. Example static ip_address=192.168.1.0/24 | str | ['metric 200'] | - |
 
 ## Hotspot
