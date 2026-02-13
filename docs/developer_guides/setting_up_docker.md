@@ -111,7 +111,7 @@ Every time you push a new Docker image, you can create a new release pointing to
   * Device selection
   * Containers - Name, Tag, Image, Registry, Startup parameters, Purge data
 
-![Create Docker Release](/img/guides/docker/create_release.png)
+![Create Docker Release](/img/guides/docker/docker_create_new_release.png)
 
 2. Using **API endpoint** 
 * You can also create a registry by using our API endpoint: [Release_create](https://api.autopi.io/?_gl=1*vll328*_ga*MTY3MDAyMDE4Mi4xNzQ5MTEwNDIx*_ga_DB2BZPKYN9*czE3NjQwODMwNDgkbzIzMSRnMSR0MTc2NDA4MzA0OSRqNTkkbDAkaDA.#/docker/docker_projects_releases_create)
