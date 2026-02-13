@@ -263,10 +263,6 @@ module.exports = {
             from: '/cloud/user-manual/software-updates/',
           },
           {
-            to: '/cloud/device_management/move-to-dedicated-environment/',
-            from: '/guides/business/move-to-dedicated-environment/',
-          },
-          {
             to: '/cloud/obd-ii/automatic-obd-logger-pausing/',
             from: '/guides/automatic-obd-logger-pausing/',
           },
