@@ -132,7 +132,7 @@ Once the flashing is complete, unmount the storage device. After that you can re
 [AutoPi](https://www.autopi.io) device. If using a [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device, unplug the [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device's USB cable and press the button to put the device into hibernation, then a short press to start up the device. 
 
 ### 5. Ensure Your Device is Connecting to the Correct Environment
-This step is required only if your company is using a dedicated environment. You can find out whether this is the case by checking what website you're going to to access your device. If it's different from my.autopi.io, for example my_company.autopi.io, then this is a dedicated environment and you need to follow this [Guide: Move to a dedicated environment](/cloud/device_management/move-to-dedicated-environment/).
+This step is required only if your company is using a dedicated environment. You can find out whether this is the case by checking what website you're going to to access your device. If it's different from my.autopi.io, for example my_company.autopi.io, then this is a dedicated environment and you need to follow this [Guide: Move to a dedicated environment](/developer_guides/move-to-dedicated-environment).
 
 ### 6. Setup the Device
 Next, you will need to have the device re-accepted in the AutoPi [Cloud](https://www.autopi.io/software-platform/cloud-management). To do
