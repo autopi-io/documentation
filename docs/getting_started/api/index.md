@@ -1,7 +1,7 @@
 ---
 id: api-intro
-title: Introduction
-supportedDevices: ['cm4','pro']
+title: Getting Started 
+supportedDevices: ['mini','cm4','pro','pro_case']
 
 ---
 import CardGrid from "/components/CardGrid" ;
