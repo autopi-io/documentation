@@ -24,23 +24,21 @@ Upon receiving the SMS, the device will wake up and reconnect. No specific messa
 ### Reading SMS Messages on the Device
 Depending on the hardware version of your AutoPi device, SMS messages can be listed or read directly from the device.
 
-**Pre-CM4 Devices**
+* **Pre-CM4 Devices using ecx2 module (AutoPi Dongle, AutoPi Dongle Gen3, AutoPi Socket CAN)** - SMS messages can be listed using the `ec2x` module. 
 
-For pre-CM4 AutoPi devices, SMS messages can be listed using the `ec2x` module.
-Run the following command from the terminal:
-```python
-ec2x.list_sms
-```
+    Run the following command from the terminal:
+    ```python
+    ec2x.list_sms
+    ```
 
-This can be useful when using prepaid SIM plans or when checking message status.
+    This can be useful when using prepaid SIM plans or when checking message status. However, you can also browse other commands here: [Ec2X Manager](https://docs.autopi.io/core/services/core-services-ec2x-manager/). 
 
-**CM4 Devices**
+* **CM4 Devices (AutoPi CAN-FD Pro, AutoPi TMU CM4)** - SMS messages can be read using the `modem` module:
+    ```python
+    modem.read_sms
+    ```
 
-For CM4-based AutoPi devices, SMS messages can be read using the modem module:
-```python
-modem.read_sms
-```
-
+    You can also browse other commands here: [Modem](https://docs.autopi.io/core/commands/core-commands-modem/).
 ---
 
 ## Troubleshooting SMS Wake-Up Issues

@@ -212,7 +212,6 @@ module.exports = {
             {
               "items": [
                 "cloud/device_management/triggers/a-guide-to-triggers",
-                "cloud/device_management/triggers/fleet-wakeup",
               ],
               "label": "Triggers",
               "type": "category"
