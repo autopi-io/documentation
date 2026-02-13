@@ -90,7 +90,8 @@ module.exports = {
         "developer_guides/setting-up-docker",
         "developer_guides/how-to-create-custom-event-for-custom-logger",
         "developer_guides/using-the-autopi-with-an-external-power-supply",
-        "developer_guides/accessing-raw-gps-data",       
+        "developer_guides/accessing-raw-gps-data",  
+        "developer_guides/move-to-dedicated-environment",     
       ],
       "Cloud": [
         "cloud/cloud-intro",
@@ -217,7 +218,6 @@ module.exports = {
               "type": "category"
             },
             "cloud/device_management/software-updates",
-            "cloud/device_management/move-to-dedicated-environment",
             "cloud/device_management/geofences", 
             "cloud/device_management/templates",
             "cloud/device_management/global-variables",
