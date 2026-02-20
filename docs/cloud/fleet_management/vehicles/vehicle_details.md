@@ -23,7 +23,7 @@ vehicle has driven.
 </br>
 
 ### Dashboard
-In the vehicle **Dashboard** section, provides you with a visual representation of real-time data for your vehicle. You can choose to view data in various formats: 
+Vehicle's **Dashboard** section, provides you with a visual representation of real-time data for your vehicle. You can choose to view data in various formats: 
 * Line chart
 * Area chart
 * Map
