@@ -247,10 +247,6 @@ module.exports = {
             from: ['/guides/a-guide-to-triggers/', '/cloud/fleet/triggers/a-guide-to-triggers/'],
           },
           {
-            to: '/cloud/device_management/triggers/fleet-wakeup/',
-            from: ['/cloud/fleet/fleet-wakeup/', '/cloud/fleet/triggers/fleet-wakeup/'],
-          },
-          {
             to: '/cloud/device_management/dashboard/adding-a-new-widget-from-scratch/',
             from: '/guides/adding-a-new-widget-from-scratch/',
           },
