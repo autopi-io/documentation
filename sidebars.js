@@ -119,6 +119,7 @@ module.exports = {
             },
             "cloud/fleet_management/locations",
             "cloud/fleet_management/fleet-alerts",
+            "cloud/fleet_management/fleet-diagnostics",
             {
               "items": [
                 "cloud/fleet_management/reports/reports-intro",
@@ -129,6 +130,8 @@ module.exports = {
             },
             {
               "items": [
+                "cloud/fleet_management/configurations/dashboards",
+                "cloud/fleet_management/configurations/fault-codes",
                 "cloud/fleet_management/configurations/notification-channels",
                 "cloud/fleet_management/configurations/vehicle-states",
               ],
@@ -172,6 +175,9 @@ module.exports = {
               "type": "category"
             },
             "cloud/device_management/cloud-jobs",
+            "cloud/device_management/change-history",
+            "cloud/device_management/variables",
+            "cloud/device_management/device-alerts",
             {
               "items": [
                 {
