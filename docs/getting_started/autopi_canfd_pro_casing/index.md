@@ -199,16 +199,14 @@ If you're working with the device during development and have it open on your de
 :::
 
 ## 7. Connect to WiFi
-
 After installing your AutoPi device into the OBD port, you will need to connect it to the AutoPi Cloud.
 To do this, you will temporarily use the device’s Wi-Fi hotspot. 
-The hotspot is named autopi-XXXX, where "XXXX" represents the unique ID of your device.
-The password for this Wi-Fi hotspot is the first 13 characters of your Device ID. 
-You can find your Device ID either on the side of the device or in the documentation 
-attached to your shipping email. 
 
-Additionally, you can access Wi-Fi information directly from the AutoPi Cloud. 
-To do this, navigate to Devices > Select Your Device > Advanced Settings > Wi-Fi > Hotspot. 
+The hotspot is named autopi-XXXX, where "XXXX" represents the unique ID of your device.
+The **password** for this Wi-Fi hotspot is the **first 13 characters of your Device ID**. 
+You can find your Device ID either by navigating to Devices > Select your device > Overview: Device specifications; or in the documentation attached to your shipping email. 
+Additionally, you can access Wi-Fi information directly from the AutoPi Cloud. To do this, navigate to Devices > Select Your Device > Advanced Settings > Wi-Fi. 
+
 Here, you will find the Wi-Fi hotspot's password and SSID credentials. 
 
 ![Wifi settings](/img/getting_started/getting_started/wifi_settings.png)
