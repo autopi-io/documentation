@@ -124,6 +124,7 @@ module.exports = {
               "items": [
                 "cloud/fleet_management/reports/reports-intro",
                 "cloud/fleet_management/reports/geofence-summary-reports",
+                "cloud/fleet_management/reports/utilization-reports",
               ],
               "label": "Reports",
               "type": "category",
