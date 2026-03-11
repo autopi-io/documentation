@@ -33,7 +33,7 @@ Open up the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardwar
 Here, you will see a 'Create' and a 'Restore default' button on the left-hand side.
 Clicking on the 'Create' button will open a new window, that looks like the following screenshot:
 
-![Create PID Logger Window](/img/getting_started/autopi_mini/create_mini_loggers/create_logger.png)
+![Create a Mini Logger](/img/getting_started/autopi_mini/create_mini_loggers/create_new_logger.png)
 
 :::note
 The 'Restore default', as the name suggests, deletes the current loggers and applies default loggers based on your vehicle type. 
@@ -60,11 +60,11 @@ This setting is set up by default when you are creating a logger, as it function
 This setting allows you to select an event that should trigger a record in the dropdown list.
 When selecting an event, you get presented with dropdown of options: Range Exit, Range Enter, Range Both, Hysteresis, Change and Delta Change. These options are a way to configure how that event behaves.
 
-![Create PID Logger With Event on](/img/getting_started/autopi_mini/create_mini_loggers/event_on.png)
+![Event On Setting](/img/getting_started/autopi_mini/create_mini_loggers/logger_event_on.png)
 
-As an example, when selecting `Ranges Both` - contains a range start and range end field, which allows to configure the range that `Ranges Both` should generate records based on, this can also be seen in the following image:
+As an example, when selecting `Range Both` - contains a range start and range end field, which allows to configure the range that `Range Both` should generate records based on, this can also be seen in the following image:
 
-![Create Event on Range both](/img/getting_started/autopi_mini/create_mini_loggers/range_both.png)
+![Range Both](/img/getting_started/autopi_mini/create_mini_loggers/logger_range_both.png)
 
 :::warning
 When setting logger to trigger `Event on` set to `Change`, some of the loggers, like external voltage, are not static by nature — they can fluctuate frequently, even by small amounts. When these loggers are **set to trigger on change**, it can lead to a high volume of events being logged. This not only results in **excessive data usage** but **can also prevent the device from entering sleep mode**, as it’s constantly active processing these changes.
@@ -117,4 +117,81 @@ Down below, you can find the table of available loggers with specifications:
 | Total Odometer                              | Total Odometer value in meters                                         | 4     | Unsigned | 0       | 2147483647| —          |       | - missing unit
 | Trip Odometer                               | Trip odometer value                                                    | 4     | Unsigned | 0       | 2147483647| —          | m     | - 
 | VIN                                         | Vehicle Identification Number                                          | 17    | ASCII    | 0       |  —        | —          | —     | -
+
+
+---
+
+## Link Your Loggers to Your Dashboard
+
+For a widget to display data, it must be linked to the appropriate **logger**. If you add or edit loggers, you will also need to update the corresponding **dashboard widgets**.
+
+Widgets can display data in several formats, including:
+* Graphs
+* Line charts
+* State timelines
+* Gauges ... 
+
+You can also configure widgets to show **average**, **minimum**, or **maximum** values depending on your needs.
+
+After adjusting your widget settings:
+
+1. Click **Save**.
+2. Refresh the widget using the **circle icon** in the top-right corner.
+
+If the data appears after refreshing, your configuration is correct. If you have just created a new logger, the device may need another **vehicle trip** before the required data is collected.
+
+---
+
+### Add a Widget
+
+To create a new widget:
+
+1. Navigate to **Dashboard**.
+2. Click the **Actions** button in the upper-right corner.
+3. Select **Add widget**.
+4. Fill out the required information.
+5. Click **Save**.
+6. Save your dashboard changes to apply the widget.
+
+![Add a Widget](/img/getting_started/autopi_mini/create_mini_loggers/add_new_widget.png)
+
+> **Note:** For a more detailed explanation of widget configuration, see this guide: [Configure the widget settings](https://docs.autopi.io/cloud/fleet_management/configurations/dashboards/#step-2-add-widgets-to-the-shared-dashboard).
+
+> **Note:** When choosing the **Field**, the list only shows data that has already been received from the device. If the logger you are looking for is not in the list, the device may not be reading it. In this case, go to **Loggers**, enable the logger, or update its settings.
+
+> **Note:** A logger must be configured beforehand, otherwise the widget will not have any data to display.
+
+---
+
+### Configure a Widget
+
+To edit an existing widget:
+
+1. Navigate to **Dashboard**.
+2. Click the **two-dot icon** on the widget you want to update.
+3. Make your desired changes.
+4. Click **Save**.
+
+![Configure a Widget](/img/getting_started/autopi_mini/create_mini_loggers/configure_widget.png)
+
+> **Note:** Ensure the configuration, especially the **Field** section, matches the data being logged.
+
+---
+
+### Auto-Generate Widgets
+
+The **Auto-generate** feature allows you to quickly create widgets based on the data received from the device. This saves time compared to creating each widget manually. Auto-generated widgets are based on **real data**, and you can adjust them afterward if needed (for example changing aggregation or visualization).
+
+How to use Auto-generate:
+
+1. Navigate to **Dashboard**.
+2. Click the **Actions** button in the upper-right corner.
+3. Select **Auto-generate**.
+4. Make any desired changes.
+5. Click **Save**.
+
+> **Note:** By default, there is usually an **auto-generated dashboard** created for your device, which you can find in the **dashboard dropdown menu**.
+
+
+When you are satisfied with your dashboard configuration, remember to **save your layout** through **Widget Actions** to keep your settings for future sessions.
 
