@@ -39,7 +39,7 @@ $ minionutil.help
 
 ### Viewing Logs Directly On the Device
 
-If you are logged onto the system using SSH ([How to SSH to your device](how_to_ssh_to_your_device.mdx))
+If you are logged onto the system using SSH ([How to SSH to your device](how_to_ssh_to_your_device.md))
 you can view the log file by running the following command:
 
 ```bash
