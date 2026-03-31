@@ -29,5 +29,5 @@ This events are triggered on the device, and then uploaded to the [Cloud](https:
 This means that you are able to both create triggers in the [Cloud](https://www.autopi.io/software-platform/cloud-management), but also configure reactors directly on the device that can react to this event, like playing a sound, sending a HTTP request or maybe publish a message on a MQTT broker.
 
 :::note
-[Click here](/cloud/device_management/triggers/a_guide_to_triggers.md) to see the guide about how triggers work. 
+[Click here](/cloud/device_management/a_guide_to_triggers) to see the guide about how triggers work. 
 :::
