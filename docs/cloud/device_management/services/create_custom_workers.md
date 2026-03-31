@@ -86,7 +86,7 @@ of a workflow. The columns in the table are as follows:
 4. **Converter** - they transform the data to another, usually more usable, form.
 
 5. **Trigger** - this is usually the code that decides whether to do something based on the result
-  of the handler, for example, [making a beep sound from the device](/cloud/device_management/triggers/a-guide-to-triggers/).
+  of the handler, for example, [making a beep sound from the device](/cloud/device_management/a-guide-to-triggers/).
 
 6. **Filter** - filters are responsible for deciding whether the data that is currently being
   manipulated is significant or not. They can stop the flow of execution if they return something

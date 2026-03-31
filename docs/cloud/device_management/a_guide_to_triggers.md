@@ -1,6 +1,6 @@
 ---
 id: a-guide-to-triggers
-title: A Guide to Triggers
+title: Triggers
 supportedDevices: ['mini','cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid";

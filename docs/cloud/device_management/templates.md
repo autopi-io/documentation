@@ -163,7 +163,7 @@ Example of setting up a new trigger:
 
 ![Example of trigger](/img/cloud/device_management/templates/create_trigger.png)
 
-To learn more about individual settings, refer to the relevant guide: [A Guide to Triggers](https://docs.autopi.io/cloud/device_management/triggers/a-guide-to-triggers/).
+To learn more about individual settings, refer to the relevant guide: [A Guide to Triggers](https://docs.autopi.io/cloud/device_management/a-guide-to-triggers/).
 
 #### Jobs 
 

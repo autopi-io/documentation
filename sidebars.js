@@ -6,6 +6,7 @@ module.exports = {
         {
           "items": [
             "getting_started/autopi_tmu_cm4/guides-intro",
+            "getting_started/autopi_tmu_cm4/create-loggers-cm4",
             "getting_started/autopi_tmu_cm4/4g-internet-setup-troubleshooting",
             "getting_started/autopi_tmu_cm4/cm4-data-troubleshooting",
           ],
@@ -216,13 +217,7 @@ module.exports = {
               "label": "Advanced Settings",
               "type": "category"
             },
-            {
-              "items": [
-                "cloud/device_management/triggers/a-guide-to-triggers",
-              ],
-              "label": "Triggers",
-              "type": "category"
-            },
+            "cloud/device_management/a-guide-to-triggers",
             "cloud/device_management/software-updates",
             "cloud/device_management/geofences", 
             "cloud/device_management/templates",
