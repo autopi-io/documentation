@@ -1,0 +1,140 @@
+---
+id: devices-list
+title: Devices
+supportedDevices: ['mini','cm4','pro','pro_case']
+---
+import CardGrid from "/components/CardGrid";
+import SideBySide from '@site/src/components/SideBySide';
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
+
+## Devices List
+
+The **Devices List** provides a table view of all your devices, including key details such as device name, unit ID, last communication timestamp, and more.
+
+![Devices List](/img/cloud/device_management/devices/devices_list.png)
+
+### Search and Filter Devices
+
+To quickly find a specific device:
+
+* Use the **Search for Vehicle** field at the top of the page.
+* Use **Filters** to refine the list based on specific criteria.
+
+<SideBySide>
+	<p>
+		<strong> Available Filters: </strong> 
+        * **Last Communication** – online now, last 15 minutes, last hour, today, last 7 days, last 30 days.  
+        * **Update State** – up-to-date, awaiting update, update failed. 
+        * **Release** – filter by software release.  
+        * **Open Alerts** – filter by severity (low, medium, high, critical).
+        * **Active Alerts** – filter by specific active device alerts.  
+        * **Board Version** – filter by device hardware version.
+        * **Type** – filter by device type: 4G - TMU CM4; Mini; Pro - CAN-FD Pro. 
+
+	</p>
+	<img alt="Columns" src={require('@site/static/img/cloud/device_management/devices/device_columns.png').default}/>
+</SideBySide>
+<br/>
+
+
+
+### Customize Table View
+
+You can customize the table using **Edit Columns** to include additional details.
+
+<SideBySide>
+	<p>
+		<strong> Available Columns: </strong> 
+        * Status  
+        * Vehicle  
+        * Device ID  
+        * IMEI  
+        * UNIT ID  
+        * Last Communication  
+        * Update State  
+        * Phone Number  
+        * ICCID  
+        * WiFi Password  
+        * Release  
+        * Open Alerts  
+        * Tags  
+        * Board Version  
+        * Pending Syncs  
+        * VIN  
+        * Type. 
+	</p>
+	<img alt="Columns" src={require('@site/static/img/cloud/device_management/devices/device_columns.png').default}/>
+</SideBySide>
+<br/>
+
+
+### Additional Actions
+
+* **Register Device** – add a new device to your account. 
+* **Go to Docs** – open documentation for this page.  
+* **Export CSV** – export device data for reporting or sharing. 
+
+![Devices List Functionalities](/img/cloud/device_management/devices/device_list.functionalities.png)
+
+To view more details about a device, click on it to open the **Device Overview** page.
+
+---
+
+## Device Overview
+
+When you select a device from the list, you are redirected to its dedicated **Device Overview** page.
+
+![Device Overview](/img/cloud/device_management/devices/device_overview.png)
+
+### General Information
+
+At the top of the page, you will find:
+
+* Device name. 
+* Last communication timestamp. 
+* "Go to Vehicle" button (to view the associated vehicle).   
+* "Edit Device" option (top-right corner). 
+
+![Device Overview Details](/img/cloud/device_management/devices/device_details.png)
+
+### Other Available Tabs for Device 
+
+Each device includes multiple tabs for configuration and monitoring:
+
+* Dashboard  
+* Jobs *(not available for AutoPi Mini devices)*  
+* Custom Code *(not available for AutoPi Mini devices)*  
+* Geofences *(not available for AutoPi Mini devices)*  
+* Services *(not available for AutoPi Mini devices)*  
+* Events  
+* CAN Analyzer *(TMU CM4 only)*  
+* Loggers / CAN Logging  
+* Change History  
+* Variables *(not available for AutoPi Mini devices)*  
+* Advanced Settings  
+* Triggers  
+* Alerts  
+* Software Updates  
+
+### Overview Widgets
+
+The Device Overview page includes several widgets that provide key insights:
+
+![Device Widgets](/img/cloud/device_management/devices/device_widgets.png)
+
+* **Key Status** - accepted/ denied. 
+* **Last Communication** - timestamp of the last time the device send data.
+* **Installed Version** - backend installed version. 
+* **Voltage Measured**  - the Voltage reading from the vehicle. 
+* **Network Interfaces** - basic information about network interfaces. 
+* **Vehicle Information** - Make, Model, Year, engine type. 
+* **CAN Bus Configuration**  - CAN Bus protocol with Baud Rate. 
+* **Open Alerts** (by severity) - shows the count of open alerts.  
+* **Device Specifications** - information such as UNIT ID, Device ID, template, modem, board version.  
+* **AutoPi.io SIM** - if you purchased the AutoPi SIM you will be able to access: status, phone number and monthly data usage overview.   
+* **Device Metrics** - information about device metrics such as CPU, memory, storage..
+
+These widgets provide a quick and comprehensive overview of your device’s status, configuration, and activity.
