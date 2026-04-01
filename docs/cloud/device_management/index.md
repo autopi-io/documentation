@@ -1,6 +1,6 @@
 ---
 id: device-management-intro
-title: Introduction
+title: Overview
 supportedDevices: ['mini','cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid";
@@ -9,36 +9,69 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-This section of our [Cloud](https://www.autopi.io/software-platform/cloud-management) Platform is dedicated to managing and configuring devices.
-Here, you can monitor and ensure that all devices within your fleet operate optimally,
-maintaining constant communication and data exchange.
+## Overview of Devices 
+
+The **Overview** section in the AutoPi Cloud Platform (under **Device Management**) provides a centralized view of all your devices. It is designed to help you monitor device activity, track system health, and ensure that your fleet operates efficiently with continuous communication and data exchange.
 
 ![Device management overview](/img/cloud/device_management/device_management_intro.png)
 
-On this page, you will find an overview of all your devices, including their activity, alerts,
-and software updates. We are committed to continual improvement, and we regularly
-enhance our devices through software updates. We strongly recommend that our
-customers keep their devices up to date.
+---
 
-Within the overview, you can see how many of your devices are currently updated,
-how many have failed to update, and how many are waiting for updates.
+## What You Can See in the Overview
 
-## Device List
-In this view, you have access to a list of all your devices, including their names, statuses, unit IDs, types, last communication timestamps, and update statuses. 
-You can customize this view using the 'Edit Columns' feature, allowing you to include other essential identifying factors like alerts or VIN numbers.
-For a faster search of your desired device, use the 'Search for Vehicle' feature at the top of the page to filter your view based on specific criteria. 
-For more detailed information about a particular device, simply click on the chosen device.
+### Devices Activity
 
-![Device management device](/img/cloud/device_management/device_management_device_list.png)
+The activity section shows how your devices are performing over time:
 
-## Device Overview
-Once you have selected a device for viewing or editing, you will be directed to a dedicated page for that specific device. 
-At the top of the page, you will find the device's name, its most recent activity timestamp, and the device it is assigned to. 
-You can edit this information in the 'Settings' located on the right side of the page. 
+![Device activity](/img/cloud/device_management/overview/fleet_overview.png)
 
-On this page you can see a concise summary of essential information about your device. 
-This includes details like its last communication, installed software version, and device specifications. 
-You will also find information about the vehicle to which the device is connected, including its [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus, make, model, year and engine.
+* **Online now** – devices currently online. 
+* **Online today** – devices that have been active during the day.  
+* **Online in the last 30 days** – long-term activity overview.  
 
-![Device management device](/img/cloud/device_management/device_management_device_overview.png)
+This helps you identify devices that are inactive or underutilized.
 
+
+### Open Alerts
+
+Displays the number of active alerts across four severity levels:
+
+![Open alerts severity](/img/cloud/device_management/overview/open_alerts.png)
+
+* **Critical**
+* **High**
+* **Medium**
+* **Low**.
+
+Monitoring this section helps you quickly detect issues. If there are **critical alerts**, it usually indicates that immediate attention is required.
+
+
+### Software Updates Status
+
+Provides an overview of update status across your devices:
+
+![Open alerts severity](/img/cloud/device_management/overview/software_updates.png)
+
+* Devices **up to date**
+* Devices with **failed updates**
+* Devices **waiting for updates**. 
+
+This allows you to ensure that your fleet is running the latest software versions.
+
+---
+
+
+## Summary
+
+The **Overview** page gives you a quick, high-level snapshot of your entire fleet, helping you:
+
+* Monitor device connectivity. 
+* Track alerts and issues.   
+* Manage software updates efficiently. 
+
+We continuously improve our platform and strongly recommend keeping your devices updated to ensure optimal performance.
+
+**Best Practices:**
+* Regularly check the **Overview** page to monitor fleet health.  
+* Pay close attention to **critical alerts**. 
+* Keep devices **up to date** to benefit from improvements and fixes. 
