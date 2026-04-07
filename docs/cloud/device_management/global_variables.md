@@ -61,11 +61,19 @@ At the moment, our AutoPi Cloud have a couple of default environment variables t
 
 In some cases, a global variable can be **overridden per device**. This means that while the variable has a global default value, you can assign a different value to specific devices when needed.  
 
+To override a variable for a specific device, navigate to the device's detail page and open the **Variables** tab. There you can define device-specific values that take precedence over the global defaults.
+
 For example:  
 - Global API key = `Office123`  
 - Device override for Device A = `Home456`  
 
 This ensures flexibility when some devices require unique values.  
+
+### Docker Container Integration  
+
+Global variables (and any device-level overrides) are **automatically injected as environment variables** when deploying Docker containers to a device. This means your containerized applications can access them directly at runtime without any extra configuration.  
+
+For more details on deploying Docker containers to your AutoPi device, see the [Setting Up Docker on Your Device](https://docs.autopi.io/developer_guides/setting-up-docker/) guide.  
 
 
 ### Best Practices  
