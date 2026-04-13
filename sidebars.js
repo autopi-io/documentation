@@ -148,7 +148,6 @@ module.exports = {
           "items": [
             "cloud/device_management/device-management-intro",
             "cloud/device_management/devices-list",
-            "cloud/device_management/dashboard-device",
             "cloud/device_management/cloud-jobs",
             "cloud/device_management/custom-code",
             "cloud/device_management/device-install-procedure",
