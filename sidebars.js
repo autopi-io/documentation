@@ -148,6 +148,9 @@ module.exports = {
           "items": [
             "cloud/device_management/device-management-intro",
             "cloud/device_management/devices-list",
+            "cloud/device_management/dashboard-device",
+            "cloud/device_management/cloud-jobs",
+            "cloud/device_management/custom-code",
             "cloud/device_management/device-install-procedure",
             {
               "items": [
@@ -155,15 +158,6 @@ module.exports = {
                 "cloud/device_management/dashboard/adding-a-new-widget-from-scratch",
               ],
               "label": "Dashboard",
-              "type": "category"
-            },
-            {
-              "items": [
-                "cloud/device_management/events/cloud-events-intro",
-                "cloud/device_management/events/cloud-events-system",
-                "cloud/device_management/events/cloud-events-vehicle"
-              ],
-              "label": "Events",
               "type": "category"
             },
             {
@@ -177,10 +171,18 @@ module.exports = {
               "label": "Services",
               "type": "category"
             },
-            "cloud/device_management/cloud-jobs",
+             {
+              "items": [
+                "cloud/device_management/events/cloud-events-intro",
+                "cloud/device_management/events/cloud-events-system",
+                "cloud/device_management/events/cloud-events-vehicle"
+              ],
+              "label": "Events",
+              "type": "category"
+            },
+            "cloud/device_management/can-analyzer",
             "cloud/device_management/change-history",
             "cloud/device_management/variables",
-            "cloud/device_management/device-alerts",
             {
               "items": [
                 {
@@ -219,6 +221,7 @@ module.exports = {
               "type": "category"
             },
             "cloud/device_management/a-guide-to-triggers",
+            "cloud/device_management/device-alerts",
             "cloud/device_management/software-updates",
             "cloud/device_management/geofences", 
             "cloud/device_management/templates",
