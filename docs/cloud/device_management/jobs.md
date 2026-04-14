@@ -15,10 +15,6 @@ The **Jobs** feature in the AutoPi Cloud is used to **schedule and execute comma
 
 Jobs are part of the **device management layer** in AutoPi Cloud, which provides centralized control over connected devices and their behavior. 
 
-![AutoPi Cloud Jobs](/img/cloud/device_management/jobs/jobs.jpg)
-
----
-
 ## Overview
 
 A Cloud Job consists of:
@@ -26,6 +22,8 @@ A Cloud Job consists of:
 * A **function** (command to execute).
 * A **schedule** (when to run it). 
 * A **returner** (where the result is sent). 
+
+![AutoPi Cloud Jobs](/img/cloud/device_management/jobs/jobs.jpg)
 
 Jobs are executed on the device and can return results back to:
 * AutoPi Cloud. 
@@ -58,12 +56,12 @@ These correspond to AutoPi Core modules running on the device.
 Jobs use cron expressions to define execution timing. Cron is a standard Linux scheduling system used to run tasks at specific intervals.
 
 Example schedules:
-| Cron Expression | Meaning           |
-| --------------- | ----------------- |
-| `* * * * *`     | Every minute      |
-| `*/5 * * * *`   | Every 5 minutes   |
-| `0 * * * *`     | Every hour        |
-| `0 0 * * *`     | Daily at midnight |
+| Cron Expression   | Meaning             |
+| :---------------: | :-----------------: |
+| `* * * * *`       | Every minute        |
+| `*/5 * * * *`     | Every 5 minutes     |
+| `0 * * * *`       | Every hour          |
+| `0 0 * * *`       | Daily at midnight   |
 
 
 ### Returner
@@ -79,13 +77,13 @@ Typical options:
 The Jobs page lists all configured jobs for a device.
 
 Each job includes:
-| Field       | Description           |
-| ----------- | --------------------- |
-| Name        | Job identifier        |
-| Description | Optional explanation  |
-| Function    | Command executed      |
-| Returner    | Output destination    |
-| Enabled     | Whether job is active |
+| Field         | Description             |
+| :-----------: | :---------------------: |
+| Name          | Job identifier          |
+| Description   | Optional explanation    |
+| Function      | Command executed        |
+| Returner      | Output destination      |
+| Enabled       | Whether job is active   |
 
 ---
 
@@ -94,34 +92,46 @@ Step-by-step:
 * Navigate to Device → Jobs.
 * Click Create.
 * Configure:
-  * Name
-  * Function
-  * Schedule (cron)
-  * Returner
-* Save and enable the job.
+  * Name.
+  * Description (optional).
+  * Enabled (or Disabled).
+  * Run on Start (or Not Run on Start). 
+  * Max Running. 
+  * Schedule (cron).
+  * Function.
+  * Arguments (optional).
+  * Returner.
+* Create the job.
+
+![Create New Job](/img/cloud/device_management/jobs/create_new_job.png)
+
 
 
 ### Example Jobs
-1. Collect system metrics
-    ```bash
-    metrics.collect
-    ```
+1. Collecting system metrics - this job runs every 5 minutes and uploads system metrics.
 
-    Schedule: `*/5 * * * *`. Runs every 5 minutes and uploads system metrics.
+    ![System Metrics Example](/img/cloud/device_management/jobs/create_system_metrics.png)
 
-2. Log device stats
-    ```bash
-    rpi.stats
-    ```
 
-    Schedule: `0 * * * *`. Runs every hour.
+    Function used: `metrics.collect`
 
-3. Query vehicle data
-    ```bash
-    obd.query rpm
-    ```
+    Schedule (to run every 5 minutes): `*/5 * * * *`. 
 
-    Schedule: `*/1 * * * *`. Runs every minute to fetch engine RPM.
+2. Log device stats - this job runs every hour and uploads rpi stats. 
+
+    ![Log Device Stats](/img/cloud/device_management/jobs/create_system_metrics.png)
+
+    Function used: `rpi.stats`
+    
+    Schedule (to run every hour): `0 * * * *`. 
+
+3. Query vehicle data - this job runs every minute to fetch engine RPM. 
+
+    ![Query vehicle data](/img/cloud/device_management/jobs/create_engine_rpm.png)
+ 
+    Function used: `obd.query rpm`
+    
+    Schedule (to run every minute): `*/1 * * * *`. 
 
 ---
 
@@ -147,9 +157,9 @@ Step-by-step:
 Jobs can be managed via the [AutoPi REST API](https://api.autopi.io/). 
 
 This enables:
-* Automated provisioning
-* CI/CD integration
-* Bulk job deployment across fleets
+* Automated provisioning.
+* CI/CD integration.
+* Bulk job deployment across fleets.
 
 The Cloud UI and API provide the same functionality. You can read more about how to use API here: [Getting started with API](https://docs.autopi.io/getting_started/api/). 
 
