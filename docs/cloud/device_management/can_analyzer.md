@@ -34,21 +34,27 @@ It acts as a **real-time inspection layer** between the AutoPi device and the ve
 
 The CAN Analyzer page consists of four main tabs:
 
-1. Sniffer - passive monitoring of CAN traffic.
-2. Recorder - captures CAN messages and stores them for later use.
-3. Player - replays previously recorded CAN traffic.
-4. PID Tester - sends request-response queries to ECUs.
+1. **Sniffer** - passive monitoring of CAN traffic.
+2. **Recorder** - captures CAN messages and stores them for later use.
+3. **Player** - replays previously recorded CAN traffic.
+4. **PID Tester** - sends request-response queries to ECUs.
+
+![CAN Analyzer Table](/img/cloud/device_management/can_analyzer/can_analyzer.png)
 
 ---
 
 ## Sniffer (Passive CAN Monitoring)
 
+![CAN Sniffer](/img/cloud/device_management/can_analyzer/can_sniffer.png)
+
+> **Note:** This will only work on vehicles which allow direct CAN streaming. 
+
 ### Purpose
 
 Used to detect:
-* Active CAN bus
-* Correct protocol and baud rate
-* Raw CAN messages
+* Active CAN bus.
+* Correct protocol and baud rate.
+* Raw CAN messages.
 
 
 ### How it works
@@ -59,36 +65,38 @@ The sniffer runs a passive monitor similar to:
 obd.monitor duration=5 protocol=<protocol> baudrate=<baudrate>
 ```
 
-This listens to all CAN frames being broadcast on the bus.
-
-This is required because:
+This listens to all CAN frames being broadcast on the bus. This is required because:
 * Some vehicles stream data continuously.
 * Others only respond to requests (PIDs).
 
 ### Configuration
 
-| Field       | Description                            |
-| ----------- | -------------------------------------- |
-| Vehicle Bus | Select CAN interface (auto or manual)  |
-| Protocol    | CAN protocol (e.g. ISO 15765-4, J1939) |
-| Baud Rate   | Typical values: 125k, 250k, 500k       |
-| Duration    | Capture time in seconds                |
+| Field         | Description                              |
+| :-----------: | :--------------------------------------: |
+| Vehicle Bus   | Select CAN interface (auto or manual)    |
+| Protocol      | CAN protocol (e.g. ISO 15765-4, J1939)   |
+| Baud Rate     | Typical values: 125k, 250k, 500k         |
+| Duration      | Capture time in seconds                  |
 
 ### Workflow
-1.Start with Auto or a known protocol
-2. Click Sniff
-3.Observe output:
-  * No data → wrong configuration
-  * Data present → valid configuration
-4. Adjust protocol/baud rate until consistent data is received
+1. Start with `Auto` Vehicle Bus or a known protocol. 
+2. Click Sniff. 
+3. Observe output:
+    * No data → wrong configuration.
+    * Data present → valid configuration.
+4. If you didn't receive any data in the output field, adjust the protocol and/or baud rate until consistent data is received. 
+5. You can also use `Verify Connection` when an obd request is send to the vehicle and device awaits for the response, as a second layer of verification of the correct connection setup. 
+6. Create bus, if you are sure of a Vehicle Bus used by your vehicle. 
 
-    This process is essential when:
-        * Vehicle protocol is unknown
-        * Working with heavy-duty (J1939) or proprietary buses.
+This process is essential when:
+    * Vehicle protocol is unknown. You can read more here: [Setting up CAN Bus Protocol](https://docs.autopi.io/getting_started/autopi_tmu_cm4/create-loggers-cm4/#use-can-analyzer-sniffer).
+    * Working with heavy-duty (J1939) or proprietary buses. You can read more here: [Heavy Duty Vehicles/ J1939 Protocol](https://docs.autopi.io/getting_started/heavy_duty_vehicles/j1939-getting-started-guide/).
 
 ---
 
 ## Recorder
+
+![CAN Recorder](/img/cloud/device_management/can_analyzer/can_recorder.png)
 
 ### Purpose
 
@@ -108,6 +116,8 @@ This captures raw CAN frames to files such as `.log`, `.csv`, or `.blf`
 
 ## Player
 
+![CAN Player](/img/cloud/device_management/can_analyzer/can_player.png)
+
 ### Purpose
 Replays recorded CAN data onto the bus.
 
@@ -119,6 +129,8 @@ Replays recorded CAN data onto the bus.
 ---
 
 ## PID Tester (Active Requests)
+
+![CAN PID Tester](/img/cloud/device_management/can_analyzer/pid_tester.png)
 
 ### Purpose
 Send request-response messages to ECUs.
@@ -133,9 +145,9 @@ This requests engine RPM from the ECU.
 
 ### When to use
 Use PID Tester when:
-* Data is not broadcast automatically
-* Specific signals are required
-* Validating diagnostic communication
+* Data is not broadcast automatically.
+* Specific signals are required.
+* Validating diagnostic communication.
 
 ---
 
