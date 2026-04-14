@@ -85,7 +85,7 @@ This listens to all CAN frames being broadcast on the bus. This is required beca
     * No data → wrong configuration.
     * Data present → valid configuration.
 4. If you didn't receive any data in the output field, adjust the protocol and/or baud rate until consistent data is received. 
-5. You can also use `Verify Connection` when an obd request is send to the vehicle and device awaits for the response, as a second layer of verification of the correct connection setup. 
+5. You can also use `Verify Connection` when an obd request is sent to the vehicle and device awaits for the response, as a second layer of verification of the correct connection setup. 
 6. Create bus, if you are sure of a Vehicle Bus used by your vehicle. 
 
 This process is essential when:
