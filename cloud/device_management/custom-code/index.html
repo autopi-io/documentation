@@ -11,7 +11,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="AutoPi Documentation" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.56b90548.css">
-<script src="/assets/js/runtime~main.33007475.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.3c977dd4.js" defer="defer"></script>
 <script src="/assets/js/main.c28d73c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -23,52 +23,51 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
 <p>Custom Code enables you to:</p>
 <ul>
-<li>Create custom logic using Python</li>
-<li>Extend or modify existing AutoPi services</li>
-<li>Process CAN / OBD / GPS data</li>
-<li>Trigger actions based on conditions</li>
-<li>Build fully custom workflows on the device</li>
+<li>Create custom logic using Python.</li>
+<li>Extend or modify existing AutoPi services.</li>
+<li>Process CAN / OBD / GPS data.</li>
+<li>Trigger actions based on conditions.</li>
+<li>Build fully custom workflows on the device.</li>
 </ul>
 <p>It is the foundation for <strong>advanced customization and integration</strong> on AutoPi devices.</p>
-<p>AutoPi devices support executing custom commands and modules directly from the cloud or API, allowing programmatic control of device behavior.</p>
+<p>AutoPi devices support executing custom commands and modules directly from the AutoPi cloud or Rest API, allowing programmatic control of device behavior.</p>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="interface-overview">Interface Overview<a href="#interface-overview" class="hash-link" aria-label="Direct link to Interface Overview" title="Direct link to Interface Overview">​</a></h2>
-<p>Navigate to:</p>
-<p><strong>Device → Custom Code</strong></p>
+<p>Navigate to: <strong>Device → Custom Code</strong>.</p>
+<p><img decoding="async" loading="lazy" alt="Custom Code Table" src="/assets/images/custom_code_table-79fd9802bdaea25374ae3746b5b598a7.png" width="1704" height="1267" class="img_ev3q"></p>
 <p>The page lists all custom modules configured on the device.</p>
-<table><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td>Name</td><td>Module name</td></tr><tr><td>Description</td><td>Optional description</td></tr><tr><td>Modified</td><td>Last updated timestamp</td></tr><tr><td>Type</td><td>Module type (Execution, Service, etc.)</td></tr><tr><td>Enabled</td><td>Whether the module is active</td></tr></tbody></table>
+<table><thead><tr><th style="text-align:center">Field</th><th style="text-align:center">Description</th></tr></thead><tbody><tr><td style="text-align:center">Name</td><td style="text-align:center">Module name</td></tr><tr><td style="text-align:center">Description</td><td style="text-align:center">Optional description</td></tr><tr><td style="text-align:center">Modified</td><td style="text-align:center">Last updated timestamp</td></tr><tr><td style="text-align:center">Type</td><td style="text-align:center">Module type (Execution, Service, etc.)</td></tr><tr><td style="text-align:center">Enabled</td><td style="text-align:center">Whether the module is active</td></tr></tbody></table>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-a-custom-module">What is a Custom Module?<a href="#what-is-a-custom-module" class="hash-link" aria-label="Direct link to What is a Custom Module?" title="Direct link to What is a Custom Module?">​</a></h2>
 <p>A <strong>custom module</strong> is a Python file that defines one or more functions that can be used by the AutoPi system.</p>
 <p>Modules can be used in:</p>
 <ul>
-<li>Services</li>
-<li>Workers</li>
-<li>Hooks</li>
-<li>Triggers</li>
-<li>Direct command execution</li>
+<li>Services - read more here: <a href="https://docs.autopi.io/cloud/device_management/services/create-custom-services/" target="_blank" rel="noopener noreferrer">Create Custom Services</a>.</li>
+<li>Workers - read more here: <a href="https://docs.autopi.io/cloud/device_management/services/create-custom-workers/" target="_blank" rel="noopener noreferrer">Create Custom Workers</a>.</li>
+<li>Hooks - read more here: <a href="https://docs.autopi.io/core/services/#creating-custom-hooks" target="_blank" rel="noopener noreferrer">Create Custom Hooks</a>.</li>
+<li>Triggers - read more here: <a href="https://docs.autopi.io/cloud/device_management/a-guide-to-triggers/" target="_blank" rel="noopener noreferrer">Triggers</a>.</li>
+<li>Direct command execution - using AutoPi cloud and its Terminal.</li>
 </ul>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="module-types">Module Types<a href="#module-types" class="hash-link" aria-label="Direct link to Module Types" title="Direct link to Module Types">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="execution">Execution<a href="#execution" class="hash-link" aria-label="Direct link to Execution" title="Direct link to Execution">​</a></h3>
 <p>Used for:</p>
 <ul>
-<li>Standalone functions</li>
-<li>Hooks and triggers</li>
-<li>Data processing</li>
+<li>Standalone functions.</li>
+<li>Hooks and triggers.</li>
+<li>Data processing.</li>
 </ul>
 <p>Example use cases:</p>
 <ul>
-<li>Transform CAN data</li>
-<li>Validate incoming data</li>
-<li>Trigger events</li>
+<li>Transform CAN data.</li>
+<li>Validate incoming data.</li>
+<li>Trigger events.</li>
 </ul>
-<hr>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="service">Service<a href="#service" class="hash-link" aria-label="Direct link to Service" title="Direct link to Service">​</a></h3>
 <p>Used for:</p>
 <ul>
-<li>Long-running processes</li>
-<li>Background logic</li>
+<li>Long-running processes.</li>
+<li>Background logic.</li>
 </ul>
 <p>A service typically includes a <code>start()</code> function that runs continuously.</p>
 <p>Custom services run alongside built-in services on the device.</p>
@@ -76,20 +75,25 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="creating-custom-code">Creating Custom Code<a href="#creating-custom-code" class="hash-link" aria-label="Direct link to Creating Custom Code" title="Direct link to Creating Custom Code">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="step-by-step">Step-by-step<a href="#step-by-step" class="hash-link" aria-label="Direct link to Step-by-step" title="Direct link to Step-by-step">​</a></h3>
 <ol>
-<li>Go to <strong>Device → Custom Code</strong></li>
-<li>Click <strong>Create</strong></li>
+<li>Go to <strong>Device → Custom Code</strong>.</li>
+<li>Click <strong>Create</strong>.</li>
 <li>Configure:<!-- -->
 <ul>
-<li>Name</li>
+<li>Name.</li>
+<li>Description (optional).</li>
 <li>Type (Execution or Service)</li>
-<li>Description (optional)</li>
+<li>Enabled (or disabled).</li>
 </ul>
 </li>
-<li>Add Python code</li>
-<li>Click <strong>Save</strong></li>
-<li>Click <strong>Sync</strong> to deploy to the device</li>
+<li>Add Python code.</li>
+<li>Specify requirements (optional).</li>
+<li>Click <strong>Save</strong>.</li>
+<li>Click <strong>Sync</strong> to deploy to the device.</li>
 </ol>
-<p>If the device is offline, changes will sync automatically when it reconnects.</p>
+<p><img decoding="async" loading="lazy" alt="Create Custom Code" src="/assets/images/create_custom_code-a1c4a6ec5272de9a3b3e2fbcb44693e1.png" width="1534" height="1076" class="img_ev3q"></p>
+<blockquote>
+<p><strong>Note:</strong> If the device is offline, changes will sync automatically when it reconnects.</p>
+</blockquote>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="example-simple-execution-module">Example: Simple Execution Module<a href="#example-simple-execution-module" class="hash-link" aria-label="Direct link to Example: Simple Execution Module" title="Direct link to Example: Simple Execution Module">​</a></h2>
 <div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token keyword" style="font-style:italic">import</span><span class="token plain"> logging</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">log </span><span class="token operator" style="color:rgb(137, 221, 255)">=</span><span class="token plain"> logging</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">getLogger</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token plain">__name__</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token keyword" style="font-style:italic">def</span><span class="token plain"> </span><span class="token function" style="color:rgb(130, 170, 255)">log_message</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    log</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">info</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token string" style="color:rgb(195, 232, 141)">&quot;Custom code executed successfully&quot;</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">This function can be called </span><span class="token keyword" style="font-style:italic">from</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token operator" style="color:rgb(137, 221, 255)">*</span><span class="token plain"> Jobs</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token operator" style="color:rgb(137, 221, 255)">*</span><span class="token plain"> Services</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token operator" style="color:rgb(137, 221, 255)">*</span><span class="token plain"> Terminal</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token comment" style="color:rgb(105, 112, 152);font-style:italic">## Example: Custom Service </span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">```python</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token keyword" style="font-style:italic">import</span><span class="token plain"> logging</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token keyword" style="font-style:italic">import</span><span class="token plain"> time</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">log </span><span class="token operator" style="color:rgb(137, 221, 255)">=</span><span class="token plain"> logging</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">getLogger</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token plain">__name__</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token keyword" style="font-style:italic">def</span><span class="token plain"> </span><span class="token function" style="color:rgb(130, 170, 255)">start</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token operator" style="color:rgb(137, 221, 255)">**</span><span class="token plain">settings</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    log</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">info</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token string" style="color:rgb(195, 232, 141)">&quot;Starting custom service&quot;</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">    </span><span class="token keyword" style="font-style:italic">while</span><span class="token plain"> </span><span class="token boolean" style="color:rgb(255, 88, 116)">True</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">        log</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">info</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token string" style="color:rgb(195, 232, 141)">&quot;Running background task&quot;</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">        time</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token plain">sleep</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token number" style="color:rgb(247, 140, 108)">5</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
@@ -109,14 +113,13 @@ Example:</p>
 <li>
 <p>Hooks - allow custom processing of data inside service workflows. Hooks are integrated into service pipelines and can control execution flow.</p>
 <ul>
-<li>Receive data from previous step</li>
-<li>Modify or filter it</li>
+<li>Receive data from previous step.</li>
+<li>Modify or filter it.</li>
 <li>Return processed result.</li>
 </ul>
 </li>
 <li>
-<p>Triggers - triggers react to data conditions.
-Example:</p>
+<p>Triggers - triggers react to data conditions, for example:</p>
 <ul>
 <li>Play sound when speed exceeds threshold.</li>
 <li>Emit event when value changes.</li>
@@ -136,28 +139,28 @@ Example:</p>
 <p>Dependencies are installed on the device when synced.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="typical-use-cases">Typical Use Cases<a href="#typical-use-cases" class="hash-link" aria-label="Direct link to Typical Use Cases" title="Direct link to Typical Use Cases">​</a></h2>
 <ul>
-<li>Data Processing<!-- -->
+<li>Data Processing:<!-- -->
 <ul>
-<li>Filter CAN messages</li>
-<li>Transform raw data into structured format</li>
+<li>filter CAN messages.</li>
+<li>transform raw data into structured format.</li>
 </ul>
 </li>
-<li>Event Handling<!-- -->
+<li>Event Handling:<!-- -->
 <ul>
-<li>Trigger alerts based on thresholds</li>
-<li>Emit events for cloud processing</li>
+<li>trigger alerts based on thresholds.</li>
+<li>emit events for cloud processing.</li>
 </ul>
 </li>
-<li>Automation<!-- -->
+<li>Automation:<!-- -->
 <ul>
-<li>Combine multiple commands into workflows</li>
-<li>Create device-side logic independent of cloud</li>
+<li>combine multiple commands into workflows.</li>
+<li>create device-side logic independent of cloud.</li>
 </ul>
 </li>
-<li>Integration<!-- -->
+<li>Integration:<!-- -->
 <ul>
-<li>Send data to external APIs</li>
-<li>Interface with third-party systems</li>
+<li>send data to external APIs.</li>
+<li>interface with third-party systems.</li>
 </ul>
 </li>
 </ul>
@@ -165,51 +168,51 @@ Example:</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary">​</a></h2>
 <p>Custom Code allows you to:</p>
 <ul>
-<li>Extend AutoPi functionality using Python</li>
-<li>Build custom services and workflows</li>
-<li>Process and react to vehicle data in real time</li>
-<li>Integrate with external systems</li>
+<li>Extend AutoPi functionality using Python.</li>
+<li>Build custom services and workflows.</li>
+<li>Process and react to vehicle data in real time.</li>
+<li>Integrate with external systems.</li>
 </ul>
 <p>It is the core feature for advanced and scalable customization of AutoPi devices.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="best-practices">Best Practices<a href="#best-practices" class="hash-link" aria-label="Direct link to Best Practices" title="Direct link to Best Practices">​</a></h3>
 <ul>
-<li>Keep modules focused and simple</li>
-<li>Use logging for debugging</li>
-<li>Test functions manually before integrating</li>
-<li>Avoid blocking operations unless using services</li>
-<li>Restart services after changes if required
+<li>Keep modules focused and simple.</li>
+<li>Use logging for debugging.</li>
+<li>Test functions manually before integrating.</li>
+<li>Avoid blocking operations unless using services.</li>
+<li>Restart services after changes if required.
 Custom services may require restarting the salt-minion process to take effect.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="common-issues">Common Issues<a href="#common-issues" class="hash-link" aria-label="Direct link to Common Issues" title="Direct link to Common Issues">​</a></h3>
 <ul>
-<li>Code not running<!-- -->
+<li><em>Code not running:</em>
 <ul>
-<li>Module not synced</li>
-<li>Device offline</li>
-<li>Service not restarted</li>
+<li>Module not synced.</li>
+<li>Device offline.</li>
+<li>Service not restarted.</li>
 </ul>
 </li>
-<li>Import errors<!-- -->
+<li><em>Import errors:</em>
 <ul>
-<li>Missing dependencies</li>
-<li>Incorrect requirements format</li>
+<li>Missing dependencies.</li>
+<li>Incorrect requirements format.</li>
 </ul>
 </li>
-<li>High CPU usage<!-- -->
+<li><em>High CPU usage:</em>
 <ul>
-<li>Infinite loops without delay</li>
-<li>Heavy processing in execution modules</li>
+<li>Infinite loops without delay.</li>
+<li>Heavy processing in execution modules.</li>
 </ul>
 </li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="best-practice-workflow">Best Practice Workflow<a href="#best-practice-workflow" class="hash-link" aria-label="Direct link to Best Practice Workflow" title="Direct link to Best Practice Workflow">​</a></h3>
 <ul>
-<li>Write and test code locally (simple function)</li>
-<li>Create module in Custom Code</li>
-<li>Sync to device</li>
-<li>Test via terminal or job</li>
-<li>Integrate into services or workflows</li>
-<li>Monitor logs and refine</li>
+<li>Write and test code locally (simple function).</li>
+<li>Create module in Custom Code.</li>
+<li>Sync to device.</li>
+<li>Test via terminal or job.</li>
+<li>Integrate into services or workflows.</li>
+<li>Monitor logs and refine.</li>
 </ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/autopi-io/documentation/edit/master/docs/cloud/device_management/custom_code.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/cloud/device_management/cloud-jobs/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Jobs</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/cloud/device_management/device-install-procedure/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Device Install Procedure</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#interface-overview" class="table-of-contents__link toc-highlight">Interface Overview</a></li><li><a href="#what-is-a-custom-module" class="table-of-contents__link toc-highlight">What is a Custom Module?</a></li><li><a href="#module-types" class="table-of-contents__link toc-highlight">Module Types</a><ul><li><a href="#execution" class="table-of-contents__link toc-highlight">Execution</a></li><li><a href="#service" class="table-of-contents__link toc-highlight">Service</a></li></ul></li><li><a href="#creating-custom-code" class="table-of-contents__link toc-highlight">Creating Custom Code</a><ul><li><a href="#step-by-step" class="table-of-contents__link toc-highlight">Step-by-step</a></li></ul></li><li><a href="#example-simple-execution-module" class="table-of-contents__link toc-highlight">Example: Simple Execution Module</a></li><li><a href="#using-custom-code" class="table-of-contents__link toc-highlight">Using Custom Code</a></li><li><a href="#passing-settings" class="table-of-contents__link toc-highlight">Passing Settings</a></li><li><a href="#pip-dependencies" class="table-of-contents__link toc-highlight">PIP Dependencies</a></li><li><a href="#typical-use-cases" class="table-of-contents__link toc-highlight">Typical Use Cases</a></li><li><a href="#summary" class="table-of-contents__link toc-highlight">Summary</a><ul><li><a href="#best-practices" class="table-of-contents__link toc-highlight">Best Practices</a></li><li><a href="#common-issues" class="table-of-contents__link toc-highlight">Common Issues</a></li><li><a href="#best-practice-workflow" class="table-of-contents__link toc-highlight">Best Practice Workflow</a></li></ul></li></ul></div></div></div><div class="container margin-top--lg"><div class="row"><div class="col--9"><div class="customFooter_WTfN"><h2>Let&#x27;s stay in touch!</h2><p>Thank you for choosing AutoPi. We&#x27;re excited to see what you will achieve with your new device!</p><div class="cardGrid_P1Qm"><a href="https://shop.autopi.io" class="card_Jf15"><img src="/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png" alt="Buy AutoPi"><strong>Buy AutoPi device</strong><p>Check out our AutoPi shop and buy an AutoPi device.</p></a><a href="https://www.autopi.io/hardware/compare/" class="card_Jf15"><img src="/img/shared/autopi_devices_trans.png" alt="Compare devices"><strong>Compare all AutoPi devices</strong><p>Check which device fits your requirements the best.</p></a><a href="https://www.autopi.io/sales-inquiry/" class="card_Jf15"><img src="/img/shared/favicon.ico" alt="Sales team"><strong>Contact our sales team</strong><p>You can build on top of your AutoPi device.</p></a><a href="https://www.autopi.io/support/" class="card_Jf15"><img src="/img/shared/support_icon.png" alt="Support team"><strong>Contact our support team</strong><p>Let us know about your technical questions.</p></a></div></div></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">AutoPi.io</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.autopi.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">AutoPi.io</a></li><li class="footer__item"><a href="https://my.autopi.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">My AutoPi Cloud</a></li><li class="footer__item"><a href="https://shop.autopi.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">Shop</a></li><li class="footer__item"><a href="https://docs.autopi.io/search/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Search Documentation</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/autopi-io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub - AutoPi Core</a></li></ul></div><div class="col footer__col"><div class="footer__title">Social</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.reddit.com/r/autopi/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Reddit</a></li><li class="footer__item"><a href="https://www.linkedin.com/company/autopi.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn</a></li><li class="footer__item"><a href="https://www.youtube.com/channel/UCH50VR17emPVVfnIWlGMLig" target="_blank" rel="noopener noreferrer" class="footer__link-item">Youtube</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 AutoPi.io.</div></div></div></footer></div>
 </body>
 </html>

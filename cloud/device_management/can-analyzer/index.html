@@ -11,7 +11,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="AutoPi Documentation" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.56b90548.css">
-<script src="/assets/js/runtime~main.33007475.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.3c977dd4.js" defer="defer"></script>
 <script src="/assets/js/main.c28d73c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -34,51 +34,57 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="interface-structure">Interface Structure<a href="#interface-structure" class="hash-link" aria-label="Direct link to Interface Structure" title="Direct link to Interface Structure">​</a></h2>
 <p>The CAN Analyzer page consists of four main tabs:</p>
 <ol>
-<li>Sniffer - passive monitoring of CAN traffic.</li>
-<li>Recorder - captures CAN messages and stores them for later use.</li>
-<li>Player - replays previously recorded CAN traffic.</li>
-<li>PID Tester - sends request-response queries to ECUs.</li>
+<li><strong>Sniffer</strong> - passive monitoring of CAN traffic.</li>
+<li><strong>Recorder</strong> - captures CAN messages and stores them for later use.</li>
+<li><strong>Player</strong> - replays previously recorded CAN traffic.</li>
+<li><strong>PID Tester</strong> - sends request-response queries to ECUs.</li>
 </ol>
+<p><img decoding="async" loading="lazy" alt="CAN Analyzer Table" src="/assets/images/can_analyzer-af808333c705ef58b1ce43144ad6c717.png" width="1699" height="798" class="img_ev3q"></p>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="sniffer-passive-can-monitoring">Sniffer (Passive CAN Monitoring)<a href="#sniffer-passive-can-monitoring" class="hash-link" aria-label="Direct link to Sniffer (Passive CAN Monitoring)" title="Direct link to Sniffer (Passive CAN Monitoring)">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="CAN Sniffer" src="/assets/images/can_sniffer-d1dbc77185a3dd4c2c7ca6f42999f6d6.png" width="1423" height="556" class="img_ev3q"></p>
+<blockquote>
+<p><strong>Note:</strong> This will only work on vehicles which allow direct CAN streaming.</p>
+</blockquote>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="purpose">Purpose<a href="#purpose" class="hash-link" aria-label="Direct link to Purpose" title="Direct link to Purpose">​</a></h3>
 <p>Used to detect:</p>
 <ul>
-<li>Active CAN bus</li>
-<li>Correct protocol and baud rate</li>
-<li>Raw CAN messages</li>
+<li>Active CAN bus.</li>
+<li>Correct protocol and baud rate.</li>
+<li>Raw CAN messages.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-it-works">How it works<a href="#how-it-works" class="hash-link" aria-label="Direct link to How it works" title="Direct link to How it works">​</a></h3>
 <p>The sniffer runs a passive monitor similar to:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">obd.monitor duration=5 protocol=&lt;protocol&gt; baudrate=&lt;baudrate&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>This listens to all CAN frames being broadcast on the bus.</p>
-<p>This is required because:</p>
+<p>This listens to all CAN frames being broadcast on the bus. This is required because:</p>
 <ul>
 <li>Some vehicles stream data continuously.</li>
 <li>Others only respond to requests (PIDs).</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="configuration">Configuration<a href="#configuration" class="hash-link" aria-label="Direct link to Configuration" title="Direct link to Configuration">​</a></h3>
-<table><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody><tr><td>Vehicle Bus</td><td>Select CAN interface (auto or manual)</td></tr><tr><td>Protocol</td><td>CAN protocol (e.g. ISO 15765-4, J1939)</td></tr><tr><td>Baud Rate</td><td>Typical values: 125k, 250k, 500k</td></tr><tr><td>Duration</td><td>Capture time in seconds</td></tr></tbody></table>
+<table><thead><tr><th style="text-align:center">Field</th><th style="text-align:center">Description</th></tr></thead><tbody><tr><td style="text-align:center">Vehicle Bus</td><td style="text-align:center">Select CAN interface (auto or manual)</td></tr><tr><td style="text-align:center">Protocol</td><td style="text-align:center">CAN protocol (e.g. ISO 15765-4, J1939)</td></tr><tr><td style="text-align:center">Baud Rate</td><td style="text-align:center">Typical values: 125k, 250k, 500k</td></tr><tr><td style="text-align:center">Duration</td><td style="text-align:center">Capture time in seconds</td></tr></tbody></table>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="workflow">Workflow<a href="#workflow" class="hash-link" aria-label="Direct link to Workflow" title="Direct link to Workflow">​</a></h3>
-<p>1.Start with Auto or a known protocol
-2. Click Sniff
-3.Observe output:</p>
+<ol>
+<li>Start with <code>Auto</code> Vehicle Bus or a known protocol.</li>
+<li>Click Sniff.</li>
+<li>Observe output:<!-- -->
 <ul>
-<li>No data → wrong configuration</li>
-<li>Data present → valid configuration</li>
-</ul>
-<ol start="4">
-<li>
-<p>Adjust protocol/baud rate until consistent data is received</p>
-<p>This process is essential when:</p>
-<ul>
-<li>Vehicle protocol is unknown</li>
-<li>Working with heavy-duty (J1939) or proprietary buses.</li>
+<li>No data → wrong configuration.</li>
+<li>Data present → valid configuration.</li>
 </ul>
 </li>
+<li>If you didn&#x27;t receive any data in the output field, adjust the protocol and/or baud rate until consistent data is received.</li>
+<li>You can also use <code>Verify Connection</code> when an obd request is send to the vehicle and device awaits for the response, as a second layer of verification of the correct connection setup.</li>
+<li>Create bus, if you are sure of a Vehicle Bus used by your vehicle.</li>
 </ol>
+<p>This process is essential when:</p>
+<ul>
+<li>Vehicle protocol is unknown. You can read more here: <a href="https://docs.autopi.io/getting_started/autopi_tmu_cm4/create-loggers-cm4/#use-can-analyzer-sniffer" target="_blank" rel="noopener noreferrer">Setting up CAN Bus Protocol</a>.</li>
+<li>Working with heavy-duty (J1939) or proprietary buses. You can read more here: <a href="https://docs.autopi.io/getting_started/heavy_duty_vehicles/j1939-getting-started-guide/" target="_blank" rel="noopener noreferrer">Heavy Duty Vehicles/ J1939 Protocol</a>.</li>
+</ul>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="recorder">Recorder<a href="#recorder" class="hash-link" aria-label="Direct link to Recorder" title="Direct link to Recorder">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="CAN Recorder" src="/assets/images/can_recorder-a5d585d65093057a0995bb55d39eb697.png" width="1418" height="394" class="img_ev3q"></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="purpose-1">Purpose<a href="#purpose-1" class="hash-link" aria-label="Direct link to Purpose" title="Direct link to Purpose">​</a></h3>
 <p>Stores CAN traffic for:</p>
 <ul>
@@ -91,6 +97,7 @@
 <p>This captures raw CAN frames to files such as <code>.log</code>, <code>.csv</code>, or <code>.blf</code></p>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="player">Player<a href="#player" class="hash-link" aria-label="Direct link to Player" title="Direct link to Player">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="CAN Player" src="/assets/images/can_player-69491e83edb3fc27113a7bd59f26300f.png" width="1429" height="513" class="img_ev3q"></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="purpose-2">Purpose<a href="#purpose-2" class="hash-link" aria-label="Direct link to Purpose" title="Direct link to Purpose">​</a></h3>
 <p>Replays recorded CAN data onto the bus.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="use-cases">Use cases<a href="#use-cases" class="hash-link" aria-label="Direct link to Use cases" title="Direct link to Use cases">​</a></h3>
@@ -101,6 +108,7 @@
 </ul>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="pid-tester-active-requests">PID Tester (Active Requests)<a href="#pid-tester-active-requests" class="hash-link" aria-label="Direct link to PID Tester (Active Requests)" title="Direct link to PID Tester (Active Requests)">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="CAN PID Tester" src="/assets/images/pid_tester-84beab71240e8fc6ae5f2187ea314c9b.png" width="1423" height="926" class="img_ev3q"></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="purpose-3">Purpose<a href="#purpose-3" class="hash-link" aria-label="Direct link to Purpose" title="Direct link to Purpose">​</a></h3>
 <p>Send request-response messages to ECUs.</p>
 <p>Example:</p>
@@ -109,9 +117,9 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="when-to-use">When to use<a href="#when-to-use" class="hash-link" aria-label="Direct link to When to use" title="Direct link to When to use">​</a></h3>
 <p>Use PID Tester when:</p>
 <ul>
-<li>Data is not broadcast automatically</li>
-<li>Specific signals are required</li>
-<li>Validating diagnostic communication</li>
+<li>Data is not broadcast automatically.</li>
+<li>Specific signals are required.</li>
+<li>Validating diagnostic communication.</li>
 </ul>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="terminal-integration">Terminal Integration<a href="#terminal-integration" class="hash-link" aria-label="Direct link to Terminal Integration" title="Direct link to Terminal Integration">​</a></h2>
