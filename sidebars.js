@@ -254,7 +254,7 @@ module.exports = {
           "label": "OBD Library",
           "type": "category"
         },
-        "cloud/accounts"
+        "cloud/accounts",
         "cloud/docker-on-autopi",
       ],
       "Core": [
