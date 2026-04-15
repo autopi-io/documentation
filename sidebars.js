@@ -78,6 +78,7 @@ module.exports = {
         "developer_guides/local-development-workflow",
         "developer_guides/reflashing-your-device",
         "developer_guides/can-bridge",
+        "developer_guides/build-grafana-dashboard",
         "developer_guides/remotely-waking-up-your-device",
         "developer_guides/rfid-integartion",
         "developer_guides/upgrading-your-raspberry-pi",
@@ -87,7 +88,7 @@ module.exports = {
         "developer_guides/enabling_uart_on_TMU_devices",
         "developer_guides/setting-up-a-device-with-verizon-wireless",
         "developer_guides/autopi-logs",
-        "developer_guides/local-api-overview",
+        "developer_guides/local-api-overview", 
         "developer_guides/setting-up-docker",
         "developer_guides/how-to-create-custom-event-for-custom-logger",
         "developer_guides/using-the-autopi-with-an-external-power-supply",
@@ -148,6 +149,7 @@ module.exports = {
           "items": [
             "cloud/device_management/device-management-intro",
             "cloud/device_management/devices-list",
+            "cloud/device_management/dashboard-device",
             "cloud/device_management/cloud-jobs",
             "cloud/device_management/custom-code",
             "cloud/device_management/device-install-procedure",
@@ -253,6 +255,7 @@ module.exports = {
           "type": "category"
         },
         "cloud/accounts"
+        "cloud/docker-on-autopi",
       ],
       "Core": [
         "core/core-intro",
