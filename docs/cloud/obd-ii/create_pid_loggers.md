@@ -217,5 +217,5 @@ then used to create a PID Logger and got a very small insight into the automated
 exist in the [AutoPi](https://www.autopi.io) ecosystem.
 
 :::tip
-However if you want to learn more about how to set up a widgets for your dashboard using a PID loggers, you can read more in this guide: [Adding widgets to your Dashboard](https://docs.autopi.io/cloud/device_management/dashboard/adding-a-new-widget-from-scratch/). 
+However if you want to learn more about how to set up a widgets for your dashboard using a PID loggers, you can read more in this guide: [Adding widgets to your Dashboard](https://docs.autopi.io/getting_started/autopi_tmu_cm4/create-loggers-cm4/#step-4-link-your-loggers-to-your-dashboard). 
 :::
