@@ -9,6 +9,10 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
+:::tip New to Docker on AutoPi?
+For an introduction to what Docker support is, why to use it, and example use cases, see [**Docker on AutoPi**](https://docs.autopi.io/cloud/docker-on-autopi/) before following this setup guide.
+:::
+
 ## Overview
 
 This guide explains how to set up Docker on your AutoPi device and deploy containers through the AutoPi Cloud. It also covers registries, projects, releases, optional features, runtime configuration, and troubleshooting.
