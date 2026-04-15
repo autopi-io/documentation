@@ -120,4 +120,4 @@ won't have any data to display.
 When you're satisfied with your dashboard configuration, save your layout via 
 **Widget Actions** to keep your settings for future sessions. 
 
-For more detailed information on widgets, see [this documentation](/cloud/device_management/dashboard/adding-a-new-widget-from-scratch).
+For more detailed information on widgets, see [Link Your Loggers to Your Dashboard](/https://docs.autopi.io/getting_started/autopi_tmu_cm4/create-loggers-cm4/#step-4-link-your-loggers-to-your-dashboard).
