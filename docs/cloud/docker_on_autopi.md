@@ -1,6 +1,6 @@
 ---
 id: docker-on-autopi
-title: Docker on AutoPi
+title: Docker
 supportedDevices: ['cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid";
