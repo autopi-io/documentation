@@ -89,7 +89,7 @@ module.exports = {
         "developer_guides/setting-up-a-device-with-verizon-wireless",
         "developer_guides/autopi-logs",
         "developer_guides/local-api-overview", 
-        "developer_guides/setting-up-docker",
+      "developer_guides/setting-up-docker",
         "developer_guides/how-to-create-custom-event-for-custom-logger",
         "developer_guides/using-the-autopi-with-an-external-power-supply",
         "developer_guides/accessing-raw-gps-data",  
