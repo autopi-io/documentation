@@ -155,14 +155,6 @@ module.exports = {
             "cloud/device_management/device-install-procedure",
             {
               "items": [
-                "cloud/device_management/dashboard/dashboard-intro",
-                "cloud/device_management/dashboard/adding-a-new-widget-from-scratch",
-              ],
-              "label": "Dashboard",
-              "type": "category"
-            },
-            {
-              "items": [
                 "cloud/device_management/services/services-intro",
                 "cloud/device_management/services/create-custom-returners",
                 "cloud/device_management/services/create-custom-services",
