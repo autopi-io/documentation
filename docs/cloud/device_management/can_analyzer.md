@@ -166,26 +166,25 @@ This allows:
 
 ### Typical Use Cases
 1. **Protocol Detection** - identify correct CAN configuration by testing:
-    * Protocol
+    * Protocol.
     * Baud rate.
 
 2. **Vehicle Integration** - verify that:
-    * AutoPi can access CAN data
+    * AutoPi can access CAN data.
     * ECUs respond correctly.
 
 3. **Reverse Engineering** - analyze unknown CAN signals by:
-    * Sniffing traffic
+    * Sniffing traffic.
     * Correlating values with real-world behavior.
 
-4. Troubleshooting - detect issues such as:
-    * No CAN traffic
-    * Incorrect wiring
-    * Unsupported protocol
+4. **Troubleshooting** - detect issues such as:
+    * No CAN traffic.
+    * Incorrect wiring.
+    * Unsupported protocol.
 
-5. Development & Testing
-    * Validate CAN-based applications
-    * Simulate environments using Player
-
+5. **Development & Testing:**
+    * Validate CAN-based applications.
+    * Simulate environments using Player.
 
 ---
 
