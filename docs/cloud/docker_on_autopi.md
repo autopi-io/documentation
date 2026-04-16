@@ -11,9 +11,11 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 
 ## What Is Docker Support on AutoPi?
 
-AutoPi devices and the AutoPi Cloud natively support running **Docker containers** directly on the device. This means you can package any application, script, or service into a container image, push it to a registry, and deploy it to one or more AutoPi devices from the cloud — without physical access to the hardware.
+AutoPi devices and the AutoPi Cloud natively support running **Docker containers** directly on the device. This means you can package any application, script, or service into a container image, push it to a registry, and deploy it to one or more AutoPi devices from the cloud without physical access to the hardware. 
 
 The AutoPi Cloud acts as the control plane: it manages container **registries**, **projects**, and **releases**, and coordinates delivery and startup on target devices.
+
+![Docker on AutoPi Cloud](/img/cloud/device_management/docker/docker_page.png)
 
 ---
 
@@ -22,7 +24,7 @@ The AutoPi Cloud acts as the control plane: it manages container **registries**,
 AutoPi devices are edge computers installed in vehicles. They collect real-time data from the vehicle (CAN bus, GPS, OBD-II, sensors) and have network connectivity. Running Docker containers alongside the AutoPi core software lets you:
 
 | Benefit | Description |
-|---|---|
+|:---:|:---:|
 | **Edge processing** | Run computations on the vehicle instead of sending all raw data to the cloud, reducing bandwidth and latency. |
 | **Custom integrations** | Deploy any software stack without modifying the AutoPi core system. |
 | **Independent updates** | Update your application container independently of the AutoPi firmware. |
@@ -137,17 +139,19 @@ Run a Python or Node.js service that transforms, filters, or enriches raw CAN/OB
 
 ### 4. Fleet-Wide Simultaneous Deployment
 
-Because releases are tied to a **project** that can include multiple devices, you can roll out the same container across your entire fleet at once from the AutoPi Cloud UI — or trigger it immediately via the API:
+Because releases are tied to a **project** that can include multiple devices, you can roll out the same container across your entire fleet at once in 2 ways: 
+* From the AutoPi Cloud UI: 
+  * First, add devices to the project: 
+  ![Deploying to multiple devices](/img/cloud/device_management/docker/devices_deployment.png)
+  * Secondly, apply the release by running this command: 
+    ```python 
+    state.sls docker.release
+    ```
 
-```
-POST /docker/projects/{project_pk}/releases/
-```
-
-Then trigger deployment to all devices in the project:
-
-```
-state.sls docker.release
-```
+* Or trigger it immediately via the API:
+  ```
+  POST /docker/projects/{project_pk}/releases/
+  ```
 
 ---
 
