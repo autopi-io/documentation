@@ -9,117 +9,71 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-In this guide we are going to take a look at how to create workers for any service that is
-available, be it a default service like the OBD manager or a custom one that you've made for
-yourselves. First off we're going to explore what can workers be used for and later on in the guide
-we're going to go through creating an example worker that is going to fetch OBD data and save that
-data to a file. Let's get started!
+This guide covers how to create workers for any available service — whether it is a default service such as the OBD manager, or a custom one you have built yourself. It begins with an overview of what workers are and how they function, then walks through a practical example: creating a worker that continuously fetches OBD data and saves it to a file.
 
 ![Service list](/img/cloud/device_management/services/create_custom_workers/service_list.png) 
 
 ## Workers
-Now, the real deal - workers. Workers are simply a process that is going to be executed by a
-manager in a specific [workflow](/core/services/index.md) that is going to eventually yield a
-desired output. Workflows are a number of steps that are going to be executed in order to create
-that desired output:
+
+A worker is a process executed by a manager according to a defined [workflow](/core/services/index.md). Each workflow consists of a series of ordered steps that produce a desired output.
 
 ![Worker list](/img/cloud/device_management/services/create_custom_workers/worker_list.png) 
 
-### Let's Create a Worker
-First off, you'll need to decide which manager to use. That really depends on the use case you
-have. For example, if you would like to read OBD data, the obd_manager would make the most sense.
-If on the other hand you would like to execute some AT command that isn't implemented by default,
-the ec2x_manager is the one you'd be looking at.
+### Creating a Worker
 
-For the purposes of this guide, we will create a worker inside the obd_manager that will be
-fetching some data. We will navigate to the services page (Device > Services) and select the
-obd_manager entry on the screen.
+Start by selecting the appropriate manager for your use case. For example, use `obd_manager` to read OBD data, or `ec2x_manager` to execute AT commands not implemented by default.
 
-The new page that opens up is the home page for the obd_manager where all of its workers reside.
-We will create a new worker now. Click on the '+ Create' button to open up the creation window.
-
-You'll be presented with the following window:
+For this guide, a worker will be created inside the `obd_manager`. Navigate to **Device** > **Services** and select the `obd_manager` entry. From the manager's home page, click **+ Create** to open the worker creation window:
 
 ![Create empty worker](/img/cloud/device_management/services/create_custom_workers/create_worker_empty.png) 
 
-Let's now get familiar with the interface. There are a few fields that need filling out and then
-we will move on to the workflows:
+The creation window contains the following fields:
 
-1. **Name**: The name of the worker. This is just for recognizability of the worker.
+1. **Name** — A descriptive name for the worker, used for identification purposes.
 
-2. **Delay**: This is the delay before the initial start of execution of the worker. This means
-  that the worker will wait *X* amount of seconds before initiating the first loop.
+2. **Delay** — The number of seconds to wait before the worker begins its first execution loop.
 
-3. **Interval**: This is the interval between each loop of the worker. As we'll see below, you are
-  able to set the worker to execute multiple times (which is why they're so useful). The interval
-  will be the time that it takes between each execution.
+3. **Interval** — The time (in seconds) between each execution loop.
 
-4. **Loop**: This is the amount of times the worker will execute within a power cycle of the [AutoPi](https://www.autopi.io)
-  device. You can set this to the following values:
+4. **Loop** — The number of times the worker will execute within a single power cycle of the [AutoPi](https://www.autopi.io) device:
+    - *Less than 0*: The worker loops indefinitely.
+    - *0 or more*: The worker executes the specified number of times and then stops. Total executions equal the loop count plus one.
 
-    1. *less than 0*: The worker will loop forever and execute the workflow every time
-    2. *0 or more*: The worker will loop the amount of times specified and then stop. This can be
-      used if you want the worker to do a specified amount of work and then stop working. The total
-      amount of executions that will occur are equal to the loop count + 1.
+5. **Order** — Determines the execution order relative to other workers in the same service. Workers with a lower order value execute first.
 
-5. **Order**: This is the order that the workers are going to be executed in. This is a more
-  'global' field, meaning that it will affect the execution of the rest of the workers in this
-  service as well. The lowest ordered worker will execute first and then go up from there.
-
-6. **Transactional**: This option is useful if there are multiple workflows on the same worker. If
-  one of the workflows fails, if transactional is enabled, then all the rest of the workflows won't
-  be executed. On the other hand, if it isn't enabled, the rest of the workflows will still be
-  executed.
+6. **Transactional** — When enabled and a workflow fails, all subsequent workflows on the same worker are skipped. When disabled, remaining workflows continue to execute regardless of prior failures.
 
 ### Workflows
-Now that we've gone through the basic options, let's take a look at the possibilities for
-workflows. Creating a workflow adds a new row on the table below. This is the basic representation
-of a workflow. The columns in the table are as follows:
 
-1. **Handler** - handlers are the first step in the workflow. They will communicate with the
-  device's hardware and produce the initial output.
+Each workflow is represented as a row in the table and consists of the following columns:
 
-2. **args** - the arguments that are to be passed to the handler.
+1. **Handler** — The first step in the workflow. Communicates directly with the device hardware and produces the initial output.
 
-3. **kwargs** - the key word arguments that are to be passed to the handler.
+2. **args** — Positional arguments passed to the handler.
 
-4. **Converter** - they transform the data to another, usually more usable, form.
+3. **kwargs** — Keyword arguments passed to the handler.
 
-5. **Trigger** - this is usually the code that decides whether to do something based on the result
-  of the handler, for example, [making a beep sound from the device](/cloud/device_management/a-guide-to-triggers/).
+4. **Converter** — Transforms the handler output into a more usable form.
 
-6. **Filter** - filters are responsible for deciding whether the data that is currently being
-  manipulated is significant or not. They can stop the flow of execution if they return something
-  that is considered [falsy](https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false) -
-  for example a value of `False`, `None`, an empty string, and so on. 
+5. **Trigger** — Executes logic based on the handler result, such as [playing a beep sound](/cloud/device_management/a-guide-to-triggers/).
 
-7. **Enricher** - enrichers.. well.. enrich the data. They add additional data, possibly by
-  computing the result.
+6. **Filter** — Determines whether the data is significant enough to continue processing. If a [falsy](https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false) value is returned (e.g. `False`, `None`, or an empty string), execution stops.
 
-8. **Returner** - returners are responsible for returning the result somewhere. For example,
-  [saving the result on a file](/cloud/device_management/services/create-custom-returners/)
-  or sending it over the internet to some cloud solution. A prime example for a returner is the
-  [Cloud](https://www.autopi.io/software-platform/cloud-management) returner that is responsible for saving the data on [my.autopi.io](https://my.autopi.io/).
+7. **Enricher** — Augments the data by adding computed or supplementary values.
 
-All of the above (except for args and kwargs) are also called *hooks*. We will look into them in
-the next section.
+8. **Returner** — Delivers the result to a destination, such as [saving it to a file](/cloud/device_management/services/create-custom-returners/) or forwarding it to a cloud platform. The built-in [Cloud](https://www.autopi.io/software-platform/cloud-management) returner, for example, sends data to [my.autopi.io](https://my.autopi.io/).
 
-Different services have different defaults handlers. The best place to take a look at those
-handlers is [the services page](/core/services/index.md). Since the idea we're going for in this
-guide is to invoke continuous OBD query commands, we're going to be using the
-[query](/core/services/core-services-obd-manager/#query) handler.
+All of the above — except **args** and **kwargs** — are referred to as *hooks* and are covered in the next section.
 
-The arguments (args) and key-word arguments (kwargs) are specified in JSON format (this means
-double quotes instead of single quotes, it took me a while to figure that out the other day). We
-want to read out the fuel level every 10 seconds and record that data, so we will specify the
-following arguments:
+Available handlers vary by service. For a full reference, see [the services page](/core/services/index.md). For this guide, the [query](/core/services/core-services-obd-manager/#query) handler will be used to continuously query OBD data.
+
+Arguments (`args`) and keyword arguments (`kwargs`) are specified in JSON format — note that JSON requires double quotes rather than single quotes. To read the fuel level, specify the following `args`:
 
 ```json
 [ "FUEL_LEVEL" ]
 ```
 
-The key-word arguments aren't essential for the worker to work, however they give more control over
-how it'll operate, so we'll specify the following kwargs:
+The `kwargs` are optional but provide additional control over execution:
 
 ```json
 {
@@ -128,20 +82,17 @@ how it'll operate, so we'll specify the following kwargs:
 }
 ```
 
-Now we've got the first part of a workflow going. From here on out, everything else is optional
-depending on your needs. Most of you would want to have some way of saving the data however, for
-which you can use a returner. You can view a guide about that [here](/cloud/device_management/services/create-custom-returners/).
-Here's the final result:
+With the handler configured, the remaining workflow steps are optional and depend on your use case. To persist the data, add a returner — see the [Create Custom Returners](/cloud/device_management/services/create-custom-returners/) guide for details. The completed worker configuration looks like this:
 
 ![Create worker completed](/img/cloud/device_management/services/create_custom_workers/create_worker_completed.png)
 
-The last thing you need to do is to hit Save and let the device sync up with the new changes. After
-a service restart, the device should be executing your new service worker.
+Click **Save** and allow the device to sync the changes. After a service restart, the device will begin executing the new worker.
 
 ### Hooks
-You can create your own custom hooks by creating a new custom module (Device > Custom Code) with
-an execution type, but you have to register them to each individual service through the Hooks tab.
-Each hook needs to have this specific signature:
+
+Custom hooks can be created by adding a new custom code module under **Device** > **Custom Code** with an execution type. Each hook must then be registered to the relevant service via the **Hooks** tab.
+
+All hooks must follow this function signature:
 
 ```python
 def some_function_name(result):
@@ -149,30 +100,22 @@ def some_function_name(result):
     return value
 ```
 
-The important part is that the function receives some result and returns some value. Based on the
-output of each hook the workflow might be interrupted. If falsy values are returned at a specific
-point in the workflow, the rest of the workflow will stop. **This isn't the case** with triggers -
-they will always execute, as the logic there might be very valuable to be executed even if there is
-an interruption. Even in the case of a thrown exception the trigger will still execute.
+The function receives a result and returns a value. If a falsy value is returned at any point in the workflow, execution of subsequent steps will stop. **The exception to this rule is triggers** — they always execute, even if an earlier step fails or raises an exception. This ensures that time-sensitive logic in triggers is never skipped.
 
-### Troubleshooting Your Service
+### Troubleshooting
 
-#### My service doesn't start / I dont see any logs from my service
-1. Check that the service is enabled in the [Cloud](https://www.autopi.io/software-platform/cloud-management), and check that it is part of the engines file in
-  `/etc/salt/minion.d/engines.conf`
-2. Check that the associated custom module has valid code
-3. Turn on debug logging on the device (In advanced settings), and restart the salt-minion, and
-  then look for errors.
+#### The service does not start, or no logs are appearing
+1. Verify that the service is enabled in the [Cloud](https://www.autopi.io/software-platform/cloud-management) and that it is listed in the engines file at `/etc/salt/minion.d/engines.conf`.
+2. Confirm that the associated custom module contains valid Python code.
+3. Enable debug logging on the device via the advanced settings, restart the Salt minion, and review the logs for errors.
 
-You can use the following command to grep for the specific service:
+To filter logs for a specific service, run the following command on the device:
 
-```
+```python
 sudo tail -f /var/log/salt/minion | grep service_name
 ```
 
 ## Conclusion
-As a closer - workers are extremely powerful if used correctly. They can execute continuously or a
-set amount of times. Workflows within the worker can be set up so that the desired outcome is
-reached without having to write complicated custom code. Use them to your advantage whenever you
-want to communicate something with the hardware components of the [AutoPi](https://www.autopi.io) or with your car directly.
+
+Workers are a powerful mechanism for interacting with the hardware components of an [AutoPi](https://www.autopi.io) device or your vehicle. They can run continuously or for a fixed number of iterations, and their workflows can be composed to achieve complex outcomes without writing custom code. Make use of them whenever you need reliable, repeatable communication with device hardware.
 

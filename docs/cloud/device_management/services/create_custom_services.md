@@ -9,62 +9,86 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-Sometimes, the pre-defined services won't implement the functionality that you're looking to have
-in your [AutoPi](https://www.autopi.io). It is possible to create custom services that run on the device alongside the rest
-of [AutoPi](https://www.autopi.io)'s services. This guide will explore how to do that.
+Services, also referred to as managers, are background processes that run independently on the device, each managed by the Salt minion parent process. If a service fails, the Salt minion automatically restarts it and reports the error.
+
+The default services included with an [AutoPi](https://www.autopi.io) device serve as the primary communication layer between the Core software and the corresponding hardware components. This architecture makes services the ideal place to implement operations that are tightly coupled to specific hardware on the device.
+
+## Built-in Services
+
+The following services are available by device type:
+
+| Service | Description | Available On |
+|---|---|---|
+| `acc_manager` | Manages the accelerometer hardware and provides access to motion and orientation data. | AutoPi TMU CM4, AutoPi CAN-FD Pro |
+| `audio_manager` | Controls audio output on the device, such as playing sounds or alerts. | AutoPi TMU CM4, AutoPi CAN-FD Pro |
+| `cloud_manager` | Handles buffering of data, and sending data in batches to the cloud server. | AutoPi TMU CM4, AutoPi CAN-FD Pro |
+| `modem_manager` | Manages the cellular modem, including connectivity, signal monitoring, and data sessions. | AutoPi TMU CM4, AutoPi CAN-FD Pro |
+| `event_reactor` | Listens for internal events fired by other services and triggers configured reactions in response. | AutoPi TMU CM4, AutoPi CAN-FD Pro |
+| `obd_manager` | Communicates directly with the STN chip to query vehicle data over the OBD-II interface. | AutoPi TMU CM4, AutoPi CAN-FD Pro |
+| `spm_manager` | Interfaces with the Smart Power Manager (SPM) to handle power states and wake-up logic. | AutoPi TMU CM4, AutoPi CAN-FD Pro |
+| `gnss_manager` | Manages the GNSS/GPS module and provides location and positioning data. | AutoPi TMU CM4, AutoPi CAN-FD Pro |
+| `crypto_manager` | Controls and holds the connection to the secure element. | AutoPi TMU CM4, AutoPi CAN-FD Pro |
+| `can0_manager` | Manages CAN interface `can0` for CAN-FD communication workflows. | AutoPi CAN-FD Pro |
+| `can1_manager` | Manages CAN interface `can1` for parallel or secondary CAN-FD communication workflows. | AutoPi CAN-FD Pro |
+| `disk_housekeeper` | Performs disk cleanup and housekeeping tasks to maintain healthy storage usage. | AutoPi CAN-FD Pro |
+
+In addition to these built-in services, it is also possible to create fully custom services that run alongside the defaults on device boot. Custom services support PIP package requirements, giving you the flexibility to integrate third-party Python libraries as needed.
 
 ## Creating a Custom Service
 
 :::note
-Make sure that your device is updated, as that will otherwise prevent you from syncing the
-modules.
+Ensure your device is up to date before proceeding. An outdated device may prevent module syncing from completing successfully.
 :::
 
-1. Go to the **Services** section and click **Create**.
-2. Fill out the fields, and click **save**.
-3. The service along with a custom module has now been created.
-4. Now you can navigate to the custom module and change the code.
-**See examples below**
+1. Navigate to the **Services** section and click **Create**.
+2. Fill in the required fields and click **Save**.
+3. The service and its associated custom module are now created.
+4. Navigate to the custom module to edit the code. See the examples below for reference.
+5. Sync the changes by clicking the **Sync** button, or restart the device — it will automatically pull the latest changes on boot.
+6. When prompted to restart the Salt minion process, click **Yes**. The service will not be loaded until the minion has restarted. You can also restart it manually using one of the following commands:
 
-4. Now sync the changes by clicking the sync button or restarting the device which automatically pulls the changes.
-5. When asked if you want to restart the salt-minion process, you should click yes, as the service
-  is not loaded until the process has been restarted. You can also restart the minion process by
-  running the following commands:
+  * In the web terminal: 
+    ```python
+    minionutil.restart
+    ```
 
-  ```
-  # In web terminal
-  $ minionutil.restart
+  * Over SSH:
+    ```python
+    systemctl restart salt-minion
+    ```
 
-  # In SSH terminal
-  $ systemctl restart salt-minion
-  ```
+---
 
 ## PIP Requirements
-You can add PIP requirements to custom code modules like so:
+
+PIP requirements can be added to any custom code module as shown below:
 
 ![Adding PIP requirements](/img/cloud/device_management/services/create_custom_services/adding_pip_requirements.png) 
 
 :::tip
-You must follow the default python requirements.txt convention to define your PIP requirements.
+Follow the standard `requirements.txt` format when specifying PIP dependencies.
 :::
 
-## Pass Settings Into the Service.
+---
 
-To pass settings into the service, you should set the settings field to a *valid* JSON object.
+## Passing Settings Into the Service
+
+To pass configuration into the service, set the **Settings** field to a valid JSON object:
 
 ![Passing settings to custom service](/img/cloud/device_management/services/create_custom_services/passing_settings_to_custom_service.png) 
 
-Which can then be accessed inside the service like so:
+These settings are then accessible inside the service as follows:
 
 ```python
 some_setting = settings.get("some_setting", "default_value")
 ```
+---
 
-## A Few Examples
+## Examples
 
-### Log Hello World Every 5 Seconds
+### Log a Message Every 5 Seconds
 
-Let's try creating a service that simply outputs "Hello World" to the log every 5 seconds.
+The following example creates a service that writes "Hello World" to the log every 5 seconds.
 
 ```python
 import logging
@@ -90,15 +114,13 @@ def start(**settings):
         # Stop everything, close connections etc.
 ```
 
-And if you have `info` level debugging configured on your device, you should now see it logging
-'HELLO WORLD' every 5 seconds.
+With `info` level logging enabled on your device, you should see the message appearing in the log every 5 seconds.
 
 :::note
-The log level of the device can be changed from the advanced settings, under **System** >
-**Logging level**
+The device log level can be adjusted in the advanced settings under **System** > **Logging level**.
 :::
 
-### Basic Service With Support for Configuring Workers From the [Cloud](https://www.autopi.io/software-platform/cloud-management) Interface and Reporting of Failures Via Events.
+### Service With Cloud-Configurable Workers and Failure Event Reporting
 
 ```python
 import logging
@@ -153,9 +175,9 @@ def start(**settings):
         # Clean up
 ```
 
-### Listen to MQTT Topics
-This service will subscribe to all topics and log the messages. Remember to add the following PIP
-requirements to the module:
+### Subscribe to MQTT Topics
+
+The following service subscribes to all MQTT topics and logs incoming messages. Add the following PIP requirement to the module before use:
 
 ```
 paho-mqtt==1.5.0
@@ -246,7 +268,9 @@ def start(**settings):
         mqttc.disconnect()
 ```
 
-Further inspiration on how to write custom services (or engines as they are also called):
-* [Salt documentation](https://docs.saltstack.com/en/2017.7/topics/engines/index.html)
-* [Examples AutoPi.io on Github](https://github.com/autopi-io/autopi-core/tree/master/src/salt/base/ext/_engines)
+---
+
+For further reference on writing custom services (also referred to as engines):
+* [Salt documentation](https://docs.saltstack.com/en/2017.7/topics/engines/index.html).
+* [Examples AutoPi.io on Github](https://github.com/autopi-io/autopi-core/tree/master/src/salt/base/ext/_engines).
 

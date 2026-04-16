@@ -9,23 +9,17 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-In this guide we will explore how you can create a custom trigger for your [AutoPi](https://www.autopi.io) service. The
-example that we will look at is a trigger that will play a beeping sound when the vehicle's speed
-is 50km/h or more. Let's dive straight in.
+This guide explains how to create a custom trigger for an [AutoPi](https://www.autopi.io) service. The example used here is a trigger that plays a beep sound when the vehicle speed reaches or exceeds 50 km/h.
 
 :::note
-Service triggers are not to be confused with [Cloud](https://www.autopi.io/software-platform/cloud-management) triggers. Although they have the same name
-they have two very different functions. Service triggers work **on the device** and can respond to
-data coming in from a handler in various ways (emiting events, playing audio, etc). [Cloud](https://www.autopi.io/software-platform/cloud-management) trigers
-on the other hand respond to events emited by the device **on the server side**.
+Service triggers are distinct from [Cloud](https://www.autopi.io/software-platform/cloud-management) triggers. Service triggers run **on the device** and respond to data produced by a handler — for example by emitting events or playing audio. Cloud triggers, by contrast, respond to events emitted by the device and execute **on the server side**.
 :::
 
-1. Let's start by creating a custom code module with the name *my_triggers* of type *Execution*. We
-  can do that by going over to **Device** > **Custom Code**:
+1. Create a custom code module named *my_triggers* with the type **Execution**. Navigate to **Device** > **Custom Code**:
 
   ![Editing custom code](/img/cloud/device_management/services/create_custom_triggers/editing_custom_code.png) 
 
-  Here is the code in plain text for easy copy and paste:
+  Here is the complete code:
 
   ```python
   import logging
@@ -63,48 +57,31 @@ on the other hand respond to events emited by the device **on the server side**.
           __context__["speed_warning_beep"] = False
   ```
 
-  To quickly run through the code, this code creates a function that will check if the result
-  passed to it has a `value` key that is equal to or more than 50. Once that condition is met, it
-  will make sure that the vehicle isn't already in that state through the context (if the vehicle
-  is continuously above 50km/h we won't play the beeping sound continuously) and if it isn't it'll
-  play the beeping sound. Once the above or equal to condition is no longer met, we reset the
-  context.
+  This function checks whether the result contains a `value` key with a value of 50 or higher. When the threshold is first crossed, it plays a beep sound. A context flag is used to ensure the sound does not play repeatedly while the vehicle remains above the threshold. When the speed drops below 50 km/h, the flag is reset.
 
-  Now, let's synchronise the changes to the device by clicking the **Sync** button. If the device
-  is offline the changes will automatically be synchronised on next start-up.
+  Once the code is ready, sync the changes to the device by clicking **Sync**. If the device is offline, the changes will be applied automatically on next start-up.
 
-2. Next, we need to register that trigger in the service that it'll be used. For this guide, we
-  need to register it in the OBD service named **obd_manager**. Go to **Device** > **Services** >
-  **obd_manager** > **Hooks** > **Create**:
+2. Register the trigger as a hook on the **obd_manager** service. Navigate to **Device** > **Services** > **obd_manager** > **Hooks** > **Create**:
 
   ![Creating a custom hook](/img/cloud/device_management/services/create_custom_triggers/creating_a_custom_hook.png) 
 
-4. We now need to use the newly registered trigger hook by adding it to a workflow in a worker.
-  Go to **Device** > **Services** > **obd_manager** > **Workers** > **Create**:
+4. Add the registered trigger hook to a worker workflow. Navigate to **Device** > **Services** > **obd_manager** > **Workers** > **Create**:
 
   ![Creating a new worker](/img/cloud/device_management/services/create_custom_triggers/creating_a_new_worker.png) 
 
-  When the above changes have been successfully synchronised to your device, it will start checking
-  the speed of your vehicle and play a single beep sound when exceeding 50km/h.
+  Once the changes have been successfully synced to the device, it will begin monitoring vehicle speed and play a single beep when 50 km/h is exceeded.
 
   :::note
-  The `query` handler with a `SPEED` argument is only valid for some vehicles, mostly internal
-  combustion engine (ICE) vehicles. If you have an electric vehicle, you might need to use a more
-  sophisticated setup to get the current speed of your vehicle. We suggest that you browse forums
-  for your make and model for such information.
+  The `query` handler with a `SPEED` argument is supported on most internal combustion engine (ICE) vehicles. For electric vehicles, a different approach may be required. Consult your vehicle's make and model forums for guidance.
   :::
 
   :::tip Not Working?
-  Check the log file on the device to see if there are warnings and/or errors. Check
-  [this](/developer_guides/autopi_logs.md) guide out for more information on how to retrieve the logs from your
-  device.
+  Check the device logs for warnings or errors. See [this guide](/developer_guides/autopi_logs.md) for instructions on retrieving logs from your device.
   :::
 
-## Want an Event Instead of a Beep?
+## Firing an Event Instead of a Beep
 
-You can freely fire events from your custom code modules. If you're looking to execute
-one or multiple different actions based on some event (in this case, speeding over 50km/h), you
-are able to do that. Let's add another function to the *my_triggers* custom code:
+Events can also be fired from custom code modules. To trigger one or more actions based on a condition — in this case, exceeding 50 km/h — add the following function to the *my_triggers* module:
 
 ```python
 def speed_warning_event(result):
@@ -136,10 +113,7 @@ def speed_warning_event(result):
         __context__["speed_warning_event"] = False
 ```
 
-The code here is esentially the same as the one presented above. The only difference is that
-the [AutoPi](https://www.autopi.io) will fire an event internally instead of playing a beeping sound. This event can then
-be used in the **event_reactor** service to perform other actions. Also, the event will be uploaded
-to the [Cloud](https://www.autopi.io/software-platform/cloud-management) and be visible from **Device** > **Events**.
+This function follows the same logic as the previous example, but fires an internal event instead of playing a sound. The event will be sent to the `event_reactor` service for further processing and will also appear in the [Cloud](https://www.autopi.io/software-platform/cloud-management) under **Device** > **Events**.
 
 
 
