@@ -173,6 +173,7 @@ module.exports = {
               "label": "Events",
               "type": "category"
             },
+            "cloud/device_management/device-loggers",
             "cloud/device_management/can-analyzer",
             "cloud/device_management/change-history",
             "cloud/device_management/variables",
