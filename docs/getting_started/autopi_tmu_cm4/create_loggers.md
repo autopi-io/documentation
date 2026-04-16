@@ -47,7 +47,14 @@ Steps to manually setup the CAN Bus:
   * Click Create. 
 
 ### Use CAN Analyzer (Sniffer)
-Use the sniffer to detect available CAN traffic and identify the correct protocol. You can read more at this guide: [Using the Cloud CAN Analyzer](https://docs.autopi.io/cloud/obd-ii/using-the-can-bus-commands/#using-the-cloud-can-analyzer). 
+Use the sniffer to detect available CAN traffic and identify the correct protocol. The CAN Analyzer functionality consists of four main functions:
+
+* Sniffer - passive monitoring of CAN traffic.
+* Recorder - captures CAN messages and stores them for later use.
+* Player - replays previously recorded CAN traffic.
+* PID Tester - sends request-response queries to ECUs.
+
+Using sniffer, helps you to find the correct CAN Bus Protocol, you can read more at this guide: [CAN Analyzer](https://docs.autopi.io/cloud/device_management/can-analyzer/). 
 
 
 ---
