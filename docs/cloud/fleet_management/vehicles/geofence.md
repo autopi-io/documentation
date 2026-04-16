@@ -74,7 +74,67 @@ geofences that have been created.
 6. **Save the Geofence:**
     - Once satisfied, click **Create**. You can always add more vehicles or 
       change details later.
-    - A notification will confirm that the geofence was successfully created. 
+    - A notification will confirm that the geofence was successfully created.
 
+---
+
+## How Fleet Geofences Work
+
+Once a geofence is created and vehicles are assigned, the AutoPi Cloud monitors vehicle positions and triggers events based on geofence state changes.
+
+### Event Types
+
+#### 1. Wake-Up State Check
+When a device wakes up, it reports whether it is currently inside or outside each geofence:
+* `vehicle/geofence/GEOFENCE_NAME/inside`
+* `vehicle/geofence/GEOFENCE_NAME/outside`
+
+#### 2. Enter / Exit Events
+When a new position is logged, the device checks whether the geofence state has changed. If **3 consecutive positions** confirm the change, one of the following events is triggered:
+* `vehicle/geofence/GEOFENCE_NAME/enter`
+* `vehicle/geofence/GEOFENCE_NAME/exit`
+
+These events are sent to the AutoPi Cloud, where they can be used for monitoring, notifications, and automation.
+
+---
+
+## Use Fleet Geofences with Templates
+
+You can combine fleet geofences with **[Templates](/cloud/device_management/templates.md)** to ensure that every new device added to a template automatically has the geofence applied — no manual setup required.
+
+### How It Works
+
+When a fleet geofence is configured and a template is assigned to a device, the geofence rules are applied to that device as part of the template. Any new device subsequently assigned to the template will have the fleet geofence applied automatically.
+
+This makes fleet geofences ideal for scaling across large fleets, where consistent geofence coverage is needed without repeating configuration for each individual device.
+
+---
+
+## Use Fleet Geofences with Triggers
+
+Geofence events can be used to automate actions through **[Triggers](/cloud/device_management/a_guide_to_triggers.md)**. A trigger listens for a specific geofence event and performs a defined action in response.
+
+### Example Use Cases
+
+* Send an email notification when a vehicle enters a restricted area.
+* Fire a webhook when a vehicle exits a designated delivery zone.
+* Send an alert on the AutoPi Cloud when a vehicle crosses a geofence boundary.
+
+### How to Set Up a Trigger
+
+1. Navigate to **Device → Events** to confirm that geofence events are being received.
+2. Go to **Triggers** and click **Create**.
+3. Set the event condition to match one of the following:
+    * `vehicle/geofence/*/enter` — triggers on entry into any geofence.
+    * `vehicle/geofence/*/exit` — triggers on exit from any geofence.
+    * Or use a specific geofence name instead of `*` to target a particular geofence.
+4. Define the action to perform when the event occurs (e.g., send email, send alert, call webhook).
+5. Save the trigger.
+
+### Possible Actions
+
+* Send email notifications.
+* Trigger webhook requests.
+* Send an alert on AutoPi Cloud.
 
 
