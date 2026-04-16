@@ -271,10 +271,6 @@ module.exports = {
             from: '/cloud/fleet/fleet-templates/',
           },
           {
-            to: '/cloud/device_management/device-install-procedure/',
-            from: '/cloud/fleet/device-install-procedure/',
-          },
-          {
             to: '/cloud/fleet_management/vehicles/trips/automatic-exports/',
             from: ['/cloud/trips/automatic-exports/', '/cloud/fleet/trips/automatic-exports/', '/cloud/fleet_management/trips/automatic-exports/'],
           },

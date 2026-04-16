@@ -152,14 +152,14 @@ module.exports = {
             "cloud/device_management/dashboard-device",
             "cloud/device_management/cloud-jobs",
             "cloud/device_management/custom-code",
-            "cloud/device_management/device-install-procedure",
             {
               "items": [
                 "cloud/device_management/services/services-intro",
-                "cloud/device_management/services/create-custom-returners",
                 "cloud/device_management/services/create-custom-services",
-                "cloud/device_management/services/create-custom-triggers",
-                "cloud/device_management/services/create-custom-workers"
+                "cloud/device_management/services/create-custom-workers",
+                "cloud/device_management/services/create-custom-returners",
+                "cloud/device_management/services/create-custom-triggers"
+                
               ],
               "label": "Services",
               "type": "category"
