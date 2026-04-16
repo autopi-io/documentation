@@ -19,7 +19,7 @@ geofences that have been created.
 
 ![Geofence tab](/img/cloud/fleet_management/vehicles/geofences/geofence_tab.png)
 
-### How to Create a Geofence
+### How to Create a Fleet Geofence
 
 ![Create geofence](/img/cloud/fleet_management/vehicles/geofences/create_geofence.png)
 
@@ -84,12 +84,7 @@ Once a geofence is created and vehicles are assigned, the AutoPi Cloud monitors 
 
 ### Event Types
 
-#### 1. Wake-Up State Check
-When a device wakes up, it reports whether it is currently inside or outside each geofence:
-* `vehicle/geofence/GEOFENCE_NAME/inside`
-* `vehicle/geofence/GEOFENCE_NAME/outside`
-
-#### 2. Enter / Exit Events
+**Enter / Exit Events**
 When a new position is logged, the device checks whether the geofence state has changed. If **3 consecutive positions** confirm the change, one of the following events is triggered:
 * `vehicle/geofence/GEOFENCE_NAME/enter`
 * `vehicle/geofence/GEOFENCE_NAME/exit`
@@ -100,7 +95,7 @@ These events are sent to the AutoPi Cloud, where they can be used for monitoring
 
 ## Use Fleet Geofences with Templates
 
-You can combine fleet geofences with **[Templates](/cloud/device_management/templates.md)** to ensure that every new device added to a template automatically has the geofence applied — no manual setup required.
+You can combine fleet geofences with **[Templates](/cloud/device_management/templates.md)** to ensure that every new device added to a template automatically has the geofence applied, no manual setup required.
 
 ### How It Works
 
