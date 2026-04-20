@@ -160,3 +160,16 @@ The geofence_slug is a URL-safe version of the geofence's name.
 | Name | Type | Description | Example |
 | ------ | ------ | ------ | ------ |
 | `fence_id` | Number | Id of the geofence that triggered the event | `3306` |
+
+## Ignition Events
+
+| Tag | Description | Fields |
+| ------ | ------ | ------ |
+| `vehicle/ignition/on` | The vehicle ignition was turned on. | `source` |
+| `vehicle/ignition/off` | The vehicle ignition was turned off. | `source` |
+
+**FIELD DEFINITIONS**
+
+| Name | Type | Description | Example |
+| ------ | ------ | ------ | ------ |
+| `source` | Text | The source that triggered the ignition event. | - |
