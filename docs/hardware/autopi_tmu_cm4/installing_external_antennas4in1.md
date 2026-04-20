@@ -36,7 +36,7 @@ left to do is connect the cables to the corresponding antenna ports. Please refe
 to the image below for guidance. 
 
 <p align= "center">
-	<img src="/img/hardware/autopi_tmu_cm4/installing_4in1_external_antennas/external_antenna_kit_4in1.png" alt="Device with antenna" width="600" />
+	<img src="/img/hardware/shared_devices/device_4in1_external_antenna_kit.png" alt="Device with antenna" width="600" />
 </p>
 
 

@@ -125,20 +125,20 @@ Each device comes with a labeled sticker showing which antenna connects to each 
 Your AutoPi CAN-FD Pro includes the following antennas:
 * 2 × 4G antennas
 * 1 × GPS antenna
-* 1 × Wi-Fi antenna
+* 1 × Wi-Fi antenna (2.4G)
 
 <p align= "center">
-	<img src="/img/hardware/autopi_tmu_cm4/installing_4in1_external_antennas/external_antenna_kit_4in1.png" alt="Device with antenna" width="600" />
+	<img src="/img/hardware/shared_devices/top_look_device_4in1_antenna.png" alt="Device with antenna" width="600" />
 </p>
 
 To attach the antennas, gently screw each one into its corresponding port by hand. There’s no need for tools, just make sure each antenna is firmly and securely fastened.
 Below, you can see examples of the device with and without the external antenna kit installed.
 
 AutoPi CAN-FD Pro without the external antenna kit installed: 
-![Pro without external antenna kit](/img/hardware/autopi_tmu_cm4/installing_4in1_external_antennas/pro_antenna_screws.jpeg)
+![Pro without external antenna kit](/img/hardware/shared_devices/side_look_device_sticker_antenna_smaller.png)
 
 AutoPi CAN-FD Pro with the external antenna kit installed:
-![Pro wit external antenna kit](/img/hardware/autopi_tmu_cm4/installing_4in1_external_antennas/pro_cables.jpeg)
+![Pro with external antenna kit](/img/hardware/shared_devices/side_look_device_4in1_antenna.png)
 
 ## 5. Locate OBD Port
 
