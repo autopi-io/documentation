@@ -225,3 +225,29 @@ https://docs.docker.com/engine/reference/commandline/events/
 | `project` | Text | Project name | my_project |
 | `id` | Text | ID of docker object | 40d7a9a7d6bb3c085149a45fc1874de8b4541bac7a28a46f60f734e34f52989b |
 | `release` | Text | Pretty version of the release | 1.2.3 |
+
+## Kernel Error Events
+
+| Tag | Description | Fields |
+| ------ | ------ | ------ |
+| `system/kernel/error` | A kernel error was detected. | - |
+
+## Mosquitto Error Events
+
+| Tag | Description | Fields |
+| ------ | ------ | ------ |
+| `system/mosquitto/error` | An error occurred in the Mosquitto MQTT broker. | - |
+
+## Temperature Events
+
+| Tag | Description | Fields |
+| ------ | ------ | ------ |
+| `system/temperature/cold` | The system temperature has dropped to a cold level. | `reason` |
+| `system/temperature/warm` | The system temperature has reached a warm level. | `reason` |
+| `system/temperature/hot` | The system temperature has reached a hot level. | `reason` |
+
+**FIELD DEFINITIONS**
+
+| Name | Type | Description | Example |
+| ------ | ------ | ------ | ------ |
+| `reason` | Text | The explanatory cause for the event. | - |
