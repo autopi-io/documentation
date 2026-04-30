@@ -231,6 +231,12 @@ for connecting your phone or notebook.
 If you need to know the APN string for the pre-installed SIM card, it is **nxt20.net**. 
 :::
 
+:::note
+If you are using a **Verizon Wireless** SIM card, please follow the dedicated setup guide:
+[Setting Up Your Device with Verizon Wireless](https://docs.autopi.io/developer_guides/setting-up-a-device-with-verizon-wireless/).
+:::
+
+
 If you are using your own SIM card, you may need to configure the APN settings after 
 connecting to the device’s Wi-Fi hotspot to ensure a seamless 4G/LTE connection. 
 However, setting up the APN is not always necessary—it depends on your SIM provider. 
