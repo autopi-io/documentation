@@ -58,9 +58,9 @@ On the map:
 
 In the **Groups+Locations** tab:
 
-![Vehicle Groups Tab ](/img/cloud/fleet_management/vehicles/geofences/create_geofence_groups.png)
+![Vehicle Groups Tab](/img/cloud/fleet_management/vehicles/geofences/create_geofence_groups.png)
 
-- If you've created vehicle groups, add them to the geofence to automatically apply the geofence to all vehicles in those groups (see [Vehicle Groups](/https://docs.autopi.io/cloud/fleet_management/vehicles/fleet-groups/)).
+- If you've created vehicle groups, add them to the geofence to automatically apply the geofence to all vehicles in those groups (see [Vehicle Groups](https://docs.autopi.io/cloud/fleet_management/vehicles/fleet-groups/)).
 - If you've created location, add it to the geofence to automatically apply the geofence to all vehicles in that location (see [Locations](https://docs.autopi.io/cloud/fleet_management/locations/)).
 - Use the search filter to find specific groups or locations.
 - Select groups/locations by checking the boxes next to them.
