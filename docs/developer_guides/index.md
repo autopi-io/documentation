@@ -5,33 +5,31 @@ title: Guides Intro
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CardGrid from "/components/CardGrid" ;
 
-Welcome to the advanced section of the [AutoPi](https://www.autopi.io) support documentation, specifically tailored
-for developers. This guide aims to provide you with a comprehensive
-understanding of the technical capabilities and integration potential of the [AutoPi](https://www.autopi.io) solution.
-Whether you are a developer looking to create custom scripts, a data analyst interested in
-deep vehicle telemetry, or a technical enthusiast aiming to optimize and extend the
-functionalities of your vehicle, this documentation will serve as your detailed roadmap.
+Welcome to the developer guides for [AutoPi](https://www.autopi.io). This section is designed to help you build,
+integrate, and troubleshoot faster with practical documentation for real-world vehicle and fleet projects.
 
-## Most used Developer guides
-- Use [**DoIP hat**](https://shop.autopi.io/products/doip-hat-v1-3) with your AutoPi device and unlocks more diagnosing and maintenance of your fleet; read more here: [How to set up DoIP](https://docs.autopi.io/developer_guides/setting-up-doip/)
-- Want to **access your device remotely**? No problem, you can [**SSH to your device**](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) or you can [enable **Tailscale**](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
-- Deploying **Docker** containers on your device; read more here: [Setting up Docker on Your Device](https://docs.autopi.io/developer_guides/setting-up-docker/)
-- Setting up a **Development Workflow**; read more here: [**Local development workflow**](https://docs.autopi.io/developer_guides/local-development-workflow/), [Using the AutoPi with an **external power supply**](https://docs.autopi.io/developer_guides/using-the-autopi-with-an-external-power-supply/), [AutoPi **Local API** overview](https://docs.autopi.io/developer_guides/local-api-overview/)
-- **Set up your own server** and receive data on your own broker; read more here: [Configuring MQTT](https://docs.autopi.io/developer_guides/configuring-mqtt/)
-- When working on a project remotely and want to access your device, its possible to wake up your device from sleep; read more here: [**Remotely waking up your device**](https://docs.autopi.io/developer_guides/remotely-waking-up-your-device/)
-- Get full logs from your device; read more here: [**AutoPi Logs**](https://docs.autopi.io/developer_guides/autopi-logs/)
-- If your device is having issues, you can [**Reflash your device**](https://docs.autopi.io/developer_guides/reflashing-your-device/)
-- Want to add a camera to your vehicle? Read more here: [**Installing a camera** on your AutoPi](https://docs.autopi.io/developer_guides/installing-a-camera-on-your-autopi/)
-- How to use **bluepy** with AutoPi devices; read more here: [Enabling Bluetooth](https://docs.autopi.io/developer_guides/how-to-use-bluepy-with-autopi-edge-devices/)
-    
+Whether you are developing custom workflows, integrating with backend systems, or working with advanced diagnostics,
+these guides provide clear, actionable steps to help you move from setup to production.
 
-With these and more topics, we hope that you will be equipped to unlock the full
-potential of the [AutoPi](https://www.autopi.io) solution. As always let us know if you have any questions or feedback
-at <a href="mailto:support@autopi.io">support@autopi.io</a>.
+## Most Used Developer Guides
+- **Advanced diagnostics (DoIP):** Use the [DoIP hat](https://shop.autopi.io/products/doip-hat-v1-3) to expand diagnostic and maintenance capabilities. Start here: [How to set up DoIP](https://docs.autopi.io/developer_guides/setting-up-doip/)
+- **Remote access:** Connect directly with [SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) or use [Tailscale](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
+- **Containerized workloads:** Run services on-device with [Setting up Docker on your device](https://docs.autopi.io/developer_guides/setting-up-docker/)
+- **Development setup:** Follow the [Local development workflow](https://docs.autopi.io/developer_guides/local-development-workflow/), power safely with an [external power supply](https://docs.autopi.io/developer_guides/using-the-autopi-with-an-external-power-supply/), and use the [AutoPi Local API overview](https://docs.autopi.io/developer_guides/local-api-overview/)
+- **Data routing and broker integration:** Send data to your own infrastructure with [Configuring MQTT](https://docs.autopi.io/developer_guides/configuring-mqtt/)
+- **Power and wake control:** Access sleeping devices remotely with [Remotely waking up your device](https://docs.autopi.io/developer_guides/remotely-waking-up-your-device/)
+- **Troubleshooting and recovery:** Collect diagnostics with [AutoPi Logs](https://docs.autopi.io/developer_guides/autopi-logs/) and recover devices with [Reflashing your device](https://docs.autopi.io/developer_guides/reflashing-your-device/)
+- **Hardware extensions:** Add peripherals with [Installing a camera on your AutoPi](https://docs.autopi.io/developer_guides/installing-a-camera-on-your-autopi/) and configure BLE workflows via [How to use bluepy with AutoPi edge devices](https://docs.autopi.io/developer_guides/how-to-use-bluepy-with-autopi-edge-devices/)
 
-<p align="center">
-    <img src="/img/getting_started/developer_guides/intro/developer_guide_graphic.jpg" alt="Developer guide graphic" width="60%" />
-</p>
+## New Developer Guides
+- [Accessing Raw GPS Data](https://docs.autopi.io/developer_guides/accessing-raw-gps-data/)
+- [Build Grafana Dashboard](https://docs.autopi.io/developer_guides/build-grafana-dashboard/)
+- [How to Create a Custom Event](https://docs.autopi.io/developer_guides/how-to-create-custom-event-for-custom-logger/)
+- [Remote CAN Access](https://docs.autopi.io/developer_guides/can-bridge/)
+- [RFID Integration](https://docs.autopi.io/developer_guides/rfid-integartion/)
+
+These and other guides are intended to help you unlock the full technical potential of your AutoPi deployment.
+If you have questions or feedback, contact us at <a href="mailto:support@autopi.io">support@autopi.io</a>.
 
 
 
