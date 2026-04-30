@@ -14,7 +14,7 @@ Download the official datasheet here: <br/>
 
 ## Device Specifications 
 | **Name** | **Description** |
-|:-----:|--------|
+|:-----------------------------------:|:-----------------------------------------------------------------:|
 |   Physical specifications    |   **Weight:** 63 g <br/> **Dimensions:** 67,2 x 49,6 x 25 mm (L x W x H)   | 
 |   Modem (EMEA variant)   |  Integrated 4G/LTE Cat 1 connection <br/> **4G (LTE-FDD):**  B1, B3, B7, B8, B20, B28 <br/> **4G (LTE-TDD):** B38, B40, B41 <br/> **2G (GSM):** B2, B3, B5, B8  | 
 |   Modem (APAC/LATAM variant)  | Integrated 4G/LTE Cat 1 connection <br/> **4G (LTE-FDD):**  B1, B2, B3, B4, B5, B7, B8, B20, B28 <br/> **4G  (LTE-TDD):** B40 <br/> **2G (GSM):** B2, B3, B5, B8       | 
