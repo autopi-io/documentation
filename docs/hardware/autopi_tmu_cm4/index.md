@@ -4,8 +4,7 @@ title: Introduction
 ---
 import CardGrid from "/components/CardGrid" ;
 
-This section has a few guides written out that are specifically for the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) devices.
-Some of the knowledge may be transferrable to previous generation devices.
+This section contains comprehensive documentation for the [AutoPi TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device. While the content is tailored specifically for this device, many concepts may apply to earlier generation models.
 
 ## Quick Links
 [Getting started](https://docs.autopi.io/getting_started/autopi_tmu_cm4/) | [Dimensions](https://docs.autopi.io/hardware/autopi_tmu_cm4/device_dimensions/) | [Specifications](https://docs.autopi.io/hardware/autopi_tmu_cm4/device_specifications/) | [State of the device](https://docs.autopi.io/hardware/autopi_tmu_cm4/led-and-button/) | [OBD connector pinout](https://docs.autopi.io/hardware/autopi_tmu_cm4/obd-connector-pinout/) | [Missing data](https://docs.autopi.io/getting_started/autopi_tmu_cm4/cm4-data-troubleshooting/) | [4G Troubleshooting](https://docs.autopi.io/getting_started/autopi_tmu_cm4/4g-internet-setup-troubleshooting/) 
@@ -14,37 +13,50 @@ Some of the knowledge may be transferrable to previous generation devices.
 <img src="/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png" alt="AutoPi TMU CM4" width="60%" />
 </p>
 
-## Key Benefits
-- **4G/LTE with global coverage:** The integrated modem with worldwide coverage. 
-- **Built in 2x CAN interface:** Automotive connection with dual CAN. 
-- **Factory integrated unit or aftermarket add-on:** Use as a factory integrated OEM device or aftermarket add-on. 
-- **Integrated power-safe functionality:** Proven and experienced power fail-safe functionality integrated. 
-- **Runs full Linux OS:** Boost a well proved and tested OS, with guarantee for stability. 
-- **Can be extended to almost any usage:** Allows extension to both business and personal use cases. 
-- **Upgradeable CPU/RAM:** Upgrade the device with additional CPU/RAM 
-- **Automotive certified (CE/FCC):** Certified to automotive standards for global usage. 
-- **Security element:** Secure and encrypt your data
+## Core Features
 
-### Upgraded Automotive Interface
-The device comes with a 2x CAN interface and can be further expanded with additional CAN interfaces. Support for Diagnostics over IP (DoIP)
+| Feature | Description |
+|:---------:|:-------------:|
+| **Global 4G/LTE Connectivity** | Integrated modem with worldwide coverage |
+| **Dual CAN Interface** | Native support for dual CAN bus connections with expansion capabilities |
+| **Flexible Deployment** | Works as both factory-integrated OEM solution and aftermarket add-on |
+| **Power Fail-Safe Design** | Proven fail-safe power management for seamless operation |
+| **Full Linux OS** | Runs on proven, stable Raspberry Pi OS with long-term support |
+| **Infinite Extensibility** | Customizable for business and personal use cases |
+| **Upgradeable Hardware** | Support for CPU and RAM expansion |
+| **Automotive Certified** | CE and FCC certified for global automotive use |
+| **Built-in Security** | Secure data encryption and protection |
 
-### Runs LINUX OS
-[AutoPi](https://www.autopi.io) Core is based on a full LINUX OS (Raspberry Pi OS), with endless possibilities for extensions and integrations. Well proven and tested OS, with high endurance.
+## Key Technical Highlights
 
-### Open Source-Software
-The device runs on an open source-software, which allows users to build a custom code on top of that. All drivers and implementations in [AutoPi](https://www.autopi.io) Core is available from our GitHub repository.
+### Advanced Automotive Interface
+The device features a dual CAN interface with support for multiple parallel connections. The integrated Diagnostics over IP (DoIP) support enables advanced vehicle diagnostics capabilities.
 
-###  Computing Power
-Broadcom BCM2711 Quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz provides incredible speed and functionality. 1GB LPDDR4 RAM and an integrated GPU. Upgradeable to even more memory
+### Linux-Based Operating System
+Built on Raspberry Pi OS, AutoPi Core provides a robust, well-tested foundation with extensive possibilities for extensions and integrations. The open-source architecture ensures long-term stability and compatibility.
 
-## Accessories 
-  * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – Add extra reach for flexible placement.
-  * [Dual Lock Extreme Velcro Strip](https://shop.autopi.io/products/dual-lock-extreme-velcro) – Secure, vibration-resistant mounting anywhere.
-  * [Global SIM card solution](https://shop.autopi.io/products/global-sim-card-solution) - Our Global SIM card solution works in 188 countries, providing you with reliable and seamless connectivity wherever your solution is based.
-  * [DoIP HAT](https://shop.autopi.io/products/doip-hat-v1-3) - The DoIP HAT is a highly advanced interface module designed to enhance vehicle diagnostics using the DoIP protocol (Diagnostics over Internet Protocol). 
-  * [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable?pr_prod_strat=jac&pr_rec_id=17052e989&pr_rec_pid=8619774050653&pr_ref_pid=8609919074653&pr_seq=uniform) - Power the AutoPi TMU CM4 device with any 12-24 volt DC power supply.
-  * [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform) - Use this Y-splitter cable if you need to connect an additional OBD-II device at the same time as your AutoPi TMU CM4.
-  * [Tesla OBD-II Adapter Cable for Model 3 and Y](https://shop.autopi.io/products/tesla-obd2-adapter-cable-for-model-3-and-y) - Add an OBD-II port to your Tesla Model 3 or Model Y with this adapter cable.
-  * [Micro USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable) - This Micro USB to USB-A adapter cable is made to fit perfectly with the external Micro USB port on the AutoPi TMU CM4 device.
-  * [OBD-II to dual DB9](https://shop.autopi.io/products/obd2-to-dual-db9) - Connect two CAN bus nodes to the OBD2 port of the AutoPi TMU CM4.
+### Open-Source Architecture
+Full access to open-source drivers and core implementations via the AutoPi GitHub repository enables custom development and community contributions.
+
+### High-Performance Computing
+Broadcom BCM2711 Quad-core Cortex-A72 processor (ARM v8) running at 1.5GHz delivers enterprise-grade performance. Includes 1GB LPDDR4 RAM with integrated GPU. Upgradeable to higher memory configurations for demanding applications.
+
+## Optional Accessories
+
+### Connectivity & Power
+- [Global SIM Card Solution](https://shop.autopi.io/products/global-sim-card-solution) – Works in 188+ countries with reliable global connectivity
+- [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable) – Power your device from any 12-24V DC power supply
+
+### OBD Expansion & Interface
+- [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable) – Extends reach for flexible device placement in any vehicle
+- [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable) – Connect additional OBD-II devices simultaneously
+- [OBD-II to Dual DB9 Adapter](https://shop.autopi.io/products/obd2-to-dual-db9) – Connect two CAN bus nodes to the OBD2 port
+- [Tesla OBD-II Adapter (Model 3/Y)](https://shop.autopi.io/products/tesla-obd2-adapter-cable-for-model-3-and-y) – Add OBD-II port to Tesla vehicles
+
+### Advanced Diagnostics
+- [DoIP HAT](https://shop.autopi.io/products/doip-hat-v1-3) – Advanced Diagnostics over IP (DoIP) interface module for enhanced vehicle diagnostics
+
+### Mounting & Integration
+- [Dual Lock Extreme Velcro Strip](https://shop.autopi.io/products/dual-lock-extreme-velcro) – Secure, vibration-resistant mounting solution
+- [Micro USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable) – Compatible external USB adapter for TMU CM4
 
