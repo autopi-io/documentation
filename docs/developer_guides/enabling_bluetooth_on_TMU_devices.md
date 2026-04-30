@@ -7,6 +7,8 @@ import CardGrid from "/components/CardGrid";
 
 :::note
   This guide only works with legacy devices using STN/ELM based chips for automotive interface. No devices sold after February 2021 contains the STN chip. 
+
+  If you have a newer AutoPi device (such as TMU CM4 or CAN-FD Pro), follow the [newer Bluetooth guide](./how_to_use_bluepy.md).
 :::
 
 In this guide we will take a look at how you can enable Bluetooth for [AutoPi](https://www.autopi.io) devices that use the
