@@ -1,18 +1,22 @@
 ---
 id: how-to-use-bluepy-with-autopi-edge-devices
-title: Enabling Bluetooth - Using bluepy with AutoPi Edge Devices
+title: Enabling Bluetooth on AutoPi 
 supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid" ;
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-# BluePy BLE Guide for [AutoPi](https://www.autopi.io) Edge Devices
-
 ## Introduction
 [AutoPi](https://www.autopi.io) Core relies on BluePy and Bluez packages built into the Linux core on the device. 
+
+:::note
+If you are using an older AutoPi device with an STN/ELM chip, follow the [legacy Bluetooth guide](./enabling_bluetooth_on_TMU_devices.md). This guide is intended for newer devices such as AutoPi TMU CM4 and AutoPi CAN-FD Pro.
+:::
 
 ## Prerequisites
 - AutoPi [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) or AutoPi [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) device
@@ -30,6 +34,9 @@ It is possible to use the [bluetooth.scan](/core/commands/core-commands-bluetoot
 A great example of using the [AutoPi](https://www.autopi.io) edge devices full functionality, is teh usage of [creating custom services](/cloud/device_management/services/create-custom-services/). Using this extendabilty of the devices you utilize the full functionality of the bluepy library on the device.   
 
 ### Scanning for Devices - Custom Code Example
+
+<Tabs>
+<TabItem value="py3" label="Python 3">
 
 ```python
 from bluepy.btle import Scanner, DefaultDelegate
@@ -57,7 +64,42 @@ for dev in devices:
         print(f"  {desc}: {value}")
 ```
 
+</TabItem>
+<TabItem value="py27" label="Python 2.7">
+
+```python
+from bluepy.btle import Scanner, DefaultDelegate
+
+class ScanDelegate(DefaultDelegate):
+    def __init__(self):
+        DefaultDelegate.__init__(self)
+
+    def handleDiscovery(self, dev, isNewDev, isNewData):
+        if isNewDev:
+            print("Discovered device {}".format(dev.addr))
+        elif isNewData:
+            print("Received new data from {}".format(dev.addr))
+
+# Initialize scanner object
+scanner = Scanner().withDelegate(ScanDelegate())
+
+# Scan for devices (timeout in seconds)
+devices = scanner.scan(10.0)
+
+# Print discovered devices
+for dev in devices:
+    print("Device {} ({}), RSSI={} dB".format(dev.addr, dev.addrType, dev.rssi))
+    for (adtype, desc, value) in dev.getScanData():
+        print("  {}: {}".format(desc, value))
+```
+
+</TabItem>
+</Tabs>
+
 ### Connecting to a Device - Custom Code Example
+
+<Tabs>
+<TabItem value="py3" label="Python 3">
 
 ```python
 from bluepy.btle import Peripheral, UUID
@@ -88,7 +130,45 @@ finally:
     device.disconnect()
 ```
 
+</TabItem>
+<TabItem value="py27" label="Python 2.7">
+
+```python
+from bluepy.btle import Peripheral, UUID
+import time
+
+try:
+    # Connect to device
+    device = Peripheral("XX:XX:XX:XX:XX:XX")  # Replace with your device's address
+    
+    # Get all services
+    services = device.getServices()
+    
+    for service in services:
+        print("Service UUID: {}".format(service.uuid))
+        
+        # Get characteristics for this service
+        characteristics = service.getCharacteristics()
+        
+        for char in characteristics:
+            print("  Characteristic UUID: {}".format(char.uuid))
+            # Check if readable
+            if char.supportsRead():
+                print("    Value: {}".format(char.read()))
+                
+except Exception as e:
+    print("Error: {}".format(str(e)))
+finally:
+    device.disconnect()
+```
+
+</TabItem>
+</Tabs>
+
 ### Reading and Writing Characteristics - Custom Code Example
+
+<Tabs>
+<TabItem value="py3" label="Python 3">
 
 ```python
 from bluepy.btle import Peripheral, UUID
@@ -134,7 +214,60 @@ if __name__ == "__main__":
         device.disconnect()
 ```
 
+</TabItem>
+<TabItem value="py27" label="Python 2.7">
+
+```python
+from bluepy.btle import Peripheral, UUID
+
+class BLEDevice:
+    def __init__(self, address):
+        self.address = address
+        self.device = None
+    
+    def connect(self):
+        self.device = Peripheral(self.address)
+        
+    def read_characteristic(self, service_uuid, char_uuid):
+        service = self.device.getServiceByUUID(UUID(service_uuid))
+        char = service.getCharacteristics(UUID(char_uuid))[0]
+        return char.read()
+        
+    def write_characteristic(self, service_uuid, char_uuid, data):
+        service = self.device.getServiceByUUID(UUID(service_uuid))
+        char = service.getCharacteristics(UUID(char_uuid))[0]
+        char.write(data)
+        
+    def disconnect(self):
+        if self.device:
+            self.device.disconnect()
+
+# Example usage
+if __name__ == "__main__":
+    device = BLEDevice("XX:XX:XX:XX:XX:XX")
+    try:
+        device.connect()
+        # Example UUIDs - replace with your device's UUIDs
+        service_uuid = "1800"
+        char_uuid = "2a00"
+        
+        # Read value
+        value = device.read_characteristic(service_uuid, char_uuid)
+        print("Read value: {}".format(value))
+        
+        # Write value
+        device.write_characteristic(service_uuid, char_uuid, b"\x01")
+    finally:
+        device.disconnect()
+```
+
+</TabItem>
+</Tabs>
+
 ### Handling Notifications - Custom Code Example
+
+<Tabs>
+<TabItem value="py3" label="Python 3">
 
 ```python
 from bluepy.btle import DefaultDelegate, Peripheral
@@ -182,7 +315,62 @@ if __name__ == "__main__":
         device.disconnect()
 ```
 
+</TabItem>
+<TabItem value="py27" label="Python 2.7">
+
+```python
+from bluepy.btle import DefaultDelegate, Peripheral
+import time
+
+class NotifyDelegate(DefaultDelegate):
+    def __init__(self):
+        DefaultDelegate.__init__(self)
+
+    def handleNotification(self, cHandle, data):
+        print("Notification from handle {}: {}".format(cHandle, data))
+
+class BLENotifyDevice:
+    def __init__(self, address):
+        self.device = Peripheral(address)
+        self.device.setDelegate(NotifyDelegate())
+    
+    def enable_notifications(self, service_uuid, char_uuid):
+        service = self.device.getServiceByUUID(UUID(service_uuid))
+        char = service.getCharacteristics(UUID(char_uuid))[0]
+        
+        # Enable notifications by writing to the CCCD
+        notify_handle = char.getHandle() + 1
+        self.device.writeCharacteristic(notify_handle, b"\x01\x00")
+    
+    def wait_for_notifications(self, timeout=1.0):
+        self.device.waitForNotifications(timeout)
+    
+    def disconnect(self):
+        self.device.disconnect()
+
+# Example usage
+if __name__ == "__main__":
+    device = BLENotifyDevice("XX:XX:XX:XX:XX:XX")
+    try:
+        # Enable notifications for a characteristic
+        device.enable_notifications("service_uuid", "char_uuid")
+        
+        # Wait for notifications
+        while True:
+            if device.wait_for_notifications(1.0):
+                continue
+            print("Waiting...")
+    finally:
+        device.disconnect()
+```
+
+</TabItem>
+</Tabs>
+
 ### Error Handling - Custom Code Example
+
+<Tabs>
+<TabItem value="py3" label="Python 3">
 
 ```python
 from bluepy.btle import Peripheral, BTLEDisconnectError, BTLEGattError
@@ -217,7 +405,49 @@ class BLEDeviceManager:
         return None
 ```
 
+</TabItem>
+<TabItem value="py27" label="Python 2.7">
+
+```python
+from bluepy.btle import Peripheral, BTLEDisconnectError, BTLEGattError
+
+class BLEDeviceManager:
+    def __init__(self, address):
+        self.address = address
+        self.device = None
+        self.max_retries = 3
+        
+    def connect_with_retry(self):
+        for attempt in range(self.max_retries):
+            try:
+                self.device = Peripheral(self.address)
+                print("Connected successfully")
+                return True
+            except BTLEDisconnectError:
+                print("Connection failed, attempt {} of {}".format(attempt + 1, self.max_retries))
+                time.sleep(1)
+        return False
+    
+    def safe_read_characteristic(self, service_uuid, char_uuid):
+        try:
+            service = self.device.getServiceByUUID(UUID(service_uuid))
+            char = service.getCharacteristics(UUID(char_uuid))[0]
+            return char.read()
+        except BTLEGattError as e:
+            print("GATT error: {}".format(str(e)))
+        except BTLEDisconnectError:
+            print("Device disconnected")
+            self.connect_with_retry()
+        return None
+```
+
+</TabItem>
+</Tabs>
+
 ## Complete Application - Custom Code Example
+
+<Tabs>
+<TabItem value="py3" label="Python 3">
 
 ```python
 from bluepy.btle import Scanner, Peripheral, DefaultDelegate, BTLEDisconnectError
@@ -282,6 +512,76 @@ if __name__ == "__main__":
     finally:
         manager.disconnect()
 ```
+
+</TabItem>
+<TabItem value="py27" label="Python 2.7">
+
+```python
+from bluepy.btle import Scanner, Peripheral, DefaultDelegate, BTLEDisconnectError
+import time
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+class BLEDeviceManager:
+    def __init__(self, target_name):
+        self.target_name = target_name
+        self.device = None
+        self.target_address = None
+        
+    def scan_for_device(self, timeout=10):
+        scanner = Scanner()
+        devices = scanner.scan(timeout)
+        
+        for dev in devices:
+            for (adtype, desc, value) in dev.getScanData():
+                if desc == "Complete Local Name" and value == self.target_name:
+                    self.target_address = dev.addr
+                    logger.info("Found device: {}".format(self.target_address))
+                    return True
+        return False
+    
+    def connect(self):
+        if not self.target_address:
+            raise ValueError("No device address available")
+            
+        try:
+            self.device = Peripheral(self.target_address)
+            logger.info("Connected successfully")
+            return True
+        except BTLEDisconnectError as e:
+            logger.error("Connection failed: {}".format(str(e)))
+            return False
+            
+    def discover_services(self):
+        services = self.device.getServices()
+        for service in services:
+            logger.info("Service: {}".format(service.uuid))
+            chars = service.getCharacteristics()
+            for char in chars:
+                logger.info("  Characteristic: {}".format(char.uuid))
+                
+    def disconnect(self):
+        if self.device:
+            self.device.disconnect()
+            logger.info("Disconnected")
+
+if __name__ == "__main__":
+    manager = BLEDeviceManager("MyDevice")  # Replace with your device name
+    
+    try:
+        if manager.scan_for_device():
+            if manager.connect():
+                manager.discover_services()
+                # Add your device-specific operations here
+                time.sleep(5)  # Keep connection alive for 5 seconds
+    finally:
+        manager.disconnect()
+```
+
+</TabItem>
+</Tabs>
 
 This example provides a complete application structure that you can adapt for your specific needs.
 
