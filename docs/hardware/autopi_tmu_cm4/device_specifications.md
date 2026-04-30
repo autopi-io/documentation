@@ -15,7 +15,7 @@ Download the official datasheet here: <br/>
 [TMU CM4 Datasheet](https://www.autopi.io/static/pdf/autopi_TMU_CM4_datasheet.pdf)
 
 | **Name** | **Description** |
-|:-----:|--------|
+|:-----:|:--------:|
 |   Processor **(NEW)**   |   Broadcom BCM2711 Quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz    | 
 |   Memory    |  1GB LPDDR4 SDRAM <br/> **Upgrade:** 2GB, 4GB or 8GB LPDDR4 SDRAM (depending on model)     | 
 |   Storage **(NEW)**    |   8GB on board eMMC <br/> **Upgrade:** 16GB and 32GB (depending on model)     | 

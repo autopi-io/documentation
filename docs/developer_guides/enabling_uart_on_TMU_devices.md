@@ -1,6 +1,6 @@
 ---
 id: enabling_uart_on_TMU_devices
-title: Enabling an External UART on AutoPi TMU CM4 Devices
+title: Enabling an External UART
 supportedDevices: ['cm4','pro']
 ---
 import CardGrid from "/components/CardGrid";
@@ -24,7 +24,7 @@ By the end of this page you will have:
 ## When should I use an external UART?
 
 | Scenario                                                                           | Why a second UART helps                                                                     |
-| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| :----------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: |
 | Adding a GNSS (GPS) module                                                         | NMEA sentences at 9600 or 115200 baud stream continuously—best handled on a dedicated port. |
 | Talking to an OBD‑II dongle while keeping the main AutoPi vehicular interface free | Avoids contention and keeps logs clean.                                                     |
 | Bridging to RS‑232/RS‑485 industrial sensors                                       | A 3‑wire TX/RX/GND connection keeps wiring simple.                                          |
@@ -59,7 +59,7 @@ Normally the Pi firmware tugs `GPIO0/1` low during the first 200 ms of boot wh
 ## 1  Hardware wiring
 
 | HAT label   | BCM GPIO | UART2 signal           | Connect to                |
-| ----------- | -------- | ---------------------- | ------------------------- |
+| :-----------: | :--------: | :----------------------:| :-------------------------: |
 | **ID\_SD**  | 0        | **TXD2** (Pi → device) | RX of the external device |
 | **ID\_SC**  | 1        | **RXD2** (device → Pi) | TX of the external device |
 | I2C1\_SDA\* | 2        | CTS2 (optional)        | RTS of the device         |
@@ -159,7 +159,7 @@ Python’s `pyserial` package makes scripting trivial—ideal for quick sensor p
 ## 5  Troubleshooting
 
 | Symptom                                       | Likely cause & fix                                                                                                                                   |
-| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :---------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------: |
 | **No `/dev/ttyAMA1`**                         | Overlay typo or missing `enable_uart=1`. Re‑check `/boot/config.txt`.                                                                                |
 | **Boot hang with garbage on console**         | Another service (e.g. `serial‑getty@ttyAMA1.service`) grabbed the port. Disable it with `sudo systemctl disable --now serial-getty@ttyAMA1.service`. |
 | **Lines held low for \~0.2 s after power‑up** | `force_eeprom_read=0` missing; firmware still probing EEPROM.                                                                                        |

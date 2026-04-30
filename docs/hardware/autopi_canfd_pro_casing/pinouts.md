@@ -28,7 +28,7 @@ The screw terminals is applied to a custom AutoPi HAT board located inside the C
 The pinouts have the following functions assigned, note some of them are already pre assigned for the OBD-II connector on the device:
 
 | Pin | Function | Used | Description |
-| ------ | ------ | ------ | ------ |
+| :------: | :------: | :------: | :------: |
 | Pin 1 | HS_CAN_HI | Yes | [See here](/hardware/autopi_tmu_cm4/using-hat/#pinout) |
 | Pin 2 | HS_CAN_LO | Yes | [See here](/hardware/autopi_tmu_cm4/using-hat/#pinout) |
 | Pin 3 | MS_CAN_HI | Yes | [See here](/hardware/autopi_tmu_cm4/using-hat/#pinout) |

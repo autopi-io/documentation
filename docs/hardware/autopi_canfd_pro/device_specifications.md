@@ -18,7 +18,7 @@ Want all details in one place? **Download the official datasheet here:** [AutoPi
 Check out the table below for an easy breakdown of everything inside the [AutoPi](https://www.autopi.io/) [CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro).
 
 | **Name** | **Description** |
-|:-----:|--------|
+|:-----:|:--------:|
 | Processor | Broadcom BCM2711 Quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz (RPi CM4) |
 | Memory | 4GB LPDDR2 SDRAM |
 | Storage | 32GB on board eMMC (expandable with USB flash drive) |
@@ -50,7 +50,7 @@ Our [AutoPi](https://www.autopi.io/) [CAN-FD Pro](https://shop.autopi.io/product
 The 4in1 Antenna Kit is a high-performance solution designed to optimize connectivity for the [AutoPi](https://www.autopi.io/) [CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro). Featuring two LTE antennas, one GPS antenna, and one WiFi antenna, this compact system delivers strong signal reception and reliable communication across multiple wireless standards. Built for demanding environments, the antenna kit ensures stable and long-term performance. 
 
 | **Name** | **Description** |
-|:-----:|--------|
+|:-----:|:--------:|
 | Antennas | 2x LTE (main and AUX), 1x GPS, and 1x Wi-Fi | 
 | Wi-Fi Support | Dual-Band (2.4 GHz and 5.8 GHz) | 
 | Connector Types | SMA for LTE and GPS, RP-SMA for Wi-Fi (configurable) | 

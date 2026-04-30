@@ -1,6 +1,6 @@
 ---
 id: how-to-create-custom-event-for-custom-logger
-title: How to Create a Custom Event for Your Custom Logger
+title: Custom Event for Your Custom Logger
 supportedDevices: ['cm4']
 ---
 import CardGrid from "/components/CardGrid" ;

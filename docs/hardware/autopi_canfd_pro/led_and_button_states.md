@@ -21,7 +21,7 @@ The following state diagram explains this lifecycle. The LED is the Blue LED on 
 With the button it is possible to control the state of the device:
 
 | Action | State | Description |
-| ------ | ------ | ------ |
+| :------: | :------: | :------: |
 | Long press (>3s) | Can be initated from any state. | SPM will go into **USER SETUP** state. |
 | Click | **ON** State | SPM will go into **SHUTDOWN** state and thereby either into hibernate or sleep. |
 | Click | **USER SETUP** State | SPM will go into **HIBERNATING** state. |
@@ -37,7 +37,7 @@ With the button it is possible to control the state of the device:
 The blue LED indicates the current state of the [low-level ](/core/power_management/core-power-low) SPM system.
 
 | LED State | Description |
-| ------ | ------ |
+| :------: | :------: |
 | Turned off | SPM is in **OFF** state. |
 | Constantly dimmed | SPM is in **HIBERNATING** state. |
 | Fading in | SPM is in **BOOTING** state. |
@@ -52,7 +52,7 @@ The blue LED indicates the current state of the [low-level ](/core/power_managem
 The green LED indicates the current state of the [high-level](/core/power_management/core-power-high) system.
 
 | LED State | Description |
-| ------ | ------ |
+| :------: | :------: |
 | Turned off | Not running or in the process of booting up. |
 | Flashing brightly | Up and running but NOT (yet) connected to the [Cloud](https://www.autopi.io/software-platform/cloud-management). |
 | Constantly bright | Up and running and connected to the [Cloud](https://www.autopi.io/software-platform/cloud-management). |

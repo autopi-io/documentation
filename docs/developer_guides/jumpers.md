@@ -143,7 +143,7 @@ For this reason, the jumper should **not be used in production deployments**.
 ## Summary
 
 | Feature | Normal Mode | Jumper Installed |
-|--------|-------------|------------------|
+|:--------:|:-------------:|:------------------:|
 | Smart Power Manager active | Yes | No |
 | Sleep mode | Enabled | Disabled |
 | Ignition control | Yes | No |
