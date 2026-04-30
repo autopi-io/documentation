@@ -24,7 +24,9 @@ manage the vehicles and operations tied to the locations they are permitted to a
 To begin, navigate to the **Locations** tab. Here, you'll find a world map displaying 
 your existing locations, along with a list view for easier navigation and management. 
 
-### Creating a Location
+---
+
+## Creating a Location
 
 ![Create Location](/img/cloud/fleet_management/locations/locations_create.png)
 
@@ -45,12 +47,16 @@ To set up a geofence:
 4. Once you're satisfied with the outline, click **Submit**. You can also choose 
    a color for the geofence if desired. 
 
-### Managing Locations
+---
+
+## Managing Locations
 
 After creating a location, it will appear in the list along with the details you 
 provided. To make changes, click **Actions** and select the three dots to either 
 edit or delete the location. If you have multiple locations, use the 
 **Search for Location** filter to quickly find specific ones. 
+
+
 
 ### Assigning Vehicles to a Location
 
@@ -80,6 +86,7 @@ the **Actions** column.
 :::
 
 
+
 ### Assigning Users to a Location
 
 You can assign users to Locations if 
@@ -92,3 +99,20 @@ the last bin icon.
 
 ![Assign locations](/img/cloud/accounts/assign_locations.png)
 
+---
+
+## Using Locations with Templates
+
+Locations can be used together with **Templates** to speed up configuration across
+your fleet.
+
+To use Locations with Templates:
+
+1. Open the template you want to use for your vehicles.
+2. Set the desired **Location** on the template.
+3. Apply the template to your selected vehicles or groups.
+
+![Assign Locations to Template](/img/cloud/fleet_management/locations/template_settings.png)
+
+This makes it easy to assign the same location setup consistently across your
+entire fleet.
