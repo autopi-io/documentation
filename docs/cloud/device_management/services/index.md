@@ -77,6 +77,8 @@ reactor.manage reactor show <name>
 
 See the [Reactors](https://docs.autopi.io/core/services/#reactors) guide for a full walkthrough.
 
+For a step-by-step implementation guide, see [Create Custom Reactors](/cloud/device_management/services/create-custom-reactors/).
+
 ### Hooks
 
 Hooks extend the behavior of a worker's workflow by registering custom functions at specific points in the pipeline. When creating a hook, you can select one of the following types:
