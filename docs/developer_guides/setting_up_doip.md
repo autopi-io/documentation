@@ -102,4 +102,5 @@ The DoIP HAT works in conjunction with specific software components on the AutoP
 4. Once you have found the UDS command you want to use, you can run the additional help command to receive more information, for example: `doip.uds help change_session`
 5. Finally you can run an UDS command like this: `doip.uds change_session 1`
 
-You can read about more commands in our [DoIP commands guide](https://docs.autopi.io/core/commands/core-commands-doip/). 
+You can read about more commands in our [DoIP commands guide](https://docs.autopi.io/core/commands/core-commands-doip/).
+For DoIP manager service commands, see [Core services: DoIP manager](https://docs.autopi.io/core/services/core-services-doip-manager/).
