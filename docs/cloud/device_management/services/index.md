@@ -77,7 +77,7 @@ reactor.manage reactor show <name>
 
 See the [Reactors](https://docs.autopi.io/core/services/#reactors) guide for a full walkthrough.
 
-For a step-by-step implementation guide, see [Create Custom Reactors](/cloud/device_management/services/create-custom-reactors/).
+For a step-by-step implementation guide, see [Create Custom Reactors](https://docs.autopi.io/cloud/device_management/services/create-custom-triggers/).
 
 ### Hooks
 
