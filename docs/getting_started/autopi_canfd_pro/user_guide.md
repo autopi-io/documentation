@@ -574,6 +574,7 @@ Steps to get into advanced settings for disk housekeeper:
 
 ![Advanced settings for Disk Housekeeper](/img/getting_started/autopi_canfd_pro/user_guide/disk_housekeeper.png)
 
+
 Settings for disk housekeeper: 
 * **Critical use limit** - this setting allows you to set an event based on critical use limit (user customizable). Disk usage percentage that is considered critical and which causes an event to be triggered.
 * **Enabled** - this settings allows you to enable Disk Housekeeper, that prevents your disk from running full with old files. By clicking on True, you enable automatic disk cleanup to prevent the disk from running full. The oldest files will be deleted first.
@@ -585,6 +586,8 @@ Settings for disk housekeeper:
 Every time the Disk Housekeeper deletes anything, it triggers an event that could be seen in the events section. This should help users to understand a little better what is happening on a device. We have 2 events: 
 * `system/disk_housekeeper/ordinary_purge` - this event is triggered when it reaches ordinary limits (customizable in the advanced settings).
 * `system/disk_housekeeper/critical_purge` - this event is triggered when it reaches critical limits (customizable in the advanced settings).
+
+For more details, see [Core Commands: Disk Housekeeper](https://docs.autopi.io/core/commands/core-commands-disk-housekeeper/). This handler automatically deletes the oldest files when disk space is running full.
 
 ### Advanced settings for Output Handler 
 Steps to get into advanced settings for output handler: 
