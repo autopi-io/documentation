@@ -68,6 +68,7 @@ module.exports = {
           "label": "API",
           "type": "category"
         },       
+        "getting_started/using-dimo-device-on-autopi-cloud",
       ],
       "Developer Guides": [  
         "developer_guides/developer-guides-intro",
