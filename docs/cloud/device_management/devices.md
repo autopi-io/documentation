@@ -35,7 +35,7 @@ To quickly find a specific device:
         * **Type** – filter by device type: 4G - TMU CM4; Mini; Pro - CAN-FD Pro. 
 
 	</p>
-	<img alt="Columns" src={require('@site/static/img/cloud/device_management/devices/device_columns.png').default}/>
+	<img alt="Columns" src={require('@site/static/img/cloud/device_management/devices/devices_list_filters.png').default}/>
 </SideBySide>
 <br/>
 
