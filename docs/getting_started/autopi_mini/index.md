@@ -41,7 +41,7 @@ add the e-mail address you want to associate with your account and create a pass
 You can also expand the form to add additional details like your country and full name, 
 though this can be done later. Click “Create account”.
 
-![AutoPi sign up](/img/getting_started/getting_started/sign_up_cloud.png)
+![AutoPi sign up](/img/getting_started/getting_started/sign_up.png)
 
 ## 2. Register Your Device
 
@@ -55,9 +55,15 @@ To add a device to your account, follow one of these methods:
 2. Click on “Devices”. 
 3. Find and click the “Register Device” button in the upper right corner. 
 
+**Option 2: Via the Accounts Tab**
+1. Navigate to the “Accounts” tab at the bottom of the left side menu on the Platform.
+2. Select “Devices”. 
+3. Locate and click the “Register Device” button in the upper right corner.
+
+
 After clicking the “Register Device” button, the registration tab will appear. Enter all necessary information: 
 
-![Register Device](/img/getting_started/getting_started/register_device.png)
+![Register Device](/img/getting_started/getting_started/register_new_device.png)
 
 - **Unit ID**: This is the number on the side of your device. You can also find it in the.
     document attached in the email you received when the device was shipped. 
@@ -68,12 +74,6 @@ Once all information is entered, click the “Register Device”. Your newly reg
 will now appear in the list under “Vehicles” in the Fleet Management section and under 
 “Devices” in the Device Management section of the Platform.
 
-**Option 2: Via the Accounts Tab**
-1. Navigate to the “Accounts” tab at the bottom of the left side menu on the Platform.
-2. Select “Devices”. 
-3. Locate and click the “Register Device” button in the upper right corner.
-
-![Register Device](/img/getting_started/getting_started/register_device_page.png)
 
 ## 3. Locate OBD Port
 
@@ -119,30 +119,30 @@ Recommended advanced settings for Electric Vehicle:
 **Configuration 1: Adjust OBD Feature, this setting ensures the device correctly communicates with your EV.**
 
 1. Go to: Advanced settings → Obd Settings → Obd Feature.
-2. Select: Non-OBD Compliant.
+2. Select: **Non-OBD Compliant**.
 3. Press: Save.
 
 **Configuration 2: Manually enter your VIN (if not detected automatically).**
 
 1. Go to: Advanced settings → Obd Vin Settings.
 2. Set Vin: enter your 17-character VIN (digits and capital letters).
-3. Pick Vin Source: select Manual.
+3. Pick Vin Source: select **Manual**.
 4. Press: Save.
 
 **Configuration 3: Set Ignition detection for EVs to properly detect when your EV is on or off.**
 1. Go to: Advanced settings → System -> Ignition Settings.
-2. Select: Accelerometer.
+2. Select: **Accelerometer**.
 3. Press: Save.
 
 **Configuration 4: Set Movement source to be more precise when the vehicle is moving.**
 1. Go to: Advanced settings → System -> Movement Source.
-2. Select: Accelerometer.
+2. Select: **Accelerometer**.
 3. Press: Save.
 
 **Configuration 5: Set the Accelerometer Delay Settings to ensure rapid response for data reading but also a protection for quick state changes.**
-1. Go to: Advanced settings → System -> Movement start delay.
-2. Select: 5 to 12 seeconds.
-3. Go to: Advanced settings -> System -> Movement stop delay.
+1. Go to: Advanced settings → System -> **Movement start delay**.
+2. Select: 5 to 12 seconds.
+3. Go to: Advanced settings -> System -> **Movement stop delay**.
 4. Select: 30 to 60 seeconds.
 3. Press: Save.
 
