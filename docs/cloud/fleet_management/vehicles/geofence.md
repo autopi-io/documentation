@@ -44,7 +44,7 @@ Click **Create** to open the configuration panel with three tabs: **Details**, *
 
 In the **Default Notification** section:
 - Select one or more notification channels to receive alerts when vehicles enter or exit the geofence.
-- Note: you must create notification channels beforehand (see [Notification Channels](https://docs.autopi.io/cloud/fleet_management/configurations/notification-channels/)).
+- Note: notification channels are configured once in [Notification Channels](https://docs.autopi.io/cloud/fleet_management/configurations/notification-channels/) and then reused here.
 - Notifications will be sent through your chosen channels when geofence events occur.
 
 **Step 3: Draw the Geofence Boundary**
