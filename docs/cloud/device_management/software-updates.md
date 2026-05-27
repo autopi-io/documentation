@@ -140,7 +140,7 @@ Update run states:
 * Changed - states that have been executed without error and have made a change on the device.
 * Failed - states that have been executed with an error. Those states usually have comments to try and explain what has gone wrong.
 
-![update-release-run](/img/cloud/device_management/software-updates/viewing-update-release-run.jpg)
+![update-release-run](/img/cloud/device_management/software-updates/update_runs.png)
 
 This view helps you understand:
 * What steps were executed.
