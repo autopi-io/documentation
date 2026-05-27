@@ -24,7 +24,7 @@ If you are using an older AutoPi device with an STN/ELM chip, follow the [legacy
 ## Installation and Setup
 
 1. Enable bluetooth from Advanced settings:
-![Enable bluetoth](/img/guides/bluetooth_enable.jpg)
+![Enable bluetoth](/img/guides/advanced_settings_bluetooth.png)
 
 ## Using the Built-in Bluetooth Extention
 
