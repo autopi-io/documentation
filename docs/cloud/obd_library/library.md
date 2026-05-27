@@ -67,7 +67,7 @@ of search results. You can browse through them and if you find one that you woul
 experiment with you can add it to your library. By clicking on the item you're interested in, a
 pop-out window similar to the one below will show up:
 
-![Community library view window](/img/cloud/obd_library/library/community-library-view-window.jpg)
+![Community library view window](/img/cloud/obd_library/library/viewing_pid_absolute_load.png)
 
 On that window, you can see details such as the exact parameters for the PID like the **header**,
 **mode** and PID **code** that it uses, the **formula** that parses the raw bytes into human
@@ -98,7 +98,7 @@ at the top-right section of the page). Clicking on that button will show a dropd
 options, PID and [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) - select the PID one. This will bring up the following window (the fields in
 the screenshot are already filled up, so that it's easier for me to describe them after):
 
-![Creating a PID](/img/cloud/obd_library/library/creating-a-pid.jpg)
+![Creating a PID](/img/cloud/obd_library/library/create_new_pid_rpm.png)
 
 Let's go through the fields that are available and how to fit the raw PID we see above into the
 PID form.
@@ -162,7 +162,7 @@ To start creating a new [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) m
 section of the page. From the dropdown that shows up from clicking on the button, select [CAN](https://www.autopi.io/hardware/autopi-canfd-pro). This
 will bring up the following window (again, it is pre-filled for the purposes of this guide):
 
-![Creating a CAN message](/img/cloud/obd_library/library/creating-a-canmsg.jpg)
+![Creating a CAN message](/img/cloud/obd_library/library/editing_can_message.png)
 
 >**Name:** Short name of the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message that's being created.
 >
@@ -375,9 +375,7 @@ window (like the one from the previous section) will pop out. In this window you
 the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message at the top with all [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals associated with it in a list below. The [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal
 that you clicked on will be already expanded and highlighted in yellow.
 
-![Editing a CAN message](/img/cloud/obd_library/library/editing_a_can_message.png)
+![Editing a CAN message](/img/cloud/obd_library/library/editing_can_message.png)
 
 Edit the description field of the signal and click Save. You can also associate that [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message
-with a vehicle [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus. You should see the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal update with the new description:
-
-![ABS Malfunction example](/img/cloud/obd_library/library/abs_malfunction_example.png)
+with a vehicle [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus. You should see the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal update with the new description. 
