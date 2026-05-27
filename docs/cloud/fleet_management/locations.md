@@ -3,110 +3,75 @@ id: locations
 title: Locations
 supportedDevices: ['mini','cm4','pro','pro_case']
 ---
-import CardGrid from "/components/CardGrid" ;
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-![Locations overview](/img/cloud/fleet_management/locations/locations_overview.jpg)
+The **Locations** feature helps you organize your fleet by creating and managing operational areas for your company—such as regional offices, headquarters, distribution centers, or service hubs. You can assign vehicles to specific locations and control user access based on their assigned areas. Users will only see vehicles and manage operations tied to the locations they have access to.
 
-The **Locations** feature enables you to create and manage various operational 
-areas related to your company, such as your US office, EU office, headquarters, 
-or any other key locations. This feature helps streamline your fleet management 
-by allowing you to assign vehicles to specific locations, ensuring more efficient
-organization and oversight.
+To begin, navigate to the **Locations** tab, where you'll see a world map of your existing locations and a list view for easy navigation. 
 
-Additionally, you can assign users to specific locations, allowing you to control
-their access based on their assigned area. This means users will only see and 
-manage the vehicles and operations tied to the locations they are permitted to access.  
-
-To begin, navigate to the **Locations** tab. Here, you'll find a world map displaying 
-your existing locations, along with a list view for easier navigation and management. 
+![Locations overview](/img/cloud/fleet_management/locations/new_locations_table.png)
 
 ---
 
 ## Creating a Location
 
-![Create Location](/img/cloud/fleet_management/locations/locations_create.png)
+1. Click **Create** and enter the location details:
+   - **Location name** (required): An internal identifier for the location
+   - **Contact email** (required): The main contact for this location
+   - **Phone number, address, and notes** (optional): Additional information to describe the location
 
-To create a new location: 
-1. Click **Create** and enter the necessary details. Required fields include the 
-   location name, which will serve as an internal identifier, and a contact email. 
-   You may also include additional information such as a phone number, address, 
-   or notes to further describe the location. 
+2. Configure geofence settings:
+   - Enter an address to zoom in on the map
+   - Choose a color for the geofence if desired
+   - Select the default enter and exit notifications
+   - Notification channels are configured once under [Notification Channels](https://docs.autopi.io/cloud/fleet_management/configurations/notification-channels/) and then reused here
 
-### Creating a Geofence
+3. Draw the geofence:
+   - Use the tools on the left side to create and edit the geofence
+   - Click on the map to draw a circle or polygon that outlines your desired area
+   - Additional tools allow you to edit, drag, remove, or rotate layers
 
-To set up a geofence: 
+4. Click **Create** to save the location
 
-2. Enter an address to zoom in on the map. 
-3. Use the tools on the left side to create and edit the geofence. You can draw 
-   a circle or polygon by clicking on the map to outline your desired area. 
-   Additional tools allow you to edit, drag, remove, or rotate layers. 
-4. Once you're satisfied with the outline, click **Submit**. You can also choose 
-   a color for the geofence if desired. 
+![Create Location](/img/cloud/fleet_management/locations/create_new_location.png)
 
 ---
 
 ## Managing Locations
 
-After creating a location, it will appear in the list along with the details you 
-provided. To make changes, click **Actions** and select the three dots to either 
-edit or delete the location. If you have multiple locations, use the 
-**Search for Location** filter to quickly find specific ones. 
+Once created, your location appears in the list. To edit or delete a location, click **Actions** (the three dots) next to the location name. Use the **Search for Location** filter to quickly find specific locations when you have multiple entries. 
 
 
 
 ### Assigning Vehicles to a Location
 
-To assign vehicles to a location:
+* Click on a location from the list to open the **Edit vehicles in location** dialog.
+* Search for and select vehicles to assign to this location.
+* Enable the vehicles you want to assign to this location. You can enable multiple vehicles at once.
+* Click **Confirm**. A confirmation notification will confirm the changes have been saved.
 
-![Location and vehicles](/img/cloud/fleet_management/locations/locations_add_vehicles.png)
-
-5. Click on a location from the list to open the **Edit vehicles in location** pop-up. 
-6. Search for and add vehicles that belong to this location or select a vehicle 
-   group. If assigning vehicles individually, you can search by vehicle name, model,
-   year, or other identifiers. 
-7. Check the right corner to see if any vehicles are already enabled or disabled 
-   for this location. Enable the vehicles you want to assign to this location. 
-   You can enable multiple vehicles at once. 
-8. If you’ve created a Vehicle Group (learn more [here](cloud/fleet_management/vehicles/groups.md)),
-   you can quickly assign multiple vehicles by selecting ‘Groups’ and enabling 
-   those that belong to the location. 
-9. Click **Save & Exit** to complete the process. A notification will confirm 
-   that the changes have been successfully saved. 
+![Location and vehicles](/img/cloud/fleet_management/locations/new_add_vehicles.png)
 
 :::tip
-Back on the Locations list, the **Vehicles** column will be updated to show the 
-number of vehicles associated with each location. Clicking on this number will 
-take you to the Vehicle section, where you can view the specific vehicles 
-assigned to that location. You can always edit the location details by selecting 
-the **Actions** column.
+The **Vehicles** column on the Locations list shows the number of vehicles assigned to each location. Click this number to view the vehicles assigned to that location in the Vehicle section.
 :::
 
 
 
 ### Assigning Users to a Location
 
-You can assign users to Locations if 
-you have created any, read more on how to [Assign users to a location](https://docs.autopi.io/cloud/accounts/#assigning-locations-to-users). To save the edits, click
-Create. A notification table in the right corner will confirm the successful 
-user creation. You can now find the user in the list with their e-mail address, 
-username, assigned customer, location, last login, permissions group, active 
-status either with green check mark or red cross. You can delete the user with 
-the last bin icon.  
+You can assign users to specific locations to control their access to vehicles and operations in those areas. For detailed instructions on assigning locations to users, see [Assigning Locations to Users](/cloud/accounts/index.md#assigning-locations-to-users).
 
-![Assign locations](/img/cloud/accounts/assign_locations.png)
+![Assign locations](/img/cloud/fleet_management/locations/location_access.png)
 
 ---
 
 ## Using Locations with Templates
 
-Locations can be used together with **Templates** to speed up configuration across
-your fleet.
-
-To use Locations with Templates:
+Combine Locations with **Templates** to efficiently configure vehicles across your fleet with consistent location assignments.
 
 1. Open the template you want to use for your vehicles.
 2. Set the desired **Location** on the template.
@@ -114,5 +79,4 @@ To use Locations with Templates:
 
 ![Assign Locations to Template](/img/cloud/fleet_management/locations/template_settings.png)
 
-This makes it easy to assign the same location setup consistently across your
-entire fleet.
+This allows you to maintain consistent location configurations across your entire fleet.
