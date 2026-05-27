@@ -9,98 +9,111 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-The **Geofence Report** provides detailed insights into vehicle activity within 
-predefined geographic areas. This report helps fleet managers:
+The **Geofence Report** provides insights into vehicle activity within predefined geographic areas. It helps fleet managers:
 - Track entries and exits from geofenced zones.
 - Monitor unauthorized or unexpected stops.
 - Evaluate route adherence and optimize routing efficiency.
 
 ## List Tab
 
+Use the **List** tab to review reports that have already been generated. This is the main place to open previous reports, export results, and remove reports you no longer need.
+
+![Reports overview](/img/cloud/fleet_management/reports/geofence_reports/reports_list.png)
+
 - Access a list of all generated Geofence Reports. The list includes:
-    - The creation date of each report.
-    - The report name (editable during creation).
-    - The report type (e.g., Geofence Report).
-    - Date range (from/to).
-    - The creator's name.
-    - Actions: Download as PDF or delete the report.
+  - Report name (editable during creation).
+  - Report type (for example, Geofence Report).
+  - Date range (from/to).
+  - Creator name.
+  - Date and time when the report was generated.
+  - Actions: Download as PDF or delete the report.
 - Click on a report to open its preview.
 
-![Reports overview](/img/cloud/fleet_management/reports/geofence_reports/reports_overview.png)
 
 ## Schedules Tab
 
-- View all scheduled Geofence Reports, including:
-    - Last generated date.
-    - Report name.
-    - Schedule type (daily, weekly, or monthly).
-    - Frequency (time of day).
-    - Actions: Delete a scheduled report.
+Use the **Schedules** tab to manage recurring Geofence Summary Reports. It gives you a clear overview of active schedules and quick access to edit or delete them.
 
-![Schedules overview](/img/cloud/fleet_management/reports/geofence_reports/schedules_overview.png)
+![Schedules overview](/img/cloud/fleet_management/reports/geofence_reports/reports_scheduled_table.png)
+
+- View all scheduled Geofence Reports, including:
+  - Report name.
+  - Report type (for example, Geofence Report).
+  - Frequency and time of day.
+  - Last generated date.
+  - Schedule creation date.
+  - Creator name.
+  - Actions: Edit or delete a scheduled report.
+
+
 
 ## Create/Schedule Tab
 
+Use the **Create/Schedule** tab to configure one-time reports or set up recurring report generation. This tab is where you define report inputs, preview results, and save your configuration.
+
 ### Creating a Geofence Summary Report
 
-1. From the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) platform, navigate to the **Reports** menu and click 
-   **Create/Schedule**.
-2. Select **Geofence Summary** from the available options.
-3. Fill out the template:
-    - **Report Name:** Automatically generated based on the current date, but 
-       you can customize it.
-    - **Vehicles/Groups:** Select vehicles or vehicle groups to include in the 
-      report. Use the dropdown menu to pick from available options and select 
-      as many as needed.
-    - **Geofences/Locations:** Choose geofences or locations to include in the 
-      report. Use the dropdown menu to pick from available options and select
-      as many as needed.
-    - **Date Range:** Specify the start and end dates for the report.
-    - **Reset:** Clears all configurations you’ve made.
-    - **Preview:** Allows you to see how the report will look before saving.
-    - **Save:** Saves the report and displays it under the Reports - List section.
+Complete the form below to create a one-time Geofence Summary Report.
 
-![Create geofence report](/img/cloud/fleet_management/reports/geofence_reports/create_reports.png)
+![Create geofence report](/img/cloud/fleet_management/reports/geofence_reports/create_geofence_summary_bob.png)
+
+To create a Geofence Summary Report: 
+- From the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) platform, navigate to the **Reports** menu and click 
+   **Create/Schedule**.
+- Select **Geofence Summary** from the available report templates.
+- Complete the report form. creation:
+    - **Name:** enter a name for the report.
+    - **Vehicles selection:** select the vehicles or groups you want to include in the report.
+      You can:
+      - select individual vehicles from the **Vehicles** dropdown.
+      - use the dropdowns under **Include vehicles from..** and choose a vehicle group, fleet geofences, or locations to include all vehicles from those groups.
+    - **Settings:**
+      - **Only include specific geofences in report (optional):** limit the report to selected geofences.
+      - **Date range:** specify the start and end dates for the report.
+    - **Reset:** clears all configurations you’ve made.
+    - **Preview:** allows you to see how the report will look before saving.
+    - **Save:** saves the report and displays it under **Reports - List**.
+
+
 
 ### Scheduling a Geofence Summary Report
 
-1. After generating a Geofence Summary Report, you can schedule it to run at 
-   regular intervals (daily, weekly, or monthly):
-    - Scheduled reports are automatically generated and displayed under 
-      **Reports - Schedules**.
-2. To schedule a report:
-    - Navigate to the **Reports** menu and click **Create/Schedule**.
-    - If you haven’t already created a report, follow the steps above to create one.
-    - Click **Schedule** next to **Create** to open the scheduling window.
-    - Fill out the schedule template:
-        - **Schedule Name:** Automatically generated based on the frequency, but you can customize it.
-        - **Vehicles/Groups:** Select vehicles or vehicle groups for the scheduled report.
-        - **Geofences/Locations:** Choose geofences or locations to include in the report.
-        - **Report Frequency:** Select Daily, Weekly, or Monthly (one option at a time).
-        - **Time of Report Generation:** Set the time you want the report to be generated.
-        - **Reset:** Clears all configurations you’ve made.
-        - **Preview:** Allows you to see how the scheduled report will look.
-        - **Save:** Saves the scheduled report and displays it under **Reports - Schedules**.
+After creating a Geofence Summary Report, you can schedule it to run at regular intervals (daily, weekly, or monthly). Scheduled reports are automatically generated and displayed under **Reports - Schedules**.
 
-![Create geofence report schedule](/img/cloud/fleet_management/reports/geofence_reports/create_schedule.png)
+![Create geofence report schedule](/img/cloud/fleet_management/reports/geofence_reports/schedule_geofence_summary_bob.png)
+
+To create a schedule:
+- Navigate to the **Reports** menu and click **Create/Schedule**. 
+- Select **Geofence Summary** from the available report templates and click **Schedule** next to Create to open the scheduling window.
+- Complete the schedule form:
+ - **Schedule Name:** Automatically generated based on the frequency, but you can customize it.
+ - **Vehicles/Include vehicles from:** Select vehicles or vehicle groups for the scheduled report. Use the same selection flow as in report creation.
+- **Settings:**
+      - **Only include specific geofences in report (optional):** limit the report to selected geofences.
+      - **Report Frequency:** select Daily, Weekly, or Monthly (one option at a time) for report frequency.
+      - **Time/Day of Report Generation:** specify the day or time of the report generation.
+    - **Reset:** clears all configurations you’ve made.
+    - **Preview:** allows you to see how the report will look before saving.
+    - **Save:** saves the report and displays it under **Reports - List**.
+
+
+
 
 ## How fields in the geofence report are calculated
 
-The fields in the **Geofence Report** are generated using data collected from GPS
-locations, accelerometer readings, and other device events. Below is a breakdown 
-of how each field is calculated:
+The fields in the **Geofence Report** are generated using data from GPS locations, accelerometer readings, and other device events. Below is a breakdown of how each field is calculated:
 
 1. **Total vehicles:** Displays the total number of vehicles selected when 
    creating the report.
 2. **Total geofences:** Shows the total number of geofences selected during 
    report creation.
-3. **Geofences interacted with:** Shows how many of the selected geofences any of the selected vehicles has interacted with, this is a subset of Total Geofences.
+3. **Geofences interacted with:** Shows how many of the selected geofences were interacted with by any selected vehicle. This value is a subset of **Total geofences**.
 4. **Most time spent in:** Identifies the geofence where a vehicle spent the 
    most time. This is calculated by measuring the duration between vehicle
-    **enter** and **exit** events for each geofence.
+   **enter** and **exit** events for each geofence.
     - Detailed information, such as total time spent, number of entries, and 
       exits, is available in the report fields below.
-5. **Total time in geofences:** The cumulative time for each selected vehicles 
+5. **Total time in geofences:** The cumulative time each selected vehicle 
    spent inside any selected geofence.
 6. **Time inside:** For each geofence, this field shows the total time a vehicle 
    spent within that geofence. It is calculated as the sum of all durations 
@@ -124,8 +137,7 @@ of how each field is calculated:
     - Data source: `obd.rpm.value`.
 11. **Driving time:** Indicates active driving time within the geofence. This is 
     determined when the engine RPM is higher than the idle threshold.
-12. **Parked:** Shows the total time a vehicle was parked in a geofence. It is 
-    calculated as:
+12. **Parked:** Shows the total time a vehicle was parked in a geofence. It is calculated as:
     - **Parked time** = total time spent in the geofence - (driving time + idling time).
 13. **Distance:** Displays the total distance driven within a specific geofence. 
     This is calculated using GPS points logged while the vehicle was inside the geofence.
@@ -133,7 +145,6 @@ of how each field is calculated:
 ![Geofence report example](/img/cloud/fleet_management/reports/geofence_reports/geofence_report_example.png)
 
 :::note
-As new report types become available, additional features and enhancements will 
-be added to the platform. Stay tuned for updates to make the most of your [AutoPi](https://www.autopi.io) 
+As new report types become available, additional features and enhancements will be added to the platform. Stay tuned for updates to make the most of your [AutoPi](https://www.autopi.io) 
 [Cloud](https://www.autopi.io/software-platform/cloud-management) Reports.
 :::
