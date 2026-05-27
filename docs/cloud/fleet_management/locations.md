@@ -63,7 +63,7 @@ The **Vehicles** column on the Locations list shows the number of vehicles assig
 
 ### Assigning Users to a Location
 
-You can assign users to specific locations to control their access to vehicles and operations in those areas. For detailed instructions on assigning locations to users, see [Assigning Locations to Users](/cloud/accounts/index.md#assigning-locations-to-users).
+You can assign users to specific locations to control their access to vehicles and operations in those areas. For detailed instructions on assigning locations to users, see [Assigning Locations to Users](https://docs.autopi.io/cloud/accounts/#assign-locations-to-users).
 
 ![Assign locations](/img/cloud/fleet_management/locations/location_access.png)
 

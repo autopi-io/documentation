@@ -52,8 +52,8 @@ Use the **Schedules** tab to manage recurring reports. It gives you a clear over
 
 ## Available Report Types
 
-- [Geofence Summary Report](./geofence_report.md) — Available
-- [Utilization Report](./utilization_report.md) — Available
+- [Geofence Summary Report](https://docs.autopi.io/cloud/fleet_management/reports/geofence-summary-reports/) — Available
+- [Utilization Report](https://docs.autopi.io/cloud/fleet_management/reports/utilization-reports/) — Available
 - Location Compliance — Coming soon
 - Connected Vehicles — Coming soon
 - Maintenance — Coming soon
