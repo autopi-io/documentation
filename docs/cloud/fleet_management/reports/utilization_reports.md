@@ -8,9 +8,8 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
-The **Utilization Report** provides a clear overview of how your vehicles, or your entire fleet, are being used over a selected period of time. It helps you understand activity levels, idle time, and overall utilization so you can optimize operations and improve efficiency.
 
----
+The **Utilization Report** provides insights into how your vehicles or fleet are being used over a selected period. It helps you understand activity levels, idle time, and overall utilization to optimize operations and improve efficiency.
 
 ## Viewing the Utilization Report
 
@@ -18,73 +17,99 @@ By default, working hours are set to **08:00 – 16:00**.
 
 The utilization report provides an overview of your vehicle or fleet for the selected time period, including:
 
-* **Active time**  
-* **Total time**  
-* **Inactive time**  
-* **Inactive time (%)**
+* Active time 
+* Total time  
+* Inactive time 
+* Inactive time (%)
 
 The report also highlights:
-* The **total number of vehicles** included.  
-* A **breakdown per individual vehicle**. 
+* The total number of vehicles included.  
+* A breakdown per individual vehicle. 
 
+**Example of the Utilization Report:**
 ![Example of Utilization Report](/img/cloud/fleet_management/reports/geofence_reports/utilization_report/example_utilization_report.png)
 
 This makes it easy to compare utilization across vehicles and identify opportunities to improve efficiency.
 
 ---
 
-## Create a New Utilization Report
+## List Tab
 
-To generate a one-time utilization report:
+Use the **List** tab to review utilization reports that have already been generated. This is the main place to open previous reports, export results, and remove reports you no longer need.
 
-* Navigate to **Reports → Create / Schedule**. 
-* Select **Utilization** as the report type.  
-* Stay on the **Create** tab.  
-* Fill in the following fields:
-   * **Report name** – give your report a descriptive name.  
-   * **Vehicles / Groups** – select the vehicles or vehicle groups to include.  
-   * **Geofences / Locations (optional)** – instead of selecting vehicles individually, you can choose a geofence or location to automatically include all associated vehicles.  
-   * **Date range** – select the time period the report should cover.  
-   * **Working hours** – define the time range considered as working hours (if applicable).  
-     * Default working hours are **08:00 – 16:00**.  
-     * You can edit these by clicking the arrow.  
-     * Optionally, click **Set as default** to apply these working hours to future reports.  
-* Click **Preview** to preview the report.  
-* Click **Save**.
+![Reports overview](/img/cloud/fleet_management/reports/geofence_reports/reports_list.png)
 
+- Access a list of all generated Utilization Reports. The list includes:
+  - Report name (editable during creation).
+  - Report type (for example, Utilization Report).
+  - Date range (from/to).
+  - Creator name.
+  - Date and time when the report was generated.
+  - Actions: Download as PDF or delete the report.
+- Click on a report to open its preview.
 
-![Create Utilization report](/img/cloud/fleet_management/reports/geofence_reports/utilization_report/create_utilization_report.png)
+## Schedules Tab
 
-Your report is now created and will appear under **Reports → List**.
+Use the **Schedules** tab to manage recurring Utilization Reports. It gives you a clear overview of active schedules and quick access to edit or delete them.
 
----
+![Schedules overview](/img/cloud/fleet_management/reports/geofence_reports/reports_scheduled_table.png)
 
-## Schedule a Utilization Report
+- View all scheduled Utilization Reports, including:
+  - Report name.
+  - Report type (for example, Utilization Report).
+  - Frequency and time of day.
+  - Last generated date.
+  - Schedule creation date.
+  - Creator name.
+  - Actions: Edit or delete a scheduled report.
 
-To automatically generate utilization reports on a recurring basis:
+## Create/Schedule Tab
 
-* Navigate to **Reports → Create / Schedule**.  
-* Select **Utilization**. 
-* Go to the **Schedule** tab.  
-* Fill in the following fields:
-   * **Schedule name** – name your scheduled report.  
-   * **Vehicles / Groups** – select which vehicles or groups to include.  
-   * **Geofences / Locations (optional)** – Include all vehicles within a selected geofence or location  
-   * **Email to users (optional)** – enter email addresses that should receive the report.  
-     * The report will still be available in the AutoPi Cloud under **Reports → List** but a copy will also be sent to the specified email addresses.  
-   * **Report frequency** – choose **Daily**, **Weekly**, or **Monthly**.  
-   * **Day of report generation** – select the specific day based on the chosen frequency.  
-   * **Working hours** – define working hours for utilization calculations.  
-     * Default is **08:00 – 16:00** but you can customize this and optionally **Set as default**.   
-* Click **Preview** to preview the report.  
-* Click **Schedule**.
+Use the **Create/Schedule** tab to configure one-time reports or set up recurring report generation. This tab is where you define report inputs, preview results, and save your configuration.
 
+### Creating a Utilization Report
 
-![Schedule Utilization Report](/img/cloud/fleet_management/reports/geofence_reports/utilization_report/schedule_utilization_report.png)
+Complete the form below to create a one-time Utilization Report.
 
-Your report is now scheduled and will appear under **Reports → Schedules**.  
-Once generated, it will also be available in **Reports → List**.
+![Create Utilization report](/img/cloud/fleet_management/reports/geofence_reports/create_utilization_report.png)
 
----
+To create a Utilization Report:
+- From the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) platform, navigate to the **Reports** menu and click **Create/Schedule**.
+- Select **Utilization** from the available report templates.
+- Complete the report form:
+  - **Name:** enter a name for the report.
+  - **Vehicles selection:** select the vehicles or groups you want to include in the report.
+    You can:
+    - Select individual vehicles from the **Vehicles** dropdown.
+    - Use the dropdowns under **Include vehicles from..** and choose a vehicle group, fleet geofences, or locations to include all vehicles from those groups.
+  - **Settings:**
+    - **Working hours (optional):** define the time range considered as working hours for utilization calculations. The default is 08:00 – 16:00. Click Set as default to apply these working hours to future reports.
+    - **Date range:** specify the start and end dates for the report.
+  - **Reset:** clears all configurations you've made.
+  - **Preview:** allows you to see how the report will look before saving.
+  - **Save:** saves the report and displays it under **Reports - List**.
 
-As new report types become available, additional features and enhancements will be added to the platform. Stay tuned for updates to make the most of your AutoPi Cloud Reports.
+### Scheduling a Utilization Report
+
+After creating a Utilization Report, you can schedule it to run at regular intervals (daily, weekly, or monthly). Scheduled reports are automatically generated and displayed under **Reports - Schedules**.
+
+![Schedule Utilization Report](/img/cloud/fleet_management/reports/geofence_reports/schedule_utilization_report.png)
+
+To create a schedule:
+- Navigate to the **Reports** menu and click **Create/Schedule**.
+- Select **Utilization** from the available report templates and click **Schedule** next to **Create** to open the scheduling window.
+- Complete the schedule form:
+  - **Schedule Name:** automatically generated based on the frequency, but you can customize it.
+  - **Vehicles/Groups:** select vehicles or vehicle groups for the scheduled report. Use the same selection flow as in report creation.
+  - **Settings:**
+    - **Report Frequency:** select Daily, Weekly, or Monthly (one option at a time).
+    - **Time/Day of Report Generation:** select the specific day or time for report generation based on the chosen frequency.
+    - **Email to users (optional):** enter email addresses that should receive the report. The report will be available in **Reports → List** and a copy will also be sent to the specified email addresses.
+    - **Working hours (optional):** define working hours for utilization calculations. The default is **08:00 – 16:00**. Click **Set as default** to apply these working hours to future reports.
+  - **Reset:** clears all configurations you've made.
+  - **Preview:** allows you to see how the report will look before saving.
+  - **Save:** saves the scheduled report and displays it under **Reports - Schedules**.
+
+:::note
+As new report types become available, additional features and enhancements will be added to the platform. Stay tuned for updates to make the most of your [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) Reports.
+:::
