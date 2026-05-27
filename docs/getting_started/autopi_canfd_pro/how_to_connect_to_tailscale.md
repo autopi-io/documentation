@@ -20,15 +20,10 @@ You can also use this video for [**Tailscale quickstart video guide**](https://y
 Steps to enable Tailscale on your device: 
 * Navigate to Devices section on [Autopi cloud](https://my.autopi.io/).
 * Click the device you want to enable Tailscale on.
-* Go to advanced settings -> Tailscale. 
-<br>
-</br>
-![Tailscale add-on](/img/getting_started/getting_started/tailscale_addon.png)
-
+* Go to advanced settings > Tailscale. 
 * Check if Tailscale is already enabled on your device. If it is, you're all set! This is how it looks like: 
-<br>
-</br>
-![Tailscale enabled](/img/getting_started/autopi_canfd_pro/enabled_tailscale.png)
+    
+![Tailscale enabled](/img/getting_started/autopi_canfd_pro/tailscale_enabled.png)
 
 * If Tailscale is not enabled, go ahead and enable it.
 Once enabled, your device will create a pending sync which needs to be synced to a device before the Tailscale is fully enabled. You can check this by clicking the "Pending" icon at the bottom right side of the platform. Pending sync look like this: 
