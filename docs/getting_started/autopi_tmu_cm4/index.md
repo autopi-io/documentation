@@ -41,7 +41,7 @@ add the e-mail address you want to associate with your account and create a pass
 You can also expand the form to add additional details like your country and full name, 
 though this can be done later. Click “Create account”.
 
-![AutoPi sign up](/img/getting_started/getting_started/sign_up_cloud.png)
+![AutoPi sign up](/img/getting_started/getting_started/sign_up.png)
 
 ## 2. Register Your Device
 
@@ -55,9 +55,14 @@ To add a device to your account, follow one of these methods:
 2. Click on “Devices”. 
 3. Find and click the “Register Device” button in the upper right corner. 
 
+**Option 2: Via the Accounts Tab**
+1. Navigate to the “Accounts” tab at the bottom of the left side menu on the Platform.
+2. Select “Devices”. 
+3. Locate and click the “Register Device” button in the upper right corner.
+
 After clicking the “Register Device” button, the registration tab will appear. Enter all necessary information: 
 
-![Register Device](/img/getting_started/getting_started/register_device.png)
+![Register Device](/img/getting_started/getting_started/register_new_device.png)
 
 - **Unit ID**: This is the number on the side of your device. You can also find it in the.
     document attached in the email you received when the device was shipped. 
@@ -69,12 +74,8 @@ will now appear in the list under “Vehicles” in the Fleet Management section
 “Devices” in the Device Management section of the Platform.
 
 
-**Option 2: Via the Accounts Tab**
-1. Navigate to the “Accounts” tab at the bottom of the left side menu on the Platform.
-2. Select “Devices”. 
-3. Locate and click the “Register Device” button in the upper right corner.
 
-![Register Device](/img/getting_started/getting_started/register_device_page.png)
+
 
 
 ## 3. Ensure SIM Connectivity
