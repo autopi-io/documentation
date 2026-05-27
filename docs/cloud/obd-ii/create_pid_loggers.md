@@ -175,7 +175,7 @@ Open up the Device > Loggers page. You will see a page with a '+ Create' button 
 right-hand side. Click on that button and select the PID option. A new window should show up that
 looks like the following screenshot:
 
-![Create PID Logger Window](/img/cloud/obd_ii/create_pid_loggers/create_pid_logger_window.jpg)
+![Create PID Logger Window](/img/cloud/obd_ii/create_pid_loggers/create_new_logger.png)
 
 Let's look through the fields available:
 
