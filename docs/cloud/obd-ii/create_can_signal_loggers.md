@@ -42,7 +42,7 @@ The creation of a logger involves specifying which signals to log and other para
 - Bus Selection: Specify the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus on which your signal is present. Vehicles often have multiple [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) buses for different systems (e.g., powertrain, chassis). Ensure you select the correct one for your signal.
 
 - Name Override: You can specify a different name for your logger here, otherwise its name remains the same as the Signals.
-![Create logger](/img/cloud/obd_ii/create_can_signal_loggers/create_logger.png)
+![Create logger](/img/cloud/obd_ii/create_can_signal_loggers/create_can_logger.png)
 
 
 **Step 4: Create the Logger**
