@@ -53,7 +53,7 @@ Each type has slightly different configuration requirements, described below.
 
 ### Create an OBD2 Fault Code
 
-![Create OBD2 Fault Code](/img/cloud/fleet_management/configurations/fault_codes/create_obd2_code.png)
+![Create OBD2 Fault Code](/img/cloud/fleet_management/configurations/fault_codes/create_new_fault.png)
 
 To create an **OBD2 fault code**, fill in the following fields:
 
@@ -66,12 +66,13 @@ To create an **OBD2 fault code**, fill in the following fields:
 * **Email Notifications** (optional):
   * Enable to receive an email when the fault occurs.
   * Email address – specify the recipient email address.
+* **Notification channel** (optional) – select a notification channel for fault-related updates. Channels are configured once in [Notification Channels](https://docs.autopi.io/cloud/fleet_management/configurations/notification-channels/) and then reused here.
 
 ---
 
 ### Create a J1939 Fault Code
 
-![Create J1939 Fault Code](/img/cloud/fleet_management/configurations/fault_codes/create_j1939_code.png)
+![Create J1939 Fault Code](/img/cloud/fleet_management/configurations/fault_codes/create_new_j1939_fault.png)
 
 To create a **J1939 fault code**, provide the following information:
 
@@ -85,12 +86,13 @@ To create a **J1939 fault code**, provide the following information:
 * **Email Notifications** (optional):
   * Enable to receive email notifications.
   * Email address – specify the recipient email address.
+* **Notification channel** (optional) – select a notification channel for fault-related updates. Channels are configured once in [Notification Channels](https://docs.autopi.io/cloud/fleet_management/configurations/notification-channels/) and then reused here.
 
 ---
 
 ### Create a Custom Fault Code
 
-![Create Custom Fault Code](/img/cloud/fleet_management/configurations/fault_codes/create_custom_code.png)
+![Create Custom Fault Code](/img/cloud/fleet_management/configurations/fault_codes/create_new_custom_fault.png)
 
 To create a **Custom fault code**, fill in the following fields:
 
@@ -103,6 +105,7 @@ To create a **Custom fault code**, fill in the following fields:
 * **Email Notifications** (optional):
   * Enable to receive email notifications.
   * Email address – specify the recipient email address.
+* **Notification channel** (optional) – select a notification channel for fault-related updates. Channels are configured once in [Notification Channels](https://docs.autopi.io/cloud/fleet_management/configurations/notification-channels/) and then reused here.
 
 ---
 
