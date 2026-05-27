@@ -74,12 +74,13 @@ Steps to get into advanced settings for DoIP:
 * Click on Advanced settings.
 * Click on Doip. 
 
-![DoIP Advanced settings](/img/guides/doip_advanced_settings.png)
+![DoIP Advanced settings](/img/guides/doip_settings.png)
 
 If you want to enable DoIP on your Autopi device you will need to configure these fields: 
 * **Default Pin Setup** - this setting changes the setup of the pins. You can read more about [DoIP main pinout](https://docs.autopi.io/developer_guides/setting-up-doip/#doip-main-pinout) and [DoIP alternative pinout](https://docs.autopi.io/developer_guides/setting-up-doip/#doip-alternative-pinout) in this guide above. By default this setting is set to main pinout as that one is used more frequently. 
 * **Enabled** - this setting allow you to enable the DOIP UDS service. By default it is disabled but if you want to start using DoIP, enable it here. 
 * **Host** - specify the hostname or IP of the TCP endpoint of the vehicle to connect to.
+* **No Gateway** - do not use the "eth0" interface as a default gateway.
 * **Port** - specify the port number of the TCP endpoint. The default value is set to `13400`. You can however change this if the port number is different for your endpoint. 
 * **Timeout** - timeout of the TCP connection. The default value is set to `0.1` and should be changed only if you experience problems with connection timeouts. 
 
