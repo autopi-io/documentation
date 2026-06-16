@@ -385,6 +385,8 @@ module.exports = {
             "hardware/accessories/tesla-obd2-adapter-model-3-y",
             "hardware/accessories/volvo-8pin-j1939-obd2",
             "hardware/accessories/man-37pin-j1939-obd2",
+            "hardware/accessories/female-can-bus-open-wires",
+            "hardware/accessories/male-can-bus-open-wires",
           ],
           "label": "Accessories",
           "type": "category"
