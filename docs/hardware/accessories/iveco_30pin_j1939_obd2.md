@@ -41,7 +41,7 @@ This adapter cable can be purchased through the AutoPi shop: [**IVECO 30 PIN J19
 | AutoPi Function | IVECO 30 PIN | OBD-II 16 PIN |
 |:-----------------:|:--------------:|:---------------:|
 | CAN High        | Pin 4        | Pin 6         |
-| CAN Low         | Pin 2        | Pin 14        |
+| CAN Low         | Pin 12       | Pin 14        |
 | Power           | Pin 30       | Pin 16        |
 
 
