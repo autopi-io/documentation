@@ -10,178 +10,316 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-You are experiencing issues connecting to the internet, when connected to the WiFi hotspot on the [AutoPi](https://www.autopi.io) Dongle. These instructions help you step-by-step to identify and resolve common problems related to SIM card setup, modem recognition, and network configurations. By following these guidelines, you can ensure a stable 4G internet connection for your AutoPi device. 
+This guide helps you diagnose and resolve common 4G connectivity issues on your [AutoPi](https://www.autopi.io) device. If you cannot access the internet while connected to the device hotspot, follow the steps below in order.
 
 :::tip Our support team is here to help you.
-Get in touch here or send an email to support@autopi.io
+If you need assistance, contact support@autopi.io.
 :::
 
-### Prerequisites:
-Before following this guide, you must have completed the initial [setup guide](/getting_started/autopi_tmu_cm4/index.md).
+### Prerequisites
+Before starting, complete the initial [setup guide](https://docs.autopi.io/getting_started/autopi_tmu_cm4/).
+
+---
 
 ### Check SIM Card
 
-1. Your SIM card must be setup for data. To check this, insert the SIM into another device, like a smartphone or similar. When inserted in the other device you must be able to browse the web.
+* Confirm that your SIM card is enabled for mobile data. Test the SIM in another device (for example, a smartphone) and verify that internet access works.
+* If you are using a data-only SIM, confirm with your carrier that the data plan is active and roaming is enabled when required.
+* Verify that the SIM card is not PIN-locked. If it is PIN-locked, enter the correct PIN in the device advance settings.
+* Remove and reinsert the SIM card, and inspect both the SIM and slot for physical damage. Bent contacts, debris, or a loose SIM slot can prevent modem detection.
+* Make sure the SIM orientation is correct. The text side of the SIM card must face up, and the triangle end must point into the device.
 
-1. If you ordered a branded version of the [AutoPi](https://www.autopi.io) (Verizon/AT&T), please verify that the network carrier of the SIM card is the same as the brand of the [AutoPi](https://www.autopi.io).
+    <img src="/img/getting_started/getting_started/sim_card.png" alt="AutoPi.io - SIM card location" style={{width: '80%'}} />
 
-1. Verify that the SIM card is not pin locked and if it is that you have entered the pin code in the settings. 
+:::caution
+When inserted correctly, you should hear a small click as the card locks into position.
+Do not force the SIM card out after the click, as this can damage the slot.
+Always verify orientation before insertion.
+:::
 
-### Check Modem on Hardware
-In the terminal on the WiFi, check that the modem has been found. This can be done by writing the following command:
-```python  
-cmd.run "lsusb" 
-```
+---
 
-The output of the command should be similar to this:
+### Check Modem Detection (Hardware)
 
-![lsusb](/img/getting_started/autopi_tmu_cm4/4g_internet_setup_troubleshooting/lsusb.jpg)
+* Connect to the device hotspot and open [AutoPi Local](http://local.autopi.io). 
+* Open the terminal and run:
 
-The important part to look for is the Modem. The ID will be different depending on which modem your device is equipped with:
+    ```python
+    cmd.run "lsusb"
+    ```
+* The output should look similar to this:
 
-| **Modem Manufacturer** | **ID**      |
-|------------------------|-------------|
-| Quectel                | `2c7c:0121` |
-| Telit                  | `1bc7:1031` |
+    ![lsusb](/img/getting_started/autopi_tmu_cm4/4g_internet_setup_troubleshooting/lsusb.jpg)
 
-If you ordered a 4G edition and you don't find the modem in your list, then please contact support@autopi.io
+* Look for your modem in the list. The USB ID will vary depending on the modem installed in your device:
+
+    | **Modem Manufacturer** | **USB ID** |
+    |------------------------|------------|
+    | Quectel                | `2c7c:0121` |
+    | Telit                  | `1bc7:1031` |
+
+* If you ordered a 4G-enabled device and the modem does not appear in the list, please contact support@autopi.io.
+
+:::tip
+If `lsusb` is unavailable, run `cmd.run "dmesg | grep -i usb"` to check USB detection events.
+:::
+
+---
 
 ### Check Modem Setup
-**Check PDP Context:**  
-If your devices is using a Telit Modem is using software version 1.22.7 or newer,
-There's a command you can run to verify that the modem has been set up correctly: 
-```python  
+
+#### Check PDP Context
+
+PDP context controls how the modem connects to the mobile network. Incorrect values can prevent data sessions from starting.
+
+For software version `1.22.7` or newer:
+
+```python
 modem.connection pdp_context
 ```
 
-This should return a message that looks like either.
-```python  
-value:  
-- apn: ''  
-cid: 1
-pdp_type: IPV4V6 
+For `older` versions:
 
-or  
-value: 
-- apn: '' 
-cid: 1
-pdp_type: IPV4V6 
-- apn: 'ims'  
-cid: 2 
-pdp_type: IPV4V6 
-```
-
-Incase your software version is older than 1.22.7, you can run the following command to get the same information: 
-
-```python  
+```python
 modem.connection execute AT+CGDCONT?
 ```
 
+Expected output is either:
 
-This should return a message that looks like either. 
-```python  
-data: '+CGDCONT: 1, "IPV4V6","",0,0,0,0'  
-or  
-Data:   
-- '+CGDCONT:1,"IPV4V6","",0,0,0,0'   
-- '+CGDCONT:2,"IPV4V6","ims","",0,0,0,0'
+```python
+# Single context
+value:
+- apn: ''
+  cid: 1
+  pdp_type: IPV4V6
+
+# Dual context (includes ims)
+value:
+- apn: ''
+  cid: 1
+  pdp_type: IPV4V6
+- apn: 'ims'
+  cid: 2
+  pdp_type: IPV4V6
 ```
 
-If you get the second message after running either command then you can reconfigure the modem by running these three commands: 
-```python  
+If the dual-context result causes connectivity issues, reconfigure with:
+
+```python
 cmd.run "systemctl stop qmi-manager"
 modem.connection execute AT+CGDCONT=2
 cmd.run "systemctl restart qmi-manager"
 ```
 
-After restarting your devices you can run the first command again to verify you get the first message. 
+Run the PDP command again to confirm the result.
 
-**Check Firmware Switch:**  
-Check if the firmware switch is set correctly by running this command if you are using software version 1.22.7 or newer.
-```python  
+---
+
+**Check Firmware Switch**
+
+An incorrect firmware switch setting can prevent the modem from connecting to the network correctly.
+
+**If you are using software version `1.22.7 or newer`, run:**
+
+```python
 modem.connection active_firmware_image
 ```
 
-this should return a message that looks like this.  
+The expected output looks like this:
+
 ```python  
-_stamp: "the curent date" 
+_stamp: "<current date>" 
 _type: active_firmware_image
 net_conf:global
 storage_conf: ram  
 ```
-Here we are looking to see if the net_conf is set to global.
 
-Incase your software version is older than 1.22.7, you can run the following command to get the same information: 
+Confirm that `net_conf` is set to `global`.
+
+
+
+**Incase your software version is `older than 1.22.7`, you can run the following command to get the same information:**
 ```python  
 modem.connection execute AT#FWSWITCH?'
 ```
 
-This should return with a message that looks like this: 
-```python  
-Data:'FWSWITCH:40:1'
-``` 
+Expected output:
 
-In case the FWSWITCH does not start with 40 or `net_conf` is not global this can be reconfigured manually by running the following command.
-```python  
+```python
+Data:'FWSWITCH:40:1'
+```
+
+If the value does not start with `40`, configure it manually:
+
+```python
 modem.connection execute AT#FWSWITCH=40,1
 ```
 
+Restart the device and verify again.
 
-### Checking qmi-manager Status
-The device contains a software manager, which ensure stable connection to the internet. This is called `qmi-manager`. To check status, please write the following command in the terminal:
-```python  
-cmd.run "qmi-manager status"
+:::tip
+For additional modem commands and examples, see [Core Commands - Modem](https://docs.autopi.io/core/commands/core-commands-modem/).
+:::
+
+---
+
+### Check APN Configuration
+
+A missing or incorrect APN can block internet access even when the modem is detected.
+
+:::note
+If you are using the AutoPi SIM card (included with monthly cloud subscription), APN is pre-configured on newly shipped devices.
+In most cases, you can skip this section.
+If you want to verify manually, APN should be set to **nxt20.net**.
+:::
+
+Check the current APN:
+
+```python
+modem.connection pdp_context
 ```
 
-The output should be similar what you can see in the image below:
+If APN is missing and your carrier requires it, set it manually:
 
-![qmistatus](/img/getting_started/autopi_tmu_cm4/4g_internet_setup_troubleshooting/qmistatus.jpg)
+```python
+modem.connection execute AT+CGDCONT=1,"IPV4V6","<your-apn>"
+```
 
-### Further Checking of Network
+Then restart the manager:
 
-If your device still isn't online, you can try running the following two commands. They will tell you a bit more about why the network manager fails:
-```python  
+```python
+cmd.run "systemctl restart qmi-manager"
+```
+
+:::tip
+If you do not know your APN, check your carrier documentation or support channel.
+:::
+
+---
+
+### Check qmi-manager Status
+
+`qmi-manager` maintains the cellular data connection.
+
+Check status:
+
+    ```python
+    cmd.run "qmi-manager status"
+    ```
+
+Expected response: 
+
+    ![qmistatus](/img/getting_started/autopi_tmu_cm4/4g_internet_setup_troubleshooting/qmistatus.jpg)
+
+If needed, restart it:
+
+    ```python
+    cmd.run "systemctl restart qmi-manager"
+    ```
+
+---
+
+### Restart the Network Interface
+
+If `qmi-manager` is running but internet is still unavailable, cycle the interface:
+
+```python
 cmd.run "qmi-manager down"
 cmd.run "qmi-manager up"
 ```
 
-If the last command reports issue with detecting the SIM card, then double check the orientation of the SIM card and try again.
+If SIM detection fails on `up`, power down the device, check SIM orientation and seating, then try again.
 
-### Tweaks
+Check interface state and IP address:
 
-If you experience connection issues where the connection drops sometimes and/or if it is online, but not shown as online on my.autopi.io, then you can try to tweak the MTU from the default value: 1500, to a lower value, in increments (ex. 1500 -> 1450 -> etc).
-This can be done on the local configuration tool, by connecting to the device hotspot and opening local.autopi.io in your browser.
+```python
+cmd.run "ip link show wwan0"
+cmd.run "ip addr show wwan0"
+```
 
-From the terminal located in the top right corner on the webpage, you can run the following two commands to update the MTU and save the changes.
+If `wwan0` has no IP address, the mobile session is not established.
 
-```python  
-grains.set qmi:mtu xxxx
+---
+
+### Adjust the MTU Setting
+
+If connection is unstable (drops, intermittent cloud status), tune MTU. Based on your board version, the default MTU is either `1500` or `1280`.
+
+If your default is `1280`, change it to `1500` and check whether the device comes online.
+If your default is `1500`, change it to `1280` and check whether behavior improves.
+This quick comparison helps confirm whether MTU is causing the issue.
+
+Apply MTU:
+
+```python
+grains.set qmi:mtu <value>
 state.sls network.wwan.qmi.config
 ```
 
-To verify that these changes have been saved, you can run the following two commands, here you want to check that first command retruns the same value you set, and that the seconed command where mtu= the same value as the one we set.    
+Verify:
 
-```python  
+```python
 grains.get qmi:mtu
 cmd.run "cat /etc/udhcpc/qmi.override"
 ```
 
+Confirm that both outputs match the configured MTU.
+
 :::note
-- **For US Verizon customers, please try this MTU = 1428.**    
-- **For other customer, please try this MTU = 1280.**
+* **US Verizon**: start with MTU `1428`.
+* **Other carriers**: start with MTU `1280`.
 :::
 
-If the connection is still not online, then please contact support@autopi.io for additional help.
+---
 
-### Check Connections
+### Check Internet and Cloud Connectivity
 
-You can to check if the device can connect to the internet though the 4g connection you can run the following command: 
-```python  
+Test internet over cellular:
+
+```python
 cmd.run "ping -c 5 -I wwan0 google.com"
 ```
 
-You can also check the connection to the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) service by running the following command: 
-```python  
+Test AutoPi Cloud access:
+
+```python
 cmd.run "curl -v my.autopi.io"
 ```
+
+If ping works but cloud access fails, test DNS:
+
+```python
+cmd.run "nslookup my.autopi.io"
+```
+
+If DNS fails, try a temporary public DNS value:
+
+```python
+cmd.run "echo 'nameserver 8.8.8.8' > /etc/resolv.conf"
+```
+
+Then re-run ping and curl.
+
+---
+
+### Collect Logs for Support
+
+If the issue persists, collect logs before opening a support request.
+Follow this guide to export relevant logs: [AutoPi Logs Guide](https://docs.autopi.io/developer_guides/autopi-logs/)
+
+---
+
+### Summary
+
+By this point, you should have verified:
+
+1. SIM compatibility, orientation, and slot condition.
+1. Modem detection and modem configuration (PDP and firmware switch).
+1. APN settings.
+1. `qmi-manager` and `wwan0` status.
+1. MTU tuning and DNS/cloud connectivity tests.
+
+:::note
+If you open a support case, include the full output from all commands used in this guide, along with the collected [Logs](https://docs.autopi.io/developer_guides/autopi-logs/).
+:::
 
