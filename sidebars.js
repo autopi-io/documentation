@@ -387,10 +387,6 @@ module.exports = {
             "hardware/accessories/volvo-8pin-j1939-obd2",
             "hardware/accessories/female-can-bus-open-wires",
             "hardware/accessories/man-37pin-j1939-obd2",
-            
-            
-
-            
           ],
           "label": "Accessories",
           "type": "category"
