@@ -45,7 +45,6 @@ This adapter cable can be purchased through the AutoPi shop: [**Caterpillar 14 P
 | GND             | Pin C              | Pin 5         |
 
 
-
 :::note
 The pinout above is based on the standard J1939 to OBD-II mapping. Refer to your Caterpillar engine documentation for any model-specific variations.
 :::
