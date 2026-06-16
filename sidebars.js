@@ -371,7 +371,8 @@ module.exports = {
               "label": "Keyfob HAT",
               "type": "category"
             },
-            "hardware/accessories/device_mounts"      
+            "hardware/accessories/device_mounts",
+            "hardware/accessories/cummins-komatsu-12pin-j1939-obd2"      
           ],
           "label": "Accessories",
           "type": "category"
@@ -479,6 +480,7 @@ module.exports = {
         },
       ],
     },
+
     {
       "type": "link",
      "label": "API",
