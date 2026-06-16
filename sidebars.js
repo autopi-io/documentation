@@ -372,7 +372,25 @@ module.exports = {
               "type": "category"
             },
             "hardware/accessories/device_mounts",
-            "hardware/accessories/cummins-komatsu-12pin-j1939-obd2"      
+            "hardware/accessories/caterpillar-14pin-j1939-obd2",
+            "hardware/accessories/caterpillar-538-5051-9pin-j1939-obd2",
+            "hardware/accessories/cummins-9pin-j1939-obd2",
+            "hardware/accessories/cummins-komatsu-12pin-j1939-obd2",
+            "hardware/accessories/iveco-30pin-j1939-obd2",
+            "hardware/accessories/knorr-wabco-7pin-j1939-obd2",
+            "hardware/accessories/male-can-bus-open-wires",
+            "hardware/accessories/man-truck-12pin-j1939-obd2",
+            "hardware/accessories/mercedes-14pin-j1939-obd2",
+            "hardware/accessories/renault-12pin-j1939-obd2",
+            "hardware/accessories/scania-16pin-j1939-obd2",
+            "hardware/accessories/tesla-obd2-adapter-model-3-y",
+            "hardware/accessories/volvo-8pin-j1939-obd2",
+            "hardware/accessories/female-can-bus-open-wires",
+            "hardware/accessories/man-37pin-j1939-obd2",
+            
+            
+
+            
           ],
           "label": "Accessories",
           "type": "category"
