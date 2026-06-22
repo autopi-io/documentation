@@ -44,6 +44,10 @@ This adapter cable can be purchased through the AutoPi shop: [**MAN Truck 12 PIN
 | CAN Low         | Pin 14    | Pin 14        |
 | Power           | Pin 16    | Pin 16        |
 
+<p align="center">
+	<img src="/img/hardware/accessories/custom_pinouts/man_custom_12to16.png" alt="MAN truck to OBD-II Adapter Cable" width="75%" />
+</p>
+
 :::note
 The pinout above is based on the standard J1939 to OBD-II mapping. Refer to your MAN truck documentation for any model-specific variations.
 :::

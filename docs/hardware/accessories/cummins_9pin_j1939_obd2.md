@@ -47,6 +47,10 @@ This adapter cable can be purchased through the AutoPi shop: [**Cummins 9 PIN J1
 | GND             | Pin A         | Pin 5         |
 
 
+<p align="center">
+	<img src="/img/hardware/accessories/custom_pinouts/cummins_custom_9to16.png" alt="Cummins 9 PIN J1939 (J1708) to OBD-II Adapter Cable" width="85%" />
+</p>
+
 :::note
 The pinout above is based on the standard J1939/J1708 to OBD-II mapping. Refer to your Cummins engine documentation for any model-specific variations.
 :::

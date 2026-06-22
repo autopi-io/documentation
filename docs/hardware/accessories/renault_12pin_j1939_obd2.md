@@ -46,6 +46,10 @@ This adapter cable can be purchased through the AutoPi shop: [**Renault 12 PIN J
 | GND             | Pin 5          | Pin 5         |
 
 
+<p align="center">
+	<img src="/img/hardware/accessories/custom_pinouts/renault_custom_12to16.png" alt="Renault to OBD-II Adapter Cable" width="75%" />
+</p>
+
 :::note
 The pinout above is based on the standard J1939 to OBD-II mapping. Refer to your Renault truck documentation for any model-specific variations.
 :::

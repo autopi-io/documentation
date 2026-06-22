@@ -45,6 +45,9 @@ This adapter cable can be purchased through the AutoPi shop: [**Mercedes 14 PIN 
 | Power           | Pin 3           | Pin 16        |
 | GND             | Pin 1           | Pin 5         |
 
+<p align="center">
+	<img src="/img/hardware/accessories/custom_pinouts/mercedes_custom_14to16.png" alt="Mercedes to OBD-II Adapter Cable" width="75%" />
+</p>
 
 :::note
 The pinout above is based on the standard J1939 to OBD-II mapping. Refer to your Mercedes truck documentation for any model-specific variations.

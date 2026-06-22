@@ -46,6 +46,9 @@ This adapter cable can be purchased through the AutoPi shop: [**Cummins-Komatsu 
 | GND             | Pin 12                   | Pin 5         |
 
 
+<p align="center">
+	<img src="/img/hardware/accessories/custom_pinouts/komatsu_custom_12to16.png" alt="Komatsu to OBD-II Adapter Cable" width="75%" />
+</p>
 
 :::note
 The pinout above is based on the standard J1939 to OBD-II mapping. Refer to your Cummins or Komatsu truck documentation for any model-specific variations.

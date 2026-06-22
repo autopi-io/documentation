@@ -45,6 +45,9 @@ This adapter cable can be purchased through the AutoPi shop: [**Scania 16 PIN J1
 | Power           | Pin 1         | Pin 16        |
 | GND             | Pin 2         | Pin 5         |
 
+<p align="center">
+	<img src="/img/hardware/accessories/custom_pinouts/scania_custom_16to16.png" alt="Scania to OBD-II Adapter Cable" width="75%" />
+</p>
 
 :::note
 The pinout above is based on the standard J1939 to OBD-II mapping. Refer to your Scania truck documentation for any model-specific variations.

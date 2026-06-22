@@ -43,6 +43,9 @@ This adapter cable can be purchased through the AutoPi shop: [**Knorr Wabco Trai
 | Power           | Pin 2             | Pin 16        |
 | GND             | Pin 1             | Pin 5         |
 
+<p align="center">
+	<img src="/img/hardware/accessories/custom_pinouts/knorr_custom_7to16.png" alt="Knorr Wabco trailer to OBD-II Adapter Cable" width="75%" />
+</p>
 
 :::note
 The pinout above is based on the standard J1939 to OBD-II mapping. Refer to your Knorr Wabco trailer documentation for any model-specific variations.

@@ -43,6 +43,9 @@ This adapter cable can be purchased through the AutoPi shop: [**Volvo 8 PIN J193
 | Power           | Pin 16        | Pin 8       |
 | GND             | Pin 4         | Pin 1       |
 
+<p align="center">
+	<img src="/img/hardware/accessories/custom_pinouts/volvo_custom_8to16.png" alt="Volvo to OBD-II Adapter Cable" width="75%" />
+</p>
 
 :::note
 The pinout above is based on the standard J1939 to OBD-II mapping. Refer to your Volvo truck documentation for any model-specific variations.
