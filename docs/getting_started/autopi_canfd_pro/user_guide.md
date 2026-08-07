@@ -261,11 +261,11 @@ AutoPi CAN-FD Pro supports **2 types** of decoders:
     * **Library File Path Pattern** (advanced) - the path to the message definition library file used for decoding the raw CAN messages.
     * **Strict mode** (advanced) - prohibits overlapping fields / multiplexing when rendering DBC file.
     
-    After you **choose or import the DBC file** you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated. There is also one important technical value that needs to be set correctly: Frame ID Mask. Frame ID Mask will help you determine how much needs to match before you have a match.
+    After you **choose or import the DBC file** you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated. 
 
-      :::note
-      Frame ID Mask: is a bitmask used to match the CAN message identifiers defined in the DBC file. **If this value is incorrect, no CAN messages will be decoded. For the J1939 protocol the recommended bitmask is ´1FFFFF00´.**
-      :::
+    Once you select the signal(s) you want to decode, you can configure the **aggregation interval** for each signal. The aggregation interval, measured in seconds, defines a time window during which all collected signal data is aggregated into a single averaged value before logging. For example, if you set an aggregation interval of 1 second, the system will collect all data points within that second, calculate their average, and log this result. When creating widgets in the AutoPi dashboard, you gain access to four distinct data representations for each signal: the **aggregated signal** (average), **maximum value**, **minimum value**, and **sample count** (the total number of data points collected within your specified aggregation interval). This flexibility allows you to create comprehensive visualizations tailored to your monitoring needs.
+
+    There is also one important technical value that needs to be set correctly: **Frame ID Mask**. Frame ID Mask is a bitmask used to match the CAN message identifiers defined in the DBC file. **If this value is incorrect, no CAN messages will be decoded. For the J1939 protocol the recommended bitmask is ´1FFFFF00´.**
 
 
 
@@ -353,6 +353,10 @@ At the moment [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-
     * **Sync Interval** (advanced) - time gap between each sync operation, specifying how often files should be synchronized automatically.
     * **Error Retry Interval** (advanced)- period of time in seconds that the handler waits before retrying an operation after encountering an error.
     * **Job Timeout** (advanced) - maximum duration allowed for the output handler task to run before it is automatically terminated.
+
+**Decoded data accessible through Cloud Storage (HTTPS)** - decoded data can be streamed directly to the AutoPi Cloud, enabling seamless integration with AutoPi dashboards and widget creation. To use this output type, ensure you have selected the Standard decoder in Step 3: Decoders. Once configured, you can add a **Cloud Storage** decoded output in this step. The upload frequency for each signal is determined by the aggregation interval set for that signal in the Decoders ste. No additional settings are required.
+
+![Decoded data accessible through Cloud Storage](/img/getting_started/autopi_canfd_pro/user_guide/cloud_returner_pro.png)
 
 
 
