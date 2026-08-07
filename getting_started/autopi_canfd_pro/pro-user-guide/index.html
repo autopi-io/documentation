@@ -11,7 +11,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="AutoPi Documentation" href="/opensearch.xml"><link rel="stylesheet" href="/assets/css/styles.7187c12b.css">
-<script src="/assets/js/runtime~main.47b9c631.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.e4c0f17b.js" defer="defer"></script>
 <script src="/assets/js/main.6c009c26.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -196,8 +196,9 @@ Already know the exact bitrates for your CAN 2.0 and/or CAN FD? Just input them 
 <li><strong>Library File Path Pattern</strong> (advanced) - the path to the message definition library file used for decoding the raw CAN messages.</li>
 <li><strong>Strict mode</strong> (advanced) - prohibits overlapping fields / multiplexing when rendering DBC file.</li>
 </ul>
-<p>After you <strong>choose or import the DBC file</strong> you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated. There is also one important technical value that needs to be set correctly: Frame ID Mask. Frame ID Mask will help you determine how much needs to match before you have a match.</p>
-<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Frame ID Mask: is a bitmask used to match the CAN message identifiers defined in the DBC file. <strong>If this value is incorrect, no CAN messages will be decoded. For the J1939 protocol the recommended bitmask is ´1FFFFF00´.</strong></p></div></div>
+<p>After you <strong>choose or import the DBC file</strong> you are able to set up the CAN messages and signals based on your preference. After you validate the file, you will be presented with the list of CAN messages and signals. You can decide if you want to create or ignore the specific message or signal. If you create one that was already created, it will be updated.</p>
+<p>Once you select the signal(s) you want to decode, you can configure the <strong>aggregation interval</strong> for each signal. The aggregation interval, measured in seconds, defines a time window during which all collected signal data is aggregated into a single averaged value before logging. For example, if you set an aggregation interval of 1 second, the system will collect all data points within that second, calculate their average, and log this result. When creating widgets in the AutoPi dashboard, you gain access to four distinct data representations for each signal: the <strong>aggregated signal</strong> (average), <strong>maximum value</strong>, <strong>minimum value</strong>, and <strong>sample count</strong> (the total number of data points collected within your specified aggregation interval). This flexibility allows you to create comprehensive visualizations tailored to your monitoring needs.</p>
+<p>There is also one important technical value that needs to be set correctly: <strong>Frame ID Mask</strong>. Frame ID Mask is a bitmask used to match the CAN message identifiers defined in the DBC file. <strong>If this value is incorrect, no CAN messages will be decoded. For the J1939 protocol the recommended bitmask is ´1FFFFF00´.</strong></p>
 <p><strong>Option 2: Add ASAM decoder</strong></p>
 <p><img decoding="async" loading="lazy" alt="ASAM decoder" src="/assets/images/asam_decoder-9d84cc4dc69e3f5e9e97d65fdff5c5ea.png" width="1131" height="838" class="img_ev3q"></p>
 <ul>
@@ -280,6 +281,8 @@ Already know the exact bitrates for your CAN 2.0 and/or CAN FD? Just input them 
 </ul>
 </li>
 </ul>
+<p><strong>Decoded data accessible through Cloud Storage (HTTPS)</strong> - decoded data can be streamed directly to the AutoPi Cloud, enabling seamless integration with AutoPi dashboards and widget creation. To use this output type, ensure you have selected the Standard decoder in Step 3: Decoders. Once configured, you can add a <strong>Cloud Storage</strong> decoded output in this step. The upload frequency for each signal is determined by the aggregation interval set for that signal in the Decoders ste. No additional settings are required.</p>
+<p><img decoding="async" loading="lazy" alt="Decoded data accessible through Cloud Storage" src="/assets/images/cloud_returner_pro-745d56cc3cad1cd101d3df2619747c60.png" width="1164" height="861" class="img_ev3q"></p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-edit-can-logger">How to edit CAN Logger?<a href="#how-to-edit-can-logger" class="hash-link" aria-label="Direct link to How to edit CAN Logger?" title="Direct link to How to edit CAN Logger?">​</a></h3>
 <p>Need to make changes to a CAN logger? No problem, it’s super simple. Just follow these steps:</p>
 <ul>
