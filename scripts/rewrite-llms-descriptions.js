@@ -39,13 +39,14 @@ function main() {
     return;
   }
 
-  const { urlIndex, idIndex } = buildIndex(DOCS_ROOT);
+  const { urlIndex, idIndex, sourceToDirKey } = buildIndex(DOCS_ROOT);
 
   const original = fs.readFileSync(LLMS_TXT, 'utf8');
   const lines = original.split('\n');
 
   let rewrites = 0;
   let unresolved = 0;
+  let mirrored = 0;
   const rewritten = lines.map((line) => {
     const m = line.match(ENTRY_RE);
     if (!m) return line;
@@ -55,6 +56,9 @@ function main() {
       unresolved += 1;
       return line;
     }
+
+    if (mirrorMarkdown(url, sourceFile, sourceToDirKey)) mirrored += 1;
+
     const desc = extractDescription(sourceFile);
     if (!desc) return line;
     if (desc !== oldDesc) rewrites += 1;
@@ -64,12 +68,37 @@ function main() {
   const output = rewritten.join('\n');
   console.log(
     `[rewrite-llms-descriptions] rewrote ${rewrites} description(s); ` +
+    `mirrored ${mirrored} page(s) to <url>/index.md; ` +
     `${unresolved} URL(s) could not be mapped to a source file`
   );
 
   if (output !== original) {
     fs.writeFileSync(LLMS_TXT, output, 'utf8');
   }
+}
+
+// Copy the plugin-generated .md at the id-based URL (e.g. /cloud-intro.md) to
+// the predictable location that matches the HTML route (e.g. /cloud/index.md).
+// Regular pages already sit at <html-dir>.md; we additionally give them a
+// <html-dir>/index.md alias so appending `.md` OR `/index.md` to any docs URL
+// yields the same clean Markdown. Existing files are never overwritten.
+function mirrorMarkdown(url, sourceFile, sourceToDirKey) {
+  const pluginMdPath = path.join(BUILD_DIR, normalizeUrlKey(url) + '.md');
+  if (!fs.existsSync(pluginMdPath)) return false;
+
+  const dirKey = sourceToDirKey.get(sourceFile);
+  if (dirKey == null) return false;
+
+  const mirrorPath = dirKey
+    ? path.join(BUILD_DIR, dirKey, 'index.md')
+    : path.join(BUILD_DIR, 'index.md');
+
+  if (path.resolve(mirrorPath) === path.resolve(pluginMdPath)) return false;
+  if (fs.existsSync(mirrorPath)) return false;
+
+  fs.mkdirSync(path.dirname(mirrorPath), { recursive: true });
+  fs.copyFileSync(pluginMdPath, mirrorPath);
+  return true;
 }
 
 // Try the directory-based URL key first; then fall back to matching the URL's
@@ -99,6 +128,7 @@ function normalizeUrlKey(url) {
 function buildIndex(docsRoot) {
   const urlIndex = new Map();
   const idIndex = new Map();
+  const sourceToDirKey = new Map();
   walk(docsRoot, (file) => {
     if (!/\.mdx?$/i.test(file)) return;
     const rel = path.relative(docsRoot, file).split(path.sep).join('/');
@@ -108,12 +138,13 @@ function buildIndex(docsRoot) {
 
     const key = urlKeyFor(rel, data);
     if (key !== null && !urlIndex.has(key)) urlIndex.set(key, file);
+    if (key !== null) sourceToDirKey.set(file, key);
 
     if (typeof data.id === 'string' && data.id.trim() && !idIndex.has(data.id.trim())) {
       idIndex.set(data.id.trim(), file);
     }
   });
-  return { urlIndex, idIndex };
+  return { urlIndex, idIndex, sourceToDirKey };
 }
 
 function safeReadFile(p) {
@@ -188,8 +219,14 @@ function extractDescription(filePath) {
 }
 
 // Remove fenced code blocks entirely; we don't want them as descriptions.
+// Also strip unterminated fences (source docs occasionally have them) so the
+// remaining text doesn't leak `` ```json ... `` into a description.
 function stripFencedCode(md) {
-  return md.replace(/```[\s\S]*?```/g, '').replace(/~~~[\s\S]*?~~~/g, '');
+  return md
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/~~~[\s\S]*?~~~/g, '')
+    .replace(/```[\s\S]*$/, '')
+    .replace(/~~~[\s\S]*$/, '');
 }
 
 // Remove Docusaurus admonitions (:::note ... :::) so prose inside them is not
