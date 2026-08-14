@@ -1,0 +1,198 @@
+# Export Data from API
+
+> <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
+
+---
+
+Our REST API offers endpoints that let you retrieve all telemetry data from your device in the format that suits you best:
+1. Aggregated Data – Simplified, high-level summaries for easier analysis.
+2. Raw Data – Detailed, unprocessed data for deeper insights and customization.
+
+## 1. Aggregated Data
+This data is aggregated by interval and a method (average, min, max), and is among other
+things used for the charts in our frontend dashboard.
+
+The aggregated data can be retrieved by using this endpoint:
+
+```
+GET /logbook/storage/read/
+```
+
+Additional API documentation can be find here: Logbook - storage read list
+
+The endpoint takes the following parameters:
+
+| Parameter | Description  |
+| -------------: | :---------- |
+|  device_id | ID of the device **(not the unit_id)** |
+|  field | The field that the value should be retrieved from. See 'Field' below |
+|  field_type | The type of the field. See 'Field' below. [float, geo_point, string, long] |
+|  from_utc | From time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
+|  to_utc | To time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
+|  interval | This is the interval to use when aggregating. ie. data for 24 hour queried with interval set to '1h' will return 24 data points, one for each hour. Ignored when aggregation is set to 'none' |
+|  aggregation | Method used when aggregating data into the specified interval. [average, min, max, none]. |
+|  size | Only used when aggregation is set to 'none', and will then return non aggregated values. |
+
+### Examples
+
+#### How get logged altitude aggregated into 1 minute average values
+
+```
+GET /logbook/storage/read/
+    ?device_id=6a6c53b5-e18e-4301-9c95-2516006bf7c6
+    &field=track.pos.alt
+    &field_type=float
+    &aggregation=avg
+    &from_utc=2020-07-06T10:03:36.352Z
+    &to_utc=2020-07-06T12:18:14.050Z
+    &interval=1m
+```
+
+#### How get latest value (set aggregation = none, and to_utc can be omitted.
+
+```
+GET /logbook/storage/read/
+    ?device_id=6a6c53b5-e18e-4301-9c95-2516006bf7c6
+    &field=track.pos.alt
+    &field_type=float
+    &aggregation=none
+    &from_utc=2020-07-06T10:03:36.352Z
+```
+
+### Importing JSON file
+As mentioned above, you can get data from our REST API, in order for you to download them, you can use this Python 3 example: 
+```
+import requests # remember to install this package!
+import json
+
+# Define the endpoint and parameters
+url = "https://api.autopi.io/logbook/storage/read/"
+params = {
+    "device_id": "6a6c53b5-e18e-4301-9c95-2516006bf7c6",
+    "field": "track.pos.alt",
+    "field_type": "float",
+    "aggregation": "avg",
+    "from_utc": "2020-07-06T10:03:36.352Z",
+    "to_utc": "2020-07-06T12:18:14.050Z",
+    "interval": "1m"
+}
+
+# Define the headers with the Authorization token
+headers = {
+    "Authorization": "Bearer YOUR_TOKEN_HERE"  # Replace with your actual token
+}
+
+# Make the GET request
+response = requests.get(url, headers=headers, params=params)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Parse the JSON response
+    data = response.json()
+
+    # Save the JSON data to a file
+    with open("response_data.json", "w") as json_file:
+        json.dump(data, json_file, indent=4)
+
+    print("Data successfully saved to response_data.json")
+else:
+    print(f"Failed to retrieve data: {response.status_code}")
+```
+
+## 2. Raw Data
+The raw data is not aggregated or treated in any way, it is in the same format as it was when it was sent by the device. Remember to keep the time frame of your search narrowed to be sure you'll get data back.
+
+The aggregated data can be retrieved by using this endpoint:
+```
+GET /logbook/storage/raw/
+```
+Additional API documentation can be find here: Logbook - storage raw list
+
+The endpoint takes the following parameters:
+| Parameter       | Description  |
+| -------------: | :---------- |
+|  device_id | ID of the device **(not the unit id)** |
+|  data_type | Optional. The datatype to retrieve. Will return all datatypes if omitted. See 'Field' below. |
+|  start_utc | From time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
+|  end_utc | To time in UTC. ISO format. "2020-01-01T00:00:00.000Z" |
+|  use_upload_time | Optional. If false (default), *start_utc* and *end_utc* will mean 'period when the data was **recorded**'. If true, *start_utc* and *end_utc* will mean 'period when the data was **uploaded**'. |
+
+### Example 
+How get logged position objects raw
+
+```
+GET logbook/storage/raw/
+    ?device_id=6a6c53b5-e18e-4301-9c95-2516006bf7c6
+    &data_type=track.pos
+    &start_utc=2020-11-24T10:13:21.276594Z
+    &end_utc=2020-11-24T11:07:07.177850Z
+```
+
+### Importing JSON file
+As mentioned above, you can get data from our REST API, in order for you to download them, you can use this Python 3 example: 
+```
+import requests # remember to install this package!
+import json
+
+# Define the endpoint and parameters
+url = "https://api.autopi.io/logbook/storage/raw/"
+params = {
+    "device_id": "6a6c53b5-e18e-4301-9c95-2516006bf7c6",
+    "data_type": "track.pos",
+    "start_utc": "2020-11-24T10:13:21.276594Z",
+    "end_utc": "2020-11-24T11:07:07.177850Z"
+}
+
+# Define the headers with the Authorization token
+headers = {
+    "Authorization": "Bearer YOUR_TOKEN_HERE"  # Replace with your actual token
+}
+
+# Make the GET request
+response = requests.get(url, headers=headers, params=params)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Parse the JSON response
+    data = response.json()
+
+    # Save the JSON data to a file
+    with open("raw_data.json", "w") as json_file:
+        json.dump(data, json_file, indent=4)
+
+    print("Data successfully saved to raw_data.json")
+else:
+    print(f"Failed to retrieve data: {response.status_code}")
+ ```   
+
+## Field
+
+To know which fields you can retrieve data from, you can get the list from the following endpoint Logbook - storage fields list
+
+This will return all the available fields that can be queried, including the type of the field.
+The data type can be derived from the fields, like so:
+
+| Field | Datatype |
+| :---- | :------- |
+| obd.speed.value | obd.speed |
+| obd.bat.level | obd.bat |
+
+etc.
+
+**This is the list of data types currently available from a standard device:**
+
+| Datatype       | 
+| :------------- |
+| acc.xyz |
+| ec2x.data_usage |
+| obd.ambiant_air_temp |
+| obd.bat |
+| obd.coolant_temp |
+| obd.engine_load |
+| obd.fuel_level |
+| obd.intake_temp |
+| obd.rpm |
+| obd.speed |
+| rpi.temp |
+| track.pos |

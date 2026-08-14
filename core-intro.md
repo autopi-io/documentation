@@ -1,0 +1,34 @@
+# Introduction
+
+> This section explores the [AutoPi](https://www.autopi.io) Core system, which is one part of the [AutoPi](https://www.autopi.io) platform. The [AutoPi](https://www.autopi.io)
+Core is an open-source software running on the hardware device. It is built on [salt stack](https://saltproject.io/).
+
+This section explores the [AutoPi](https://www.autopi.io) Core system, which is one part of the [AutoPi](https://www.autopi.io) platform. The [AutoPi](https://www.autopi.io)
+Core is an open-source software running on the hardware device. It is built on [salt stack](https://saltproject.io/).
+
+## What is [AutoPi](https://www.autopi.io) Core?
+The [AutoPi](https://www.autopi.io) Core is a system that runs on the [AutoPi](https://www.autopi.io) device. It includes a vast range of
+functionalities such as services that manage different components in the device. For example,
+there is the [OBD service](/core/services/obd_manager.md), which controls how the device communicates
+with the OBD-II port of your vehicle. There is also the [tracking service](/core/services/tracking_manager.md),
+which controls the GPS modem inside the device.
+
+  
+
+There are also many modules that provide a single execution commands that help to manage or work
+with the device. Modules are separated by functionality, for example, the [OBD module](/core/commands/obd.md)
+provides commands that work with the OBD-II port of your vehicle, just like the OBD service
+mentioned above. The [ec2x module](/core/commands/ec2x.md) has commands to manage the Quectel 4G/GPS
+modem.
+
+## Get Your Device Today and Get Started!
+
+  
+
+[![](/img/hardware/autopi_mini/AutoPi_Mini_5_Top_right.png) **AutoPi Mini** Build for fleet volume scaling and ease of install. CAN bus ready with support for legacy protocols. Support wide range of OEM Parameters. Comes with connectivity built-in. See price.](https://shop.autopi.io/products/autopi-mini)
+
+[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **AutoPi TMU CM4** Based on Raspberry Pi Compute Module 4. Best for custom solutions requiring large computation power and expansion options. Comes with connectivity built-in. See price.](https://shop.autopi.io/products/autopi-telematics-unit-cm4-4g-lte-edition)
+
+[![](/img/hardware/autopi_canfd_pro/canfd_pro_trans.png) **AutoPi CAN-FD Pro** Based on Raspberry Pi Compute Module 4. Our most powerful device to date, designed for full speed automotive datalogging of dual CAN-FD channels. See price.](https://shop.autopi.io/products/autopi-can-fd-pro)
+
+[![](/img/shared/autopi_devices_trans.png) **Comparison of all AutoPi devices** Compare our devices and find the best fit for your requirements.](https://www.autopi.io/hardware/compare/)

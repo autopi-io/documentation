@@ -1,0 +1,50 @@
+# Specifications
+
+> <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
+
+---
+
+Download the official datasheet here: 
+[Autopi Mini Datasheet](https://www.autopi.io/static/pdf/autopi_mini_datasheet.pdf)
+
+## Device Specifications 
+| **Name** | **Description** |
+|:-----------------------------------:|:-----------------------------------------------------------------:|
+|   Physical specifications    |   **Weight:** 63 g  **Dimensions:** 67,2 x 49,6 x 25 mm (L x W x H)   | 
+|   Modem (EMEA variant)   |  Integrated 4G/LTE Cat 1 connection  **4G (LTE-FDD):**  B1, B3, B7, B8, B20, B28  **4G (LTE-TDD):** B38, B40, B41  **2G (GSM):** B2, B3, B5, B8  | 
+|   Modem (APAC/LATAM variant)  | Integrated 4G/LTE Cat 1 connection  **4G (LTE-FDD):**  B1, B2, B3, B4, B5, B7, B8, B20, B28  **4G  (LTE-TDD):** B40  **2G (GSM):** B2, B3, B5, B8       | 
+|   Modem (NA variant)   |   Integrated 4G/LTE Cat 1 connection (3G/EDGE fallback)  **4G (LTE FDD):** B2, B4, B5, B12, B13  **3G (WCDMA):** B2, B4, B5     |  
+|   Certifications    |   CE/RED/UKCA, E-Mark, EAC, RoHS, REACH, RCM, SDPPI POSTEL, CITC     |   
+|   GPS    |   Integrated GPS + A-GPS.  **Supports:** GPS/GLONASS/BeiDou/Galileo/SBAS/QZSS/DGPS  **Receiver:** 33 channel  **Tracking sensitivity:** -165 dBM  **Position Accuracy:** < 2.5 m CEP  **Hot start:** < 1 s  **Warm start:** < 25 s  **Cold start:** < 35 s  **Velocity Accuracy:** < 0.1 m/s (within +/- 15% error) |  
+|   Power    |  Built-in Power Management system to prevent the vehicle’s battery from being drained  **Input voltage range:** 10–30 V DC with overvoltage and reverse polarity protection  **Back-up battery:** 170 mAh Li-Ion battery (0.63 Wh)  **Power consumption:**  At 12V < 3 mA (Ultra Deep Sleep)  At 12V < 5 mA (Deep Sleep)  At 12V < 16 mA (Online Deep Sleep)  At 12V < 18 mA (GPS Sleep)  At 12V < 33 mA (nominal)      | 
+|   Wireless   |  **Bluetooth:** Bluetooth 4.0 + Low Energy (BLE)  |    
+|   Accelerometer   | Built in 3-axis accelerometer |
+|   Automotive Interface    |  **Data:** K-Line, CAN bus data  **Data reading:**  Up to 32 vehicle onboard parameters, supported OBD protocols:  ISO 9141-2 (5 baud init, 10.4 kbaud)  ISO 14230-4 KWP (5 baud init, 10.4 kbaud)  ISO 14230-4 KWP (fast init, 10.4 kbaud)  ISO 15765-4 CAN (11 bit ID, 250 kbaud)  ISO 15765-4 CAN (11 bit ID, 500 kbaud)  ISO 15765-4 CAN (29 bit ID, 250 kbaud)  ISO 15765-4 CAN (29 bit ID, 500 kbaud)      |  
+|   Data parameters support   |   **30+ Parameters from OBD port**  Mileage / Fuel / RPM / Speed / Engine temperature / DTC / Engine load value / Coolant temperature / Short and long term fuel trim bank / Fuel pressure / Intake MAP / Engine RPM / Vehicle speed / Timing advance / Intake air temperature / MAF throttle position / Run time since engine start / Fuel rail pressure relative / Fuel rail pressure direct / Commanded EGR / EGR error / Fuel level / Distance traveled codes cleared / Barometric pressure / Control module voltage / Absolute load value / OBD Ambient air temperature / Time since codes cleared / Absolute fuel rail pressure / Hybrid battery pack remaining life / Engine oil temperature / Fuel injector timing / Fuel rate / VIN / DTC value / Distance and time traveled since Malfunction Indicator Lamp ON/ EV Milage / EV Range / EV Battery level / Ignition status     |  
+|   Input slots     |  **SIM Card:** Nano SIM – Comes with SIM card and subscription pre-installed      |   
+|   Absolute Maximum  Operating Environment    |  **Operating Temperature:** -40° to +85° C (-40° to +185° F)  **Relative Humidity:** 5% to 95% Noncondensing      |  
+
+## LED Lights of an AutoPi Mini Device
+AutoPi Mini has 2 LED lights: Navigation LED and Status LED. These LED lights helps you understand the status of the GNSS and device's operating status. Both LED lights are described more in depth below: 
+
+1. **Navigation LED(closer to the edge of the device):**
+    
+    This LED indicates the status of the GNSS (Global Navigation Satellite System).
+    - **Green and blinking slowly:** The device is receiving a GNSS signal. 
+    - **Solid green:** The device is not receiving a GNSS signal. 
+    - **Off:** This may indicate the device is either in sleep mode or experiencing an issue. 
+
+2.  **Status LED (farther from the edge of the device):**
+    
+    This LED reflects the device’s operating status.
+    - **Blinking every second:** The device is in normal operating mode. 
+    - **Blinking every 2 seconds:** The device is in sleep mode. 
+    - **Fast blinking:** Indicates modem activity. 
+    - **Off:** This could mean the device is not functioning. 
+
+If either LED is not behaving as expected, it could be a sign of connectivity or 
+hardware issues that need attention. Try to disconnect it from the OBD-II port, 
+then reconnect it. Wait until both lights are green and blinking.  
+
+![AutoPi Mini LED meaning](/img/getting_started/autopi_mini/data_troubleshooting/mini_light_placements_01.png)

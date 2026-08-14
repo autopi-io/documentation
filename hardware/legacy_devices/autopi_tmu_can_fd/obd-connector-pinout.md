@@ -1,0 +1,11 @@
+# OBD Connector Pinout
+
+> This is an image of the OBD connector pinout. It is valid for the [AutoPi](https://www.autopi.io) TMU CAN-FD versions of the [AutoPi](https://www.autopi.io).
+
+This is an image of the OBD connector pinout. It is valid for the [AutoPi](https://www.autopi.io) TMU CAN-FD versions of the [AutoPi](https://www.autopi.io).
+
+![OBD connector pinout](/img/hardware/legacy_devices/autopi_tmu_can_fd/obd_connector_pinout/obd_pinout_CAN-FD_ed-GND.png)
+
+:::note
+In case you have any questions, don't hesitate to contact us at [support@autopi.io](mailto:support@autopi.io).
+:::

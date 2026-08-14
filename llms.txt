@@ -1,0 +1,287 @@
+# AutoPi Documentation
+
+> Documentation for AutoPi devices, AutoPi Cloud, AutoPi Core, APIs, integrations and developer guides.
+
+This file contains links to documentation sections following the llmstxt.org standard.
+
+## Table of Contents
+
+- [Accounts](https://docs.autopi.io/cloud/accounts.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Triggers](https://docs.autopi.io/cloud/device_management/a-guide-to-triggers.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Introduction](https://docs.autopi.io/cloud/device_management/advanced_settings/cloud-config-mini-intro.md): The configuration settings controls the behaviour of the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) device.
+- [Accelerometer](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-accelerometer.md): | Name | Description | Type | Default | Unit |
+- [Alerts](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-alerts.md): | Name | Description | Type | Default | Unit |
+- [Audio](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-audio.md): | Name | Description | Type | Default | Unit |
+- [Bluetooth](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-bluetooth.md): | Name | Description | Type | Default | Unit |
+- [Can Logging](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-can-logging.md): | Name | Description | Type | Default | Unit |
+- [Cellular](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-cellular.md): | Name | Description | Type | Default | Unit |
+- [Charging Session](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-charging-session.md): | Name | Description | Type | Default | Unit |
+- [Cloud Storage](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-cloud-storage.md): | Name | Description | Type | Default | Unit |
+- [Docker](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-docker.md): | Name | Description | Type | Default | Unit |
+- [Doip](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-doip.md): | Name | Description | Type | Default | Unit |
+- [Introduction](https://docs.autopi.io/cloud/device_management/advanced_settings/cloud-config-intro.md): The configuration settings controls the behaviour of the device.
+- [Key Fob](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-key-fob.md): | Name | Description | Type | Default | Unit |
+- [Mqtt](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-mqtt.md): | Name | Description | Type | Default | Unit |
+- [Obd](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-obd.md): | Name | Description | Type | Default | Unit |
+- [Power](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-power.md): | Name | Description | Type | Default | Unit |
+- [Rfid](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-rfid.md): | Name | Description | Type | Default | Unit |
+- [System](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-system.md): | Name | Description | Type | Default | Unit |
+- [Tailscale](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-tailscale.md): | Name | Description | Type | Default | Unit |
+- [Tracking](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-tracking.md): | Name | Description | Type | Default | Unit |
+- [Trip](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-trip.md): | Name | Description | Type | Default | Unit |
+- [Update Release](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-update-release.md): | Name | Description | Type | Default | Unit |
+- [Vehicle](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-vehicle.md): | Name | Description | Type | Default | Unit |
+- [Wifi](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-wifi.md): | Name | Description | Type | Default | Unit |
+- [Wireguard](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-wireguard.md): | Name | Description | Type | Default | Unit |
+- [Device Alerts](https://docs.autopi.io/cloud/device_management/device-alerts.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [CAN Analyzer](https://docs.autopi.io/cloud/device_management/can-analyzer.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Change History](https://docs.autopi.io/cloud/device_management/change-history.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Custom Code](https://docs.autopi.io/cloud/device_management/custom-code.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Device Dashboard](https://docs.autopi.io/cloud/device_management/dashboard-device.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Devices](https://docs.autopi.io/cloud/device_management/devices-list.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Introduction](https://docs.autopi.io/cloud/device_management/cloud-events-intro.md): In the Events section, you will find records of specific state changes or
+- [System](https://docs.autopi.io/cloud/device_management/events/cloud-events-system.md): System events relate to the running system of the device.
+- [Vehicle](https://docs.autopi.io/cloud/device_management/events/cloud-events-vehicle.md): These events are calculated from the voltage level measured via the OBD-II connector and are fired by the trigger [`battery_event`](/core/services/...
+- [Geofences](https://docs.autopi.io/cloud/device_management/geofences.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Global Variables](https://docs.autopi.io/cloud/device_management/global-variables.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Overview](https://docs.autopi.io/cloud/device-management-intro.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Jobs](https://docs.autopi.io/cloud/device_management/cloud-jobs.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Loggers](https://docs.autopi.io/cloud/device_management/device-loggers.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Create Custom Returners](https://docs.autopi.io/cloud/device_management/services/create-custom-returners.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Create Custom Services](https://docs.autopi.io/cloud/device_management/services/create-custom-services.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Create Custom Triggers](https://docs.autopi.io/cloud/device_management/services/create-custom-triggers.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Create Custom Workers](https://docs.autopi.io/cloud/device_management/services/create-custom-workers.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Services](https://docs.autopi.io/cloud/device_management/services-intro.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Software Updates](https://docs.autopi.io/cloud/device_management/software-updates.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Templates](https://docs.autopi.io/cloud/device_management/templates.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Variables](https://docs.autopi.io/cloud/device_management/variables.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Docker](https://docs.autopi.io/cloud/docker-on-autopi.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Dashboards](https://docs.autopi.io/cloud/fleet_management/configurations/dashboards.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Fault Codes](https://docs.autopi.io/cloud/fleet_management/configurations/fault-codes.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Notification Channels](https://docs.autopi.io/cloud/fleet_management/configurations/notification-channels.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Vehicle States](https://docs.autopi.io/cloud/fleet_management/configurations/vehicle-states.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Alerts](https://docs.autopi.io/cloud/fleet_management/fleet-alerts.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Diagnostics](https://docs.autopi.io/cloud/fleet_management/fleet-diagnostics.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Introduction](https://docs.autopi.io/cloud/fleet-intro.md): Welcome to our documentation page for the Fleet Management part of our [AutoPi](https://www.autopi.io) 
+- [Locations](https://docs.autopi.io/cloud/fleet_management/locations.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Overview](https://docs.autopi.io/cloud/fleet_management/fleet-overview.md): This section provides an overview of your entire fleet, showcasing all vehicles 
+- [Geofence Summary Report](https://docs.autopi.io/cloud/fleet_management/reports/geofence-summary-reports.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Introduction](https://docs.autopi.io/cloud/fleet_management/reports-intro.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Utilization report](https://docs.autopi.io/cloud/fleet_management/reports/utilization-reports.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Geofences](https://docs.autopi.io/cloud/fleet_management/vehicles/fleet-geofences.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Groups](https://docs.autopi.io/cloud/fleet_management/vehicles/fleet-groups.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Vehicles List](https://docs.autopi.io/cloud/fleet_management/vehicles/list.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Automatic Exports](https://docs.autopi.io/cloud/fleet_management/vehicles/trips/automatic-exports.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Introduction](https://docs.autopi.io/cloud/fleet_management/vehicles/introduction.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Vehicle Details](https://docs.autopi.io/cloud/fleet_management/vehicles/vehicle-details.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Introduction](https://docs.autopi.io/cloud-intro.md): This section is all about the [Cloud](https://www.autopi.io/software-platform/cloud-management) system. It goes over details, such as the different...
+- [Automatic OBD Logger Pausing](https://docs.autopi.io/cloud/obd-ii/automatic-obd-logger-pausing.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [CAN Bus Configuration](https://docs.autopi.io/cloud/obd-ii/can-bus-configuration.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Create a Valid Can Dump](https://docs.autopi.io/cloud/obd-ii/create-valid-can-dump.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Create CAN Signal Loggers](https://docs.autopi.io/cloud/obd-ii/create-can-signal-loggers.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Create PID Loggers](https://docs.autopi.io/cloud/obd-ii/create-pid-loggers.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Debug Raw PID Queries](https://docs.autopi.io/cloud/obd-ii/debug-raw-pid-queries.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Introduction](https://docs.autopi.io/cloud/obd-ii-intro.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Log Raw CAN Messages](https://docs.autopi.io/cloud/obd-ii/log-raw-can-messages.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Using the CAN Bus Commands](https://docs.autopi.io/cloud/obd-ii/using-the-can-bus-commands.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Community Library](https://docs.autopi.io/cloud/obd_library/community_library.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [My Library](https://docs.autopi.io/cloud/obd_library/car-explorer-library-manual.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Acc](https://docs.autopi.io/core/commands/core-commands-acc.md): Manages current connection.
+- [Audio](https://docs.autopi.io/core/commands/core-commands-audio.md): Play a given audio file using the `aplay` command.
+- [Avrdude](https://docs.autopi.io/core/commands/core-commands-avrdude.md): Flash hex file to MCU.
+- [Ble](https://docs.autopi.io/core/commands/core-commands-ble.md): :::warning
+- [Bluetooth](https://docs.autopi.io/core/commands/core-commands-bluetooth.md): Shows this help information.
+- [Can](https://docs.autopi.io/core/commands/core-commands-can.md): Attempts to autodetect the protocol.
+- [Can Decoder](https://docs.autopi.io/core/commands/core-commands-can-decoder.md): Handler for decoding files containing raw CAN data.
+- [Certificate](https://docs.autopi.io/core/commands/core-commands-certificate.md): Internal certificate generation helper.
+- [Clock](https://docs.autopi.io/core/commands/core-commands-clock.md): Shows this help information.
+- [Cloud](https://docs.autopi.io/core/commands/core-commands-cloud.md): Queries/calls a given cache function.
+- [Crypto](https://docs.autopi.io/core/commands/core-commands-crypto.md): Generates a new key in the Secure Element
+- [Cryptoauth](https://docs.autopi.io/core/commands/core-commands-cryptoauth.md): Shows this help information.
+- [Dac](https://docs.autopi.io/core/commands/core-commands-dac.md): Tests MCP4725 DAC.
+- [Disk Housekeeper](https://docs.autopi.io/core/commands/core-commands-disk-housekeeper.md): Handler for deleting old files when disk is running full.
+- [Doip](https://docs.autopi.io/core/commands/core-commands-doip.md): Gets current context.
+- [Ec2X](https://docs.autopi.io/core/commands/core-commands-ec2x.md): :::note Important The EC2X commands listed in this documentation are only compatible with the EC2X series of modems and require a board version of ...
+- [File Sync](https://docs.autopi.io/core/commands/core-commands-file-sync.md): Shows this help information.
+- [Fileutil](https://docs.autopi.io/core/commands/core-commands-fileutil.md): Match lines in a text file.
+- [Gnss](https://docs.autopi.io/core/commands/core-commands-gnss.md): Query the connection class.
+- [Hooklib](https://docs.autopi.io/core/commands/core-commands-hooklib.md): Filter that only returns alternating/changed results.
+- [Hostapd](https://docs.autopi.io/core/commands/core-commands-hostapd.md): Returns all connected clients indexed by their MAC address.
+- [Introduction](https://docs.autopi.io/core/core-commands-intro.md): Commands are executed on the device. They can be run remotely from the [Cloud](https://www.autopi.io/software-platform/cloud-management) terminal o...
+- [Keyfob](https://docs.autopi.io/core/commands/core-commands-keyfob.md): Performs a key fob button action.
+- [Log](https://docs.autopi.io/core/commands/core-commands-log.md): Shows this help information.
+- [Logger](https://docs.autopi.io/core/commands/core-commands-logger.md): Helper command to call handlers or workflows on different engines/services identified by their namespace.
+- [Minionutil](https://docs.autopi.io/core/commands/core-commands-minionutil.md): Change to different master host.
+- [Modem](https://docs.autopi.io/core/commands/core-commands-modem.md): Queries a given connection class command.
+- [Mosquitto](https://docs.autopi.io/core/commands/core-commands-mosquitto.md): Triggers `system/mosquitto/error` events.
+- [Obd](https://docs.autopi.io/core/commands/core-commands-obd.md): Gets current battery voltage
+- [Openocd](https://docs.autopi.io/core/commands/core-commands-openocd.md): Shows this help information.
+- [Power](https://docs.autopi.io/core/commands/core-commands-power.md): Shows this help information.
+- [Qmi](https://docs.autopi.io/core/commands/core-commands-qmi.md): Get cell location info.
+- [Reactor](https://docs.autopi.io/core/commands/core-commands-reactor.md): Queries or manipulates cache of event reactor.
+- [Rfid](https://docs.autopi.io/core/commands/core-commands-rfid.md): Read the settings file stored in /opt/autopi/rfid/settings.yaml and load it.
+- [Rpi](https://docs.autopi.io/core/commands/core-commands-rpi.md): Get timestamp for last boot of system.
+- [Socketcan](https://docs.autopi.io/core/commands/core-commands-socketcan.md): Bring down CAN interface.
+- [Spm](https://docs.autopi.io/core/commands/core-commands-spm.md): Gets current battery voltage
+- [Stateutil](https://docs.autopi.io/core/commands/core-commands-stateutil.md): Calls a salt module function safely - if an error occurs it will be added as an error in the response.
+- [Stn](https://docs.autopi.io/core/commands/core-commands-stn.md): External sleep trigger configuration.
+- [Time](https://docs.autopi.io/core/commands/core-cmd-time.md): Shows this help information.
+- [Tracking](https://docs.autopi.io/core/commands/core-commands-tracking.md): :::warning
+- [Usbutil](https://docs.autopi.io/core/commands/core-commands-usbutil.md): Triggers `system/usb/<vendor>/<product>/not_connected` events when specified (must be present) devices
+- [Wifi](https://docs.autopi.io/core/commands/core-commands-wifi.md): Shows this help information.
+- [Introduction](https://docs.autopi.io/core-intro.md): This section explores the [AutoPi](https://www.autopi.io) Core system, which is one part of the [AutoPi](https://www.autopi.io) platform. The [Auto...
+- [High-level](https://docs.autopi.io/core/power_management/core-power-high.md): :::note
+- [Introduction](https://docs.autopi.io/core/core-power-intro.md): :::tip
+- [Low-level](https://docs.autopi.io/core/power_management/core-power-low.md): The SPM (Smart Power Management) is an embedded system that controls the low-level power cycle of the device. It interacts with a number of subsyst...
+- [Sleep Timers](https://docs.autopi.io/core/power_management/core-power-sleep-timers.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Cloud](https://docs.autopi.io/core/returners/core-returners-cloud.md): Return a result to [Cloud](https://www.autopi.io/software-platform/cloud-management) cache.
+- [Cloud Jsonl](https://docs.autopi.io/core/returners/core-returners-cloud-jsonl.md): Ensure all open writers are closed.
+- [Event](https://docs.autopi.io/core/returners/core-returners-event.md): Publishes a job execution notification on the minion`s local event bus.
+- [Event Result](https://docs.autopi.io/core/returners/core-returners-event-result.md): Publishes an entire job result on the minion`s local event bus.
+- [Introduction](https://docs.autopi.io/core/core-returners-intro.md): Returners are executed on the device and are responsible for transferring command results, events and other data to a given system or endpoint. In ...
+- [Jsonl](https://docs.autopi.io/core/returners/core-returners-jsonl.md): Return a result to JSONL file.
+- [Mqtt](https://docs.autopi.io/core/returners/core-returners-mqtt.md): Return a result to MQTT.
+- [Acc Manager](https://docs.autopi.io/core/services/core-services-acc-manager.md): Adds device orientation (in degrees) which attempts to report back the exact orientation of the
+- [Api Service](https://docs.autopi.io/core/services/core-services-api-service.md): Serves the local REST API for running AutoPi commands.
+- [Audio Manager](https://docs.autopi.io/core/services/core-services-audio-manager.md): Play a given audio file using the `aplay` command.
+- [Ble Manager](https://docs.autopi.io/core/services/core-services-ble-manager.md): Flashes new firmware to the BlueNRG device.
+- [Can Manager](https://docs.autopi.io/core/services/core-services-can-manager.md): Converts raw CAN data using the CAN database available for the current protocol.
+- [Cloud Manager](https://docs.autopi.io/core/services/core-services-cloud-manager.md): Queries/calls a given cache function.
+- [Crypto Manager](https://docs.autopi.io/core/services/core-services-crypto-manager.md): Queries a given command.
+- [Docker Monitor](https://docs.autopi.io/core/services/core-services-docker-monitor.md): Internal service for monitoring container changes.
+- [Doip Manager](https://docs.autopi.io/core/services/core-services-doip-manager.md): Gets current context.
+- [Ec2X Manager](https://docs.autopi.io/core/services/core-services-ec2x-manager.md): Manages current connection.
+- [Event Reactor](https://docs.autopi.io/core/services/core-services-event-reactor.md): Ensures a worker thread is scheduled for events with a detain period specified.
+- [Gnss Manager](https://docs.autopi.io/core/services/core-services-gnss-manager.md): Converts a GNSS location result into position type.
+- [Introduction](https://docs.autopi.io/core/core-services-intro.md): A variety of services are running on the device, each having its own specific area of responsibility. Most services are built around the same struc...
+- [Key Fob Manager](https://docs.autopi.io/core/services/core-services-key-fob-manager.md): Performs a key fob button action.
+- [Manager](https://docs.autopi.io/core/services/core-services-manager.md)
+- [Modem Manager](https://docs.autopi.io/core/services/core-services-modem-manager.md): Queries a given connection class command.
+- [Obd Manager](https://docs.autopi.io/core/services/core-services-obd-manager.md): Converts a voltage reading result with battery charge state and level.
+- [Process Manager](https://docs.autopi.io/core/services/core-services-process-manager.md): Starts a new process if it`s not already started.
+- [Rfid Manager](https://docs.autopi.io/core/services/core-services-rfid-manager.md): If there are any authorized_tokens saved in context, this handler will attempt to authenticate
+- [Spm Manager](https://docs.autopi.io/core/services/core-services-spm-manager.md): Flashes new SPM firmware to the MCU.
+- [Tracking Manager](https://docs.autopi.io/core/services/core-services-tracking-manager.md): Converts a GNSS location result into position type.
+- [Accessing Raw GPS Data (10 Hz)](https://docs.autopi.io/developer_guides/accessing-raw-gps-data.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [AutoPi Logs](https://docs.autopi.io/developer_guides/autopi-logs.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Build a Grafana Dashboard Pipeline for AutoPi CAN-FD Pro Data in Amazon S3](https://docs.autopi.io/developer_guides/build-grafana-dashboard.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Configuring MQTT](https://docs.autopi.io/developer_guides/configuring-mqtt.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Enabling Bluetooth on Legacy Devices With STN Chips](https://docs.autopi.io/developer_guides/enabling_bluetooth_on_TMU_devices.md): :::note
+- [Enabling an External UART](https://docs.autopi.io/developer_guides/enabling_uart_on_TMU_devices.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Custom Event for Your Custom Logger](https://docs.autopi.io/developer_guides/how-to-create-custom-event-for-custom-logger.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [How to SSH to Your Device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Enabling Bluetooth on AutoPi](https://docs.autopi.io/developer_guides/how-to-use-bluepy-with-autopi-edge-devices.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Guides Intro](https://docs.autopi.io/developer-guides-intro.md): Welcome to the developer guides for [AutoPi](https://www.autopi.io). This section is designed to help you build,
+- [Installing a Camera on Your AutoPi](https://docs.autopi.io/developer_guides/installing-a-camera-on-your-autopi.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Jumpers](https://docs.autopi.io/developer_guides/jumpers.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [AutoPi Local API Overview](https://docs.autopi.io/developer_guides/local-api-overview.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Local Development Workflow](https://docs.autopi.io/developer_guides/local-development-workflow.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Modbus Server](https://docs.autopi.io/developer_guides/modbus-server.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Move Device to a Dedicated Environment](https://docs.autopi.io/developer_guides/move-to-dedicated-environment.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Reflashing Your Device](https://docs.autopi.io/developer_guides/reflashing-your-device.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [CAN Bridge Over the Internet](https://docs.autopi.io/developer_guides/can-bridge.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Remotely Waking up Your Device](https://docs.autopi.io/developer_guides/remotely-waking-up-your-device.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [RFID Reader Integration](https://docs.autopi.io/developer_guides/rfid-integartion.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Setting Up Docker on Your Device](https://docs.autopi.io/developer_guides/setting-up-docker.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Setting up DoIP](https://docs.autopi.io/developer_guides/setting-up-doip.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Setting Up a Device with Verizon Wireless](https://docs.autopi.io/developer_guides/setting-up-a-device-with-verizon-wireless.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Upgrade/Replace Your Raspberry Pi Computer](https://docs.autopi.io/developer_guides/upgrading-your-raspberry-pi.md): :::caution Before proceeding with the upgrade
+- [Using the AutoPi With an External Power Supply](https://docs.autopi.io/developer_guides/using-the-autopi-with-an-external-power-supply.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Change Device Settings from the REST API](https://docs.autopi.io/getting_started/api/change-device-settings-from-api.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Command Webhook Callbacks](https://docs.autopi.io/getting_started/api/command-webhook-callbacks.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Export Data from API](https://docs.autopi.io/getting_started/api/export-data-from-api.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Getting Started](https://docs.autopi.io/getting_started/api-intro.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Send Device Data to Own Server](https://docs.autopi.io/getting_started/api/send-device-data-to-own-server.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [4G Internet Setup Troubleshooting](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-4g-internet-setup-troubleshooting.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Accessing files via SFTP/SCP on AutoPi](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Data Troubleshooting](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-data-troubleshooting.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [How to connect to Tailscale on your Autopi device](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Getting started](https://docs.autopi.io/getting_started/pro-guides-intro.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Amazon Web Services (AWS) S3 Bucket Creation](https://docs.autopi.io/getting_started/autopi_canfd_pro/set_up_AWS_S3_bucket.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [User guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Getting started](https://docs.autopi.io/getting_started/pro-casing-guides-intro.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Create Loggers](https://docs.autopi.io/getting_started/autopi_mini/create-mini-loggers.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Data Troubleshooting](https://docs.autopi.io/getting_started/autopi_mini/mini-data-troubleshooting.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Getting Started](https://docs.autopi.io/getting_started/mini-guides-intro.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [4G Internet Setup Troubleshooting](https://docs.autopi.io/getting_started/autopi_tmu_cm4/4g-internet-setup-troubleshooting.md): Facing issues connecting to the internet?
+- [Create Loggers](https://docs.autopi.io/getting_started/autopi_tmu_cm4/create-loggers-cm4.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Data Troubleshooting](https://docs.autopi.io/getting_started/autopi_tmu_cm4/cm4-data-troubleshooting.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Getting Started](https://docs.autopi.io/getting_started/guides-intro.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Getting Started](https://docs.autopi.io/getting_started/electric-vehicles-intro.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Power Cycles](https://docs.autopi.io/getting_started/electric_vehicles/power-cycle-for-electric-vehicles.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Getting Started](https://docs.autopi.io/getting_started/heavy_duty_vehicles/j1939-getting-started-guide.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Using DIMO Device on AutoPi's Cloud](https://docs.autopi.io/getting_started/using-dimo-device-on-autopi-cloud.md): If you have a [DIMO x AutoPi device](https://drivedimo.com) and would like to use it on the [AutoPi Cloud platform](https://my.autopi.io/#/login), ...
+- [Caterpillar 14 PIN J1939 to OBD-II Adapter Cable](https://docs.autopi.io/hardware/accessories/caterpillar-14pin-j1939-obd2.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Caterpillar (538-5051) Truck 9 PIN J1939 to OBD-II Adapter Cable](https://docs.autopi.io/hardware/accessories/caterpillar-538-5051-9pin-j1939-obd2.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Cummins 9 PIN J1939 (J1708) to OBD-II Adapter Cable](https://docs.autopi.io/hardware/accessories/cummins-9pin-j1939-obd2.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Cummins-Komatsu Truck 12 PIN J1939 to OBD-II Adapter Cable](https://docs.autopi.io/hardware/accessories/cummins-komatsu-12pin-j1939-obd2.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Device Mounts](https://docs.autopi.io/hardware/accessories/device_mounts.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [DoIP HAT Installation](https://docs.autopi.io/hardware/accessories/doip-install.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [OBD-II to dual DB9 pinout](https://docs.autopi.io/hardware/accessories/dualdb9-pinout.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Female CAN Bus Cable with Open Wires](https://docs.autopi.io/hardware/accessories/female-can-bus-open-wires.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Accessories Overview](https://docs.autopi.io/hardware/accessories-intro.md): Explore a range of compatible accessories to enhance your AutoPi device. Find the right add-ons to maximize functionality and improve data management.
+- [IVECO 30 PIN J1939 to OBD-II Adapter Cable](https://docs.autopi.io/hardware/accessories/iveco-30pin-j1939-obd2.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Introduction](https://docs.autopi.io/hardware/accessories/keyfob-intro.md): :::caution
+- [Keyless Interface Specification](https://docs.autopi.io/hardware/accessories/keyfob-hat/keyfob-interface.md): :::warning
+- [Keyfob Cloud Configuration](https://docs.autopi.io/hardware/accessories/keyfob-hat/keyfob-cloud-configuration.md): :::caution Before proceeding with the install
+- [Keyfob HAT Install](https://docs.autopi.io/hardware/accessories/keyfob-hat-install.md): :::caution Before proceeding with the install
+- [Keyfob HAT Pinout](https://docs.autopi.io/hardware/accessories/keyfob-hat/keyfob-hat-pinout.md): :::note
+- [Knorr Wabco Trailer 7 PIN J1939 to OBD-II Adapter Cable](https://docs.autopi.io/hardware/accessories/knorr-wabco-7pin-j1939-obd2.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Male CAN Bus Cable with Open Wires](https://docs.autopi.io/hardware/accessories/male-can-bus-open-wires.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [MAN 37 PIN J1939 to OBD-II Adapter Cable](https://docs.autopi.io/hardware/accessories/man-37pin-j1939-obd2.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [MAN Truck 12 PIN J1939 to OBD-II Adapter Cable](https://docs.autopi.io/hardware/accessories/man-truck-12pin-j1939-obd2.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Mercedes 14 PIN J1939 to OBD-II Adapter Cable](https://docs.autopi.io/hardware/accessories/mercedes-14pin-j1939-obd2.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Renault 12 PIN J1939 to OBD-II Adapter Cable](https://docs.autopi.io/hardware/accessories/renault-12pin-j1939-obd2.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Scania 16 PIN J1939 to OBD-II Adapter Cable](https://docs.autopi.io/hardware/accessories/scania-16pin-j1939-obd2.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Global SIM Card Solution](https://docs.autopi.io/hardware/accessories/sim-solution.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Tesla OBD-II Adapter Cable for Model 3 and Y](https://docs.autopi.io/hardware/accessories/tesla-obd2-adapter-model-3-y.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Volvo 8 PIN J1939 to OBD-II Adapter Cable](https://docs.autopi.io/hardware/accessories/volvo-8pin-j1939-obd2.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Device dimensions](https://docs.autopi.io/hardware/autopi_canfd_pro/device_dimensions.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Technical Specifications](https://docs.autopi.io/hardware/autopi_canfd_pro/device_specifications.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Introduction](https://docs.autopi.io/hardware/autopi-pro-intro.md): The AutoPi CAN-FD Pro is our most powerful device to date, purpose-built for full-speed automotive data logging across dual CAN-FD channels. It shi...
+- [LED and Button States](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-led-and-button.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Mounting Options](https://docs.autopi.io/hardware/autopi_canfd_pro/mounting_options.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [OBD Connector Pinout](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-obd-connector-pinout.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Introduction](https://docs.autopi.io/hardware/autopi-pro-casing-intro.md): The [AutoPi CAN-FD Pro + IP67 Casing](https://shop.autopi.io/products/autopi-can-fd-pro-ip67-casing) is our most powerful automotive data logging d...
+- [Mounting Options](https://docs.autopi.io/hardware/autopi_canfd_pro_casing/mounting-options-pro.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Screw terminal pinouts for IP67](https://docs.autopi.io/hardware/autopi_canfd_pro_casing/pinouts.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Specifications](https://docs.autopi.io/hardware/autopi_mini/device_specifications.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Introduction](https://docs.autopi.io/hardware/autopi-mini-intro.md): This section has a few guides written out that are specifically for the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autop...
+- [Device Dimensions](https://docs.autopi.io/hardware/autopi_tmu_cm4/device_dimensions.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Technical Specifications](https://docs.autopi.io/hardware/autopi_tmu_cm4/device_specifications.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Introduction](https://docs.autopi.io/hardware/autopi-cm4-intro.md): This section contains comprehensive documentation for the [AutoPi TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device. While the content...
+- [Installing 3-in-1 External Antennas](https://docs.autopi.io/hardware/autopi_tmu_cm4/installing_external_antennas.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Installing 4-in-1 External Antennas](https://docs.autopi.io/hardware/autopi_tmu_cm4/installing_4in1_external_antennas.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Install Heatsink](https://docs.autopi.io/hardware/autopi_tmu_cm4/installing-heatsink.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [LED and Button States](https://docs.autopi.io/hardware/autopi_tmu_cm4/led-and-button.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Mounting Holes](https://docs.autopi.io/hardware/autopi_tmu_cm4/mounting_holes.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [OBD Connector Pinout](https://docs.autopi.io/hardware/autopi_tmu_cm4/obd-connector-pinout.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Replacing the CM4](https://docs.autopi.io/hardware/autopi_tmu_cm4/replacing-cm4.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Using the HAT](https://docs.autopi.io/hardware/autopi_tmu_cm4/using-hat.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [Connection Overview](https://docs.autopi.io/hardware/autopi_tmu_socketcan/connection-overview.md): This diagram shows the 3.5 CAN-FD generation frontside connections possibilities
+- [Device Dimensions](https://docs.autopi.io/hardware/autopi_tmu_socketcan/device_dimensions.md): ![Device dimensions](/img/hardware/autopi_tmu_socketcan/device_dimensions/device_dimensions_4.png)
+- [Introduction](https://docs.autopi.io/hardware/SocketCAN-intro.md): This section has a few guides written out that are specifically for third generation (TMU) devices.
+- [Install External Antennas](https://docs.autopi.io/hardware/autopi_tmu_socketcan/installing_external_antennas.md): :::caution Before proceeding with the upgrade
+- [Mounting Holes](https://docs.autopi.io/hardware/autopi_tmu_socketcan/mounting_holes.md): ![Mounting holes](/img/hardware/autopi_tmu_socketcan/mounting_holes/mounting_holes.png)
+- [OBD Connector Pinout](https://docs.autopi.io/hardware/autopi_tmu_socketcan/obd-connector-pinout.md): This is an image of the OBD connector pinout. It is valid for the [AutoPi](https://www.autopi.io) TMU SocketCAN versions of the [AutoPi](https://ww...
+- [HW Introduction](https://docs.autopi.io/hardware-intro.md): This section explores the hardware components of the [AutoPi](https://www.autopi.io) and how they differ from one generation
+- [Connection Overview](https://docs.autopi.io/hardware/legacy_devices/autopi_dongle/connection-overview.md): This is a diagram shows the connection possibilities of the second generation [AutoPi](https://www.autopi.io).
+- [Introduction](https://docs.autopi.io/hardware/legacy_devices/gen-2-intro.md): In this section, we will explore specifics about the generation 2 devices. On this page, you will
+- [OBD Connector Pinout](https://docs.autopi.io/hardware/legacy_devices/autopi_dongle/obd-connector-pinout.md): This is an image of the OBD connector pinout. It is valid for all generations of the [AutoPi](https://www.autopi.io).
+- [Setup Your Gen 2 DiY Edition](https://docs.autopi.io/hardware/legacy_devices/autopi_dongle/setup-your-gen-2-diy-edition.md): Congratulations on your [AutoPi](https://www.autopi.io) Device, DiY Edition! We're sure that you have some great plans on how to use
+- [Update Firmware of EG25-G Module](https://docs.autopi.io/hardware/legacy_devices/autopi_dongle/update-firmware-of-eg25-g-module.md): :::caution
+- [Using GPIO and HDMI](https://docs.autopi.io/hardware/legacy_devices/autopi_dongle/using-gpio-and-hdmi-with-the-gen-2.md): This is a step-by-step guide on how to access the HDMI on your dongle.
+- [Using the RPi3 Adapter](https://docs.autopi.io/hardware/legacy_devices/autopi_dongle/using-the-rpi3-adapter.md): **Please note:** The [AutoPi](https://www.autopi.io) always needs power through the OBD connector, to function properly. Powering the board through...
+- [Connection Overview](https://docs.autopi.io/hardware/legacy_devices/autopi_dongle_gen3/connection-overview.md): This diagram shows the 3<sup>rd</sup> generation frontside connections possibilities
+- [Developer Kit](https://docs.autopi.io/hardware/legacy_devices/autopi_dongle_gen3/developer-kit.md): In this guide we will explore how you can get started with your [AutoPi](https://www.autopi.io) Developer Kit. We will talk
+- [Introduction](https://docs.autopi.io/hardware/legacy_devices/gen-3-intro.md): This section has a few guides written out that are specifically for third generation (TMU) devices.
+- [Installing External Antennas](https://docs.autopi.io/hardware/legacy_devices/autopi_dongle_gen3/installing-external-antennas.md): This is a step-by-step guide on how to install external 4G and GPS antennas on your [AutoPi](https://www.autopi.io).
+- [OBD Connector Pinout](https://docs.autopi.io/hardware/legacy_devices/autopi_dongle_gen3/obd-connector-pinout.md): This is an image of the OBD connector pinout. It is valid for all generations of the [AutoPi](https://www.autopi.io).
+- [Setup your TMU DiY Edition](https://docs.autopi.io/hardware/legacy_devices/autopi_dongle_gen3/setup-your-tmu-diy-edition.md): Congratulations on your [AutoPi](https://www.autopi.io) Device, DiY Edition! We're sure that you have some great plans on how to use
+- [Connection Overview](https://docs.autopi.io/hardware/legacy_devices/autopi_tmu_can_fd/connection-overview.md): This diagram shows the 3.5 CAN-FD generation frontside connections possibilities
+- [Device Dimensions](https://docs.autopi.io/hardware/legacy_devices/autopi_tmu_can_fd/device_dimensions.md): ![Device dimensions](/img/hardware/legacy_devices/autopi_tmu_can_fd/device_dimensions/device_dimensions_4.png)
+- [Introduction](https://docs.autopi.io/hardware/legacy_devices/gen-3.5-intro.md): This section has a few guides written out that are specifically for third generation (TMU) devices.
+- [Install External Antennas](https://docs.autopi.io/hardware/legacy_devices/autopi_tmu_can_fd/installing-external-antennas.md): :::caution Before proceeding with the upgrade
+- [Mounting Holes](https://docs.autopi.io/hardware/legacy_devices/autopi_tmu_can_fd/mounting_holes.md): ![Mounting holes](/img/hardware/legacy_devices/autopi_tmu_can_fd/mounting_holes/mounting_holes.png)
+- [OBD Connector Pinout](https://docs.autopi.io/hardware/legacy_devices/autopi_tmu_can_fd/obd-connector-pinout.md): This is an image of the OBD connector pinout. It is valid for the [AutoPi](https://www.autopi.io) TMU CAN-FD versions of the [AutoPi](https://www.a...
+- [AutoPi Documentation](https://docs.autopi.io/index.md): Welcome to the official documentation for the [AutoPi platform](https://autopi.io).

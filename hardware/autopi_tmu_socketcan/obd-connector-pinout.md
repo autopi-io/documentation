@@ -1,0 +1,7 @@
+# OBD Connector Pinout
+
+> This is an image of the OBD connector pinout. It is valid for the [AutoPi](https://www.autopi.io) TMU SocketCAN versions of the [AutoPi](https://www.autopi.io).
+
+This is an image of the OBD connector pinout. It is valid for the [AutoPi](https://www.autopi.io) TMU SocketCAN versions of the [AutoPi](https://www.autopi.io).
+
+![OBD connector pinout](/img/hardware/autopi_tmu_socketcan/obd_connector_pinout/obd_pinout_CAN-FD_ed-GND_chassis01.png)
