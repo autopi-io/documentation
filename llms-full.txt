@@ -27387,19 +27387,6 @@ Want to dig right into the source code? Get full access here:
 
 [![](/img/shared/github.png) **AutoPi Documentation Github** Participate in the documentation, it's open-source.](https://github.com/autopi-io/documentation)
 
-## For AI Tools & RAG
-
-The AutoPi documentation is published in LLM-friendly formats so you can plug it
-directly into ChatGPT, Claude, Cursor, Continue, or your own RAG pipeline — no
-scraping required.
-
-- [`llms.txt`](https://docs.autopi.io/llms.txt) — an index of every documentation page, following the [llmstxt.org](https://llmstxt.org/) standard.
-- [`llms-full.txt`](https://docs.autopi.io/llms-full.txt) — the complete AutoPi documentation as one machine-readable Markdown document, ready to ingest.
-- Every page is also available as clean Markdown by appending `index.md` to its URL (e.g. `https://docs.autopi.io/cloud/index.md`).
-
-These files are regenerated on every documentation build, so anything you index
-stays in sync with the site.
-
 ### Developer Guides (Advanced)
 
 - **Advanced diagnostics (DoIP):** Use the [DoIP hat](https://shop.autopi.io/products/doip-hat-v1-3) to expand diagnostic and maintenance capabilities. Start here: [How to set up DoIP](https://docs.autopi.io/developer_guides/setting-up-doip/)
@@ -27415,3 +27402,16 @@ stays in sync with the site.
 - **Custom event automation:** Define custom triggers and actions for specialized logger logic with [How to Create a Custom Event](https://docs.autopi.io/developer_guides/how-to-create-custom-event-for-custom-logger/)
 - **Remote CAN workflows:** Enable remote CAN bus access for diagnostics and development tasks with [Remote CAN Access](https://docs.autopi.io/developer_guides/can-bridge/)
 - **RFID workflows:** Integrate RFID-based identification workflows with your setup using [RFID Integration](https://docs.autopi.io/developer_guides/rfid-integartion/)
+
+## For AI Tools & RAG
+
+The AutoPi documentation is published in LLM-friendly formats so you can plug it
+directly into ChatGPT, Claude, Cursor, Continue, or your own RAG pipeline — no
+scraping required.
+
+- [`llms.txt`](https://docs.autopi.io/llms.txt) — an index of every documentation page, following the [llmstxt.org](https://llmstxt.org/) standard.
+- [`llms-full.txt`](https://docs.autopi.io/llms-full.txt) — the complete AutoPi documentation as one machine-readable Markdown document, ready to ingest.
+- Every page is also available as clean Markdown by appending `index.md` to its URL (e.g. `https://docs.autopi.io/cloud/index.md`).
+
+These files are regenerated on every documentation build, so anything you index
+stays in sync with the site.
