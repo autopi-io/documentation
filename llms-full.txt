@@ -27406,11 +27406,11 @@ Want to dig right into the source code? Get full access here:
 ## For AI Tools & RAG
 
 The AutoPi documentation is published in LLM-friendly formats so you can plug it
-directly into ChatGPT, Claude, Cursor, Continue, or your own RAG pipeline — no
+directly into ChatGPT, Claude, Cursor, Continue, or your own RAG pipeline - no
 scraping required.
 
-- [`llms.txt`](https://docs.autopi.io/llms.txt) — an index of every documentation page, following the [llmstxt.org](https://llmstxt.org/) standard.
-- [`llms-full.txt`](https://docs.autopi.io/llms-full.txt) — the complete AutoPi documentation as one machine-readable Markdown document, ready to ingest.
+- [`llms.txt`](https://docs.autopi.io/llms.txt) - an index of every documentation page, following the [llmstxt.org](https://llmstxt.org/) standard.
+- [`llms-full.txt`](https://docs.autopi.io/llms-full.txt) - the complete AutoPi documentation as one machine-readable Markdown document, ready to ingest.
 - Every page is also available as clean Markdown by appending `index.md` to its URL (e.g. `https://docs.autopi.io/cloud/index.md`).
 
 These files are regenerated on every documentation build, so anything you index
