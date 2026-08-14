@@ -155,6 +155,26 @@ module.exports = {
     ['./src/plugins/tailwind-config.js', {}],
     'docusaurus-plugin-sass',
     [
+      'docusaurus-plugin-llms',
+      {
+        // The docs preset uses routeBasePath: '/', so docs URLs live at the site
+        // root (e.g. https://docs.autopi.io/cloud/...) rather than under /docs/.
+        // Use the object form of docsDir so generated links match the public routes.
+        docsDir: [
+          { path: 'docs', routeBasePath: '/', label: 'AutoPi Documentation' },
+        ],
+        generateLLMsTxt: true,
+        generateLLMsFullTxt: true,
+        generateMarkdownFiles: true,
+        excludeImports: true,
+        removeDuplicateHeadings: true,
+        rewriteImageUrls: true,
+        title: 'AutoPi Documentation',
+        description:
+          'Documentation for AutoPi devices, AutoPi Cloud, AutoPi Core, APIs, integrations and developer guides.',
+      },
+    ],
+    [
       '@docusaurus/plugin-client-redirects',
       {
         redirects: [
