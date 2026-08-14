@@ -1,0 +1,10 @@
+# OBD Connector Pinout
+
+> <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
+
+---
+
+This is an image of the OBD connector pinout. It is valid for the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) editions generations of the [AutoPi](https://www.autopi.io).
+
+![OBD connector pinout](/img/hardware/autopi_tmu_cm4/obd_connector_pinout/obd_pinout_CM4_ed01.png)

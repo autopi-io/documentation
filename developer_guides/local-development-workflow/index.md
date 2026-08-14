@@ -1,0 +1,145 @@
+# Local Development Workflow
+
+> <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
+
+---
+
+When you build or debug modules, speed matters. A cloud-only workflow is reliable for deployment, but it is often too slow for everyday development.
+
+Typical cloud-only loop:
+
+1. Make changes.
+2. Push/sync changes to the device.
+3. Restart services.
+4. Execute module.
+5. Repeat.
+
+For active development, a local workflow gives a much faster feedback loop and a better developer experience. In this guide, you will learn:
+
+* When to use cloud vs local workflows.
+* How to develop directly on the device over SSH.
+* How to develop locally and sync changes to the device (recommended).
+* How to choose between refreshing modules and restarting the minion.
+
+:::note 
+Recommended workflow - use the **[AutoPi Cloud](https://www.autopi.io/software-platform/cloud-management)** for fleet management, configuration, and final rollouts.
+Use **local or SSH-based workflows** for rapid iteration, debugging, and testing.
+:::
+
+---
+
+## Before you begin
+
+Make sure you have the following:
+
+* SSH access to the device, see: [How to SSH to Your Device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/).
+* A local development environment (recommended).
+* Basic familiarity with AutoPi modules and Salt structure.
+
+When syncing from the Cloud, the modules will be put in the following directories, based on the type:
+
+* `/opt/autopi/salt/modules`
+* `/opt/autopi/salt/returners`
+* `/opt/autopi/salt/utils`
+* `/opt/autopi/salt/engines`
+* `/opt/autopi/salt/states`
+
+:::warning
+Cloud sync can overwrite local edits on the device without prompting.
+If you develop directly on the device, keep backups or version-control your files locally.
+:::
+
+---
+
+## Option 1: Edit directly on the device (SSH)
+
+This is the fastest setup for small fixes or quick validation.
+
+You can connect to your AutoPi device in several ways, depending on your setup:
+
+* Connect Screen and Keyboard to Device. 
+* Connect to the device hotspot: [Connect to the hotspot of your AutoPi device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/#step-1-connect-to-the-hotspot).
+* Connect through your local Wi-Fi network: [Connect through your home Wi-Fi to AutoPi device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/#connect-through-your-home-wi-fi).
+* Connect using Tailscale: [Connect to Tailscale on your AutoPi device](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/).
+* Connect using WireGuard: [Connect to WireGuard on your AutoPi device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/#connect-using-wireguard).
+
+**Steps for development through SSH:**
+
+1. SSH into the device.
+2. Edit files in the relevant `/opt/autopi/salt/...` directory.
+3. Reload modules or restart the minion.
+4. Run your test command and validate the result.
+
+**To apply changes after editing:**
+
+* Faster method (may not pick up every change):
+    ```python
+    autopi saltutil.refresh_modules
+    ```
+
+* More reliable method during development:
+    ```python
+    autopi minionutil.restart
+    ```
+
+---
+
+## Option 2: Remote development - develop locally and sync to device 
+
+Alternatively, another workflow can be to have a script on your development machine that copies the files to the device via [scp](https://www.computerhope.com/unix/scp.htm), that way you can make the changes in your favorite editor. This usually provides the best productivity: local editor, version control, and fast deployments.
+
+### Example deployment script
+
+Create a small script on your development machine to copy files and restart services:
+
+```python
+#!/usr/bin/env bash
+set -euo pipefail
+
+DEVICE_HOST="pi@local.autopi.io"
+LOCAL_FILE="./my_module.py"
+REMOTE_FILE="/opt/autopi/salt/modules/my_module.py"
+
+scp "$LOCAL_FILE" "$DEVICE_HOST:$REMOTE_FILE"
+ssh "$DEVICE_HOST" "autopi minionutil.restart"
+```
+
+You can extend this script to sync multiple files and run a smoke test command after deployment.
+
+### Suggested iteration loop
+
+1. Edit code locally.
+2. Run local quality checks (lint/tests where applicable).
+3. Deploy with your sync script.
+4. Restart the minion or refresh modules.
+5. Execute and verify behavior on the device.
+
+---
+
+## Keep in mind 
+
+**Choosing between refresh and restart:** 
+* Use `autopi saltutil.refresh_modules` for faster reloads when changing simple module code.
+* Use `autopi minionutil.restart` when behavior is inconsistent or when changing deeper dependencies.
+
+If you are unsure, restart the minion service for a clean reload. You can also read more here: [Minionutil Commands](https://docs.autopi.io/core/commands/core-commands-minionutil/).
+
+**Common pitfalls:**
+1.  * **Issue:** Local changes disappear after cloud sync.
+    * **Solution:** The cloud-synced version has replaced your device-local file. Keep local backups, use version control, and avoid editing the same files directly on the device right before a cloud sync.
+
+2. * **Issue:** Changes do not apply immediately after editing.
+    * **Solution:** Reload modules with `autopi saltutil.refresh_modules` or run `autopi minionutil.restart` for a clean reload.
+
+3. * **Issue:** The development loop feels slow.
+    * **Solution:** Reduce manual cloud sync steps during active coding. Develop locally, sync with a script, and use cloud deployment only once changes are stable.
+
+**When to switch back to cloud deployment?**
+
+Once development is stable: 
+    1. Commit and review your code.
+    2. Push via your standard cloud workflow.
+    3. Validate on target devices.
+
+For additional implementation support, see our [Development Voucher](https://shop.autopi.io/products/development-voucher).
