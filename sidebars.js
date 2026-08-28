@@ -211,7 +211,8 @@ module.exports = {
                   ],
                   "label": "AutoPi Mini",
                   "type": "category"
-                }
+                },
+                "cloud/device_management/advanced_settings/audio-on-your-device"
               ],
               "label": "Advanced Settings",
               "type": "category"
@@ -494,11 +495,11 @@ module.exports = {
         },
       ],
     },
-
     {
       "type": "link",
      "label": "API",
       "href": "https://api.autopi.io/"
     },
+
   ]
 };
