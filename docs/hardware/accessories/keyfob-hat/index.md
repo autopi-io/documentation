@@ -1,6 +1,7 @@
 ---
 id: keyfob-intro
 title: Introduction
+slug: /hardware/accessories/keyfob-hat/keyfob-intro
 ---
 import CardGrid from "/components/CardGrid";
 
