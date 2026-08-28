@@ -56,6 +56,16 @@ After confirming your board version, download the matching image from the table 
 
 You may also check the [autopi-core releases page](https://github.com/autopi-io/autopi-core/releases) for a newer **board-version-compatible** image.
 
+:::note Beta Image Available (Board Versions 7.0 and 7.1)
+A beta image based on v1.28.2 that can be found here: [v1.28.2](https://github.com/autopi-io/autopi-core/releases/tag/v1.28.2) is available for Generation 4 devices. It contains the most recent version of AutoPi Core and introduces **64-bit support** — meaning the operating system is compiled for a 64-bit ARM architecture, which allows the device to address more memory and can deliver improved performance compared to the standard 32-bit image.
+
+Compatibility notes:
+- **Board version 7.0**: Fully supported.
+- **Board version 7.1**: Supported, but CAN communication will not function until the device has retrieved its configuration from AutoPi Cloud for the first time.
+
+As a beta release, this image may include changes that have not yet been fully validated for production use. Use it at your own discretion.
+:::
+
 ---
 
 ## 2. Set Up Balena Etcher (or an Alternative)
