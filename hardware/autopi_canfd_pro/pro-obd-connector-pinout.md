@@ -7,7 +7,7 @@
 
 This is an image of the OBD connector pinout. It is valid for the different generations of [AutoPi](https://www.autopi.io) devices including the [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro).
 
-![OBD connector pinout](/img/hardware/autopi_tmu_cm4/obd_connector_pinout/obd_pinout_CM4_ed01.png)
+![OBD connector pinout](/img/hardware/autopi_tmu_cm4/obd_connector_pinout/obd_pinout_CM4_ed02.png)
 
 ## In need of Accessories? Check our [AutoPi shop](https://shop.autopi.io/)
   * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – Add extra reach for flexible placement.
