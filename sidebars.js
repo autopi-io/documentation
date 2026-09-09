@@ -433,7 +433,8 @@ module.exports = {
         {
           "items": [
             "hardware/autopi_mini/autopi-mini-intro",
-            "hardware/autopi_mini/device_specifications"
+            "hardware/autopi_mini/device_specifications",
+            "hardware/autopi_mini/mini-obd-connector-pinout"
           ],
           "label": "AutoPi Mini",
           "type": "category"
