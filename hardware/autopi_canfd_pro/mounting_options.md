@@ -5,9 +5,9 @@
 
 ---
 
-Want more flexibility when setting up your [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro)? No worries — we’ve made installation easier than ever.
+This guide explores all available mounting options for your AutoPi CAN-FD Pro device, from permanent custom installations using built-in mounting holes to convenient pre-designed mounts and helpful accessories. Discover the best installation method for your vehicle's interior layout and requirements.
 
-## Mounting holes on your [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro)
+## Mounting holes on your AutoPi CAN-FD Pro device
 
 ### Need more reach?
 We’ve got two essential accessories to make setup of your [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro) easier. [Accessories](https://shop.autopi.io/):
@@ -20,7 +20,7 @@ The [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/
 ![Device mounting holes](/img/hardware/autopi_canfd_pro/canfd_pro_mounting_holes.png)
 
 ## Choose your mount
-Don’t want to DIY? We’ve got you covered with pre-designed mounts made specifically for the [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro).
+Don’t want to DIY? We’ve got you covered with pre-designed mounts made specifically for the AutoPi CAN-FD Pro device.
 
 ### 1. Flat surface mount
 * Perfect for dashboards, panels, or any flat surface.

@@ -1,17 +1,20 @@
 # Geofences
 
 > <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
-## Overview
+---
 
-Geofences are virtual boundaries on a map that define areas of interest for your fleet. They enable you to monitor vehicle movements in real time and automatically respond to location-based events. With geofences, you can:
+This guide will walk you through creating and managing geofences for your AutoPi fleet. Geofences are virtual boundaries that enable real-time vehicle monitoring, location-based automation, and immediate alerting when vehicles enter or exit designated areas. Learn how to set up geofences, integrate them with templates and triggers, and automate responses both in the cloud and directly on your devices.
 
-* **Monitor deliveries** by tracking when vehicles enter or exit delivery zones
-* **Enforce restricted areas** by preventing vehicles from entering out-of-country regions or unauthorized locations, and receive immediate alerts
-* **Improve safety** by receiving instant notifications when a vehicle crosses a boundary
-* **Automate workflows** by triggering actions (email notifications, webhook requests, or cloud alerts) based on geofence events
-
-Geofences integrate seamlessly with other AutoPi Cloud features. Use **Templates** to apply geofences across your entire fleet at scale, **Triggers** to automate cloud-side responses when vehicles enter or exit designated areas, and **Event Reactors** to execute real-time actions directly on the device — such as playing an audible alert to immediately notify the driver.
+### Key features:
+- Interactive map-based geofence creation with circle and polygon drawing tools.
+- Support for vehicle groups, locations, and individual vehicle assignment.
+- Real-time event monitoring and filtering.
+- Cloud-side triggers for automated notifications and webhooks.
+- On-device event reactors for immediate, time-sensitive actions.
+- Template-based geofence deployment for fleet-wide configuration.
+- Comprehensive geofence event tracking and auditing.
 
 ---
 
@@ -191,12 +194,19 @@ To receive immediate alerts when a vehicle enters a restricted area:
 
 ---
 
-## Use Case: Restricted Areas
+## Common use cases:
+- **Delivery Zone Monitoring** — track when vehicles enter or exit assigned delivery areas.
+- **Restricted Area Enforcement** — prevent and alert on unauthorized border or region crossings.
+- **Geofence-Based Automation** — trigger notifications, webhooks, or alerts based on boundary events.
+- **Real-Time Driver Alerts** — play audible warnings on the device when entering sensitive areas.
+- **Fleet-Wide Consistency** — apply standard geofences across large fleets using templates.
+- **Workflow Automation** — integrate geofence events with external systems via webhooks.
+
+### Example Use Case: Restricted Areas
 
 Geofences are particularly useful for enforcing areas where vehicles should never travel. Create geofences around regions you want to prevent vehicles from entering, then set up triggers to notify you immediately when a vehicle violates these boundaries.
 
-### Examples
-
+**Examples:**
 * **Out-of-Country Boundaries**: define geofences around neighboring countries to prevent drivers from crossing international borders.
 * **Off-Limits Zones**: restrict vehicles from entering competitor facilities, dangerous areas, or construction zones.
 * **Authorized Service Areas**: ensure service vehicles only operate within assigned regions.

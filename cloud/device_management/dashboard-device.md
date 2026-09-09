@@ -4,14 +4,18 @@
 
 ---
 
-The **Device Dashboard** is the central workspace for monitoring real-time vehicle and device data. It helps you track key metrics such as location, speed, RPM, and custom signals, whether you manage one vehicle or an entire fleet.
+This guide will walk you through creating and managing device dashboards for real-time vehicle and device data visualization. Design custom dashboards with multiple widget types, configure data collection through OBD loggers, and monitor key metrics such as location, speed, RPM, and custom signals for single vehicles or entire fleets.
 
-In this guide, you will learn how to:
+What you'll learn:
+- How to create and manage multiple device dashboards for different use cases.
+- How to add and configure widgets with 9+ visualization types.
+- How to use dashboard actions and controls effectively.
+- How to set up data collection using OBD loggers.
+- How to configure widgets to display logged OBD data.
+- How to use autogeneration to quickly create initial dashboards.
+- How to build complete custom widgets from OBD data end-to-end.
 
-- Create and manage device dashboards
-- Add and configure widgets
-- Use dashboard actions effectively
-- Build a custom widget from OBD data end-to-end
+---
 
 The dashboard supports the following visualization types:
 

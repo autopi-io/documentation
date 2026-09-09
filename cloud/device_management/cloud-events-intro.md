@@ -1,13 +1,22 @@
 # Introduction
 
-> The Events tab shows the complete history of events received from your device.
-It includes both built-in events and custom events, so you can keep all relevant activity in one place.
+> This guide will walk you through accessing and managing device events in AutoPi Cloud. View the complete history of system and vehicle events, filter events by time, type, and custom tags, and use events as the foundation for triggers, alerts, automation, and troubleshooting. Learn how to configure trip detection using events and create custom events for advanced workflows.
 
-The Events tab shows the complete history of events received from your device.
-It includes both built-in events and custom events, so you can keep all relevant activity in one place.
+This guide will walk you through accessing and managing device events in AutoPi Cloud. View the complete history of system and vehicle events, filter events by time, type, and custom tags, and use events as the foundation for triggers, alerts, automation, and troubleshooting. Learn how to configure trip detection using events and create custom events for advanced workflows.
 
         
  
+
+What you'll learn:
+- How to view the complete event history from your device.
+- How to filter events by time interval, event type (System/Vehicle), and event tags.
+- How to use wildcard filters to find specific event patterns.
+- How to leverage events for troubleshooting and historical analysis.
+- How to configure trip detection using event tags.
+- How to create custom events for advanced automation workflows.
+- How to integrate events with triggers, alerts, and operational reporting.
+
+---
 
 ## Event Filters
 
@@ -25,6 +34,8 @@ This makes the Events tab especially useful for troubleshooting, because you can
 :::tip 
 When troubleshooting, start with a broader time range and then narrow results by event type and tag to find relevant events faster.
 :::
+
+---
 
 ## Event Types
 
@@ -44,6 +55,8 @@ For detailed information about event categories and settings, see:
 - [Vehicle](https://docs.autopi.io/cloud/device_management/events/cloud-events-vehicle/)
 
 These guides list all available events, including each event tag and description, so you can understand what each event represents and how to use it.
+
+---
 
 ## What events can be used for?
 
@@ -77,6 +90,8 @@ Then verify the next few trips and adjust again if needed.
 You can also create your own custom events. Once emitted, they will appear in this Events section alongside standard events, making them available for the same trigger, alert, and history workflows. To learn more, see: [How to create custom event for custom logger](https://docs.autopi.io/developer_guides/how-to-create-custom-event-for-custom-logger/). 
 
 > Note: Custom events are not available for AutoPi Mini devices.
+
+---
 
 ## Summary
 

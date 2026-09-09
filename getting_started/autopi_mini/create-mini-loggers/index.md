@@ -2,16 +2,20 @@
 
 > <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
-Logging is one of the core features of the [AutoPi Mini](https://www.autopi.io/hardware/autopi-mini), allowing you to automatically record key data from your device for analysis, monitoring, or integration with other systems. In this guide, you’ll learn how to create and configure loggers for your AutoPi Mini, from understanding what are the available loggers, to setting up your own custom data collection workflows.
-
----
-Logging is one of the core features of the [AutoPi Mini](https://www.autopi.io/hardware/autopi-mini), allowing you to automatically record key data from your device for analysis, monitoring, or integration with other systems. In this guide, you’ll learn how to create and configure loggers for your AutoPi Mini, from understanding what are the available loggers, to setting up your own custom data collection workflows.
-
-We’ll start with a step-by-step walkthrough on how to create, manage, and verify loggers directly from your AutoPi Cloud, followed by a quick overview of the available loggers and their specifications. Whether you’re setting up your first logger or fine-tuning advanced data capture, this guide will help you get started quickly and confidently.
 
 ---
 
-## Default Set of [Mini](https://www.autopi.io/hardware/autopi-mini) Loggers 
+This guide will walk you through creating and configuring loggers for your AutoPi Mini device. Logging is a core feature that allows you to automatically record key data for analysis, monitoring, or integration with other systems. You'll learn how to create custom loggers, manage their settings, and link them to your dashboard widgets—from setting up your first logger to fine-tuning advanced data capture workflows.
+
+**What you'll learn:**
+- Understanding and configuring default loggers based on your vehicle type.
+- Creating custom loggers with specific parameters and event triggers.
+- Available logger specifications and technical details.
+- Linking loggers to dashboard widgets for data visualization.
+
+---
+
+## Default Set of Mini Loggers
 To ensure your AutoPi mini device works right out of the box, we preconfigure it with a set of commonly used loggers based on the most frequently requested data from our users. These default loggers are automatically installed on your device before delivery.
 
 During the device registration process (covered in Step 2: Registration of the device of [Getting started guide](https://docs.autopi.io/getting_started/autopi_mini/#2-register-your-device)), you’ll be asked to enter your vehicle’s make, model, year, and type. **Vehicle types** include: Internal Combustion Engine (ICE), Battery Electric Vehicle (BEV), Plug-in Hybrid Electric Vehicle (PHEV) or Hybrid Electric Vehicle (HEV).

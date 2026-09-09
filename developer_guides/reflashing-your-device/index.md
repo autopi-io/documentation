@@ -5,25 +5,22 @@
 
 ---
 
-This guide explains how to reflash your AutoPi device with a fresh AutoPi OS image. Reflashing is useful for recovery and troubleshooting, but it changes low-level device software and should be performed carefully. Before you begin, confirm your device version, use the correct image, and follow each step in order to reduce the risk of configuration issues or data loss.
+This guide will walk you through reflashing your AutoPi device with a fresh AutoPi OS image. You'll learn how to download the correct image for your device, set up flashing tools, connect your device storage media (either SD card for pre-CM4 devices or eMMC for CM4 devices), flash the image, and complete the device setup and registration process.
+
+Reflashing is useful for device recovery and troubleshooting but involves changing low-level device software and should be performed carefully. The process varies slightly depending on your AutoPi hardware version and host operating system (verified on Pop!_OS 6.1 and Windows 10).
 
 :::warning
 Only use this guide if you are comfortable working directly with device firmware. Reflashing should not be performed on a fully operational production device unless necessary. If you are unsure about any step, contact our [Support team](mailto:support@autopi.io) before proceeding.
 :::
 
-The reflashing process varies slightly depending on your AutoPi hardware version and host operating system. The steps in this guide were verified on Pop!_OS 6.1 (Debian-based) and Windows 10.
-
-**Reflashing Quick Start Summary:**
-
-1. Download the AutoPi OS image.
-2. Set up Balena Etcher (or an alternative tool).
-3. Connect the device storage media:
-    - Pre-CM4 devices (versions 3.0-6.3)
-    - CM4 devices (version 7.x+)
-4. Flash the image.
-5. (Optional) Ensure your device is connecting to the correct environment.
-6. Complete initial device setup.
-7. Update your device from the Cloud.
+**Steps you'll complete:**
+1. Download the correct AutoPi OS image for your board version.
+2. Set up Balena Etcher (or alternative flashing tool).
+3. Connect your device storage media (SD card or eMMC).
+4. Flash the OS image to your device.
+5. Ensure your device connects to the correct environment.
+6. Complete device setup and registration.
+7. Update your device from AutoPi Cloud.
 
 ---
 

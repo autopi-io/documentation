@@ -1,8 +1,10 @@
 # Using DIMO Device on AutoPi's Cloud
 
-> If you have a [DIMO x AutoPi device](https://drivedimo.com) and would like to use it on the [AutoPi Cloud platform](https://my.autopi.io/#/login), this guide will walk you through the full migration process. You will learn how to transition your device from the DIMO server to AutoPi's server and unlock all AutoPi Cloud features.
+> This guide will walk you through migrating your [DIMO x AutoPi device](https://drivedimo.com) to the AutoPi Cloud platform. You'll learn how to transition from the DIMO server to AutoPi's infrastructure, order a Global SIM card, create your AutoPi account, and reflash your device to unlock full access to AutoPi Cloud features.
 
-If you have a [DIMO x AutoPi device](https://drivedimo.com) and would like to use it on the [AutoPi Cloud platform](https://my.autopi.io/#/login), this guide will walk you through the full migration process. You will learn how to transition your device from the DIMO server to AutoPi's server and unlock all AutoPi Cloud features.
+This guide will walk you through migrating your [DIMO x AutoPi device](https://drivedimo.com) to the AutoPi Cloud platform. You'll learn how to transition from the DIMO server to AutoPi's infrastructure, order a Global SIM card, create your AutoPi account, and reflash your device to unlock full access to AutoPi Cloud features.
+
+---
 
 ## Prerequisites
 

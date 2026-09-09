@@ -1,16 +1,15 @@
 # Overview
 
-> This section provides an overview of your entire fleet, showcasing all vehicles 
-associated with your account. With access to real-time data and advanced fleet 
-management tools, you can efficiently manage, monitor, and optimize your fleet’s 
-operations.
+> <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
-This section provides an overview of your entire fleet, showcasing all vehicles 
-associated with your account. With access to real-time data and advanced fleet 
-management tools, you can efficiently manage, monitor, and optimize your fleet’s 
-operations. 
+---
+
+This section will walk you through the AutoPi Fleet Management dashboard, providing comprehensive visibility into your entire vehicle fleet. Access real-time vehicle locations, status updates, and operational metrics to efficiently manage, monitor, and optimize your fleet's performance and utilization.
 
     
+
+---
 
 ## Fleet Tracking
 ![Fleet map overview](/img/cloud/fleet_management/overview/Fleet_overview_world_map.png)

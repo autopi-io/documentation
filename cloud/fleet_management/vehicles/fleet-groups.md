@@ -1,6 +1,21 @@
 # Groups
 
 > <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
+
+---
+
+This guide will walk you through creating and managing vehicle groups to organize your fleet into reusable, logical segments. Vehicle groups enable you to apply configurations, workflows, and policies consistently across multiple vehicles simultaneously, streamlining fleet management and reducing manual configuration tasks.
+
+![Vehicle groups](/img/cloud/fleet_management/vehicles/groups/new_groups.png)
+
+What you'll learn:
+- How to create vehicle groups for organizing your fleet.
+- How to add and remove vehicles from existing groups.
+- How to edit and delete groups as your fleet structure evolves.
+- How to integrate groups with templates for automatic assignments.
+- How to apply geofences to entire groups efficiently.
+- How to use groups in reporting and analytics workflows.
 
 ## What Are Groups?
 
@@ -12,7 +27,12 @@ instead of selecting each vehicle one by one.
 Common use cases include applying geofences, configuring templates, and creating
 reports for a specific segment of your fleet.
 
-![Vehicle groups](/img/cloud/fleet_management/vehicles/groups/new_groups.png)
+Key features: 
+- Simple group creation and management interface
+- Quick vehicle search and selection for group membership
+- Integration with templates for automatic group assignment
+- Geofence application at group level
+- Group-based reporting capabilities
 
 ## Create a Vehicle Group
 

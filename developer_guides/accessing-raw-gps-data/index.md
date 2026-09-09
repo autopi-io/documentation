@@ -2,14 +2,26 @@
 
 > <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
-This guide explains how to enable and stream raw GPS (NMEA) data at 10 Hz from your AutoPi device.
 
 ---
-This guide explains how to enable and stream raw GPS (NMEA) data at 10 Hz from your AutoPi device.
 
-## Overview 
-By default, the device’s `GNSS Manager` service handles GPS communication. To stream raw NMEA data directly, this service must first be disabled to free up the serial (TTY) port used for GPS communication.
-Once disabled, you can use a simple Python script mentioned below to configure the GPS polling rate, enable streaming mode, and read data from the serial output in real time.
+This guide will walk you through enabling and streaming raw GPS (NMEA) data at 10 Hz from your AutoPi device. By disabling the default GNSS Manager service and using a custom Python script, you can access real-time, unprocessed GPS data directly from the serial port for advanced positioning and navigation applications.
+
+### Common use cases:
+- **High-Precision Tracking** — applications requiring 10 Hz GPS updates for precise location tracking.
+- **Custom GPS Processing** — parse and filter specific NMEA messages for specialized applications.
+- **Research & Development** — access raw GPS data for positioning algorithm development.
+- **Autonomous Navigation** — integrate real-time GPS data for autonomous vehicle systems.
+- **Data Logging** — capture continuous GPS streams for later analysis.
+
+### Prerequisites:
+- Access to your AutoPi device's Cloud dashboard (my.autopi.io).
+- Basic Python programming knowledge.
+- Understanding of NMEA GPS data format.
+- SSH access to your device (optional, for advanced troubleshooting).
+- Permissions to disable device services.
+
+---
 
 ## Steps
 

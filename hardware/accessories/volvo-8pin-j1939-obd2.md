@@ -33,6 +33,8 @@ This adapter cable can be purchased through the AutoPi shop: [**Volvo 8 PIN J193
 
 | AutoPi Function | OBD-II 16 PIN | Volvo 8 PIN |
 |:-----------------:|:---------------:|:-------------:|
+| CAN High        | Pin 3         | Pin 2         |
+| CAN Low         | Pin 11         | Pin 3        |
 | Power           | Pin 16        | Pin 8       |
 | GND             | Pin 4         | Pin 1       |
 

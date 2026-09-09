@@ -5,17 +5,23 @@
 
 ---
 
-This guide explains how to integrate a USB RFID reader with your [AutoPi](https://www.autopi.io) device and configure RFID-based access tracking in [AutoPi Cloud](https://my.autopi.io).
+This guide will walk you through integrating a USB RFID reader with your AutoPi device and configuring RFID-based access tracking in AutoPi Cloud. You'll learn how to enable RFID functionality, configure your reader, create workers and reactors, assign tokens to users, and monitor vehicle access through the Access Control system and System Events.
 
-With this setup, drivers or operators scan an RFID card or chip before using a vehicle. AutoPi Cloud then records the authentication attempt in Access Control and System Events, giving you clear visibility into who used which vehicle, when, and for how long.
+RFID integration enables driver identification and vehicle access control by requiring authorized users to scan their RFID cards or chips before vehicle operation. AutoPi Cloud records all authentication attempts and provides complete visibility into who used which vehicle, when, and for how long.
 
-Typical benefits include:
-- Better vehicle accountability.
-- Easier investigation by linking incidents to specific drivers or operators.
-- More accurate tracking of working hours based on scan history.
+**Benefits of RFID integration:**
+- Enhanced vehicle accountability and driver identification.
+- Improved investigation capabilities by linking incidents to specific operators.
+- Accurate tracking of working hours and vehicle usage patterns.
+- Theft prevention through unauthorized access alerts.
+- Asset and equipment tracking using RFID tags.
 
 :::tip
-Connect the RFID reader over USB and use a model that behaves as a keyboard input device (HID). Other reader types may work, but HID readers are the officially verified option.
+Use a USB RFID reader that behaves as a keyboard input device (HID) for best compatibility. HID readers are the officially verified option for AutoPi integration.
+:::
+
+:::note
+If RFID does not appear in your Advanced Settings, contact [support@autopi.io](mailto:support@autopi.io). The feature can be enabled for your account at no additional cost.
 :::
 
 ---

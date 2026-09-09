@@ -5,18 +5,21 @@
 
 ---
 
-In this guide we will explore how you can setup your own server that accepts data from your [AutoPi](https://www.autopi.io) device. We won't get in too many
-details, but we will explore the very basics that are needed, namely:
+This guide will walk you through setting up your own server to receive and process telemetry data from your AutoPi device. You'll learn how to configure your device to send data to a custom endpoint, understand the data format sent by the device, and implement a basic REST API endpoint to receive and handle the incoming data.
 
-1. How to setup the device to send data to a server different from the default one
-1. What format of the data to expect from the device
-1. Code examples of a very basic REST endpoint (in NodeJS with the ExpressJS framework)
+**What you'll learn:**
+- Configuring your device's Cloud API URL to point to your custom server.
+- Understanding the JSON data format sent by AutoPi devices.
+- Building a basic REST endpoint using Node.js and Express.js.
 
-Since we will be building the server with NodeJS, this guide requires you to have a very basic familiarity with Javascript syntax, however it
-shouldn't be too hard to follow if you have used other programming languages. Also, you will need to have `node` and `npm` command line tools
-installed on your workstation. You can download the full NodeJS package from [here](https://nodejs.org/en/download/).
+**Prerequisites:**
+- Basic familiarity with JavaScript syntax.
+- Node.js and npm installed on your workstation ([download here](https://nodejs.org/en/download/)).
+- Access to the AutoPi Cloud to modify device settings.
 
-## Set Device's [Cloud](https://www.autopi.io/software-platform/cloud-management) API Url
+---
+
+## Set Device's Cloud API URL
 Firstly, we need to make sure that the device will connect to your own server. For this, we do have a very neat option that can
 be changed from the [AutoPi Cloud](https://my.autopi.io) website. You need to navigate to Devices > Select Device > Advanced Settings > Cloud Storage where
 you will be able to see a screen like the following:

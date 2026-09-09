@@ -535,15 +535,22 @@ If you need to apply this change across multiple devices, use the **Templates** 
 
 ## Introduction
 
-The configuration settings controls the behaviour of the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) device.
+---
+
+This guide will walk you through configuring advanced settings for your AutoPi Mini device. Optimize device behavior for your specific vehicle type (ICE or EV), configure OBD communication, manage vehicle identification, and customize ignition detection and vehicle tracking methods. Learn how to fine-tune your Mini device for reliable data collection and seamless vehicle integration.
+
+![Mini advanced settings](/img/cloud/device_management/advanced_settings/autopi_mini/mini_advanced_settings.png)
+
+What you'll learn:
+- How to access and navigate AutoPi Mini advanced settings.
+- How to configure OBD settings for your vehicle type (ICE or EV).
+- How to manage vehicle identification (VIN) settings.
+- How to set up ignition detection methods based on your vehicle type.
+- How to configure vehicle tracking and trip detection sources.
 
 :::note
 Like any [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) functionality, configuration settings can be changed programmatically through the [AutoPi](https://www.autopi.io) REST API. For more information see our [API docs page](https://api.autopi.io/).
 :::
-
-This documentation provides an overview of the adjustable settings on the AutoPi Mini device, helping you optimize its functionalities for your vehicle type.
-
-![Mini advanced settings](/img/cloud/device_management/advanced_settings/autopi_mini/mini_advanced_settings.png)
 
 ## Obd settings
 
@@ -886,15 +893,17 @@ Devices with a hardware version of **5.2** and above **don't** support wake on m
 
 ## Introduction(Advanced_settings)
 
-The configuration settings controls the behaviour of the device.
+---
+
+This guide will walk you through accessing and configuring advanced settings for your AutoPi TMU CM4 device. Customize device behavior, power management, data logging, network configuration, and specialized features to optimize your device for your specific operational needs. Learn how to access configuration options and understand the settings available to control your device's functionality.
+
+![AutoPi Cloud Advanced Settings](/img/cloud/device_management/advanced_settings/autopi_tmu_cm4/intro/advanced_settings_updated.png)
 
 :::tip
 Like any AutoPi [Cloud](https://www.autopi.io/software-platform/cloud-management) functionality, configuration settings can be changed programmatically through the AutoPi REST API. For more information see our [API docs page](https://api.autopi.io/).
 :::
 
 You can control a lot of different things on the device. Each of the settings is explained in details on the following pages.
-
-![AutoPi Cloud Configuration](/img/cloud/device_management/advanced_settings/autopi_tmu_cm4/intro/configuration.jpg)
 
 ---
 
@@ -1710,9 +1719,16 @@ It is typically the first step in any CAN integration workflow.
 
 ---
 
-The **Device Change History** page gives you a clear overview of all configuration and state changes applied to a device, both recent and historical. It’s a useful tool for tracking what was changed, when it happened, and whether those changes were applied successfully. This helps with troubleshooting, auditing configuration updates, and understanding the current state of your device.
+This guide will walk you through accessing and interpreting your device's complete change history. View all configuration and state changes applied to your device, verify successful deployments, identify failed updates, and maintain a comprehensive audit trail for compliance and troubleshooting purposes.
 
----
+What you'll learn:
+- How to access and navigate the device change history.
+- How to interpret successful and failed configuration changes.
+- How to track when changes were applied and their outcomes.
+- How to analyze detailed change information by device type.
+- How to use state results for in-depth troubleshooting.
+- How to verify configuration deployments and identify issues.
+- How to maintain audit trails for compliance and governance.
 
 ## Change History Table
 
@@ -2033,14 +2049,18 @@ Custom services may require restarting the salt-minion process to take effect.
 
 ---
 
-The **Device Dashboard** is the central workspace for monitoring real-time vehicle and device data. It helps you track key metrics such as location, speed, RPM, and custom signals, whether you manage one vehicle or an entire fleet.
+This guide will walk you through creating and managing device dashboards for real-time vehicle and device data visualization. Design custom dashboards with multiple widget types, configure data collection through OBD loggers, and monitor key metrics such as location, speed, RPM, and custom signals for single vehicles or entire fleets.
 
-In this guide, you will learn how to:
+What you'll learn:
+- How to create and manage multiple device dashboards for different use cases.
+- How to add and configure widgets with 9+ visualization types.
+- How to use dashboard actions and controls effectively.
+- How to set up data collection using OBD loggers.
+- How to configure widgets to display logged OBD data.
+- How to use autogeneration to quickly create initial dashboards.
+- How to build complete custom widgets from OBD data end-to-end.
 
-- Create and manage device dashboards
-- Add and configure widgets
-- Use dashboard actions effectively
-- Build a custom widget from OBD data end-to-end
+---
 
 The dashboard supports the following visualization types:
 
@@ -2212,6 +2232,19 @@ After completing these three steps, your dashboard widget will display vehicle d
 
 ---
 
+This guide will walk you through managing your AutoPi devices in the cloud platform. Access your complete device inventory, configure individual device settings, monitor device status and health metrics, and connect your devices to vehicles. Learn how to search and filter devices, customize device views, and access comprehensive device configuration options.
+
+What you'll learn:
+- How to view and manage your complete device inventory in the Devices List-
+- How to search and filter devices by connectivity, status, and specifications.
+- How to customize the device table view to display relevant information.
+- How to access comprehensive device overview pages and status metrics.
+- How to configure device settings and connect devices to vehicles.
+- How to navigate device configuration tabs (Dashboard, Jobs, Services, Events, Triggers, Alerts, and more).
+- How to view device specifications, metrics, and real-time status information.
+
+---
+
 ## Devices List
 
 The **Devices List** provides a table view of all your devices, including key details such as device name, unit ID, last communication timestamp, and more.
@@ -2380,11 +2413,21 @@ Your AutoPi device is now successfully paired with a vehicle and ready for use!
 
 ## Introduction(Device_management)
 
-The Events tab shows the complete history of events received from your device.
-It includes both built-in events and custom events, so you can keep all relevant activity in one place.
+This guide will walk you through accessing and managing device events in AutoPi Cloud. View the complete history of system and vehicle events, filter events by time, type, and custom tags, and use events as the foundation for triggers, alerts, automation, and troubleshooting. Learn how to configure trip detection using events and create custom events for advanced workflows.
 
         
  
+
+What you'll learn:
+- How to view the complete event history from your device.
+- How to filter events by time interval, event type (System/Vehicle), and event tags.
+- How to use wildcard filters to find specific event patterns.
+- How to leverage events for troubleshooting and historical analysis.
+- How to configure trip detection using event tags.
+- How to create custom events for advanced automation workflows.
+- How to integrate events with triggers, alerts, and operational reporting.
+
+---
 
 ## Event Filters
 
@@ -2402,6 +2445,8 @@ This makes the Events tab especially useful for troubleshooting, because you can
 :::tip 
 When troubleshooting, start with a broader time range and then narrow results by event type and tag to find relevant events faster.
 :::
+
+---
 
 ## Event Types
 
@@ -2421,6 +2466,8 @@ For detailed information about event categories and settings, see:
 - [Vehicle](https://docs.autopi.io/cloud/device_management/events/cloud-events-vehicle/)
 
 These guides list all available events, including each event tag and description, so you can understand what each event represents and how to use it.
+
+---
 
 ## What events can be used for?
 
@@ -2454,6 +2501,8 @@ Then verify the next few trips and adjust again if needed.
 You can also create your own custom events. Once emitted, they will appear in this Events section alongside standard events, making them available for the same trigger, alert, and history workflows. To learn more, see: [How to create custom event for custom logger](https://docs.autopi.io/developer_guides/how-to-create-custom-event-for-custom-logger/). 
 
 > Note: Custom events are not available for AutoPi Mini devices.
+
+---
 
 ## Summary
 
@@ -3091,11 +3140,15 @@ For more details on deploying Docker containers to your AutoPi device, see the [
 
 ---
 
-## Overview of Devices 
+This guide will walk you through the Device Management Overview section in AutoPi Cloud, providing centralized visibility into your entire device fleet. Monitor device activity and connectivity, track alerts by severity level, and manage software updates across all devices to ensure optimal performance and operational efficiency.
 
-The **Overview** section in the AutoPi Cloud Platform (under **Device Management**) provides a centralized view of all your devices. It is designed to help you monitor device activity, track system health, and ensure that your fleet operates efficiently with continuous communication and data exchange.
-
-![Device management overview](/img/cloud/device_management/device_management_intro.png)
+What you'll learn:
+- How to view device connectivity status across multiple time periods.
+- How to monitor device activity (online now, today, and last 30 days).
+- How to identify and prioritize alerts by severity level (Critical, High, Medium, Low).
+- How to track software update status across your fleet.
+- How to identify inactive or underutilized devices.
+- How to use fleet health metrics to maintain optimal performance.
 
 ---
 
@@ -5776,9 +5829,9 @@ Its various features are designed to make it easier to:
 
 ---
 
-The **Locations** feature helps you organize your fleet by creating and managing operational areas for your company—such as regional offices, headquarters, distribution centers, or service hubs. You can assign vehicles to specific locations and control user access based on their assigned areas. Users will only see vehicles and manage operations tied to the locations they have access to.
+This guide will walk you through creating and managing operational locations for your fleet. Organize your vehicles by geographic areas or operational hubs, assign vehicles and users to specific locations, and control access permissions based on location assignments. Use locations alongside templates to maintain consistent fleet configurations across your organization.
 
-To begin, navigate to the **Locations** tab, where you'll see a world map of your existing locations and a list view for easy navigation. 
+## Getting Started with Locations 
 
 ![Locations overview](/img/cloud/fleet_management/locations/new_locations_table.png)
 
@@ -5849,12 +5902,13 @@ This allows you to maintain consistent location configurations across your entir
 
 ## Overview(Fleet_management)
 
-This section provides an overview of your entire fleet, showcasing all vehicles 
-associated with your account. With access to real-time data and advanced fleet 
-management tools, you can efficiently manage, monitor, and optimize your fleet’s 
-operations. 
+---
+
+This section will walk you through the AutoPi Fleet Management dashboard, providing comprehensive visibility into your entire vehicle fleet. Access real-time vehicle locations, status updates, and operational metrics to efficiently manage, monitor, and optimize your fleet's performance and utilization.
 
     
+
+---
 
 ## Fleet Tracking
 ![Fleet map overview](/img/cloud/fleet_management/overview/Fleet_overview_world_map.png)
@@ -6243,16 +6297,18 @@ As new report types become available, additional features and enhancements will 
 
 ## Geofences(Vehicles)
 
-## Overview
+---
 
-Geofences are virtual boundaries on a map that define areas of interest for your fleet. They enable you to monitor vehicle movements in real time and automatically respond to location-based events. With geofences, you can:
+This guide will walk you through creating and managing geofences for your AutoPi fleet. Geofences are virtual boundaries that enable real-time vehicle monitoring, location-based automation, and immediate alerting when vehicles enter or exit designated areas. Learn how to set up geofences, integrate them with templates and triggers, and automate responses both in the cloud and directly on your devices.
 
-* **Monitor deliveries** by tracking when vehicles enter or exit delivery zones
-* **Enforce restricted areas** by preventing vehicles from entering out-of-country regions or unauthorized locations, and receive immediate alerts
-* **Improve safety** by receiving instant notifications when a vehicle crosses a boundary
-* **Automate workflows** by triggering actions (email notifications, webhook requests, or cloud alerts) based on geofence events
-
-Geofences integrate seamlessly with other AutoPi Cloud features. Use **Templates** to apply geofences across your entire fleet at scale, **Triggers** to automate cloud-side responses when vehicles enter or exit designated areas, and **Event Reactors** to execute real-time actions directly on the device — such as playing an audible alert to immediately notify the driver.
+### Key features:
+- Interactive map-based geofence creation with circle and polygon drawing tools.
+- Support for vehicle groups, locations, and individual vehicle assignment.
+- Real-time event monitoring and filtering.
+- Cloud-side triggers for automated notifications and webhooks.
+- On-device event reactors for immediate, time-sensitive actions.
+- Template-based geofence deployment for fleet-wide configuration.
+- Comprehensive geofence event tracking and auditing.
 
 ---
 
@@ -6432,12 +6488,19 @@ To receive immediate alerts when a vehicle enters a restricted area:
 
 ---
 
-## Use Case: Restricted Areas
+## Common use cases:
+- **Delivery Zone Monitoring** — track when vehicles enter or exit assigned delivery areas.
+- **Restricted Area Enforcement** — prevent and alert on unauthorized border or region crossings.
+- **Geofence-Based Automation** — trigger notifications, webhooks, or alerts based on boundary events.
+- **Real-Time Driver Alerts** — play audible warnings on the device when entering sensitive areas.
+- **Fleet-Wide Consistency** — apply standard geofences across large fleets using templates.
+- **Workflow Automation** — integrate geofence events with external systems via webhooks.
+
+### Example Use Case: Restricted Areas
 
 Geofences are particularly useful for enforcing areas where vehicles should never travel. Create geofences around regions you want to prevent vehicles from entering, then set up triggers to notify you immediately when a vehicle violates these boundaries.
 
-### Examples
-
+**Examples:**
 * **Out-of-Country Boundaries**: define geofences around neighboring countries to prevent drivers from crossing international borders.
 * **Off-Limits Zones**: restrict vehicles from entering competitor facilities, dangerous areas, or construction zones.
 * **Authorized Service Areas**: ensure service vehicles only operate within assigned regions.
@@ -6447,6 +6510,20 @@ By combining geofences with triggers, you gain real-time visibility and can take
 ---
 
 ## Groups
+
+---
+
+This guide will walk you through creating and managing vehicle groups to organize your fleet into reusable, logical segments. Vehicle groups enable you to apply configurations, workflows, and policies consistently across multiple vehicles simultaneously, streamlining fleet management and reducing manual configuration tasks.
+
+![Vehicle groups](/img/cloud/fleet_management/vehicles/groups/new_groups.png)
+
+What you'll learn:
+- How to create vehicle groups for organizing your fleet.
+- How to add and remove vehicles from existing groups.
+- How to edit and delete groups as your fleet structure evolves.
+- How to integrate groups with templates for automatic assignments.
+- How to apply geofences to entire groups efficiently.
+- How to use groups in reporting and analytics workflows.
 
 ## What Are Groups?
 
@@ -6458,7 +6535,12 @@ instead of selecting each vehicle one by one.
 Common use cases include applying geofences, configuring templates, and creating
 reports for a specific segment of your fleet.
 
-![Vehicle groups](/img/cloud/fleet_management/vehicles/groups/new_groups.png)
+Key features: 
+- Simple group creation and management interface
+- Quick vehicle search and selection for group membership
+- Integration with templates for automatic group assignment
+- Geofence application at group level
+- Group-based reporting capabilities
 
 ## Create a Vehicle Group
 
@@ -6530,11 +6612,11 @@ Read the main guide: [Geofence Summary Report](/cloud/fleet_management/reports/g
 
 ---
 
-In the Vehicle section you can see all your vehicles, paired with a map showing 
-their latest known position and geofences. In this section, we'll focus on the List tab. The vehicle list displays all 
-your vehicles, along with their designated names and connection. 
+This guide will walk you through managing and viewing your fleet vehicles using the Vehicles List tab. Access comprehensive vehicle information, apply filters and search, customize column visibility, and perform bulk operations through import/export functionality to efficiently manage your entire fleet.
 
 ![Vehicles list](/img/cloud/fleet_management/vehicles/list/vehicles_list.png)
+
+---
 
 ## Vehicle Filters
 Between the world map and the list, you'll find filtering options, which are 
@@ -6567,11 +6649,19 @@ Actions icon lets you request last know location of your vehicle, or edit vehicl
 
 ---
 
-# Automatic Exporting
-When enabled for a device, it will automatically trigger exports when a trip ends, and when an export is finished, it will send notifications (mail and/or JSON Http request)
+This guide will walk you through enabling and managing automatic trip exports for your AutoPi device. Configure your device to automatically export trip data when trips end, receive notifications via email or webhook, and access exported data through the AutoPi API. Learn how to retrieve, process, and manage trip export tasks and their associated data.
+
+### What you'll learn:
+- How to enable automatic trip export functionality per device or fleet-wide via templates.
+- How to understand the trip export workflow and timing.
+- How to configure triggers to receive notifications (email and/or webhooks) when exports complete.
+- How to authenticate with the AutoPi API using API tokens.
+- How to retrieve exported trip data using API endpoints.
+- How to understand the JSON Lines data format for exported trips.
+- How to manually trigger and retrieve trip exports for historical data.
 
 :::tip
-Contact [sales@autopi.io](mailto:support@autopi.io) to get more information.
+Contact [sales@autopi.io](mailto:sales@autopi.io) for information about enabling automatic trip exports on your account.
 :::
 
 ## Endpoints Overview
@@ -6693,8 +6783,6 @@ Now you can use the task ID to retrieve the result, in this case: 100
 ## Introduction(Vehicles)
 
 ---
-
-## Overview
 
 The Trips section provides comprehensive information about vehicle trips. Trips are automatically detected based on events sent from your device. By default, engine start and stop events trigger trip creation, but you can customize this behavior to match your specific needs. When the AutoPi system receives trip start and stop events, it processes them according to specific logic to determine when trips begin and end.
 
@@ -6845,9 +6933,13 @@ For AutoPi TMU CM4 devices, you can set up automatic trip export. Business custo
 
 ## Vehicle Details
 
-The **Vehicle Details** section of AutoPi Cloud centralizes all key information about your vehicles in one place. It provides general vehicle data, real-time widget displays, trip history, active alerts, and diagnostic codes — giving you the tools you need to efficiently manage your fleet and maintain operational performance.
+---
+
+This guide will walk you through accessing and utilizing the Vehicle Details section in AutoPi Cloud. Gain complete visibility into vehicle information, monitor real-time performance metrics through customizable dashboards, review trip history, manage active alerts, and diagnose issues using comprehensive diagnostic data.
 
 ![Vehicle name](/img/cloud/fleet_management/vehicles/vehicle_details/vehicle_name.png)
+
+---
 
 ### Overview
 The **Overview** section presents a summary of key vehicle information through a series of widgets. Here you can find details about the vehicle itself, the fleet it belongs to, active alerts, assigned geofences, and location data. It also displays cumulative statistics on time driven and total distance traveled.
@@ -7380,8 +7472,6 @@ the following are the valid input parameter:
 ## Create CAN Signal Loggers
 
 ---
-
-# Create [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Signal Loggers
 
 [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals play a crucial role in vehicle communication, differing from PIDs in their use and structure. While PIDs (Parameter IDs) are standardized codes used across different vehicles for obtaining specific data points (like engine RPM, temperature), [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) (Controller Area Network) signals are more direct, low-level messages that devices within the vehicle use to communicate with each other. Understanding these differences is key to effectively logging and analyzing vehicle data.
 
@@ -8140,18 +8230,21 @@ described above.
 
 ---
 
-This guide will give an overview of the OBD My Library feature, which is a way to discover the
-available PID's in your car, both hidden and public/default OBD-II, and sharing them with the
-community.
+This guide will walk you through accessing the community OBD library to discover supported PIDs for your vehicle. Learn how devices automatically report supported commands, how to find and add community PIDs to your personal library, how to create and share your own proprietary PIDs, and how to troubleshoot PID detection issues.
 
-We will go over the following topics in this guide.
-* How and when the car reports the supported PIDS.
-* How to find PID's in the Community Library.
-* How to add a PID to your library.
-* How to create (and share) proprietary PID's.
-* Troubleshooting if no PID's are reported from the device.
+![Community library overview](/img/cloud/obd_library/community_library/updated_overview.png)
 
-![Community library overview](/img/cloud/obd_library/community_library/updated_overview.png) 
+What you'll learn:
+- How the device automatically detects and reports supported PIDs from your vehicle.
+- How to access and browse the community library of shared PIDs.
+- How to filter the community library by vehicle make, model, and year.
+- How to add discovered PIDs to your personal library.
+- How to create custom proprietary PIDs with proper formulas and configurations.
+- How to share your PIDs with the community for others to discover and use.
+- How to set up loggers to collect data using community and custom PIDs.
+- How to troubleshoot PID detection and visibility issues.
+
+---
 
 ## How And When The Device Reports The Supported PID's
 When the device connects to the server, it will check the for the following:
@@ -8291,9 +8384,7 @@ See [this guide](/developer_guides/autopi_logs.md) if you are unsure how to get 
 
 ---
 
-In this page we go through the Library section of our Cloud. Below is a screenshot of an example
-Library that is already filled with some PIDs and [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages. Open the screenshot in a
-new tab to get a better overview of the whole page.
+This guide will walk you through managing your personal OBD library in AutoPi Cloud. Create and configure custom PIDs (Parameter IDs) and CAN messages, access the community library to discover and reuse shared definitions, test your configurations, and import vehicle data from DBC files. Learn how to build a comprehensive library of vehicle signals for data logging and analysis.
 
 ![Full library screenshot](/img/cloud/obd_library/library/updated/library_overview.png)
 
@@ -10264,14 +10355,34 @@ Shows this help information.
 
 ## Introduction(Core)
 
-Commands are executed on the device. They can be run remotely from the [Cloud](https://www.autopi.io/software-platform/cloud-management) terminal or through the local dashboard accessible via the WiFi hotspot. Commands can even be executed directly from the Linux shell via the built-in `autopi` executable.
+This guide provides a comprehensive reference for all AutoPi core commands available on your device. Execute powerful device operations remotely from the cloud, locally via WiFi, or directly through the Linux shell. Commands enable you to interact with your vehicle's systems, manage power states, configure logging, and automate complex workflows.
+
+### Execution methods:
+- **Cloud Terminal** — execute commands remotely from the AutoPi Cloud platform. see [Cloud Commands](https://docs.autopi.io/core/commands/core-commands-cloud/). 
+- **Local Terminal** — run commands locally via the device's WiFi hotspot. See [Local Development Workflow](https://docs.autopi.io/developer_guides/local-development-workflow/) for detailed setup instructions. 
+- **SSH** — execute commands remotely over SSH for secure access to your device. See [How to SSH to Your Device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) for connection setup.
+- **REST API** — programmatic command execution for automation and integration. See [Rest API execute](https://api.autopi.io/#/dongle-execute-create).
+
+### Common command categories:
+- **[OBD Commands](http://docs.autopi.io/core/commands/core-commands-obd/)** — query vehicle data, send OBD requests, analyze CAN messages.
+- **[Power Management](https://docs.autopi.io/core/commands/core-commands-power/)** — control power states, manage sleep timers, monitor voltage.
+- **[Service Management](https://docs.autopi.io/core/services/)** — start, stop, and configure device services.
+- **[System Commands](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-system/)** — monitor device metrics, retrieve logs, manage configurations.
+- **[CAN Logging](https://docs.autopi.io/core/commands/core-commands-can/) and Data Collection** — configure loggers, manage data streams, export data.
+- **[Network Commands](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-system/#network)** — manage connectivity, configure network interfaces.
+- **[Custom Commands](https://docs.autopi.io/cloud/device_management/custom-code/)** — create and execute Python-based custom automation.
+
+### Key features:
+- Multi-interface execution (Cloud, local, CLI).
+- Real-time command feedback and response data.
+- Error handling and troubleshooting information.
+- Command chaining and automation support.
+- REST API integration for programmatic access.
+- Python support for custom command development.
+- Comprehensive command reference documentation.
 
 :::note
-You can actually program your own commands in Python through the [AutoPi](https://www.autopi.io) Cloud. When logged in go to: _Device_ -> _Custom Code_
-:::
-
-:::tip
-Like any [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) functionality, commands can be executed programmatically through the [AutoPi](https://www.autopi.io) REST API. For more information see: https://api.autopi.io/#dongle-execute-create
+You can create your own custom commands in Python through the [AutoPi](https://www.autopi.io) Cloud. When logged in, go to: _Device_ -> _Custom Code_
 :::
 
 ---
@@ -11806,9 +11917,26 @@ See all the available power events [here](/cloud/device_management/events/system
 
 ## Introduction(5)
 
+---
+
+This guide will walk you through understanding and managing the power consumption of your AutoPi device. Learn how the device transitions between operational states (On, Sleeping, Hibernating), configure power cycles and sleep timers, monitor status via LED indicators, and optimize power management for your specific vehicle type and use case.
+
+Common use cases:
+- **Power Optimization** — configure sleep timers and wake triggers to balance responsiveness and battery conservation.
+- **Battery Protection** — set up hibernation thresholds to prevent vehicle battery depletion.
+- **Extended Downtime** — manage device behavior when vehicles are parked for extended periods.
+- **Vehicle Type Configuration** — optimize power management for internal combustion or electric vehicles.
+- **Status Monitoring** — use LED indicators to verify device state and diagnose power-related issues.
+- **Connectivity Management** — configure modem power-saving options for cost and power efficiency.
+- **Troubleshooting** — diagnose power cycle issues and verify proper state transitions.
+
 :::tip
-For power cycle, LED and button information on the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4), please see [configuration here](/hardware/autopi_tmu_cm4/led_and_button.mdx)
+For power cycle, LED, and button information on the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4), please see [configuration here](/hardware/autopi_tmu_cm4/led_and_button.mdx)
 :::
+
+---
+
+## Power Management Architecture
 
 The power management of the device consists of a low- and high-level layer. For further details please see: 
 
@@ -11939,6 +12067,10 @@ The green LED indicates the current state of the [high-level](/core/power_manage
 | Turned off | Not running or in the process of booting up. |
 | Flashing brightly | Up and running but NOT (yet) connected to the [Cloud](https://www.autopi.io/software-platform/cloud-management). |
 | Constantly bright | Up and running and connected to the [Cloud](https://www.autopi.io/software-platform/cloud-management). |
+
+:::note
+For LED light indicators on the AutoPi Mini device, see [LED Lights of an AutoPi Mini Device](/hardware/autopi_mini/device_specifications/#led-lights-of-an-autopi-mini-device).
+:::
 
 ---
 
@@ -12305,7 +12437,32 @@ Publishes an entire job result on the minion`s local event bus.
 
 ## Introduction(6)
 
-Returners are executed on the device and are responsible for transferring command results, events and other data to a given system or endpoint. In an upcoming release it will be possible for users to code their own custom returners in Python.
+---
+
+This guide provides a comprehensive reference for returners, which are responsible for transferring command results, events, and other data from your device to specified systems and endpoints. Learn how to configure different returner types to route data to cloud storage, external systems, event handlers, and message brokers.
+
+### Returner Types:
+Returners enable flexible data routing to multiple destinations. The following returner types are available:
+
+- **[Cloud Returner](https://docs.autopi.io/core/returners/core-returners-cloud/)** — transfer data directly to the AutoPi Cloud platform for storage and analysis.
+- **[Cloud JSONL Returner](https://docs.autopi.io/core/returners/core-returners-cloud-jsonl/)** — export data to cloud storage in JSONL (JSON Lines) format for efficient data handling.
+- **[Event Returner](https://docs.autopi.io/core/returners/core-returners-event/)** — route events to AutoPi Cloud event system for real-time processing and triggering.
+- **[Event Result Returner](https://docs.autopi.io/core/returners/core-returners-event-result/)** — handle and return results from event-triggered actions.
+- **[JSONL Returner](https://docs.autopi.io/core/returners/core-returners-jsonl/)** — export command results and data in JSONL format for external processing. 
+- **[MQTT Returner](https://docs.autopi.io/core/returners/core-returners-mqtt/)** — stream device data and events to MQTT brokers for integration with IoT systems.
+
+### Key features:
+- Multiple returner types for different use cases.
+- JSONL format support for structured data exchange.
+- Cloud platform integration.
+- Event and result handling.
+- MQTT messaging support.
+- Python support for custom returners.
+- Flexible data routing to multiple endpoints.
+
+:::tip
+You can also create custom returners for specialized use cases. See [Creating Custom Returners](https://docs.autopi.io/cloud/device_management/services/create-custom-returners/) for detailed instructions on building your own returner solutions.
+:::
 
 ---
 
@@ -13096,11 +13253,24 @@ Listens for position results and triggers position unknown/standstill/moving eve
 
 ## Introduction(7)
 
-A variety of services are running on the device, each having its own specific area of responsibility. Most services are built around the same structure and using the same concepts which are described below.
+---
+
+This guide provides a comprehensive reference for the services running on your AutoPi device. Understand how services are structured and configured, learn how workers and workflows process data, configure reactors to automate responses to device events, and extend functionality using custom hooks for specialized processing.
+
+### Key features:
+- Modular service architecture with configurable settings.
+- Worker threads with customizable timing and execution parameters.
+- Two workflow types (Simple and Extended) for different processing needs.
+- Workflow steps with defined responsibilities (handler, converter, trigger, filter, enricher, returner).
+- Reactor system for event-driven automation.
+- Custom hook support for extensible data processing.
+- Cloud-based service management and configuration.
 
 :::note
 Services can be setup and configured from the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management). When logged in go to: _Device_ > _Services_
 :::
+
+---
 
 ## Settings
 
@@ -13775,11 +13945,24 @@ Listens for position results and triggers position unknown/standstill/moving eve
 ## Accessing Raw GPS Data (10 Hz)
 
 ---
-This guide explains how to enable and stream raw GPS (NMEA) data at 10 Hz from your AutoPi device.
 
-## Overview 
-By default, the device’s `GNSS Manager` service handles GPS communication. To stream raw NMEA data directly, this service must first be disabled to free up the serial (TTY) port used for GPS communication.
-Once disabled, you can use a simple Python script mentioned below to configure the GPS polling rate, enable streaming mode, and read data from the serial output in real time.
+This guide will walk you through enabling and streaming raw GPS (NMEA) data at 10 Hz from your AutoPi device. By disabling the default GNSS Manager service and using a custom Python script, you can access real-time, unprocessed GPS data directly from the serial port for advanced positioning and navigation applications.
+
+### Common use cases:
+- **High-Precision Tracking** — applications requiring 10 Hz GPS updates for precise location tracking.
+- **Custom GPS Processing** — parse and filter specific NMEA messages for specialized applications.
+- **Research & Development** — access raw GPS data for positioning algorithm development.
+- **Autonomous Navigation** — integrate real-time GPS data for autonomous vehicle systems.
+- **Data Logging** — capture continuous GPS streams for later analysis.
+
+### Prerequisites:
+- Access to your AutoPi device's Cloud dashboard (my.autopi.io).
+- Basic Python programming knowledge.
+- Understanding of NMEA GPS data format.
+- SSH access to your device (optional, for advanced troubleshooting).
+- Permissions to disable device services.
+
+---
 
 ## Steps
 
@@ -13942,9 +14125,26 @@ If the script runs but no NMEA data is printed:
 
 ---
 
-In this guide we will talk about how you can manage your AutoPi's logs. The topics that we will
-cover are how you can view your device's logs and how you can download the log files to your
-computer.
+This guide will walk you through accessing and downloading AutoPi device logs for troubleshooting and support purposes. You'll learn how to view logs through AutoPi Cloud, access them directly via SSH, download log files using multiple methods (local admin interface, SCP, or Dropbox), and understand how log rotation works on your device.
+
+Device logs are essential for diagnosing issues, investigating unexpected behavior, and providing detailed information to the AutoPi support team. This guide covers all the primary methods for retrieving and managing your logs.
+
+**What you'll learn:**
+- Viewing device logs through AutoPi Cloud terminal.
+- Accessing logs directly on the device via SSH.
+- Downloading log files to your computer (three methods).
+- Understanding log file types and locations.
+- Working with log rotation and file management.
+
+**Common log files:**
+- `/var/log/salt/minion` — primary AutoPi system logs (rotated weekly).
+- `/var/log/syslog` — system-wide logs (rotated daily).
+
+:::tip
+Remember that all timestamps in device logs are in UTC (Coordinated Universal Time).
+:::
+
+---
 
 ## Viewing Logs
 
@@ -14752,29 +14952,20 @@ Use this final checklist before sharing dashboards with other users:
 
 ---
 
-## Overview
+This guide will walk you through setting up complete MQTT connectivity between your AutoPi device and a Mosquitto broker. You'll learn how to install and configure a Mosquitto broker, connect your device in direct-connect or broker-bridge mode, enable MQTT returners for common data sources (loggers, services, and jobs), and validate your setup with end-to-end testing and troubleshooting guidance.
 
-This guide walks you through a complete MQTT setup between an AutoPi device and a Mosquitto broker.
+**What you'll accomplish:**
+- Install and configure a Mosquitto MQTT broker on Linux.
+- Connect your AutoPi device in direct-connect or broker-bridge mode.
+- Enable MQTT returners on loggers, services, and jobs.
+- Validate data flow and troubleshoot connectivity issues.
+- Prepare your setup for production use.
 
-By the end, you will have:
-
-1. A working MQTT broker on Linux.
-2. An AutoPi device connected in either direct-connect or broker-bridge mode.
-3. MQTT returners enabled on common data sources (loggers, services, jobs).
-4. A validation flow and troubleshooting checklist.
-
-## Before You Start
-
-Make sure you have the following:
-
-* A Linux server reachable by your AutoPi device (examples use Debian 11).
-* AutoPi Cloud permissions to edit Advanced Settings, Services, Loggers, and Jobs. Read more here: [Account Permissions](https://docs.autopi.io/cloud/accounts/#modifying-user-permissions).
-* Network access from device to broker on the MQTT port:
-    * 1883 for non-TLS
-    * 8883 for TLS
-* A mode choice:
-    * Direct-connect mode: faster setup, but no local buffering during outages.
-    * Broker-bridge mode: more resilient, with buffering on the device.
+**Before you start, ensure you have:**
+- A Linux server reachable by your AutoPi device (examples use Debian 11).
+- AutoPi Cloud permissions to edit Advanced Settings, Services, Loggers, and Jobs — see [Account Permissions](https://docs.autopi.io/cloud/accounts/#modifying-user-permissions).
+- Network access from device to broker on MQTT ports (1883 for non-TLS, 8883 for TLS).
+- A connection mode choice: direct-connect (fast testing) or broker-bridge (resilient with buffering).
 
 :::info
 If you are unsure which mode to use, start with direct-connect mode for testing, then move to broker-bridge mode for production-like behavior.
@@ -14787,6 +14978,8 @@ The initial broker setup in this guide is intended for testing. Do not use `allo
 :::note
 This setup is not available for AutoPi Mini devices. There might be a different option available at no cost. If you are interested, contact our sales team at sales@autopi.io.
 :::
+
+---
 
 ## 1. Set Up the Endpoint Broker
 
@@ -15026,15 +15219,18 @@ Before moving to production:
 ## Enabling Bluetooth on Legacy Devices With STN Chips
 
 :::note
-  This guide only works with legacy devices using STN/ELM based chips for automotive interface. No devices sold after February 2021 contains the STN chip. 
-
-  If you have a newer AutoPi device (such as TMU CM4 or CAN-FD Pro), follow the [newer Bluetooth guide](./how_to_use_bluepy.md).
+This guide is for legacy AutoPi devices using STN/ELM-based chips for automotive interface. Devices sold after February 2021 do not contain the STN chip. For newer devices (TMU CM4, CAN-FD Pro), see the [Bluetooth guide for modern devices](./how_to_use_bluepy.md).
 :::
 
-In this guide we will take a look at how you can enable Bluetooth for [AutoPi](https://www.autopi.io) devices that use the
-STN chip. By default the STN chip and Bluetooth don't work well together, so we will need to disable
-the STN chip entirely in order to get the Bluetooth functionality to work properly and the device to
-be kept running despite the STN chip's absence.
+This guide will walk you through enabling Bluetooth functionality on legacy AutoPi devices with STN chips. Since the STN chip and Bluetooth do not work well together by default, you'll learn how to disable the STN chip while keeping your device running, and then enable Bluetooth for use with your AutoPi.
+
+**Steps you'll complete:**
+- Disable the STN chip's UART sleep functionality
+- Disable the OBD manager service
+- Enable and configure Bluetooth
+- Optionally establish direct communication with the STN chip
+
+---
 
 ## Enabling Bluetooth
 1. **Disable uart_sleep**  
@@ -15123,13 +15319,34 @@ If you need to execute other commands, you will need to consult the
 
 ---
 
+This guide will walk you through enabling and configuring UART 2 on your AutoPi TMU CM4 device to support external serial communication. You'll learn how to wire the necessary GPIO pins, configure the Raspberry Pi firmware to expose the serial port, test the connection, and use the UART with Python for real-world applications like GPS modules, CAN bridges, industrial sensors, and other serial devices.
+
+**What you'll accomplish:**
+- Wire GPIO 0 and GPIO 1 for UART 2 TX and RX signals.
+- Enable UART 2 in the Raspberry Pi firmware configuration.
+- Verify serial communication with a loop-back test.
+- Use Python to read from and write to the external serial port.
+- Troubleshoot common UART configuration issues.
+
+**Common use cases for external UART:**
+- Adding GNSS (GPS) modules for continuous NMEA sentence streaming.
+- Connecting OBD-II dongles while keeping the main vehicular interface free.
+- Bridging to RS-232/RS-485 industrial sensors via 3-wire connections.
+- Debugging other microcontroller boot output and console logs.
+
+:::caution Level shifting
+If your external device operates at 5V TTL or ±12V RS-232, you **must** use a level shifter or line driver (e.g., MAX3232, SN65HVD230). Direct 5V connections to a CM4 pin can permanently damage the SoC.
+:::
+
+---
+
 ## Overview
 
 A UART (Universal Asynchronous Receiver/Transmitter) is the simplest and most widely supported way to move serial data between two devices. On an AutoPi TMU CM4 you already have one UART occupied by the automotive interface, but many real‑world projects—GPS receivers, CAN bridges, industrial sensors or even another microcontroller—need a *second* serial interface.
 
 > **Goal** – Re‑purpose the built‑in **UART 2** of the CM4 and break it out on the HAT so your add‑on hardware can talk to the AutoPi at 300 baud or 4 Mbit/s and everything in between.
 
-By the end of this page you will have:
+By the end of this guuide you will have:
 
 * **Wired** the right pins
 * **Edited** the Raspberry Pi firmware so it exposes `/dev/ttyAMA1`, and
@@ -15306,12 +15523,20 @@ Use `core_freq_min=250` to keep the UART clock stable during idle throttling, an
 
 ---
 
-This guide walks you through creating a custom event for your own logger script. This is useful when you want your AutoPi device to react to specific conditions like determining when a trip has started or ended based on your own parameters.
+This guide will walk you through creating a custom event for your own logger script. Custom events enable your AutoPi device to autonomously react to specific conditions and trigger actions based on your defined parameters—such as detecting trip start/end conditions, monitoring battery voltage thresholds, or responding to real-time sensor data.
 
-We'll go step-by-step through:
-* Creating a custom execution script
-* Hooking it into the OBD Manager
-* Enabling it on a CAN logger
+### Common use cases:
+- **Threshold Monitoring** — trigger events when sensor values exceed specified limits.
+- **Battery Management** — react to high-voltage battery state changes.
+- **Data Processing** — pre-process logger output before indexing to reduce data storage.
+
+### Prerequisites:
+- Access to your AutoPi device's Custom Code section.
+- Understanding of basic Python programming.
+- Familiarity with the OBD Manager and CAN Logger configuration.
+- Knowledge of AutoPi's event system and data structures.
+
+---
 
 ## Step 1: Create a Custom Execution Script
 Start by creating a new custom module. In this example, we’ll call it `custom_event`.
@@ -15384,20 +15609,17 @@ You now have a custom trigger configured for your custom logger. Your AutoPi dev
 
 ---
 
-There are several ways to connect to your AutoPi device. This guide explains how to access your device remotely using **SSH (Secure Shell)**. SSH allows you to open a terminal session on your AutoPi device and run commands remotely.
+This guide will walk you through accessing your AutoPi device remotely using SSH (Secure Shell). You'll learn how to connect through multiple methods: device hotspot, local Wi-Fi network, Tailscale VPN, and WireGuard VPN. The guide covers SSH setup and connection procedures, file transfer using SCP, and executing AutoPi commands remotely from your terminal.
+
+**Connection methods covered:**
+- Device hotspot.
+- Local Wi-Fi network.
+- Tailscale VPN.
+- WireGuard VPN.
 
 :::note
-SSH access is **not available for AutoPi Mini devices**.
+SSH access is not available for AutoPi Mini devices.
 :::
-
-## How to SSH into Your Device
-
-You can connect to your AutoPi device using several different methods depending on your setup:
-
-* Connect to the device's **Hotspot**.
-* Connect through your **local Wi-Fi network**.
-* Connect using **Tailscale**. 
-* Connect using **WireGuard**.
 
 ---
 
@@ -15526,12 +15748,21 @@ Running commands through SSH can be useful for:
 
 ---
 
-## Introduction
-[AutoPi](https://www.autopi.io) Core relies on BluePy and Bluez packages built into the Linux core on the device. 
+This guide will walk you through enabling and using Bluetooth functionality on AutoPi devices. You'll learn how to enable Bluetooth in your device settings, use the built-in Bluetooth scan command, and implement custom Bluetooth applications using the BluePy library. The guide includes practical code examples for scanning, connecting, reading/writing characteristics, handling notifications, and error handling.
 
 :::note
-If you are using an older AutoPi device with an STN/ELM chip, follow the [legacy Bluetooth guide](./enabling_bluetooth_on_TMU_devices.md). This guide is intended for newer devices such as AutoPi TMU CM4 and AutoPi CAN-FD Pro.
+If you are using an older AutoPi device with an STN/ELM chip, follow the [legacy Bluetooth guide](./enabling_bluetooth_on_TMU_devices.md). This guide is for newer devices: AutoPi TMU CM4 and AutoPi CAN-FD Pro.
 :::
+
+**What you'll learn:**
+- Enabling Bluetooth in device settings.
+- Using the built-in Bluetooth scan command.
+- Scanning for Bluetooth devices with BluePy.
+- Connecting to and interacting with Bluetooth devices.
+- Reading and writing characteristics.
+- Handling notifications and errors.
+
+---
 
 ## Prerequisites
 - AutoPi [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) or AutoPi [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) device
@@ -16098,12 +16329,18 @@ If you have questions or feedback, contact us at support@autopi.io.
 
 ---
 
-This guide will explore how you can attach an external USB camera to your [AutoPi](https://www.autopi.io) device and make some use out of it.
-There is one prerequisite however - you need to be able to SSH into your dongle. We already have a guide on that which you can
-take a look at [here](/developer_guides/how-to-ssh-to-your-device/).
+This guide will walk you through attaching an external USB camera to your AutoPi device and configuring it for video streaming and recording. You'll learn how to install and configure motion and MotionEye software, set up video recording and motion detection, access the camera feed through a web interface, and fine-tune camera settings for your environment.
 
-Firstly, we need to do some initial setup to get the [AutoPi](https://www.autopi.io) ready to use an external USB web camera. Let's start with the
-software that we're going to use:
+**Prerequisites:**
+- SSH access to your AutoPi device — see [How to SSH to Your Device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/).
+- A USB web camera compatible with Linux.
+- Basic familiarity with command-line SSH operations.
+
+---
+
+## Software Overview
+
+This guide uses two key software components:
 
 1. [motion](https://motion-project.github.io/motion_guide.html) - Motion is a daemon service that is responsible for communicating
 with the camera. It'll setup the devices (`/dev/video*`) and get them started.
@@ -16231,20 +16468,13 @@ Afterwards, there is a long list of the description of each option.
 
 ---
 
-## Overview
+This guide will walk you through understanding and using the FORCE 5V jumper on your AutoPi device. You'll learn what jumpers are, how they override the Smart Power Manager (SPM), when to install them for development work, and how to properly install and remove them while maintaining device safety.
 
-A **jumper** is a small electrical connector used to short two header pins on a PCB. When installed, it electrically connects the pins and changes the behavior of the circuit by enabling or disabling specific hardware functions.
+A jumper is a small electrical connector that shorts two header pins on the device's circuit board. On AutoPi devices, the FORCE 5V jumper disables the Smart Power Manager and forces the Raspberry Pi compute module to receive constant 5V power, independent of vehicle ignition state or power management controls.
 
-On AutoPi devices, the jumper is used to **override the Smart Power Manager (SPM)** and force the internal Raspberry Pi compute module to receive a constant **5 V supply**.
-
-This configuration is primarily intended for:
-* Developing firmware interacting with the SPM
-* Debugging unexpected shutdowns or sleep events
-* Running long development workloads
-* Testing boot processes or system initialization
-* Performing low-level hardware diagnostics.
-
-Because this configuration bypasses the normal power management mechanisms, it should **only be used for development purposes**.
+:::warning
+**Important:** the jumper is intended **exclusively for development purposes**. It bypasses critical power management and battery protection mechanisms and should never be used in production environments.
+:::
 
 ---
 
@@ -16374,9 +16604,16 @@ The `FORCE 5V` jumper is a hardware override that disables the Smart Power Manag
 
 ---
 
-# AutoPi Local API Overview
+This guide will walk you through using the AutoPi Local API to interact with your device directly over the local network. You'll learn how to authenticate, execute commands, retrieve device information, download logs, and configure network and APN settings through REST endpoints accessible on port 9000.
 
-The AutoPi Local API provides a set of REST endpoints to interact with your local AutoPi device. The API is typically accessible on port `9000` of the device.
+The Local API provides direct device control without requiring an internet connection or cloud platform access. It's useful for local development, testing, configuration management, and troubleshooting when your device is on the same network as your computer or client application.
+
+**Key capabilities:**
+- **Authentication** — obtain JWT tokens for API access.
+- **Device Management** — query device information and connected units.
+- **Command Execution** — run AutoPi commands and state configurations.
+- **Log Access** — download system and application logs.
+- **Network Configuration** — manage WiFi and cellular (APN) settings.
 
 ---
 
@@ -16714,27 +16951,17 @@ All endpoints return structured error responses if something goes wrong.
 
 ---
 
-When you build or debug modules, speed matters. A cloud-only workflow is reliable for deployment, but it is often too slow for everyday development.
+This guide will walk you through establishing an efficient local development workflow for building and debugging AutoPi modules. You'll learn when to use cloud versus local development approaches, how to edit and test code directly on your device via SSH, how to sync changes from your local machine to the device, and how to optimize your feedback loop for rapid iteration.
 
-Typical cloud-only loop:
+While cloud-based workflows are ideal for reliable fleet management and final deployments, local development provides significantly faster iteration cycles. This guide demonstrates two complementary approaches: developing directly on the device and developing locally with automated sync to the device.
 
-1. Make changes.
-2. Push/sync changes to the device.
-3. Restart services.
-4. Execute module.
-5. Repeat.
+**What you'll learn:**
+- When to use cloud versus local development workflows.
+- How to develop and test directly on the device over SSH.
+- How to develop locally and sync changes efficiently (recommended approach).
+- When to refresh modules versus restart the minion service.
 
-For active development, a local workflow gives a much faster feedback loop and a better developer experience. In this guide, you will learn:
-
-* When to use cloud vs local workflows.
-* How to develop directly on the device over SSH.
-* How to develop locally and sync changes to the device (recommended).
-* How to choose between refreshing modules and restarting the minion.
-
-:::note 
-Recommended workflow - use the **[AutoPi Cloud](https://www.autopi.io/software-platform/cloud-management)** for fleet management, configuration, and final rollouts.
-Use **local or SSH-based workflows** for rapid iteration, debugging, and testing.
-:::
+**Recommended workflow:** use the [AutoPi Cloud](https://www.autopi.io/software-platform/cloud-management) for fleet management, configuration, and final rollouts. Use local or SSH-based workflows for rapid iteration, debugging, and testing.
 
 ---
 
@@ -17164,25 +17391,22 @@ You should now be able to make configuration changes, execute commands and so on
 
 ---
 
-This guide explains how to reflash your AutoPi device with a fresh AutoPi OS image. Reflashing is useful for recovery and troubleshooting, but it changes low-level device software and should be performed carefully. Before you begin, confirm your device version, use the correct image, and follow each step in order to reduce the risk of configuration issues or data loss.
+This guide will walk you through reflashing your AutoPi device with a fresh AutoPi OS image. You'll learn how to download the correct image for your device, set up flashing tools, connect your device storage media (either SD card for pre-CM4 devices or eMMC for CM4 devices), flash the image, and complete the device setup and registration process.
+
+Reflashing is useful for device recovery and troubleshooting but involves changing low-level device software and should be performed carefully. The process varies slightly depending on your AutoPi hardware version and host operating system (verified on Pop!_OS 6.1 and Windows 10).
 
 :::warning
 Only use this guide if you are comfortable working directly with device firmware. Reflashing should not be performed on a fully operational production device unless necessary. If you are unsure about any step, contact our [Support team](mailto:support@autopi.io) before proceeding.
 :::
 
-The reflashing process varies slightly depending on your AutoPi hardware version and host operating system. The steps in this guide were verified on Pop!_OS 6.1 (Debian-based) and Windows 10.
-
-**Reflashing Quick Start Summary:**
-
-1. Download the AutoPi OS image.
-2. Set up Balena Etcher (or an alternative tool).
-3. Connect the device storage media:
-    - Pre-CM4 devices (versions 3.0-6.3)
-    - CM4 devices (version 7.x+)
-4. Flash the image.
-5. (Optional) Ensure your device is connecting to the correct environment.
-6. Complete initial device setup.
-7. Update your device from the Cloud.
+**Steps you'll complete:**
+1. Download the correct AutoPi OS image for your board version.
+2. Set up Balena Etcher (or alternative flashing tool).
+3. Connect your device storage media (SD card or eMMC).
+4. Flash the OS image to your device.
+5. Ensure your device connects to the correct environment.
+6. Complete device setup and registration.
+7. Update your device from AutoPi Cloud.
 
 ---
 
@@ -17655,17 +17879,23 @@ Key points:
 
 ---
 
-This guide explains how to integrate a USB RFID reader with your [AutoPi](https://www.autopi.io) device and configure RFID-based access tracking in [AutoPi Cloud](https://my.autopi.io).
+This guide will walk you through integrating a USB RFID reader with your AutoPi device and configuring RFID-based access tracking in AutoPi Cloud. You'll learn how to enable RFID functionality, configure your reader, create workers and reactors, assign tokens to users, and monitor vehicle access through the Access Control system and System Events.
 
-With this setup, drivers or operators scan an RFID card or chip before using a vehicle. AutoPi Cloud then records the authentication attempt in Access Control and System Events, giving you clear visibility into who used which vehicle, when, and for how long.
+RFID integration enables driver identification and vehicle access control by requiring authorized users to scan their RFID cards or chips before vehicle operation. AutoPi Cloud records all authentication attempts and provides complete visibility into who used which vehicle, when, and for how long.
 
-Typical benefits include:
-- Better vehicle accountability.
-- Easier investigation by linking incidents to specific drivers or operators.
-- More accurate tracking of working hours based on scan history.
+**Benefits of RFID integration:**
+- Enhanced vehicle accountability and driver identification.
+- Improved investigation capabilities by linking incidents to specific operators.
+- Accurate tracking of working hours and vehicle usage patterns.
+- Theft prevention through unauthorized access alerts.
+- Asset and equipment tracking using RFID tags.
 
 :::tip
-Connect the RFID reader over USB and use a model that behaves as a keyboard input device (HID). Other reader types may work, but HID readers are the officially verified option.
+Use a USB RFID reader that behaves as a keyboard input device (HID) for best compatibility. HID readers are the officially verified option for AutoPi integration.
+:::
+
+:::note
+If RFID does not appear in your Advanced Settings, contact [support@autopi.io](mailto:support@autopi.io). The feature can be enabled for your account at no additional cost.
 :::
 
 ---
@@ -17867,21 +18097,31 @@ RFID integration provides an additional layer of security and automation while i
 
 ---
 
+This guide will walk you through setting up Docker on your AutoPi device and deploying containerized applications through AutoPi Cloud. You'll learn how to configure Docker registries, create projects, define releases, configure runtime settings, and troubleshoot common deployment issues.
+
+Docker support enables you to run containerized applications directly on your AutoPi device, extending its capabilities beyond standard edge processing. This is particularly useful for deploying AI/ML services, custom backend services, data processing pipelines, communication bridges, MQTT processors, and other advanced workloads.
+
+**Common use cases:**
+- AI/ML inference services (TensorFlow, PyTorch).
+- Custom data processing and transformation pipelines.
+- MQTT brokers and message processors.
+- Backend microservices and APIs.
+- Hardware bridge services for CAN, GPS, and sensor integration.
+
 :::tip New to Docker on AutoPi?
-For an introduction to what Docker support is, why to use it, and example use cases, see [**Docker on AutoPi**](https://docs.autopi.io/cloud/docker-on-autopi/) before following this setup guide.
+For an introduction to Docker support, why to use it, and architectural overview, see [Docker on AutoPi](https://docs.autopi.io/cloud/docker-on-autopi/) before following this setup guide.
 :::
 
-## Overview
+:::note Prerequisites
+1. **Docker add-on enabled** — Docker support is an optional add-on. Contact **sales@autopi.io** to enable it for your account.
+2. **Docker enabled in device settings** — Navigate to AutoPi Cloud > Advanced Settings > Docker and ensure it's enabled for your device.
+:::
 
-This guide explains how to set up Docker on your AutoPi device and deploy containers through the AutoPi Cloud. It also covers registries, projects, releases, optional features, runtime configuration, and troubleshooting.
+---
 
-AutoPi devices support running Docker containers directly on the unit. This enables you to deploy applications such as:
-* AI/ML services  
-* Custom scripts or backend services  
-* Data processing pipelines  
-* Communication bridges or MQTT processors  
+## Deployment Architecture
 
-The deployment flow works like this:
+The Docker deployment flow on AutoPi works through a layered model:
 
 1. Build and store your container in a **Docker registry**.
 2. Group your container builds in an AutoPi **project**.
@@ -17889,6 +18129,7 @@ The deployment flow works like this:
 4. Deploy the release to your AutoPi **device**.
 
 ---
+
 ## Understanding Registries, Projects, and Releases
 
 :::note
@@ -18240,30 +18481,71 @@ For DoIP manager service commands, see [Core services: DoIP manager](https://doc
 
 ---
 
-We have had serveral different users report issues with setting up the 4G Dongle on Verizon Wireless.
+This guide will walk you through setting up your AutoPi device with Verizon Wireless. Verizon requires IMEI number registration for SIM activation, which can present challenges since the AutoPi's IMEI is not recognized by Verizon's system. This guide provides a verified method to work around this limitation and successfully activate your device on Verizon's network.
 
-The issue is that Verizon requires an IMEI number to register the SIM. And while the [AutoPi](https://www.autopi.io) does have an IMEI, this is just not recognized by Verizon’s system and the setup fails.
+**Setup steps:**
+1. Register the SIM with Verizon using a compatible device (smartphone or tablet).
+2. Insert the SIM into your AutoPi device.
+3. Configure the APN settings for Verizon.
+4. Complete device setup and verification.
 
-This is a verified method of setting it up:
+---
 
-1. If you have a brand-new SIM you must use another device (Tablet or smartphone) to register the SIM with Verizon. Use the IMEI from that device.
-2. If you have a SIM that is already registered on Verizon’s network, you can go ahead and use the SIM.
-3. Follow this guide for inserting the SIM in the device: https://www.autopi.io/getting-started
-4. Instead of the preselected APN settings, use this string: vzwinternet
+## Setup Instructions
 
-That's it! You should now be able to use your AutoPi device with Verizon Wireless.
+### Step 1: Register SIM with Verizon
+
+If you have a brand-new SIM card, you must first register it with Verizon using a different device:
+
+- Use a smartphone or tablet with a recognized IMEI.
+- Register the SIM using that device's IMEI.
+- This ensures the SIM is properly activated on Verizon's network.
+
+If your SIM is already registered on Verizon's network, you can proceed directly to Step 2.
+
+### Step 2: Insert SIM into AutoPi Device
+
+Follow the SIM insertion procedure documented in the [AutoPi Getting Started guide](https://docs.autopi.io/getting_started/autopi_tmu_cm4/).
+
+### Step 3: Configure APN Settings
+
+When setting up your device, use the following APN configuration instead of the preselected default:
+
+**APN String:** `vzwinternet`
+
+### Step 4: Complete Setup
+
+After configuring the APN, complete your device setup and verify that your AutoPi device successfully connects to Verizon's 4G network.
+
+---
+
+## Verification
+
+Once setup is complete, your AutoPi device should be able to communicate with Verizon's network and begin transmitting data through AutoPi Cloud.
 
 ---
 
 ## Upgrade/Replace Your Raspberry Pi Computer
 
-:::caution Before proceeding with the upgrade
-Please read the **whole guide** in order to have a good understanding of how all the components fit together.
+This guide will walk you through safely disassembling your AutoPi device, removing and replacing the Raspberry Pi computer, and reassembling everything with proper cable connections. The guide includes detailed step-by-step instructions with visual references for both disassembly and assembly, plus essential post-upgrade steps for registering your new device in AutoPi Cloud.
 
-You need to be careful not to tear or damage some of the cables when handling the casing of the device.
+Upgrading or replacing your Raspberry Pi is a delicate process that requires careful handling of internal cables and connectors. Read this guide completely before beginning to ensure you understand how all components fit together and to avoid damaging cables or connections.
+
+**What you'll accomplish:**
+- Safely disassemble your AutoPi device.
+- Remove the existing Raspberry Pi and disconnect all cables.
+- Install a new Raspberry Pi computer.
+- Properly reconnect all internal cables and antennas.
+- Reassemble the device enclosure.
+- Register the new device in AutoPi Cloud.
+
+:::caution Before proceeding with the upgrade
+Please read the **entire guide** to understand how all the components fit together. Be especially careful not to tear or damage cables when handling the device casing or removing internal components. When in doubt, refer to the visual guides provided for each step.
 :::
 
-### Disassembling the [AutoPi](https://www.autopi.io) Device
+---
+
+### Disassembling the AutoPi Device
 
 	
 		Step 1: On the bottom side of the device,
@@ -18476,13 +18758,33 @@ You need to be careful not to tear or damage some of the cables when handling th
 
 ---
 
-AutoPi devices are preconfigured for in-vehicle use. For lab or bench setups, you can safely power the device with an external power supply through the OBD connector.
+This guide will walk you through safely powering your AutoPi device using an external power supply through the OBD connector. This approach is ideal for development, testing, and troubleshooting scenarios where vehicle-based power is unavailable.
+
+### What you'll learn:
+- How to correctly connect an external power supply to your AutoPi device.
+- Power supply requirements and safety considerations.
+- How to manage sleep timers and power states during bench testing.
+- Best practices for lab and testing environments.
+
+### Common use cases:
+- **Configuration Validation** — test settings and configurations before vehicle deployment.
+- **Issue Reproduction** — reproduce and debug problems in a controlled environment.
+- **Development Testing** — develop and test features without vehicle access.
+- **Firmware Testing** — validate firmware updates and custom code.
+
+### Prerequisites:
+- An AutoPi device (CM4, CAN-FD Pro, or Pro Casing models). 
+- An external power supply (12V minimum, 2.5A recommended).
+- Basic understanding of power management and device safety.
+- Optional: OBD-II power cable for easier connectivity.
 
 ![AutoPi With External Power Supply](/img/guides/ssh_access/external_power_supply.jpeg)
 
 :::tip Recommended for testing and troubleshooting
 Using an external power supply is an excellent option when validating configurations, reproducing issues, and troubleshooting behavior outside a vehicle.
 :::
+
+---
 
 ## Setup Checklist
 
@@ -18524,11 +18826,12 @@ For an easier connection to an external power supply, we recommend the OBD power
 
 ---
 
-In this guide we'll explore how you can change your device's advanced settings directly through our
-REST API, without having to go through the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) system to do it.
+This guide will walk you through changing your device's settings directly through the AutoPi REST API. You'll learn how to retrieve available configuration options, view current settings states, and modify settings for your device without using the AutoPi Cloud interface. The guide covers authentication, endpoint usage, and synchronizing changes to your device.
 
-This guide will assume that you are able to log in to your account and receive a JWT token that you
-can authenticate with to make the requests ([here's a section for that](/getting_started/api/index.md)).
+**Prerequisites:**
+- Authentication token (JWT or API Token) — see [Authentication](/getting_started/api/index.md).
+- Device ID (primary key UUID, not unit ID) — retrieve via `GET /dongle/devices`.
+- API URL: `https://api.autopi.io/` (or your dedicated environment URL for business customers).
 
 :::note
 Currently, the settings endpoints used in this guide aren't documented in our API documentation
@@ -18687,7 +18990,15 @@ devices.
 
 ---
 
-It is possible to get notified via webhook when a command completes on a device.
+This guide will walk you through implementing webhook callbacks for command execution on your AutoPi device. Webhook callbacks allow you to receive asynchronous notifications when a command completes, including both successful responses and timeout events. You'll learn how to execute commands with callbacks, verify webhook request integrity using HMAC signatures, and debug callback issues.
+
+**Key topics:**
+- Executing commands with callback URLs.
+- Handling command execution and timeout states.
+- Verifying webhook request signatures.
+- Debugging and monitoring callbacks.
+
+---
 
 ### Overview
 
@@ -18829,9 +19140,13 @@ If you execute a module, the response will look like the above, but if you inste
 
 ---
 
-Our REST API offers endpoints that let you retrieve all telemetry data from your device in the format that suits you best:
-1. Aggregated Data – Simplified, high-level summaries for easier analysis.
-2. Raw Data – Detailed, unprocessed data for deeper insights and customization.
+This guide will walk you through retrieving telemetry data from your device using the AutoPi REST API. You'll learn how to export data in two formats, aggregated data for high-level analysis and raw data for detailed insights. The guide covers endpoint parameters, query examples, and practical Python code to download and save your device data.
+
+**Data export options:**
+1. **Aggregated Data** — simplified, interval-based summaries (average, min, max) for easier analysis.
+2. **Raw Data** — detailed, unprocessed data recorded by your device for deeper insights and customization.
+
+---
 
 ## 1. Aggregated Data
 This data is aggregated by interval and a method (average, min, max), and is among other
@@ -19027,8 +19342,7 @@ etc.
 
 ---
 
-You are able to use the [AutoPi REST API](https://api.autopi.io) with your browser, which will display our
-auto-generated documentation portal.
+This guide will walk you through accessing and using the AutoPi REST API. You'll learn how to authenticate using API tokens or JWT tokens, retrieve telemetry data from your devices, and send CAN bus commands directly to your vehicle. The guide covers both the interactive API documentation portal and manual request methods using tools like Postman.
 
 ![api_frontpage](/img/getting_started/api/api_intro/api_frontpage.jpg) 
 
@@ -19297,18 +19611,21 @@ if __name__ == "__main__":
 
 ---
 
-In this guide we will explore how you can setup your own server that accepts data from your [AutoPi](https://www.autopi.io) device. We won't get in too many
-details, but we will explore the very basics that are needed, namely:
+This guide will walk you through setting up your own server to receive and process telemetry data from your AutoPi device. You'll learn how to configure your device to send data to a custom endpoint, understand the data format sent by the device, and implement a basic REST API endpoint to receive and handle the incoming data.
 
-1. How to setup the device to send data to a server different from the default one
-1. What format of the data to expect from the device
-1. Code examples of a very basic REST endpoint (in NodeJS with the ExpressJS framework)
+**What you'll learn:**
+- Configuring your device's Cloud API URL to point to your custom server.
+- Understanding the JSON data format sent by AutoPi devices.
+- Building a basic REST endpoint using Node.js and Express.js.
 
-Since we will be building the server with NodeJS, this guide requires you to have a very basic familiarity with Javascript syntax, however it
-shouldn't be too hard to follow if you have used other programming languages. Also, you will need to have `node` and `npm` command line tools
-installed on your workstation. You can download the full NodeJS package from [here](https://nodejs.org/en/download/).
+**Prerequisites:**
+- Basic familiarity with JavaScript syntax.
+- Node.js and npm installed on your workstation ([download here](https://nodejs.org/en/download/)).
+- Access to the AutoPi Cloud to modify device settings.
 
-## Set Device's [Cloud](https://www.autopi.io/software-platform/cloud-management) API Url
+---
+
+## Set Device's Cloud API URL
 Firstly, we need to make sure that the device will connect to your own server. For this, we do have a very neat option that can
 be changed from the [AutoPi Cloud](https://my.autopi.io) website. You need to navigate to Devices > Select Device > Advanced Settings > Cloud Storage where
 you will be able to see a screen like the following:
@@ -19637,7 +19954,7 @@ Note that there are some events that do send out some data along, for example:
 
 ---
 
-This guide helps you diagnose and resolve common 4G connectivity issues on your [AutoPi](https://www.autopi.io) device. If you cannot access the internet while connected to the device hotspot, follow the steps below in order.
+This guide will help you diagnose and resolve common 4G connectivity issues with your AutoPi CAN-FD Pro device. It provides systematic troubleshooting for problems including SIM card detection, modem configuration, APN settings, network interface status, and cloud connectivity. The guide is organized as a diagnostic checklist to help you identify and fix cellular connectivity problems step by step.
 
 :::tip Our support team is here to help you.
 If you need assistance, contact support@autopi.io.
@@ -19938,9 +20255,17 @@ If you open a support case, include the full output from all commands used in th
 
 ---
 
+This guide will walk you through accessing files stored on your AutoPi device using SFTP (SSH File Transfer Protocol) or SCP (Secure Copy Protocol). These methods allow you to securely transfer files between your AutoPi device and your computer over a network connection. Whether you prefer a graphical file manager or command-line tools, this guide covers both approaches.
+
+**Available Methods:**
+1. **SFTP with Cyberduck** — Use a graphical interface for file transfers
+2. **Command-line SCP** — Transfer files directly from Terminal or PowerShell
+
 :::note
-If you want to use scp on Windows to download files from the autopi, you need to set up openssl.  
+If you are using Windows and want to use `scp` to download files from the AutoPi, you will need to set up OpenSSL on your system.
 :::
+
+---
 
 ## Option 1: Accessing files via SFTP
 
@@ -20050,23 +20375,14 @@ scp /local/file.txt pi@[IP_ADDRESS]:/opt/autopi/can1/
 ## Data Troubleshooting
 
 ---
-
-You are experiencing issues with getting the data out of your [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro)? This guide help you step-by-step to identify and resolve common problems related to wrong configurations on device, configurations to CAN Loggers, verification of CAN channels, nominal voltage detection, and internet connectivity issues. 
+This guide will help you identify and resolve common data logging issues with your AutoPi CAN-FD Pro device. It provides systematic troubleshooting for problems related to device configuration, CAN logger setup, channel verification, voltage detection, and internet connectivity. The guide is organized as a diagnostic checklist to help you determine why your device may not be recording vehicle data.
 
 :::tip Our support team is here to help you.
 Get in touch here or send an email to support@autopi.io
 :::
 
 ### Prerequisites:
-Before following this guide, you must have completed the initial [Setup guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/).
-
-### Why am I not seeing any data? 
-If you've followed the [Getting Started Guide](/getting_started/autopi_canfd_pro/index.md)
-and tested your [AutoPi](https://www.autopi.io) [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) device during vehicle operation, but are not recording any data, this guide will help you identify and resolve common issues. 
-
-This guide is organized as a checklist, detailing potential reasons why your vehicle
-data might not be recorded. It is only intended for the
-[AutoPi](https://www.autopi.io) [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) device.  
+Before following this guide, you must have completed the initial [Setup guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/).  
 
 ## Common causes and solutions for no data recorded
 
@@ -20209,112 +20525,147 @@ Ensure the correct Bitrate is set for your vehicle, you can follow this guide: [
 
 ---
 
-Tailscale makes creating software-defined networks easy: securely connecting users, services, and devices. Your [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) has already [Tailscale](https://tailscale.com/) installed, however it is not active just yet. You have full control over this! If you want to connect to Tailscale on your device follow this guide.
+Tailscale enables secure, software-defined networking that connects users, services, and devices over a private network. Your AutoPi device comes with Tailscale pre-installed but inactive, giving you full control over when to enable it. This guide walks you through setting up Tailscale to establish secure remote access to your AutoPi device.
 
-You can also use this video for [**Tailscale quickstart video guide**](https://youtu.be/sPdvyR7bLqI).
-
-### 1. Enable Tailscale on your device
-Steps to enable Tailscale on your device: 
-* Navigate to Devices section on [Autopi cloud](https://my.autopi.io/).
-* Click the device you want to enable Tailscale on.
-* Go to advanced settings > Tailscale. 
-* Check if Tailscale is already enabled on your device. If it is, you're all set! This is how it looks like: 
-    
-![Tailscale enabled](/img/getting_started/autopi_canfd_pro/tailscale_enabled.png)
-
-* If Tailscale is not enabled, go ahead and enable it.
-Once enabled, your device will create a pending sync which needs to be synced to a device before the Tailscale is fully enabled. You can check this by clicking the "Pending" icon at the bottom right side of the platform. Pending sync look like this: 
-
-![Tailscale pending sync](/img/getting_started/autopi_canfd_pro/pending_sync.png)
-
-* Make sure the device has synced the change. You can do that by clicking sync button above the created pending sync. 
-
-### 2. Create a tailnet
-Go to [tailscale.com](https://tailscale.com/) and select Get Started. Alternatively, you can download and install the Tailscale client on your device, then sign up.
-
-### 3. Open tailscale on your computer
-
-There are few ways on how to open tailscale on your computer: 
-* On Windows/macOS/Linux: Open the Tailscale app from the system tray or menu bar.
-* On Android/iOS: Open the Tailscale app from your app drawer.
-* On CLI (Linux/macOS/Windows Command Prompt/PowerShell): Open a terminal and type:
-    ```python 
-    tailscale up 
-    ```
-
-### 4. Log in to [Tailscale](https://login.tailscale.com/start) on your computer 
-
-* If you're not already logged in, the app will prompt you to authenticate.
-* Click "Log in", and a browser window will open.
-* Choose your authentication method (Google, Microsoft, GitHub, or custom SSO).
-* After logging in, allow the request to connect your device to the network.
-
-### 5. Generate auth key for your device
-* Use this link to generate auth key: [Generate auth key](https://login.tailscale.com/admin/settings/keys)
-* Option 1: Insert Auth Key in Advanced settings on your device: 
-    - Navigate to Devices section on [Autopi cloud](https://my.autopi.io/)
-    - Click the device you want to insert the auth key on. 
-    - Go to advanced settings -> Tailscale.
-    - Fill out the Auth key. Make sure the tailscale is enabled. 
-
-* Option 2: Run up command with auth key in terminal: 
-    ```python 
-    cmd.run 'tailscale up --authkey=tskey-KEYKEY-KEYKEYKEYKEY'
-    ```
-
-:::note
-Make sure you use the key that was generated in the first step of this section and replace it accordingly in the command with your auth key.
+:::tip
+For a visual walkthrough, check out this [Tailscale quickstart video guide](https://youtu.be/sPdvyR7bLqI).
 :::
 
-### 6. Confirm connection 
+---
 
-* Once logged in, your device should appear in the [Tailscale admin panel](https://login.tailscale.com/admin/machines)
-* In the Tailscale app, you should see "Connected" with an assigned Tailscale IP (e.g., 100.x.x.x).
-* If using CLI, check your connection with: 
-    ```python 
-    tailscale status 
-    ```
+## 1. Enable Tailscale on Your Device
 
-### 7. Test your connection 
+Before connecting to Tailscale, you must first enable it on your AutoPi device:
 
-* Check your [Tailscale admin panel](https://login.tailscale.com/admin/machines) - to make sure you are able to see both your device and your computer in this list. This gives you an indication that you have everything set up correctly.
-* After finishing the whole process, you can SSH from your computer to a device - this gives you the full access to Tailscale. 
+1. Navigate to **Devices** on [AutoPi Cloud](https://my.autopi.io/).
+2. Click the device you want to configure.
+3. Go to **Advanced Settings** > **Tailscale**.
+4. Check if Tailscale is already enabled. If enabled, it will look like this:
 
-### 8. Optional: Enable exit node (if needed)
+    ![Tailscale Enabled](/img/getting_started/autopi_canfd_pro/tailscale_enabled.png)
 
-If you want to route all traffic through another device on your Tailscale network:
-* Open the Tailscale app.
-* Click "Use Exit Node" and select a device.
-* On CLI, use:
-    ```python 
-    tailscale up --exit-node=100.x.x.x 
-    ```
+5. If not enabled, click to enable it. Your device will create a pending sync that needs to be applied:
 
-### 9. Disconnect when needed
+    ![Tailscale Pending Sync](/img/getting_started/autopi_canfd_pro/pending_sync.png)
+
+6. Click the sync button to apply the change to your device. 
+
+## 2. Create a Tailnet
+
+Visit [Tailscale.com](https://tailscale.com/) and select **Get Started**. Alternatively, download and install the Tailscale client on your computer, then sign up.
+
+## 3. Open Tailscale on Your Computer
+
+There are several ways to access Tailscale:
+
+- **Windows/macOS/Linux**: Open the Tailscale app from the system tray or menu bar.
+- **Android/iOS**: Open the Tailscale app from your app drawer.
+- **CLI (Linux/macOS/Windows)**: Open a terminal and run:
+
+```
+tailscale up
+```
+
+## 4. Log In to Tailscale
+
+Complete the authentication process on your computer:
+
+1. If not already logged in, the app will prompt you to authenticate.
+2. Click **Log In**, and a browser window will open.
+3. Choose your authentication method (Google, Microsoft, GitHub, or custom SSO).
+4. After logging in, approve the request to connect your device to the network.
+
+## 5. Generate and Configure Auth Key
+
+Generate an authentication key for your AutoPi device:
+
+1. Generate an auth key at [Tailscale Settings](https://login.tailscale.com/admin/settings/keys).
+2. Use one of the following options to configure the key on your device:
+
+**Option 1: Via AutoPi Cloud Settings**
+
+1. Navigate to **Devices** on [AutoPi Cloud](https://my.autopi.io/).
+2. Click your device.
+3. Go to **Advanced Settings** > **Tailscale**.
+4. Paste the auth key and verify Tailscale is enabled.
+
+**Option 2: Via Terminal Command**
+
+Run the following command in the device terminal:
+
+```
+cmd.run 'tailscale up --authkey=tskey-KEYKEY-KEYKEYKEYKEY'
+```
+
+:::note
+Replace the example auth key with your actual key generated in the previous step.
+:::
+
+## 6. Confirm Connection
+
+Verify that your device is connected:
+
+1. Your device should appear in the [Tailscale admin panel](https://login.tailscale.com/admin/machines).
+2. In the Tailscale app, you should see **Connected** with an assigned Tailscale IP (e.g., 100.x.x.x).
+3. If using CLI, check your connection status:
+
+```
+tailscale status
+```
+
+## 7. Test Your Connection
+
+Verify everything is working correctly:
+
+1. Check your [Tailscale admin panel](https://login.tailscale.com/admin/machines) to confirm both your computer and device are listed.
+2. You can now SSH from your computer to your device for full remote access. 
+
+## 8. Optional: Configure Exit Node
+
+To route all traffic through another device on your network:
+
+1. Open the Tailscale app.
+2. Click **Use Exit Node** and select a device.
+3. Alternatively, on CLI, run:
+
+```
+tailscale up --exit-node=100.x.x.x
+```
+
+## 9. Disconnect When Needed
+
 To disconnect from Tailscale:
-* In the Tailscale app, click "Disconnect".
-* In CLI, run:
-    ```python 
-    tailscale down 
-    ```
+
+1. In the Tailscale app, click **Disconnect**.
+2. Alternatively, on CLI, run:
+
+```
+tailscale down
+```
 
 :::note
-There is also a way to permanently disable and stop the tailscale service (to prevent the big data usage on your device). This is how you can do so: 
+**Manage Tailscale Service**
 
-* Disable + stop tailscale service (tailscaled) so it will not automatically start on boot: 
-    ```python
-    cmd.run 'systemctl disable tailscaled'
-    cmd.run 'systemctl stop tailscaled'
-    ```
+To prevent excessive data usage, you can permanently disable Tailscale:
 
-* Enable + start: 
-    ```python
-    cmd.run 'systemctl enable tailscaled'
-    cmd.run 'systemctl start tailscaled'
-    ```
+**Disable and stop service:**
+
+```
+cmd.run 'systemctl disable tailscaled'
+cmd.run 'systemctl stop tailscaled'
+```
+
+**Re-enable and start service:**
+
+```
+cmd.run 'systemctl enable tailscaled'
+cmd.run 'systemctl start tailscaled'
+```
 :::
 
-That's it! Your [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) is now connected to [Tailscale](https://tailscale.com/). Enjoy secure and remote access to your [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro).
+---
+
+**You're all set!** Your AutoPi device is now connected to Tailscale, providing you with secure remote access to your device from anywhere.
 
 ---
 
@@ -20322,20 +20673,25 @@ That's it! Your [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-f
 
 ---
 
-:::note
-The device comes pre-assembled with the SD card inside and requires just a few steps to complete the installation.
+This comprehensive guide will walk you through setting up your AutoPi CAN-FD Pro from account creation to full cloud connectivity. Your device arrives ready to be installed, requiring only a few essential steps to get operational.
 
-1. **Power Off the Vehicle**: When inserting the device for the first time, ensure that the vehicle is powered off.
-2. **Vehicle Must Be Parked**: When working on and customizing your device, make sure your vehicle is in the parked position.
-3. **Do Not Remove the AutoPi While Driving.**
-4. **Power Source**: The device can only be powered through the OBD-II port.
-     Powering the Raspberry Pi directly is not supported and may cause issues.
-5. **Advanced Settings Caution**: When updating the Advanced settings, ensure you understand what you
-     are doing, as changes can affect the performance of your car and its battery.  
+## Important Safety & Setup Requirements
+
+:::caution
+
+The AutoPi Telematics Unit is a technical device that interfaces directly with your vehicle's ECU. Before proceeding, please review these critical requirements:
+
+1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
+2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
+3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
+4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
+5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
 
 :::
 
-## [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) Quick Start Summary
+## Quick Start Summary
+
+### [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) Setup Steps
 * Step 1: Set up your account on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#1-setting-up-user-account).
 * Step 2: Register your device on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#2-register-your-device). 
 * Step 3: SIM card installation (if you did not purchased one from us), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#3-ensure-sim-connectivity).
@@ -20619,14 +20975,14 @@ get the most out of your AutoPi experience:
 ## Amazon Web Services (AWS) S3 Bucket Creation
 
 ---
-This guide will walk you through on how to create an Amazon Web Services (AWS) S3 bucket. If you want your data from AutoPi CAN-FD Pro device to be uploaded to Amazon S3 bucket, you will need to create a AWS account and S3 bucket and configure the settings for Output handlers in AutoPi cloud. 
+This guide will walk you through creating an Amazon Web Services (AWS) S3 bucket and configuring your AutoPi CAN-FD Pro device to upload data to it. To enable cloud data storage, you will need to create an AWS account, set up an S3 bucket, generate secure access credentials, and configure the output settings in AutoPi cloud.
 
 **Quick Start Summary:**
 1. Create an Amazon Web Services account.
 2. Create an S3 Bucket. 
-3. Create users and assign permissions. 
-3. Create Access key and secret key to access the S3 bucket (make sure to save it). 
-4. Fill in Access Key ID, Access Secret Key and Destination Path under CAN Logger on AutoPi cloud. 
+3. Create IAM users and assign permissions. 
+4. Generate Access Key ID and Secret Access Key (save them securely). 
+5. Configure the Output handler in AutoPi cloud with your credentials.
 
 ---
 ## What is AWS S3?
@@ -20768,15 +21124,19 @@ You can read more about advanced settings for S3 upload process here: [Advanced 
 
 ---
 
-Our newest [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) device has some new features that are not available on our other devices. This guide will walk you through everything you need to know about the CAN Logging feature on our AutoPi CAN-FD Pro device. Whether you're setting up your first logger or exploring advanced options, we've made it easy to follow and fully customizable to suit your needs.
+The AutoPi CAN-FD Pro is engineered with advanced CAN logging capabilities not available on other AutoPi devices. This comprehensive guide walks you through CAN Logging, data queries, frame listeners, event reactors, and workflow hooks. Whether you're setting up your first logger or exploring advanced automation, this guide provides everything you need to master the device's powerful features.
+
 :::note
-**CAN Logging** on the AutoPi CAN-FD Pro is different from the Loggers feature available on our other device [AutoPi TMU CM4](https://shop.autopi.io/products/autopi-telematics-unit-cm4-4g-lte-edition). 
+**Important Distinction**
+
+CAN Logging on the AutoPi CAN-FD Pro is distinct from the Loggers feature available on other devices such as the [AutoPi TMU CM4](https://shop.autopi.io/products/autopi-telematics-unit-cm4-4g-lte-edition). The CAN-FD Pro provides more granular control over channel configuration, filtering, and advanced automation capabilities.
 :::
 
-**What is CAN Logging?**
-CAN Logging captures traffic from your vehicle’s CAN bus using two dedicated interfaces: can0 and can1. These logs can include raw or decoded data, depending on your configuration.
+## Understanding CAN Logging
 
-![CAN logging](/img/getting_started/autopi_canfd_pro/can_logging_tab.png)
+CAN Logging captures traffic from your vehicle's CAN bus using two dedicated interfaces: can0 and can1. These logs can include raw or decoded data, depending on your configuration.
+
+![CAN Logging](/img/getting_started/autopi_canfd_pro/can_logging_tab.png)
 
 **`logger.status` command**
 
@@ -21377,24 +21737,42 @@ These settings allow you to control exactly when a trip is considered active, en
 
 ---
 
-Need a device that can handle tough environments? The [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro) is packed into a durable, IP67-rated aluminum casing — built to withstand dust, dirt, and water, making it perfect for rugged, outdoor, or industrial installations. This step-by-step guide will help you get started with your new device. The device comes pre-assembled with the SD card inside and requires just a few steps to complete the installation.
+## Welcome to AutoPi Setup
 
-:::note
-**Important Notes Before You Start**
+The [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) with IP67-rated aluminum casing is engineered for demanding environments. Built to withstand dust, dirt, and water, it's ideal for rugged, outdoor, or industrial installations. This comprehensive guide walks you through setup from account creation to full cloud connectivity. Your device arrives ready to be installed, requiring only a few essential steps to get operational.
 
-The AutoPi Telematics Unit is a highly customizeable and technical device. It contains a direct
-interface to your car and communicates with the ECU in your car.
+## What You'll Learn
 
-1. **Power Off the Vehicle**: When inserting the device for the first time, ensure that the vehicle is powered off.
-2. **Vehicle Must Be Parked**: When working on and customizing your device, make sure your vehicle is in the parked position.
-3. **Do Not Remove the AutoPi While Driving.**
-4. **Power Source**: The device can only be powered through the OBD-II port.
-     Powering the Raspberry Pi directly is not supported and may cause issues.
-5. **Advanced Settings Caution**: When updating the Advanced settings, ensure you understand what you
-     are doing, as changes can affect the performance of your car and its battery.  
+By following this guide, you will:
+
+- Create and configure your AutoPi Cloud account.
+- Register your device on the platform.
+- Verify SIM connectivity (if required).
+- Attach the external antenna kit for optimal reception.
+- Locate your vehicle's OBD port.
+- Physically install the device for optimal performance.
+- Connect the device to the AutoPi Cloud via Wi-Fi.
+- Configure network settings (APN and MTU) for connectivity.
+- Verify your setup and finalize security settings.
+- Set up data output handlers and remote file access.
+
+## Important Safety & Setup Requirements
+
+:::caution
+
+The AutoPi Telematics Unit is a technical device that interfaces directly with your vehicle's ECU. Before proceeding, please review these critical requirements:
+
+1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
+2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
+3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
+4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
+5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
+
 :::
 
-## [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) Quick Start Summary
+## Quick Start Summary
+
+### [AutoPi CAN-FD Pro with IP67 Casing](https://shop.autopi.io/products/autopi-can-fd-pro) Setup Steps
 * Step 1: Set up your account on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/#1-setting-up-user-account).
 * Step 2: Register your device on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/#2-register-your-device). 
 * Step 3: SIM card installation (if you did not purchased one from us), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/#3-ensure-sim-connectivity).
@@ -21673,13 +22051,18 @@ get the most out of your AutoPi experience:
 ## Create Loggers
 
 ---
-Logging is one of the core features of the [AutoPi Mini](https://www.autopi.io/hardware/autopi-mini), allowing you to automatically record key data from your device for analysis, monitoring, or integration with other systems. In this guide, you’ll learn how to create and configure loggers for your AutoPi Mini, from understanding what are the available loggers, to setting up your own custom data collection workflows.
 
-We’ll start with a step-by-step walkthrough on how to create, manage, and verify loggers directly from your AutoPi Cloud, followed by a quick overview of the available loggers and their specifications. Whether you’re setting up your first logger or fine-tuning advanced data capture, this guide will help you get started quickly and confidently.
+This guide will walk you through creating and configuring loggers for your AutoPi Mini device. Logging is a core feature that allows you to automatically record key data for analysis, monitoring, or integration with other systems. You'll learn how to create custom loggers, manage their settings, and link them to your dashboard widgets—from setting up your first logger to fine-tuning advanced data capture workflows.
+
+**What you'll learn:**
+- Understanding and configuring default loggers based on your vehicle type.
+- Creating custom loggers with specific parameters and event triggers.
+- Available logger specifications and technical details.
+- Linking loggers to dashboard widgets for data visualization.
 
 ---
 
-## Default Set of [Mini](https://www.autopi.io/hardware/autopi-mini) Loggers 
+## Default Set of Mini Loggers
 To ensure your AutoPi mini device works right out of the box, we preconfigure it with a set of commonly used loggers based on the most frequently requested data from our users. These default loggers are automatically installed on your device before delivery.
 
 During the device registration process (covered in Step 2: Registration of the device of [Getting started guide](https://docs.autopi.io/getting_started/autopi_mini/#2-register-your-device)), you’ll be asked to enter your vehicle’s make, model, year, and type. **Vehicle types** include: Internal Combustion Engine (ICE), Battery Electric Vehicle (BEV), Plug-in Hybrid Electric Vehicle (PHEV) or Hybrid Electric Vehicle (HEV).
@@ -21862,19 +22245,15 @@ When you are satisfied with your dashboard configuration, remember to **save you
 
 ---
 
-## Why Am I Not Seeing Any Data? 
+This guide will help you identify and resolve common data logging issues with your AutoPi Mini device. It provides systematic troubleshooting for problems including connectivity issues, logger configuration, widget setup, and electric vehicle compatibility. The guide is organized as a diagnostic checklist to help you determine why your device may not be recording or displaying vehicle data.
 
-If you've followed the [Getting Started Guide](/getting_started/autopi_mini/index.md)
-and tested your [AutoPi](https://www.autopi.io) TMU CM4 device during a drivebut no data is appearing on 
-your [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) Dashboard, this guide will help you identify and resolve common issues.
+:::note
+This guide is specifically for the [AutoPi Mini](https://www.autopi.io/hardware/autopi-mini) device. For other device models, please refer to the appropriate guide.
+:::
 
-Organized as a checklist, this guide outlines potential causes for missing vehicle
-data and offers solutions. It is specifically for the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) device. For 
-[AutoPi](https://www.autopi.io) TMU CM4, please refer to this [guide](/getting_started/autopi_tmu_cm4/index.md).  
+---
 
-![Dashboard](/img/getting_started/autopi_mini/data_troubleshooting/no_data_dashboard.png)
-
-## Common Causes and Solutions for Data Not Appearing on the [Cloud](https://www.autopi.io/software-platform/cloud-management)  
+## Common Causes and Solutions  
 
 ### 1. Connection Issues 
 
@@ -21999,26 +22378,37 @@ After making these adjustments, check the 'Change History' tab to confirm that y
 
 ---
 
-Welcome to [AutoPi](https://www.autopi.io)! 
+## Welcome to AutoPi Setup
 
-This step-by-step guide will help you set up your [AutoPi](https://www.autopi.io) TMU CM4 4G/LTE Edition. 
-The device comes pre-assembled with the SD card inside and requires just a few steps to complete the installation.
+This comprehensive guide will walk you through setting up your AutoPi Mini from account creation to full cloud connectivity. Your device arrives pre-assembled with the SIM card installed, requiring only a few essential steps to get operational.
 
-:::note
+## What You'll Learn
 
-**Important Notes Before You Start**
+By following this guide, you will:
 
-The [AutoPi](https://www.autopi.io) Telematics Unit is a highly customizeable and technical device. It contains a direct
-interface to your car and communicates with the ECU in your car.
+- Create and configure your AutoPi Cloud account.
+- Register your device on the platform.
+- Locate your vehicle's OBD port.
+- Physically install the device for optimal performance.
+- Connect the device to the AutoPi Cloud via Wi-Fi.
+- Configure your AutoPi Mini for Electric Vehicle compatibility (if applicable).
+- Complete security and finalization settings.
 
-1. **Power Off the Vehicle**: When inserting the device for the first time, ensure that the vehicle is powered off.
-2. **Vehicle Must Be Parked**: When working on and customizing your device, make sure your vehicle is in the parked position.
-3. **Do Not Remove the [AutoPi](https://www.autopi.io) While Driving.**
-4. **Power Source**: The device can only be powered through the OBD-II port.
-     Powering the Raspberry Pi directly is not supported and may cause issues.
-5. **Advanced Settings Caution**: When updating the Advanced settings, ensure you understand what you
-     are doing, as changes can affect the performance of your car and its battery.  
+## Important Safety & Setup Requirements
+
+:::caution
+
+The AutoPi Telematics Unit is a technical device that interfaces directly with your vehicle's ECU. Before proceeding, please review these critical requirements:
+
+1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
+2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
+3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
+4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
+5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
+
 :::
+
+---
 
 ## 1. Setting Up User Account
 
@@ -22086,6 +22476,8 @@ This is the OBD-II extension cable:
 
 ![AutoPi.io - Relocator cable](/img/getting_started/getting_started/relocator_cable.png)
 
+---
+
 ## Electric Vehicle configurations
 
 If your [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) is connected to an Electric Vehicle we recommend to set some extra configurations for your device. Unlike internal combustion engine (ICE) vehicles, some EVs do not support automatic VIN detection, which can prevent the device from reading data properly. To resolve this, follow these steps to adjust the advanced settings for EV compatibility. 
@@ -22139,18 +22531,33 @@ Take your device for a trip to start gathering data.
 
 ---
 
-This guide helps you diagnose and resolve common 4G connectivity issues on your [AutoPi](https://www.autopi.io) device. If you cannot access the internet while connected to the device hotspot, follow the steps below in order.
+If your AutoPi device is unable to connect to the internet, this guide provides a systematic troubleshooting approach to diagnose and resolve common 4G connectivity issues. Follow the steps in the order presented to identify the root cause and restore connectivity.
 
-:::tip Our support team is here to help you.
-If you need assistance, contact support@autopi.io.
-:::
+## What You'll Learn
 
-### Prerequisites
+By following this guide, you will:
+
+- Verify SIM card compatibility, orientation, and physical condition.
+- Confirm modem detection and hardware status.
+- Check and configure modem settings (PDP context and firmware).
+- Validate and configure APN settings for your carrier.
+- Diagnose and manage `qmi-manager` service status.
+- Restart and troubleshoot the network interface (`wwan0`).
+- Tune MTU settings for optimal connectivity.
+- Test internet and cloud connectivity.
+- Collect diagnostic logs for support when needed.
+
+## Prerequisites
+
 Before starting, complete the initial [setup guide](https://docs.autopi.io/getting_started/autopi_tmu_cm4/).
+
+:::tip Need Support?
+If you need assistance after following these steps, contact support@autopi.io and include all command outputs and logs collected during troubleshooting.
+:::
 
 ---
 
-### Check SIM Card
+## Check SIM Card
 
 * Confirm that your SIM card is enabled for mobile data. Test the SIM in another device (for example, a smartphone) and verify that internet access works.
 * If you are using a data-only SIM, confirm with your carrier that the data plan is active and roaming is enabled when required.
@@ -22168,7 +22575,7 @@ Always verify orientation before insertion.
 
 ---
 
-### Check Modem Detection (Hardware)
+## Check Modem Detection (Hardware)
 
 * Connect to the device hotspot and open [AutoPi Local](http://local.autopi.io). 
 * Open the terminal and run:
@@ -22195,19 +22602,19 @@ If `lsusb` is unavailable, run `cmd.run "dmesg | grep -i usb"` to check USB dete
 
 ---
 
-### Check Modem Setup
+## Check Modem Setup
 
-#### Check PDP Context
+### Check PDP Context
 
 PDP context controls how the modem connects to the mobile network. Incorrect values can prevent data sessions from starting.
 
-For software version `1.22.7` or newer:
+**For software version `1.22.7` or newer:**
 
 ```python
 modem.connection pdp_context
 ```
 
-For `older` versions:
+**For older versions:**
 
 ```python
 modem.connection execute AT+CGDCONT?
@@ -22242,13 +22649,11 @@ cmd.run "systemctl restart qmi-manager"
 
 Run the PDP command again to confirm the result.
 
----
-
-**Check Firmware Switch**
+### Check Firmware Switch
 
 An incorrect firmware switch setting can prevent the modem from connecting to the network correctly.
 
-**If you are using software version `1.22.7 or newer`, run:**
+**For software version `1.22.7` or newer:**
 
 ```python
 modem.connection active_firmware_image
@@ -22265,7 +22670,7 @@ storage_conf: ram
 
 Confirm that `net_conf` is set to `global`.
 
-**Incase your software version is `older than 1.22.7`, you can run the following command to get the same information:**
+**For software version older than `1.22.7`:**
 ```python  
 modem.connection execute AT#FWSWITCH?'
 ```
@@ -22290,7 +22695,7 @@ For additional modem commands and examples, see [Core Commands - Modem](https://
 
 ---
 
-### Check APN Configuration
+## Check APN Configuration
 
 A missing or incorrect APN can block internet access even when the modem is detected.
 
@@ -22324,29 +22729,29 @@ If you do not know your APN, check your carrier documentation or support channel
 
 ---
 
-### Check qmi-manager Status
+## Check qmi-manager Status
 
 `qmi-manager` maintains the cellular data connection.
 
-Check status:
+**Check status:**
 
-    ```python
-    cmd.run "qmi-manager status"
-    ```
+```python
+cmd.run "qmi-manager status"
+```
 
-Expected response: 
+**Expected response:**
 
-    ![qmistatus](/img/getting_started/autopi_tmu_cm4/4g_internet_setup_troubleshooting/qmistatus.jpg)
+![qmistatus](/img/getting_started/autopi_tmu_cm4/4g_internet_setup_troubleshooting/qmistatus.jpg)
 
-If needed, restart it:
+**If needed, restart it:**
 
-    ```python
-    cmd.run "systemctl restart qmi-manager"
-    ```
+```python
+cmd.run "systemctl restart qmi-manager"
+```
 
 ---
 
-### Restart the Network Interface
+## Restart the Network Interface
 
 If `qmi-manager` is running but internet is still unavailable, cycle the interface:
 
@@ -22368,7 +22773,7 @@ If `wwan0` has no IP address, the mobile session is not established.
 
 ---
 
-### Adjust the MTU Setting
+## Adjust the MTU Setting
 
 If connection is unstable (drops, intermittent cloud status), tune MTU. Based on your board version, the default MTU is either `1500` or `1280`.
 
@@ -22399,7 +22804,7 @@ Confirm that both outputs match the configured MTU.
 
 ---
 
-### Check Internet and Cloud Connectivity
+## Check Internet and Cloud Connectivity
 
 Test internet over cellular:
 
@@ -22429,25 +22834,22 @@ Then re-run ping and curl.
 
 ---
 
-### Collect Logs for Support
+## Collect Logs for Support
 
-If the issue persists, collect logs before opening a support request.
-Follow this guide to export relevant logs: [AutoPi Logs Guide](https://docs.autopi.io/developer_guides/autopi-logs/)
+If the issue persists, collect diagnostic logs before opening a support request. Follow this guide to export relevant logs: [AutoPi Logs Guide](https://docs.autopi.io/developer_guides/autopi-logs/)
 
----
+## Summary
 
-### Summary
+At this point, you should have verified:
 
-By this point, you should have verified:
-
-1. SIM compatibility, orientation, and slot condition.
-1. Modem detection and modem configuration (PDP and firmware switch).
-1. APN settings.
-1. `qmi-manager` and `wwan0` status.
-1. MTU tuning and DNS/cloud connectivity tests.
+1. SIM compatibility, orientation, and physical condition.
+2. Modem detection and modem configuration (PDP and firmware switch).
+3. APN settings.
+4. `qmi-manager` and `wwan0` status.
+5. MTU tuning and DNS/cloud connectivity tests.
 
 :::note
-If you open a support case, include the full output from all commands used in this guide, along with the collected [Logs](https://docs.autopi.io/developer_guides/autopi-logs/).
+**When Opening a Support Case** - include the complete output from all commands run in this guide, along with the diagnostic logs collected using the [AutoPi Logs Guide](https://docs.autopi.io/developer_guides/autopi-logs/). This will help our support team diagnose the issue more quickly.
 :::
 
 ---
@@ -22902,116 +23304,92 @@ This setup allows you to build powerful data collection and monitoring workflows
 
 ---
 
-## Why Am I Not Seeing Any Data? 
+If you've completed the [Getting Started Guide](/getting_started/autopi_tmu_cm4/index.md) and tested your AutoPi TMU CM4 device during a drive but aren't seeing data on the AutoPi Cloud Dashboard, this guide will help you identify and resolve the issue systematically.
 
-If you've followed the [Getting Started Guide](/getting_started/autopi_tmu_cm4/index.md)
-and tested your [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device during a drive, but aren't seeing any data
-on the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management), this guide will help you identify and resolve common issues. 
+## What You'll Learn
 
-This guide is organized as a checklist, detailing potential reasons why your vehicle
-data might not be appearing on the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) Dashboard. It is intended for the
-[AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device, for [AutoPi](https://www.autopi.io) Mini please see the [Mini guides](/getting_started/autopi_mini/index.md).  
+By following this guide, you will:
 
-![Dashboard](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/no_data_dashboard.png)
+- Check device LED status and verify cloud connectivity.
+- Diagnose and resolve internet connectivity issues.
+- Verify and configure CAN Bus settings for your vehicle.
+- Create and configure Loggers to capture vehicle data.
+- Set up and customize dashboard widgets to display your data.
+- Troubleshoot widget configuration issues.
 
-## Common Causes and Solutions for Data Not Appearing on the [Cloud](https://www.autopi.io/software-platform/cloud-management)  
+## Common Causes and Solutions
+
+This guide is organized by cause, detailing potential reasons why vehicle data may not appear on the AutoPi Cloud Dashboard. It is intended for the AutoPi TMU CM4 device. For the AutoPi Mini, please refer to the [Mini guides](/getting_started/autopi_mini/index.md).
+
+![No Data Dashboard](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/no_data_dashboard.png)  
 
 ### 1. Connection Issues 
 
-A common reason for missing data is a communication issue between your [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) 
-device and the [Cloud](https://www.autopi.io/software-platform/cloud-management). If you’ve followed the Getting Started guide, this should 
-typically not be a problem. However, it’s important to check the status of the 
-LEDs on the side of the device to confirm it’s communicating with the [Cloud](https://www.autopi.io/software-platform/cloud-management) and hasn’t entered sleep mode. 
+A common reason for missing data is a communication issue between your AutoPi TMU CM4 device and the cloud. If you followed the Getting Started guide, this is typically not a problem. However, check the LED status on the side of the device to confirm it's communicating with the cloud and hasn't entered sleep mode.
 
-- **LED Status**: Both the green and blue LEDs should be lit solid and bright. 
-    If the blue LED is “breathing” (varying brightness from dim to bright), 
-    the device is in sleep mode. 
-- **To Resolve**: Disconnect the device from the OBD-II port, then reconnect it.
-    Wait until both LEDs are solid before proceeding.
+- **LED Status**: Both the green and blue LEDs should be lit solid and bright. If the blue LED is "breathing" (varying brightness from dim to bright), the device is in sleep mode.
+- **Resolution**: Disconnect the device from the OBD-II port, then reconnect it. Wait until both LEDs are solid before proceeding.
 
-For more details on LED status meanings, refer to [this guide](/core/power_management/#status-leds).
+For more details on LED status meanings, refer to [Status LEDs](/core/power_management/#status-leds).
 
 ![CM4 LED status meaning](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/cm4_light_placements_01.png)
 
 ### 2. Internet Connectivity Issues 
 
-Ensure your device is connected to the internet. If there are connectivity issues,
-follow the steps outlined in our [4G Internet Setup and Troubleshooting Guide](/getting_started/autopi_tmu_cm4/4g-internet-setup-troubleshooting).
+Ensure your device is connected to the internet. If there are connectivity issues, follow the steps outlined in the [4G Internet Setup and Troubleshooting Guide](/getting_started/autopi_tmu_cm4/4g-internet-setup-troubleshooting).
 
 ### 3. CAN Bus Creation 
 
-When the device boots for the first time, it attempts to autodetect the 
-communication protocol and sends the results back to [AutoPi](https://www.autopi.io), where a CAN Bus is 
-created for your device.
+When the device boots for the first time, it attempts to autodetect the communication protocol and sends the results back to AutoPi, where a CAN Bus is created for your device.
 
-- **Check for CAN Bus**: Go to Vehicles > Choose Device > Settings > Vehicle Editor 
-    to see if the CAN Bus has been created.
-- **Manual Configuration**: If the CAN Bus wasn’t created automatically, you might 
-    need to configure it manually. For assistance, refer to this [guide](/cloud/obd-ii/can-bus-configuration).
+- **Check for CAN Bus**: Navigate to **Vehicles** > **Choose Device** > **Settings** > **Vehicle Editor** to verify that the CAN Bus has been created.
+- **Manual Configuration**: If the CAN Bus wasn't created automatically, you'll need to configure it manually. For assistance, refer to the [CAN Bus Configuration Guide](/cloud/obd-ii/can-bus-configuration).
 
 ![Change device settings](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/device_settings.png)
 
 ### 4. Loggers Creation
 
-To view data on the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) Dashboard, you need to create Loggers to collect
-the data via your [AutoPi](https://www.autopi.io) device. 
+To view data on the AutoPi Cloud Dashboard, you need to create Loggers to collect the data via your AutoPi device. 
 
-- **Setting Up Loggers**: Loggers can be configured to communicate on the CAN Bus
-    and capture the necessary data. They can be set up using PIDs or CAN messages,
-    depending on your vehicle's communication type. 
-- **Accessing Loggers**: Navigate to the Devices section of the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management), 
-    select your device, and find Loggers. Some default loggers may already be 
-    available and should display data in the Dashboard widgets. However, 
-    depending on your vehicle, you may need to create custom loggers. 
-- **Explore OBD Community Library**: You can check the OBD Community Library for
-    loggers that have been created for your specific vehicle model and year. 
+- **Setting Up Loggers**: Loggers can be configured to communicate on the CAN Bus and capture the necessary data. They can be set up using PIDs or CAN messages, depending on your vehicle's communication type.
+- **Accessing Loggers**: Navigate to the Devices section of the AutoPi Cloud, select your device, and find Loggers. Some default loggers may already be available and should display data in the Dashboard widgets. Depending on your vehicle, you may need to create custom loggers.
+- **Explore OBD Community Library**: Check the OBD Community Library for loggers that have been created for your specific vehicle model and year. 
 
 ![Create Loggers](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/loggers.png)
 
-For more information on creating Loggers, visit our [OBD-II Introduction Guide](/cloud/obd-ii/). 
-Additional documentation on CAN and PID configuration can be found under the 
-OBD-II dropdown in the [Cloud](https://www.autopi.io/software-platform/cloud-management) section of our documentation. 
+For more information on creating Loggers, visit the [OBD-II Introduction Guide](/cloud/obd-ii/). Additional documentation on CAN and PID configuration is available under the OBD-II section of the Cloud documentation.
 
-When everything is configured correctly you should be able to see your data 
-displayed in the form of widgets on the Dashboard by navigating to Vehicles > Dashboard.
+When everything is configured correctly, you should be able to see your data displayed as widgets on the Dashboard by navigating to **Vehicles** > **Dashboard**.
 
 ### 5. Configuring Widgets
 
-![Successful dashboard](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/successful_data_dashboard.png)
+![Successful Dashboard](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/successful_data_dashboard.png)
 
-After setting up your loggers, you'll be able to view your data on the dashboard.
-Each widget in the dashboard offers controls in the top-right corner: 
+After setting up your loggers, you can view your data on the dashboard. Each widget in the dashboard has controls in the top-right corner:
 
-- **Circle icon**: Refreshes the widget's data. 
-- **Three dots icon**: Opens the configuration options for the widget. 
+- **Circle icon**: Refreshes the widget's data.
+- **Three dots icon**: Opens the configuration options for the widget.
 - **X icon**: Removes the widget. Feel free to remove any default widgets that aren't relevant to you.
 
-![Configurinyyg widget](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/configuration_widget.png)
+![Configuring Widget](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/configuration_widget.png)
 
-To customize how your data is displayed, click the three dots on a widget. 
-This will take you to the configuration settings, where you can choose different 
-display formats such as graphs, line charts, gauges, and more. You can also set 
-the widget to show data averages, minimums, or maximums. 
+To customize how your data is displayed, click the three dots on a widget. This opens the configuration settings, where you can choose different display formats such as graphs, line charts, gauges, and more. You can also set the widget to show data averages, minimums, or maximums. 
 
 :::note
-If your widget shows "No data," it's often due to an incorrect configuration—especially 
-in the 'Field' section. Ensure the widget's settings align with the configuration
-of the logger that collects the data for that field. 
+**Widget Shows "No Data"**
+
+If a widget displays "No data," it's often due to incorrect configuration—especially in the 'Field' section. Ensure the widget's settings align with the configuration of the logger that collects the data for that field.
 :::
 
-After updating your widget settings, click **Save**, then refresh the widget using 
-the circle icon to check if data appears. If you see the data, the configuration 
-is correct. To make sure your changes are saved for future use, click 
-**Widget Actions** and select **Save**.
+After updating your widget settings, click **Save**, then refresh the widget using the circle icon to check if data appears. If data displays, the configuration is correct. To save your changes for future use, click **Widget Actions** and select **Save**.
 
-![Widget actions](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/widget_action.png)
+![Widget Actions](/img/getting_started/autopi_tmu_cm4/data_troubleshooting/widget_action.png)
 
-To add a new widget to your dashboard, go to **Widget Actions** and choose 
-**Add Widget**. Remember, a logger must be set up beforehand, or the widget 
-won't have any data to display. 
+**Adding New Widgets**
 
-When you're satisfied with your dashboard configuration, save your layout via 
-**Widget Actions** to keep your settings for future sessions. 
+To add a new widget to your dashboard, go to **Widget Actions** and choose **Add Widget**. Remember, a logger must be set up beforehand, or the widget won't have any data to display.
+
+When you're satisfied with your dashboard configuration, save your layout via **Widget Actions** to keep your settings for future sessions.
 
 For more detailed information on widgets, see [Link Your Loggers to Your Dashboard](https://docs.autopi.io/getting_started/autopi_tmu_cm4/create-loggers-cm4/#step-4-link-your-loggers-to-your-dashboard).
 
@@ -23021,26 +23399,38 @@ For more detailed information on widgets, see [Link Your Loggers to Your Dashboa
 
 ---
 
-Welcome to AutoPi! 
- 
-This step-by-step guide will help you set up your AutoPi TMU CM4 4G/LTE Edition. 
-The device comes pre-assembled with the SD card inside and requires just a few steps to complete the installation.
+## Welcome to AutoPi Setup
 
-:::note
+This comprehensive guide will walk you through setting up your AutoPi TMU CM4 4G/LTE Edition from account creation to full cloud connectivity. Your device arrives ready to be installed, requiring only a few essential steps to get operational.
 
-**Important Notes Before You Start**
+## What You'll Learn
 
-The AutoPi Telematics Unit is a highly customizeable and technical device. It contains a direct
-interface to your car and communicates with the ECU in your car.
+By following this guide, you will:
 
-1. **Power Off the Vehicle**: When inserting the device for the first time, ensure that the vehicle is powered off.
-2. **Vehicle Must Be Parked**: When working on and customizing your device, make sure your vehicle is in the parked position.
-3. **Do Not Remove the AutoPi While Driving.**
-4. **Power Source**: The device can only be powered through the OBD-II port.
-     Powering the Raspberry Pi directly is not supported and may cause issues.
-5. **Advanced Settings Caution**: When updating the Advanced settings, ensure you understand what you
-     are doing, as changes can affect the performance of your car and its battery.  
+- Create and configure your [AutoPi Cloud account](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#1-setting-up-user-account). 
+- [Register](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#2-register-your-device) your device on the platform. 
+- Verify [SIM connectivity](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#3-ensure-sim-connectivity) (if required).
+- Locate and prepare your vehicle's [OBD port](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#4-locate-obd-port). 
+- Physically [install the device](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#5-installation) for optimal performance. 
+- Connect the device to the AutoPi Cloud via [Wi-Fi](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#6-connect-to-device-wifi-hotspot).
+- Configure [network settings](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#7-connect-to-local-administration) (APN) for 4G/LTE connectivity.
+- [Verify](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#8-verify-connectivity) your setup and [finalize](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#9-finalization) security settings.
+
+## Important Safety & Setup Requirements
+
+:::caution
+
+The AutoPi Telematics Unit is a technical device that interfaces directly with your vehicle's ECU. Before proceeding, please review these critical requirements:
+
+1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
+2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
+3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
+4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
+5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
+
 :::
+
+---
 
 ## 1. Setting Up User Account
 
@@ -23711,7 +24101,9 @@ for the respective PIDs and or [CAN](https://www.autopi.io/hardware/autopi-canfd
 
 ## Using DIMO Device on AutoPi's Cloud
 
-If you have a [DIMO x AutoPi device](https://drivedimo.com) and would like to use it on the [AutoPi Cloud platform](https://my.autopi.io/#/login), this guide will walk you through the full migration process. You will learn how to transition your device from the DIMO server to AutoPi's server and unlock all AutoPi Cloud features.
+This guide will walk you through migrating your [DIMO x AutoPi device](https://drivedimo.com) to the AutoPi Cloud platform. You'll learn how to transition from the DIMO server to AutoPi's infrastructure, order a Global SIM card, create your AutoPi account, and reflash your device to unlock full access to AutoPi Cloud features.
+
+---
 
 ## Prerequisites
 
@@ -23881,6 +24273,7 @@ This adapter cable can be purchased through the AutoPi shop: [**Caterpillar 14 P
 
 | AutoPi Function | Caterpillar 14 PIN | OBD-II 16 PIN |
 |:-----------------:|:--------------------:|:---------------:|
+| CAN High        | Pin A              | Pin 6         |
 | CAN Low         | Pin D              | Pin 14        |
 | Power           | Pin B              | Pin 16        |
 | GND             | Pin C              | Pin 5         |
@@ -24032,16 +24425,18 @@ The pinout above is based on the standard J1939 to OBD-II mapping. Refer to your
 
 ---
 
-This section contains a description of the mounting options available for the [AutoPi](https://www.autopi.io) devices.
+This guide provides comprehensive information about the available mounting options for your AutoPi device. Choose the appropriate mount type for your installation environment, secure your device safely in vehicles with different interior configurations, and access downloadable 3D-printable mount designs for customized installations.
 
-## Flat Surfaces Mount
+## Mounting Options
+
+### Flat Surfaces Mount
 The mount is meant to be screwed or glued to a flat surface and to snap on the bottom of the device. 
 
 ![Device mount for flat surfeces](/img/hardware/accessories/device_mounts/device_mount_3_cut.png)
 
 Download mount for flat surfaces.
 
-## Curved Surfaces Mount
+### Curved Surfaces Mount
 The mount is meant to be glued or secured with zip ties to a curved surface such as a support pipe under the dash or a curved piece of plastic and to snap on the bottom of the device.
 
 ![Device mount for curved surfeces](/img/hardware/accessories/device_mounts/device_mount_curve_1_CutV2.png)
@@ -24188,8 +24583,7 @@ You have now successfully installed the AutoPi DoIP HAT.
 
 ---
 
-## Introduction
-This page describes the pinout of our OBD-II to dual DB9 pinout cable:
+This guide provides detailed pinout information for the OBD-II to dual DB9 adapter cable. Use this reference to understand the pin assignments, connector configurations, and signal routing for connecting your AutoPi device to external systems via DB9 connectors.
 
     
 
@@ -25252,6 +25646,8 @@ This adapter cable can be purchased through the AutoPi shop: [**Volvo 8 PIN J193
 
 | AutoPi Function | OBD-II 16 PIN | Volvo 8 PIN |
 |:-----------------:|:---------------:|:-------------:|
+| CAN High        | Pin 3         | Pin 2         |
+| CAN Low         | Pin 11         | Pin 3        |
 | Power           | Pin 16        | Pin 8       |
 | GND             | Pin 4         | Pin 1       |
 
@@ -25454,9 +25850,9 @@ The green LED indicates the current state of the [high-level](/core/power_manage
 
 ---
 
-Want more flexibility when setting up your [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro)? No worries — we’ve made installation easier than ever.
+This guide explores all available mounting options for your AutoPi CAN-FD Pro device, from permanent custom installations using built-in mounting holes to convenient pre-designed mounts and helpful accessories. Discover the best installation method for your vehicle's interior layout and requirements.
 
-## Mounting holes on your [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro)
+## Mounting holes on your AutoPi CAN-FD Pro device
 
 ### Need more reach?
 We’ve got two essential accessories to make setup of your [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro) easier. [Accessories](https://shop.autopi.io/):
@@ -25469,7 +25865,7 @@ The [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/
 ![Device mounting holes](/img/hardware/autopi_canfd_pro/canfd_pro_mounting_holes.png)
 
 ## Choose your mount
-Don’t want to DIY? We’ve got you covered with pre-designed mounts made specifically for the [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro).
+Don’t want to DIY? We’ve got you covered with pre-designed mounts made specifically for the AutoPi CAN-FD Pro device.
 
 ### 1. Flat surface mount
 * Perfect for dashboards, panels, or any flat surface.
@@ -25760,6 +26156,39 @@ This section has a few guides written out that are specifically for the [AutoPi]
 :::tip
 You can download the official datasheet here: [Autopi Mini Datasheet](https://www.autopi.io/static/pdf/autopi_mini_datasheet.pdf)
 :::
+
+---
+
+## OBD Connector Pinout(Autopi_mini)
+
+## Overview
+
+The OBD-II (On-Board Diagnostics, revision 2) connector is the standard diagnostic port used in all modern vehicles. The AutoPi Mini connects to your vehicle through this 16-pin connector, allowing you to read vehicle data, monitor diagnostics, and access engine parameters in real-time.
+
+This guide provides the pinout configuration for the OBD-II connector on the AutoPi Mini device, helping you understand the pin layout and best connection practices.
+
+## Connector Layout
+
+![OBD connector pinout](/img/hardware/autopi_mini/mini_connector_pinout.png)
+
+## Connection Best Practices
+
+- Ensure a secure connection to avoid intermittent data loss
+- The connector should click firmly into place
+- Power cycles are not needed when plugging in the device
+- The AutoPi Mini powers on automatically when connected to a vehicle with the ignition in the ON or ACC position
+- Verify no bent pins before inserting the connector
+
+## Vehicle Communication Protocols
+
+The AutoPi Mini automatically detects and communicates using the protocol supported by your vehicle:
+
+- **CAN Bus** (ISO 15765-4): Preferred modern standard for most vehicles manufactured after 2008
+- **ISO 9141-2**: Older protocol still used by some vehicles
+- **KWP2000**: Keyword Protocol 2000, alternative to ISO 9141-2
+- **J1850-PWM**: Used in some Ford and GM vehicles
+
+The device intelligently handles protocol switching based on your vehicle's capabilities.
 
 ---
 
@@ -26160,7 +26589,7 @@ The green LED indicates the current state of the [high-level](/core/power_manage
 
 ---
 
-Mounting holes can be used to create mounts for easier installation in the vehicle. 
+This guide explains how to utilize the mounting holes on your AutoPi TMU CM4 device to create custom installation solutions. Learn how to design and fabricate mounts tailored to your vehicle's interior layout for secure and professional device installation.
 
 ![Mounting holes](/img/hardware/autopi_tmu_cm4/mounting_holes/mounting_holes.png)
 

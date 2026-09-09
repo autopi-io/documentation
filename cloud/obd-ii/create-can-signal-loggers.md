@@ -5,8 +5,6 @@
 
 ---
 
-# Create [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Signal Loggers
-
 [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals play a crucial role in vehicle communication, differing from PIDs in their use and structure. While PIDs (Parameter IDs) are standardized codes used across different vehicles for obtaining specific data points (like engine RPM, temperature), [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) (Controller Area Network) signals are more direct, low-level messages that devices within the vehicle use to communicate with each other. Understanding these differences is key to effectively logging and analyzing vehicle data.
 
 **Step 1: Start with a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Signal**

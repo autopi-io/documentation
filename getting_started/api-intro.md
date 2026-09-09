@@ -5,8 +5,7 @@
 
 ---
 
-You are able to use the [AutoPi REST API](https://api.autopi.io) with your browser, which will display our
-auto-generated documentation portal.
+This guide will walk you through accessing and using the AutoPi REST API. You'll learn how to authenticate using API tokens or JWT tokens, retrieve telemetry data from your devices, and send CAN bus commands directly to your vehicle. The guide covers both the interactive API documentation portal and manual request methods using tools like Postman.
 
 ![api_frontpage](/img/getting_started/api/api_intro/api_frontpage.jpg) 
 

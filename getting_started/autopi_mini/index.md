@@ -5,26 +5,37 @@
 
 ---
 
-Welcome to [AutoPi](https://www.autopi.io)! 
+## Welcome to AutoPi Setup
 
-This step-by-step guide will help you set up your [AutoPi](https://www.autopi.io) TMU CM4 4G/LTE Edition. 
-The device comes pre-assembled with the SD card inside and requires just a few steps to complete the installation.
+This comprehensive guide will walk you through setting up your AutoPi Mini from account creation to full cloud connectivity. Your device arrives pre-assembled with the SIM card installed, requiring only a few essential steps to get operational.
 
-:::note
+## What You'll Learn
 
-**Important Notes Before You Start**
+By following this guide, you will:
 
-The [AutoPi](https://www.autopi.io) Telematics Unit is a highly customizeable and technical device. It contains a direct
-interface to your car and communicates with the ECU in your car.
+- Create and configure your AutoPi Cloud account.
+- Register your device on the platform.
+- Locate your vehicle's OBD port.
+- Physically install the device for optimal performance.
+- Connect the device to the AutoPi Cloud via Wi-Fi.
+- Configure your AutoPi Mini for Electric Vehicle compatibility (if applicable).
+- Complete security and finalization settings.
 
-1. **Power Off the Vehicle**: When inserting the device for the first time, ensure that the vehicle is powered off.
-2. **Vehicle Must Be Parked**: When working on and customizing your device, make sure your vehicle is in the parked position.
-3. **Do Not Remove the [AutoPi](https://www.autopi.io) While Driving.**
-4. **Power Source**: The device can only be powered through the OBD-II port.
-     Powering the Raspberry Pi directly is not supported and may cause issues.
-5. **Advanced Settings Caution**: When updating the Advanced settings, ensure you understand what you
-     are doing, as changes can affect the performance of your car and its battery.  
+## Important Safety & Setup Requirements
+
+:::caution
+
+The AutoPi Telematics Unit is a technical device that interfaces directly with your vehicle's ECU. Before proceeding, please review these critical requirements:
+
+1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
+2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
+3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
+4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
+5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
+
 :::
+
+---
 
 ## 1. Setting Up User Account
 
@@ -91,6 +102,8 @@ to place your [AutoPi](https://www.autopi.io) in a more convenient location.
 This is the OBD-II extension cable: 
 
 ![AutoPi.io - Relocator cable](/img/getting_started/getting_started/relocator_cable.png)
+
+---
 
 ## Electric Vehicle configurations
 

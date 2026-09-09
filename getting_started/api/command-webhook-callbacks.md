@@ -5,7 +5,15 @@
 
 ---
 
-It is possible to get notified via webhook when a command completes on a device.
+This guide will walk you through implementing webhook callbacks for command execution on your AutoPi device. Webhook callbacks allow you to receive asynchronous notifications when a command completes, including both successful responses and timeout events. You'll learn how to execute commands with callbacks, verify webhook request integrity using HMAC signatures, and debug callback issues.
+
+**Key topics:**
+- Executing commands with callback URLs.
+- Handling command execution and timeout states.
+- Verifying webhook request signatures.
+- Debugging and monitoring callbacks.
+
+---
 
 ### Overview
 

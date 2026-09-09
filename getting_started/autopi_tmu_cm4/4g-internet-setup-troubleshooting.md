@@ -4,18 +4,33 @@
 
 ---
 
-This guide helps you diagnose and resolve common 4G connectivity issues on your [AutoPi](https://www.autopi.io) device. If you cannot access the internet while connected to the device hotspot, follow the steps below in order.
+If your AutoPi device is unable to connect to the internet, this guide provides a systematic troubleshooting approach to diagnose and resolve common 4G connectivity issues. Follow the steps in the order presented to identify the root cause and restore connectivity.
 
-:::tip Our support team is here to help you.
-If you need assistance, contact support@autopi.io.
-:::
+## What You'll Learn
 
-### Prerequisites
+By following this guide, you will:
+
+- Verify SIM card compatibility, orientation, and physical condition.
+- Confirm modem detection and hardware status.
+- Check and configure modem settings (PDP context and firmware).
+- Validate and configure APN settings for your carrier.
+- Diagnose and manage `qmi-manager` service status.
+- Restart and troubleshoot the network interface (`wwan0`).
+- Tune MTU settings for optimal connectivity.
+- Test internet and cloud connectivity.
+- Collect diagnostic logs for support when needed.
+
+## Prerequisites
+
 Before starting, complete the initial [setup guide](https://docs.autopi.io/getting_started/autopi_tmu_cm4/).
+
+:::tip Need Support?
+If you need assistance after following these steps, contact support@autopi.io and include all command outputs and logs collected during troubleshooting.
+:::
 
 ---
 
-### Check SIM Card
+## Check SIM Card
 
 * Confirm that your SIM card is enabled for mobile data. Test the SIM in another device (for example, a smartphone) and verify that internet access works.
 * If you are using a data-only SIM, confirm with your carrier that the data plan is active and roaming is enabled when required.
@@ -33,7 +48,7 @@ Always verify orientation before insertion.
 
 ---
 
-### Check Modem Detection (Hardware)
+## Check Modem Detection (Hardware)
 
 * Connect to the device hotspot and open [AutoPi Local](http://local.autopi.io). 
 * Open the terminal and run:
@@ -60,19 +75,19 @@ If `lsusb` is unavailable, run `cmd.run "dmesg | grep -i usb"` to check USB dete
 
 ---
 
-### Check Modem Setup
+## Check Modem Setup
 
-#### Check PDP Context
+### Check PDP Context
 
 PDP context controls how the modem connects to the mobile network. Incorrect values can prevent data sessions from starting.
 
-For software version `1.22.7` or newer:
+**For software version `1.22.7` or newer:**
 
 ```python
 modem.connection pdp_context
 ```
 
-For `older` versions:
+**For older versions:**
 
 ```python
 modem.connection execute AT+CGDCONT?
@@ -107,13 +122,11 @@ cmd.run "systemctl restart qmi-manager"
 
 Run the PDP command again to confirm the result.
 
----
-
-**Check Firmware Switch**
+### Check Firmware Switch
 
 An incorrect firmware switch setting can prevent the modem from connecting to the network correctly.
 
-**If you are using software version `1.22.7 or newer`, run:**
+**For software version `1.22.7` or newer:**
 
 ```python
 modem.connection active_firmware_image
@@ -130,7 +143,7 @@ storage_conf: ram
 
 Confirm that `net_conf` is set to `global`.
 
-**Incase your software version is `older than 1.22.7`, you can run the following command to get the same information:**
+**For software version older than `1.22.7`:**
 ```python  
 modem.connection execute AT#FWSWITCH?'
 ```
@@ -155,7 +168,7 @@ For additional modem commands and examples, see [Core Commands - Modem](https://
 
 ---
 
-### Check APN Configuration
+## Check APN Configuration
 
 A missing or incorrect APN can block internet access even when the modem is detected.
 
@@ -189,29 +202,29 @@ If you do not know your APN, check your carrier documentation or support channel
 
 ---
 
-### Check qmi-manager Status
+## Check qmi-manager Status
 
 `qmi-manager` maintains the cellular data connection.
 
-Check status:
+**Check status:**
 
-    ```python
-    cmd.run "qmi-manager status"
-    ```
+```python
+cmd.run "qmi-manager status"
+```
 
-Expected response: 
+**Expected response:**
 
-    ![qmistatus](/img/getting_started/autopi_tmu_cm4/4g_internet_setup_troubleshooting/qmistatus.jpg)
+![qmistatus](/img/getting_started/autopi_tmu_cm4/4g_internet_setup_troubleshooting/qmistatus.jpg)
 
-If needed, restart it:
+**If needed, restart it:**
 
-    ```python
-    cmd.run "systemctl restart qmi-manager"
-    ```
+```python
+cmd.run "systemctl restart qmi-manager"
+```
 
 ---
 
-### Restart the Network Interface
+## Restart the Network Interface
 
 If `qmi-manager` is running but internet is still unavailable, cycle the interface:
 
@@ -233,7 +246,7 @@ If `wwan0` has no IP address, the mobile session is not established.
 
 ---
 
-### Adjust the MTU Setting
+## Adjust the MTU Setting
 
 If connection is unstable (drops, intermittent cloud status), tune MTU. Based on your board version, the default MTU is either `1500` or `1280`.
 
@@ -264,7 +277,7 @@ Confirm that both outputs match the configured MTU.
 
 ---
 
-### Check Internet and Cloud Connectivity
+## Check Internet and Cloud Connectivity
 
 Test internet over cellular:
 
@@ -294,23 +307,20 @@ Then re-run ping and curl.
 
 ---
 
-### Collect Logs for Support
+## Collect Logs for Support
 
-If the issue persists, collect logs before opening a support request.
-Follow this guide to export relevant logs: [AutoPi Logs Guide](https://docs.autopi.io/developer_guides/autopi-logs/)
+If the issue persists, collect diagnostic logs before opening a support request. Follow this guide to export relevant logs: [AutoPi Logs Guide](https://docs.autopi.io/developer_guides/autopi-logs/)
 
----
+## Summary
 
-### Summary
+At this point, you should have verified:
 
-By this point, you should have verified:
-
-1. SIM compatibility, orientation, and slot condition.
-1. Modem detection and modem configuration (PDP and firmware switch).
-1. APN settings.
-1. `qmi-manager` and `wwan0` status.
-1. MTU tuning and DNS/cloud connectivity tests.
+1. SIM compatibility, orientation, and physical condition.
+2. Modem detection and modem configuration (PDP and firmware switch).
+3. APN settings.
+4. `qmi-manager` and `wwan0` status.
+5. MTU tuning and DNS/cloud connectivity tests.
 
 :::note
-If you open a support case, include the full output from all commands used in this guide, along with the collected [Logs](https://docs.autopi.io/developer_guides/autopi-logs/).
+**When Opening a Support Case** - include the complete output from all commands run in this guide, along with the diagnostic logs collected using the [AutoPi Logs Guide](https://docs.autopi.io/developer_guides/autopi-logs/). This will help our support team diagnose the issue more quickly.
 :::

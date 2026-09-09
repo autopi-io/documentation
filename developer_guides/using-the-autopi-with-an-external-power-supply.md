@@ -5,13 +5,33 @@
 
 ---
 
-AutoPi devices are preconfigured for in-vehicle use. For lab or bench setups, you can safely power the device with an external power supply through the OBD connector.
+This guide will walk you through safely powering your AutoPi device using an external power supply through the OBD connector. This approach is ideal for development, testing, and troubleshooting scenarios where vehicle-based power is unavailable.
+
+### What you'll learn:
+- How to correctly connect an external power supply to your AutoPi device.
+- Power supply requirements and safety considerations.
+- How to manage sleep timers and power states during bench testing.
+- Best practices for lab and testing environments.
+
+### Common use cases:
+- **Configuration Validation** — test settings and configurations before vehicle deployment.
+- **Issue Reproduction** — reproduce and debug problems in a controlled environment.
+- **Development Testing** — develop and test features without vehicle access.
+- **Firmware Testing** — validate firmware updates and custom code.
+
+### Prerequisites:
+- An AutoPi device (CM4, CAN-FD Pro, or Pro Casing models). 
+- An external power supply (12V minimum, 2.5A recommended).
+- Basic understanding of power management and device safety.
+- Optional: OBD-II power cable for easier connectivity.
 
 ![AutoPi With External Power Supply](/img/guides/ssh_access/external_power_supply.jpeg)
 
 :::tip Recommended for testing and troubleshooting
 Using an external power supply is an excellent option when validating configurations, reproducing issues, and troubleshooting behavior outside a vehicle.
 :::
+
+---
 
 ## Setup Checklist
 

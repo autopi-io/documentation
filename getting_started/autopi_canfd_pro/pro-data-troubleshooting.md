@@ -2,25 +2,17 @@
 
 > <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
+This guide will help you identify and resolve common data logging issues with your AutoPi CAN-FD Pro device. It provides systematic troubleshooting for problems related to device configuration, CAN logger setup, channel verification, voltage detection, and internet connectivity. The guide is organized as a diagnostic checklist to help you determine why your device may not be recording vehicle data.
 
 ---
-
-You are experiencing issues with getting the data out of your [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro)? This guide help you step-by-step to identify and resolve common problems related to wrong configurations on device, configurations to CAN Loggers, verification of CAN channels, nominal voltage detection, and internet connectivity issues. 
+This guide will help you identify and resolve common data logging issues with your AutoPi CAN-FD Pro device. It provides systematic troubleshooting for problems related to device configuration, CAN logger setup, channel verification, voltage detection, and internet connectivity. The guide is organized as a diagnostic checklist to help you determine why your device may not be recording vehicle data.
 
 :::tip Our support team is here to help you.
 Get in touch here or send an email to support@autopi.io
 :::
 
 ### Prerequisites:
-Before following this guide, you must have completed the initial [Setup guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/).
-
-### Why am I not seeing any data? 
-If you've followed the [Getting Started Guide](/getting_started/autopi_canfd_pro/index.md)
-and tested your [AutoPi](https://www.autopi.io) [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) device during vehicle operation, but are not recording any data, this guide will help you identify and resolve common issues. 
-
-This guide is organized as a checklist, detailing potential reasons why your vehicle
-data might not be recorded. It is only intended for the
-[AutoPi](https://www.autopi.io) [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) device.  
+Before following this guide, you must have completed the initial [Setup guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/).  
 
 ## Common causes and solutions for no data recorded
 

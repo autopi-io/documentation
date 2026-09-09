@@ -1,12 +1,26 @@
 # Introduction
 
-> A variety of services are running on the device, each having its own specific area of responsibility. Most services are built around the same structure and using the same concepts which are described below.
+> <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
-A variety of services are running on the device, each having its own specific area of responsibility. Most services are built around the same structure and using the same concepts which are described below.
+---
+
+This guide provides a comprehensive reference for the services running on your AutoPi device. Understand how services are structured and configured, learn how workers and workflows process data, configure reactors to automate responses to device events, and extend functionality using custom hooks for specialized processing.
+
+### Key features:
+- Modular service architecture with configurable settings.
+- Worker threads with customizable timing and execution parameters.
+- Two workflow types (Simple and Extended) for different processing needs.
+- Workflow steps with defined responsibilities (handler, converter, trigger, filter, enricher, returner).
+- Reactor system for event-driven automation.
+- Custom hook support for extensible data processing.
+- Cloud-based service management and configuration.
 
 :::note
 Services can be setup and configured from the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management). When logged in go to: _Device_ > _Services_
 :::
+
+---
 
 ## Settings
 

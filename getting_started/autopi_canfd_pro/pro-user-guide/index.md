@@ -5,15 +5,19 @@
 
 ---
 
-Our newest [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) device has some new features that are not available on our other devices. This guide will walk you through everything you need to know about the CAN Logging feature on our AutoPi CAN-FD Pro device. Whether you're setting up your first logger or exploring advanced options, we've made it easy to follow and fully customizable to suit your needs.
+The AutoPi CAN-FD Pro is engineered with advanced CAN logging capabilities not available on other AutoPi devices. This comprehensive guide walks you through CAN Logging, data queries, frame listeners, event reactors, and workflow hooks. Whether you're setting up your first logger or exploring advanced automation, this guide provides everything you need to master the device's powerful features.
+
 :::note
-**CAN Logging** on the AutoPi CAN-FD Pro is different from the Loggers feature available on our other device [AutoPi TMU CM4](https://shop.autopi.io/products/autopi-telematics-unit-cm4-4g-lte-edition). 
+**Important Distinction**
+
+CAN Logging on the AutoPi CAN-FD Pro is distinct from the Loggers feature available on other devices such as the [AutoPi TMU CM4](https://shop.autopi.io/products/autopi-telematics-unit-cm4-4g-lte-edition). The CAN-FD Pro provides more granular control over channel configuration, filtering, and advanced automation capabilities.
 :::
 
-**What is CAN Logging?**
-CAN Logging captures traffic from your vehicle’s CAN bus using two dedicated interfaces: can0 and can1. These logs can include raw or decoded data, depending on your configuration.
+## Understanding CAN Logging
 
-![CAN logging](/img/getting_started/autopi_canfd_pro/can_logging_tab.png)
+CAN Logging captures traffic from your vehicle's CAN bus using two dedicated interfaces: can0 and can1. These logs can include raw or decoded data, depending on your configuration.
+
+![CAN Logging](/img/getting_started/autopi_canfd_pro/can_logging_tab.png)
 
 **`logger.status` command**
 

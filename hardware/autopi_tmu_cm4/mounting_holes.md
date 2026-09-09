@@ -5,7 +5,7 @@
 
 ---
 
-Mounting holes can be used to create mounts for easier installation in the vehicle. 
+This guide explains how to utilize the mounting holes on your AutoPi TMU CM4 device to create custom installation solutions. Learn how to design and fabricate mounts tailored to your vehicle's interior layout for secure and professional device installation.
 
 ![Mounting holes](/img/hardware/autopi_tmu_cm4/mounting_holes/mounting_holes.png)
 

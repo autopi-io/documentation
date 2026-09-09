@@ -5,9 +5,26 @@
 
 ---
 
-In this guide we will talk about how you can manage your AutoPi's logs. The topics that we will
-cover are how you can view your device's logs and how you can download the log files to your
-computer.
+This guide will walk you through accessing and downloading AutoPi device logs for troubleshooting and support purposes. You'll learn how to view logs through AutoPi Cloud, access them directly via SSH, download log files using multiple methods (local admin interface, SCP, or Dropbox), and understand how log rotation works on your device.
+
+Device logs are essential for diagnosing issues, investigating unexpected behavior, and providing detailed information to the AutoPi support team. This guide covers all the primary methods for retrieving and managing your logs.
+
+**What you'll learn:**
+- Viewing device logs through AutoPi Cloud terminal.
+- Accessing logs directly on the device via SSH.
+- Downloading log files to your computer (three methods).
+- Understanding log file types and locations.
+- Working with log rotation and file management.
+
+**Common log files:**
+- `/var/log/salt/minion` — primary AutoPi system logs (rotated weekly).
+- `/var/log/syslog` — system-wide logs (rotated daily).
+
+:::tip
+Remember that all timestamps in device logs are in UTC (Coordinated Universal Time).
+:::
+
+---
 
 ## Viewing Logs
 

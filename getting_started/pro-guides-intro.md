@@ -5,20 +5,25 @@
 
 ---
 
-:::note
-The device comes pre-assembled with the SD card inside and requires just a few steps to complete the installation.
+This comprehensive guide will walk you through setting up your AutoPi CAN-FD Pro from account creation to full cloud connectivity. Your device arrives ready to be installed, requiring only a few essential steps to get operational.
 
-1. **Power Off the Vehicle**: When inserting the device for the first time, ensure that the vehicle is powered off.
-2. **Vehicle Must Be Parked**: When working on and customizing your device, make sure your vehicle is in the parked position.
-3. **Do Not Remove the AutoPi While Driving.**
-4. **Power Source**: The device can only be powered through the OBD-II port.
-     Powering the Raspberry Pi directly is not supported and may cause issues.
-5. **Advanced Settings Caution**: When updating the Advanced settings, ensure you understand what you
-     are doing, as changes can affect the performance of your car and its battery.  
+## Important Safety & Setup Requirements
+
+:::caution
+
+The AutoPi Telematics Unit is a technical device that interfaces directly with your vehicle's ECU. Before proceeding, please review these critical requirements:
+
+1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
+2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
+3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
+4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
+5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
 
 :::
 
-## [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) Quick Start Summary
+## Quick Start Summary
+
+### [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) Setup Steps
 * Step 1: Set up your account on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#1-setting-up-user-account).
 * Step 2: Register your device on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#2-register-your-device). 
 * Step 3: SIM card installation (if you did not purchased one from us), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#3-ensure-sim-connectivity).

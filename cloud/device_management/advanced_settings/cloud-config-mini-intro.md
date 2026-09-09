@@ -1,16 +1,23 @@
 # Introduction
 
-> The configuration settings controls the behaviour of the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) device.
+> ---
 
-The configuration settings controls the behaviour of the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) device.
+---
+
+This guide will walk you through configuring advanced settings for your AutoPi Mini device. Optimize device behavior for your specific vehicle type (ICE or EV), configure OBD communication, manage vehicle identification, and customize ignition detection and vehicle tracking methods. Learn how to fine-tune your Mini device for reliable data collection and seamless vehicle integration.
+
+![Mini advanced settings](/img/cloud/device_management/advanced_settings/autopi_mini/mini_advanced_settings.png)
+
+What you'll learn:
+- How to access and navigate AutoPi Mini advanced settings.
+- How to configure OBD settings for your vehicle type (ICE or EV).
+- How to manage vehicle identification (VIN) settings.
+- How to set up ignition detection methods based on your vehicle type.
+- How to configure vehicle tracking and trip detection sources.
 
 :::note
 Like any [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) functionality, configuration settings can be changed programmatically through the [AutoPi](https://www.autopi.io) REST API. For more information see our [API docs page](https://api.autopi.io/).
 :::
-
-This documentation provides an overview of the adjustable settings on the AutoPi Mini device, helping you optimize its functionalities for your vehicle type.
-
-![Mini advanced settings](/img/cloud/device_management/advanced_settings/autopi_mini/mini_advanced_settings.png)
 
 ## Obd settings
 

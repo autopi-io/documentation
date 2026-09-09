@@ -5,9 +5,16 @@
 
 ---
 
-# AutoPi Local API Overview
+This guide will walk you through using the AutoPi Local API to interact with your device directly over the local network. You'll learn how to authenticate, execute commands, retrieve device information, download logs, and configure network and APN settings through REST endpoints accessible on port 9000.
 
-The AutoPi Local API provides a set of REST endpoints to interact with your local AutoPi device. The API is typically accessible on port `9000` of the device.
+The Local API provides direct device control without requiring an internet connection or cloud platform access. It's useful for local development, testing, configuration management, and troubleshooting when your device is on the same network as your computer or client application.
+
+**Key capabilities:**
+- **Authentication** — obtain JWT tokens for API access.
+- **Device Management** — query device information and connected units.
+- **Command Execution** — run AutoPi commands and state configurations.
+- **Log Access** — download system and application logs.
+- **Network Configuration** — manage WiFi and cellular (APN) settings.
 
 ---
 

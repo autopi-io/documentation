@@ -2,17 +2,17 @@
 
 > <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
-This guide will walk you through on how to create an Amazon Web Services (AWS) S3 bucket. If you want your data from AutoPi CAN-FD Pro device to be uploaded to Amazon S3 bucket, you will need to create a AWS account and S3 bucket and configure the settings for Output handlers in AutoPi cloud.
+This guide will walk you through creating an Amazon Web Services (AWS) S3 bucket and configuring your AutoPi CAN-FD Pro device to upload data to it. To enable cloud data storage, you will need to create an AWS account, set up an S3 bucket, generate secure access credentials, and configure the output settings in AutoPi cloud.
 
 ---
-This guide will walk you through on how to create an Amazon Web Services (AWS) S3 bucket. If you want your data from AutoPi CAN-FD Pro device to be uploaded to Amazon S3 bucket, you will need to create a AWS account and S3 bucket and configure the settings for Output handlers in AutoPi cloud. 
+This guide will walk you through creating an Amazon Web Services (AWS) S3 bucket and configuring your AutoPi CAN-FD Pro device to upload data to it. To enable cloud data storage, you will need to create an AWS account, set up an S3 bucket, generate secure access credentials, and configure the output settings in AutoPi cloud.
 
 **Quick Start Summary:**
 1. Create an Amazon Web Services account.
 2. Create an S3 Bucket. 
-3. Create users and assign permissions. 
-3. Create Access key and secret key to access the S3 bucket (make sure to save it). 
-4. Fill in Access Key ID, Access Secret Key and Destination Path under CAN Logger on AutoPi cloud. 
+3. Create IAM users and assign permissions. 
+4. Generate Access Key ID and Secret Access Key (save them securely). 
+5. Configure the Output handler in AutoPi cloud with your credentials.
 
 ---
 ## What is AWS S3?

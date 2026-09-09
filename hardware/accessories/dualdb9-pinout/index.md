@@ -5,8 +5,7 @@
 
 ---
 
-## Introduction
-This page describes the pinout of our OBD-II to dual DB9 pinout cable:
+This guide provides detailed pinout information for the OBD-II to dual DB9 adapter cable. Use this reference to understand the pin assignments, connector configurations, and signal routing for connecting your AutoPi device to external systems via DB9 connectors.
 
     
 

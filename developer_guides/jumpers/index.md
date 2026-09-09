@@ -5,20 +5,13 @@
 
 ---
 
-## Overview
+This guide will walk you through understanding and using the FORCE 5V jumper on your AutoPi device. You'll learn what jumpers are, how they override the Smart Power Manager (SPM), when to install them for development work, and how to properly install and remove them while maintaining device safety.
 
-A **jumper** is a small electrical connector used to short two header pins on a PCB. When installed, it electrically connects the pins and changes the behavior of the circuit by enabling or disabling specific hardware functions.
+A jumper is a small electrical connector that shorts two header pins on the device's circuit board. On AutoPi devices, the FORCE 5V jumper disables the Smart Power Manager and forces the Raspberry Pi compute module to receive constant 5V power, independent of vehicle ignition state or power management controls.
 
-On AutoPi devices, the jumper is used to **override the Smart Power Manager (SPM)** and force the internal Raspberry Pi compute module to receive a constant **5 V supply**.
-
-This configuration is primarily intended for:
-* Developing firmware interacting with the SPM
-* Debugging unexpected shutdowns or sleep events
-* Running long development workloads
-* Testing boot processes or system initialization
-* Performing low-level hardware diagnostics.
-
-Because this configuration bypasses the normal power management mechanisms, it should **only be used for development purposes**.
+:::warning
+**Important:** the jumper is intended **exclusively for development purposes**. It bypasses critical power management and battery protection mechanisms and should never be used in production environments.
+:::
 
 ---
 

@@ -5,11 +5,15 @@
 
 ---
 
-## Overview of Devices 
+This guide will walk you through the Device Management Overview section in AutoPi Cloud, providing centralized visibility into your entire device fleet. Monitor device activity and connectivity, track alerts by severity level, and manage software updates across all devices to ensure optimal performance and operational efficiency.
 
-The **Overview** section in the AutoPi Cloud Platform (under **Device Management**) provides a centralized view of all your devices. It is designed to help you monitor device activity, track system health, and ensure that your fleet operates efficiently with continuous communication and data exchange.
-
-![Device management overview](/img/cloud/device_management/device_management_intro.png)
+What you'll learn:
+- How to view device connectivity status across multiple time periods.
+- How to monitor device activity (online now, today, and last 30 days).
+- How to identify and prioritize alerts by severity level (Critical, High, Medium, Low).
+- How to track software update status across your fleet.
+- How to identify inactive or underutilized devices.
+- How to use fleet health metrics to maintain optimal performance.
 
 ---
 

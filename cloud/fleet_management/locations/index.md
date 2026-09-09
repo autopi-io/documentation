@@ -5,9 +5,9 @@
 
 ---
 
-The **Locations** feature helps you organize your fleet by creating and managing operational areas for your company—such as regional offices, headquarters, distribution centers, or service hubs. You can assign vehicles to specific locations and control user access based on their assigned areas. Users will only see vehicles and manage operations tied to the locations they have access to.
+This guide will walk you through creating and managing operational locations for your fleet. Organize your vehicles by geographic areas or operational hubs, assign vehicles and users to specific locations, and control access permissions based on location assignments. Use locations alongside templates to maintain consistent fleet configurations across your organization.
 
-To begin, navigate to the **Locations** tab, where you'll see a world map of your existing locations and a list view for easy navigation. 
+## Getting Started with Locations 
 
 ![Locations overview](/img/cloud/fleet_management/locations/new_locations_table.png)
 

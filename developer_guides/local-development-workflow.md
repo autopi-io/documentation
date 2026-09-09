@@ -5,27 +5,17 @@
 
 ---
 
-When you build or debug modules, speed matters. A cloud-only workflow is reliable for deployment, but it is often too slow for everyday development.
+This guide will walk you through establishing an efficient local development workflow for building and debugging AutoPi modules. You'll learn when to use cloud versus local development approaches, how to edit and test code directly on your device via SSH, how to sync changes from your local machine to the device, and how to optimize your feedback loop for rapid iteration.
 
-Typical cloud-only loop:
+While cloud-based workflows are ideal for reliable fleet management and final deployments, local development provides significantly faster iteration cycles. This guide demonstrates two complementary approaches: developing directly on the device and developing locally with automated sync to the device.
 
-1. Make changes.
-2. Push/sync changes to the device.
-3. Restart services.
-4. Execute module.
-5. Repeat.
+**What you'll learn:**
+- When to use cloud versus local development workflows.
+- How to develop and test directly on the device over SSH.
+- How to develop locally and sync changes efficiently (recommended approach).
+- When to refresh modules versus restart the minion service.
 
-For active development, a local workflow gives a much faster feedback loop and a better developer experience. In this guide, you will learn:
-
-* When to use cloud vs local workflows.
-* How to develop directly on the device over SSH.
-* How to develop locally and sync changes to the device (recommended).
-* How to choose between refreshing modules and restarting the minion.
-
-:::note 
-Recommended workflow - use the **[AutoPi Cloud](https://www.autopi.io/software-platform/cloud-management)** for fleet management, configuration, and final rollouts.
-Use **local or SSH-based workflows** for rapid iteration, debugging, and testing.
-:::
+**Recommended workflow:** use the [AutoPi Cloud](https://www.autopi.io/software-platform/cloud-management) for fleet management, configuration, and final rollouts. Use local or SSH-based workflows for rapid iteration, debugging, and testing.
 
 ---
 

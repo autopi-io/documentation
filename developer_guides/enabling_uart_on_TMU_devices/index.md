@@ -5,13 +5,34 @@
 
 ---
 
+This guide will walk you through enabling and configuring UART 2 on your AutoPi TMU CM4 device to support external serial communication. You'll learn how to wire the necessary GPIO pins, configure the Raspberry Pi firmware to expose the serial port, test the connection, and use the UART with Python for real-world applications like GPS modules, CAN bridges, industrial sensors, and other serial devices.
+
+**What you'll accomplish:**
+- Wire GPIO 0 and GPIO 1 for UART 2 TX and RX signals.
+- Enable UART 2 in the Raspberry Pi firmware configuration.
+- Verify serial communication with a loop-back test.
+- Use Python to read from and write to the external serial port.
+- Troubleshoot common UART configuration issues.
+
+**Common use cases for external UART:**
+- Adding GNSS (GPS) modules for continuous NMEA sentence streaming.
+- Connecting OBD-II dongles while keeping the main vehicular interface free.
+- Bridging to RS-232/RS-485 industrial sensors via 3-wire connections.
+- Debugging other microcontroller boot output and console logs.
+
+:::caution Level shifting
+If your external device operates at 5V TTL or ±12V RS-232, you **must** use a level shifter or line driver (e.g., MAX3232, SN65HVD230). Direct 5V connections to a CM4 pin can permanently damage the SoC.
+:::
+
+---
+
 ## Overview
 
 A UART (Universal Asynchronous Receiver/Transmitter) is the simplest and most widely supported way to move serial data between two devices. On an AutoPi TMU CM4 you already have one UART occupied by the automotive interface, but many real‑world projects—GPS receivers, CAN bridges, industrial sensors or even another microcontroller—need a *second* serial interface.
 
 > **Goal** – Re‑purpose the built‑in **UART 2** of the CM4 and break it out on the HAT so your add‑on hardware can talk to the AutoPi at 300 baud or 4 Mbit/s and everything in between.
 
-By the end of this page you will have:
+By the end of this guuide you will have:
 
 * **Wired** the right pins
 * **Edited** the Raspberry Pi firmware so it exposes `/dev/ttyAMA1`, and

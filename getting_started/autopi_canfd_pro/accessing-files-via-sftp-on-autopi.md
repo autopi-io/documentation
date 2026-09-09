@@ -5,9 +5,17 @@
 
 ---
 
+This guide will walk you through accessing files stored on your AutoPi device using SFTP (SSH File Transfer Protocol) or SCP (Secure Copy Protocol). These methods allow you to securely transfer files between your AutoPi device and your computer over a network connection. Whether you prefer a graphical file manager or command-line tools, this guide covers both approaches.
+
+**Available Methods:**
+1. **SFTP with Cyberduck** — Use a graphical interface for file transfers
+2. **Command-line SCP** — Transfer files directly from Terminal or PowerShell
+
 :::note
-If you want to use scp on Windows to download files from the autopi, you need to set up openssl.  
+If you are using Windows and want to use `scp` to download files from the AutoPi, you will need to set up OpenSSL on your system.
 :::
+
+---
 
 ## Option 1: Accessing files via SFTP
 

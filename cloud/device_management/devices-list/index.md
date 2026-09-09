@@ -5,6 +5,19 @@
 
 ---
 
+This guide will walk you through managing your AutoPi devices in the cloud platform. Access your complete device inventory, configure individual device settings, monitor device status and health metrics, and connect your devices to vehicles. Learn how to search and filter devices, customize device views, and access comprehensive device configuration options.
+
+What you'll learn:
+- How to view and manage your complete device inventory in the Devices List-
+- How to search and filter devices by connectivity, status, and specifications.
+- How to customize the device table view to display relevant information.
+- How to access comprehensive device overview pages and status metrics.
+- How to configure device settings and connect devices to vehicles.
+- How to navigate device configuration tabs (Dashboard, Jobs, Services, Events, Triggers, Alerts, and more).
+- How to view device specifications, metrics, and real-time status information.
+
+---
+
 ## Devices List
 
 The **Devices List** provides a table view of all your devices, including key details such as device name, unit ID, last communication timestamp, and more.
