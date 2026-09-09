@@ -1,13 +1,34 @@
 ---
 id: core-power-intro
 title: Introduction
+supportedDevices: ['cm4','pro','pro_case']
 ---
 import CardGrid from "/components/CardGrid";
+import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+
+<DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
+
+This guide will walk you through understanding and managing the power consumption of your AutoPi device. Learn how the device transitions between operational states (On, Sleeping, Hibernating), configure power cycles and sleep timers, monitor status via LED indicators, and optimize power management for your specific vehicle type and use case.
+
+
+Common use cases:
+- **Power Optimization** — configure sleep timers and wake triggers to balance responsiveness and battery conservation.
+- **Battery Protection** — set up hibernation thresholds to prevent vehicle battery depletion.
+- **Extended Downtime** — manage device behavior when vehicles are parked for extended periods.
+- **Vehicle Type Configuration** — optimize power management for internal combustion or electric vehicles.
+- **Status Monitoring** — use LED indicators to verify device state and diagnose power-related issues.
+- **Connectivity Management** — configure modem power-saving options for cost and power efficiency.
+- **Troubleshooting** — diagnose power cycle issues and verify proper state transitions.
+
 
 :::tip
-For power cycle, LED and button information on the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4), please see [configuration here](/hardware/autopi_tmu_cm4/led_and_button.mdx)
+For power cycle, LED, and button information on the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4), please see [configuration here](/hardware/autopi_tmu_cm4/led_and_button.mdx)
 :::
 
+---
+
+## Power Management Architecture
 
 The power management of the device consists of a low- and high-level layer. For further details please see: 
 
@@ -139,4 +160,8 @@ The green LED indicates the current state of the [high-level](/core/power_manage
 | Turned off | Not running or in the process of booting up. |
 | Flashing brightly | Up and running but NOT (yet) connected to the [Cloud](https://www.autopi.io/software-platform/cloud-management). |
 | Constantly bright | Up and running and connected to the [Cloud](https://www.autopi.io/software-platform/cloud-management). |
+
+:::note
+For LED light indicators on the AutoPi Mini device, see [LED Lights of an AutoPi Mini Device](/hardware/autopi_mini/device_specifications/#led-lights-of-an-autopi-mini-device).
+:::
 

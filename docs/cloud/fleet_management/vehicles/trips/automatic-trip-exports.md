@@ -9,11 +9,20 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-# Automatic Exporting
-When enabled for a device, it will automatically trigger exports when a trip ends, and when an export is finished, it will send notifications (mail and/or JSON Http request)
+This guide will walk you through enabling and managing automatic trip exports for your AutoPi device. Configure your device to automatically export trip data when trips end, receive notifications via email or webhook, and access exported data through the AutoPi API. Learn how to retrieve, process, and manage trip export tasks and their associated data.
+
+### What you'll learn:
+- How to enable automatic trip export functionality per device or fleet-wide via templates.
+- How to understand the trip export workflow and timing.
+- How to configure triggers to receive notifications (email and/or webhooks) when exports complete.
+- How to authenticate with the AutoPi API using API tokens.
+- How to retrieve exported trip data using API endpoints.
+- How to understand the JSON Lines data format for exported trips.
+- How to manually trigger and retrieve trip exports for historical data.
+
 
 :::tip
-Contact [sales@autopi.io](mailto:support@autopi.io) to get more information.
+Contact [sales@autopi.io](mailto:sales@autopi.io) for information about enabling automatic trip exports on your account.
 :::
 
 ## Endpoints Overview

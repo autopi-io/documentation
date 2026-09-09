@@ -9,10 +9,7 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-
-In this page we go through the Library section of our Cloud. Below is a screenshot of an example
-Library that is already filled with some PIDs and [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages. Open the screenshot in a
-new tab to get a better overview of the whole page.
+This guide will walk you through managing your personal OBD library in AutoPi Cloud. Create and configure custom PIDs (Parameter IDs) and CAN messages, access the community library to discover and reuse shared definitions, test your configurations, and import vehicle data from DBC files. Learn how to build a comprehensive library of vehicle signals for data logging and analysis.
 
 ![Full library screenshot](/img/cloud/obd_library/library/updated/library_overview.png)
 

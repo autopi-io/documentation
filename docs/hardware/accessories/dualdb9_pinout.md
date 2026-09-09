@@ -10,9 +10,8 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
+This guide provides detailed pinout information for the OBD-II to dual DB9 adapter cable. Use this reference to understand the pin assignments, connector configurations, and signal routing for connecting your AutoPi device to external systems via DB9 connectors.
 
-## Introduction
-This page describes the pinout of our OBD-II to dual DB9 pinout cable:
 
 <p align="center">
     <img src="/img/hardware/accessories/cables/obd2_db9.png" alt="OBD-II to dual DB9 cable" width="60%" />

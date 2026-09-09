@@ -9,21 +9,17 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-There are several ways to connect to your AutoPi device. This guide explains how to access your device remotely using **SSH (Secure Shell)**. SSH allows you to open a terminal session on your AutoPi device and run commands remotely.
+This guide will walk you through accessing your AutoPi device remotely using SSH (Secure Shell). You'll learn how to connect through multiple methods: device hotspot, local Wi-Fi network, Tailscale VPN, and WireGuard VPN. The guide covers SSH setup and connection procedures, file transfer using SCP, and executing AutoPi commands remotely from your terminal.
+
+**Connection methods covered:**
+- Device hotspot.
+- Local Wi-Fi network.
+- Tailscale VPN.
+- WireGuard VPN.
 
 :::note
-SSH access is **not available for AutoPi Mini devices**.
+SSH access is not available for AutoPi Mini devices.
 :::
-
-
-## How to SSH into Your Device
-
-You can connect to your AutoPi device using several different methods depending on your setup:
-
-* Connect to the device's **Hotspot**.
-* Connect through your **local Wi-Fi network**.
-* Connect using **Tailscale**. 
-* Connect using **WireGuard**.
 
 ---
 

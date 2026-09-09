@@ -6,15 +6,18 @@ import CardGrid from "/components/CardGrid";
 
 
 :::note
-  This guide only works with legacy devices using STN/ELM based chips for automotive interface. No devices sold after February 2021 contains the STN chip. 
-
-  If you have a newer AutoPi device (such as TMU CM4 or CAN-FD Pro), follow the [newer Bluetooth guide](./how_to_use_bluepy.md).
+This guide is for legacy AutoPi devices using STN/ELM-based chips for automotive interface. Devices sold after February 2021 do not contain the STN chip. For newer devices (TMU CM4, CAN-FD Pro), see the [Bluetooth guide for modern devices](./how_to_use_bluepy.md).
 :::
 
-In this guide we will take a look at how you can enable Bluetooth for [AutoPi](https://www.autopi.io) devices that use the
-STN chip. By default the STN chip and Bluetooth don't work well together, so we will need to disable
-the STN chip entirely in order to get the Bluetooth functionality to work properly and the device to
-be kept running despite the STN chip's absence.
+This guide will walk you through enabling Bluetooth functionality on legacy AutoPi devices with STN chips. Since the STN chip and Bluetooth do not work well together by default, you'll learn how to disable the STN chip while keeping your device running, and then enable Bluetooth for use with your AutoPi.
+
+**Steps you'll complete:**
+- Disable the STN chip's UART sleep functionality
+- Disable the OBD manager service
+- Enable and configure Bluetooth
+- Optionally establish direct communication with the STN chip
+
+---
 
 ## Enabling Bluetooth
 1. **Disable uart_sleep**  

@@ -11,12 +11,21 @@ import TabItem from '@theme/TabItem';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-## Introduction
-[AutoPi](https://www.autopi.io) Core relies on BluePy and Bluez packages built into the Linux core on the device. 
+This guide will walk you through enabling and using Bluetooth functionality on AutoPi devices. You'll learn how to enable Bluetooth in your device settings, use the built-in Bluetooth scan command, and implement custom Bluetooth applications using the BluePy library. The guide includes practical code examples for scanning, connecting, reading/writing characteristics, handling notifications, and error handling.
 
 :::note
-If you are using an older AutoPi device with an STN/ELM chip, follow the [legacy Bluetooth guide](./enabling_bluetooth_on_TMU_devices.md). This guide is intended for newer devices such as AutoPi TMU CM4 and AutoPi CAN-FD Pro.
+If you are using an older AutoPi device with an STN/ELM chip, follow the [legacy Bluetooth guide](./enabling_bluetooth_on_TMU_devices.md). This guide is for newer devices: AutoPi TMU CM4 and AutoPi CAN-FD Pro.
 :::
+
+**What you'll learn:**
+- Enabling Bluetooth in device settings.
+- Using the built-in Bluetooth scan command.
+- Scanning for Bluetooth devices with BluePy.
+- Connecting to and interacting with Bluetooth devices.
+- Reading and writing characteristics.
+- Handling notifications and errors.
+
+---
 
 ## Prerequisites
 - AutoPi [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) or AutoPi [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) device

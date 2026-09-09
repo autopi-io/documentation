@@ -9,11 +9,11 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-In the Vehicle section you can see all your vehicles, paired with a map showing 
-their latest known position and geofences. In this section, we'll focus on the List tab. The vehicle list displays all 
-your vehicles, along with their designated names and connection. 
+This guide will walk you through managing and viewing your fleet vehicles using the Vehicles List tab. Access comprehensive vehicle information, apply filters and search, customize column visibility, and perform bulk operations through import/export functionality to efficiently manage your entire fleet.
 
 ![Vehicles list](/img/cloud/fleet_management/vehicles/list/vehicles_list.png)
+
+---
 
 ## Vehicle Filters
 Between the world map and the list, you'll find filtering options, which are 

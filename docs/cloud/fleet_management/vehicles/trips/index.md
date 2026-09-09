@@ -8,8 +8,6 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-## Overview
-
 The Trips section provides comprehensive information about vehicle trips. Trips are automatically detected based on events sent from your device. By default, engine start and stop events trigger trip creation, but you can customize this behavior to match your specific needs. When the AutoPi system receives trip start and stop events, it processes them according to specific logic to determine when trips begin and end.
 
 <p align="center">

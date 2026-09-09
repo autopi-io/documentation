@@ -9,21 +9,31 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
+This guide will walk you through setting up Docker on your AutoPi device and deploying containerized applications through AutoPi Cloud. You'll learn how to configure Docker registries, create projects, define releases, configure runtime settings, and troubleshoot common deployment issues.
+
+Docker support enables you to run containerized applications directly on your AutoPi device, extending its capabilities beyond standard edge processing. This is particularly useful for deploying AI/ML services, custom backend services, data processing pipelines, communication bridges, MQTT processors, and other advanced workloads.
+
+**Common use cases:**
+- AI/ML inference services (TensorFlow, PyTorch).
+- Custom data processing and transformation pipelines.
+- MQTT brokers and message processors.
+- Backend microservices and APIs.
+- Hardware bridge services for CAN, GPS, and sensor integration.
+
 :::tip New to Docker on AutoPi?
-For an introduction to what Docker support is, why to use it, and example use cases, see [**Docker on AutoPi**](https://docs.autopi.io/cloud/docker-on-autopi/) before following this setup guide.
+For an introduction to Docker support, why to use it, and architectural overview, see [Docker on AutoPi](https://docs.autopi.io/cloud/docker-on-autopi/) before following this setup guide.
 :::
 
-## Overview
+:::note Prerequisites
+1. **Docker add-on enabled** — Docker support is an optional add-on. Contact **sales@autopi.io** to enable it for your account.
+2. **Docker enabled in device settings** — Navigate to AutoPi Cloud > Advanced Settings > Docker and ensure it's enabled for your device.
+:::
 
-This guide explains how to set up Docker on your AutoPi device and deploy containers through the AutoPi Cloud. It also covers registries, projects, releases, optional features, runtime configuration, and troubleshooting.
+---
 
-AutoPi devices support running Docker containers directly on the unit. This enables you to deploy applications such as:
-* AI/ML services  
-* Custom scripts or backend services  
-* Data processing pipelines  
-* Communication bridges or MQTT processors  
+## Deployment Architecture
 
-The deployment flow works like this:
+The Docker deployment flow on AutoPi works through a layered model:
 
 1. Build and store your container in a **Docker registry**.
 2. Group your container builds in an AutoPi **project**.
@@ -31,6 +41,7 @@ The deployment flow works like this:
 4. Deploy the release to your AutoPi **device**.
 
 ---
+
 ## Understanding Registries, Projects, and Releases
 
 :::note

@@ -9,11 +9,12 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-In this guide we'll explore how you can change your device's advanced settings directly through our
-REST API, without having to go through the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) system to do it.
+This guide will walk you through changing your device's settings directly through the AutoPi REST API. You'll learn how to retrieve available configuration options, view current settings states, and modify settings for your device without using the AutoPi Cloud interface. The guide covers authentication, endpoint usage, and synchronizing changes to your device.
 
-This guide will assume that you are able to log in to your account and receive a JWT token that you
-can authenticate with to make the requests ([here's a section for that](/getting_started/api/index.md)).
+**Prerequisites:**
+- Authentication token (JWT or API Token) — see [Authentication](/getting_started/api/index.md).
+- Device ID (primary key UUID, not unit ID) — retrieve via `GET /dongle/devices`.
+- API URL: `https://api.autopi.io/` (or your dedicated environment URL for business customers).
 
 :::note
 Currently, the settings endpoints used in this guide aren't documented in our API documentation

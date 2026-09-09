@@ -8,29 +8,20 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-## Overview
+This guide will walk you through setting up complete MQTT connectivity between your AutoPi device and a Mosquitto broker. You'll learn how to install and configure a Mosquitto broker, connect your device in direct-connect or broker-bridge mode, enable MQTT returners for common data sources (loggers, services, and jobs), and validate your setup with end-to-end testing and troubleshooting guidance.
 
-This guide walks you through a complete MQTT setup between an AutoPi device and a Mosquitto broker.
+**What you'll accomplish:**
+- Install and configure a Mosquitto MQTT broker on Linux.
+- Connect your AutoPi device in direct-connect or broker-bridge mode.
+- Enable MQTT returners on loggers, services, and jobs.
+- Validate data flow and troubleshoot connectivity issues.
+- Prepare your setup for production use.
 
-By the end, you will have:
-
-1. A working MQTT broker on Linux.
-2. An AutoPi device connected in either direct-connect or broker-bridge mode.
-3. MQTT returners enabled on common data sources (loggers, services, jobs).
-4. A validation flow and troubleshooting checklist.
-
-## Before You Start
-
-Make sure you have the following:
-
-* A Linux server reachable by your AutoPi device (examples use Debian 11).
-* AutoPi Cloud permissions to edit Advanced Settings, Services, Loggers, and Jobs. Read more here: [Account Permissions](https://docs.autopi.io/cloud/accounts/#modifying-user-permissions).
-* Network access from device to broker on the MQTT port:
-    * 1883 for non-TLS
-    * 8883 for TLS
-* A mode choice:
-    * Direct-connect mode: faster setup, but no local buffering during outages.
-    * Broker-bridge mode: more resilient, with buffering on the device.
+**Before you start, ensure you have:**
+- A Linux server reachable by your AutoPi device (examples use Debian 11).
+- AutoPi Cloud permissions to edit Advanced Settings, Services, Loggers, and Jobs — see [Account Permissions](https://docs.autopi.io/cloud/accounts/#modifying-user-permissions).
+- Network access from device to broker on MQTT ports (1883 for non-TLS, 8883 for TLS).
+- A connection mode choice: direct-connect (fast testing) or broker-bridge (resilient with buffering).
 
 :::info
 If you are unsure which mode to use, start with direct-connect mode for testing, then move to broker-bridge mode for production-like behavior.
@@ -43,6 +34,8 @@ The initial broker setup in this guide is intended for testing. Do not use `allo
 :::note
 This setup is not available for AutoPi Mini devices. There might be a different option available at no cost. If you are interested, contact our sales team at sales@autopi.io.
 :::
+
+---
 
 ## 1. Set Up the Endpoint Broker
 

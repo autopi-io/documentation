@@ -9,12 +9,18 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-This guide will explore how you can attach an external USB camera to your [AutoPi](https://www.autopi.io) device and make some use out of it.
-There is one prerequisite however - you need to be able to SSH into your dongle. We already have a guide on that which you can
-take a look at [here](/developer_guides/how-to-ssh-to-your-device/).
+This guide will walk you through attaching an external USB camera to your AutoPi device and configuring it for video streaming and recording. You'll learn how to install and configure motion and MotionEye software, set up video recording and motion detection, access the camera feed through a web interface, and fine-tune camera settings for your environment.
 
-Firstly, we need to do some initial setup to get the [AutoPi](https://www.autopi.io) ready to use an external USB web camera. Let's start with the
-software that we're going to use:
+**Prerequisites:**
+- SSH access to your AutoPi device — see [How to SSH to Your Device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/).
+- A USB web camera compatible with Linux.
+- Basic familiarity with command-line SSH operations.
+
+---
+
+## Software Overview
+
+This guide uses two key software components:
 
 1. [motion](https://motion-project.github.io/motion_guide.html) - Motion is a daemon service that is responsible for communicating
 with the camera. It'll setup the devices (`/dev/video*`) and get them started.

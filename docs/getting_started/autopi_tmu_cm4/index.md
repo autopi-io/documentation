@@ -12,26 +12,38 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-Welcome to AutoPi! 
- 
-This step-by-step guide will help you set up your AutoPi TMU CM4 4G/LTE Edition. 
-The device comes pre-assembled with the SD card inside and requires just a few steps to complete the installation.
+## Welcome to AutoPi Setup
 
-:::note
+This comprehensive guide will walk you through setting up your AutoPi TMU CM4 4G/LTE Edition from account creation to full cloud connectivity. Your device arrives ready to be installed, requiring only a few essential steps to get operational.
 
-**Important Notes Before You Start**
+## What You'll Learn
 
-The AutoPi Telematics Unit is a highly customizeable and technical device. It contains a direct
-interface to your car and communicates with the ECU in your car.
+By following this guide, you will:
 
-1. **Power Off the Vehicle**: When inserting the device for the first time, ensure that the vehicle is powered off.
-2. **Vehicle Must Be Parked**: When working on and customizing your device, make sure your vehicle is in the parked position.
-3. **Do Not Remove the AutoPi While Driving.**
-4. **Power Source**: The device can only be powered through the OBD-II port.
-     Powering the Raspberry Pi directly is not supported and may cause issues.
-5. **Advanced Settings Caution**: When updating the Advanced settings, ensure you understand what you
-     are doing, as changes can affect the performance of your car and its battery.  
+- Create and configure your [AutoPi Cloud account](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#1-setting-up-user-account). 
+- [Register](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#2-register-your-device) your device on the platform. 
+- Verify [SIM connectivity](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#3-ensure-sim-connectivity) (if required).
+- Locate and prepare your vehicle's [OBD port](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#4-locate-obd-port). 
+- Physically [install the device](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#5-installation) for optimal performance. 
+- Connect the device to the AutoPi Cloud via [Wi-Fi](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#6-connect-to-device-wifi-hotspot).
+- Configure [network settings](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#7-connect-to-local-administration) (APN) for 4G/LTE connectivity.
+- [Verify](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#8-verify-connectivity) your setup and [finalize](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#9-finalization) security settings.
+
+## Important Safety & Setup Requirements
+
+:::caution
+
+The AutoPi Telematics Unit is a technical device that interfaces directly with your vehicle's ECU. Before proceeding, please review these critical requirements:
+
+1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
+2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
+3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
+4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
+5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
+
 :::
+
+---
 
 ## 1. Setting Up User Account
 

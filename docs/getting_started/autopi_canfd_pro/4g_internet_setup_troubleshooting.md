@@ -9,7 +9,7 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-This guide helps you diagnose and resolve common 4G connectivity issues on your [AutoPi](https://www.autopi.io) device. If you cannot access the internet while connected to the device hotspot, follow the steps below in order.
+This guide will help you diagnose and resolve common 4G connectivity issues with your AutoPi CAN-FD Pro device. It provides systematic troubleshooting for problems including SIM card detection, modem configuration, APN settings, network interface status, and cloud connectivity. The guide is organized as a diagnostic checklist to help you identify and fix cellular connectivity problems step by step.
 
 :::tip Our support team is here to help you.
 If you need assistance, contact support@autopi.io.

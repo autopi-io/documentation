@@ -12,24 +12,42 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-Need a device that can handle tough environments? The [AutoPi](https://www.autopi.io/) [CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro) is packed into a durable, IP67-rated aluminum casing — built to withstand dust, dirt, and water, making it perfect for rugged, outdoor, or industrial installations. This step-by-step guide will help you get started with your new device. The device comes pre-assembled with the SD card inside and requires just a few steps to complete the installation.
+## Welcome to AutoPi Setup
 
-:::note
-**Important Notes Before You Start**
+The [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) with IP67-rated aluminum casing is engineered for demanding environments. Built to withstand dust, dirt, and water, it's ideal for rugged, outdoor, or industrial installations. This comprehensive guide walks you through setup from account creation to full cloud connectivity. Your device arrives ready to be installed, requiring only a few essential steps to get operational.
 
-The AutoPi Telematics Unit is a highly customizeable and technical device. It contains a direct
-interface to your car and communicates with the ECU in your car.
+## What You'll Learn
 
-1. **Power Off the Vehicle**: When inserting the device for the first time, ensure that the vehicle is powered off.
-2. **Vehicle Must Be Parked**: When working on and customizing your device, make sure your vehicle is in the parked position.
-3. **Do Not Remove the AutoPi While Driving.**
-4. **Power Source**: The device can only be powered through the OBD-II port.
-     Powering the Raspberry Pi directly is not supported and may cause issues.
-5. **Advanced Settings Caution**: When updating the Advanced settings, ensure you understand what you
-     are doing, as changes can affect the performance of your car and its battery.  
+By following this guide, you will:
+
+- Create and configure your AutoPi Cloud account.
+- Register your device on the platform.
+- Verify SIM connectivity (if required).
+- Attach the external antenna kit for optimal reception.
+- Locate your vehicle's OBD port.
+- Physically install the device for optimal performance.
+- Connect the device to the AutoPi Cloud via Wi-Fi.
+- Configure network settings (APN and MTU) for connectivity.
+- Verify your setup and finalize security settings.
+- Set up data output handlers and remote file access.
+
+## Important Safety & Setup Requirements
+
+:::caution
+
+The AutoPi Telematics Unit is a technical device that interfaces directly with your vehicle's ECU. Before proceeding, please review these critical requirements:
+
+1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
+2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
+3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
+4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
+5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
+
 :::
 
-## [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) Quick Start Summary
+## Quick Start Summary
+
+### [AutoPi CAN-FD Pro with IP67 Casing](https://shop.autopi.io/products/autopi-can-fd-pro) Setup Steps
 * Step 1: Set up your account on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/#1-setting-up-user-account).
 * Step 2: Register your device on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/#2-register-your-device). 
 * Step 3: SIM card installation (if you did not purchased one from us), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/#3-ensure-sim-connectivity).

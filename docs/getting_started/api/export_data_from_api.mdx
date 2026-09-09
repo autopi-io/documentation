@@ -9,9 +9,13 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-Our <a href="https://api.autopi.io/" target="_blank">REST API</a> offers endpoints that let you retrieve all telemetry data from your device in the format that suits you best:
-1. Aggregated Data – Simplified, high-level summaries for easier analysis.
-2. Raw Data – Detailed, unprocessed data for deeper insights and customization.
+This guide will walk you through retrieving telemetry data from your device using the AutoPi REST API. You'll learn how to export data in two formats, aggregated data for high-level analysis and raw data for detailed insights. The guide covers endpoint parameters, query examples, and practical Python code to download and save your device data.
+
+**Data export options:**
+1. **Aggregated Data** — simplified, interval-based summaries (average, min, max) for easier analysis.
+2. **Raw Data** — detailed, unprocessed data recorded by your device for deeper insights and customization.
+
+---
 
 ## 1. Aggregated Data
 This data is aggregated by interval and a method (average, min, max), and is among other

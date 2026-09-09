@@ -9,13 +9,20 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-This guide walks you through creating a custom event for your own logger script. This is useful when you want your AutoPi device to react to specific conditions like determining when a trip has started or ended based on your own parameters.
+This guide will walk you through creating a custom event for your own logger script. Custom events enable your AutoPi device to autonomously react to specific conditions and trigger actions based on your defined parameters—such as detecting trip start/end conditions, monitoring battery voltage thresholds, or responding to real-time sensor data.
 
-We'll go step-by-step through:
-* Creating a custom execution script
-* Hooking it into the OBD Manager
-* Enabling it on a CAN logger
+### Common use cases:
+- **Threshold Monitoring** — trigger events when sensor values exceed specified limits.
+- **Battery Management** — react to high-voltage battery state changes.
+- **Data Processing** — pre-process logger output before indexing to reduce data storage.
 
+### Prerequisites:
+- Access to your AutoPi device's Custom Code section.
+- Understanding of basic Python programming.
+- Familiarity with the OBD Manager and CAN Logger configuration.
+- Knowledge of AutoPi's event system and data structures.
+
+---
 
 ## Step 1: Create a Custom Execution Script
 Start by creating a new custom module. In this example, we’ll call it `custom_event`.

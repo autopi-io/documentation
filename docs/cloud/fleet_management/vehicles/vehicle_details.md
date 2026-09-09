@@ -7,10 +7,13 @@ import CardGrid from "/components/CardGrid" ;
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+---
 
-The **Vehicle Details** section of AutoPi Cloud centralizes all key information about your vehicles in one place. It provides general vehicle data, real-time widget displays, trip history, active alerts, and diagnostic codes — giving you the tools you need to efficiently manage your fleet and maintain operational performance.
+This guide will walk you through accessing and utilizing the Vehicle Details section in AutoPi Cloud. Gain complete visibility into vehicle information, monitor real-time performance metrics through customizable dashboards, review trip history, manage active alerts, and diagnose issues using comprehensive diagnostic data.
 
 ![Vehicle name](/img/cloud/fleet_management/vehicles/vehicle_details/vehicle_name.png)
+
+---
 
 ### Overview
 The **Overview** section presents a summary of key vehicle information through a series of widgets. Here you can find details about the vehicle itself, the fleet it belongs to, active alerts, assigned geofences, and location data. It also displays cumulative statistics on time driven and total distance traveled.

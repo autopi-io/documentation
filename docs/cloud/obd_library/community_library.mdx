@@ -9,18 +9,21 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-This guide will give an overview of the OBD My Library feature, which is a way to discover the
-available PID's in your car, both hidden and public/default OBD-II, and sharing them with the
-community.
+This guide will walk you through accessing the community OBD library to discover supported PIDs for your vehicle. Learn how devices automatically report supported commands, how to find and add community PIDs to your personal library, how to create and share your own proprietary PIDs, and how to troubleshoot PID detection issues.
 
-We will go over the following topics in this guide.
-* How and when the car reports the supported PIDS.
-* How to find PID's in the Community Library.
-* How to add a PID to your library.
-* How to create (and share) proprietary PID's.
-* Troubleshooting if no PID's are reported from the device.
+![Community library overview](/img/cloud/obd_library/community_library/updated_overview.png)
 
-![Community library overview](/img/cloud/obd_library/community_library/updated_overview.png) 
+What you'll learn:
+- How the device automatically detects and reports supported PIDs from your vehicle.
+- How to access and browse the community library of shared PIDs.
+- How to filter the community library by vehicle make, model, and year.
+- How to add discovered PIDs to your personal library.
+- How to create custom proprietary PIDs with proper formulas and configurations.
+- How to share your PIDs with the community for others to discover and use.
+- How to set up loggers to collect data using community and custom PIDs.
+- How to troubleshoot PID detection and visibility issues.
+
+---
 
 ## How And When The Device Reports The Supported PID's
 When the device connects to the server, it will check the for the following:

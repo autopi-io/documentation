@@ -10,19 +10,15 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-## Why Am I Not Seeing Any Data? 
+This guide will help you identify and resolve common data logging issues with your AutoPi Mini device. It provides systematic troubleshooting for problems including connectivity issues, logger configuration, widget setup, and electric vehicle compatibility. The guide is organized as a diagnostic checklist to help you determine why your device may not be recording or displaying vehicle data.
 
-If you've followed the [Getting Started Guide](/getting_started/autopi_mini/index.md)
-and tested your [AutoPi](https://www.autopi.io) TMU CM4 device during a drivebut no data is appearing on 
-your [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) Dashboard, this guide will help you identify and resolve common issues.
+:::note
+This guide is specifically for the [AutoPi Mini](https://www.autopi.io/hardware/autopi-mini) device. For other device models, please refer to the appropriate guide.
+:::
 
-Organized as a checklist, this guide outlines potential causes for missing vehicle
-data and offers solutions. It is specifically for the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) device. For 
-[AutoPi](https://www.autopi.io) TMU CM4, please refer to this [guide](/getting_started/autopi_tmu_cm4/index.md).  
+---
 
-![Dashboard](/img/getting_started/autopi_mini/data_troubleshooting/no_data_dashboard.png)
-
-## Common Causes and Solutions for Data Not Appearing on the [Cloud](https://www.autopi.io/software-platform/cloud-management)  
+## Common Causes and Solutions  
 
 ### 1. Connection Issues 
 

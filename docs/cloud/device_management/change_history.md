@@ -11,9 +11,17 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-The **Device Change History** page gives you a clear overview of all configuration and state changes applied to a device, both recent and historical. It’s a useful tool for tracking what was changed, when it happened, and whether those changes were applied successfully. This helps with troubleshooting, auditing configuration updates, and understanding the current state of your device.
+This guide will walk you through accessing and interpreting your device's complete change history. View all configuration and state changes applied to your device, verify successful deployments, identify failed updates, and maintain a comprehensive audit trail for compliance and troubleshooting purposes.
 
----
+What you'll learn:
+- How to access and navigate the device change history.
+- How to interpret successful and failed configuration changes.
+- How to track when changes were applied and their outcomes.
+- How to analyze detailed change information by device type.
+- How to use state results for in-depth troubleshooting.
+- How to verify configuration deployments and identify issues.
+- How to maintain audit trails for compliance and governance.
+
 
 ## Change History Table
 
