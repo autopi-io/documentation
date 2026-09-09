@@ -40,12 +40,14 @@ This adapter cable can be purchased through the AutoPi shop: [**Caterpillar 14 P
 
 | AutoPi Function | Caterpillar 14 PIN | OBD-II 16 PIN |
 |:-----------------:|:--------------------:|:---------------:|
+| CAN High        | Pin A              | Pin 6         |
 | CAN Low         | Pin D              | Pin 14        |
 | Power           | Pin B              | Pin 16        |
 | GND             | Pin C              | Pin 5         |
 
+
 <p align="center">
-	<img src="/img/hardware/accessories/custom_pinouts/caterpillar_custom_14to16.png" alt="Caterpillar to OBD-II Adapter Cable" width="75%" />
+	<img src="/img/hardware/accessories/adapter_cables/cat_14_pinout_updated.png" alt="Caterpillar to OBD-II Adapter Cable" width="75%" />
 </p>
 
 :::note
