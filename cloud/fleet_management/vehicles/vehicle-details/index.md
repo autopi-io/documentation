@@ -5,131 +5,199 @@
 
 ---
 
-This guide will walk you through accessing and utilizing the Vehicle Details section in AutoPi Cloud. Gain complete visibility into vehicle information, monitor real-time performance metrics through customizable dashboards, review trip history, manage active alerts, and diagnose issues using comprehensive diagnostic data.
+This guide shows you how to access and use the Vehicle Details section in AutoPi Cloud. The Vehicle Details page is your central hub for managing and monitoring all aspects of a specific vehicle.
 
-![Vehicle name](/img/cloud/fleet_management/vehicles/vehicle_details/vehicle_name.png)
+From this page, you can:
+- **View comprehensive vehicle information** — access complete details about your vehicle, including make, model, VIN, license plate, and custom reference information.
+- **Edit vehicle settings** — update vehicle details, fleet assignments, locations, geofences, groups, and other vehicle-specific configurations.
+- **Monitor real-time performance** — create customizable dashboards with various visualization types to track metrics such as vehicle position, speed, RPM, battery status, and more.
+- **Analyze trip history** — review detailed trip information including routes, duration, distance, and trip categorization.
+- **Manage active alerts** — view and respond to vehicle alerts with different severity levels to stay informed about vehicle health.
+- **Diagnose vehicle issues** — access diagnostic error codes and timestamps to identify and resolve vehicle problems before they become critical.
+
+Whether you're managing a single vehicle or overseeing a fleet, the Vehicle Details section provides the tools you need to stay informed and maintain optimal vehicle performance.
 
 ---
 
 ### Overview
-The **Overview** section presents a summary of key vehicle information through a series of widgets. Here you can find details about the vehicle itself, the fleet it belongs to, active alerts, assigned geofences, and location data. It also displays cumulative statistics on time driven and total distance traveled.
+The **Overview** section displays key vehicle information in a series of widgets, including:
+- Vehicle details and fleet membership
+- Active alerts and assigned geofences
+- Location data
+- Cumulative statistics on drive time and total distance
 
-![Vehicles overview](/img/cloud/fleet_management/vehicles/vehicle_details/vehicles_overview.png)
+![Vehicles overview](/img/cloud/fleet_management/vehicles/vehicle_details/vehicle_overview_updated.png)
+
+---
+
+### Edit Vehicle
+
+From any tab in the Vehicle Details section, you can edit vehicle information by clicking the **Edit Vehicle** button in the upper-right corner.
+
+![Edit Vehicle Button](/img/cloud/fleet_management/vehicles/vehicle_details/edit_vehicle_updated.png)
+
+Clicking this button opens the vehicle edit dialog. The following sections are available for configuration:
+
+![Vehicle Edit Dialog](/img/cloud/fleet_management/vehicles/vehicle_details/edit_vehicle_details.png)
+
+Update basic **vehicle information**:
+- **Name** — name of your vehicle
+- **Type** — ICE, EV, Hybrid, or Plug-in Hybrid
+- **Make** — vehicle manufacturer
+- **Model** — vehicle model
+- **Year** — model year
+- **VIN** — vehicle identification number
+- **License Plate** — registration plate number
+- **Reference** — custom reference identifier
+
+Manage vehicle **fleet** settings:
+- **Fleet state** — current fleet assignment status
+- **Vehicle state** — operational status of the vehicle
+- **Locations** — assigned vehicle locations
+- **Geofences** — geofence assignments
+- **Groups** — vehicle group membership
+
+Store **additional vehicle details**:
+- **Mileage** — current vehicle mileage
+- **Color** — vehicle color
+- **Battery** — battery voltage (12V or 24V)
+- **Notes** — custom notes about the vehicle
+
+Add **custom fields** as needed to capture additional vehicle information specific to your organization.
+
+Change the vehicle's custom **avatar** image for quick visual identification. 
+
+Under Advanced, configure the **asset type** for the vehicle. 
 
 ---
 
 ### Dashboard
-The **Dashboard** section offers a visual representation of real-time vehicle data. Data can be displayed in a variety of widget formats to suit your monitoring needs:
+The **Dashboard** section displays real-time vehicle data in customizable widgets. You can create multiple dashboards and customize them with various visualization types to monitor the metrics that matter most.
 
-* Line chart
-* Area chart
-* Map
-* Gauge
-* Bar chart
-* Pie chart
-* State timeline
-* Linear gauge
-* Numeric
+**Available widget types:**
+- Line chart, Area chart, Bar chart, Pie chart
+- Map, Gauge, Linear gauge
+- State timeline, Numeric display
 
-You can filter data by date range to track metrics such as vehicle position, speed, RPM, and more. Widgets are fully customizable — build your own to surface the data that matters most, or use the **Auto Generate** feature to have the platform automatically create a dashboard based on the latest data received from the vehicle.
+Filter data by date range to track metrics such as vehicle position, speed, RPM, and more. Build custom widgets to display the data that matters most, or use **Auto Generate** to let the platform automatically create a dashboard based on the latest vehicle data.
 
-The platform supports **multiple dashboards**, so you can create and organize as many as needed. Dashboards are grouped into three categories:
-
-1. **Autogenerated** — automatically created based on data received from the device
-2. **Mine** — dashboards you have created manually
-3. **Shared** — dashboards shared by an admin user within your organization
+**Dashboard organization:**
+Dashboards are grouped into three categories:
+1. **Autogenerated** — automatically created from device data
+2. **Mine** — dashboards you created
+3. **Shared** — dashboards shared by admin users in your organization
 
 :::note
-Users with Admin permissions can create dashboards and push them to specific vehicles based on vehicle type or Make/Model. You can read more here: [Shared Dashboards](https://docs.autopi.io/cloud/fleet_management/configurations/dashboards/#creating-a-shared-dashboard).
+Users with Admin permissions can create dashboards and push them to specific vehicles based on vehicle type or Make/Model. Learn more: [Shared Dashboards](https://docs.autopi.io/cloud/fleet_management/configurations/dashboards/#creating-a-shared-dashboard).
 :::
 
 ![Vehicles dashboard](/img/cloud/fleet_management/vehicles/vehicle_details/vehicles_multiple_dashboards.png)
 
-#### Create New Dashboard 
-To create a new Vehicle dashboard:
+#### Create a New Dashboard
+To create a new vehicle dashboard:
 
-1. Navigate to **Vehicle> Dashboard**.
+1. Navigate to **Vehicle > Dashboard**.
 2. Click **Create dashboard**.
-3. Enter:
-   - **Name**: A clear dashboard name.
-   - **Description** (optional): A short description of its purpose.
+3. Enter the following:
+   - **Name** — a clear, descriptive dashboard name
+   - **Description** (optional) — a short description of the dashboard's purpose
 4. Click **Create**.
 
 ![Create New Device Dashboard](/img/cloud/device_management/dashboard/create_new_device_dashboard.png)
 
-#### Adding Widgets to the Dashboard
+#### Add Widgets to a Dashboard
 
-Use real vehicle data when possible to validate widget configuration.
-
-:::note
-The **Autogenerate** option creates widgets automatically from available device data. This is a practical starting point when creating a dashboard from scratch.
+:::tip
+Use the **Autogenerate** option to automatically create widgets from available device data. This is a convenient way to get started when building a new dashboard.
 :::
 
 To add a widget manually:
 
-1. Navigate to the **Dashboard** and click **Actions**.
+1. Go to your **Dashboard** and click **Actions**.
 2. Click **Add widget**.
 3. Select a widget type.
    ![Widget types](/img/cloud/fleet_management/configurations/dashboards/widget_type.png)
 4. Configure the widget:
    ![Widget configuration](/img/cloud/fleet_management/configurations/dashboards/configure_widget.png)
-   - **Title**: Widget display name.
-   - **Visualization**: Chart or display type (line chart, map, gauge, and so on).
-   - **Field**: Logger or signal to display.
-   - **Aggregation**: Average, minimum, maximum, sum, or raw data.
-   - **Unit**: Unit shown in the widget.
-   - **Auto scale**: Scales values automatically to fit the visualization.
-   - **Hide gaps**: Shows or hides periods with no data.
-5. Click **Save** in the widget editor, then save the dashboard.
+   - **Title** — name displayed on the widget.
+   - **Visualization** — chart or display type (line chart, map, gauge, etc.).
+   - **Field** — logger or signal to display.
+   - **Aggregation** — Average, minimum, maximum, sum, or raw data.
+   - **Unit** — unit of measurement shown in the widget.
+   - **Auto scale** — automatically scale values to fit the visualization.
+   - **Hide gaps** — hide or show periods with no data.
+5. Click **Save**, then save the dashboard.
 
 #### Widget Controls
 
-Each widget has the following controls in the top-right corner:
+Each widget includes the following controls in the top-right corner:
 
 | Icon | Action |
 |:------:|:--------:|
-| Circle (refresh) | Refresh the data displayed in the widget |
-| Two-dot (edit) | Open the widget editor |
-| Download | Download the data for this widget only |
+| Circle (refresh) | Refresh widget data |
+| Two-dot (edit) | Edit the widget |
+| Download | Download widget data |
 | X (delete) | Remove the widget from the dashboard |
 
 ---
 
 ### Trips
-Next to Dashboard you’ll find the **Trips** section. This section provides detailed
-information about the vehicle’s trips, displaying the trip route on a map along 
-with the starting and ending addresses, duration, and distance traveled. You can 
-also categorize trips as personal or business and, if necessary, export trip data.  
+The **Trips** section displays detailed information about each vehicle trip, including:
+- Trip route on a map.
+- Starting and ending addresses.
+- Trip duration and distance.
+- Trip categorization (personal or business).
+- Data export capability.
 
-![Vehicles widgets](/img/cloud/fleet_management/vehicles/vehicle_details/vehicle_trips.jpg)
+![Vehicle Trip](/img/cloud/fleet_management/vehicles/vehicle_details/vehicle_trips_updated.png)
 
-Above the map, you have filtering options for the trips, choose a week, last month
-or a custom range you would like to view, and it will show you a list of all the 
-trips that have been taken by this vehicle during the filtered time. Clicking on 
-one of the trips will show you a route on the map, the distance it travelled and 
-how long the trip took.  
+**Filter trips by:**
+- Time range (week, last month, or custom dates).
+- Distance.
+- Duration.
 
-You can further filter the trip view based on the date or number of months, as 
-well as by distance or duration of the trips. Next to the filtering options, you 
-will see overall data of this vehicle’s trips, including the total number of 
-trips made, total distance driven, total duration, and average distance and duration.
+Click any trip to view its complete route on the map along with the distance traveled and duration.
+
+**Trip summary displays:**
+- Total number of trips.
+- Total distance driven.
+- Total duration.
+- Average distance and duration per trip.
+
+:::info
+For more detailed information on trip management and analysis, see [Trips](https://docs.autopi.io/cloud/fleet_management/vehicles/trips/).
+:::
 
 ---
 
 ### Alerts
-The **Alerts** tab displays all active alerts associated with the vehicle. The table lists each alert's severity level, occurrence count, and description, giving you a clear view of any issues requiring attention. Alerts can be dismissed or resolved directly from this view.
+The **Alerts** tab displays all active vehicle alerts, including severity level, occurrence count, and description. This provides a centralized view of all issues requiring attention for the vehicle.
+
+**Alert information includes:**
+- **Severity level** — indicates the urgency of the alert (critical, warning, info, etc.)
+- **Occurrence count** — how many times the alert has been triggered
+- **Description** — details about what triggered the alert
+
+You can manage alerts directly from this view by dismissing resolved issues or marking them as resolved. Regular monitoring of active alerts helps you stay informed about vehicle health and respond promptly to any problems.
 
 ![Vehicles alerts](/img/cloud/fleet_management/vehicles/vehicle_details/vehicles_alerts.png)
 
+---
+
 ### Diagnostics
-The **Diagnostics** tab is the final section of the Vehicle view. It lists all diagnostic error codes currently reported by the vehicle, providing structured insight into any detected issues.
+The **Diagnostics** tab displays all diagnostic error codes currently reported by the vehicle. This provides structured insight into any detected issues.
 
-For each diagnostic code, the following information is available:
+**For each diagnostic code, you can view:**
+- Error code and description.
+- First and last occurrence timestamps.
+- Occurrence count.
 
-* The error code and its description
-* Timestamps for the first and last occurrence
-* A count of how many times the error has been recorded
+This information helps you understand not only what the issue is, but also when it first appeared and how frequently it occurs.
 
-This gives you a clear picture of not only what the issue is, but also when it first appeared and how frequently it recurs. When used alongside the **Fault Codes** functionality, the Diagnostics tab becomes a powerful real-time monitoring tool. Critical issues can trigger immediate notifications via cloud alerts or email, allowing your team to respond promptly. You can also configure a custom **Trigger** to automate actions based on any specific diagnostic code.
+**Monitoring vehicle health:**
+Use diagnostics alongside **Fault Codes** to monitor vehicle health in real time. You can:
+- Configure cloud alerts or email notifications for critical issues.
+- Set up custom **Triggers** to automate actions based on specific diagnostic codes.
+- Respond promptly to detected problems before they become major issues.
 
 ![Vehicle diagnostics](/img/cloud/fleet_management/vehicles/vehicle_details/vehicle_details_diagnostics.png)
