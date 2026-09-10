@@ -136,6 +136,7 @@ module.exports = {
             {
               "items": [
                 "cloud/fleet_management/configurations/dashboards",
+                "cloud/fleet_management/configurations/asset-types",
                 "cloud/fleet_management/configurations/fault-codes",
                 "cloud/fleet_management/configurations/notification-channels",
                 "cloud/fleet_management/configurations/vehicle-states",
