@@ -501,15 +501,13 @@ module.exports = {
       "Releases": [
         "releases/introduction",
         "releases/september-2026",
-      ],
-      "type": "category"
+      ]
     },
     {
       "Changelog": [
         "changelog/introduction",
         "changelog/september-2026",
-      ],
-      "type": "category"
+      ]
     },
     {
       "type": "link",
