@@ -153,7 +153,51 @@ The Device Overview page includes several widgets that provide key insights:
 These widgets provide a quick and comprehensive overview of your device’s status, configuration, and activity.
 
 ---
+## Device Control Icons
 
+Located in the bottom-right corner of the Device Overview page, you'll find three icons that provide quick access to important device management functions:
+* Terminal 
+* Pending Sync
+* Warnings. 
+
+![Device Control Icons](/img/cloud/device_management/devices/device_icons.png)
+
+### Terminal Icon
+The **Terminal** icon provides access to the cloud's real-time terminal, allowing you to execute commands directly on your device (when it's online) and receive responses immediately. This feature is invaluable for:
+- **Troubleshooting issues** — run diagnostic commands to identify and resolve problems quickly.
+- **Real-time vehicle information** — query the device for current vehicle data and status.
+- **Device configuration** — make quick adjustments and test settings without waiting for sync cycles.
+- **System monitoring** — check [device logs](https://docs.autopi.io/developer_guides/autopi-logs/), performance metrics, and system status.
+
+:::note
+The terminal works only when the device is online and provides instant feedback from your AutoPi device.
+:::
+
+For a complete list of available commands you can run, see the [Commands documentation](https://docs.autopi.io/core/commands/).
+
+### Pending Syncs Icon
+The **Pending Syncs** icon shows any configuration changes awaiting application to your device. Here's how it works:
+
+**How pending syncs function:**
+- Any changes you make in the cloud are temporarily saved as pending syncs.
+- Pending syncs are automatically applied when the device starts up, restart or reconnects.
+- If the device is currently online, you can click the **Sync** button to apply changes immediately without waiting.
+
+**Use pending syncs when:**
+- You've made multiple configuration changes and want to apply them right away.
+- You need to verify that changes have been successfully applied to the device by checking the empty list, while checking the [Change History](https://docs.autopi.io/cloud/device_management/change-history/) for complete overview of when the changes has been applied to a device. 
+- The device is online and you want to push updates in real time. 
+
+### Warnings Icon
+The **Warnings** icon displays important warnings that require your attention. These warnings provide insight into potential issues with your device, such as:
+- Configuration problems or incomplete setup.
+- Device connectivity issues.
+- Software update requirements.
+- Security issues. 
+
+Regularly check warnings to ensure your device is operating optimally and to prevent future issues.
+
+---
 ## Connecting Your AutoPi Device to a Vehicle
 
 Follow the steps below to connect your AutoPi device to either a new or existing vehicle.
