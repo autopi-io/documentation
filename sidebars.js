@@ -136,10 +136,10 @@ module.exports = {
             {
               "items": [
                 "cloud/fleet_management/configurations/dashboards",
-                "cloud/fleet_management/configurations/asset-types",
                 "cloud/fleet_management/configurations/fault-codes",
                 "cloud/fleet_management/configurations/notification-channels",
                 "cloud/fleet_management/configurations/vehicle-states",
+                "cloud/fleet_management/configurations/asset-types",
               ],
               "label": "Configurations",
               "type": "category",
@@ -496,6 +496,20 @@ module.exports = {
           "type": "category"
         },
       ],
+    },
+    {
+      "Releases": [
+        "releases/introduction",
+        "releases/september-2026",
+      ],
+      "type": "category"
+    },
+    {
+      "Changelog": [
+        "changelog/introduction",
+        "changelog/september-2026",
+      ],
+      "type": "category"
     },
     {
       "type": "link",
