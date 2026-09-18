@@ -24,7 +24,7 @@ You can now create and manage Asset Types and associate vehicles with a specific
 
 ![Asset Types Table](/img/releases/september_2026/asset_types_updated.png)
 
-:::Note
+:::note
 All asset type related changes (creating and editing) are available only to users with Account Administrator permission. Read more here: [User Permissions](https://docs.autopi.io/cloud/accounts/#modifying-user-permissions). 
 :::
 
@@ -105,4 +105,4 @@ A new Redis setting gives you more control over how data is buffered in the syst
 
 ---
 
-For a full list of all changes, see the [**September 2026 Changelog**](../changelog/September_2026).
+For a full list of all changes, see the [**September 2026 Changelog**](../changelog/september-2026).
