@@ -1,7 +1,7 @@
 ---
 id: setting-up-doip
 title: Setting up DoIP
-supportedDevices: ['cm4']
+supportedDevices: ['cm4','pro','pro_case']
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl'; import CardGrid from "/components/CardGrid" ;
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
