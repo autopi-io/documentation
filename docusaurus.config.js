@@ -54,7 +54,17 @@ module.exports = {
           to: 'developer_guides/',
           label: 'Guides',
           position: 'left',
-        },  
+        },
+        {
+          to: 'releases/introduction/',
+          label: 'Releases',
+          position: 'left',
+        },
+        {
+          to: 'changelog/introduction/',
+          label: 'Changelog',
+          position: 'left',
+        },
         {
           to: 'https://api.autopi.io/',
           label: 'API',
