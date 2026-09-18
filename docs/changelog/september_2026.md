@@ -116,4 +116,4 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 
 ---
 
-**Looking for a summary?** View the [**September 2026 Release highlights**](../releases/september-2026) page.
+**Looking for a summary?** View the [**September 2026 Release highlights**](/releases/september-2026) page.

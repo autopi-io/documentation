@@ -105,4 +105,4 @@ A new Redis setting gives you more control over how data is buffered in the syst
 
 ---
 
-For a full list of all changes, see the [**September 2026 Changelog**](../changelog/september-2026).
+For a full list of all changes, see the [**September 2026 Changelog**](/changelog/september-2026).
