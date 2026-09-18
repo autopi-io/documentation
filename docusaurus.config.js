@@ -56,12 +56,12 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'releases/introduction/',
+          to: 'releases/',
           label: 'Releases',
           position: 'left',
         },
         {
-          to: 'changelog/introduction/',
+          to: 'changelog/',
           label: 'Changelog',
           position: 'left',
         },
