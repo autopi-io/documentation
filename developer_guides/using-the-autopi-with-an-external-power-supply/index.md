@@ -21,7 +21,7 @@ This guide will walk you through safely powering your AutoPi device using an ext
 
 ### Prerequisites:
 - An AutoPi device (CM4, CAN-FD Pro, or Pro Casing models). 
-- An external power supply (12V minimum, 2.5A recommended).
+- An external power supply (13 V minimum, 2.5 A recommended).
 - Basic understanding of power management and device safety.
 - Optional: OBD-II power cable for easier connectivity.
 
@@ -29,6 +29,10 @@ This guide will walk you through safely powering your AutoPi device using an ext
 
 :::tip Recommended for testing and troubleshooting
 Using an external power supply is an excellent option when validating configurations, reproducing issues, and troubleshooting behavior outside a vehicle.
+:::
+
+:::note
+A variable power supply is recommended so that you can simulate engine stopped voltage level (less than ~12.8 V), and also engine running (more than ~13.3 V).
 :::
 
 ---

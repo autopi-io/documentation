@@ -4,6 +4,146 @@
 
 This file contains all documentation content in a single document following the llmstxt.org standard.
 
+## Introduction
+
+---
+
+# Changelog
+
+Welcome to our monthly changelogs. Each month, we organize and document all changes to the AutoPi platform across our **Frontend**, **Backend**, and **Core** systems.
+
+## What You'll Find Here
+
+This section contains the complete, raw changelogs for each monthly release, pulled directly from our GitLab repositories. These pages provide comprehensive technical details about every change, including:
+
+- All new features and enhancements.
+- Bug fixes and stability improvements.
+- Refactoring and internal updates.
+- Other technical changes.
+
+## Navigating Releases
+
+Each month has two views:
+
+- **Changelog** (this section) — the technical, unfiltered view of all changes across all systems.
+- **Releases** — a curated, user-friendly summary highlighting the most important new features, bug fixes, and improvements with screenshots and descriptions.
+
+We recommend starting with the Releases page for a better overview, then referring to the Changelog for deeper technical details.
+
+## Need Help or Have Questions?
+
+- **Support Issues** — if you encounter any issues or bugs, please contact our support team at [support@autopi.io](mailto:support@autopi.io).
+- **Feature Requests & Sales Inquiries** — questions about features or interested in discussing potential new capabilities? Reach out to our sales team at [sales@autopi.io](mailto:sales@autopi.io).
+
+---
+
+## September 2026
+
+---
+
+# September 2026 Changelog
+
+**Generated:** 2026-09-18
+
+## Backend
+
+### Backend 1.28.18
+
+**Release Date:** 2026-09-09
+
+#### Features
+
+- Enhance logger data structure by adding source_id to improve signal identification
+
+#### Bug Fixes
+
+- Changed datafields to return logger id, min max in object. Also changed to exclude the unit fields
+- Fixed issue causing raw query to return no data in certain situations
+- Fixed naming issues in the datafields
+- Enhance logger data structure with descriptions and improve name formatting
+- Fixed issue with uuid identifier and added logger types to enhance data structure for loggers
+
+### Backend 1.28.17
+
+**Release Date:** 2026-09-02
+
+#### Features
+
+- Implement model merging functionality with UI support
+
+#### Bug Fixes
+
+- Fixed vehicle count on asset type not including non registered devices.
+- Fixed issue where archive action could be done on an already archived device
+- Fixed issue with tracking.last_driven.source
+- Fixed issue where callback would fail due to incorrect type
+
+### Backend 1.28.16
+
+**Release Date:** 2026-09-01
+
+#### Features
+
+- Improve scheduled report email subject format
+- Add range_interval_and_offset function for ES date_histogram params and update DataReadView to utilize it
+- Parse ISO strings to datetime in range_interval_and_offset function
+- Changed to skip certain invalid values per data parameter logger
+- Add translation_overrides_vehicle_icon field to Customer model and serializer
+- Add edition filtering to health check configurations and implement related tests
+- Add device health summary reporting to Discord and implement related tests
+- Enhance device health summary reporting with ASCII table and additional filters
+- Update device health summary reporting with improved failure counts and links to detailed reports
+- Restrict asset type assignment to AccountAdministrators in FleetVehicleSerializer
+- Added min, max and use_logger_bounds parameters to the datareadview
+
+#### Bug Fixes
+
+- Added asset_type column in vehicle selection in groups and locations and changed asset_type field to be obj but support integer id as value.
+- Changed to use correct cache TTL for queried keys in DataFields view
+- Improve handling of cached JSON data in DataFields and event processing
+- Enhance error message for asset type deletion to clarify vehicle association
+- Rename migrations after rebase
+- Added missing files
+- Fixed issue in trip logic that could cause issues when attempting to merge trips.
+
+#### Refactor
+
+- Enhance inherited asset type check for customer ownership
+- Streamline logger resolution in DataFields API view
+
+---
+
+## Frontend
+
+### Frontend 1.28.26
+
+**Release Date:** 2026-09-09
+
+#### Bug Fixes
+
+- Update trip address handling and improve display logic for locations
+- Enhance address formatting to include county in location display
+- Update logger field structure in StorageField and DataField interfaces to include source_id and type
+- Update terminology for asset labels in settings garage component
+- Update component names and improve address formatting in tests
+
+### Frontend 1.28.25
+
+**Release Date:** 2026-09-04
+
+#### Bug Fixes
+
+- Fixed issue where asset types and access control components was not centered.
+- Fixed missing validation errors in location view
+- Changed the device link in template device list to open in new tab
+- Changed the datafields and dashboard generator to use new logger field on datafields response. Now logger bounds is only available for the fields where a logger is found, and it defaults to false.
+
+---
+
+**Looking for a summary?** View the [**September 2026 Release highlights**](/releases/september-2026) page.
+
+---
+
 ## Accounts
 
 ---
@@ -533,66 +673,85 @@ If you need to apply this change across multiple devices, use the **Templates** 
 
 ---
 
-## Introduction
+## Introduction(Advanced_settings)
 
 ---
 
-This guide will walk you through configuring advanced settings for your AutoPi Mini device. Optimize device behavior for your specific vehicle type (ICE or EV), configure OBD communication, manage vehicle identification, and customize ignition detection and vehicle tracking methods. Learn how to fine-tune your Mini device for reliable data collection and seamless vehicle integration.
+This guide provides detailed instructions for configuring advanced settings on your AutoPi Mini device. You will learn how to optimize communication with your vehicle's diagnostic systems, manage vehicle identification, and configure ignition and tracking detection to match your specific vehicle type. These settings are essential for ensuring accurate data collection and reliable device operation.
 
 ![Mini advanced settings](/img/cloud/device_management/advanced_settings/autopi_mini/mini_advanced_settings.png)
 
-What you'll learn:
-- How to access and navigate AutoPi Mini advanced settings.
-- How to configure OBD settings for your vehicle type (ICE or EV).
-- How to manage vehicle identification (VIN) settings.
-- How to set up ignition detection methods based on your vehicle type.
-- How to configure vehicle tracking and trip detection sources.
+In this guide, you will:
+- Configure OBD (On-Board Diagnostics) communication settings for your vehicle type.
+- Set up vehicle identification (VIN) to uniquely identify your vehicle.
+- Choose the appropriate ignition detection method for your vehicle.
+- Select the vehicle tracking and trip detection data source.
 
 :::note
 Like any [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) functionality, configuration settings can be changed programmatically through the [AutoPi](https://www.autopi.io) REST API. For more information see our [API docs page](https://api.autopi.io/).
 :::
 
-## Obd settings
+## OBD Settings
 
-| Name | Description | Default |
+The OBD Feature setting determines how your AutoPi Mini device communicates with your vehicle's onboard diagnostics system.
+
+| Setting | Description | Default |
 | ------ | ------ | ------ |
-| Obd Feature | Specifies how the device communicates with the vehicle’s onboard diagnostics (OBD) system. | OBD (auto) |
+| OBD Feature | Determines the communication protocol used to access vehicle diagnostics. Select **OBD (Auto)** for internal combustion engine (ICE) vehicles or **Non-OBD Compliant** for electric vehicles (EVs). | OBD (Auto) |
 
-:::tip
-If you have an internal combustion engine (ICE) vehicle, select OBD (Auto) in the OBD Feature field. This is the default setting for all AutoPi Mini devices.
-If you have an electric vehicle (EV), select Non-OBD Compliant in the OBD Feature field.
+## Vehicle Identification (VIN) Settings
+
+:::info 
+These settings are located under the **OBD VIN Setting** tab in Advanced Settings.
 :::
 
-## Obd Vin Settings
+The VIN (Vehicle Identification Number) is a unique 17-character code that identifies your vehicle. These settings allow you to specify how the VIN is obtained for your vehicle record.
 
-| Name | Description | Default |
+| Setting | Description | Default |
 | ------ | ------ | ------ |
-| Vin | If the vehicle identification number (VIN) cannot be retrieved automatically, you can enter it manually. The VIN is a 17-character code consisting of digits and capital letters. | - |
-| Vin source | Specifies how the VIN is obtained: either automatically from the device (Auto) or entered manually by the user (Manual). | Auto |
+| VIN | The 17-character vehicle identification number. This is typically retrieved automatically from your vehicle's diagnostics system. If automatic detection fails, you can enter this manually. | — |
+| VIN Source | Specifies whether the VIN is retrieved automatically from the vehicle (**Auto**) or entered manually (**Manual**). Select Manual if your device cannot automatically retrieve the VIN. | Auto |
 
-:::tip
-If your device cannot automatically detect the VIN, you can enter it manually in the VIN field after selecting Manual for VIN Source.
+## Ignition Detection Settings
+
+:::info
+This setting is located under the **System** tab in Advanced Settings.
 :::
 
-## System
+Ignition detection determines how the AutoPi Mini identifies whether your vehicle is running. This is important for accurate trip detection and data collection.
 
-| Name | Description | Default |
+| Setting | Description | Default |
 | ------ | ------ | ------ |
-| Ignition settings | Specifies how the system detects vehicle ignition status. | Power Voltage or Engine RPM |
+| Ignition Detection Method | Specifies the sensor or data source used to detect vehicle ignition status. For ICE vehicles, select **Power Voltage or Engine RPM**. For electric vehicles, select **Accelerometer**. | Power Voltage or Engine RPM |
 
-:::tip
-If you have an ICE vehicle, select Power Voltage or Engine RPM as the ignition detection method.
-If you have an EV, select Accelerometer for ignition detection.
+## Vehicle Tracking Settings
+
+:::info
+This setting is located under the **Tracking** tab in Advanced Settings.
 :::
 
-## Tracking 
-This setting is used to determine if a vehicle has been driven by using these 2 sources: 
-* Trip start/stop - created events for both trip start and trip stop that can be found under Device > Events; the whole trip taken can be seen in Vehicle > Trips.
-* obd.rpm - values for RPM detected from the vehicle. 
+The tracking setting determines which data source is used to detect when your vehicle is in use. This information is essential for trip logging and fleet management.
 
-| Name | Description | Default |
+| Setting | Description | Default |
 | ------ | ------ | ------ |
-| Source | What data source should be used to determine if a vehicle/asset has been used/driven? Changing this will only apply to new data being logged. | Trip start/stop |
+| Tracking Source | Determines the data source for detecting when your vehicle is being driven. **Trip start/stop** uses calculated trip events (viewable in Device > Events and Vehicle > Trips). **Engine RPM** monitors actual RPM values from your vehicle's engine. This setting only affects new data collected after the change is applied. | Trip start/stop |
+
+---
+
+## Quick Setup for Electric Vehicles
+
+:::tip
+If you have an electric vehicle or hybrid, follow these steps to optimize your AutoPi Mini configuration:
+
+1. **OBD Feature**: set to **Non-OBD Compliant**.
+2. **VIN Source**: select **Manual**.
+3. **VIN**: enter your vehicle's 17-character VIN code.
+4. **Ignition Detection Method**: select **Accelerometer**.
+5. **Movement Start Delay**: set between **5 to 12 seconds**.
+6. **Movement Stop Delay**: set between **30 to 60 seconds**.
+
+After making these adjustments, verify your settings by checking the **Change History** tab to confirm they were applied successfully. For optimal performance, we recommend restarting the device remotely. If you need assistance with this step, please contact our support team at **support@autopi.io**.
+:::
 
 ---
 
@@ -891,19 +1050,60 @@ Devices with a hardware version of **5.2** and above **don't** support wake on m
 
 ---
 
-## Introduction(Advanced_settings)
+## Introduction(3)
 
 ---
 
-This guide will walk you through accessing and configuring advanced settings for your AutoPi TMU CM4 device. Customize device behavior, power management, data logging, network configuration, and specialized features to optimize your device for your specific operational needs. Learn how to access configuration options and understand the settings available to control your device's functionality.
+:::warning
+**Performance impact notice** - changing advanced settings can significantly affect your device's performance, battery life, data consumption, and overall stability. Only modify settings if you understand their implications. If you are unsure about any setting or need assistance, please contact our support team at **support@autopi.io** for guidance.
+:::
+
+This guide provides a comprehensive overview of all advanced configuration settings available for your AutoPi TMU CM4 device. Advanced settings enable fine-tuned control over device behavior, power management, data logging, connectivity, and specialized features. Each setting is configurable through the AutoPi Cloud platform and can be customized to match your specific operational requirements.
 
 ![AutoPi Cloud Advanced Settings](/img/cloud/device_management/advanced_settings/autopi_tmu_cm4/intro/advanced_settings_updated.png)
 
-:::tip
-Like any AutoPi [Cloud](https://www.autopi.io/software-platform/cloud-management) functionality, configuration settings can be changed programmatically through the AutoPi REST API. For more information see our [API docs page](https://api.autopi.io/).
-:::
+## Available Settings
 
-You can control a lot of different things on the device. Each of the settings is explained in details on the following pages.
+The following advanced settings are available for the AutoPi TMU CM4. Click on any setting to view detailed configuration options and parameters:
+
+### Device 
+- **[Accelerometer](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-accelerometer/)** - configure accelerometer and gyroscope sampling rates and ranges for motion detection and logging.
+- **[System](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-system/)** - configure core system parameters and device behavior. 
+- **[Audio](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-audio/)** - configure speak alerts to let the device speak out important events immediately when they occur. [Learn more here](https://docs.autopi.io/cloud/device_management/advanced_settings/audio-on-your-device/).
+
+### Connectivity & Communication
+- **[Bluetooth](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-bluetooth/)** - enable and configure Bluetooth connectivity options.
+- **Cellular** - manage cellular network settings and mobile connectivity, edit SIM settings, and adjust MTU. 
+- **[WiFi](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-wifi/)** - configure WiFi network parameters and connectivity.
+- **[MQTT](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-mqtt/)** - enable the MQTT broker, specify the returner, and add custom configuration for the broker to support messaging. [Learn more here](https://docs.autopi.io/developer_guides/configuring-mqtt/).
+- **[Tailscale](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-tailscale/)** - configure Tailscale VPN connectivity. [Learn more here](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/).
+- **[WireGuard](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-wireguard/)** - set up WireGuard VPN for secure connections. 
+
+### Vehicle & Data Logging
+- **[OBD](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-obd/)** - enable OBD protocol autodetection and configure advanced OBD settings including adaptive timing, passthrough interval, print spaces, and response timeout.
+- **[DoIP](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-doip/)** - configure Diagnostics over IP protocol for vehicle diagnostics. [Learn more here](https://docs.autopi.io/developer_guides/setting-up-doip/). 
+- **Vehicle** - set vehicle-specific parametersfor trips.
+- **[Tracking](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-tracking/)** - configure GPS and driving settings.
+- **[Trip](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-trip/)** - manage trip detection and trip logic. [Learn more here](https://docs.autopi.io/cloud/fleet_management/vehicles/trips/).
+
+### Power & Energy Management
+- **[Power](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-power/)** - specify your battery's critical level, safety cut-out, sleep timers, and wake triggers to manage device power consumption and behavior. [Learn more here](https://docs.autopi.io/core/power_management/core-power-sleep-timers/).
+
+### Cloud & Storage
+- **Cloud Hub** - manage cloud hub connectivity and synchronization settings.
+- **[Cloud Storage](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-cloud-storage/)** - configure data storage and synchronization with the AutoPi Cloud platform.
+- **[Update Release](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-update-release/)** - manage firmware and software update settings. [Learn more here](https://docs.autopi.io/cloud/device_management/software-updates/).
+
+### IoT & Integration
+- **[Alerts](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-alerts/)** - configure any events you want to show up as alerts on the cloud. [Learn more here](https://docs.autopi.io/cloud/fleet_management/fleet-alerts/).
+- **[Docker](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-docker/)** - enable Docker container deployments. [Learn more here](https://docs.autopi.io/developer_guides/setting-up-docker/).
+- **[Key Fob](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-key-fob/)** - configure key fob pairing and control settings. [Learn more here](https://docs.autopi.io/hardware/accessories/keyfob-hat/keyfob-intro/).
+- **Modbus** - set up Modbus protocol support for industrial device integration. [Learn more here](https://docs.autopi.io/developer_guides/modbus-server/).
+- **[RFID](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-rfid/)** - set up RFID reader and tag detection parameters. [Learn more here](https://docs.autopi.io/developer_guides/rfid-integartion/).
+
+:::tip
+All advanced settings can also be modified programmatically through the AutoPi REST API. For API documentation and examples, see our [API docs page](https://api.autopi.io/).
+:::
 
 ---
 
@@ -2366,7 +2566,51 @@ The Device Overview page includes several widgets that provide key insights:
 These widgets provide a quick and comprehensive overview of your device’s status, configuration, and activity.
 
 ---
+## Device Control Icons
 
+Located in the bottom-right corner of the Device Overview page, you'll find three icons that provide quick access to important device management functions:
+* Terminal 
+* Pending Sync
+* Warnings. 
+
+![Device Control Icons](/img/cloud/device_management/devices/device_icons.png)
+
+### Terminal Icon
+The **Terminal** icon provides access to the cloud's real-time terminal, allowing you to execute commands directly on your device (when it's online) and receive responses immediately. This feature is invaluable for:
+- **Troubleshooting issues** — run diagnostic commands to identify and resolve problems quickly.
+- **Real-time vehicle information** — query the device for current vehicle data and status.
+- **Device configuration** — make quick adjustments and test settings without waiting for sync cycles.
+- **System monitoring** — check [device logs](https://docs.autopi.io/developer_guides/autopi-logs/), performance metrics, and system status.
+
+:::note
+The terminal works only when the device is online and provides instant feedback from your AutoPi device.
+:::
+
+For a complete list of available commands you can run, see the [Commands documentation](https://docs.autopi.io/core/commands/).
+
+### Pending Syncs Icon
+The **Pending Syncs** icon shows any configuration changes awaiting application to your device. Here's how it works:
+
+**How pending syncs function:**
+- Any changes you make in the cloud are temporarily saved as pending syncs.
+- Pending syncs are automatically applied when the device starts up, restart or reconnects.
+- If the device is currently online, you can click the **Sync** button to apply changes immediately without waiting.
+
+**Use pending syncs when:**
+- You've made multiple configuration changes and want to apply them right away.
+- You need to verify that changes have been successfully applied to the device by checking the empty list, while checking the [Change History](https://docs.autopi.io/cloud/device_management/change-history/) for complete overview of when the changes has been applied to a device. 
+- The device is online and you want to push updates in real time. 
+
+### Warnings Icon
+The **Warnings** icon displays important warnings that require your attention. These warnings provide insight into potential issues with your device, such as:
+- Configuration problems or incomplete setup.
+- Device connectivity issues.
+- Software update requirements.
+- Security issues. 
+
+Regularly check warnings to ensure your device is operating optimally and to prevent future issues.
+
+---
 ## Connecting Your AutoPi Device to a Vehicle
 
 Follow the steps below to connect your AutoPi device to either a new or existing vehicle.
@@ -8057,7 +8301,7 @@ If a PID is queried that is not supported by the vehicle a `NO DATA` response is
 
 ---
 
-## Introduction(3)
+## Introduction(4)
 
 ---
 
@@ -12131,7 +12375,7 @@ Get current WPA/EAPOL/EAP status.
 
 ---
 
-## Introduction(4)
+## Introduction(5)
 
 This section explores the [AutoPi](https://www.autopi.io) Core system, which is one part of the [AutoPi](https://www.autopi.io) platform. The [AutoPi](https://www.autopi.io)
 Core is an open-source software running on the hardware device. It is built on [salt stack](https://saltproject.io/).
@@ -12185,7 +12429,7 @@ See all the available power events [here](/cloud/device_management/events/system
 
 ---
 
-## Introduction(5)
+## Introduction(6)
 
 ---
 
@@ -12705,7 +12949,7 @@ Publishes an entire job result on the minion`s local event bus.
 
 ---
 
-## Introduction(6)
+## Introduction(7)
 
 ---
 
@@ -13521,7 +13765,7 @@ Listens for position results and triggers position unknown/standstill/moving eve
 
 ---
 
-## Introduction(7)
+## Introduction(8)
 
 ---
 
@@ -19044,7 +19288,7 @@ This guide will walk you through safely powering your AutoPi device using an ext
 
 ### Prerequisites:
 - An AutoPi device (CM4, CAN-FD Pro, or Pro Casing models). 
-- An external power supply (12V minimum, 2.5A recommended).
+- An external power supply (13 V minimum, 2.5 A recommended).
 - Basic understanding of power management and device safety.
 - Optional: OBD-II power cable for easier connectivity.
 
@@ -19052,6 +19296,10 @@ This guide will walk you through safely powering your AutoPi device using an ext
 
 :::tip Recommended for testing and troubleshooting
 Using an external power supply is an excellent option when validating configurations, reproducing issues, and troubleshooting behavior outside a vehicle.
+:::
+
+:::note
+A variable power supply is recommended so that you can simulate engine stopped voltage level (less than ~12.8 V), and also engine running (more than ~13.3 V).
 :::
 
 ---
@@ -24731,26 +24979,26 @@ The DoIP solution described in this guide is **only supported on AutoPi TMU CM4�
 
 ## Introduction
 
-This guide explains how to physically install the **AutoPi DoIP HAT** on an AutoPi TMU CM4 device.
+This guide provides step-by-step instructions for installing the **AutoPi DoIP HAT** on an AutoPi TMU CM4 device.
 
-The DoIP HAT enables **Diagnostics over IP (DoIP)**, allowing diagnostic and programming communication with vehicle ECUs over Ethernet instead of CAN. This is commonly used for:
-- UDS diagnostics over Ethernet
-- ECU flashing and programming
-- High-bandwidth diagnostic workflows
-- OEM and engineering tools that require DoIP
+The DoIP HAT enables **Diagnostics over IP (DoIP)**, a protocol that transports diagnostic and programming communication with vehicle ECUs over Ethernet instead of CAN. This is commonly used for:
+- UDS diagnostics over Ethernet.
+- ECU flashing and programming.
+- High-bandwidth diagnostic workflows.
+- OEM and engineering tools that require DoIP.
 
-If you are looking for instructions on **how to use DoIP after installation**, see:  
+For instructions on configuring DoIP after installation, refer to:  
 [Setting up DoIP on AutoPi](/developer_guides/setting-up-doip/)
 
 ## What is DoIP?
 
 DoIP (Diagnostic over Internet Protocol, ISO 13400) is an automotive diagnostic protocol that transports diagnostic messages over IP-based networks, typically Ethernet.
 
-Compared to CAN-based diagnostics, DoIP offers:
-- Higher bandwidth
-- Faster flashing and data transfer
-- Direct compatibility with modern OEM diagnostic tools
-- Ethernet-based ECU access without CAN bottlenecks
+DoIP provides several advantages over traditional CAN-based diagnostics:
+- Higher bandwidth for faster data transfer.
+- Reduced flashing and programming times.
+- Direct compatibility with modern OEM diagnostic tools.
+- ECU access without CAN network limitations.
 
 ## Prerequisites
 
@@ -24763,10 +25011,9 @@ Before starting, ensure you have the following:
 - Clean, static-safe workspace
 
 :::info
-The DoIP HAT can be purchased from the AutoPi Shop:  
-[DoIP HAT for AutoPi TMU CM4](https://shop.autopi.io/products/doip-hat-v1-3)
+The DoIP HAT is available for purchase through the AutoPi Shop: [DoIP HAT for AutoPi TMU CM4](https://shop.autopi.io/products/doip-hat-v1-3).
 
-You can also order AutoPi devices with the DoIP HAT pre-installed.
+Alternatively, you can order AutoPi devices with the DoIP HAT pre-installed from the factory.
 :::
 
   
@@ -24775,29 +25022,29 @@ You can also order AutoPi devices with the DoIP HAT pre-installed.
 
 ### Step 1 – Open the AutoPi enclosure
 
-Place the AutoPi device upside down and remove the four screws on the bottom of the enclosure.
+Position the AutoPi device upside down and remove the four screws from the bottom of the enclosure.
 
-Carefully lift off the top cover to expose the internal PCB.
+Gently lift off the top cover to access the internal PCB.
 
   
 
 ### Step 2 – Prepare the DoIP HAT
 
-Attach the two **6.5 mm plastic spacers** to the DoIP HAT PCB using the provided plastic screws.
+Secure the two **6.5 mm plastic spacers** to the DoIP HAT PCB using the provided plastic screws.
 
-Ensure the spacers are firmly mounted and aligned with the mounting holes.
+Verify that the spacers are securely mounted and properly aligned with the mounting holes.
 
   
 
 ### Step 3 – Mount the DoIP HAT
 
-Carefully align the DoIP HAT with the **40-pin GPIO header** on the AutoPi main board.
+Align the DoIP HAT with the **40-pin GPIO header** on the AutoPi main board, ensuring proper orientation.
 
-Press the HAT straight down until the connector is fully seated.  
-Verify:
-- The HAT is level
-- The GPIO connector is fully engaged
-- No pins are misaligned or bent
+Press the HAT vertically downward until the connector is fully seated.  
+Confirm:
+- The HAT sits level and flush.
+- The GPIO connector is fully engaged.
+- No pins are bent or misaligned.
 
   
 
@@ -24805,47 +25052,49 @@ Verify:
 
 Reassemble the device using the **DoIP-compatible side shield**.
 
-This side shield provides the correct cutout and routing for the internal Ethernet interface used by DoIP.
+The side shield provides the proper cutout and internal routing for the Ethernet interface used by DoIP.
 
-Make sure:
-- No cables are pinched
-- The HAT remains firmly seated
-- All enclosure screws are tightened evenly
+Ensure:
+- No cables are trapped or pinched.
+- The HAT remains secure and seated.
+- All enclosure screws are tightened uniformly.
 
   
 
 ## Final Checks
 
-After installation:
+After completing the installation:
 
-- The external Ethernet port on the AutoPi is now **reserved for DoIP**
-- Do not connect external Ethernet cables
-- Install the device **only in vehicles that support DoIP**
-- Proceed with software configuration before attempting diagnostics
+- The external Ethernet port is **reserved for DoIP** and internal vehicle communication.
+- Do not connect external Ethernet devices to the port.
+- Install the device **only in vehicles that support DoIP** functionality.
+- Proceed with software configuration before attempting any diagnostic operations.
 
 ## Next Steps
 
-The DoIP hardware installation is now complete.
+Hardware installation is complete.
 
-Continue with the software setup guide to:
-- Enable DoIP services
-- Configure network settings
-- Validate ECU discovery and communication
+Proceed to the software configuration guide to:
+- Enable DoIP services on the device.
+- Configure network parameters.
+- Verify ECU discovery and bidirectional communication.
 
-➡️ [Setting up DoIP on AutoPi](/developer_guides/setting-up-doip/)
+For full overview oh setting up DoIP, read this guide: [Setting up DoIP on AutoPi](https://docs.autopi.io/developer_guides/setting-up-doip/). 
+
+For available DoIP commands and operations: [DoIP Commands Reference](https://docs.autopi.io/core/commands/core-commands-doip/). 
 
 ## Troubleshooting
 
-If the device does not detect DoIP ECUs after installation:
+If the device fails to detect DoIP ECUs following installation:
 
-- Verify the HAT is fully seated on the GPIO header
-- Confirm the vehicle supports DoIP
-- Check that no external Ethernet device is connected
-- Ensure the correct AutoPi OS version is installed
+- Verify the HAT is completely seated on the GPIO header.
+- Confirm that the vehicle supports DoIP functionality.
+- Ensure no external Ethernet devices are connected.
+- Validate that the appropriate AutoPi OS version is installed.
 
 ---
 
-You have now successfully installed the AutoPi DoIP HAT.
+The AutoPi DoIP HAT installation is complete.
 
 ---
 
@@ -26178,7 +26427,7 @@ This is an image of the OBD connector pinout. It is valid for the different gene
 
 ---
 
-## Introduction(8)
+## Introduction(9)
 
 The [AutoPi CAN-FD Pro + IP67 Casing](https://shop.autopi.io/products/autopi-can-fd-pro-ip67-casing) is our most powerful automotive data logging device, engineered for full-speed dual CAN-FD channel capture. Built on the Raspberry Pi Compute Module, it features 32 GB of onboard storage (expandable via flash drive) and an integrated 4G/LTE modem for secure, real-time data delivery to your cloud environment.
 
@@ -26402,7 +26651,7 @@ then reconnect it. Wait until both lights are green and blinking.
 
 ---
 
-## Introduction(9)
+## Introduction(10)
 
 This section has a few guides written out that are specifically for the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) devices. 
 
@@ -26515,7 +26764,7 @@ Download the official datasheet here:
 
 ---
 
-## Introduction(10)
+## Introduction(11)
 
 This section contains comprehensive documentation for the [AutoPi TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) device. While the content is tailored specifically for this device, many concepts may apply to earlier generation models.
 
@@ -27111,7 +27360,7 @@ The power to the extension ports can be controlled using the following commands:
 
 ---
 
-## Introduction(11)
+## Introduction(12)
 
 This section has a few guides written out that are specifically for third generation (TMU) devices.
 Some of the knowledge may be transferrable to second generation devices.
@@ -27767,7 +28016,7 @@ In case you have any questions, don't hesitate to contact us at [support@autopi.
 
 ---
 
-## Introduction(12)
+## Introduction(13)
 
 This section has a few guides written out that are specifically for third generation (TMU) devices.
 Some of the knowledge may be transferrable to second generation devices.
@@ -28033,7 +28282,7 @@ The power to the extension ports can be controlled using the following commands:
 
 ---
 
-## Introduction(13)
+## Introduction(14)
 
 This section has a few guides written out that are specifically for third generation (TMU) devices.
 Some of the knowledge may be transferrable to second generation devices.
@@ -28321,3 +28570,132 @@ scraping required.
 
 These files are regenerated on every documentation build, so anything you index
 stays in sync with the site.
+
+---
+
+## Introduction(15)
+
+---
+# Releases
+
+Welcome to our monthly releases. Here you'll find curated summaries of the most important updates to the AutoPi platform, organized by month.
+
+## What You'll Find Here
+
+Each release page highlights:
+
+- **New Features** — major improvements and capabilities added to the platform.
+- **Bug Fixes** — stability improvements and issue resolutions.
+- **Screenshots & Descriptions** — visual guides and clear explanations to help you understand what's new.
+- **Where to Find It** — step-by-step navigation to locate features in the cloud interface or device settings.
+
+## Our Updates
+
+Releases may include updates to one or more of the following:
+
+- **Frontend** — Cloud UI and dashboard.
+- **Backend** — Cloud API and services.
+- **Core** — device firmware and core libraries.
+
+## Want Technical Details?
+
+Looking for a complete, unfiltered list of all changes? Visit the Changelog section for raw technical details pulled directly from our development repositories.
+
+## Need Help or Have Questions?
+
+- **Support Issues** — if you encounter any issues or bugs, please contact our support team at [support@autopi.io](mailto:support@autopi.io).
+- **Feature Requests & Sales Inquiries** — questions about features or interested in discussing potential new capabilities? Reach out to our sales team at [sales@autopi.io](mailto:sales@autopi.io).
+
+---
+
+## September 2026(Releases)
+
+---
+
+# September 2026 Releases
+
+## New Features
+
+### Asset Types
+
+*Where to find it: Configuration → Asset Types.*
+
+You can now create and manage Asset Types and associate vehicles with a specific asset type. This makes it easier to organize your vehicles and identify them based on their type.
+
+![Asset Types Table](/img/releases/september_2026/asset_types_updated.png)
+
+:::note
+All asset type related changes (creating and editing) are available only to users with Account Administrator permission. Read more here: [User Permissions](https://docs.autopi.io/cloud/accounts/#modifying-user-permissions). 
+:::
+
+Read more about how to use this new functionality here: [Asset Types Guide](https://docs.autopi.io/cloud/fleet_management/configurations/asset-types/). 
+
+### Terminology 
+
+*Where to find it: Accounts → Terminology.*
+
+On this page, you can customize wording for driving-related terms across the app and for the vehicle itself.  Select terms from dropdown options, or create custom terms.
+
+![Terminology Tab](/img/releases/september_2026/terminology_updated.png)
+
+### Vehicle avatar 
+
+*Where to find it: Vehicles List → pick a Vehicle → Edit Vehicle → Avatar: upload.*
+
+You can add a vehicle avatar image for your vehicle. Once the image is uploaded, it shows up on the Overview page. 
+
+![Vehicle Avatar](/img/releases/september_2026/avatar_updated.png)
+
+### Position map widget: show or hide event overlays
+
+*Where to find it: Device/Vehicle → Dashboard → Position widget → Edit → Show event overlays.*
+
+You can now choose whether events should be displayed on top of the position widget on the map. Simply disable this option if you prefer a cleaner map without event markers displayed on top of the position widget.
+
+![Position Map Setting](/img/releases/september_2026/position_map.png)
+
+### GPS filtering for smooth positions
+
+*Where to find it: Device → Advanced Settings → Tracking → Stable Mode.*
+
+GPS filtering now provides better calculation of smooth GPS positions, helping to reduce noise and inaccuracies in location data. This is particularly useful when your device is parked or stationary, where GPS signals can be unstable.
+
+![GPS Filtering](/img/releases/september_2026/advanced_gps.png)
+
+If your device is experiencing issues with GPS positions when parked or in similar conditions, we recommend the following settings:
+
+* **Mode** - Stable (noise-reducing, LE910CX only).
+* **Standstill Emit Distance** - 40.
+* **Sog Moving Threshold** - 5.
+
+### PGN logging support
+
+*Where to find it: Device → Loggers → Create: PGN.*
+
+PGN logging is now supported in the device logger. You can now create a PGN logger in addition to the existing PID and CAN loggers.
+
+![PGN Logger](/img/releases/september_2026/pgn_logger.png)
+
+### More information in CSV exports
+
+*Where to find it: Vehicles List → pick a Vehicle →Dashboard → Download all data or Download CSV on widget.*
+
+Dashboard CSV exports now include two additional columns:
+* Widget – shows which dashboard widget the data comes from.
+* Field name – shows the specific field the data represents.
+
+This makes exported data easier to identify and work with.
+
+![CSV Export Columns](/img/releases/september_2026/csv_export.png)
+
+### More control over Redis buffering
+
+*Where to find it: Device → Advanced Settings → System → Redis → Maxmemory.*
+
+A new Redis setting gives you more control over how data is buffered in the system.
+
+![Redis Buffering](/img/releases/september_2026/redis_memory.png)
+
+---
+
+For a full list of all changes, see the [**September 2026 Changelog**](/changelog/september-2026).
