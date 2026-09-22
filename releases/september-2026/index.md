@@ -1,11 +1,9 @@
 # September 2026
 
-> <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+> ---
+New Features
 
 ---
-
-# September 2026 Releases
-
 ## New Features
 
 ### Asset Types
@@ -14,7 +12,7 @@
 
 You can now create and manage Asset Types and associate vehicles with a specific asset type. This makes it easier to organize your vehicles and identify them based on their type.
 
-![Asset Types Table](/img/releases/september_2026/asset_types_updated.png)
+![Asset Types Table](/img/releases/september_2026/asset_types_preview2.png)
 
 :::note
 All asset type related changes (creating and editing) are available only to users with Account Administrator permission. Read more here: [User Permissions](https://docs.autopi.io/cloud/accounts/#modifying-user-permissions). 
@@ -28,7 +26,7 @@ Read more about how to use this new functionality here: [Asset Types Guide](http
 
 On this page, you can customize wording for driving-related terms across the app and for the vehicle itself.  Select terms from dropdown options, or create custom terms.
 
-![Terminology Tab](/img/releases/september_2026/terminology_updated.png)
+![Terminology Tab](/img/releases/september_2026/terminology_preview.png)
 
 ### Vehicle avatar 
 
@@ -36,7 +34,7 @@ On this page, you can customize wording for driving-related terms across the app
 
 You can add a vehicle avatar image for your vehicle. Once the image is uploaded, it shows up on the Overview page. 
 
-![Vehicle Avatar](/img/releases/september_2026/avatar_updated.png)
+![Vehicle Avatar](/img/releases/september_2026/avatar_preview.png)
 
 ### Position map widget: show or hide event overlays
 
