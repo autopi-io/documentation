@@ -245,6 +245,11 @@ html[data-theme=dark] {
   border-color: #0e46a6;
 }
 
+.container img {
+    // border-radius: 15px;
+    border: 1px solid #eee;
+}
+
 .image-container {
   display: flex;
   justify-content: center; 
