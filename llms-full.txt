@@ -28649,7 +28649,7 @@ You can add a vehicle avatar image for your vehicle. Once the image is uploaded,
 
 You can now choose whether events should be displayed on top of the position widget on the map. Simply disable this option if you prefer a cleaner map without event markers displayed on top of the position widget.
 
-![Position Map Setting](/img/releases/september_2026/position_map.png)
+![Position Map Setting](/img/releases/september_2026/event_overlay_widget.png)
 
 ### GPS filtering for smooth positions
 
@@ -28657,7 +28657,7 @@ You can now choose whether events should be displayed on top of the position wid
 
 GPS filtering now provides better calculation of smooth GPS positions, helping to reduce noise and inaccuracies in location data. This is particularly useful when your device is parked or stationary, where GPS signals can be unstable.
 
-![GPS Filtering](/img/releases/september_2026/advanced_gps.png)
+![GPS Filtering](/img/releases/september_2026/advanced_gps_settings.png)
 
 If your device is experiencing issues with GPS positions when parked or in similar conditions, we recommend the following settings:
 
@@ -28671,7 +28671,7 @@ If your device is experiencing issues with GPS positions when parked or in simil
 
 PGN logging is now supported in the device logger. You can now create a PGN logger in addition to the existing PID and CAN loggers.
 
-![PGN Logger](/img/releases/september_2026/pgn_logger.png)
+![PGN Logger](/img/releases/september_2026/new_pgn_logger.png)
 
 ### More information in CSV exports
 
@@ -28683,7 +28683,7 @@ Dashboard CSV exports now include two additional columns:
 
 This makes exported data easier to identify and work with.
 
-![CSV Export Columns](/img/releases/september_2026/csv_export.png)
+![CSV Export Columns](/img/releases/september_2026/csv_export_new_columns.png)
 
 ### More control over Redis buffering
 
@@ -28691,7 +28691,7 @@ This makes exported data easier to identify and work with.
 
 A new Redis setting gives you more control over how data is buffered in the system.
 
-![Redis Buffering](/img/releases/september_2026/redis_memory.png)
+![Redis Buffering](/img/releases/september_2026/advanced_system_redis_updated.png)
 
 ---
 
