@@ -163,6 +163,7 @@ module.exports = {
   ],
   plugins: [
     ['./src/plugins/tailwind-config.js', {}],
+    './src/plugins/gtag-fallback.js',
     'docusaurus-plugin-sass',
     [
       'docusaurus-plugin-llms',
