@@ -34,30 +34,30 @@ function useDocTOC() {
 function StayInTouch() {
   return (
     <div className={footerStyles.customFooter}>
-      <h2>Let's stay in touch!</h2>
+      <h2>Stay connected with AutoPi</h2>
       <p>
-        Thank you for choosing AutoPi. We're excited to see what you will achieve with your new device!
+        Explore our devices or contact our team for guidance and support.
       </p>
       <div className={footerStyles.cardGrid}>
         <a href="https://shop.autopi.io" className={footerStyles.card}>
           <img src="/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png" alt="Buy AutoPi" />
-          <strong>Buy AutoPi device</strong>
-          <p>Check out our AutoPi shop and buy an AutoPi device.</p>
+          <strong>Shop AutoPi devices</strong>
+          <p>Browse our devices, accessories, and connectivity solutions.</p>
         </a>
         <a href="https://www.autopi.io/hardware/compare/" className={footerStyles.card}>
           <img src="/img/shared/autopi_devices_trans.png" alt="Compare devices" />
-          <strong>Compare all AutoPi devices</strong>
-          <p>Check which device fits your requirements the best.</p>
+          <strong>Compare devices</strong>
+          <p>Find the AutoPi device that best meets your requirements.</p>
         </a>
         <a href="https://www.autopi.io/sales-inquiry/" className={footerStyles.card}>
           <img src="/img/shared/favicon.ico" alt="Sales team" />
-          <strong>Contact our sales team</strong>
-          <p>You can build on top of your AutoPi device.</p>
+          <strong>Contact sales</strong>
+          <p>Discuss your use case and identify the right solution.</p>
         </a>
         <a href="https://www.autopi.io/support/" className={footerStyles.card}>
           <img src="/img/shared/support_icon.png" alt="Support team" />
-          <strong>Contact our support team</strong>
-          <p>Let us know about your technical questions.</p>
+          <strong>Contact support</strong>
+          <p>Get assistance with technical questions and product support.</p>
         </a>
       </div>
     </div>
