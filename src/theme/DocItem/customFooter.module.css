@@ -1,41 +1,41 @@
 .customFooter {
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb; /* Tailwind gray-200 */
-  border-radius: 0.5rem;      /* rounded-lg */
-  padding: 2.5rem 1.5rem;     /* py-10 px-6 */
+  width: 100%;
+  margin-top: 2rem;
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  padding: 1.5rem;
   text-align: center;
 }
 
 .customFooter h2 {
-  font-size: 1.5rem;          /* text-2xl */
-  font-weight: 600;          /* font-semibold */
-  color: #111827;            /* text-gray-900 */
-  margin-bottom: 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
 }
 
 .customFooter > p {
-  font-size: 1rem;           /* text-base */
-  color: #4b5563;            /* text-gray-600 */
-  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0 auto 1.25rem;
+  max-width: 36rem;
 }
 
 .cardGrid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;                /* gap-6 */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
 }
 
 .card {
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb; /* border-gray-200 */
-  border-radius: 0.5rem;     /* rounded-lg */
-  width: 14rem;              /* w-56 */
-  padding: 1rem;             /* p-4 */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow-sm */
+  min-width: 0;
+  background-color: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  padding: 0.875rem;
   text-align: center;
   text-decoration: none;
-  color: #1f2937;            /* text-gray-800 */
+  color: var(--ifm-font-color-base);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -46,23 +46,31 @@
 
 .card img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1rem;
-  width: 2.5rem;             /* w-10 */
-  height: 2.5rem;            /* h-10 */
+  margin: 0 auto 0.625rem;
+  width: 2rem;
+  height: 2rem;
   object-fit: contain;
 }
 
 .card strong {
   display: block;
-  font-size: 1rem;           /* text-base */
+  font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .card p {
-  font-size: 0.875rem;       /* text-sm */
-  color: #4b5563;            /* text-gray-600 */
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-700);
   margin: 0;
+}
+
+@media (max-width: 576px) {
+  .customFooter {
+    padding: 1.25rem 1rem;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
 }
