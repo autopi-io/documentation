@@ -17,7 +17,6 @@ module.exports = {
           "items": [
             "getting_started/autopi_canfd_pro/pro-guides-intro",
             "getting_started/autopi_canfd_pro/pro-user-guide",
-            "getting_started/autopi_canfd_pro/how_to_connect_to_tailscale",
             "getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi",
             "getting_started/autopi_canfd_pro/set_up_AWS_S3_bucket",
             "getting_started/autopi_canfd_pro/pro-data-troubleshooting",
@@ -63,7 +62,8 @@ module.exports = {
             "getting_started/api/command-webhook-callbacks",
             "getting_started/api/change-device-settings-from-api",
             "getting_started/api/export-data-from-api",
-            "getting_started/api/send-device-data-to-own-server"
+            "getting_started/api/send-device-data-to-own-server",
+            "getting_started/api/local-api-overview"
           ],
           "label": "API",
           "type": "category"
@@ -76,6 +76,7 @@ module.exports = {
         "developer_guides/how-to-use-bluepy-with-autopi-edge-devices",          
         "developer_guides/configuring-mqtt",
         "developer_guides/how-to-ssh-to-your-device",
+        "developer_guides/how_to_connect_to_tailscale",
         "developer_guides/local-development-workflow",
         "developer_guides/reflashing-your-device",
         "developer_guides/can-bridge",
@@ -90,12 +91,11 @@ module.exports = {
         "developer_guides/enabling_uart_on_TMU_devices",
         "developer_guides/setting-up-a-device-with-verizon-wireless",
         "developer_guides/autopi-logs",
-        "developer_guides/local-api-overview", 
         "developer_guides/setting-up-docker",
         "developer_guides/how-to-create-custom-event-for-custom-logger",
         "developer_guides/using-the-autopi-with-an-external-power-supply",
         "developer_guides/accessing-raw-gps-data",  
-        "developer_guides/move-to-dedicated-environment",     
+        "developer_guides/move-to-dedicated-environment",
       ],
       "Cloud": [
         "cloud/cloud-intro",
@@ -123,6 +123,7 @@ module.exports = {
             },
             "cloud/fleet_management/locations",
             "cloud/fleet_management/fleet-alerts",
+            "cloud/fleet_management/access-control",
             "cloud/fleet_management/fleet-diagnostics",
             {
               "items": [
