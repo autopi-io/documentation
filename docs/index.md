@@ -143,9 +143,9 @@ Want to dig right into the source code? Get full access here:
 ### Developer Guides (Advanced)
 
 - **Advanced diagnostics (DoIP):** Use the [DoIP hat](https://shop.autopi.io/products/doip-hat-v1-3) to expand diagnostic and maintenance capabilities. Start here: [How to set up DoIP](https://docs.autopi.io/developer_guides/setting-up-doip/)
-- **Remote access:** Connect directly with [SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) or use [Tailscale](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
+- **Remote access:** Connect directly with [SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) or use [Tailscale](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/)
 - **Containerized workloads:** Run services on-device with [Setting up Docker on your device](https://docs.autopi.io/developer_guides/setting-up-docker/)
-- **Development setup:** Follow the [Local development workflow](https://docs.autopi.io/developer_guides/local-development-workflow/), power safely with an [external power supply](https://docs.autopi.io/developer_guides/using-the-autopi-with-an-external-power-supply/), and use the [AutoPi Local API overview](https://docs.autopi.io/developer_guides/local-api-overview/)
+- **Development setup:** Follow the [Local development workflow](https://docs.autopi.io/developer_guides/local-development-workflow/), power safely with an [external power supply](https://docs.autopi.io/developer_guides/using-the-autopi-with-an-external-power-supply/), and use the [AutoPi Local API overview](https://docs.autopi.io/getting_started/api/local-api-overview/)
 - **Data routing and broker integration:** Send data to your own infrastructure with [Configuring MQTT](https://docs.autopi.io/developer_guides/configuring-mqtt/)
 - **Power and wake control:** Access sleeping devices remotely with [Remotely waking up your device](https://docs.autopi.io/developer_guides/remotely-waking-up-your-device/)
 - **Troubleshooting and recovery:** Collect diagnostics with [AutoPi Logs](https://docs.autopi.io/developer_guides/autopi-logs/) and recover devices with [Reflashing your device](https://docs.autopi.io/developer_guides/reflashing-your-device/)

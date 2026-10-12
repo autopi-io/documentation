@@ -43,7 +43,7 @@ Check out the table below for an easy breakdown of everything inside the [AutoPi
 :::tip
 Our [AutoPi](https://www.autopi.io/) [CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) is built for performance and flexibility.
 * **4-in-1 External Antenna**: Included with every device — supports 2x 4G/LTE, 1x GPS, and 1x WiFi/BLE for top-notch connectivity.
-* **[Tailscale Add-on Pre-Installed](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)**: Our latest feature makes remote access faster and more secure than ever. Troubleshooting on the go? No problem — you’ll be connected in no time.
+* **[Tailscale Add-on Pre-Installed](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/)**: Our latest feature makes remote access faster and more secure than ever. Troubleshooting on the go? No problem — you’ll be connected in no time.
 :::
 
 ### 4-in-1 preinstalled antenna kit

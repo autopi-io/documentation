@@ -82,13 +82,13 @@ ssh pi@192.168.1.50
 ---
 
 ## Connect Using Tailscale
-You can also use Tailscale for secure remote access to your AutoPi device from anywhere. If you want to read about the whole setup, check out this guide: [How to connect to Tailscale on your Autopi device](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
+You can also use Tailscale for secure remote access to your AutoPi device from anywhere. If you want to read about the whole setup, check out this guide: [How to connect to Tailscale on your Autopi device](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/)
 
 ### Setup Steps:
 * Open Advanced Settings on your device.
 * Navigate to Tailscale.
 * Enable Tailscale and provide your Auth Key.
-* For a full setup guide, refer to the [Tailscale documentation](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/#2-create-a-tailnet). 
+* For a full setup guide, refer to the [Tailscale documentation](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/#2-create-a-tailnet). 
 * Once configured, connect using the device’s Tailscale IP address.
 
 ![Tailscale Advanced Settings](/img/guides/ssh_access/advanced_tailscale.png)

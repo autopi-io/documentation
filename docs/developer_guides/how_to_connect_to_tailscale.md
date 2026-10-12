@@ -158,4 +158,3 @@ cmd.run 'systemctl start tailscaled'
 ---
 
 **You're all set!** Your AutoPi device is now connected to Tailscale, providing you with secure remote access to your device from anywhere.
-

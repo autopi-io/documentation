@@ -32,7 +32,7 @@ This command is a great tool to see the current status of your data logger(s) in
 * If the device is connected to the internet it can be done through the cloud terminal on AutoPi cloud.
 * If you have direct SSH access to the device via LAN or VPN you can use the autopi terminal command.
   * You can check out this guide: [How to SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/)
-  * For using Tailscale, you can check out this guide: [How to connect to Tailscale](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
+  * For using Tailscale, you can check out this guide: [How to connect to Tailscale](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/)
 * If you are nearby the device and can connect to it's local WiFi hotspot you can do it from the local admin UI on local.autopi.io. Here is a guide: [Local development workflow](https://docs.autopi.io/developer_guides/local-development-workflow/)
 
 Below is an example of the output of the command:
@@ -624,7 +624,7 @@ At the moment if you want to access your device remotely using [Tailscale](https
 * **Auth Key** - Specify the Tailscale auth key to be used by the device. Generate a new key on the Tailscale console below 'Settings' > 'Keys'.
 * **Enabled** - by default this setting is not enabled, but if you want to use Tailscale, you just have to enable it here. 
 
-For more information check out this guide: [How to connect to Tailscale on your AutoPi device](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
+For more information check out this guide: [How to connect to Tailscale on your AutoPi device](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/)
 
 
 ### Advanced settings for Trips
