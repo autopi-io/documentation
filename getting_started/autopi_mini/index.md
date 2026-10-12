@@ -7,43 +7,43 @@
 
 ## Welcome to AutoPi Setup
 
-This comprehensive guide will walk you through setting up your AutoPi Mini from account creation to full cloud connectivity. Your device arrives pre-assembled with the SIM card installed, requiring only a few essential steps to get operational.
+This guide walks you through setting up an AutoPi Mini, from creating an account to verifying cloud connectivity and configuring the device for an electric vehicle, if applicable. The device arrives pre-assembled with its SIM card installed.
 
-## What You'll Learn
+## Quickstart
 
-By following this guide, you will:
+Complete the steps in order:
 
-- Create and configure your AutoPi Cloud account.
-- Register your device on the platform.
-- Locate your vehicle's OBD port.
-- Physically install the device for optimal performance.
-- Connect the device to the AutoPi Cloud via Wi-Fi.
-- Configure your AutoPi Mini for Electric Vehicle compatibility (if applicable).
-- Complete security and finalization settings.
+1. [Create an AutoPi Cloud account](#1-set-up-your-user-account).
+2. [Register your device](#2-register-your-device).
+3. [Locate the vehicle's OBD-II port](#3-locate-obd-port).
+4. [Install and position the device](#4-install-the-device).
+5. [Verify cloud connectivity](#5-verify-cloud-connectivity).
+6. [Configure the Mini for an electric vehicle](#6-configure-the-mini-for-an-electric-vehicle), if applicable.
+7. [Confirm the setup](#7-confirm-the-setup).
 
-## Important Safety & Setup Requirements
+## Important Safety and Setup Requirements
 
 :::caution
 
-The AutoPi Telematics Unit is a technical device that interfaces directly with your vehicle's ECU. Before proceeding, please review these critical requirements:
+The AutoPi Mini connects directly to your vehicle's ECU. Follow these requirements before continuing:
 
-1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
-2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
-3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
-4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
-5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
+1. **Turn off the vehicle:** make sure the vehicle is completely powered off before connecting the device for the first time.
+2. **Park before making changes:** install or configure the device only while the vehicle is parked.
+3. **Keep the device connected while driving:** never disconnect the AutoPi Mini while the vehicle is moving.
+4. **Use the OBD-II power source:** power the device only through the OBD-II connector.
+5. **Change advanced settings carefully:** incorrect settings may affect vehicle data collection or battery life.
 
 :::
 
 ---
 
-## 1. Setting Up User Account
+## 1. Set Up Your User Account
 
-Once you have received your [AutoPi](https://www.autopi.io) device it is important to associate it with [Cloud](https://www.autopi.io/software-platform/cloud-management) Platform.
-Go to [my.autopi.io](https://my.autopi.io/) and click “Sign up”. In the pop-up, 
-add the e-mail address you want to associate with your account and create a password. 
-You can also expand the form to add additional details like your country and full name, 
-though this can be done later. Click “Create account”.
+1. Go to [my.autopi.io](https://my.autopi.io/).
+2. Select **Sign up**.
+3. Enter your email address and create a password.
+4. Optionally, expand the form and add your name and country. You can also add these details later.
+5. Select **Create account**.
 
 ![AutoPi sign up](/img/getting_started/getting_started/sign_up.png)
 
@@ -73,9 +73,7 @@ After clicking the “Register Device” button, the registration tab will appea
 - **Vehicle Information**: Optionally include the make, model and year of the vehicle.
 - **Vehicle Type**: Choose the type of vehicle (ICE, Battery [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), or Plug-in Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)).
 
-Once all information is entered, click the “Register Device”. Your newly registered device 
-will now appear in the list under “Vehicles” in the Fleet Management section and under 
-“Devices” in the Device Management section of the Platform.
+The Mini device should now appear under **Fleet Management** > **Vehicles** and **Device Management** > **Devices**.
 
 ## 3. Locate OBD Port
 
@@ -84,70 +82,88 @@ it is usually found underneath the dashboard and looks something like this:
 
   ![AutoPi.io - OBD port](/img/getting_started/getting_started/obd_location.jpg)
 
-Please note that the location of the OBD port varies from make and model but is
-typically found in one of the locations shown below:
+Its exact location depends on the vehicle's make and model. The following image shows common locations. If you cannot find the port, consult the vehicle owner's manual.
 
 ![AutoPi.io - OBD port location](/img/getting_started/getting_started/TMU_placement_dashboard_v1_finecut-01.jpg)
 
-## 4. Installation
+## 4. Install the Device
 
-When installing the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini), make sure the device is positioned with the 
-logo facing upwards toward the sky. This is important because the GPS antenna is 
-inside the device, and if it's not facing up, you might not get a strong GPS signal.
+1. Make sure the vehicle is completely powered off.
+2. Connect the AutoPi Mini to the OBD-II port.
+3. Position the device with the **AutoPi logo facing upward toward the sky**. The GPS antenna is inside the device, and another orientation may weaken the GPS signal.
+4. Make sure the device cannot interfere with pedals, steering, or other vehicle controls.
 
-If the OBD port is in a difficult spot or gets in the way, you can buy an 
-[extension cable](https://shop.autopi.io/products/obd-ii-extension-cable)
-to place your [AutoPi](https://www.autopi.io) in a more convenient location. 
+If the OBD-II port is difficult to reach or leaves the Mini in an unsafe position, use an [OBD-II extension cable](https://shop.autopi.io/products/obd-ii-extension-cable) to move it to a suitable location.
 
-This is the OBD-II extension cable: 
+  
 
-![AutoPi.io - Relocator cable](/img/getting_started/getting_started/relocator_cable.png)
+:::tip Performance tips
+- Keep the AutoPi logo facing the sky.
+- Keep the device out of direct sunlight when possible. Excessive heat may reduce performance.
+- Do not cover the device with metal, because this can interfere with the internal GPS antenna.
+- Power the Mini only through the OBD-II connector.
+:::
 
----
+## 5. Verify Cloud Connectivity
 
-## Electric Vehicle configurations
+1. Turn on the vehicle to supply power to the AutoPi Mini.
+2. Allow a few minutes for the device to start and establish its cellular connection.
+3. Sign in to the [AutoPi Cloud](https://my.autopi.io/).
+4. Open **Devices**, select the Mini, and confirm that it appears online.
 
-If your [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) is connected to an Electric Vehicle we recommend to set some extra configurations for your device. Unlike internal combustion engine (ICE) vehicles, some EVs do not support automatic VIN detection, which can prevent the device from reading data properly. To resolve this, follow these steps to adjust the advanced settings for EV compatibility. 
+:::tip If the Mini remains offline
+The first cellular connection may take a few minutes. If the device does not appear online or does not report data, follow the [AutoPi Mini Data Troubleshooting](/getting_started/autopi_mini/mini-data-troubleshooting) guide to check its status LEDs and data configuration.
+:::
 
-![Mini advanced settings](/img/getting_started/autopi_mini/mini_advanced_settings.png)
+## 6. Configure the Mini for an Electric Vehicle
 
-Recommended advanced settings for Electric Vehicle:
+If the Mini is installed in an electric vehicle (EV), apply the following settings. Some EVs do not support automatic VIN detection or standard OBD-II behavior, which can prevent the device from collecting data correctly.
 
-**Configuration 1: Adjust OBD Feature, this setting ensures the device correctly communicates with your EV.**
+### Set the OBD Feature
 
-1. Go to: Advanced settings → Obd Settings → Obd Feature.
-2. Select: **Non-OBD Compliant**.
-3. Press: Save.
+This setting allows the Mini to communicate with vehicles that do not use standard OBD-II behavior.
 
-**Configuration 2: Manually enter your VIN (if not detected automatically).**
+1. Go to **Advanced Settings** > **OBD Settings** > **OBD Feature**.
+2. Select **Non-OBD Compliant**.
+3. Select **Save**.
 
-1. Go to: Advanced settings → Obd Vin Settings.
-2. Set Vin: enter your 17-character VIN (digits and capital letters).
-3. Pick Vin Source: select **Manual**.
-4. Press: Save.
+### Enter the VIN Manually
 
-**Configuration 3: Set Ignition detection for EVs to properly detect when your EV is on or off.**
-1. Go to: Advanced settings → System -> Ignition Settings.
-2. Select: **Accelerometer**.
-3. Press: Save.
+Complete this configuration even if the VIN was detected automatically.
 
-**Configuration 4: Set Movement source to be more precise when the vehicle is moving.**
-1. Go to: Advanced settings → System -> Movement Source.
-2. Select: **Accelerometer**.
-3. Press: Save.
+1. Go to **Advanced Settings** > **OBD VIN Settings**.
+2. Enter the 17-character VIN using digits and uppercase letters.
+3. Set **VIN Source** to **Manual**.
+4. Select **Save**.
 
-**Configuration 5: Set the Accelerometer Delay Settings to ensure rapid response for data reading but also a protection for quick state changes.**
-1. Go to: Advanced settings → System -> **Movement start delay**.
-2. Select: 5 to 12 seconds.
-3. Go to: Advanced settings -> System -> **Movement stop delay**.
-4. Select: 30 to 60 seeconds.
-3. Press: Save.
+### Configure Ignition Detection
 
-After making these adjustments, check the 'Change History' tab to confirm that your settings were applied successfully.
+1. Go to **Advanced Settings** > **System** > **Ignition Settings**.
+2. Select **Accelerometer**.
+3. Select **Save**.
 
-**You Are All Set!**
+### Configure Movement Detection
 
-Congratulations! You've successfully set up your [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) device and connected 
-it to the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management). Your device is now ready to start gathering and transmitting 
-data, enabling you to take full advantage of the powerful features [AutoPi](https://www.autopi.io) offers. 
-Take your device for a trip to start gathering data.
+1. Go to **Advanced Settings** > **System** > **Movement Source**.
+2. Select **Accelerometer**.
+3. Set **Movement start delay** to a value from **5 to 12 seconds**.
+4. Set **Movement stop delay** to a value from **30 to 60 seconds**.
+5. Select **Save**.
+
+After making these changes, open **Change History** and confirm that each setting was applied successfully.
+
+## 7. Confirm the Setup
+
+1. Confirm that the Mini appears online in the AutoPi Cloud.
+2. Take the vehicle for a drive to begin collecting trip and vehicle data.
+3. Return to the AutoPi Cloud and confirm that new data appears for the device.
+
+### Setup Complete
+
+Your AutoPi Mini is connected to the AutoPi Cloud and ready to collect and transmit vehicle data.
+
+## What's Next?
+
+- **Configure data collection:** follow [Create Mini Loggers](/getting_started/autopi_mini/create-mini-loggers) to customize the data collected from the vehicle.
+- **Troubleshoot missing data:** use [AutoPi Mini Data Troubleshooting](/getting_started/autopi_mini/mini-data-troubleshooting) if the device is online but data does not appear.
+- **Explore the AutoPi Cloud:** try real-time monitoring, analytics, and configurable alerts in the [AutoPi Cloud](https://my.autopi.io/).

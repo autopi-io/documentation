@@ -7,44 +7,45 @@
 
 ## Welcome to AutoPi Setup
 
-This comprehensive guide will walk you through setting up your AutoPi TMU CM4 4G/LTE Edition from account creation to full cloud connectivity. Your device arrives ready to be installed, requiring only a few essential steps to get operational.
+This guide walks you through setting up an AutoPi TMU CM4 4G/LTE Edition, from creating an account to connecting the device to the AutoPi Cloud.
 
-## What You'll Learn
+## Quickstart
 
-By following this guide, you will:
+Complete the steps in order. If your device includes an AutoPi Cloud subscription and a pre-installed SIM card, you can skip the SIM installation and APN configuration steps.
 
 - Create and configure your [AutoPi Cloud account](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#1-setting-up-user-account). 
-- [Register](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#2-register-your-device) your device on the platform. 
+- [Register](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#2-register-your-device) your device on the AutoPi platform. 
 - Verify [SIM connectivity](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#3-ensure-sim-connectivity) (if required).
 - Locate and prepare your vehicle's [OBD port](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#4-locate-obd-port). 
 - Physically [install the device](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#5-installation) for optimal performance. 
-- Connect the device to the AutoPi Cloud via [Wi-Fi](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#6-connect-to-device-wifi-hotspot).
-- Configure [network settings](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#7-connect-to-local-administration) (APN) for 4G/LTE connectivity.
-- [Verify](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#8-verify-connectivity) your setup and [finalize](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#9-finalization) security settings.
+- [Connect to the device's Wi-Fi hotspot](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#6-connect-to-device-wifi-hotspot).
+- [Open Local Administration and configure the APN](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#7-connect-to-local-administration) (APN) for 4G/LTE connectivity.
+- [Verify the device's internet and cloud connectivity](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#8-verify-connectivity).
+- [Change the default Wi-Fi password and finalize the setup](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#9-finalization).
 
-## Important Safety & Setup Requirements
+## Important Safety and Setup Requirements
 
 :::caution
 
-The AutoPi Telematics Unit is a technical device that interfaces directly with your vehicle's ECU. Before proceeding, please review these critical requirements:
+The AutoPi device connects directly to your vehicle's ECU. Follow these requirements before continuing:
 
-1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
-2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
-3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
-4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
-5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
+1. **Turn off the vehicle:** make sure the vehicle is completely powered off before connecting the device for the first time.
+2. **Park before making changes:** install or configure the device only while the vehicle is parked.
+3. **Keep the device connected while driving:** never disconnect the AutoPi device while the vehicle is moving.
+4. **Use the OBD-II power source:** power the device only through the OBD-II connector. Powering the Raspberry Pi directly is not supported and may damage the device.
+5. **Change advanced settings carefully:** incorrect settings may affect vehicle performance or battery life.
 
 :::
 
 ---
 
-## 1. Setting Up User Account
+## 1. Set Up Your User Account
 
-Once you have received your AutoPi device it is important to associate it with Cloud Platform.
-Go to [my.autopi.io](https://my.autopi.io/) and click “Sign up”. In the pop-up, 
-add the e-mail address you want to associate with your account and create a password. 
-You can also expand the form to add additional details like your country and full name, 
-though this can be done later. Click “Create account”.
+1. Go to [my.autopi.io](https://my.autopi.io/).
+2. Select **Sign up**.
+3. Enter your email address and create a password.
+4. Optionally, expand the form and add your name and country. You can also add these details later.
+5. Select **Create account**.
 
 ![AutoPi sign up](/img/getting_started/getting_started/sign_up.png)
 
@@ -69,47 +70,35 @@ After clicking the “Register Device” button, the registration tab will appea
 
 ![Register Device](/img/getting_started/getting_started/register_new_device.png)
 
-- **Unit ID**: This is the number on the side of your device. You can also find it in the.
-    document attached in the email you received when the device was shipped. 
-- **Vehicle Information**: Optionally include the make, model and year of the vehicle.
-- **Vehicle Type**: Choose the type of vehicle (ICE, Battery [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), or Plug-in Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)).
+- **Unit ID:** find this number on the side of the device or in the document attached to your shipping email.
+- **Vehicle information:** optionally enter the vehicle's make, model, and year.
+- **Vehicle type:** select ICE, battery electric, hybrid electric, or plug-in hybrid electric.
 
-Once all information is entered, click the “Register Device”. Your newly registered device 
-will now appear in the list under “Vehicles” in the Fleet Management section and under 
-“Devices” in the Device Management section of the Platform.
+The device should now appear under **Fleet Management** > **Vehicles** and **Device Management** > **Devices**.
 
 ## 3. Ensure SIM Connectivity
 
 :::note
-If you have purchased the AutoPi TMU CM4 with monthly cloud subscription, 
-your SIM card is already assembled in the device, so you can skip this step. 
+If you purchased an AutoPi TMU CM4 with a monthly cloud subscription, the SIM card is already installed. Continue to Step 4.
 :::
 
-If you have purchased the hardware-only version, you will need to insert your SIM card 
-into your AutoPi before connecting the device to your vehicle. The AutoPi uses nano SIM sizes. 
-The location of the SIM card slot is shown in the picture below.  
+The hardware-only version requires a nano-SIM card that supports IPv4. Install the SIM card before connecting the AutoPi device to the vehicle:
 
-When inserting the SIM card, it’s important to ensure it is installed correctly. 
-The picture below shows the proper orientation of the SIM card. 
-Please note that the text side of the SIM card must face up and the “triangle” end point into the device. 
+1. Locate the SIM card slot shown below.
+2. Hold the SIM card with the printed side facing up and the angled end pointing into the device.
+3. Gently insert the card until it clicks into place. Do not force it.
 
 ![AutoPi.io - SIM card location](/img/getting_started/getting_started/sim_card.png)
 
 :::caution
-**Please notice:** When the SIM card is inserted correctly, you will hear a small "click" when the
-card is in position. Don't try do force the SIM out after the click as this will damage the device.
-Make sure the orientation is correct before inserting the SIM. Wrong orientation could potentially
-damage your device.
+Inserting the SIM card in the wrong orientation or forcing it into or out of the slot may damage the device. Confirm the orientation before insertion.
 :::
 
-:::caution
-**Please notice:** The SIM card needs to be compatible with ipv4, for the device to establish a 4g/LTE connection. 
-:::
+Recommended US-based SIM providers include:
 
-Here's a list of the US based SIM providers that we recommend to be used with the AutoPi:
 1. AT&T
 2. T-Mobile
-3. Any MVNO provider that is roaming the networks of the providers above
+3. An MVNO that uses either the AT&T or T-Mobile network
 
 ## 4. Locate OBD Port
 
@@ -125,8 +114,8 @@ locations shown below:
 
 ## 5. Installation
 
-When installing the AutoPi, always make sure that the device is positioned with 
-the logo facing upwards towards the sky. This orientation is crucial because the GPS antenna 
+When installing the AutoPi, always make sure that the **device is positioned with 
+the logo facing upwards towards the sky**. This orientation is crucial because the GPS antenna 
 is located within the device, and incorrect positioning may result in a weak GPS signal. 
 
 If the OBD port is in an inconvenient spot or gets in the way, 
@@ -137,14 +126,13 @@ on the side or underneath — just make sure the logo is still facing upwards.
 
 This is the OBD-II extension cable:
 
-![AutoPi.io - Relocator cable](/img/getting_started/getting_started/relocator_cable.png)
+  
 
 Velcro Strip:
 
-![AutoPi.io - Relocator cable](/img/getting_started/getting_started/velcro_strip.png)
+  
 
-**Tips on getting the best performance of your device**:
-
+:::tip **Tips on getting the best performance of your device**:
 - Make sure that the AutoPi logo is facing the sky.
 - Try to avoid installing the device in direct sun. Direct sun will heat up the device and,
   in the summertime, this can cause the CPU to throttle down, if the temperature gets too hot.  
@@ -153,104 +141,137 @@ Velcro Strip:
 - When powering the device, make sure you only power it through the OBD connector.
   The device cannot be powered through any of the other ports. 
 
-## 6. Connect to device WiFi hotspot
+:::
 
-After installing your AutoPi device into the OBD port, you will need to connect it to the AutoPi Cloud.
-To do this, you will temporarily use the device’s Wi-Fi hotspot. 
+## 6. Connect to the Device's Wi-Fi Hotspot
 
-The hotspot is named autopi-XXXX, where "XXXX" represents the unique ID of your device.
-The **password** for this Wi-Fi hotspot is the **first 13 characters of your Device ID**. 
-You can find your Device ID either by navigating to Devices > Select your device > Overview: Device specifications; or in the documentation attached to your shipping email. 
-Additionally, you can access Wi-Fi information directly from the AutoPi Cloud. 
-To do this, navigate to Devices > Select Your Device > Advanced Settings > Wi-Fi. 
-Here, you will find the Wi-Fi hotspot's password and SSID credentials. 
+After installing the AutoPi device, temporarily connect a phone or computer to its Wi-Fi hotspot. This connection allows you to access Local Administration and configure the device in the next step.
+
+### Find the Hotspot Credentials
+
+The default hotspot credentials are:
+
+- **Network name (SSID):** `autopi-XXXX`, where `XXXX` is the unique ID of your device.
+- **Password:** the first 13 characters of your Device ID.
+
+You can find the Device ID in either of these locations:
+
+- In the document attached to your shipping email.
+- In the AutoPi Cloud under **Devices** > **Select your device** > **Overview** > **Device specifications widget**.
+
+You can also view the hotspot name and password under **Devices** > **Select your device** > **Advanced Settings** > **Wi-Fi**.
 
 ![Advanced Settings - Wifi](/img/getting_started/getting_started/wifi_settings.png)
 
-When the device is powered on, a blue light will appear on the side, indicating 
-that it has power. When the device successfully connects to the AutoPi Cloud, 
-a green light will be visible. If the device is not connected, the light will be flashing. 
+### Connect to the Hotspot
 
-For a detailed description of the two status LEDs, please refer to the [full description](/core/power_management/#status-leds).
-
-## 7. Connect to Local Administration
+1. Turn on the vehicle to supply power to the AutoPi device.
+2. Wait for the blue status light to appear. This indicates that the device has power.
+3. Open the Wi-Fi settings on your phone or computer.
+4. Select the `autopi-XXXX` network.
+5. Enter the hotspot password.
+6. Confirm that your phone or computer is connected to the hotspot.
 
 :::note
-If you’ve purchased the AutoPi TMU CM4 with a monthly cloud subscription, your SIM card
-is pre-installed in the device, and no additional action is required for SIM connectivity. 
-The APN settings are already configured for you. Please be aware that the SIM card 
-has a monthly data cap, so it's recommended to limit the use of the device’s hotspot 
-for connecting your phone or notebook.
+Your phone or computer may report that the Wi-Fi network has no internet connection. Remain connected so you can access Local Administration in the next step.
+:::
+
+### Check the Status Lights
+
+- A **blue light** indicates that the device has power.
+- A **green light** indicates that the device is connected to the AutoPi Cloud.
+- A **flashing green light** indicates that the device has not yet connected to the AutoPi Cloud.
+
+For more information, see the [status LED descriptions](/core/power_management/#status-leds).
+
+## 7. Configure the APN in Local Administration
+
+:::note
+If your AutoPi TMU CM4 includes a monthly cloud subscription, its SIM card and APN are already configured. The APN string for the pre-installed SIM card is **nxt20.net**. You can skip the configuration steps below and continue to [Step 8](#8-verify-connectivity).
+
+The pre-installed SIM card has a monthly data limit. Avoid using the AutoPi hotspot for regular internet access from a phone or computer.
 :::
 
 :::note
-If you need to know the APN string for the pre-installed SIM card, it is **nxt20.net**. 
-:::
-
-:::note
-If you are using a **Verizon Wireless** SIM card, please follow the dedicated setup guide:
+If you use a **Verizon Wireless** SIM card, follow the dedicated setup guide:
 [Setting Up Your Device with Verizon Wireless](https://docs.autopi.io/developer_guides/setting-up-a-device-with-verizon-wireless/).
 :::
 
-If you are using your own SIM card, you may need to configure the APN settings after 
-connecting to the device’s Wi-Fi hotspot to ensure a seamless 4G/LTE connection. 
-However, setting up the APN is not always necessary—it depends on your SIM provider. 
-We suggest checking with your SIM provider directly or searching online for the correct APN settings. 
+If you installed your own SIM card, ask your mobile provider for the correct APN string before continuing. APN settings vary by provider, and an incorrect value will prevent the device from establishing a cellular connection.
 
-Here’s how you configure the APN settings: 
+### Open Local Administration
 
-1. Go to my.autopi.io. If you're already logged in, please log out. 
-2. On the login page, find the “Go Local” button at the bottom left side, 
-   or alternatively, go directly to local.autopi.io.
+Remain connected to the AutoPi Wi-Fi hotspot from Step 6, then:
+
+1. Go to [my.autopi.io](https://my.autopi.io/). If you are already signed in, sign out.
+2. Select **Login locally on your device** in the upper-right corner. Alternatively, go directly to [local.autopi.io](http://local.autopi.io/).
 
     
 
-This will connect you to the local device, and you should see a screen similar to 
-the one shown in the image below, indicating that you're connected locally.
-From here, you can log in without needing a username or password.
+3. Confirm that the page indicates you are connected to a local device as shown on the screenshot below: 
 
-![AutoPi.io - Localhost login](/img/getting_started/getting_started/local.jpg)
+  
+    
+  
 
-Once the information is saved, it will be applied to the device, and you should 
-see a notification when successfully saved. 
+4. Select **Login**. A username and password are not required for local access.
 
-### 4G/LTE Settings
+### Configure the 4G/LTE Settings
+
+1. Open the **4G/LTE** tab.
+2. In the **APN String** field, replace the existing APN string with the value provided by your mobile provider.
+3. If the SIM card has a PIN, enter it in the **SIM PIN** field. Otherwise, leave this field empty.
+4. Keep **MTU** set to its default value of **1280**.
+5. Select **Save and apply**.
+6. Wait for the success notification before leaving the page.
+7. Continue to Step 8 to verify the connection.
+
 ![AutoPi.io - Settings Page](/img/getting_started/getting_started/apn_settings.png)
 
-### APN Presets List
+#### Optional: Use an APN Preset
+
+You can select a provider from **APN Presets** at the top of the **4G/LTE** tab. Presets are provided for convenience, but they are not guaranteed to work for every SIM card or subscription. Confirm the APN string with your mobile provider and verify that the preset entered the correct value.
+
 ![AutoPi.io - Settings Page](/img/getting_started/getting_started/apn_settings_list.png) 
 
 ## 8. Verify Connectivity
 
-To verify that you have set up your APN settings correctly, connect your phone 
-to the AutoPi hotspot and use your browser to visit any webpage. 
-If the page loads successfully, it means your device is online and has 
-started uploading data to the AutoPi Cloud.
+Verify both the cellular internet connection and the AutoPi Cloud connection:
 
-## 9. Finalization
+1. Keep your phone or computer connected to the AutoPi Wi-Fi hotspot.
+2. Open a browser and visit a public webpage.
+3. Confirm that the webpage loads. This verifies that the APN settings are correct and the device has internet access.
+4. Check the green status light on the AutoPi device:
+  - A steady green light indicates that the device is connected to the AutoPi Cloud.
+  - A flashing green light indicates that the device has not yet connected to the AutoPi Cloud.
+5. Sign in to the [AutoPi Cloud](https://my.autopi.io/) and confirm that the device appears online.
 
-Your device is now online and connected to the AutoPi Cloud. After completing 
-the setup, it's important to change your device's WiFi password. 
-The default password is intended for one-time use only, and it is strongly 
-recommended to update it afterward. You can change the password through the 
-AutoPi Cloud by navigating to **Devices** > **Advanced Settings** > **Wi-Fi** > **Pass**. 
+:::tip If the device remains offline
+The first cellular connection may take a few minutes. If a webpage does not load or the device does not appear online, confirm the APN string and SIM PIN with your mobile provider. Then return to [Step 7](#7-configure-the-apn-in-local-administration), update the settings, and test the connection again.
+:::
 
-To prevent excessive data usage, it's advisable to avoid using the device’s 
-hotspot to connect your phone or tablet after the initial configuration is complete. 
+## 9. Finalize the Setup
 
-**You Are All Set!**
+After verifying connectivity, replace the default Wi-Fi hotspot password:
 
-Congratulations! You've successfully set up your AutoPi device and connected it 
-to the AutoPi Cloud. Your device is now ready to start gathering and transmitting data,
-enabling you to take full advantage of the powerful features AutoPi offers. 
-Take your device for a trip to start gathering data.
+1. In the AutoPi Cloud, open **Device**.
+2. Go to **Advanced Settings** > **Wi-Fi**.
+3. Enter a secure password in the **Pass** field.
+4. Save and apply the change.
+5. Store the new password in a secure location.
+
+Your phone or computer may disconnect from the hotspot after the password changes. Use the new password if you need to connect again.
+
+To avoid unnecessary cellular data usage, disconnect phones, tablets, and computers from the AutoPi hotspot after completing the setup.
+
+### Setup Complete
+
+Your AutoPi device is now connected to the AutoPi Cloud and ready to collect and transmit vehicle data. Take the vehicle for a drive to begin gathering trip data.
 
 :::note
-If you are getting started with you DiY Edition please refer to this guide 
-[Setup Your TMU DIY Edition](/hardware/legacy_devices/autopi_dongle_gen3/setup_your_tmu_diy_edition.md).
+For a TMU DIY Edition, see [Set Up Your TMU DIY Edition](/hardware/legacy_devices/autopi_dongle_gen3/setup_your_tmu_diy_edition.md).
 
-For older, Generation 2 devices, you can find the relevant guide here
-[Setup Your Gen 2 Edition](/hardware/legacy_devices/autopi_dongle/setup_your_gen_2_diy_edition.md).
+For an older Generation 2 device, see [Set Up Your Gen 2 Edition](/hardware/legacy_devices/autopi_dongle/setup_your_gen_2_diy_edition.md).
 :::
 
 ---
@@ -258,10 +279,10 @@ For older, Generation 2 devices, you can find the relevant guide here
 
 Now that your device is up and running, here are a few suggestions to help you 
 get the most out of your AutoPi experience: 
-- **Explore the AutoPi Cloud**: Dive into the AutoPi Cloud platform to explore all 
+- **Explore the AutoPi Cloud**: dive into the AutoPi Cloud platform to explore all 
   the features available to you, such as real-time vehicle monitoring, 
   advanced analytics, and customizable alerts. 
-- **Check Out Our Documentation**: Our [documentation page](https://docs.autopi.io/) 
+- **Check Out Our Documentation**: our [documentation page](https://docs.autopi.io/) 
   is a great resource for learning more about advanced features, troubleshooting, 
   and getting the most out of your device. 
 - **Build your Nested Accounts and Invite New Users**: AutoPi Cloud uses a multi-tenant architecture, which means multiple accounts (tenants) share the same platform and infrastructure, while all data, configurations, and user access remain securely isolated. You can read more here: [Account management](https://docs.autopi.io/cloud/accounts/).

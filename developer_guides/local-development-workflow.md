@@ -51,7 +51,7 @@ You can connect to your AutoPi device in several ways, depending on your setup:
 * Connect Screen and Keyboard to Device. 
 * Connect to the device hotspot: [Connect to the hotspot of your AutoPi device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/#step-1-connect-to-the-hotspot).
 * Connect through your local Wi-Fi network: [Connect through your home Wi-Fi to AutoPi device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/#connect-through-your-home-wi-fi).
-* Connect using Tailscale: [Connect to Tailscale on your AutoPi device](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/).
+* Connect using Tailscale: [Connect to Tailscale on your AutoPi device](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/).
 * Connect using WireGuard: [Connect to WireGuard on your AutoPi device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/#connect-using-wireguard).
 
 **Steps for development through SSH:**

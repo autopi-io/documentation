@@ -27,7 +27,7 @@ The following advanced settings are available for the AutoPi TMU CM4. Click on a
 - **Cellular** - manage cellular network settings and mobile connectivity, edit SIM settings, and adjust MTU. 
 - **[WiFi](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-wifi/)** - configure WiFi network parameters and connectivity.
 - **[MQTT](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-mqtt/)** - enable the MQTT broker, specify the returner, and add custom configuration for the broker to support messaging. [Learn more here](https://docs.autopi.io/developer_guides/configuring-mqtt/).
-- **[Tailscale](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-tailscale/)** - configure Tailscale VPN connectivity. [Learn more here](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/).
+- **[Tailscale](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-tailscale/)** - configure Tailscale VPN connectivity. [Learn more here](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/).
 - **[WireGuard](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-wireguard/)** - set up WireGuard VPN for secure connections. 
 
 ### Vehicle & Data Logging

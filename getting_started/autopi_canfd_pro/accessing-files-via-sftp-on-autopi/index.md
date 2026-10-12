@@ -49,7 +49,7 @@ Choose your connection method:
     - The IP may be assigned via DHCP (check router) or use a static IP like `169.254.x.x`.  
 
   * **4. Tailscale (VPN)**  
-    - Ensure Tailscale is installed and activated on both the AutoPi and your computer. You can read more at this guide: [How to connect to Tailscale on your AutoPi device](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
+    - Ensure Tailscale is installed and activated on both the AutoPi and your computer. You can read more at this guide: [How to connect to Tailscale on your AutoPi device](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/)
     - On the AutoPi, run `tailscale ip` to get its Tailscale IP (e.g., `100.x.x.x`).  
 
 :::note

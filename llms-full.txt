@@ -1076,7 +1076,7 @@ The following advanced settings are available for the AutoPi TMU CM4. Click on a
 - **Cellular** - manage cellular network settings and mobile connectivity, edit SIM settings, and adjust MTU. 
 - **[WiFi](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-wifi/)** - configure WiFi network parameters and connectivity.
 - **[MQTT](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-mqtt/)** - enable the MQTT broker, specify the returner, and add custom configuration for the broker to support messaging. [Learn more here](https://docs.autopi.io/developer_guides/configuring-mqtt/).
-- **[Tailscale](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-tailscale/)** - configure Tailscale VPN connectivity. [Learn more here](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/).
+- **[Tailscale](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-tailscale/)** - configure Tailscale VPN connectivity. [Learn more here](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/).
 - **[WireGuard](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-wireguard/)** - set up WireGuard VPN for secure connections. 
 
 ### Vehicle & Data Logging
@@ -5584,6 +5584,95 @@ Now that you understand Docker fundamentals on AutoPi, explore these additional 
 - **[Docker Best Practices](https://docs.docker.com/develop/dev-best-practices/)** — industry-standard guidance for building production-ready containers.
 
 For questions or assistance, contact the AutoPi support team at [support@autopi.io](mailto:support@autopi.io).
+
+---
+
+## Access Control
+
+---
+
+Access Control uses RFID authentication to identify drivers and record vehicle access attempts. It provides a centralized history of who attempted to access a vehicle, which RFID token they used, when the attempt occurred, and whether access was approved or rejected.
+
+By linking RFID tokens to users and assigning authorized drivers to vehicles, you can maintain a clear record of vehicle usage across your fleet. This helps fleet administrators verify driver activity, investigate incidents, monitor rejected access attempts, and identify unauthorized vehicle use. The access history also supports operational accountability by showing when drivers authenticated, logged out, or attempted to use vehicles they were not assigned to.
+
+## Prerequisites
+
+Before using Access Control:
+
+1. [Enable and configure RFID on the AutoPi device](https://docs.autopi.io/developer_guides/rfid-integartion/).
+2. [Add an RFID token to each user who needs vehicle access](#assign-rfid-tokens-to-users).
+3. [Assign each driver to the vehicles they are authorized to use](#assign-drivers-to-vehicles).
+
+:::note
+If Access Control or RFID settings are not available for your account, contact [support@autopi.io](mailto:support@autopi.io). These features can be enabled at no additional cost.
+:::
+
+---
+
+## Assign RFID Tokens to Users
+
+Each user can have one or more RFID tokens.
+
+1. In AutoPi Cloud, go to **Users**.
+2. Open the relevant user profile.
+3. Scroll to **RFID Tokens**.
+4. Add one or more tokens, then save your changes.
+
+![Assign RFID Token to User](/img/cloud/fleet_management/access_control/rfid_token.png)
+
+Only administrators with the `account_administrator` permission can assign RFID tokens.
+
+You can create users without email addresses for drivers who do not need to sign in to AutoPi Cloud. Their RFID tokens and access activity can still be tracked.
+
+---
+
+## Assign Drivers to Vehicles
+
+A vehicle can have multiple assigned drivers, and a driver can be assigned to multiple vehicles.
+
+1. Go to **Fleet Management > Vehicles**.
+2. Select one or more vehicles.
+3. Select **Assign Drivers**.
+4. Choose the drivers who are authorized to use the selected vehicles.
+5. Save your changes.
+
+![Assign Drivers to Vehicles](/img/cloud/fleet_management/access_control/assign_drivers_button.png)
+
+The **Assign Drivers** button becomes available after you select at least one vehicle. You can also manage driver assignments from the Access Control page or review a driver's vehicles from the **Assigned Vehicles** tab in their user profile.
+
+For more information about managing vehicles and driver assignments, see [Vehicles List](https://docs.autopi.io/cloud/fleet_management/vehicles/list/).
+
+---
+
+## Review Access Attempts
+
+The Access Control page records RFID authentication attempts across your fleet.
+
+![Access Control table](/img/guides/rfid_reader/access_control_table.png)
+
+Each record includes:
+
+- **User name**: the user associated with the scanned RFID token.
+- **Token used**: the RFID token presented to the reader.
+- **Timestamp**: when the access attempt occurred.
+- **Vehicle**: the vehicle where the token was scanned.
+- **Status**: whether the user was approved, rejected, or logged out.
+
+Use these records to verify driver activity, investigate rejected access attempts, and maintain accountability across your fleet.
+
+---
+
+## Review RFID Events
+
+Each RFID scan also generates a system event:
+
+- `system/rfid/<rfid_token>/read`: the device read an RFID token.
+- `system/rfid/<rfid_token>/authenticated`: the token was authenticated.
+- `system/rfid/<rfid_token>/rejected`: the token was rejected.
+
+If you do not know a card or chip's token ID, scan it and review the resulting event in the device's **Events** tab. For more information, see [RFID Events](https://docs.autopi.io/cloud/device_management/events/cloud-events-system/#rfid-events).
+
+You can use these events to create custom triggers for rejected tokens, including email notifications and fleet administrator alerts. See [Custom Triggers](https://docs.autopi.io/cloud/device_management/a-guide-to-triggers/) for configuration instructions.
 
 ---
 
@@ -16033,6 +16122,154 @@ Use `core_freq_min=250` to keep the UART clock stable during idle throttling, an
 
 ---
 
+## How to connect to Tailscale on your Autopi device
+
+---
+
+Tailscale enables secure, software-defined networking that connects users, services, and devices over a private network. Your AutoPi device comes with Tailscale pre-installed but inactive, giving you full control over when to enable it. This guide walks you through setting up Tailscale to establish secure remote access to your AutoPi device.
+
+:::tip
+For a visual walkthrough, check out this [Tailscale quickstart video guide](https://youtu.be/sPdvyR7bLqI).
+:::
+
+---
+
+## 1. Enable Tailscale on Your Device
+
+Before connecting to Tailscale, you must first enable it on your AutoPi device:
+
+1. Navigate to **Devices** on [AutoPi Cloud](https://my.autopi.io/).
+2. Click the device you want to configure.
+3. Go to **Advanced Settings** > **Tailscale**.
+4. Check if Tailscale is already enabled. If enabled, it will look like this:
+
+    ![Tailscale Enabled](/img/getting_started/autopi_canfd_pro/tailscale_enabled.png)
+
+5. If not enabled, click to enable it. Your device will create a pending sync that needs to be applied:
+
+    ![Tailscale Pending Sync](/img/getting_started/autopi_canfd_pro/pending_sync.png)
+
+6. Click the sync button to apply the change to your device. 
+
+## 2. Create a Tailnet
+
+Visit [Tailscale.com](https://tailscale.com/) and select **Get Started**. Alternatively, download and install the Tailscale client on your computer, then sign up.
+
+## 3. Open Tailscale on Your Computer
+
+There are several ways to access Tailscale:
+
+- **Windows/macOS/Linux**: Open the Tailscale app from the system tray or menu bar.
+- **Android/iOS**: Open the Tailscale app from your app drawer.
+- **CLI (Linux/macOS/Windows)**: Open a terminal and run:
+
+```
+tailscale up
+```
+
+## 4. Log In to Tailscale
+
+Complete the authentication process on your computer:
+
+1. If not already logged in, the app will prompt you to authenticate.
+2. Click **Log In**, and a browser window will open.
+3. Choose your authentication method (Google, Microsoft, GitHub, or custom SSO).
+4. After logging in, approve the request to connect your device to the network.
+
+## 5. Generate and Configure Auth Key
+
+Generate an authentication key for your AutoPi device:
+
+1. Generate an auth key at [Tailscale Settings](https://login.tailscale.com/admin/settings/keys).
+2. Use one of the following options to configure the key on your device:
+
+**Option 1: Via AutoPi Cloud Settings**
+
+1. Navigate to **Devices** on [AutoPi Cloud](https://my.autopi.io/).
+2. Click your device.
+3. Go to **Advanced Settings** > **Tailscale**.
+4. Paste the auth key and verify Tailscale is enabled.
+
+**Option 2: Via Terminal Command**
+
+Run the following command in the device terminal:
+
+```
+cmd.run 'tailscale up --authkey=tskey-KEYKEY-KEYKEYKEYKEY'
+```
+
+:::note
+Replace the example auth key with your actual key generated in the previous step.
+:::
+
+## 6. Confirm Connection
+
+Verify that your device is connected:
+
+1. Your device should appear in the [Tailscale admin panel](https://login.tailscale.com/admin/machines).
+2. In the Tailscale app, you should see **Connected** with an assigned Tailscale IP (e.g., 100.x.x.x).
+3. If using CLI, check your connection status:
+
+```
+tailscale status
+```
+
+## 7. Test Your Connection
+
+Verify everything is working correctly:
+
+1. Check your [Tailscale admin panel](https://login.tailscale.com/admin/machines) to confirm both your computer and device are listed.
+2. You can now SSH from your computer to your device for full remote access. 
+
+## 8. Optional: Configure Exit Node
+
+To route all traffic through another device on your network:
+
+1. Open the Tailscale app.
+2. Click **Use Exit Node** and select a device.
+3. Alternatively, on CLI, run:
+
+```
+tailscale up --exit-node=100.x.x.x
+```
+
+## 9. Disconnect When Needed
+
+To disconnect from Tailscale:
+
+1. In the Tailscale app, click **Disconnect**.
+2. Alternatively, on CLI, run:
+
+```
+tailscale down
+```
+
+:::note
+**Manage Tailscale Service**
+
+To prevent excessive data usage, you can permanently disable Tailscale:
+
+**Disable and stop service:**
+
+```
+cmd.run 'systemctl disable tailscaled'
+cmd.run 'systemctl stop tailscaled'
+```
+
+**Re-enable and start service:**
+
+```
+cmd.run 'systemctl enable tailscaled'
+cmd.run 'systemctl start tailscaled'
+```
+:::
+
+---
+
+**You're all set!** Your AutoPi device is now connected to Tailscale, providing you with secure remote access to your device from anywhere.
+
+---
+
 ## Custom Event for Your Custom Logger
 
 ---
@@ -16195,13 +16432,13 @@ ssh pi@192.168.1.50
 ---
 
 ## Connect Using Tailscale
-You can also use Tailscale for secure remote access to your AutoPi device from anywhere. If you want to read about the whole setup, check out this guide: [How to connect to Tailscale on your Autopi device](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
+You can also use Tailscale for secure remote access to your AutoPi device from anywhere. If you want to read about the whole setup, check out this guide: [How to connect to Tailscale on your Autopi device](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/)
 
 ### Setup Steps:
 * Open Advanced Settings on your device.
 * Navigate to Tailscale.
 * Enable Tailscale and provide your Auth Key.
-* For a full setup guide, refer to the [Tailscale documentation](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/#2-create-a-tailnet). 
+* For a full setup guide, refer to the [Tailscale documentation](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/#2-create-a-tailnet). 
 * Once configured, connect using the device’s Tailscale IP address.
 
 ![Tailscale Advanced Settings](/img/guides/ssh_access/advanced_tailscale.png)
@@ -16809,9 +17046,9 @@ these guides provide clear, actionable steps to help you move from setup to prod
 
 ## Most Used Developer Guides
 - **Advanced diagnostics (DoIP):** Use the [DoIP hat](https://shop.autopi.io/products/doip-hat-v1-3) to expand diagnostic and maintenance capabilities. Start here: [How to set up DoIP](https://docs.autopi.io/developer_guides/setting-up-doip/)
-- **Remote access:** Connect directly with [SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) or use [Tailscale](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
+- **Remote access:** Connect directly with [SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) or use [Tailscale](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/)
 - **Containerized workloads:** Run services on-device with [Setting up Docker on your device](https://docs.autopi.io/developer_guides/setting-up-docker/)
-- **Development setup:** Follow the [Local development workflow](https://docs.autopi.io/developer_guides/local-development-workflow/), power safely with an [external power supply](https://docs.autopi.io/developer_guides/using-the-autopi-with-an-external-power-supply/), and use the [AutoPi Local API overview](https://docs.autopi.io/developer_guides/local-api-overview/)
+- **Development setup:** Follow the [Local development workflow](https://docs.autopi.io/developer_guides/local-development-workflow/), power safely with an [external power supply](https://docs.autopi.io/developer_guides/using-the-autopi-with-an-external-power-supply/), and use the [AutoPi Local API overview](https://docs.autopi.io/getting_started/api/local-api-overview/)
 - **Data routing and broker integration:** Send data to your own infrastructure with [Configuring MQTT](https://docs.autopi.io/developer_guides/configuring-mqtt/)
 - **Power and wake control:** Access sleeping devices remotely with [Remotely waking up your device](https://docs.autopi.io/developer_guides/remotely-waking-up-your-device/)
 - **Troubleshooting and recovery:** Collect diagnostics with [AutoPi Logs](https://docs.autopi.io/developer_guides/autopi-logs/) and recover devices with [Reflashing your device](https://docs.autopi.io/developer_guides/reflashing-your-device/)
@@ -17114,353 +17351,6 @@ The `FORCE 5V` jumper is a hardware override that disables the Smart Power Manag
 
 ---
 
-## AutoPi Local API Overview
-
----
-
-This guide will walk you through using the AutoPi Local API to interact with your device directly over the local network. You'll learn how to authenticate, execute commands, retrieve device information, download logs, and configure network and APN settings through REST endpoints accessible on port 9000.
-
-The Local API provides direct device control without requiring an internet connection or cloud platform access. It's useful for local development, testing, configuration management, and troubleshooting when your device is on the same network as your computer or client application.
-
-**Key capabilities:**
-- **Authentication** — obtain JWT tokens for API access.
-- **Device Management** — query device information and connected units.
-- **Command Execution** — run AutoPi commands and state configurations.
-- **Log Access** — download system and application logs.
-- **Network Configuration** — manage WiFi and cellular (APN) settings.
-
----
-
-## Authentication
-
-### `POST /auth/login/`
-
-Returns a static token and information about the local user and device.
-
-**Curl Example:**
-
-```bash
-curl -X POST http://<device-ip>:9000/auth/login/
-```
-
-**Response:**
-
-```json
-{
-  "token": "<jwt_token>",
-  "user": {
-    "pk": 0,
-    "username": "local user",
-    "has_devices": true,
-    "is_local": true,
-    "devices": [
-      {
-        "unit_id": "<uuid>",
-        "display": "Local device"
-      }
-    ],
-    "timezone": "UTC"
-  }
-}
-```
-
----
-
-## Device Info
-
-### `GET /`
-
-Returns the device's unique unit ID.
-
-**Curl Example:**
-
-```bash
-curl http://<device-ip>:9000/
-```
-
-**Response:**
-
-```json
-{
-  "unit_id": "<uuid>"
-}
-```
-
----
-
-### `GET /dongle/devices/`
-
-Returns a list of available local devices.
-
-**Curl Example:**
-
-```bash
-curl http://<device-ip>:9000/dongle/devices/
-```
-
-**Response:**
-
-```json
-[
-  {
-    "unit_id": "<uuid>",
-    "display": "Local device"
-  }
-]
-```
-
----
-
-## Log File Download
-
-### `GET /download_log/?file=<filename>`
-
-Downloads a specified log file from the device.
-
-**Query Parameters:**
-
-- `file`: Name of the log file to download (e.g., `syslog`, `salt/minion`)
-
-**Curl Example:**
-
-```bash
-curl -O http://<device-ip>:9000/download_log/?file=syslog
-```
-
----
-
-## Command Execution
-
-### `POST /dongle/<unit_id>/execute/`
-
-Executes a structured command on the device.
-
-:::tip 
-The reason that you need the unit_id is because we need to make sure that the request is actually meant for that specific device when using the endpoint from another connected device, like when using the local configuration tool.
-
-The unit_id can be retrieved one of the following ways 
-A.	Calling the root route
-```
-GET localhost:9000
-```
-
-B.	Reading it from the file 
-```
-/etc/salt/minion_id
-```
-:::
-
-**Request Body:**
-
-```json
-{
-  "command": "cmd.run",
-  "arg": ["ls", "-l"],
-  "kwarg": {}
-}
-```
-
-**Curl Example:**
-
-```bash
-curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute/ \
-  -H "Content-Type: application/json" \
-  -d '{"command": "cmd.run", "arg": ["ls", "-l"], "kwarg": {}}'
-```
-
-**Response:**
-
-Returns the command output as JSON.
-
-:::tip
-The above commands can also be executed in raw format using the below endpoint.
-:::
-
----
-
-### `POST /dongle/<unit_id>/execute_raw/`
-
-Executes a raw command string.
-
-**Request Body:**
-
-```json
-{
-  "command": "cmd.run ls -l"
-}
-```
-
-**Curl Example:**
-
-```bash
-curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute_raw/ \
-  -H "Content-Type: application/json" \
-  -d '{"command": "cmd.run ls -l"}'
-```
-
-**Response:**
-
-Returns the command output as JSON.
-
----
-
-### Saving and applying WiFi networks
-
-To save WiFi credentials on the device:
-
-**Command:**
-
-```json
-{
-  "command": "grains.set",
-  "arg": ["wpa_supplicant:networks", [
-    { "ssid": "Network-1", "psk": "password1", "priority": 2 },
-    { "ssid": "Network-2", "psk": "password2", "priority": 1 }
-  ]],
-  "kwarg": {
-    "destructive": true,
-    "force": true
-  }
-}
-```
-
-**Curl Example:**
-
-```bash
-curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute/ \
-  -H "Content-Type: application/json" \
-  -d '{
-    "command": "grains.set",
-    "arg": ["wpa_supplicant:networks", [
-      { "ssid": "Network-1", "psk": "password1", "priority": 2 },
-      { "ssid": "Network-2", "psk": "password2", "priority": 1 }
-    ]],
-    "kwarg": { "destructive": true, "force": true }
-  }'
-```
-
-Then, to apply the changes and reconfigure the WiFi service:
-
-**Command:**
-
-```json
-{
-  "command": "state.sls",
-  "arg": ["network.wlan.client.config"],
-  "kwarg": {}
-}
-```
-
-**Curl Example:**
-
-```bash
-curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute/ \
-  -H "Content-Type: application/json" \
-  -d '{
-    "command": "state.sls",
-    "arg": ["network.wlan.client.config"],
-    "kwarg": {}
-  }'
-```
-
----
-
-## APN Settings
-
-### `GET /dongle/<unit_id>/settings/apn/`
-
-Retrieves current APN settings.
-
-**Curl Example:**
-
-```bash
-curl http://<device-ip>:9000/dongle/<unit_id>/settings/apn/
-```
-
-**Response:**
-
-```json
-{
-  "apn": "internet",
-  "user": "user",
-  "pass": "pass",
-  "pin": "0000",
-  "mtu": 1280
-}
-```
-
----
-
-### `PUT /dongle/<unit_id>/settings/apn/`
-
-Updates the APN configuration.
-
-**Request Body:**
-
-```json
-{
-  "apn": "internet",
-  "user": "user",
-  "pass": "pass",
-  "pin": "0000",
-  "mtu": 1280
-}
-```
-
-**Curl Example:**
-
-```bash
-curl -X PUT http://<device-ip>:9000/dongle/<unit_id>/settings/apn/ \
-  -H "Content-Type: application/json" \
-  -d '{"apn": "internet", "user": "user", "pass": "pass", "pin": "0000", "mtu": 1280}'
-```
-
-**Response:**
-
-Returns the updated APN configuration.
-
-Then, to apply the changes and reconfigure the QMI service:
-
-**Command:**
-
-```json
-{
-  "command": "state.sls",
-  "arg": ["network.wwan.qmi.config"],
-  "kwarg": {}
-}
-```
-
-**Curl Example:**
-
-```bash
-curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute/ \
-  -H "Content-Type: application/json" \
-  -d '{
-    "command": "state.sls",
-    "arg": ["network.wwan.qmi.config"],
-    "kwarg": {}
-  }'
-```
-
----
-
-## Error Responses
-
-All endpoints return structured error responses if something goes wrong.
-
-**Example:**
-
-```json
-{
-  "error": "unit_id does not match the id configured on this device"
-}
-```
-
----
-
----
-
 ## Local Development Workflow
 
 ---
@@ -17511,7 +17401,7 @@ You can connect to your AutoPi device in several ways, depending on your setup:
 * Connect Screen and Keyboard to Device. 
 * Connect to the device hotspot: [Connect to the hotspot of your AutoPi device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/#step-1-connect-to-the-hotspot).
 * Connect through your local Wi-Fi network: [Connect through your home Wi-Fi to AutoPi device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/#connect-through-your-home-wi-fi).
-* Connect using Tailscale: [Connect to Tailscale on your AutoPi device](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/).
+* Connect using Tailscale: [Connect to Tailscale on your AutoPi device](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/).
 * Connect using WireGuard: [Connect to WireGuard on your AutoPi device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/#connect-using-wireguard).
 
 **Steps for development through SSH:**
@@ -20125,6 +20015,353 @@ if __name__ == "__main__":
 
 ---
 
+## AutoPi Local API Overview
+
+---
+
+This guide will walk you through using the AutoPi Local API to interact with your device directly over the local network. You'll learn how to authenticate, execute commands, retrieve device information, download logs, and configure network and APN settings through REST endpoints accessible on port 9000.
+
+The Local API provides direct device control without requiring an internet connection or cloud platform access. It's useful for local development, testing, configuration management, and troubleshooting when your device is on the same network as your computer or client application.
+
+**Key capabilities:**
+- **Authentication** — obtain JWT tokens for API access.
+- **Device Management** — query device information and connected units.
+- **Command Execution** — run AutoPi commands and state configurations.
+- **Log Access** — download system and application logs.
+- **Network Configuration** — manage WiFi and cellular (APN) settings.
+
+---
+
+## Authentication
+
+### `POST /auth/login/`
+
+Returns a static token and information about the local user and device.
+
+**Curl Example:**
+
+```bash
+curl -X POST http://<device-ip>:9000/auth/login/
+```
+
+**Response:**
+
+```json
+{
+  "token": "<jwt_token>",
+  "user": {
+    "pk": 0,
+    "username": "local user",
+    "has_devices": true,
+    "is_local": true,
+    "devices": [
+      {
+        "unit_id": "<uuid>",
+        "display": "Local device"
+      }
+    ],
+    "timezone": "UTC"
+  }
+}
+```
+
+---
+
+## Device Info
+
+### `GET /`
+
+Returns the device's unique unit ID.
+
+**Curl Example:**
+
+```bash
+curl http://<device-ip>:9000/
+```
+
+**Response:**
+
+```json
+{
+  "unit_id": "<uuid>"
+}
+```
+
+---
+
+### `GET /dongle/devices/`
+
+Returns a list of available local devices.
+
+**Curl Example:**
+
+```bash
+curl http://<device-ip>:9000/dongle/devices/
+```
+
+**Response:**
+
+```json
+[
+  {
+    "unit_id": "<uuid>",
+    "display": "Local device"
+  }
+]
+```
+
+---
+
+## Log File Download
+
+### `GET /download_log/?file=<filename>`
+
+Downloads a specified log file from the device.
+
+**Query Parameters:**
+
+- `file`: Name of the log file to download (e.g., `syslog`, `salt/minion`)
+
+**Curl Example:**
+
+```bash
+curl -O http://<device-ip>:9000/download_log/?file=syslog
+```
+
+---
+
+## Command Execution
+
+### `POST /dongle/<unit_id>/execute/`
+
+Executes a structured command on the device.
+
+:::tip 
+The reason that you need the unit_id is because we need to make sure that the request is actually meant for that specific device when using the endpoint from another connected device, like when using the local configuration tool.
+
+The unit_id can be retrieved one of the following ways 
+A.	Calling the root route
+```
+GET localhost:9000
+```
+
+B.	Reading it from the file 
+```
+/etc/salt/minion_id
+```
+:::
+
+**Request Body:**
+
+```json
+{
+  "command": "cmd.run",
+  "arg": ["ls", "-l"],
+  "kwarg": {}
+}
+```
+
+**Curl Example:**
+
+```bash
+curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute/ \
+  -H "Content-Type: application/json" \
+  -d '{"command": "cmd.run", "arg": ["ls", "-l"], "kwarg": {}}'
+```
+
+**Response:**
+
+Returns the command output as JSON.
+
+:::tip
+The above commands can also be executed in raw format using the below endpoint.
+:::
+
+---
+
+### `POST /dongle/<unit_id>/execute_raw/`
+
+Executes a raw command string.
+
+**Request Body:**
+
+```json
+{
+  "command": "cmd.run ls -l"
+}
+```
+
+**Curl Example:**
+
+```bash
+curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute_raw/ \
+  -H "Content-Type: application/json" \
+  -d '{"command": "cmd.run ls -l"}'
+```
+
+**Response:**
+
+Returns the command output as JSON.
+
+---
+
+### Saving and applying WiFi networks
+
+To save WiFi credentials on the device:
+
+**Command:**
+
+```json
+{
+  "command": "grains.set",
+  "arg": ["wpa_supplicant:networks", [
+    { "ssid": "Network-1", "psk": "password1", "priority": 2 },
+    { "ssid": "Network-2", "psk": "password2", "priority": 1 }
+  ]],
+  "kwarg": {
+    "destructive": true,
+    "force": true
+  }
+}
+```
+
+**Curl Example:**
+
+```bash
+curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "command": "grains.set",
+    "arg": ["wpa_supplicant:networks", [
+      { "ssid": "Network-1", "psk": "password1", "priority": 2 },
+      { "ssid": "Network-2", "psk": "password2", "priority": 1 }
+    ]],
+    "kwarg": { "destructive": true, "force": true }
+  }'
+```
+
+Then, to apply the changes and reconfigure the WiFi service:
+
+**Command:**
+
+```json
+{
+  "command": "state.sls",
+  "arg": ["network.wlan.client.config"],
+  "kwarg": {}
+}
+```
+
+**Curl Example:**
+
+```bash
+curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "command": "state.sls",
+    "arg": ["network.wlan.client.config"],
+    "kwarg": {}
+  }'
+```
+
+---
+
+## APN Settings
+
+### `GET /dongle/<unit_id>/settings/apn/`
+
+Retrieves current APN settings.
+
+**Curl Example:**
+
+```bash
+curl http://<device-ip>:9000/dongle/<unit_id>/settings/apn/
+```
+
+**Response:**
+
+```json
+{
+  "apn": "internet",
+  "user": "user",
+  "pass": "pass",
+  "pin": "0000",
+  "mtu": 1280
+}
+```
+
+---
+
+### `PUT /dongle/<unit_id>/settings/apn/`
+
+Updates the APN configuration.
+
+**Request Body:**
+
+```json
+{
+  "apn": "internet",
+  "user": "user",
+  "pass": "pass",
+  "pin": "0000",
+  "mtu": 1280
+}
+```
+
+**Curl Example:**
+
+```bash
+curl -X PUT http://<device-ip>:9000/dongle/<unit_id>/settings/apn/ \
+  -H "Content-Type: application/json" \
+  -d '{"apn": "internet", "user": "user", "pass": "pass", "pin": "0000", "mtu": 1280}'
+```
+
+**Response:**
+
+Returns the updated APN configuration.
+
+Then, to apply the changes and reconfigure the QMI service:
+
+**Command:**
+
+```json
+{
+  "command": "state.sls",
+  "arg": ["network.wwan.qmi.config"],
+  "kwarg": {}
+}
+```
+
+**Curl Example:**
+
+```bash
+curl -X POST http://<device-ip>:9000/dongle/<unit_id>/execute/ \
+  -H "Content-Type: application/json" \
+  -d '{
+    "command": "state.sls",
+    "arg": ["network.wwan.qmi.config"],
+    "kwarg": {}
+  }'
+```
+
+---
+
+## Error Responses
+
+All endpoints return structured error responses if something goes wrong.
+
+**Example:**
+
+```json
+{
+  "error": "unit_id does not match the id configured on this device"
+}
+```
+
+---
+
+---
+
 ## Send Device Data to Own Server
 
 ---
@@ -20817,7 +21054,7 @@ Choose your connection method:
     - The IP may be assigned via DHCP (check router) or use a static IP like `169.254.x.x`.  
 
   * **4. Tailscale (VPN)**  
-    - Ensure Tailscale is installed and activated on both the AutoPi and your computer. You can read more at this guide: [How to connect to Tailscale on your AutoPi device](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
+    - Ensure Tailscale is installed and activated on both the AutoPi and your computer. You can read more at this guide: [How to connect to Tailscale on your AutoPi device](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/)
     - On the AutoPi, run `tailscale ip` to get its Tailscale IP (e.g., `100.x.x.x`).  
 
 :::note
@@ -20915,7 +21152,7 @@ For more details on LED status meanings, refer to this guide: [LED and button st
 Run the `logger.status` command on the device to see the status of data logger(s).
 
 1. If the device is connected to the Internet it can be done through the cloud terminal on [AutoPi cloud](https://my.autopi.io/).
-2. Or alternatively if you have direct SSH access [How to SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) to the device via LAN or VPN (for Tailscale, you can read more at this guide: [How to connect to Tailscale](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)) you can use the `autopi` terminal command.
+2. Or alternatively if you have direct SSH access [How to SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) to the device via LAN or VPN (for Tailscale, you can read more at this guide: [How to connect to Tailscale](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/)) you can use the `autopi` terminal command.
 3. Or if you are nearby the device and can connect to it's local WiFi hotspot you can do it from the local admin UI on local.autopi.io. Here is a guide: [Local development workflow](https://docs.autopi.io/developer_guides/local-development-workflow/). 
 
 Regardless of which of the above methods you use, you must run the command: 
@@ -21039,177 +21276,18 @@ Ensure the correct Bitrate is set for your vehicle, you can follow this guide: [
 
 ---
 
-## How to connect to Tailscale on your Autopi device
-
----
-
-Tailscale enables secure, software-defined networking that connects users, services, and devices over a private network. Your AutoPi device comes with Tailscale pre-installed but inactive, giving you full control over when to enable it. This guide walks you through setting up Tailscale to establish secure remote access to your AutoPi device.
-
-:::tip
-For a visual walkthrough, check out this [Tailscale quickstart video guide](https://youtu.be/sPdvyR7bLqI).
-:::
-
----
-
-## 1. Enable Tailscale on Your Device
-
-Before connecting to Tailscale, you must first enable it on your AutoPi device:
-
-1. Navigate to **Devices** on [AutoPi Cloud](https://my.autopi.io/).
-2. Click the device you want to configure.
-3. Go to **Advanced Settings** > **Tailscale**.
-4. Check if Tailscale is already enabled. If enabled, it will look like this:
-
-    ![Tailscale Enabled](/img/getting_started/autopi_canfd_pro/tailscale_enabled.png)
-
-5. If not enabled, click to enable it. Your device will create a pending sync that needs to be applied:
-
-    ![Tailscale Pending Sync](/img/getting_started/autopi_canfd_pro/pending_sync.png)
-
-6. Click the sync button to apply the change to your device. 
-
-## 2. Create a Tailnet
-
-Visit [Tailscale.com](https://tailscale.com/) and select **Get Started**. Alternatively, download and install the Tailscale client on your computer, then sign up.
-
-## 3. Open Tailscale on Your Computer
-
-There are several ways to access Tailscale:
-
-- **Windows/macOS/Linux**: Open the Tailscale app from the system tray or menu bar.
-- **Android/iOS**: Open the Tailscale app from your app drawer.
-- **CLI (Linux/macOS/Windows)**: Open a terminal and run:
-
-```
-tailscale up
-```
-
-## 4. Log In to Tailscale
-
-Complete the authentication process on your computer:
-
-1. If not already logged in, the app will prompt you to authenticate.
-2. Click **Log In**, and a browser window will open.
-3. Choose your authentication method (Google, Microsoft, GitHub, or custom SSO).
-4. After logging in, approve the request to connect your device to the network.
-
-## 5. Generate and Configure Auth Key
-
-Generate an authentication key for your AutoPi device:
-
-1. Generate an auth key at [Tailscale Settings](https://login.tailscale.com/admin/settings/keys).
-2. Use one of the following options to configure the key on your device:
-
-**Option 1: Via AutoPi Cloud Settings**
-
-1. Navigate to **Devices** on [AutoPi Cloud](https://my.autopi.io/).
-2. Click your device.
-3. Go to **Advanced Settings** > **Tailscale**.
-4. Paste the auth key and verify Tailscale is enabled.
-
-**Option 2: Via Terminal Command**
-
-Run the following command in the device terminal:
-
-```
-cmd.run 'tailscale up --authkey=tskey-KEYKEY-KEYKEYKEYKEY'
-```
-
-:::note
-Replace the example auth key with your actual key generated in the previous step.
-:::
-
-## 6. Confirm Connection
-
-Verify that your device is connected:
-
-1. Your device should appear in the [Tailscale admin panel](https://login.tailscale.com/admin/machines).
-2. In the Tailscale app, you should see **Connected** with an assigned Tailscale IP (e.g., 100.x.x.x).
-3. If using CLI, check your connection status:
-
-```
-tailscale status
-```
-
-## 7. Test Your Connection
-
-Verify everything is working correctly:
-
-1. Check your [Tailscale admin panel](https://login.tailscale.com/admin/machines) to confirm both your computer and device are listed.
-2. You can now SSH from your computer to your device for full remote access. 
-
-## 8. Optional: Configure Exit Node
-
-To route all traffic through another device on your network:
-
-1. Open the Tailscale app.
-2. Click **Use Exit Node** and select a device.
-3. Alternatively, on CLI, run:
-
-```
-tailscale up --exit-node=100.x.x.x
-```
-
-## 9. Disconnect When Needed
-
-To disconnect from Tailscale:
-
-1. In the Tailscale app, click **Disconnect**.
-2. Alternatively, on CLI, run:
-
-```
-tailscale down
-```
-
-:::note
-**Manage Tailscale Service**
-
-To prevent excessive data usage, you can permanently disable Tailscale:
-
-**Disable and stop service:**
-
-```
-cmd.run 'systemctl disable tailscaled'
-cmd.run 'systemctl stop tailscaled'
-```
-
-**Re-enable and start service:**
-
-```
-cmd.run 'systemctl enable tailscaled'
-cmd.run 'systemctl start tailscaled'
-```
-:::
-
----
-
-**You're all set!** Your AutoPi device is now connected to Tailscale, providing you with secure remote access to your device from anywhere.
-
----
-
 ## Getting started(Getting_started)
 
 ---
 
-This comprehensive guide will walk you through setting up your AutoPi CAN-FD Pro from account creation to full cloud connectivity. Your device arrives ready to be installed, requiring only a few essential steps to get operational.
+## Welcome to AutoPi CAN-FD Pro Setup
 
-## Important Safety & Setup Requirements
-
-:::caution
-
-The AutoPi Telematics Unit is a technical device that interfaces directly with your vehicle's ECU. Before proceeding, please review these critical requirements:
-
-1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
-2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
-3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
-4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
-5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
-
-:::
+This guide walks you through setting up an AutoPi CAN-FD Pro, from creating an account to configuring data output and remote file access.
 
 ## Quick Start Summary
 
-### [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) Setup Steps
+Complete the steps in order. If your device includes an AutoPi Cloud subscription and a pre-installed SIM card, you can skip the SIM installation and APN configuration steps.
+
 * Step 1: Set up your account on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#1-setting-up-user-account).
 * Step 2: Register your device on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#2-register-your-device). 
 * Step 3: SIM card installation (if you did not purchased one from us), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro/#3-ensure-sim-connectivity).
@@ -21223,18 +21301,28 @@ The AutoPi Telematics Unit is a technical device that interfaces directly with y
 * Step 11: Set up output handlers for data (where do you want the captured data to be send to), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-4-outputs).
 * Step 12: Access the files remotely, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/).
 
+## Important Safety and Setup Requirements
+
+:::caution
+
+The AutoPi device connects directly to your vehicle's ECU. Follow these requirements before continuing:
+
+1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
+2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
+3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
+4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
+5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
+
+:::
 ---
 
-## Getting started
-This step-by-step guide will help you set up your AutoPi CAN-FD Pro. 
+## 1. Set Up Your User Account
 
-## 1. Setting Up User Account
-
-Once you have received your AutoPi device it is important to associate it with Cloud Platform.
-Go to [my.autopi.io](https://my.autopi.io/) and click “Sign up”. In the pop-up, 
-add the e-mail address you want to associate with your account and create a password. 
-You can also expand the form to add additional details like your country and full name, 
-though this can be done later. Click “Create account”.
+1. Go to [my.autopi.io](https://my.autopi.io/).
+2. Select **Sign up**.
+3. Enter your email address and create a password.
+4. Optionally, expand the form and add your name and country. You can also add these details later.
+5. Select **Create account**.
 
 ![AutoPi sign up](/img/getting_started/getting_started/sign_up.png)
 
@@ -21259,234 +21347,242 @@ After clicking the “Register Device” button, the registration tab will appea
 
 ![Register Device](/img/getting_started/getting_started/register_new_device.png)
 
-- **Unit ID**: This is the number on the side of your device. You can also find it in the.
+- **Unit ID**: this is the number on the side of your device. You can also find it in the.
     document attached in the email you received when the device was shipped. 
-- **Vehicle Information**: Optionally include the make, model and year of the vehicle.
-- **Vehicle Type**: Choose the type of vehicle (ICE, Battery [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), or Plug-in Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)).
+- **Vehicle Information**: optionally include the make, model and year of the vehicle.
+- **Vehicle Type**: choose the type of vehicle (ICE, Battery [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), or Plug-in Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)).
 
-Once all information is entered, click the “Register Device”. Your newly registered device 
-will now appear in the list under “Vehicles” in the Fleet Management section and under 
-“Devices” in the Device Management section of the Platform.
+The device should now appear under **Fleet Management** > **Vehicles** and **Device Management** > **Devices**.
 
 ## 3. Ensure SIM Connectivity
 
 :::note
-If you have purchased the AutoPi TMU CM4 with monthly cloud subscription, 
-your SIM card is already assembled in the device, so you can skip this step. 
+If your AutoPi CAN-FD Pro includes a monthly cloud subscription, the SIM card is already installed. Continue to [Step 4](#4-attach-the-external-antenna-kit).
 :::
 
-If you have purchased the hardware-only version, you will need to insert your SIM card 
-into your AutoPi before connecting the device to your vehicle. The AutoPi uses nano SIM sizes. 
-The location of the SIM card slot is shown in the picture below.  
+The hardware-only version requires a nano-SIM card that supports IPv4. Install the SIM card before connecting the AutoPi device to the vehicle:
 
-When inserting the SIM card, it’s important to ensure it is installed correctly. 
-The picture below shows the proper orientation of the SIM card. 
-Please note that the text side of the SIM card must face up and the “triangle” end point into the device. 
+1. Locate the SIM card slot shown below.
+2. Hold the SIM card with the printed side facing up and the angled end pointing into the device.
+3. Gently insert the card until it clicks into place. Do not force it.
 
 ![AutoPi.io - SIM card location](/img/getting_started/getting_started/sim_card.png)
 
 :::caution
-**Please notice:** When the SIM card is inserted correctly, you will hear a small "click" when the
-card is in position. Don't try do force the SIM out after the click as this will damage the device.
-Make sure the orientation is correct before inserting the SIM. Wrong orientation could potentially
-damage your device.
+Inserting the SIM card in the wrong orientation or forcing it into or out of the slot may damage the device. Confirm the orientation before insertion.
 :::
 
-:::caution
-**Please notice:** The SIM card needs to be compatible with ipv4, for the device to establish a 4g/LTE connection. 
-:::
+Recommended US-based SIM providers include:
 
-Here's a list of the US based SIM providers that we recommend to be used with the AutoPi:
 1. AT&T
 2. T-Mobile
-3. Any MVNO provider that is roaming the networks of the providers above
+3. An MVNO that uses either the AT&T or T-Mobile network
 
 ## 4. Attach the External Antenna Kit
-Each device comes with a labeled sticker showing which antenna connects to each port, making installation simple and error-free.
-Your AutoPi CAN-FD Pro includes the following antennas:
-* 2 × 4G antennas
-* 1 × GPS antenna
-* 1 × Wi-Fi antenna (2.4G)
 
-	
+The label on the device identifies the correct port for each antenna. The external antenna kit includes:
 
-To attach the antennas, gently screw each one into its corresponding port by hand. There’s no need for tools, just make sure each antenna is firmly and securely fastened.
-Below, you can see examples of the device with and without the external antenna kit installed.
+- Two 4G antennas
+- One GPS antenna
+- One 2.4 GHz Wi-Fi antenna
 
-AutoPi CAN-FD Pro without the external antenna kit installed: 
+Use the label to match each antenna to its port, then screw each antenna into place by hand. Tighten the antennas until they are secure, but do not use tools or overtighten them.
+
+:::caution
+Before powering on the AutoPi CAN-FD Pro, verify that every antenna is connected securely to its correctly labeled port. Do not power on or bring the device online unless the complete external antenna kit is attached.
+:::
+
+  
+
+**Without the external antenna kit:**
+
 ![Pro without external antenna kit](/img/hardware/shared_devices/side_look_device_sticker_antenna_smaller.png)
 
-AutoPi CAN-FD Pro with the external antenna kit installed:
+**With the external antenna kit:**
+
 ![Pro with external antenna kit](/img/hardware/shared_devices/side_look_device_4in1_antenna.png)
 
-## 5. Locate OBD Port
+## 5. Locate the OBD-II Port
 
-Next step is to locate your OBD port in your car, it is usually found underneath the dashboard and
-looks something like this:
+Locate the OBD-II port before installing the device. The port is usually underneath the dashboard and looks like this:
 
   ![AutoPi.io - OBD port](/img/getting_started/getting_started/obd_location.jpg)
 
-The location of the OBD port varies from make and model, but is typically fund in one of the
-locations shown below:
+Its exact location depends on the vehicle or equipment. The following image shows common locations in passenger vehicles. If you cannot find the port, consult the owner's manual.
 
 ![AutoPi.io - OBD port location](/img/getting_started/getting_started/TMU_placement_dashboard_v1_finecut-01.jpg)
 
-## 6. Installation
+## 6. Install the Device
 
-When installing the AutoPi, always make sure that the device is positioned with 
-the logo facing upwards towards the sky. This orientation is crucial because the GPS antenna 
-is located within the device, and incorrect positioning may result in a weak GPS signal. 
+1. Make sure the vehicle or equipment is completely powered off.
+2. Connect the AutoPi CAN-FD Pro to the OBD-II port.
+3. Position the device with the AutoPi logo and external antennas facing upward toward the sky.
+4. Secure the device so it cannot move or interfere with vehicle controls.
 
-If the OBD port is in an inconvenient spot or gets in the way, 
-you can buy some **Accessories** from our [AutoPi shop](https://shop.autopi.io/): 
-    * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – add extra reach for flexible placement.
-    * [Dual Lock Extreme Velcro Strip](https://shop.autopi.io/products/dual-lock-extreme-velcro) – secure, vibration-resistant mounting anywhere.
-    * [DoIP HAT](https://shop.autopi.io/products/doip-hat-v1-3) - the DoIP HAT is a highly advanced interface module designed to enhance vehicle diagnostics using the DoIP protocol (Diagnostics over Internet Protocol).  
-    * [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable?pr_prod_strat=jac&pr_rec_id=17052e989&pr_rec_pid=8619774050653&pr_ref_pid=8609919074653&pr_seq=uniform) - power the AutoPi CAN-FD Pro device with any 12-24 volt DC power supply.
-    * [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform) - use this Y-splitter cable if you need to connect an additional OBD-II device at the same time as your AutoPi CAN-FD Pro.
-    * [Tesla OBD-II Adapter Cable for Model 3 and Y](https://shop.autopi.io/products/tesla-obd2-adapter-cable-for-model-3-and-y) - add an OBD-II port to your Tesla Model 3 or Model Y with this adapter cable.
-    * [CAN Bus Testing/Loop Cable](https://shop.autopi.io/products/can-bus-testing-cable) - the CAN Bus Testing Cable is a cable designed for internal communication testing between two CAN bus systems.
-    * [Micro USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable)- this Micro USB to USB-A adapter cable is made to fit perfectly with the external Micro USB port on the AutoPi CAN-FD Pro device.
-    * [OBD-II to dual DB9](https://shop.autopi.io/products/obd2-to-dual-db) - connect two CAN bus nodes to the OBD2 port of the AutoPi CAN-FD Pro.
+If the OBD-II port is difficult to reach or does not provide a safe mounting position, use an appropriate accessory from the [AutoPi shop](https://shop.autopi.io/):
 
-### Tips on getting the best performance of your device:
+- [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform): Adds extra reach for flexible placement.
+- [Dual Lock Extreme Velcro Strip](https://shop.autopi.io/products/dual-lock-extreme-velcro): Secures the device in a vibration-resistant position.
+- [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform): Connects the CAN-FD Pro and another OBD-II device at the same time.
+- [OBD-II to Dual DB9 Cable](https://shop.autopi.io/products/obd2-to-dual-db): Connects two CAN bus nodes to the CAN-FD Pro OBD-II port.
 
-- Make sure that the AutoPi logo is facing the sky.
-- Antennas should also face the sky to ensure a strong signal. 
-- Try to avoid installing the device in direct sun. Direct sun will heat up the device and,
-  in the summertime, this can cause the CPU to throttle down, if the temperature gets too hot. 
-- When powering the device, make sure you only power it through the OBD connector.
-  The device cannot be powered through any of the other ports. 
-- Proper installation makes all the difference in performance. Follow the steps above for correct device mounting.
-- The device contains a GPS antenna inside. 
-  Make sure there is no metal covering the device as this can affect its performance. 
+:::tip Performance tips
+- Keep the AutoPi logo and external antennas facing the sky.
+- Keep the device out of direct sunlight when possible. Excessive heat may reduce CPU performance.
+- Do not cover the device or antennas with metal, because this can interfere with GPS and cellular signals.
+- Use only a supported OBD-II power connection.
+- Make sure the device and antennas are firmly secured before operating the vehicle or equipment.
+:::
 
-## 7. Connect to WiFi
+## 7. Connect to the Device's Wi-Fi Hotspot
 
-After installing your AutoPi device into the OBD port, you will need to connect it to the AutoPi Cloud.
-To do this, you will temporarily use the device’s Wi-Fi hotspot. 
+After installing the CAN-FD Pro, temporarily connect a phone or computer to its Wi-Fi hotspot. This connection allows you to access Local Administration and configure the device in the next step.
 
-The hotspot is named autopi-XXXX, where "XXXX" represents the unique ID of your device.
-The **password** for this Wi-Fi hotspot is the **first 13 characters of your Device ID**. 
-You can find your Device ID either by navigating to Devices > Select your device > Overview: Device specifications; or in the documentation 
-attached to your shipping email. 
-Additionally, you can access Wi-Fi information directly from the AutoPi Cloud. 
-To do this, navigate to Devices > Select Your Device > Advanced Settings > Wi-Fi. 
-Here, you will find the Wi-Fi hotspot's password and SSID credentials. 
-![Wifi settings](/img/getting_started/getting_started/wifi_settings.png)
+### Find the Hotspot Credentials
 
-When the device is powered on, a blue light will appear on the side, indicating 
-that it has power. When the device successfully connects to the AutoPi Cloud, 
-a green light will be visible. If the device is not connected, the light will be flashing. 
+The default hotspot credentials are:
 
-For a detailed description of the two status LEDs, please refer to the [LED and Button States on AutoPi CAN-FD Pro](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-led-and-button/).
+- **Network name (SSID):** `autopi-XXXX`, where `XXXX` is the unique ID of your device.
+- **Password:** The first 13 characters of your Device ID.
 
-## 8. Connect to Local Administration
+You can find the Device ID in either of these locations:
+
+- In the document attached to your shipping email.
+- In the AutoPi Cloud under **Devices** > **Select your device** > **Overview** > **Device specifications widget**.
+
+You can also view the hotspot name and password under **Devices** > **Select your device** > **Advanced Settings** > **Wi-Fi**.
+
+![Advanced Settings - Wi-Fi](/img/getting_started/getting_started/wifi_settings.png)
+
+### Connect to the Hotspot
+
+1. Turn on the vehicle or equipment to supply power to the CAN-FD Pro.
+2. Wait for the blue status light to appear. This indicates that the device has power.
+3. Open the Wi-Fi settings on your phone or computer.
+4. Select the `autopi-XXXX` network.
+5. Enter the hotspot password.
+6. Confirm that your phone or computer is connected to the hotspot.
 
 :::note
-If you’ve purchased the AutoPi TMU CM4 with a monthly cloud subscription, your SIM card
-is pre-installed in the device, and no additional action is required for SIM connectivity. 
-The APN settings are already configured for you. Please be aware that the SIM card 
-has a monthly data cap, so it's recommended to limit the use of the device’s hotspot 
-for connecting your phone or notebook.
+Your phone or computer may report that the Wi-Fi network has no internet connection. Remain connected so you can access Local Administration in the next step.
+:::
+
+### Check the Status Lights
+
+- A **blue light** indicates that the device has power.
+- A **green light** indicates that the device is connected to the AutoPi Cloud.
+- A **flashing green light** indicates that the device has not yet connected to the AutoPi Cloud.
+
+For more information, see [LED and Button States on AutoPi CAN-FD Pro](/hardware/autopi_canfd_pro/pro-led-and-button/).
+
+## 8. Configure the APN in Local Administration
+
+:::note
+If your AutoPi CAN-FD Pro includes a monthly cloud subscription, its SIM card and APN are already configured. The APN string for the pre-installed SIM card is **nxt20.net**. You can skip the configuration steps below and continue to [Step 9](#9-verify-connectivity).
+
+The pre-installed SIM card has a monthly data limit. Avoid using the AutoPi hotspot for regular internet access from a phone or computer.
 :::
 
 :::note
-If you need to know the APN string for the pre-installed SIM card, it is **nxt20.net**. 
-:::
-
-:::note
-If you are using a **Verizon Wireless** SIM card, please follow the dedicated setup guide:
+If you use a **Verizon Wireless** SIM card, follow the dedicated setup guide:
 [Setting Up Your Device with Verizon Wireless](https://docs.autopi.io/developer_guides/setting-up-a-device-with-verizon-wireless/).
 :::
 
-If you are using your own SIM card, you may need to configure the APN settings after 
-connecting to the device’s Wi-Fi hotspot to ensure a seamless 4G/LTE connection. 
-However, setting up the APN is not always necessary—it depends on your SIM provider. 
-We suggest checking with your SIM provider directly or searching online for the correct APN settings. 
+If you installed your own SIM card, ask your mobile provider for the correct APN string before continuing. APN settings vary by provider, and an incorrect value will prevent the device from establishing a cellular connection.
 
-Here’s how you configure the APN settings: 
+### Open Local Administration
 
-1. Go to my.autopi.io. If you're already logged in, please log out. 
-2. On the login page, find the “Go Local” button at the bottom left side, 
-   or alternatively, go directly to local.autopi.io.
+Remain connected to the AutoPi Wi-Fi hotspot from Step 7, then:
+
+1. Go to [my.autopi.io](https://my.autopi.io/). If you are already signed in, sign out.
+2. Select **Login locally on your device** in the upper-right corner. Alternatively, go directly to [local.autopi.io](http://local.autopi.io/).
 
     
 
-This will connect you to the local device, and you should see a screen similar to 
-the one shown in the image below, indicating that you're connected locally.
-From here, you can log in without needing a username or password.
+3. Confirm that the page indicates you are connected to a local device.
 
-![AutoPi.io - Localhost login](/img/getting_started/getting_started/local.jpg)
+  
 
-Once the information is saved, it will be applied to the device, and you should 
-see a notification when successfully saved. 
+4. Select **Login**. A username and password are not required for local access.
 
-4G/LTE Settings 
-![AutoPi.io - Settings Page](/img/getting_started/getting_started/apn_settings.png)
+### Configure the 4G/LTE Settings
 
-APN Presets List 
-![AutoPi.io - Settings Page](/img/getting_started/getting_started/apn_settings_list.png) 
+1. Open the **4G/LTE** tab.
+2. In the **APN String** field, replace the existing APN string with the value provided by your mobile provider.
+3. If the SIM card has a PIN, enter it in the **SIM PIN** field. Otherwise, leave this field empty.
+4. Keep **MTU** set to its default value of **1280**.
+5. Select **Save and apply**.
+6. Wait for the success notification before leaving the page.
+7. Continue to Step 9 to verify the connection.
+
+![4G/LTE settings](/img/getting_started/getting_started/apn_settings.png)
+
+#### Optional: Use an APN Preset
+
+You can select a provider from **APN Presets** at the top of the **4G/LTE** tab. Presets are provided for convenience, but they are not guaranteed to work for every SIM card or subscription. Confirm the APN string with your mobile provider and verify that the preset entered the correct value.
+
+![APN presets list](/img/getting_started/getting_started/apn_settings_list.png)
 
 ## 9. Verify Connectivity
 
-To verify that you have set up your APN settings correctly, connect your phone 
-to the AutoPi hotspot and use your browser to visit any webpage. 
-If the page loads successfully, it means your device is online and has 
-started uploading data to the AutoPi Cloud.
+Verify both the cellular internet connection and the AutoPi Cloud connection:
 
-## 10. Finalization
+1. Keep your phone or computer connected to the AutoPi Wi-Fi hotspot.
+2. Open a browser and visit a public webpage.
+3. Confirm that the webpage loads. This verifies that the APN settings are correct and the device has internet access.
+4. Check the green status light on the CAN-FD Pro:
+   - A steady green light indicates that the device is connected to the AutoPi Cloud.
+   - A flashing green light indicates that the device has not yet connected to the AutoPi Cloud.
+5. Sign in to the [AutoPi Cloud](https://my.autopi.io/) and confirm that the device appears online.
 
-Your device is now online and connected to the AutoPi Cloud. After completing 
-the setup, it's important to change your device's WiFi password. 
-The default password is intended for one-time use only, and it is strongly 
-recommended to update it afterward. You can change the password through the 
-AutoPi Cloud by navigating to **Devices** > **Advanced Settings** > **Wi-Fi** > **Pass**. 
+:::tip If the device remains offline
+The first cellular connection may take a few minutes. If a webpage does not load or the device does not appear online, confirm the APN string and SIM PIN with your mobile provider. Then return to [Step 8](#8-configure-the-apn-in-local-administration), update the settings, and test the connection again.
+:::
 
-To prevent excessive data usage, it's advisable to avoid using the device’s 
-hotspot to connect your phone or tablet after the initial configuration is complete. 
+## 10. Finalize the Setup
 
-## 11. Set up Output Handlers 
+After verifying connectivity, replace the default Wi-Fi hotspot password:
 
-Your device can capture data, but you’ll need to choose where that data should be sent, also known as configuring an output handler. Currently, the AutoPi CAN-FD Pro supports output to an Amazon AWS S3 bucket. Setting this up is quick and straightforward, just follow the step-by-step guide here: [Amazon Web Services (AWS) S3 Bucket Creation](https://docs.autopi.io/getting_started/autopi_canfd_pro/set_up_AWS_S3_bucket/).
+1. In the AutoPi Cloud, open **Devices** and select your CAN-FD Pro.
+2. Go to **Advanced Settings** > **Wi-Fi**.
+3. Enter a secure password in the **Pass** field.
+4. Save and apply the change.
+5. Store the new password in a secure location.
+
+Your phone or computer may disconnect from the hotspot after the password changes. Use the new password if you need to connect again.
+
+To avoid unnecessary cellular data usage, disconnect phones, tablets, and computers from the AutoPi hotspot after completing the setup.
+
+## 11. Set Up Output Handlers
+
+Configure an output handler to choose where the CAN-FD Pro sends captured data. The device currently supports output to an Amazon S3 bucket. Follow [Amazon Web Services (AWS) S3 Bucket Creation](/getting_started/autopi_canfd_pro/set_up_AWS_S3_bucket/) to configure the destination.
 
 ## 12. Access Files Remotely on AutoPi
 
-You can also view and manage your captured data remotely from your AutoPi device. For detailed instructions on how to access your files using SFTP or SCP, check out this guide: [Accessing files via SFTP/SCP on AutoPi](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/). 
+You can view and manage captured data remotely by using SFTP or SCP. Follow [Accessing Files via SFTP/SCP on AutoPi](/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/) to configure access.
 
 :::note
-Remember to adjust the **sleep timers** according to your needs. You can easily change these settings anytime by navigating to:
-Advanced Settings → Power → Sleep Timer.
+Review the **sleep timer** settings and adjust them for your use case under **Advanced Settings** > **Power** > **Sleep Timer**. By default, the device enters sleep mode when it receives this event:
+`^vehicle/battery/(discharging|unknown)`.
 
-By default, the device enters sleep mode when it receives the event:
-`^vehicle/battery/(discharging|unknown)`
-
-Sleep is prevented when any of the following events are active:
-`^vehicle/battery/(charging_slow|charging|overcharging)`
-
+The device remains awake while any of these events are active:
+`^vehicle/battery/(charging_slow|charging|overcharging)`.
 :::
 
-**You Are All Set!**
+### Setup Complete
 
-Congratulations! You've successfully set up your AutoPi device and connected it 
-to the AutoPi Cloud. Your device is now ready to start gathering and transmitting data,
-enabling you to take full advantage of the powerful features AutoPi offers. 
-Take your device for a trip to start gathering data.
+Your AutoPi CAN-FD Pro is connected to the AutoPi Cloud and ready to capture and transmit data. Operate the vehicle or equipment to begin collecting data, then confirm that the configured output handler receives it.
 
 ---
 
-**What's Next?**
+## What's Next?
 
-Now that your device is up and running, here are a few suggestions to help you 
-get the most out of your AutoPi experience: 
-- **Read our User guide**: dive into the CAN-FD Pro device and all of its functionalities in our [User guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/). 
-- **Explore the AutoPi [Cloud](https://docs.autopi.io/cloud/)**: Dive into the [AutoPi Cloud platform](https://my.autopi.io/) to explore all 
-  the features available to you, such as real-time vehicle monitoring, 
-  advanced analytics, and customizable alerts. 
-- **Check Out Our Documentation**: Our [documentation page](https://docs.autopi.io/) 
-  is a great resource for learning more about advanced features, troubleshooting, 
-  and getting the most out of your device. 
-- **Build your Nested Accounts and Invite New Users**: AutoPi Cloud uses a multi-tenant architecture, which means multiple accounts (tenants) share the same platform and infrastructure, while all data, configurations, and user access remain securely isolated. You can read more here: [Account management](https://docs.autopi.io/cloud/accounts/).
+Now that the device is running, you can:
+
+- **Learn about CAN-FD Pro features:** read the [CAN-FD Pro User Guide](/getting_started/autopi_canfd_pro/pro-user-guide/).
+- **Explore the AutoPi Cloud:** try real-time monitoring, analytics, and configurable alerts in the [AutoPi Cloud](https://my.autopi.io/).
+- **Read more documentation:** learn about advanced features and troubleshooting on the [AutoPi documentation site](https://docs.autopi.io/).
+- **Create nested accounts and invite users:** learn how AutoPi Cloud securely separates data, configurations, and access for multiple accounts in [Account Management](https://docs.autopi.io/cloud/accounts/).
 
 ---
 
@@ -21662,7 +21758,7 @@ This command is a great tool to see the current status of your data logger(s) in
 * If the device is connected to the internet it can be done through the cloud terminal on AutoPi cloud.
 * If you have direct SSH access to the device via LAN or VPN you can use the autopi terminal command.
   * You can check out this guide: [How to SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/)
-  * For using Tailscale, you can check out this guide: [How to connect to Tailscale](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
+  * For using Tailscale, you can check out this guide: [How to connect to Tailscale](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/)
 * If you are nearby the device and can connect to it's local WiFi hotspot you can do it from the local admin UI on local.autopi.io. Here is a guide: [Local development workflow](https://docs.autopi.io/developer_guides/local-development-workflow/)
 
 Below is an example of the output of the command:
@@ -22222,7 +22318,7 @@ At the moment if you want to access your device remotely using [Tailscale](https
 * **Auth Key** - Specify the Tailscale auth key to be used by the device. Generate a new key on the Tailscale console below 'Settings' > 'Keys'.
 * **Enabled** - by default this setting is not enabled, but if you want to use Tailscale, you just have to enable it here. 
 
-For more information check out this guide: [How to connect to Tailscale on your AutoPi device](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
+For more information check out this guide: [How to connect to Tailscale on your AutoPi device](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/)
 
 ### Advanced settings for Trips
 The Trips feature provides detailed information about each vehicle trip, including the route displayed on a map, start and end addresses, trip duration, and distance traveled. You can also categorize trips as personal or business and export trip data when needed. For your AutoPi CAN-FD Pro device you can also tweak some extra settings under Advanced settings -> Trip. 
@@ -22255,42 +22351,13 @@ These settings allow you to control exactly when a trip is considered active, en
 
 ---
 
-## Welcome to AutoPi Setup
+## Welcome to AutoPi CAN-FD Pro Setup
 
 The [AutoPi CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) with IP67-rated aluminum casing is engineered for demanding environments. Built to withstand dust, dirt, and water, it's ideal for rugged, outdoor, or industrial installations. This comprehensive guide walks you through setup from account creation to full cloud connectivity. Your device arrives ready to be installed, requiring only a few essential steps to get operational.
 
-## What You'll Learn
-
-By following this guide, you will:
-
-- Create and configure your AutoPi Cloud account.
-- Register your device on the platform.
-- Verify SIM connectivity (if required).
-- Attach the external antenna kit for optimal reception.
-- Locate your vehicle's OBD port.
-- Physically install the device for optimal performance.
-- Connect the device to the AutoPi Cloud via Wi-Fi.
-- Configure network settings (APN and MTU) for connectivity.
-- Verify your setup and finalize security settings.
-- Set up data output handlers and remote file access.
-
-## Important Safety & Setup Requirements
-
-:::caution
-
-The AutoPi Telematics Unit is a technical device that interfaces directly with your vehicle's ECU. Before proceeding, please review these critical requirements:
-
-1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
-2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
-3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
-4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
-5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
-
-:::
-
 ## Quick Start Summary
+Complete the steps in order. If your device includes an AutoPi Cloud subscription and a pre-installed SIM card, you can skip the SIM installation and APN configuration steps.
 
-### [AutoPi CAN-FD Pro with IP67 Casing](https://shop.autopi.io/products/autopi-can-fd-pro) Setup Steps
 * Step 1: Set up your account on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/#1-setting-up-user-account).
 * Step 2: Register your device on [AutoPi Cloud](https://my.autopi.io/), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/#2-register-your-device). 
 * Step 3: SIM card installation (if you did not purchased one from us), you can read more [in this section](https://docs.autopi.io/getting_started/autopi_canfd_pro_casing/#3-ensure-sim-connectivity).
@@ -22304,17 +22371,31 @@ The AutoPi Telematics Unit is a technical device that interfaces directly with y
 * Step 11: Set up output handlers for data (where do you want the captured data to be send to), you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/#step-4-outputs).
 * Step 12: Access the files remotely, you can read more [in this guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/).
 
+## Important Safety and Setup Requirements
+
+:::caution
+
+The AutoPi device connects directly to your vehicle's ECU. Follow these requirements before continuing:
+
+1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
+2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
+3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
+4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
+5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
+
+:::
+
 ---
 ## Getting started
 This step-by-step guide will help you set up your AutoPi CAN-FD Pro with the IP67 casing.
 
-## 1. Setting Up User Account
+## 1. Set Up Your User Account
 
-Once you have received your AutoPi device it is important to associate it with Cloud Platform.
-Go to [my.autopi.io](https://my.autopi.io/) and click “Sign up”. In the pop-up, 
-add the e-mail address you want to associate with your account and create a password. 
-You can also expand the form to add additional details like your country and full name, 
-though this can be done later. Click “Create account”.
+1. Go to [my.autopi.io](https://my.autopi.io/).
+2. Select **Sign up**.
+3. Enter your email address and create a password.
+4. Optionally, expand the form and add your name and country. You can also add these details later.
+5. Select **Create account**.
 
 ![AutoPi sign up](/img/getting_started/getting_started/sign_up.png)
 
@@ -22343,226 +22424,247 @@ After clicking the “Register Device” button, the registration tab will appea
 - **Vehicle Information**: Optionally include the make, model and year of the vehicle.
 - **Vehicle Type**: Choose the type of vehicle (ICE, Battery [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), or Plug-in Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)).
 
-Once all information is entered, click the “Register Device”. Your newly registered device 
-will now appear in the list under “Vehicles” in the Fleet Management section and under 
-“Devices” in the Device Management section of the Platform.
+The device should now appear under **Fleet Management** > **Vehicles** and **Device Management** > **Devices**.
 
 ## 3. Ensure SIM Connectivity
 
 :::note
-If you have purchased the AutoPi TMU CM4 with monthly cloud subscription, 
-your SIM card is already assembled in the device, so you can skip this step. 
+If your AutoPi CAN-FD Pro includes a monthly cloud subscription, the SIM card is already installed. Continue to [Step 4](#4-attach-the-external-antenna-kit).
 :::
 
-If you have purchased the hardware-only version, you will need to insert your SIM card 
-into your AutoPi before connecting the device to your vehicle. The AutoPi uses nano SIM sizes. Getting your SIM card in place is quick and easy:
-Simply open the device’s casing and insert the SIM card as shown in the picture below. 
+The hardware-only version requires a nano-SIM card that supports IPv4. Install the SIM card before connecting the device to the vehicle:
 
-![Sim card](/img/getting_started/getting_started/sim_pro.jpeg)
+1. Open the device casing and locate the SIM card slot shown below.
 
-When inserting the SIM card, it’s important to ensure it is installed correctly. 
-The picture below shows the proper orientation of the SIM card. 
-Please note that the text side of the SIM card must face up and the “triangle” end point into the device. 
+  
 
-![Sim card positioning](/img/getting_started/getting_started/simcard_direction.jpeg)
+2. Hold the SIM card with the printed side facing up and the angled end pointing into the slot.
+3. Gently insert the card until it clicks into place. Do not force it.
+
+  
 
 :::caution
-**Please notice:** When the SIM card is inserted correctly, you will hear a small "click" when the
-card is in position. Don't try do force the SIM out after the click as this will damage the device.
-Make sure the orientation is correct before inserting the SIM. Wrong orientation could potentially
-damage your device.
+Inserting the SIM card in the wrong orientation or forcing it into or out of the slot may damage the device. Confirm the orientation before insertion.
 :::
 
-:::caution
-**Please notice:** The SIM card needs to be compatible with ipv4, for the device to establish a 4g/LTE connection. 
-:::
+Recommended US-based SIM providers include:
 
-Here's a list of the US based SIM providers that we recommend to be used with the AutoPi:
 1. AT&T
 2. T-Mobile
-3. Any MVNO provider that is roaming the networks of the providers above
+3. An MVNO that uses either the AT&T or T-Mobile network
 
 ## 4. Attach the External Antenna Kit
 
 Each device comes with a labeled sticker showing which antenna connects to each port, making installation simple and error-free. This guide will walk you through the process step by step.
 
-Your AutoPi CAN-FD Pro comes with the following antennas:
+The external antenna kit includes:
 * 2 × 4G antennas
 * 1 × GPS antenna
 * 1 × Wi-Fi antenna
 
 ![AutoPi CAN-FD Pro](/img/hardware/autopi_canfd_pro/canfd_pro_casing_measurements.png)
 
-As shown in the image above, when the AutoPi logo is facing upward, the antenna ports are arranged as follows:
-* Right side (top to bottom): 4G, GPS, 4G.
-* Left side (top to bottom): Wi-Fi.
+With the AutoPi logo facing upward, connect the antennas to these ports:
 
-To attach the antennas, gently screw each one into its corresponding port by hand. Tools are not required, just make sure each antenna is securely fastened without over-tightening.
+- **Right side, top to bottom:** 4G, GPS, 4G
+- **Left side:** Wi-Fi
 
-## 5. Locate OBD Port
+Screw each antenna cable into its corresponding port by hand. Tighten each connection until secure, but do not use tools or overtighten it.
 
-Next step is to locate your OBD port in your car, it is usually found underneath the dashboard and
-looks something like this:
+:::caution
+Before powering on the AutoPi CAN-FD Pro, verify that every antenna is connected securely to its correct port. Do not power on or bring the device online unless the complete external antenna kit is attached.
+:::
+
+## 5. Locate the OBD-II Port
+
+Locate the OBD-II port before installing the device. The port is usually underneath the dashboard and looks like this:
 
   ![AutoPi.io - OBD port](/img/getting_started/getting_started/obd_location.jpg)
 
-The location of the OBD port varies from make and model, but is typically fund in one of the
-locations shown below:
+Its exact location depends on the vehicle or equipment. The following image shows common locations in passenger vehicles. If you cannot find the port, consult the owner's manual.
 
 ![AutoPi.io - OBD port location](/img/getting_started/getting_started/TMU_placement_dashboard_v1_finecut-01.jpg)
 
-## 6. Installation
+## 6. Install the Device
 
-When installing the AutoPi, always make sure that the device is positioned with 
-the logo facing upwards towards the sky. This orientation is crucial because the GPS antenna 
-is located within the device, and incorrect positioning may result in a weak GPS signal. 
+The IP67 casing measures **160 × 110 × 60 mm (L × W × H)**. Choose a secure mounting position before connecting power.
 
-### Steps for installation:
-1. Choose a Mounting Spot: pick a good location in your vehicle where you'd like to mount the device. It should be secure and have a clear view of the sky if possible.
-2. Mount the Device: you can use one of our mounting options, like a homemade bracket or a ready-made bracket.
-    Check out your options [here].
-3. Connect the Antennas: attach the antennas to the device. Please make sure the distance between the antennas and the device is no more than 3 meters—that's the length of the antenna cables.
-4. Need More Cable Length for the OBD II Port? No problem! If the OBD port is in an inconvenient spot or gets in the way, 
-you can buy some accessories from our [AutoPi shop](https://shop.autopi.io/): 
-    * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – add extra reach for flexible placement.
-    * [Dual Lock Extreme Velcro Strip](https://shop.autopi.io/products/dual-lock-extreme-velcro) – secure, vibration-resistant mounting anywhere.
-    * [DoIP HAT](https://shop.autopi.io/products/doip-hat-v1-3) - the DoIP HAT is a highly advanced interface module designed to enhance vehicle diagnostics using the DoIP protocol (Diagnostics over Internet Protocol).  
-    * [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable?pr_prod_strat=jac&pr_rec_id=17052e989&pr_rec_pid=8619774050653&pr_ref_pid=8609919074653&pr_seq=uniform) - power the AutoPi CAN-FD Pro device with any 12-24 volt DC power supply.
-    * [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform) - use this Y-splitter cable if you need to connect an additional OBD-II device at the same time as your AutoPi CAN-FD Pro.
-    * [Tesla OBD-II Adapter Cable for Model 3 and Y](https://shop.autopi.io/products/tesla-obd2-adapter-cable-for-model-3-and-y) - add an OBD-II port to your Tesla Model 3 or Model Y with this adapter cable.
-    * [CAN Bus Testing/Loop Cable](https://shop.autopi.io/products/can-bus-testing-cable) - the CAN Bus Testing Cable is a cable designed for internal communication testing between two CAN bus systems.
-    * [Micro USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable)- this Micro USB to USB-A adapter cable is made to fit perfectly with the external Micro USB port on the AutoPi CAN-FD Pro device.
-    * [OBD-II to dual DB9](https://shop.autopi.io/products/obd2-to-dual-db) - connect two CAN bus nodes to the OBD2 port of the AutoPi CAN-FD Pro.
+1. Make sure the vehicle or equipment is completely powered off.
+2. Choose a secure mounting position that does not interfere with vehicle controls.
+3. Mount the casing with an appropriate bracket or other secure mounting hardware.
+4. Position the external antennas with a clear view of the sky when possible. Keep each antenna within the 3 m cable length of the device.
+5. Connect the CAN-FD Pro to the OBD-II port.
+6. Secure all cables so they cannot move, become pinched, or interfere with vehicle operation.
 
-### Device dimensions:
-160mm x 110mm x 60mm (L/W/H)
+If the OBD-II port is difficult to reach or does not provide a safe installation position, use an appropriate accessory from the [AutoPi shop](https://shop.autopi.io/):
 
-![AutoPi CAN-FD Pro](/img/hardware/autopi_canfd_pro/canfd_pro_casing_measurements.png)
+- [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform): Adds extra reach for flexible placement.
+- [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform): Connects the CAN-FD Pro and another OBD-II device at the same time.
+- [OBD-II to Dual DB9 Cable](https://shop.autopi.io/products/obd2-to-dual-db): Connects two CAN bus nodes to the CAN-FD Pro OBD-II port.
 
-### Tips on getting the best performance of your device:
-- Make sure that the AutoPi logo is facing the sky.
-- Antennas should also face the sky to ensure a strong signal. 
-- Try to avoid installing the device in direct sun. Direct sun will heat up the device and, in the summertime, this can cause the CPU to throttle down, if the temperature gets too hot. 
-- When powering the device, make sure you only power it through the OBD connector. The device cannot be powered through any of the other ports. 
-- Proper installation makes all the difference in performance. Follow the steps above for correct device mounting.
-
-:::note
-If you're working with the device during development and have it open on your desk, you can connect a monitor (via HDMI), a keyboard (via USB), and even use an Ethernet cable for internet. This setup helps you see exactly what's happening on the device in real time—ideal for debugging or development sessions.
-:::
-
-## 7. Connect to WiFi
-After installing your AutoPi device into the OBD port, you will need to connect it to the AutoPi Cloud.
-To do this, you will temporarily use the device’s Wi-Fi hotspot. 
-
-The hotspot is named autopi-XXXX, where "XXXX" represents the unique ID of your device.
-The **password** for this Wi-Fi hotspot is the **first 13 characters of your Device ID**. 
-You can find your Device ID either by navigating to Devices > Select your device > Overview: Device specifications; or in the documentation attached to your shipping email. 
-Additionally, you can access Wi-Fi information directly from the AutoPi Cloud. To do this, navigate to Devices > Select Your Device > Advanced Settings > Wi-Fi. 
-
-Here, you will find the Wi-Fi hotspot's password and SSID credentials. 
-
-![Wifi settings](/img/getting_started/getting_started/wifi_settings.png)
-
-When the device is powered on, a blue light will appear on the side, indicating 
-that it has power. When the device successfully connects to the AutoPi Cloud, 
-a green light will be visible. If the device is not connected, the light will be flashing. 
-
-For a detailed description of the two status LEDs, please refer to the 
-
-## 8. Connect to Local Administration
-
-:::note
-If you’ve purchased the AutoPi CAN-FD Pro with a monthly cloud subscription, your SIM card
-is pre-installed in the device, and no additional action is required for SIM connectivity. 
-The APN settings are already configured for you. Please be aware that the SIM card 
-has a monthly data cap, so it's recommended to limit the use of the device’s hotspot 
-for connecting your phone or notebook.
+:::tip Performance tips
+- Position the external antennas toward the sky and away from metal obstructions.
+- Keep the device out of direct sunlight when possible. Excessive heat may reduce CPU performance.
+- Use only a supported OBD-II power connection.
+- Make sure the casing, antennas, and cables are firmly secured before operating the vehicle or equipment.
 :::
 
 :::note
-If you need to know the APN string for the pre-installed SIM card, it is **nxt20.net**. 
+For bench development with the casing open, you can connect a monitor through HDMI, a keyboard through USB, and an Ethernet cable for network access. Use this configuration only in a suitable development environment, not as a permanent installation.
+:::
+
+## 7. Connect to the Device's Wi-Fi Hotspot
+After installing the CAN-FD Pro, temporarily connect a phone or computer to its Wi-Fi hotspot. This connection allows you to access Local Administration and configure the device in the next step.
+
+### Find the Hotspot Credentials
+
+The default hotspot credentials are:
+
+- **Network name (SSID):** `autopi-XXXX`, where `XXXX` is the unique ID of your device.
+- **Password:** The first 13 characters of your Device ID.
+
+You can find the Device ID in either of these locations:
+
+- In the document attached to your shipping email.
+- In the AutoPi Cloud under **Devices** > **Select your device** > **Overview** > **Device specifications widget**.
+
+You can also view the hotspot name and password under **Devices** > **Select your device** > **Advanced Settings** > **Wi-Fi**.
+
+![Advanced Settings - Wi-Fi](/img/getting_started/getting_started/wifi_settings.png)
+
+### Connect to the Hotspot
+
+1. Turn on the vehicle or equipment to supply power to the CAN-FD Pro.
+2. Wait for the blue status light to appear. This indicates that the device has power.
+3. Open the Wi-Fi settings on your phone or computer.
+4. Select the `autopi-XXXX` network.
+5. Enter the hotspot password.
+6. Confirm that your phone or computer is connected to the hotspot.
+
+:::note
+Your phone or computer may report that the Wi-Fi network has no internet connection. Remain connected so you can access Local Administration in the next step.
+:::
+
+### Check the Status Lights
+
+- A **blue light** indicates that the device has power.
+- A **green light** indicates that the device is connected to the AutoPi Cloud.
+- A **flashing green light** indicates that the device has not yet connected to the AutoPi Cloud.
+
+For more information, see [LED and Button States on AutoPi CAN-FD Pro](/hardware/autopi_canfd_pro/pro-led-and-button/).
+
+## 8. Configure the APN in Local Administration
+
+:::note
+If your AutoPi CAN-FD Pro includes a monthly cloud subscription, its SIM card and APN are already configured. The APN string for the pre-installed SIM card is **nxt20.net**. You can skip the configuration steps below and continue to [Step 9](#9-verify-connectivity).
+
+The pre-installed SIM card has a monthly data limit. Avoid using the AutoPi hotspot for regular internet access from a phone or computer.
 :::
 
 :::note
-If you are using a **Verizon Wireless** SIM card, please follow the dedicated setup guide:
+If you use a **Verizon Wireless** SIM card, follow the dedicated setup guide:
 [Setting Up Your Device with Verizon Wireless](https://docs.autopi.io/developer_guides/setting-up-a-device-with-verizon-wireless/).
 :::
 
-If you are using your own SIM card, you may need to configure the APN settings after 
-connecting to the device’s Wi-Fi hotspot to ensure a seamless 4G/LTE connection. 
-However, setting up the APN is not always necessary—it depends on your SIM provider. 
-We suggest checking with your SIM provider directly or searching online for the correct APN settings. 
+If you installed your own SIM card, ask your mobile provider for the correct APN string before continuing. APN settings vary by provider, and an incorrect value will prevent the device from establishing a cellular connection.
 
-Here’s how you configure the APN settings: 
+### Open Local Administration
 
-1. Go to my.autopi.io. If you're already logged in, please log out. 
-2. On the login page, find the “Go Local” button at the bottom left side, 
-   or alternatively, go directly to local.autopi.io.
+Remain connected to the AutoPi Wi-Fi hotspot from Step 7, then:
 
-    
+1. Go to [my.autopi.io](https://my.autopi.io/). If you are already signed in, sign out.
+2. Select **Login locally on your device** in the upper-right corner. Alternatively, go directly to [local.autopi.io](http://local.autopi.io/).
 
-This will connect you to the local device, and you should see a screen similar to 
-the one shown in the image below, indicating that you're connected locally.
-From here, you can log in without needing a username or password.
+  
 
-![AutoPi.io - Localhost login](/img/getting_started/getting_started/local.jpg)
+3. Confirm that the page indicates you are connected to a local device.
 
-Once the information is saved, it will be applied to the device, and you should 
-see a notification when successfully saved. 
+  
 
-4G/LTE Settings 
-![AutoPi.io - Settings Page](/img/getting_started/getting_started/apn_settings.png)
+4. Select **Login**. A username and password are not required for local access.
 
-APN Presets List
-![AutoPi.io - Settings Page](/img/getting_started/getting_started/apn_settings_list.png) 
+### Configure the 4G/LTE Settings
+
+1. Open the **4G/LTE** tab.
+2. In the **APN String** field, replace the existing APN string with the value provided by your mobile provider.
+3. If the SIM card has a PIN, enter it in the **SIM PIN** field. Otherwise, leave this field empty.
+4. Keep **MTU** set to its default value of **1280**.
+5. Select **Save and apply**.
+6. Wait for the success notification before leaving the page.
+7. Continue to Step 9 to verify the connection.
+
+![4G/LTE settings](/img/getting_started/getting_started/apn_settings.png)
+
+#### Optional: Use an APN Preset
+
+You can select a provider from **APN Presets** at the top of the **4G/LTE** tab. Presets are provided for convenience, but they are not guaranteed to work for every SIM card or subscription. Confirm the APN string with your mobile provider and verify that the preset entered the correct value.
+
+![APN presets list](/img/getting_started/getting_started/apn_settings_list.png)
 
 ## 9. Verify Connectivity
 
-To verify that you have set up your APN settings correctly, connect your phone 
-to the AutoPi hotspot and use your browser to visit any webpage. 
-If the page loads successfully, it means your device is online and has 
-started uploading data to the AutoPi Cloud.
+Verify both the cellular internet connection and the AutoPi Cloud connection:
 
-## 10. Finalization
+1. Keep your phone or computer connected to the AutoPi Wi-Fi hotspot.
+2. Open a browser and visit a public webpage.
+3. Confirm that the webpage loads. This verifies that the APN settings are correct and the device has internet access.
+4. Check the green status light on the CAN-FD Pro:
+   - A steady green light indicates that the device is connected to the AutoPi Cloud.
+   - A flashing green light indicates that the device has not yet connected to the AutoPi Cloud.
+5. Sign in to the [AutoPi Cloud](https://my.autopi.io/) and confirm that the device appears online.
 
-Your device is now online and connected to the AutoPi Cloud. After completing 
-the setup, it's important to change your device's WiFi password. 
-The default password is intended for one-time use only, and it is strongly 
-recommended to update it afterward. You can change the password through the 
-AutoPi Cloud by navigating to **Devices** > **Advanced Settings** > **Wi-Fi** > **Pass**. 
+:::tip If the device remains offline
+The first cellular connection may take a few minutes. If a webpage does not load or the device does not appear online, confirm the APN string and SIM PIN with your mobile provider. Then return to [Step 8](#8-configure-the-apn-in-local-administration), update the settings, and test the connection again.
+:::
 
-To prevent excessive data usage, it's advisable to avoid using the device’s 
-hotspot to connect your phone or tablet after the initial configuration is complete. 
+## 10. Finalize the Setup
 
-## 11. Set up Output Handlers 
+After verifying connectivity, replace the default Wi-Fi hotspot password:
 
-Your device can capture data, but you’ll need to choose where that data should be sent, also known as configuring an output handler. Currently, the AutoPi CAN-FD Pro supports output to an Amazon AWS S3 bucket. Setting this up is quick and straightforward, just follow the step-by-step guide here: [Amazon Web Services (AWS) S3 Bucket Creation](https://docs.autopi.io/getting_started/autopi_canfd_pro/set_up_AWS_S3_bucket/).
+1. In the AutoPi Cloud, open **Devices** and select your CAN-FD Pro.
+2. Go to **Advanced Settings** > **Wi-Fi**.
+3. Enter a secure password in the **Pass** field.
+4. Save and apply the change.
+5. Store the new password in a secure location.
+
+Your phone or computer may disconnect from the hotspot after the password changes. Use the new password if you need to connect again.
+
+To avoid unnecessary cellular data usage, disconnect phones, tablets, and computers from the AutoPi hotspot after completing the setup.
+
+## 11. Set Up Output Handlers
+
+Configure an output handler to choose where the CAN-FD Pro sends captured data. The device currently supports output to an Amazon S3 bucket. Follow [Amazon Web Services (AWS) S3 Bucket Creation](/getting_started/autopi_canfd_pro/set_up_AWS_S3_bucket/) to configure the destination.
 
 ## 12. Access Files Remotely on AutoPi
 
-You can also view and manage your captured data remotely from your AutoPi device. For detailed instructions on how to access your files using SFTP or SCP, check out this guide: [Accessing files via SFTP/SCP on AutoPi](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/). 
+You can view and manage captured data remotely by using SFTP or SCP. Follow [Accessing Files via SFTP/SCP on AutoPi](/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/) to configure access.
 
-**You Are All Set!**
+:::note
+Review the **sleep timer** settings and adjust them for your use case under **Advanced Settings** > **Power** > **Sleep Timer**. By default, the device enters sleep mode when it receives this event:
+`^vehicle/battery/(discharging|unknown)`.
 
-Congratulations! You've successfully set up your AutoPi device and connected it 
-to the AutoPi Cloud. Your device is now ready to start gathering and transmitting data,
-enabling you to take full advantage of the powerful features AutoPi offers. 
-Take your device for a trip to start gathering data.
+The device remains awake while any of these events are active:
+`^vehicle/battery/(charging_slow|charging|overcharging)`.
+:::
+
+### Setup Complete
+
+Your AutoPi CAN-FD Pro with IP67 casing is connected to the AutoPi Cloud and ready to capture and transmit data. Operate the vehicle or equipment to begin collecting data, then confirm that the configured output handler receives it.
 
 ---
 
-**What's Next?**
+## What's Next?
 
-Now that your device is up and running, here are a few suggestions to help you 
-get the most out of your AutoPi experience: 
-- **Read our User guide**: dive into the CAN-FD Pro device and all of its functionalities in our [User guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/). 
-- **Explore the AutoPi Cloud**: Dive into the [AutoPi Cloud platform](https://my.autopi.io/#/login) to explore all 
-  the features available to you, such as real-time vehicle monitoring, 
-  advanced analytics, and customizable alerts. 
-- **Check Out Our Documentation**: Our [documentation page](https://docs.autopi.io/) 
-  is a great resource for learning more about advanced features, troubleshooting, 
-  and getting the most out of your device. 
-- **Build your Nested Accounts and Invite New Users**: AutoPi Cloud uses a multi-tenant architecture, which means multiple accounts (tenants) share the same platform and infrastructure, while all data, configurations, and user access remain securely isolated. You can read more here: [Account management](https://docs.autopi.io/cloud/accounts/).
+Now that the device is running, you can:
+
+- **Learn about CAN-FD Pro features:** read the [CAN-FD Pro User Guide](/getting_started/autopi_canfd_pro/pro-user-guide/).
+- **Explore the AutoPi Cloud:** try real-time monitoring, analytics, and configurable alerts in the [AutoPi Cloud](https://my.autopi.io/).
+- **Read more documentation:** learn about advanced features and troubleshooting on the [AutoPi documentation site](https://docs.autopi.io/).
+- **Create nested accounts and invite users:** learn how AutoPi Cloud securely separates data, configurations, and access for multiple accounts in [Account Management](/cloud/accounts/).
+
+:::note CAN-FD Pro guide compatibility
+All guides written for the standard AutoPi CAN-FD Pro also apply to the version with the IP67 casing. You can follow the same CAN-FD Pro procedures unless a guide explicitly provides different hardware installation or casing instructions.
+:::
 
 ---
 
@@ -22898,43 +23000,43 @@ After making these adjustments, check the 'Change History' tab to confirm that y
 
 ## Welcome to AutoPi Setup
 
-This comprehensive guide will walk you through setting up your AutoPi Mini from account creation to full cloud connectivity. Your device arrives pre-assembled with the SIM card installed, requiring only a few essential steps to get operational.
+This guide walks you through setting up an AutoPi Mini, from creating an account to verifying cloud connectivity and configuring the device for an electric vehicle, if applicable. The device arrives pre-assembled with its SIM card installed.
 
-## What You'll Learn
+## Quickstart
 
-By following this guide, you will:
+Complete the steps in order:
 
-- Create and configure your AutoPi Cloud account.
-- Register your device on the platform.
-- Locate your vehicle's OBD port.
-- Physically install the device for optimal performance.
-- Connect the device to the AutoPi Cloud via Wi-Fi.
-- Configure your AutoPi Mini for Electric Vehicle compatibility (if applicable).
-- Complete security and finalization settings.
+1. [Create an AutoPi Cloud account](#1-set-up-your-user-account).
+2. [Register your device](#2-register-your-device).
+3. [Locate the vehicle's OBD-II port](#3-locate-obd-port).
+4. [Install and position the device](#4-install-the-device).
+5. [Verify cloud connectivity](#5-verify-cloud-connectivity).
+6. [Configure the Mini for an electric vehicle](#6-configure-the-mini-for-an-electric-vehicle), if applicable.
+7. [Confirm the setup](#7-confirm-the-setup).
 
-## Important Safety & Setup Requirements
+## Important Safety and Setup Requirements
 
 :::caution
 
-The AutoPi Telematics Unit is a technical device that interfaces directly with your vehicle's ECU. Before proceeding, please review these critical requirements:
+The AutoPi Mini connects directly to your vehicle's ECU. Follow these requirements before continuing:
 
-1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
-2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
-3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
-4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
-5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
+1. **Turn off the vehicle:** make sure the vehicle is completely powered off before connecting the device for the first time.
+2. **Park before making changes:** install or configure the device only while the vehicle is parked.
+3. **Keep the device connected while driving:** never disconnect the AutoPi Mini while the vehicle is moving.
+4. **Use the OBD-II power source:** power the device only through the OBD-II connector.
+5. **Change advanced settings carefully:** incorrect settings may affect vehicle data collection or battery life.
 
 :::
 
 ---
 
-## 1. Setting Up User Account
+## 1. Set Up Your User Account
 
-Once you have received your [AutoPi](https://www.autopi.io) device it is important to associate it with [Cloud](https://www.autopi.io/software-platform/cloud-management) Platform.
-Go to [my.autopi.io](https://my.autopi.io/) and click “Sign up”. In the pop-up, 
-add the e-mail address you want to associate with your account and create a password. 
-You can also expand the form to add additional details like your country and full name, 
-though this can be done later. Click “Create account”.
+1. Go to [my.autopi.io](https://my.autopi.io/).
+2. Select **Sign up**.
+3. Enter your email address and create a password.
+4. Optionally, expand the form and add your name and country. You can also add these details later.
+5. Select **Create account**.
 
 ![AutoPi sign up](/img/getting_started/getting_started/sign_up.png)
 
@@ -22964,9 +23066,7 @@ After clicking the “Register Device” button, the registration tab will appea
 - **Vehicle Information**: Optionally include the make, model and year of the vehicle.
 - **Vehicle Type**: Choose the type of vehicle (ICE, Battery [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), or Plug-in Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)).
 
-Once all information is entered, click the “Register Device”. Your newly registered device 
-will now appear in the list under “Vehicles” in the Fleet Management section and under 
-“Devices” in the Device Management section of the Platform.
+The Mini device should now appear under **Fleet Management** > **Vehicles** and **Device Management** > **Devices**.
 
 ## 3. Locate OBD Port
 
@@ -22975,73 +23075,91 @@ it is usually found underneath the dashboard and looks something like this:
 
   ![AutoPi.io - OBD port](/img/getting_started/getting_started/obd_location.jpg)
 
-Please note that the location of the OBD port varies from make and model but is
-typically found in one of the locations shown below:
+Its exact location depends on the vehicle's make and model. The following image shows common locations. If you cannot find the port, consult the vehicle owner's manual.
 
 ![AutoPi.io - OBD port location](/img/getting_started/getting_started/TMU_placement_dashboard_v1_finecut-01.jpg)
 
-## 4. Installation
+## 4. Install the Device
 
-When installing the [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini), make sure the device is positioned with the 
-logo facing upwards toward the sky. This is important because the GPS antenna is 
-inside the device, and if it's not facing up, you might not get a strong GPS signal.
+1. Make sure the vehicle is completely powered off.
+2. Connect the AutoPi Mini to the OBD-II port.
+3. Position the device with the **AutoPi logo facing upward toward the sky**. The GPS antenna is inside the device, and another orientation may weaken the GPS signal.
+4. Make sure the device cannot interfere with pedals, steering, or other vehicle controls.
 
-If the OBD port is in a difficult spot or gets in the way, you can buy an 
-[extension cable](https://shop.autopi.io/products/obd-ii-extension-cable)
-to place your [AutoPi](https://www.autopi.io) in a more convenient location. 
+If the OBD-II port is difficult to reach or leaves the Mini in an unsafe position, use an [OBD-II extension cable](https://shop.autopi.io/products/obd-ii-extension-cable) to move it to a suitable location.
 
-This is the OBD-II extension cable: 
+  
 
-![AutoPi.io - Relocator cable](/img/getting_started/getting_started/relocator_cable.png)
+:::tip Performance tips
+- Keep the AutoPi logo facing the sky.
+- Keep the device out of direct sunlight when possible. Excessive heat may reduce performance.
+- Do not cover the device with metal, because this can interfere with the internal GPS antenna.
+- Power the Mini only through the OBD-II connector.
+:::
 
----
+## 5. Verify Cloud Connectivity
 
-## Electric Vehicle configurations
+1. Turn on the vehicle to supply power to the AutoPi Mini.
+2. Allow a few minutes for the device to start and establish its cellular connection.
+3. Sign in to the [AutoPi Cloud](https://my.autopi.io/).
+4. Open **Devices**, select the Mini, and confirm that it appears online.
 
-If your [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) is connected to an Electric Vehicle we recommend to set some extra configurations for your device. Unlike internal combustion engine (ICE) vehicles, some EVs do not support automatic VIN detection, which can prevent the device from reading data properly. To resolve this, follow these steps to adjust the advanced settings for EV compatibility. 
+:::tip If the Mini remains offline
+The first cellular connection may take a few minutes. If the device does not appear online or does not report data, follow the [AutoPi Mini Data Troubleshooting](/getting_started/autopi_mini/mini-data-troubleshooting) guide to check its status LEDs and data configuration.
+:::
 
-![Mini advanced settings](/img/getting_started/autopi_mini/mini_advanced_settings.png)
+## 6. Configure the Mini for an Electric Vehicle
 
-Recommended advanced settings for Electric Vehicle:
+If the Mini is installed in an electric vehicle (EV), apply the following settings. Some EVs do not support automatic VIN detection or standard OBD-II behavior, which can prevent the device from collecting data correctly.
 
-**Configuration 1: Adjust OBD Feature, this setting ensures the device correctly communicates with your EV.**
+### Set the OBD Feature
 
-1. Go to: Advanced settings → Obd Settings → Obd Feature.
-2. Select: **Non-OBD Compliant**.
-3. Press: Save.
+This setting allows the Mini to communicate with vehicles that do not use standard OBD-II behavior.
 
-**Configuration 2: Manually enter your VIN (if not detected automatically).**
+1. Go to **Advanced Settings** > **OBD Settings** > **OBD Feature**.
+2. Select **Non-OBD Compliant**.
+3. Select **Save**.
 
-1. Go to: Advanced settings → Obd Vin Settings.
-2. Set Vin: enter your 17-character VIN (digits and capital letters).
-3. Pick Vin Source: select **Manual**.
-4. Press: Save.
+### Enter the VIN Manually
 
-**Configuration 3: Set Ignition detection for EVs to properly detect when your EV is on or off.**
-1. Go to: Advanced settings → System -> Ignition Settings.
-2. Select: **Accelerometer**.
-3. Press: Save.
+Complete this configuration even if the VIN was detected automatically.
 
-**Configuration 4: Set Movement source to be more precise when the vehicle is moving.**
-1. Go to: Advanced settings → System -> Movement Source.
-2. Select: **Accelerometer**.
-3. Press: Save.
+1. Go to **Advanced Settings** > **OBD VIN Settings**.
+2. Enter the 17-character VIN using digits and uppercase letters.
+3. Set **VIN Source** to **Manual**.
+4. Select **Save**.
 
-**Configuration 5: Set the Accelerometer Delay Settings to ensure rapid response for data reading but also a protection for quick state changes.**
-1. Go to: Advanced settings → System -> **Movement start delay**.
-2. Select: 5 to 12 seconds.
-3. Go to: Advanced settings -> System -> **Movement stop delay**.
-4. Select: 30 to 60 seeconds.
-3. Press: Save.
+### Configure Ignition Detection
 
-After making these adjustments, check the 'Change History' tab to confirm that your settings were applied successfully.
+1. Go to **Advanced Settings** > **System** > **Ignition Settings**.
+2. Select **Accelerometer**.
+3. Select **Save**.
 
-**You Are All Set!**
+### Configure Movement Detection
 
-Congratulations! You've successfully set up your [AutoPi](https://www.autopi.io) [Mini](https://www.autopi.io/hardware/autopi-mini) device and connected 
-it to the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management). Your device is now ready to start gathering and transmitting 
-data, enabling you to take full advantage of the powerful features [AutoPi](https://www.autopi.io) offers. 
-Take your device for a trip to start gathering data.
+1. Go to **Advanced Settings** > **System** > **Movement Source**.
+2. Select **Accelerometer**.
+3. Set **Movement start delay** to a value from **5 to 12 seconds**.
+4. Set **Movement stop delay** to a value from **30 to 60 seconds**.
+5. Select **Save**.
+
+After making these changes, open **Change History** and confirm that each setting was applied successfully.
+
+## 7. Confirm the Setup
+
+1. Confirm that the Mini appears online in the AutoPi Cloud.
+2. Take the vehicle for a drive to begin collecting trip and vehicle data.
+3. Return to the AutoPi Cloud and confirm that new data appears for the device.
+
+### Setup Complete
+
+Your AutoPi Mini is connected to the AutoPi Cloud and ready to collect and transmit vehicle data.
+
+## What's Next?
+
+- **Configure data collection:** follow [Create Mini Loggers](/getting_started/autopi_mini/create-mini-loggers) to customize the data collected from the vehicle.
+- **Troubleshoot missing data:** use [AutoPi Mini Data Troubleshooting](/getting_started/autopi_mini/mini-data-troubleshooting) if the device is online but data does not appear.
+- **Explore the AutoPi Cloud:** try real-time monitoring, analytics, and configurable alerts in the [AutoPi Cloud](https://my.autopi.io/).
 
 ---
 
@@ -23919,44 +24037,45 @@ For more detailed information on widgets, see [Link Your Loggers to Your Dashboa
 
 ## Welcome to AutoPi Setup
 
-This comprehensive guide will walk you through setting up your AutoPi TMU CM4 4G/LTE Edition from account creation to full cloud connectivity. Your device arrives ready to be installed, requiring only a few essential steps to get operational.
+This guide walks you through setting up an AutoPi TMU CM4 4G/LTE Edition, from creating an account to connecting the device to the AutoPi Cloud.
 
-## What You'll Learn
+## Quickstart
 
-By following this guide, you will:
+Complete the steps in order. If your device includes an AutoPi Cloud subscription and a pre-installed SIM card, you can skip the SIM installation and APN configuration steps.
 
 - Create and configure your [AutoPi Cloud account](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#1-setting-up-user-account). 
-- [Register](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#2-register-your-device) your device on the platform. 
+- [Register](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#2-register-your-device) your device on the AutoPi platform. 
 - Verify [SIM connectivity](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#3-ensure-sim-connectivity) (if required).
 - Locate and prepare your vehicle's [OBD port](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#4-locate-obd-port). 
 - Physically [install the device](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#5-installation) for optimal performance. 
-- Connect the device to the AutoPi Cloud via [Wi-Fi](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#6-connect-to-device-wifi-hotspot).
-- Configure [network settings](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#7-connect-to-local-administration) (APN) for 4G/LTE connectivity.
-- [Verify](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#8-verify-connectivity) your setup and [finalize](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#9-finalization) security settings.
+- [Connect to the device's Wi-Fi hotspot](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#6-connect-to-device-wifi-hotspot).
+- [Open Local Administration and configure the APN](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#7-connect-to-local-administration) (APN) for 4G/LTE connectivity.
+- [Verify the device's internet and cloud connectivity](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#8-verify-connectivity).
+- [Change the default Wi-Fi password and finalize the setup](https://docs.autopi.io/getting_started/autopi_tmu_cm4/#9-finalization).
 
-## Important Safety & Setup Requirements
+## Important Safety and Setup Requirements
 
 :::caution
 
-The AutoPi Telematics Unit is a technical device that interfaces directly with your vehicle's ECU. Before proceeding, please review these critical requirements:
+The AutoPi device connects directly to your vehicle's ECU. Follow these requirements before continuing:
 
-1. **Power Off the Vehicle**: Always ensure your vehicle is completely powered off before inserting the device for the first time.
-2. **Vehicle Position**: Work on and customize your device only when the vehicle is parked.
-3. **Do Not Remove While Driving**: Never disconnect the AutoPi while the vehicle is in operation.
-4. **Power Source**: The device can only be powered through the OBD-II port. Direct power to the Raspberry Pi is not supported and may cause damage.
-5. **Advanced Settings**: When modifying Advanced Settings, ensure you understand the implications, as changes may affect vehicle performance and battery life.
+1. **Turn off the vehicle:** make sure the vehicle is completely powered off before connecting the device for the first time.
+2. **Park before making changes:** install or configure the device only while the vehicle is parked.
+3. **Keep the device connected while driving:** never disconnect the AutoPi device while the vehicle is moving.
+4. **Use the OBD-II power source:** power the device only through the OBD-II connector. Powering the Raspberry Pi directly is not supported and may damage the device.
+5. **Change advanced settings carefully:** incorrect settings may affect vehicle performance or battery life.
 
 :::
 
 ---
 
-## 1. Setting Up User Account
+## 1. Set Up Your User Account
 
-Once you have received your AutoPi device it is important to associate it with Cloud Platform.
-Go to [my.autopi.io](https://my.autopi.io/) and click “Sign up”. In the pop-up, 
-add the e-mail address you want to associate with your account and create a password. 
-You can also expand the form to add additional details like your country and full name, 
-though this can be done later. Click “Create account”.
+1. Go to [my.autopi.io](https://my.autopi.io/).
+2. Select **Sign up**.
+3. Enter your email address and create a password.
+4. Optionally, expand the form and add your name and country. You can also add these details later.
+5. Select **Create account**.
 
 ![AutoPi sign up](/img/getting_started/getting_started/sign_up.png)
 
@@ -23981,47 +24100,35 @@ After clicking the “Register Device” button, the registration tab will appea
 
 ![Register Device](/img/getting_started/getting_started/register_new_device.png)
 
-- **Unit ID**: This is the number on the side of your device. You can also find it in the.
-    document attached in the email you received when the device was shipped. 
-- **Vehicle Information**: Optionally include the make, model and year of the vehicle.
-- **Vehicle Type**: Choose the type of vehicle (ICE, Battery [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini), or Plug-in Hybrid [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)).
+- **Unit ID:** find this number on the side of the device or in the document attached to your shipping email.
+- **Vehicle information:** optionally enter the vehicle's make, model, and year.
+- **Vehicle type:** select ICE, battery electric, hybrid electric, or plug-in hybrid electric.
 
-Once all information is entered, click the “Register Device”. Your newly registered device 
-will now appear in the list under “Vehicles” in the Fleet Management section and under 
-“Devices” in the Device Management section of the Platform.
+The device should now appear under **Fleet Management** > **Vehicles** and **Device Management** > **Devices**.
 
 ## 3. Ensure SIM Connectivity
 
 :::note
-If you have purchased the AutoPi TMU CM4 with monthly cloud subscription, 
-your SIM card is already assembled in the device, so you can skip this step. 
+If you purchased an AutoPi TMU CM4 with a monthly cloud subscription, the SIM card is already installed. Continue to Step 4.
 :::
 
-If you have purchased the hardware-only version, you will need to insert your SIM card 
-into your AutoPi before connecting the device to your vehicle. The AutoPi uses nano SIM sizes. 
-The location of the SIM card slot is shown in the picture below.  
+The hardware-only version requires a nano-SIM card that supports IPv4. Install the SIM card before connecting the AutoPi device to the vehicle:
 
-When inserting the SIM card, it’s important to ensure it is installed correctly. 
-The picture below shows the proper orientation of the SIM card. 
-Please note that the text side of the SIM card must face up and the “triangle” end point into the device. 
+1. Locate the SIM card slot shown below.
+2. Hold the SIM card with the printed side facing up and the angled end pointing into the device.
+3. Gently insert the card until it clicks into place. Do not force it.
 
 ![AutoPi.io - SIM card location](/img/getting_started/getting_started/sim_card.png)
 
 :::caution
-**Please notice:** When the SIM card is inserted correctly, you will hear a small "click" when the
-card is in position. Don't try do force the SIM out after the click as this will damage the device.
-Make sure the orientation is correct before inserting the SIM. Wrong orientation could potentially
-damage your device.
+Inserting the SIM card in the wrong orientation or forcing it into or out of the slot may damage the device. Confirm the orientation before insertion.
 :::
 
-:::caution
-**Please notice:** The SIM card needs to be compatible with ipv4, for the device to establish a 4g/LTE connection. 
-:::
+Recommended US-based SIM providers include:
 
-Here's a list of the US based SIM providers that we recommend to be used with the AutoPi:
 1. AT&T
 2. T-Mobile
-3. Any MVNO provider that is roaming the networks of the providers above
+3. An MVNO that uses either the AT&T or T-Mobile network
 
 ## 4. Locate OBD Port
 
@@ -24037,8 +24144,8 @@ locations shown below:
 
 ## 5. Installation
 
-When installing the AutoPi, always make sure that the device is positioned with 
-the logo facing upwards towards the sky. This orientation is crucial because the GPS antenna 
+When installing the AutoPi, always make sure that the **device is positioned with 
+the logo facing upwards towards the sky**. This orientation is crucial because the GPS antenna 
 is located within the device, and incorrect positioning may result in a weak GPS signal. 
 
 If the OBD port is in an inconvenient spot or gets in the way, 
@@ -24049,14 +24156,13 @@ on the side or underneath — just make sure the logo is still facing upwards.
 
 This is the OBD-II extension cable:
 
-![AutoPi.io - Relocator cable](/img/getting_started/getting_started/relocator_cable.png)
+  
 
 Velcro Strip:
 
-![AutoPi.io - Relocator cable](/img/getting_started/getting_started/velcro_strip.png)
+  
 
-**Tips on getting the best performance of your device**:
-
+:::tip **Tips on getting the best performance of your device**:
 - Make sure that the AutoPi logo is facing the sky.
 - Try to avoid installing the device in direct sun. Direct sun will heat up the device and,
   in the summertime, this can cause the CPU to throttle down, if the temperature gets too hot.  
@@ -24065,104 +24171,137 @@ Velcro Strip:
 - When powering the device, make sure you only power it through the OBD connector.
   The device cannot be powered through any of the other ports. 
 
-## 6. Connect to device WiFi hotspot
+:::
 
-After installing your AutoPi device into the OBD port, you will need to connect it to the AutoPi Cloud.
-To do this, you will temporarily use the device’s Wi-Fi hotspot. 
+## 6. Connect to the Device's Wi-Fi Hotspot
 
-The hotspot is named autopi-XXXX, where "XXXX" represents the unique ID of your device.
-The **password** for this Wi-Fi hotspot is the **first 13 characters of your Device ID**. 
-You can find your Device ID either by navigating to Devices > Select your device > Overview: Device specifications; or in the documentation attached to your shipping email. 
-Additionally, you can access Wi-Fi information directly from the AutoPi Cloud. 
-To do this, navigate to Devices > Select Your Device > Advanced Settings > Wi-Fi. 
-Here, you will find the Wi-Fi hotspot's password and SSID credentials. 
+After installing the AutoPi device, temporarily connect a phone or computer to its Wi-Fi hotspot. This connection allows you to access Local Administration and configure the device in the next step.
+
+### Find the Hotspot Credentials
+
+The default hotspot credentials are:
+
+- **Network name (SSID):** `autopi-XXXX`, where `XXXX` is the unique ID of your device.
+- **Password:** the first 13 characters of your Device ID.
+
+You can find the Device ID in either of these locations:
+
+- In the document attached to your shipping email.
+- In the AutoPi Cloud under **Devices** > **Select your device** > **Overview** > **Device specifications widget**.
+
+You can also view the hotspot name and password under **Devices** > **Select your device** > **Advanced Settings** > **Wi-Fi**.
 
 ![Advanced Settings - Wifi](/img/getting_started/getting_started/wifi_settings.png)
 
-When the device is powered on, a blue light will appear on the side, indicating 
-that it has power. When the device successfully connects to the AutoPi Cloud, 
-a green light will be visible. If the device is not connected, the light will be flashing. 
+### Connect to the Hotspot
 
-For a detailed description of the two status LEDs, please refer to the [full description](/core/power_management/#status-leds).
-
-## 7. Connect to Local Administration
+1. Turn on the vehicle to supply power to the AutoPi device.
+2. Wait for the blue status light to appear. This indicates that the device has power.
+3. Open the Wi-Fi settings on your phone or computer.
+4. Select the `autopi-XXXX` network.
+5. Enter the hotspot password.
+6. Confirm that your phone or computer is connected to the hotspot.
 
 :::note
-If you’ve purchased the AutoPi TMU CM4 with a monthly cloud subscription, your SIM card
-is pre-installed in the device, and no additional action is required for SIM connectivity. 
-The APN settings are already configured for you. Please be aware that the SIM card 
-has a monthly data cap, so it's recommended to limit the use of the device’s hotspot 
-for connecting your phone or notebook.
+Your phone or computer may report that the Wi-Fi network has no internet connection. Remain connected so you can access Local Administration in the next step.
+:::
+
+### Check the Status Lights
+
+- A **blue light** indicates that the device has power.
+- A **green light** indicates that the device is connected to the AutoPi Cloud.
+- A **flashing green light** indicates that the device has not yet connected to the AutoPi Cloud.
+
+For more information, see the [status LED descriptions](/core/power_management/#status-leds).
+
+## 7. Configure the APN in Local Administration
+
+:::note
+If your AutoPi TMU CM4 includes a monthly cloud subscription, its SIM card and APN are already configured. The APN string for the pre-installed SIM card is **nxt20.net**. You can skip the configuration steps below and continue to [Step 8](#8-verify-connectivity).
+
+The pre-installed SIM card has a monthly data limit. Avoid using the AutoPi hotspot for regular internet access from a phone or computer.
 :::
 
 :::note
-If you need to know the APN string for the pre-installed SIM card, it is **nxt20.net**. 
-:::
-
-:::note
-If you are using a **Verizon Wireless** SIM card, please follow the dedicated setup guide:
+If you use a **Verizon Wireless** SIM card, follow the dedicated setup guide:
 [Setting Up Your Device with Verizon Wireless](https://docs.autopi.io/developer_guides/setting-up-a-device-with-verizon-wireless/).
 :::
 
-If you are using your own SIM card, you may need to configure the APN settings after 
-connecting to the device’s Wi-Fi hotspot to ensure a seamless 4G/LTE connection. 
-However, setting up the APN is not always necessary—it depends on your SIM provider. 
-We suggest checking with your SIM provider directly or searching online for the correct APN settings. 
+If you installed your own SIM card, ask your mobile provider for the correct APN string before continuing. APN settings vary by provider, and an incorrect value will prevent the device from establishing a cellular connection.
 
-Here’s how you configure the APN settings: 
+### Open Local Administration
 
-1. Go to my.autopi.io. If you're already logged in, please log out. 
-2. On the login page, find the “Go Local” button at the bottom left side, 
-   or alternatively, go directly to local.autopi.io.
+Remain connected to the AutoPi Wi-Fi hotspot from Step 6, then:
+
+1. Go to [my.autopi.io](https://my.autopi.io/). If you are already signed in, sign out.
+2. Select **Login locally on your device** in the upper-right corner. Alternatively, go directly to [local.autopi.io](http://local.autopi.io/).
 
     
 
-This will connect you to the local device, and you should see a screen similar to 
-the one shown in the image below, indicating that you're connected locally.
-From here, you can log in without needing a username or password.
+3. Confirm that the page indicates you are connected to a local device as shown on the screenshot below: 
 
-![AutoPi.io - Localhost login](/img/getting_started/getting_started/local.jpg)
+  
+    
+  
 
-Once the information is saved, it will be applied to the device, and you should 
-see a notification when successfully saved. 
+4. Select **Login**. A username and password are not required for local access.
 
-### 4G/LTE Settings
+### Configure the 4G/LTE Settings
+
+1. Open the **4G/LTE** tab.
+2. In the **APN String** field, replace the existing APN string with the value provided by your mobile provider.
+3. If the SIM card has a PIN, enter it in the **SIM PIN** field. Otherwise, leave this field empty.
+4. Keep **MTU** set to its default value of **1280**.
+5. Select **Save and apply**.
+6. Wait for the success notification before leaving the page.
+7. Continue to Step 8 to verify the connection.
+
 ![AutoPi.io - Settings Page](/img/getting_started/getting_started/apn_settings.png)
 
-### APN Presets List
+#### Optional: Use an APN Preset
+
+You can select a provider from **APN Presets** at the top of the **4G/LTE** tab. Presets are provided for convenience, but they are not guaranteed to work for every SIM card or subscription. Confirm the APN string with your mobile provider and verify that the preset entered the correct value.
+
 ![AutoPi.io - Settings Page](/img/getting_started/getting_started/apn_settings_list.png) 
 
 ## 8. Verify Connectivity
 
-To verify that you have set up your APN settings correctly, connect your phone 
-to the AutoPi hotspot and use your browser to visit any webpage. 
-If the page loads successfully, it means your device is online and has 
-started uploading data to the AutoPi Cloud.
+Verify both the cellular internet connection and the AutoPi Cloud connection:
 
-## 9. Finalization
+1. Keep your phone or computer connected to the AutoPi Wi-Fi hotspot.
+2. Open a browser and visit a public webpage.
+3. Confirm that the webpage loads. This verifies that the APN settings are correct and the device has internet access.
+4. Check the green status light on the AutoPi device:
+  - A steady green light indicates that the device is connected to the AutoPi Cloud.
+  - A flashing green light indicates that the device has not yet connected to the AutoPi Cloud.
+5. Sign in to the [AutoPi Cloud](https://my.autopi.io/) and confirm that the device appears online.
 
-Your device is now online and connected to the AutoPi Cloud. After completing 
-the setup, it's important to change your device's WiFi password. 
-The default password is intended for one-time use only, and it is strongly 
-recommended to update it afterward. You can change the password through the 
-AutoPi Cloud by navigating to **Devices** > **Advanced Settings** > **Wi-Fi** > **Pass**. 
+:::tip If the device remains offline
+The first cellular connection may take a few minutes. If a webpage does not load or the device does not appear online, confirm the APN string and SIM PIN with your mobile provider. Then return to [Step 7](#7-configure-the-apn-in-local-administration), update the settings, and test the connection again.
+:::
 
-To prevent excessive data usage, it's advisable to avoid using the device’s 
-hotspot to connect your phone or tablet after the initial configuration is complete. 
+## 9. Finalize the Setup
 
-**You Are All Set!**
+After verifying connectivity, replace the default Wi-Fi hotspot password:
 
-Congratulations! You've successfully set up your AutoPi device and connected it 
-to the AutoPi Cloud. Your device is now ready to start gathering and transmitting data,
-enabling you to take full advantage of the powerful features AutoPi offers. 
-Take your device for a trip to start gathering data.
+1. In the AutoPi Cloud, open **Device**.
+2. Go to **Advanced Settings** > **Wi-Fi**.
+3. Enter a secure password in the **Pass** field.
+4. Save and apply the change.
+5. Store the new password in a secure location.
+
+Your phone or computer may disconnect from the hotspot after the password changes. Use the new password if you need to connect again.
+
+To avoid unnecessary cellular data usage, disconnect phones, tablets, and computers from the AutoPi hotspot after completing the setup.
+
+### Setup Complete
+
+Your AutoPi device is now connected to the AutoPi Cloud and ready to collect and transmit vehicle data. Take the vehicle for a drive to begin gathering trip data.
 
 :::note
-If you are getting started with you DiY Edition please refer to this guide 
-[Setup Your TMU DIY Edition](/hardware/legacy_devices/autopi_dongle_gen3/setup_your_tmu_diy_edition.md).
+For a TMU DIY Edition, see [Set Up Your TMU DIY Edition](/hardware/legacy_devices/autopi_dongle_gen3/setup_your_tmu_diy_edition.md).
 
-For older, Generation 2 devices, you can find the relevant guide here
-[Setup Your Gen 2 Edition](/hardware/legacy_devices/autopi_dongle/setup_your_gen_2_diy_edition.md).
+For an older Generation 2 device, see [Set Up Your Gen 2 Edition](/hardware/legacy_devices/autopi_dongle/setup_your_gen_2_diy_edition.md).
 :::
 
 ---
@@ -24170,10 +24309,10 @@ For older, Generation 2 devices, you can find the relevant guide here
 
 Now that your device is up and running, here are a few suggestions to help you 
 get the most out of your AutoPi experience: 
-- **Explore the AutoPi Cloud**: Dive into the AutoPi Cloud platform to explore all 
+- **Explore the AutoPi Cloud**: dive into the AutoPi Cloud platform to explore all 
   the features available to you, such as real-time vehicle monitoring, 
   advanced analytics, and customizable alerts. 
-- **Check Out Our Documentation**: Our [documentation page](https://docs.autopi.io/) 
+- **Check Out Our Documentation**: our [documentation page](https://docs.autopi.io/) 
   is a great resource for learning more about advanced features, troubleshooting, 
   and getting the most out of your device. 
 - **Build your Nested Accounts and Invite New Users**: AutoPi Cloud uses a multi-tenant architecture, which means multiple accounts (tenants) share the same platform and infrastructure, while all data, configurations, and user access remain securely isolated. You can read more here: [Account management](https://docs.autopi.io/cloud/accounts/).
@@ -26234,7 +26373,7 @@ Check out the table below for an easy breakdown of everything inside the [AutoPi
 :::tip
 Our [AutoPi](https://www.autopi.io/) [CAN-FD Pro](https://shop.autopi.io/products/autopi-can-fd-pro) is built for performance and flexibility.
 * **4-in-1 External Antenna**: Included with every device — supports 2x 4G/LTE, 1x GPS, and 1x WiFi/BLE for top-notch connectivity.
-* **[Tailscale Add-on Pre-Installed](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)**: Our latest feature makes remote access faster and more secure than ever. Troubleshooting on the go? No problem — you’ll be connected in no time.
+* **[Tailscale Add-on Pre-Installed](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/)**: Our latest feature makes remote access faster and more secure than ever. Troubleshooting on the go? No problem — you’ll be connected in no time.
 :::
 
 ### 4-in-1 preinstalled antenna kit
@@ -26256,7 +26395,7 @@ The 4in1 Antenna Kit is a high-performance solution designed to optimize connect
 The AutoPi CAN-FD Pro is our most powerful device to date, purpose-built for full-speed automotive data logging across dual CAN-FD channels. It ships with 32 GB of onboard storage — expandable via USB flash drive — and features a built-in 4G/LTE modem for secure, reliable data transmission to your cloud solution. The device is powered by the Raspberry Pi Compute Module.
 
 ### Quick Links 
-[Getting started](https://docs.autopi.io/getting_started/autopi_canfd_pro/) | [User Guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/) | [Device Dimensions](https://docs.autopi.io/hardware/autopi_canfd_pro/device_dimensions/) | [Specifications](https://docs.autopi.io/hardware/autopi_canfd_pro/device_specifications/) | [State of a Device](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-led-and-button/) | [OBD Connector Pinout](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-obd-connector-pinout/) | [Use Tailscale for Remote Access](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/) | [Access Files](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/) | [Data Troubleshooting](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-data-troubleshooting/) | [4G Troubleshooting](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-4g-internet-setup-troubleshooting/)
+[Getting started](https://docs.autopi.io/getting_started/autopi_canfd_pro/) | [User Guide](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-user-guide/) | [Device Dimensions](https://docs.autopi.io/hardware/autopi_canfd_pro/device_dimensions/) | [Specifications](https://docs.autopi.io/hardware/autopi_canfd_pro/device_specifications/) | [State of a Device](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-led-and-button/) | [OBD Connector Pinout](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-obd-connector-pinout/) | [Use Tailscale for Remote Access](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/) | [Access Files](https://docs.autopi.io/getting_started/autopi_canfd_pro/accessing-files-via-sftp-on-autopi/) | [Data Troubleshooting](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-data-troubleshooting/) | [4G Troubleshooting](https://docs.autopi.io/getting_started/autopi_canfd_pro/pro-4g-internet-setup-troubleshooting/)
 
 ### Key Benefits
 
@@ -28545,9 +28684,9 @@ Want to dig right into the source code? Get full access here:
 ### Developer Guides (Advanced)
 
 - **Advanced diagnostics (DoIP):** Use the [DoIP hat](https://shop.autopi.io/products/doip-hat-v1-3) to expand diagnostic and maintenance capabilities. Start here: [How to set up DoIP](https://docs.autopi.io/developer_guides/setting-up-doip/)
-- **Remote access:** Connect directly with [SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) or use [Tailscale](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)
+- **Remote access:** Connect directly with [SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) or use [Tailscale](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/)
 - **Containerized workloads:** Run services on-device with [Setting up Docker on your device](https://docs.autopi.io/developer_guides/setting-up-docker/)
-- **Development setup:** Follow the [Local development workflow](https://docs.autopi.io/developer_guides/local-development-workflow/), power safely with an [external power supply](https://docs.autopi.io/developer_guides/using-the-autopi-with-an-external-power-supply/), and use the [AutoPi Local API overview](https://docs.autopi.io/developer_guides/local-api-overview/)
+- **Development setup:** Follow the [Local development workflow](https://docs.autopi.io/developer_guides/local-development-workflow/), power safely with an [external power supply](https://docs.autopi.io/developer_guides/using-the-autopi-with-an-external-power-supply/), and use the [AutoPi Local API overview](https://docs.autopi.io/getting_started/api/local-api-overview/)
 - **Data routing and broker integration:** Send data to your own infrastructure with [Configuring MQTT](https://docs.autopi.io/developer_guides/configuring-mqtt/)
 - **Power and wake control:** Access sleeping devices remotely with [Remotely waking up your device](https://docs.autopi.io/developer_guides/remotely-waking-up-your-device/)
 - **Troubleshooting and recovery:** Collect diagnostics with [AutoPi Logs](https://docs.autopi.io/developer_guides/autopi-logs/) and recover devices with [Reflashing your device](https://docs.autopi.io/developer_guides/reflashing-your-device/)

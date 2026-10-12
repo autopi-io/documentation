@@ -27,7 +27,7 @@ For more details on LED status meanings, refer to this guide: [LED and button st
 Run the `logger.status` command on the device to see the status of data logger(s).
 
 1. If the device is connected to the Internet it can be done through the cloud terminal on [AutoPi cloud](https://my.autopi.io/).
-2. Or alternatively if you have direct SSH access [How to SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) to the device via LAN or VPN (for Tailscale, you can read more at this guide: [How to connect to Tailscale](https://docs.autopi.io/getting_started/autopi_canfd_pro/how_to_connect_to_tailscale/)) you can use the `autopi` terminal command.
+2. Or alternatively if you have direct SSH access [How to SSH to your device](https://docs.autopi.io/developer_guides/how-to-ssh-to-your-device/) to the device via LAN or VPN (for Tailscale, you can read more at this guide: [How to connect to Tailscale](https://docs.autopi.io/developer_guides/how_to_connect_to_tailscale/)) you can use the `autopi` terminal command.
 3. Or if you are nearby the device and can connect to it's local WiFi hotspot you can do it from the local admin UI on local.autopi.io. Here is a guide: [Local development workflow](https://docs.autopi.io/developer_guides/local-development-workflow/). 
 
 Regardless of which of the above methods you use, you must run the command: 
