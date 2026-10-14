@@ -273,7 +273,7 @@ Permissions define what actions a user can perform. Users are assigned to permis
 
 **5. Fleet Management** - access to the Fleet Management section of the cloud including Overview; Vehicles - Vehicles List,Geofences, Groups; Locations; Reports; Users; Diagnostics; Alerts and Configurations - Dashboards, Fault Codes, Notification Channels, States. This permission is best for fleet managers that needs full access to their fleet. 
 
-**6. Access Control Management** - access to the RFID token history. This feature is an add-on and therefore if you are interested in using this, you can contact us at sales@autopi.io .
+**6. Access Control Management** - provides access to the **Access Control** tab under **Fleet Management**, where users can review RFID token history. 
 
 ### Assign Locations to Users
 ![Assigning locations to users](/img/cloud/accounts/create_new_user_location_access.png)
@@ -5604,7 +5604,7 @@ Before using Access Control:
 3. [Assign each driver to the vehicles they are authorized to use](#assign-drivers-to-vehicles).
 
 :::note
-If Access Control or RFID settings are not available for your account, contact [support@autopi.io](mailto:support@autopi.io). These features can be enabled at no additional cost.
+To see the **Access Control** tab, your user account must have the `Access Control Management` permission. You can read more here: [Permission Groups](https://docs.autopi.io/cloud/accounts/#modifying-user-permissions).
 :::
 
 ---
@@ -8076,48 +8076,107 @@ the following are the valid input parameter:
 
 ---
 
-[CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals play a crucial role in vehicle communication, differing from PIDs in their use and structure. While PIDs (Parameter IDs) are standardized codes used across different vehicles for obtaining specific data points (like engine RPM, temperature), [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) (Controller Area Network) signals are more direct, low-level messages that devices within the vehicle use to communicate with each other. Understanding these differences is key to effectively logging and analyzing vehicle data.
+Use a CAN signal logger to passively capture specific raw CAN messages and send them to the AutoPi Cloud. Unlike a PID logger, a CAN signal logger does not send requests on the CAN bus.
 
-**Step 1: Start with a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Signal**
+This guide explains how to define a CAN message and signal, create the logger, modify its generated worker to preserve raw data, and synchronize the configuration with your device.
 
-Before you can log anything, you need a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal to monitor. [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals are not standardized like PIDs, meaning they can vary significantly between different vehicle makes and models. To create a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal, you must first identify the signal's properties, including its ID, format, and the data it carries.
+## Before You Begin
 
-Identification and Documentation: Use vehicle documentation or tools to identify the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal. This may involve using a DBC file or capturing and analyzing traffic on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) network to find the signals relevant to your needs.
+Make sure that:
 
-Creation: Once identified, you can create a representation of this signal in [CAN Signals](/cloud/obd-ii/#can-messages-and-can-signals)
+- You know the header and expected payload length of the CAN message you want to capture.
+- Your device is assigned to a vehicle with a vehicle bus configured.
+- The configured vehicle bus matches the bus on which the CAN message is transmitted.
 
-**Step 2: Navigate to Your Device's Logger Section**
+If you need help configuring the CAN bus, follow [Step 1: Setting Up CAN Bus Protocol](https://docs.autopi.io/getting_started/autopi_tmu_cm4/create-loggers-cm4/#step-1-setting-up-can-bus-protocol).
 
-With your [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal defined, the next step involves setting up the environment to log this signal.
-- Access: Log into your device's management interface and navigate to the 'Loggers' section.
-![Loggers overview](/img/cloud/obd_ii/create_can_signal_loggers/logger_overview.png)
+## Step 1: Create a CAN Message and Signal
 
-  
-- New Logger: Look for an option to create a new logger.
-![Logger overview create](/img/cloud/obd_ii/create_can_signal_loggers/logger_overview_create.png)
+First, create a CAN message that defines the header the device should listen for.
 
-**Step 3: Configure the Logger**
+1. In the AutoPi Cloud, go to **OBD Library > My Library**.
+2. Select **Create > CAN**.
+3. Complete the CAN message fields:
 
-The creation of a logger involves specifying which signals to log and other parameters:
+	- **Name**: enter a descriptive, user-readable name.
+    - **Description**: enter the description of the CAN message. 
+	- **Header**: enter the header of the CAN message you want to capture.
+	- **Bytes**: enter the expected payload length, which is the number of data bytes after the header.
+	- **Sender**: select the ECU that sends the message. If the sender is unknown, use `vector_XXX` as a placeholder.
 
-- Signal Selection: In the modal window that appears upon choosing to create a new logger, select the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal you created earlier from the dropdown menu.
+    
 
-- Bus Selection: Specify the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus on which your signal is present. Vehicles often have multiple [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) buses for different systems (e.g., powertrain, chassis). Ensure you select the correct one for your signal.
+4. Add a CAN signal to the message. The signal does not need to represent meaningful decoded data. It is required so that the CAN message is valid and can be used to create a logger.
 
-- Name Override: You can specify a different name for your logger here, otherwise its name remains the same as the Signals.
-![Create logger](/img/cloud/obd_ii/create_can_signal_loggers/create_can_logger.png)
+    
 
-**Step 4: Create the Logger**
+5. At the bottom of the dialog, select the vehicle bus configured for your device.
+6. Save the CAN message and signal.
 
-Finally, you're ready to create the logger:
+:::note
+If the correct vehicle bus is not available, configure it for the vehicle before continuing. The logger will only list messages associated with the selected vehicle bus. If you need help configuring the CAN bus, follow [Step 1: Setting Up CAN Bus Protocol](https://docs.autopi.io/getting_started/autopi_tmu_cm4/create-loggers-cm4/#step-1-setting-up-can-bus-protocol).
+:::
 
-Finalize: Review your selections to ensure everything is correct, then click the "Create" button to finalize the creation of your [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal logger.
+## Step 2: Create a CAN Signal Logger
 
-Confirmation: You should receive a confirmation that your logger has been created successfully. Congratulations, you've set up a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal logger!
+AutoPi devices use OBD filters to determine which messages are accepted and which are dropped. Creating a CAN signal logger adds the selected message to these filters.
 
-Congratulations! You have now created a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal logger.
+The logger is passive and does not transmit anything on the CAN bus. Although CAN signal loggers normally convert raw messages into human-readable values, Step 3 removes that conversion so the raw messages are retained.
 
-This process allows you to monitor and record data from specific [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals on your vehicle, providing valuable insights into its operation. Unlike working with PIDs, which often require working through a vehicle's OBD-II interface and are limited to predefined parameters, logging [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals gives you access to a broader range of data directly from the vehicle's internal networks. This approach can unveil more detailed information and support advanced diagnostics and customization projects.
+1. Go to **Device > Loggers**.
+2. Select **+ Create > CAN**.
+
+    
+
+3. Open the **Signal** dropdown, and select the CAN signal created in Step 1.
+4. Select the CAN bus on which the message is transmitted.
+5. Optionally, enter a different name for the logger. Otherwise, it uses the signal name.
+6. Save the logger.
+
+If the signal does not appear in the dropdown, confirm that the CAN message is associated with the same vehicle bus as your device.
+
+## Step 3: Modify the Default `can_logger`
+
+When you add the CAN signal logger in Step 2, a default `can_logger` worker is created. You must modify this worker to return raw CAN messages.
+
+1. Go to **Device > Services**, and locate `obd_manager`.
+2. Check the **Custom** column before opening the service.
+
+    :::warning
+    If `obd_manager` is marked as custom, deleting it also removes any existing custom changes to that service. Record any changes you need to preserve before selecting the trash icon. Deleting the custom version restores the default `obd_manager` service.
+    :::
+
+3. Open the default `obd_manager` service.
+4. In the **Workers** section, open `can_logger`.
+5. Modify the worker as follows:
+
+    
+
+    - Clear the **Converter** field. It is set to `can` by default; select the **x** in the dropdown to remove it.
+    - Remove the `rpm_engine_event` trigger because it is not needed for this workflow.
+    - To receive repeated messages, remove the `alternating_readout` filter. When enabled, this filter omits consecutive messages with the same value.
+
+6. Save the worker.
+
+<!-- Add a screenshot of the modified can_logger worker here. -->
+
+## Step 4: Sync the Changes to the Device
+
+Synchronize the configuration with your device. After synchronization, the device will capture matching messages from the CAN bus and send them to the AutoPi Cloud.
+
+:::note
+Raw CAN messages are sent as strings, while the AutoPi Cloud storage layer typically expects integers or floating-point values. Contact AutoPi Support after completing the setup so that your data storage configuration can be verified.
+:::
+
+### Test the Logger
+
+You can test the setup by running a command that simulates the `can_logger` workflow:
+
+```shell
+obd.manage run handler='monitor' kwargs='{"filtering": "can"}'
+```
+
+The command returns the CAN messages accepted by the configured filters. For optional arguments, such as the monitoring duration or maximum message count, refer to the [`obd.monitor` command documentation](https://docs.autopi.io/core/commands/core-commands-obd/#obdmonitor).
 
 ---
 
@@ -22345,6 +22404,27 @@ In the Trip Event section:
 
 These settings allow you to control exactly when a trip is considered active, ensuring that CAN data logging starts and stops at the appropriate times.
 
+### Advanced settings for Accelerometer
+
+The accelerometer settings are available for both AutoPi CAN-FD Pro and AutoPi TMU CM4 devices.
+Use them to configure accelerometer and gyroscope measurements and fine-tune motion events.
+
+![Advanced settings for Accelerometer](/img/getting_started/autopi_canfd_pro/user_guide/advanced_accelerometer.png)
+
+:::tip
+To log accelerometer data more frequently, increase the accelerometer **Sampling Rate**. A higher
+sampling rate produces more data and can affect system performance, so increase it only as needed.
+:::
+
+You can also adjust:
+
+* Accelerometer settings, including its sampling rate and measurement range.
+* Gyroscope settings, including its sampling rate and measurement range.
+* Motion Events settings, including shake and jolt thresholds, detection durations, and the
+  delay between events.
+
+For descriptions and default values for each option, see [Accelerometer Advanced Settings](/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-accelerometer/).
+
 ---
 
 ## Getting started(3)
@@ -23011,7 +23091,7 @@ Complete the steps in order:
 3. [Locate the vehicle's OBD-II port](#3-locate-obd-port).
 4. [Install and position the device](#4-install-the-device).
 5. [Verify cloud connectivity](#5-verify-cloud-connectivity).
-6. [Configure the Mini for an electric vehicle](#6-configure-the-mini-for-an-electric-vehicle), if applicable.
+6. **Optional for electric vehicles only:** [Configure the Mini for an electric vehicle](#6-optional-configure-the-mini-for-an-electric-vehicle). If you do not have an electric vehicle, skip this step.
 7. [Confirm the setup](#7-confirm-the-setup).
 
 ## Important Safety and Setup Requirements
@@ -23108,9 +23188,11 @@ If the OBD-II port is difficult to reach or leaves the Mini in an unsafe positio
 The first cellular connection may take a few minutes. If the device does not appear online or does not report data, follow the [AutoPi Mini Data Troubleshooting](/getting_started/autopi_mini/mini-data-troubleshooting) guide to check its status LEDs and data configuration.
 :::
 
-## 6. Configure the Mini for an Electric Vehicle
+## 6. Optional: Configure the Mini for an Electric Vehicle
 
-If the Mini is installed in an electric vehicle (EV), apply the following settings. Some EVs do not support automatic VIN detection or standard OBD-II behavior, which can prevent the device from collecting data correctly.
+Complete this step only if the Mini is installed in an electric vehicle (EV). For any other vehicle type, skip to [Step 7: Confirm the Setup](#7-confirm-the-setup).
+
+Some EVs do not support automatic VIN detection or standard OBD-II behavior, which can prevent the device from collecting data correctly. For more information, see [Electric Vehicle Setup](https://docs.autopi.io/getting_started/electric_vehicles/).
 
 ### Set the OBD Feature
 
@@ -24323,17 +24405,250 @@ get the most out of your AutoPi experience:
 
 ---
 
-[AutoPi](https://www.autopi.io) supports a wide range of electric vehicles ([Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)s) by providing advanced telematics and
-data analysis capabilities that enhance the functionality and management of [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)s. The
-supported library of [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)s can be found here: [supported EVs](https://www.autopi.io/electric-vehicles/).
+This guide explains how to configure an AutoPi device for an electric vehicle. The required settings depend on the AutoPi device edition and the data interfaces available in the vehicle.
 
-Getting started with AutpPi devices on [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)s follow the same setup as Internal combustion engine vehicles.
-Please follow the guides below to get started:
+The [supported electric vehicle table](https://www.autopi.io/hardware/autopi-mini/) applies only to the **AutoPi Mini**. The AutoPi TMU CM4 and AutoPi CAN-FD Pro also support electric vehicles, but they require vehicle-specific logger or CAN bus configurations and do not have published compatibility tables.
 
-- [AutoPi](https://www.autopi.io) TMU CM4: [getting started guide](/getting_started/autopi_tmu_cm4/index.md).
-- [AutoPi](https://www.autopi.io) mini: [getting started guide](/getting_started/autopi_mini/index.md).
+	
 
-![Electric vehicle graphic](/img/getting_started/electric_vehicles/intro/electric_vehicle_graphic.png)
+## Choose Your Device Edition
+
+| Device edition | Recommended use | Electric vehicle configuration path |
+| --- | --- | --- |
+| **AutoPi Mini** | Standard telematics and data collection through the vehicle's OBD-II connector | Configure the Mini's OBD behavior, VIN, ignition detection, and movement detection in **Advanced Settings**. |
+| **AutoPi TMU CM4** | Custom OBD-II or CAN data collection with configurable loggers | Complete the standard TMU CM4 installation, then create loggers for the signals supported by the vehicle. |
+| **AutoPi CAN-FD Pro** | High-speed raw or decoded logging from one or two CAN/CAN-FD buses | Configure the CAN channels, bitrate, logger, decoder, and output for the vehicle. |
+
+:::caution
+
+Install the device only while the vehicle is parked and powered off. Change its configuration only while the vehicle is parked, and never disconnect it while driving. Incorrect CAN parameters or active diagnostic requests can trigger vehicle warnings or interfere with CAN bus communication.
+
+:::
+
+## Before You Begin
+
+1. Identify your AutoPi device edition: Mini, TMU CM4, or CAN-FD Pro.
+2. If you use an AutoPi Mini, confirm that the vehicle and model year appear in the [Mini supported electric vehicle table](https://www.autopi.io/hardware/autopi-mini/).
+3. Create an [AutoPi Cloud](https://my.autopi.io/) account and register the device.
+4. Record the vehicle's 17-character VIN.
+5. Complete the installation and connectivity steps in the getting started guide for your device edition.
+
+---
+
+## AutoPi Mini
+
+Complete the [AutoPi Mini getting started guide](/getting_started/autopi_mini/) before continuing. When the Mini is online, apply the electric vehicle settings below.
+
+Confirm compatibility and available data for your vehicle and model year in the [Mini supported electric vehicle table](https://www.autopi.io/hardware/autopi-mini/). Support can vary by model year, trim, region, and battery or powertrain configuration.
+
+Some electric vehicles do not support automatic VIN detection or standard OBD-II behavior. Without the following settings, the Mini may not identify the vehicle or collect trip and vehicle data correctly.
+
+### Set the OBD Feature
+
+This setting allows the Mini to communicate with vehicles that do not use standard OBD-II behavior.
+
+1. Go to **Advanced Settings** > **OBD Settings** > **OBD Feature**.
+2. Select **Non-OBD Compliant**.
+3. Select **Save**.
+
+### Enter the VIN Manually
+
+Enter the VIN manually even if the device detected it automatically.
+
+1. Go to **Advanced Settings** > **OBD VIN Settings**.
+2. Enter the 17-character VIN using digits and uppercase letters.
+3. Set **VIN Source** to **Manual**.
+4. Select **Save**.
+
+### Configure Ignition Detection
+
+1. Go to **Advanced Settings** > **System** > **Ignition Settings**.
+2. Select **Accelerometer**.
+3. Select **Save**.
+
+### Configure Movement Detection
+
+1. Go to **Advanced Settings** > **System** > **Movement Source**.
+2. Select **Accelerometer**.
+3. Set **Movement start delay** to a value from **5 to 12 seconds**.
+4. Set **Movement stop delay** to a value from **30 to 60 seconds**.
+5. Select **Save**.
+
+After saving these changes, open **Change History** and confirm that each setting was applied successfully. Take a short test drive, then confirm that a new trip and the expected vehicle data appear in the AutoPi Cloud.
+
+---
+
+## AutoPi TMU CM4
+
+The TMU CM4 supports electric vehicles through configurable power, tracking, trip, and logger settings. The Mini supported electric vehicle table does not apply to this device. Configure the settings below so the TMU CM4 responds to battery and movement events instead of engine events.
+
+1. Complete the [AutoPi TMU CM4 getting started guide](/getting_started/autopi_tmu_cm4/).
+2. Confirm that the device is online in the AutoPi Cloud.
+
+To configure the device's power cycles correctly, follow the
+[Power Cycles guide](/getting_started/electric_vehicles/power-cycle-for-electric-vehicles/).
+
+### Configure the Sleep Timer
+
+The event-driven sleep timer determines which vehicle events start the timer that allows the device to enter sleep mode.
+
+1. Go to **Advanced Settings** > **Power** > **Sleep Timer** > **Event Driven**.
+2. Set **Event Regex** to `^vehicle/battery/(charging_slow|discharging)`.
+3. Set **Reason** to `battery_discharging`.
+4. Select **Save**.
+
+### Configure Sleep Timer Suppression
+
+Sleep timer suppression defines which events clear active sleep timers and prevent new ones from being enabled. This configuration keeps the device awake while the vehicle is moving or charging.
+
+1. Go to **Advanced Settings** > **Power** > **Sleep Timer** > **Suppress**.
+2. Set **Event Regex** to `^vehicle/(motion/(shaking|jolting)|battery/(charging|overcharging))`.
+3. Select **Save**.
+
+### Configure the Last Driven Source
+
+This setting determines which event source updates the vehicle's **Last Driven** timestamp in the AutoPi Cloud.
+
+1. Go to **Advanced Settings** > **Tracking** > **Last Driven**.
+2. Set **Source** to **Battery charging** or **Accelerometer motion**, depending on which source most reliably represents vehicle use.
+3. Select **Save**.
+
+### Configure Trip Events
+
+Use both GNSS and accelerometer movement to determine when a trip starts and stops.
+
+1. Go to **Advanced Settings** > **Vehicle** > **Trip Event**.
+2. Under **Sources**, select **GNSS movement** and **Accelerometer motion**.
+3. Open **Transition to Start** and set **Match Count** to `0`. With this value, all selected sources must agree before a trip starts.
+4. Open **Transition to Stop** and set **Match Count** to `1`. With this value, either selected source can stop the trip.
+5. Select **Save**.
+
+### Configure Electric Vehicle Data Collection
+
+Available signals and query details vary by vehicle. Use parameters from the vehicle manufacturer or your integration specification. Do not assume that standard OBD-II PIDs for internal combustion engine vehicles are available.
+
+1. Obtain the required signal, PID, or CAN parameters for the vehicle.
+2. Follow [Create Loggers for AutoPi TMU CM4](/getting_started/autopi_tmu_cm4/create-loggers-cm4) to configure the required data queries and collection interval.
+3. Apply the changes and confirm their status in **Change History**.
+4. Take a short test drive.
+5. Confirm that the device generates the expected trip start and stop events, updates **Last Driven**, and returns plausible values at the configured interval.
+
+:::note
+
+Do not copy parameters from another vehicle solely because it uses the same connector. CAN identifiers, diagnostic sessions, formulas, and security requirements can vary between manufacturers, models, and model years.
+
+:::
+
+---
+
+## AutoPi CAN-FD Pro
+
+The CAN-FD Pro supports electric vehicles by recording traffic directly from up to two CAN or CAN-FD channels. The Mini supported electric vehicle table does not apply to this device. Configure the channel connected to the vehicle bus, then create a logger and choose where to store or transfer the captured data.
+
+Complete the [AutoPi CAN-FD Pro getting started guide](/getting_started/autopi_canfd_pro/), including the external antenna and connectivity steps, before continuing. When the device is online, apply the electric vehicle settings below.
+
+To configure the device's power cycles correctly, follow the
+[Power Cycles guide](/getting_started/electric_vehicles/power-cycle-for-electric-vehicles/).
+
+### Configure the Sleep Timer
+
+The event-driven sleep timer determines which vehicle events start the timer that allows the device to enter sleep mode.
+
+1. Go to **Advanced Settings** > **Power** > **Sleep Timer** > **Event Driven**.
+2. Set **Event Regex** to `^vehicle/battery/(charging_slow|discharging)`.
+3. Set **Reason** to `battery_discharging`.
+4. Select **Save**.
+
+### Configure Sleep Timer Suppression
+
+Sleep timer suppression defines which events clear active sleep timers and prevent new ones from being enabled. This configuration keeps the device awake while the vehicle is moving or charging.
+
+1. Go to **Advanced Settings** > **Power** > **Sleep Timer** > **Suppress**.
+2. Set **Event Regex** to `^vehicle/(motion/(shaking|jolting)|battery/(charging|overcharging))`.
+3. Select **Save**.
+
+### Configure the Last Driven Source
+
+This setting determines which event source updates the vehicle's **Last Driven** timestamp in the AutoPi Cloud.
+
+1. Go to **Advanced Settings** > **Tracking** > **Last Driven**.
+2. Set **Source** to **Battery charging** or **Accelerometer motion**, depending on which source most reliably represents vehicle use.
+3. Select **Save**.
+
+### Configure Trip Events
+
+Use both GNSS and accelerometer movement to determine when a trip starts and stops.
+
+1. Go to **Advanced Settings** > **Vehicle** > **Trip Event**.
+2. Under **Sources**, select **GNSS movement** and **Accelerometer motion**.
+3. Open **Transition to Start** and set **Match Count** to `0`. With this value, all selected sources must agree before a trip starts.
+4. Open **Transition to Stop** and set **Match Count** to `1`. With this value, either selected source can stop the trip.
+5. Select **Save**.
+
+### Configure CAN Logging
+
+When you connect a CAN-FD Pro to a vehicle for the first time, it uses **Any (passive)** autodetection by default. This method listens for CAN traffic without sending requests, reducing the risk of triggering vehicle warnings or communication issues. The device tests common bitrates automatically to identify the connected CAN bus.
+
+Autodetection works best when the CAN bus is active. With the vehicle safely parked, turn on the ignition and check the result. If necessary, complete a controlled test drive and review the result afterward. Never change device settings while driving.
+
+#### Verify Automatic CAN Bus Detection
+
+1. In the AutoPi Cloud, go to **Devices**, select the CAN-FD Pro, and open **CAN Logging**.
+2. Open the connected channel, such as **can0** or **can1**, and select **Configure**.
+3. Confirm that the channel is enabled and that **Any (passive)** is selected.
+4. Open the device's **Events** section and review the autodetection result. The device may generate events such as:
+	- `vehicle/bus/can0/autodetected`
+	- `vehicle/bus/can0/autodetect/any_passive/successful`
+	- `vehicle/bus/can0/autodetect/any_passive/unsuccessful`
+5. Run the [`logger.status` command](/getting_started/autopi_canfd_pro/pro-user-guide/#understanding-can-logging) to view the current channel, logger, decoder, output, and storage status in real time.
+6. Confirm that the channel receives frames and reports the detected bitrate.
+
+#### Configure the CAN Bus Manually
+
+If passive autodetection is unsuccessful, configure the channel manually:
+
+1. Obtain the vehicle's CAN or CAN-FD arbitration bitrate and, if applicable, its data bitrate.
+2. Open the channel configuration under **CAN Logging**.
+3. Enter the known bitrate values instead of using automatic bitrate detection.
+4. Keep frame transmission disabled unless the integration explicitly requires it and you understand the effect of transmitting on the vehicle bus.
+5. Apply the configuration, run `logger.status`, and confirm that the channel receives frames without errors.
+
+#### Configure Data Collection
+
+After the CAN bus and bitrate are configured correctly:
+
+1. Check the [OBD Community Library](/cloud/obd_library/community_library/) for PID details shared for your vehicle model.
+2. Configure the required queries or create a CAN logger for the channel.
+3. Choose raw logging to capture all bus traffic, or add the appropriate PID details or decoder to produce interpreted signals.
+4. Configure the required output, such as local files or an Amazon S3 bucket.
+5. Apply the configuration and confirm that the expected data and output files are created.
+
+For channel settings, loggers, decoders, and outputs, follow the [CAN-FD Pro user guide](/getting_started/autopi_canfd_pro/pro-user-guide/).
+
+:::warning
+
+Active autodetection methods transmit diagnostic requests and can trigger warning indicators when the vehicle does not support the selected protocol. Keep the default **Any (passive)** setting unless the vehicle integration specifically requires an active method.
+
+:::
+
+---
+
+## Validate the Installation
+
+After configuring the device:
+
+1. Confirm that the device is online and that the latest changes were applied successfully.
+2. With the vehicle parked, confirm that the device reports data without triggering dashboard warnings.
+3. Take a short test drive in a safe area.
+4. Confirm that trip start and stop events are detected correctly.
+5. Where available, compare key values such as speed, state of charge, and odometer readings with the vehicle display.
+6. Check for missing, constant, implausible, or incorrectly scaled values before using the data in production.
+
+If the device is online but does not collect the expected data, use the troubleshooting guide for your edition:
+
+- [AutoPi Mini Data Troubleshooting](/getting_started/autopi_mini/mini-data-troubleshooting)
+- [AutoPi TMU CM4 Data Troubleshooting](/getting_started/autopi_tmu_cm4/cm4-data-troubleshooting)
+- [AutoPi CAN-FD Pro Data Troubleshooting](/getting_started/autopi_canfd_pro/pro-data-troubleshooting)
 
 ---
 
@@ -24341,126 +24656,164 @@ Please follow the guides below to get started:
 
 ---
 
-The AutoPi dongle is initially configured to be powered on when the engine of the vehicle is
-running. When the engine is not running, a sleep timer is created to put the dongle to sleep after
-5 minutes or whatever configured.
+By default, an AutoPi device uses engine RPM events to determine whether a vehicle is running. When
+the engine stops, the device starts a sleep timer and enters sleep mode after the configured delay,
+which is five minutes by default.
 
-Behind the scenes this works by using [engine events](/cloud/device_management/events/cloud-events-vehicle/#engine-events).
-Engine events are triggered based on the RPM values continuously read from the vehicle. For all
-non-BEVs (Battery [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)s) this is setup automatically as default because they all
-support readout of engine RPM in the same way according to the OBD-II PID standard
-(SAE J1979).
+This behavior relies on [engine events](/cloud/device_management/events/cloud-events-vehicle/#engine-events)
+generated from RPM values read through the standard OBD-II PID defined by SAE J1979. Most vehicles
+with an internal combustion engine support this PID, but battery electric vehicles (BEVs) do not
+use a standardized method for reporting motor activity.
 
-Unfortunately, this is not as simple for BEVs. Here there is no standard and data is read out in
-different ways between makes and models. Two approaches are available:
+For a BEV, choose a configuration based on the data available from the vehicle:
 
-1. if your vehicle can respond to PID requests and/or 
-2. if your car continuously delivers data on a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus.
+1. Use an RPM PID if the vehicle responds to PID requests with a value that represents movement.
+2. Use a communication PID if the vehicle responds only while it is active.
+3. Use a CAN signal if the vehicle continuously transmits an RPM value while it is active.
 
-## Setup a PID Logger Using the `rpm_motor_event` Trigger
-This option can be used if your vehicle can respond to PID queries.
+Check the [OBD Community Library](/cloud/obd_library/community_library/) if you do not know which PID
+or CAN signal is available for your vehicle.
 
-**Precondition:** A PID which on request delivers an RPM value related to the movement of the
-vehicle. It could be the RPM of an electric motor, a spinning wheel etc. If you do not know of such
-a PID for your model, you can always check the *Community Library* on https://my.autopi.io.
+## Set Up an RPM PID Using the `rpm_motor_event` Trigger
 
-:::note Important
-The PID must be named 'RPM' or else the `rpm_motor_event` trigger will skip checking the value.
+Use this method when the vehicle responds to a PID request with an RPM value that represents
+movement, such as electric motor or wheel speed.
+
+:::note
+
+The device configuration differs between AutoPi TMU CM4 and AutoPi CAN-FD Pro. Follow the steps for
+your device edition.
+
 :::
 
-Go to **Device** > **Loggers** > **Create** > **PID**. Choose your RPM PID and be sure to
-select the *rpm_motor_event* trigger.
+### AutoPi TMU CM4
 
-![Setting up RPM based PID logger](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/setting_up_rpm_based_pid_logger.png) 
+The standard PID logger workflow described in this section applies only to AutoPi TMU CM4. Before
+continuing, add a PID that returns a movement-related RPM value to your OBD Library.
 
-After the logger has been synced to your device, and the service has been restarted, you should
-start seeing motor events in the **Device** > **Events** page.
+To create the RPM PID logger:
 
-[Click here for documentation on motor events](/cloud/device_management/events/cloud-events-vehicle/#motor-events).
+1. Open the TMU CM4 device in the AutoPi Cloud.
+2. Go to **Loggers** > **Create** > **PID**.
+3. Select the RPM PID.
+4. Select the `rpm_motor_event` trigger.
+5. Save the logger and sync the changes to the device.
+6. Restart the associated service when prompted.
 
-## Setup a PID Logger Using the `communication_event` Trigger
+	
 
-This option can be used if you do not have a PID capable of delivering RPM data, but instead have
-another arbitrary PID that delivers data when the vehicle is moving or active. The actual content
-of the PID response is irrelevant for this trigger to function.
-
-**Precondition:** A PID which on request delivers data when the vehicle is active and no response
-when the vehicle is inactive. If you do not know any PID to use, you can always check the
-*Community Library* on https://my.autopi.io.
-
-**Note:** There is no restriction on specific naming of the PID.
-
-Go to **Device** > **Loggers** > **Create** > **PID**. Choose your arbitrary PID and be sure
-to select the `communication_event` trigger.
-
-![Setting up communication based PID logger](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/setting_up_communication_based_pid_logger.png) 
-
-[Click here for documentation on communication events](/cloud/device_management/events/cloud-events-vehicle/#communication-events).
-
-Next step is to re-configure the sleep timer functionality to use communication events instead of
-the default engine/motor events. Go to **Device** > **Advanced Settings** > **Power** and change the three
-values:
-
-**Sleep Timer** > **Event Driven** > **Event Regex:** `^vehicle/communication/disconnected`
-
-**Sleep Timer** > **Event Driven** > **Reason:** `vehicle_communication_disconnected`
-
-**Sleep Timer** > **Suppress** > **Event Regex:** `^vehicle/communication/established`
-
-As shown below:
-
-![Change events 1](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/change_events_1.png) 
-
-...
-
-![Change events 2](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/change_events_2.png) 
-
-After all the changes have been synced to your device, and the service has been restarted, you
-should start seeing communication events and also `system/sleep_timer` events in the
-**Device** > **Events** page.
-
-## Setup a PID Logger Using a Custom Trigger
-
-**Caution:** This option is recommended for expert users only.
-
-Instead of using one of the built-in triggers you can provide your own implementation which also
-can fire your own custom events. The setup procedure is the same as in the example above except
-that the trigger used is custom. See how to create a custom trigger
-[here](/cloud/device_management/services/create-custom-triggers/).
-
-## Setup a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Logger Using the `rpm_engine_event` Trigger
-
-This option can be used if your vehicle continuously produces data on a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus while
-active/driving.
-
-**Note:** At the time of writing, this approach can only make use of the `rpm_engine_event` trigger
-and thus produce engine events,
-[click here for documentation on engine events](/cloud/device_management/events/cloud-events-vehicle/#engine-events).
-
-**Precondition:** A [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message mapping for your specific vehicle which contains an RPM signal. If
-you do not know any [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages for your vehicle, you can always check the *Community Library*
-on https://my.autopi.io.
-
-The following example shows how an RPM signal can be found in the *Community Library* for vehicles of the make Alfa Romeo. 
-Go to **OBD Library** > **Community Library** and specify *Make*:
-
-![Community library](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/community_library_screenshot.png) 
-
-Click on the *RPM* signal and in the pop-up window click on the button *Add to my library*. You have
-now added the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message to your library, and you can use it for logging.
-
-Next step is to setup a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) logger for the RPM signal. Go to **Device** > **Loggers** >
-**Create** > **CAN** and choose the RPM signal:
-
-![Setting up CAN signal logger](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/setting_up_can_signal_logger.png) 
-
-:::note Important
-The [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal must be named 'RPM' or else the `rpm_engine_event` trigger will skip checking the
-value.
+:::important
+Name the PID `RPM`. The `rpm_motor_event` trigger ignores values from PIDs with other names.
 :::
 
 After the logger has been synced to your device, and the service has been restarted, you should
-start seeing engine events in the **Device** > **Events** page.
+start seeing motor events on the **Events** page. For more information, see
+[Motor Events](/cloud/device_management/events/cloud-events-vehicle/#motor-events).
+
+### AutoPi CAN-FD Pro
+
+AutoPi CAN-FD Pro uses an OBD-II PID query in **CAN Logging** instead of the standard PID logger
+workflow used by AutoPi TMU CM4.
+
+1. Open the CAN-FD Pro device in the AutoPi Cloud.
+2. Go to **CAN Logging** and open **Queries**.
+3. Select **Add Query** > **OBD-II PID**.
+4. Configure the required PID request.
+5. Under **Response**, enable **Show Advanced Settings**.
+6. Under **Triggers**, select `rpm_motor_event_trigger`.
+7. Save the query and apply the changes to the device.
+
+	
+
+---
+
+## Set Up a PID Logger Using the `communication_event` Trigger
+
+Use this TMU CM4 method when the vehicle does not provide movement-related RPM data but does respond
+to another PID while active. The response value itself does not affect the trigger.
+
+The PID must return data while the vehicle is active and stop responding while the vehicle is
+inactive. Unlike the RPM method, this PID does not require a specific name.
+
+To read more about communication events, click here: [Communication Events](https://docs.autopi.io/cloud/device_management/events/cloud-events-vehicle/#communication-events).
+
+### Create the PID Logger
+
+1. Open the TMU CM4 device in the AutoPi Cloud.
+2. Go to **Loggers** > **Create** > **PID**.
+3. Select a PID that responds only while the vehicle is active.
+4. Select the `communication_event` trigger.
+5. Save the logger and sync the changes to the device.
+6. Restart the associated service when prompted.
+
+	
+
+### Configure the Sleep Timer
+
+Configure the sleep timer to use
+[communication events](/cloud/device_management/events/cloud-events-vehicle/#communication-events)
+instead of engine or motor events:
+
+1. Go to **Advanced Settings** > **Power** > **Sleep Timer** > **Event Driven**.
+2. Set **Event Regex** to `^vehicle/communication/disconnected`.
+3. Set **Reason** to `vehicle_communication_disconnected`.
+4. Go to **Sleep Timer** > **Suppress**.
+5. Set **Event Regex** to `^vehicle/communication/established`.
+6. Save the settings and sync the changes to the device.
+
+	
+
+	
+
+After applying the configuration, open **Events** for the device. Confirm that communication events
+and `system/sleep_timer` events appear when the vehicle changes between active and inactive states.
+
+---
+
+## Set Up a PID Logger Using a Custom Trigger
+
+If the built-in triggers do not meet your requirements, create a custom trigger and select it when
+you configure the PID logger. For implementation and configuration details, see
+[Create Custom Triggers](/cloud/device_management/services/create-custom-triggers/).
+
+:::caution
+Custom triggers are intended for advanced users who can develop and validate custom event logic.
+:::
+
+---
+
+## Set Up a TMU CM4 CAN Logger Using the `rpm_engine_event` Trigger
+
+Use this TMU CM4 method when the vehicle continuously transmits an RPM signal on the CAN bus while
+active. This workflow generates
+[engine events](/cloud/device_management/events/cloud-events-vehicle/#engine-events).
+
+Before continuing, obtain a CAN message mapping for the vehicle that contains an RPM signal. Check
+the [OBD Community Library](/cloud/obd_library/community_library/) if you do not have a mapping.
+
+:::important
+
+Name the CAN signal `RPM`. The `rpm_engine_event` trigger ignores values from signals with other
+names.
+
+:::
+
+1. In the AutoPi Cloud, go to **OBD Library** > **Community Library**.
+2. Filter the library by vehicle make and locate an RPM signal.
+
+	
+
+3. Open the signal and select **Add to my library**.
+4. Open the TMU CM4 device and go to **Loggers** > **Create** > **CAN**.
+
+	
+
+5. Select the RPM signal and the `rpm_engine_event` trigger.
+6. Save the logger and sync the changes to the device.
+7. Restart the associated service when prompted.
+
+After applying the configuration, safely test the vehicle and open **Events** for the device.
+Confirm that engine events appear when the vehicle becomes active and inactive.
 
 ---
 

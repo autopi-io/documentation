@@ -18,7 +18,7 @@ Complete the steps in order:
 3. [Locate the vehicle's OBD-II port](#3-locate-obd-port).
 4. [Install and position the device](#4-install-the-device).
 5. [Verify cloud connectivity](#5-verify-cloud-connectivity).
-6. [Configure the Mini for an electric vehicle](#6-configure-the-mini-for-an-electric-vehicle), if applicable.
+6. **Optional for electric vehicles only:** [Configure the Mini for an electric vehicle](#6-optional-configure-the-mini-for-an-electric-vehicle). If you do not have an electric vehicle, skip this step.
 7. [Confirm the setup](#7-confirm-the-setup).
 
 ## Important Safety and Setup Requirements
@@ -115,9 +115,11 @@ If the OBD-II port is difficult to reach or leaves the Mini in an unsafe positio
 The first cellular connection may take a few minutes. If the device does not appear online or does not report data, follow the [AutoPi Mini Data Troubleshooting](/getting_started/autopi_mini/mini-data-troubleshooting) guide to check its status LEDs and data configuration.
 :::
 
-## 6. Configure the Mini for an Electric Vehicle
+## 6. Optional: Configure the Mini for an Electric Vehicle
 
-If the Mini is installed in an electric vehicle (EV), apply the following settings. Some EVs do not support automatic VIN detection or standard OBD-II behavior, which can prevent the device from collecting data correctly.
+Complete this step only if the Mini is installed in an electric vehicle (EV). For any other vehicle type, skip to [Step 7: Confirm the Setup](#7-confirm-the-setup).
+
+Some EVs do not support automatic VIN detection or standard OBD-II behavior, which can prevent the device from collecting data correctly. For more information, see [Electric Vehicle Setup](https://docs.autopi.io/getting_started/electric_vehicles/).
 
 ### Set the OBD Feature
 
