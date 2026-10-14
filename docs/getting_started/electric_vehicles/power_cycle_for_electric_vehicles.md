@@ -1,130 +1,184 @@
 ---
 id: power-cycle-for-electric-vehicles
 title: Power Cycles
-supportedDevices: ['cm4']
+supportedDevices: ['cm4','pro','pro_case']
 ---
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-The AutoPi dongle is initially configured to be powered on when the engine of the vehicle is
-running. When the engine is not running, a sleep timer is created to put the dongle to sleep after
-5 minutes or whatever configured.
+By default, an AutoPi device uses engine RPM events to determine whether a vehicle is running. When
+the engine stops, the device starts a sleep timer and enters sleep mode after the configured delay,
+which is five minutes by default.
 
-Behind the scenes this works by using [engine events](/cloud/device_management/events/cloud-events-vehicle/#engine-events).
-Engine events are triggered based on the RPM values continuously read from the vehicle. For all
-non-BEVs (Battery [Electric Vehicle](https://www.autopi.io/hardware/autopi-mini)s) this is setup automatically as default because they all
-support readout of engine RPM in the same way according to the OBD-II PID standard
-(SAE J1979).
+This behavior relies on [engine events](/cloud/device_management/events/cloud-events-vehicle/#engine-events)
+generated from RPM values read through the standard OBD-II PID defined by SAE J1979. Most vehicles
+with an internal combustion engine support this PID, but battery electric vehicles (BEVs) do not
+use a standardized method for reporting motor activity.
 
-Unfortunately, this is not as simple for BEVs. Here there is no standard and data is read out in
-different ways between makes and models. Two approaches are available:
+For a BEV, choose a configuration based on the data available from the vehicle:
 
-1. if your vehicle can respond to PID requests and/or 
-2. if your car continuously delivers data on a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus.
+1. Use an RPM PID if the vehicle responds to PID requests with a value that represents movement.
+2. Use a communication PID if the vehicle responds only while it is active.
+3. Use a CAN signal if the vehicle continuously transmits an RPM value while it is active.
 
-## Setup a PID Logger Using the `rpm_motor_event` Trigger
-This option can be used if your vehicle can respond to PID queries.
+Check the [OBD Community Library](/cloud/obd_library/community_library/) if you do not know which PID
+or CAN signal is available for your vehicle.
 
-**Precondition:** A PID which on request delivers an RPM value related to the movement of the
-vehicle. It could be the RPM of an electric motor, a spinning wheel etc. If you do not know of such
-a PID for your model, you can always check the *Community Library* on https://my.autopi.io.
+## Set Up an RPM PID Using the `rpm_motor_event` Trigger
 
-:::note Important
-The PID must be named 'RPM' or else the `rpm_motor_event` trigger will skip checking the value.
+Use this method when the vehicle responds to a PID request with an RPM value that represents
+movement, such as electric motor or wheel speed.
+
+:::note
+
+The device configuration differs between AutoPi TMU CM4 and AutoPi CAN-FD Pro. Follow the steps for
+your device edition.
+
 :::
 
-Go to **Device** > **Loggers** > **Create** > **PID**. Choose your RPM PID and be sure to
-select the *rpm_motor_event* trigger.
+### AutoPi TMU CM4
 
-![Setting up RPM based PID logger](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/setting_up_rpm_based_pid_logger.png) 
+The standard PID logger workflow described in this section applies only to AutoPi TMU CM4. Before
+continuing, add a PID that returns a movement-related RPM value to your OBD Library.
 
-After the logger has been synced to your device, and the service has been restarted, you should
-start seeing motor events in the **Device** > **Events** page.
+To create the RPM PID logger:
 
-[Click here for documentation on motor events](/cloud/device_management/events/cloud-events-vehicle/#motor-events).
+1. Open the TMU CM4 device in the AutoPi Cloud.
+2. Go to **Loggers** > **Create** > **PID**.
+3. Select the RPM PID.
+4. Select the `rpm_motor_event` trigger.
+5. Save the logger and sync the changes to the device.
+6. Restart the associated service when prompted.
 
-## Setup a PID Logger Using the `communication_event` Trigger
+<p align="center">
+	<img src="/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/setting_up_rpm_based_pid_logger.png" alt="Setting up an RPM-based PID logger" width="800" style={{maxWidth: '100%'}} />
+</p>
 
-This option can be used if you do not have a PID capable of delivering RPM data, but instead have
-another arbitrary PID that delivers data when the vehicle is moving or active. The actual content
-of the PID response is irrelevant for this trigger to function.
-
-**Precondition:** A PID which on request delivers data when the vehicle is active and no response
-when the vehicle is inactive. If you do not know any PID to use, you can always check the
-*Community Library* on https://my.autopi.io.
-
-**Note:** There is no restriction on specific naming of the PID.
-
-Go to **Device** > **Loggers** > **Create** > **PID**. Choose your arbitrary PID and be sure
-to select the `communication_event` trigger.
-
-![Setting up communication based PID logger](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/setting_up_communication_based_pid_logger.png) 
-
-[Click here for documentation on communication events](/cloud/device_management/events/cloud-events-vehicle/#communication-events).
-
-Next step is to re-configure the sleep timer functionality to use communication events instead of
-the default engine/motor events. Go to **Device** > **Advanced Settings** > **Power** and change the three
-values:
-
-**Sleep Timer** > **Event Driven** > **Event Regex:** `^vehicle/communication/disconnected`
-
-**Sleep Timer** > **Event Driven** > **Reason:** `vehicle_communication_disconnected`
-
-**Sleep Timer** > **Suppress** > **Event Regex:** `^vehicle/communication/established`
-
-As shown below:
-
-![Change events 1](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/change_events_1.png) 
-
-...
-
-![Change events 2](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/change_events_2.png) 
-
-After all the changes have been synced to your device, and the service has been restarted, you
-should start seeing communication events and also `system/sleep_timer` events in the
-**Device** > **Events** page.
-
-## Setup a PID Logger Using a Custom Trigger
-
-**Caution:** This option is recommended for expert users only.
-
-Instead of using one of the built-in triggers you can provide your own implementation which also
-can fire your own custom events. The setup procedure is the same as in the example above except
-that the trigger used is custom. See how to create a custom trigger
-[here](/cloud/device_management/services/create-custom-triggers/).
-
-## Setup a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Logger Using the `rpm_engine_event` Trigger
-
-This option can be used if your vehicle continuously produces data on a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus while
-active/driving.
-
-**Note:** At the time of writing, this approach can only make use of the `rpm_engine_event` trigger
-and thus produce engine events,
-[click here for documentation on engine events](/cloud/device_management/events/cloud-events-vehicle/#engine-events).
-
-**Precondition:** A [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message mapping for your specific vehicle which contains an RPM signal. If
-you do not know any [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) messages for your vehicle, you can always check the *Community Library*
-on https://my.autopi.io.
-
-The following example shows how an RPM signal can be found in the *Community Library* for vehicles of the make Alfa Romeo. 
-Go to **OBD Library** > **Community Library** and specify *Make*:
-
-![Community library](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/community_library_screenshot.png) 
-
-Click on the *RPM* signal and in the pop-up window click on the button *Add to my library*. You have
-now added the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) message to your library, and you can use it for logging.
-
-Next step is to setup a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) logger for the RPM signal. Go to **Device** > **Loggers** >
-**Create** > **CAN** and choose the RPM signal:
-
-![Setting up CAN signal logger](/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/setting_up_can_signal_logger.png) 
-
-:::note Important
-The [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal must be named 'RPM' or else the `rpm_engine_event` trigger will skip checking the
-value.
+:::important
+Name the PID `RPM`. The `rpm_motor_event` trigger ignores values from PIDs with other names.
 :::
 
+
 After the logger has been synced to your device, and the service has been restarted, you should
-start seeing engine events in the **Device** > **Events** page.
+start seeing motor events on the **Events** page. For more information, see
+[Motor Events](/cloud/device_management/events/cloud-events-vehicle/#motor-events).
+
+### AutoPi CAN-FD Pro
+
+AutoPi CAN-FD Pro uses an OBD-II PID query in **CAN Logging** instead of the standard PID logger
+workflow used by AutoPi TMU CM4.
+
+1. Open the CAN-FD Pro device in the AutoPi Cloud.
+2. Go to **CAN Logging** and open **Queries**.
+3. Select **Add Query** > **OBD-II PID**.
+4. Configure the required PID request.
+5. Under **Response**, enable **Show Advanced Settings**.
+6. Under **Triggers**, select `rpm_motor_event_trigger`.
+7. Save the query and apply the changes to the device.
+
+<p align="center">
+	<img src="/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/rpm_pid_query.png" alt="Creating RPM Query" width="800" style={{maxWidth: '100%'}} />
+</p>
+
+---
+
+## Set Up a PID Logger Using the `communication_event` Trigger
+
+Use this TMU CM4 method when the vehicle does not provide movement-related RPM data but does respond
+to another PID while active. The response value itself does not affect the trigger.
+
+The PID must return data while the vehicle is active and stop responding while the vehicle is
+inactive. Unlike the RPM method, this PID does not require a specific name.
+
+To read more about communication events, click here: [Communication Events](https://docs.autopi.io/cloud/device_management/events/cloud-events-vehicle/#communication-events).
+
+### Create the PID Logger
+
+1. Open the TMU CM4 device in the AutoPi Cloud.
+2. Go to **Loggers** > **Create** > **PID**.
+3. Select a PID that responds only while the vehicle is active.
+4. Select the `communication_event` trigger.
+5. Save the logger and sync the changes to the device.
+6. Restart the associated service when prompted.
+
+<p align="center">
+	<img src="/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/setting_up_communication_based_pid_logger.png" alt="Setting up a communication-based PID logger" width="800" style={{maxWidth: '100%'}} />
+</p>
+
+### Configure the Sleep Timer
+
+Configure the sleep timer to use
+[communication events](/cloud/device_management/events/cloud-events-vehicle/#communication-events)
+instead of engine or motor events:
+
+1. Go to **Advanced Settings** > **Power** > **Sleep Timer** > **Event Driven**.
+2. Set **Event Regex** to `^vehicle/communication/disconnected`.
+3. Set **Reason** to `vehicle_communication_disconnected`.
+4. Go to **Sleep Timer** > **Suppress**.
+5. Set **Event Regex** to `^vehicle/communication/established`.
+6. Save the settings and sync the changes to the device.
+
+<p align="center">
+	<img src="/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/change_events_1.png" alt="Configuring the event-driven sleep timer" width="800" style={{maxWidth: '100%'}} />
+</p>
+
+<p align="center">
+	<img src="/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/change_events_2.png" alt="Configuring sleep timer suppression" width="800" style={{maxWidth: '100%'}} />
+</p>
+
+After applying the configuration, open **Events** for the device. Confirm that communication events
+and `system/sleep_timer` events appear when the vehicle changes between active and inactive states.
+
+---
+
+## Set Up a PID Logger Using a Custom Trigger
+
+If the built-in triggers do not meet your requirements, create a custom trigger and select it when
+you configure the PID logger. For implementation and configuration details, see
+[Create Custom Triggers](/cloud/device_management/services/create-custom-triggers/).
+
+:::caution
+Custom triggers are intended for advanced users who can develop and validate custom event logic.
+:::
+
+---
+
+## Set Up a TMU CM4 CAN Logger Using the `rpm_engine_event` Trigger
+
+Use this TMU CM4 method when the vehicle continuously transmits an RPM signal on the CAN bus while
+active. This workflow generates
+[engine events](/cloud/device_management/events/cloud-events-vehicle/#engine-events).
+
+Before continuing, obtain a CAN message mapping for the vehicle that contains an RPM signal. Check
+the [OBD Community Library](/cloud/obd_library/community_library/) if you do not have a mapping.
+
+:::important
+
+Name the CAN signal `RPM`. The `rpm_engine_event` trigger ignores values from signals with other
+names.
+
+:::
+
+1. In the AutoPi Cloud, go to **OBD Library** > **Community Library**.
+2. Filter the library by vehicle make and locate an RPM signal.
+
+<p align="center">
+	<img src="/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/community_library_screenshot.png" alt="Finding an RPM signal in the Community Library" width="800" style={{maxWidth: '100%'}} />
+</p>
+
+3. Open the signal and select **Add to my library**.
+4. Open the TMU CM4 device and go to **Loggers** > **Create** > **CAN**.
+
+
+<p align="center">
+	<img src="/img/getting_started/electric_vehicles/power_cycle_for_electric_vehicles/setting_up_can_signal_logger.png" alt="Setting up a CAN signal logger" width="800" style={{maxWidth: '100%'}} />
+</p>
+
+5. Select the RPM signal and the `rpm_engine_event` trigger.
+6. Save the logger and sync the changes to the device.
+7. Restart the associated service when prompted.
+
+After applying the configuration, safely test the vehicle and open **Events** for the device.
+Confirm that engine events appear when the vehicle becomes active and inactive.
