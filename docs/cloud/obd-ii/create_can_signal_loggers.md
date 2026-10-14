@@ -9,49 +9,109 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
 
-[CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals play a crucial role in vehicle communication, differing from PIDs in their use and structure. While PIDs (Parameter IDs) are standardized codes used across different vehicles for obtaining specific data points (like engine RPM, temperature), [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) (Controller Area Network) signals are more direct, low-level messages that devices within the vehicle use to communicate with each other. Understanding these differences is key to effectively logging and analyzing vehicle data.
+Use a CAN signal logger to passively capture specific raw CAN messages and send them to the AutoPi Cloud. Unlike a PID logger, a CAN signal logger does not send requests on the CAN bus.
 
-**Step 1: Start with a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) Signal**
+This guide explains how to define a CAN message and signal, create the logger, modify its generated worker to preserve raw data, and synchronize the configuration with your device.
 
-Before you can log anything, you need a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal to monitor. [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals are not standardized like PIDs, meaning they can vary significantly between different vehicle makes and models. To create a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal, you must first identify the signal's properties, including its ID, format, and the data it carries.
+## Before You Begin
 
-Identification and Documentation: Use vehicle documentation or tools to identify the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal. This may involve using a DBC file or capturing and analyzing traffic on the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) network to find the signals relevant to your needs.
+Make sure that:
 
-Creation: Once identified, you can create a representation of this signal in [CAN Signals](/cloud/obd-ii/#can-messages-and-can-signals)
+- You know the header and expected payload length of the CAN message you want to capture.
+- Your device is assigned to a vehicle with a vehicle bus configured.
+- The configured vehicle bus matches the bus on which the CAN message is transmitted.
+
+If you need help configuring the CAN bus, follow [Step 1: Setting Up CAN Bus Protocol](https://docs.autopi.io/getting_started/autopi_tmu_cm4/create-loggers-cm4/#step-1-setting-up-can-bus-protocol).
+
+## Step 1: Create a CAN Message and Signal
+
+First, create a CAN message that defines the header the device should listen for.
+
+1. In the AutoPi Cloud, go to **OBD Library > My Library**.
+2. Select **Create > CAN**.
+3. Complete the CAN message fields:
+
+	- **Name**: enter a descriptive, user-readable name.
+    - **Description**: enter the description of the CAN message. 
+	- **Header**: enter the header of the CAN message you want to capture.
+	- **Bytes**: enter the expected payload length, which is the number of data bytes after the header.
+	- **Sender**: select the ECU that sends the message. If the sender is unknown, use `vector_XXX` as a placeholder.
+
+    <img src="/img/cloud/obd_ii/create_can_signal_loggers/create_new_can_message.png" alt="Create New CAN Message" width="100%" />
+
+4. Add a CAN signal to the message. The signal does not need to represent meaningful decoded data. It is required so that the CAN message is valid and can be used to create a logger.
+
+    <img src="/img/cloud/obd_ii/create_can_signal_loggers/create_new_can_signal.png" alt="Create New CAN Signal" width="100%" />
+
+5. At the bottom of the dialog, select the vehicle bus configured for your device.
+6. Save the CAN message and signal.
 
 
-**Step 2: Navigate to Your Device's Logger Section**
+:::note
+If the correct vehicle bus is not available, configure it for the vehicle before continuing. The logger will only list messages associated with the selected vehicle bus. If you need help configuring the CAN bus, follow [Step 1: Setting Up CAN Bus Protocol](https://docs.autopi.io/getting_started/autopi_tmu_cm4/create-loggers-cm4/#step-1-setting-up-can-bus-protocol).
+:::
 
-With your [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal defined, the next step involves setting up the environment to log this signal.
-- Access: Log into your device's management interface and navigate to the 'Loggers' section.
-![Loggers overview](/img/cloud/obd_ii/create_can_signal_loggers/logger_overview.png)
+## Step 2: Create a CAN Signal Logger
 
-  
-- New Logger: Look for an option to create a new logger.
-![Logger overview create](/img/cloud/obd_ii/create_can_signal_loggers/logger_overview_create.png)
+AutoPi devices use OBD filters to determine which messages are accepted and which are dropped. Creating a CAN signal logger adds the selected message to these filters.
 
+The logger is passive and does not transmit anything on the CAN bus. Although CAN signal loggers normally convert raw messages into human-readable values, Step 3 removes that conversion so the raw messages are retained.
 
-**Step 3: Configure the Logger**
+1. Go to **Device > Loggers**.
+2. Select **+ Create > CAN**.
 
-The creation of a logger involves specifying which signals to log and other parameters:
+    <img src="/img/cloud/obd_ii/create_can_signal_loggers/logger_overview_create.png" alt="Logger overview create" width="100%" />
 
-- Signal Selection: In the modal window that appears upon choosing to create a new logger, select the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal you created earlier from the dropdown menu.
-
-- Bus Selection: Specify the [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) bus on which your signal is present. Vehicles often have multiple [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) buses for different systems (e.g., powertrain, chassis). Ensure you select the correct one for your signal.
-
-- Name Override: You can specify a different name for your logger here, otherwise its name remains the same as the Signals.
-![Create logger](/img/cloud/obd_ii/create_can_signal_loggers/create_can_logger.png)
+3. Open the **Signal** dropdown, and select the CAN signal created in Step 1.
+4. Select the CAN bus on which the message is transmitted.
+5. Optionally, enter a different name for the logger. Otherwise, it uses the signal name.
+6. Save the logger.
 
 
-**Step 4: Create the Logger**
+If the signal does not appear in the dropdown, confirm that the CAN message is associated with the same vehicle bus as your device.
 
-Finally, you're ready to create the logger:
 
-Finalize: Review your selections to ensure everything is correct, then click the "Create" button to finalize the creation of your [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal logger.
+## Step 3: Modify the Default `can_logger`
 
-Confirmation: You should receive a confirmation that your logger has been created successfully. Congratulations, you've set up a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal logger!
+When you add the CAN signal logger in Step 2, a default `can_logger` worker is created. You must modify this worker to return raw CAN messages.
 
-Congratulations! You have now created a [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signal logger.
+1. Go to **Device > Services**, and locate `obd_manager`.
+2. Check the **Custom** column before opening the service.
 
-This process allows you to monitor and record data from specific [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals on your vehicle, providing valuable insights into its operation. Unlike working with PIDs, which often require working through a vehicle's OBD-II interface and are limited to predefined parameters, logging [CAN](https://www.autopi.io/hardware/autopi-canfd-pro) signals gives you access to a broader range of data directly from the vehicle's internal networks. This approach can unveil more detailed information and support advanced diagnostics and customization projects.
+    :::warning
+    If `obd_manager` is marked as custom, deleting it also removes any existing custom changes to that service. Record any changes you need to preserve before selecting the trash icon. Deleting the custom version restores the default `obd_manager` service.
+    :::
+
+3. Open the default `obd_manager` service.
+4. In the **Workers** section, open `can_logger`.
+5. Modify the worker as follows:
+
+    <img src="/img/cloud/obd_ii/create_can_signal_loggers/edit_can_logger.png" alt="Edit CAN Logger" width="100%" />
+
+    - Clear the **Converter** field. It is set to `can` by default; select the **x** in the dropdown to remove it.
+    - Remove the `rpm_engine_event` trigger because it is not needed for this workflow.
+    - To receive repeated messages, remove the `alternating_readout` filter. When enabled, this filter omits consecutive messages with the same value.
+
+6. Save the worker.
+
+<!-- Add a screenshot of the modified can_logger worker here. -->
+
+
+## Step 4: Sync the Changes to the Device
+
+Synchronize the configuration with your device. After synchronization, the device will capture matching messages from the CAN bus and send them to the AutoPi Cloud.
+
+:::note
+Raw CAN messages are sent as strings, while the AutoPi Cloud storage layer typically expects integers or floating-point values. Contact AutoPi Support after completing the setup so that your data storage configuration can be verified.
+:::
+
+### Test the Logger
+
+You can test the setup by running a command that simulates the `can_logger` workflow:
+
+```shell
+obd.manage run handler='monitor' kwargs='{"filtering": "can"}'
+```
+
+The command returns the CAN messages accepted by the configured filters. For optional arguments, such as the monitoring duration or maximum message count, refer to the [`obd.monitor` command documentation](https://docs.autopi.io/core/commands/core-commands-obd/#obdmonitor).
 
