@@ -654,5 +654,27 @@ In the Trip Event section:
 These settings allow you to control exactly when a trip is considered active, ensuring that CAN data logging starts and stops at the appropriate times.
 
 
+### Advanced settings for Accelerometer
+
+The accelerometer settings are available for both AutoPi CAN-FD Pro and AutoPi TMU CM4 devices.
+Use them to configure accelerometer and gyroscope measurements and fine-tune motion events.
+
+![Advanced settings for Accelerometer](/img/getting_started/autopi_canfd_pro/user_guide/advanced_accelerometer.png)
+
+:::tip
+To log accelerometer data more frequently, increase the accelerometer **Sampling Rate**. A higher
+sampling rate produces more data and can affect system performance, so increase it only as needed.
+:::
+
+You can also adjust:
+
+* Accelerometer settings, including its sampling rate and measurement range.
+* Gyroscope settings, including its sampling rate and measurement range.
+* Motion Events settings, including shake and jolt thresholds, detection durations, and the
+  delay between events.
+
+For descriptions and default values for each option, see [Accelerometer Advanced Settings](/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-accelerometer/).
+
+
 
 
