@@ -144,8 +144,7 @@ Permissions define what actions a user can perform. Users are assigned to permis
 
 **5. Fleet Management** - access to the Fleet Management section of the cloud including Overview; Vehicles - Vehicles List,Geofences, Groups; Locations; Reports; Users; Diagnostics; Alerts and Configurations - Dashboards, Fault Codes, Notification Channels, States. This permission is best for fleet managers that needs full access to their fleet. 
 
-**6. Access Control Management** - access to the RFID token history. This feature is an add-on and therefore if you are interested in using this, you can contact us at sales@autopi.io .
-
+**6. Access Control Management** - provides access to the **Access Control** tab under **Fleet Management**, where users can review RFID token history. 
 
 ### Assign Locations to Users
 ![Assigning locations to users](/img/cloud/accounts/create_new_user_location_access.png)
