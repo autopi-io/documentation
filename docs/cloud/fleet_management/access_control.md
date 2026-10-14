@@ -21,7 +21,7 @@ Before using Access Control:
 3. [Assign each driver to the vehicles they are authorized to use](#assign-drivers-to-vehicles).
 
 :::note
-If Access Control or RFID settings are not available for your account, contact [support@autopi.io](mailto:support@autopi.io). These features can be enabled at no additional cost.
+To see the **Access Control** tab, your user account must have the `Access Control Management` permission. You can read more here: [Permission Groups](https://docs.autopi.io/cloud/accounts/#modifying-user-permissions).
 :::
 
 ---
