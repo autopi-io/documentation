@@ -36,7 +36,7 @@ You can edit the default channels or create new ones to match your workflow.
 1. Click **Create** in the Notification Channels table.
 2. Fill in the channel details:
     - **Name** (required): a clear name for the channel.
-    - **Type** (required): choose how notifications are delivered (for example, Alert, Email, Discord webhook, or SMS).
+    - **Type** (required): choose how notifications are delivered (for example, Alert, Email or Discord webhook).
     - **Description** (optional): additional context about when this channel should be used.
 3. Click **Create** to save the new channel.
 
@@ -56,10 +56,9 @@ We currently support several types of notification channels. You can set up one 
     * **Alert**: creates an alert in the AutoPi Cloud. You can choose from different severity levels: low, medium, high, or critical.
     * **Email**: sends an email to the specified address. You can also add CC and BCC to include multiple recipients.
     * **Discord**: use a webhook ID and token to receive notifications directly in your Discord server.
-    * **SMS**: add a phone number to receive notifications via text message.
 
 <p align="center">
-    <img src="/img/cloud/fleet_management/configurations/notification_channels/channel_types.png" alt="Create channel"  />
+    <img src="/img/cloud/fleet_management/configurations/notification_channels/notification_channels_types.png" alt="Create channel"  />
 </p>
 
 
