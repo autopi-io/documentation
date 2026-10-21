@@ -162,7 +162,8 @@ module.exports = {
                 "cloud/device_management/services/create-custom-services",
                 "cloud/device_management/services/create-custom-workers",
                 "cloud/device_management/services/create-custom-returners",
-                "cloud/device_management/services/create-custom-triggers"
+                "cloud/device_management/services/create-custom-triggers",
+                "cloud/device_management/services/create-custom-reactors"
                 
               ],
               "label": "Services",
