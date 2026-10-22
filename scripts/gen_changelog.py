@@ -17,7 +17,7 @@ from datetime import datetime
 
 # GitLab projects and branches
 CHANGELOGS = {
-    'core':     {'project': 'AutoPi.io/core',     'branch': 'master'},
+    'core':     {'project': 'AutoPi.io/core',     'branch': 'dev'},
     'backend':  {'project': 'AutoPi.io/backend',  'branch': 'develop'},
     'frontend': {'project': 'AutoPi.io/frontend', 'branch': 'develop'},
 }

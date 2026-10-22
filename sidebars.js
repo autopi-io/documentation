@@ -502,12 +502,14 @@ module.exports = {
     {
       "Releases": [
         "releases/introduction",
+        "releases/october-2026",
         "releases/september-2026",
       ]
     },
     {
       "Changelog": [
         "changelog/introduction",
+        "changelog/october-2026",
         "changelog/september-2026",
       ]
     },
