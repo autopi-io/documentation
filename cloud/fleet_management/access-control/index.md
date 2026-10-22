@@ -13,7 +13,7 @@ By linking RFID tokens to users and assigning authorized drivers to vehicles, yo
 
 Before using Access Control:
 
-1. [Enable and configure RFID on the AutoPi device](https://docs.autopi.io/developer_guides/rfid-integartion/).
+1. [Enable and configure RFID on the AutoPi device](https://docs.autopi.io/developer_guides/rfid-integartion/). To learn more about the underlying service, see [RFID Manager](https://docs.autopi.io/core/services/core-services-rfid-manager/).
 2. [Add an RFID token to each user who needs vehicle access](#assign-rfid-tokens-to-users).
 3. [Assign each driver to the vehicles they are authorized to use](#assign-drivers-to-vehicles).
 

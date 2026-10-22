@@ -10,6 +10,10 @@ The keyless entry solution described here only works with the [AutoPi](https://w
 
 This guide provides a general technical overview of the [AutoPi](https://www.autopi.io) Keyless solution. 
 
+:::note
+To learn more about managing key fobs, see [Key Fob Manager](https://docs.autopi.io/core/services/core-services-key-fob-manager/).
+:::
+
 Many different approaches to lock/unlock exist already, but with the solution from [AutoPi](https://www.autopi.io), you receive an agnostic solution working across all make and models available. These are some of the benefits:
 -	No wire cutting needed, which means your vehicle’s warranty is not voided 
 -	Easy and fast installation and removal

@@ -7,6 +7,7 @@ This file contains links to documentation sections following the llmstxt.org sta
 ## Table of Contents
 
 - [Introduction](https://docs.autopi.io/introduction.md): Welcome to our monthly changelogs. Each month, we organize and document all changes to the AutoPi platform across our **Frontend**, **Backend**, and **Core** systems.
+- [October 2026](https://docs.autopi.io/changelog/october-2026.md): **Generated:** 2026-10-22
 - [September 2026](https://docs.autopi.io/changelog/september-2026.md): **Generated:** 2026-09-18
 - [Accounts](https://docs.autopi.io/cloud/accounts.md): Welcome to the Account Management guide. This section explains how to set up and manage your AutoPi cloud environment, including accounts, customers, users, devices, and access permissions. By the end of this guide, you’ll understand how to organize…
 - [Triggers](https://docs.autopi.io/cloud/device_management/a-guide-to-triggers.md): This guide introduces **Triggers** and explains how to **create and edit them** on your AutoPi device. Triggers allow you to receive notifications when specific events occur on your device or vehicle. They provide a flexible way to monitor vehicle…
@@ -135,10 +136,10 @@ This file contains links to documentation sections following the llmstxt.org sta
 - [Tracking](https://docs.autopi.io/core/commands/core-commands-tracking.md): Gets current context.
 - [Usbutil](https://docs.autopi.io/core/commands/core-commands-usbutil.md): Triggers `system/usb/<vendor>/<product>/not_connected` events when specified (must be present) devices are missing, i.e. not seen for whatever reason when running the `usbutil.devices` command.
 - [Wifi](https://docs.autopi.io/core/commands/core-commands-wifi.md): Shows this help information.
-- [Introduction](https://docs.autopi.io/core-intro.md): This section explores the [AutoPi](https://www.autopi.io) Core system, which is one part of the [AutoPi](https://www.autopi.io) platform. The [AutoPi](https://www.autopi.io) Core is an open-source software running on the hardware device. It is built…
+- [Introduction](https://docs.autopi.io/core-intro.md): AutoPi Core is the open-source software that runs on AutoPi devices. Built on [Salt](https://saltproject.io/), it provides the services and commands used to configure the device, communicate with connected hardware, and collect vehicle data.
 - [High-level](https://docs.autopi.io/core/power_management/core-power-high.md): See all the available power commands [here](/core/commands/power.md).
-- [Introduction](https://docs.autopi.io/core/core-power-intro.md): This guide will walk you through understanding and managing the power consumption of your AutoPi device. Learn how the device transitions between operational states (On, Sleeping, Hibernating), configure power cycles and sleep timers, monitor status…
-- [Low-level](https://docs.autopi.io/core/power_management/core-power-low.md): The SPM (Smart Power Management) is an embedded system that controls the low-level power cycle of the device. It interacts with a number of subsystems that can initiate power state changes:
+- [Introduction](https://docs.autopi.io/core/core-power-intro.md): AutoPi power management controls when the device is awake, sleeping, or hibernating. These states allow the device to collect and upload data while protecting the vehicle's battery.
+- [Low-level](https://docs.autopi.io/core/power_management/core-power-low.md): The SPM (Smart Power Management) is an embedded system that controls the low-level power cycle of the device. To learn more about the service, see [SPM Manager](https://docs.autopi.io/core/services/core-services-spm-manager/).
 - [Sleep Timers](https://docs.autopi.io/core/power_management/core-power-sleep-timers.md): Sleep timers are a functionality built into the [AutoPi](https://www.autopi.io) who's purpose is to protect the battery of your vehicle by limiting the amount of power required by the device when it's plugged into a vehicle. On this page, we will…
 - [Cloud](https://docs.autopi.io/core/returners/core-returners-cloud.md): Return a result to [Cloud](https://www.autopi.io/software-platform/cloud-management) cache.
 - [Cloud Jsonl](https://docs.autopi.io/core/returners/core-returners-cloud-jsonl.md): Ensure all open writers are closed.
@@ -293,4 +294,5 @@ This file contains links to documentation sections following the llmstxt.org sta
 - [OBD Connector Pinout](https://docs.autopi.io/hardware/legacy_devices/autopi_tmu_can_fd/obd-connector-pinout.md): This is an image of the OBD connector pinout. It is valid for the [AutoPi](https://www.autopi.io) TMU CAN-FD versions of the [AutoPi](https://www.autopi.io).
 - [AutoPi Documentation](https://docs.autopi.io/index.md): Welcome to the official documentation for the [AutoPi platform](https://autopi.io).
 - [Introduction](https://docs.autopi.io/introduction-2.md): <DeviceSupportBanner supported={frontMatter.supportedDevices} />
+- [October 2026](https://docs.autopi.io/releases/october-2026.md): Added support for CAN Listen-Only Mode on the AutoPi TMU CM4, configurable through Advanced Settings. When enabled, the entire device operates in passive listening mode, allowing it to monitor and receive CAN bus traffic without transmitting…
 - [September 2026](https://docs.autopi.io/releases/september-2026.md): *Where to find it: Configuration → Asset Types.*

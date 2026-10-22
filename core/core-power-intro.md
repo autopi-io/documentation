@@ -5,154 +5,101 @@
 
 ---
 
-This guide will walk you through understanding and managing the power consumption of your AutoPi device. Learn how the device transitions between operational states (On, Sleeping, Hibernating), configure power cycles and sleep timers, monitor status via LED indicators, and optimize power management for your specific vehicle type and use case.
+AutoPi power management controls when the device is awake, sleeping, or hibernating. These states allow the device to collect and upload data while protecting the vehicle's battery.
 
-Common use cases:
-- **Power Optimization** — configure sleep timers and wake triggers to balance responsiveness and battery conservation.
-- **Battery Protection** — set up hibernation thresholds to prevent vehicle battery depletion.
-- **Extended Downtime** — manage device behavior when vehicles are parked for extended periods.
-- **Vehicle Type Configuration** — optimize power management for internal combustion or electric vehicles.
-- **Status Monitoring** — use LED indicators to verify device state and diagnose power-related issues.
-- **Connectivity Management** — configure modem power-saving options for cost and power efficiency.
-- **Troubleshooting** — diagnose power cycle issues and verify proper state transitions.
+This guide explains each power state, what causes the device to change states, and how the status LEDs indicate its current state. To configure when the device sleeps, see [Sleep Timers](https://docs.autopi.io/core/power_management/core-power-sleep-timers/).
 
 :::tip
-For power cycle, LED, and button information on the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4), please see [configuration here](/hardware/autopi_tmu_cm4/led_and_button.mdx)
+For device-specific power cycle, LED, and button behavior, see [LED and Button on AutoPi TMU CM4 Devices](https://docs.autopi.io/hardware/autopi_tmu_cm4/led-and-button/) or [LED and Button on AutoPi CAN-FD Pro Devices](https://docs.autopi.io/hardware/autopi_canfd_pro/pro-led-and-button/).
 :::
 
----
+## How Power Management Works
 
-## Power Management Architecture
+Power management has two layers:
 
-The power management of the device consists of a low- and high-level layer. For further details please see: 
-
-1. [Low-level](/core/power_management/low_level.md)
-1. [High-level](/core/power_management/high_level.md)
+- [Low-level power management](https://docs.autopi.io/core/power_management/core-power-low/) controls the hardware states and wake triggers through the Smart Power Management (SPM) system. To learn more about the underlying service, see [SPM Manager](https://docs.autopi.io/core/services/core-services-spm-manager/).
+- [High-level power management](https://docs.autopi.io/core/power_management/core-power-high/) uses AutoPi Core commands, settings, and events to decide when the device should sleep or hibernate.
 
 ## Power Cycle
-Overall, there are three states that the device can be in:
 
-* On
-* Sleeping
-* Hibernating
+The device uses three main operating states:
 
-#### On
-The `On` state is when the device is awake and performing work. It will record data, communicate with the [Cloud](https://www.autopi.io/software-platform/cloud-management) or do whatever it has been configured to do.
-Eventually, when the vehicle has turned off, a sleep timer is scheduled that will shut down the device and go to sleep in order to conserve power. This sleep timer puts the device into the `Sleeping` state.
+| State | Description | How the Device Leaves the State |
+| :---: | :---: | :---: |
+| **On** | The device collects data, runs configured tasks, and communicates with AutoPi Cloud. | A sleep timer expires, or a hibernation threshold is reached. |
+| **Sleeping** | The Raspberry Pi is powered off for a configured interval to reduce power consumption. | A wake timer expires, or a configured source such as a voltage change, the modem, or the accelerometer triggers a wake-up. |
+| **Hibernating** | Almost all components are powered off to protect a low vehicle battery. | The STN chip detects that the voltage has risen above the configured wake threshold. |
 
-#### Sleeping
-The `Sleeping` state is a state where the device is powered off for a certain period of time. Before the device goes to sleep, there is always setup
-an interval until it will wake up again ([configuration here](/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-power/#sleep-timer)). When the [`Modem > Power Save`](/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-power/#modem) option is disabled, the modem is kept powered on while sleeping. This makes it possible to wake the device by sending an SMS to it, if it is within mobile network range.
+### When the Vehicle Is Parked
 
-There are generally two reasons for a device to go to the `On` state while sleeping:
-1. **The vehicle's engine turns on.** More precisely, the vehicle's battery voltage raises above a [specified threshold](/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-power/#wake-trigger).
-2. **The sleep timer's sleep period passes.** When the device goes to sleep, a wake timer is being setup based on the inactivity setting.
+When you connect the device while the vehicle's engine is off, the typical cycle is:
 
-We will take a look at example scenarios which will further describe the power cycle of the device.
+1. The device boots and connects to AutoPi Cloud.
+2. The device creates a sleep timer. The default timer is five minutes, but the configured value may differ.
+3. When the timer expires, the device sets a hardware wake timer and attempts to upload pending data.
+4. The device shuts down and enters the `Sleeping` state.
+5. When the wake interval expires, the device boots again. If the vehicle is still inactive, the device creates another sleep timer and repeats the cycle.
 
-#### Hibernating
-The `Hibernating` state is the last effort the device will do in order to preserve your vehicle's battery. It will shut off almost all
-of the functionalities of the [AutoPi](https://www.autopi.io) leaving only one power-cheap component on - a chip that will detect a raise in the battery's
-voltage so that it can trigger an `On` state. This will happen when the vehicle is powered on, so this is the moment the battery will
-start to charge up again.
+This periodic wake-up allows the device to process tasks and upload data without remaining on continuously. See [Sleep Timers](https://docs.autopi.io/core/power_management/core-power-sleep-timers/) to configure the awake period and sleep interval.
 
-### Walk-Through
+### When the Vehicle Starts
 
-Let us now walk through an example of the power cycle. We will begin with the device being unplugged and the vehicle's engine not running.
-If we plug in a device in the vehicle's OBD-II port the following steps will occur:
+If the device is sleeping when the engine of a standard internal combustion engine (ICE) vehicle starts, the typical sequence is:
 
-1. The device will start booting
-2. After some time, bootup process will finish and device will appear online on the [Cloud](https://www.autopi.io/software-platform/cloud-management)
-3. A sleep timer will be setup (that will expire after 5 minutes by default)
-4. When the sleep timer expires, three things will happen:
-    1. A wake up timer will be setup on the hardware level
-    2. The device will attempt to upload pending data to the [Cloud](https://www.autopi.io/software-platform/cloud-management)
-    3. The device will start its shutdown procedure
-5. Device is now sleeping
+1. The STN chip detects that the vehicle's battery voltage has risen above the configured [wake threshold](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/cloud-config-power/#wake-trigger).
+2. The STN chip sends a wake signal, and the device boots.
+3. The device detects CAN bus traffic and RPM data.
+4. The RPM data triggers the `vehicle/engine/running` event.
+5. The device clears its sleep timers and prevents new timers from being set while the vehicle is running.
 
-By default, a sleep timer will introduce a wake-up timer that is in 2 hours after the device goes to sleep. So let's now take a look
-at what happens with this:
-
-1. Wake-up timer expires
-2. Device will start its boot process
-3. After boot, device will appear online on the [Cloud](https://www.autopi.io/software-platform/cloud-management)
-4. A new sleep timer will be setup (5 minutes by default)
-5. When the sleep timer expires, three things happen:
-    1. A wake up timer will be setup on the hardware level
-    2. The device will attempt to upload any pending data to the [Cloud](https://www.autopi.io/software-platform/cloud-management)
-    2. The device will start its shutdown procedure
-5. Device is now sleeping
-
-It is more or less the same procedure. This means that by default, your device will wake up every two hours, setup a sleep timer for 5
-minutes and go back to sleep. In the time that the device is `On` it will try to read data off of the CAN bus from the vehicle, record
-it and report any data or events it needs to report to the [Cloud](https://www.autopi.io/software-platform/cloud-management). Now, what happens if the vehicle is being driven? Let's assume that
-the device is asleep at the moment that the engine of the vehicle gets turned on. Here's what will happen:
-
-1. The STN chip will detect the higher voltage reading
-2. The STN chip will send a wake-up request to the device
-3. The device will boot up
-4. After boot, the device will appear online on the [Cloud](https://www.autopi.io/software-platform/cloud-management)
-5. Device will detect CAN bus traffic, more specifically RPM values (only works by default on standard ICE vehicles)
-6. The RPM values will trigger an event called `vehicle/engine/running`
-7. All sleep timers are cleared and sleep timers are no longer allowed to be set
-
-Almost the same process will occur if the device is already awake with the exception that it won't need to actually boot up again.
-Instead, the device will stay awake, current sleep timers will be cleared and new sleep timers won't be able to be set.
-
-So now you may be wondering, when exactly does the device go into hibernation, or maybe what even is the hibernation state?
-Hibernation is a state where the device sees that the battery is very low on power and will shut down completely, leaving only
-a very power-cheap device which will wake the device up again when the battery level raises to normal values. This mode is necessary
-as without it, the [AutoPi](https://www.autopi.io) can potentially drain the battery so low that the vehicle won't be able to start up the next time, or
-even worse - permanently damage the battery. So, in essence, hibernation is a last resort effort of the [AutoPi](https://www.autopi.io) to protect the battery
-of the vehicle.
-
-There are two settings that you can tweak on the [Cloud](https://www.autopi.io/software-platform/cloud-management) in the Advanced > Settings > Power section: `Critical Level` and `Safety Cut-Out`.
-They both make the device go to hibernation, however they differ on one key point - Critical Level will still shut down the device
-gracefully, while Safety Cut-Out will essentially pull the plug on it. The difference is that with a graceful shutdown the [Cloud](https://www.autopi.io/software-platform/cloud-management) will
-(*likely*\*) receive an event that will be reported. With Safety Cut-out, this won't happen, there will only be a notification the next
-time the device gets online.
-
-:::note
-\**likely* - If the device doesn't have access to the internet for whatever reason (no WiFi connection, no 4G/LTE enabled, or there is no
-coverage at the current moment) the event will not be sent to the [Cloud](https://www.autopi.io/software-platform/cloud-management) even if it went to hibernation due to the Critical Level threshold.
-:::
-
-As long as the battery doesn't go below the Voltage threshold that are set on those two settings (`Critical Level` and `Safety Cut-Out`)
-your device will wake up occasionally to check up on if it needs to do something or not. If there is nothing to do, it will go back to
-sleep after the sleep timer is triggered.
+If the device is already on when the vehicle starts, it remains on and clears its sleep timers without rebooting.
 
 :::caution
-For OBD-II non-compliant vehicles additional configuration may be required to ensure a well-functioning power cycle.
-For EVs please see this [guide](/getting_started/electric_vehicles/power-cycle-for-electric-vehicles/).
+Vehicles that do not provide standard OBD-II engine data may require additional configuration to keep the device awake while driving. For electric vehicles, see [Configure the Power Cycle for Electric Vehicles](/getting_started/electric_vehicles/power-cycle-for-electric-vehicles/).
 :::
+
+### When the Battery Voltage Is Low
+
+Hibernation protects the vehicle's battery when its voltage falls too low. You can configure two hibernation thresholds under **Devices > select a device > Advanced Settings > Power**:
+
+| Setting | Behavior |
+| :---: | :---: |
+| **Critical Level** | Starts a graceful shutdown. Before entering hibernation, the device attempts to upload pending data and report the event to AutoPi Cloud. |
+| **Safety Cut-Out** | Immediately cuts power to prevent further battery drain. AutoPi Cloud receives a notification after the device comes back online. |
+
+The device can report a critical-level shutdown to AutoPi Cloud only when it has an internet connection. While the battery voltage remains above both thresholds, the device continues its configured wake-and-sleep cycle.
 
 ## Status LEDs
 
+The status LEDs provide a quick visual indication of the device's current power state and connection to AutoPi Cloud.
+
 :::note
-Status LEDs are only available on the [AutoPi](https://www.autopi.io) Telematics Unit.
+This guide and the LED states below apply only to AutoPi TMU CM4/CAN-FD Pro devices. For information about the LED indicators on AutoPi Mini devices, see [LED Lights of an AutoPi Mini Device](https://docs.autopi.io/hardware/autopi_mini/device_specifications/#led-lights-of-an-autopi-mini-device).
 :::
+
+  
 
 ### Blue LED
 
-The blue LED indicates the current state of the [low-level ](/core/power_management/low_level.md) SPM system.
+The blue LED shows the state of the [low-level SPM system](https://docs.autopi.io/core/power_management/core-power-low/).
 
 | LED State | Description |
-| ------ | ------ |
-| Turned off | SPM is in [OFF](/core/power_management/low_level.md#off) state. |
-| Flashing brightly | SPM is in [BOOTING](/core/power_management/low_level.md#booting) state. |
-| Constantly bright | SPM is in [ON](/core/power_management/low_level.md#on) state. |
-| Breathing effect | SPM is in [SLEEPING](/core/power_management/low_level.md#sleeping) state. |
-| Constantly dimmed | SPM is in [HIBERNATING](/core/power_management/low_level.md#hibernating) state. |
+| :---: | :---: |
+| Off | The SPM system is [off](https://docs.autopi.io/core/power_management/core-power-low/#off). |
+| Bright flashing | The SPM system is [booting](https://docs.autopi.io/core/power_management/core-power-low/#booting). |
+| Constant bright light | The SPM system is [on](https://docs.autopi.io/core/power_management/core-power-low/#on). |
+| Breathing effect | The SPM system is [sleeping](https://docs.autopi.io/core/power_management/core-power-low/#sleeping). |
+| Constant dim light | The SPM system is [hibernating](https://docs.autopi.io/core/power_management/core-power-low/#hibernating). |
 
 ### Green LED
 
-The green LED indicates the current state of the [high-level](/core/power_management/high_level.md) system.
+The green LED shows the state of the [high-level power management system](https://docs.autopi.io/core/power_management/core-power-high/) and its connection to AutoPi Cloud.
 
 | LED State | Description |
-| ------ | ------ |
-| Turned off | Not running or in the process of booting up. |
-| Flashing brightly | Up and running but NOT (yet) connected to the [Cloud](https://www.autopi.io/software-platform/cloud-management). |
-| Constantly bright | Up and running and connected to the [Cloud](https://www.autopi.io/software-platform/cloud-management). |
+| :---: | :---: |
+| Off | The system is not running or is still booting. |
+| Bright flashing | The system is running but is not connected to AutoPi Cloud. |
+| Constant bright light | The system is running and connected to AutoPi Cloud. |
 
 :::note
 For LED light indicators on the AutoPi Mini device, see [LED Lights of an AutoPi Mini Device](/hardware/autopi_mini/device_specifications/#led-lights-of-an-autopi-mini-device).

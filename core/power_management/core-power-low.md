@@ -1,10 +1,12 @@
 # Low-level
 
-> The SPM (Smart Power Management) is an embedded system that controls the low-level power cycle of the device. It interacts with a number of subsystems that can initiate power state changes:
+> The SPM (Smart Power Management) is an embedded system that controls the low-level power cycle of the device. To learn more about the service, see [SPM Manager](https://docs.autopi.io/core/services/core-services-spm-manager/).
 
 ## SPM
 
-The SPM (Smart Power Management) is an embedded system that controls the low-level power cycle of the device. It interacts with a number of subsystems that can initiate power state changes:
+The SPM (Smart Power Management) is an embedded system that controls the low-level power cycle of the device. To learn more about the service, see [SPM Manager](https://docs.autopi.io/core/services/core-services-spm-manager/).
+
+It interacts with a number of subsystems that can initiate power state changes:
 
 | Subsystem | Description |
 | ------ | ------ |

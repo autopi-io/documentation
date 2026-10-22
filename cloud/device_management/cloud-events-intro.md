@@ -16,6 +16,10 @@ What you'll learn:
 - How to create custom events for advanced automation workflows.
 - How to integrate events with triggers, alerts, and operational reporting.
 
+:::note
+To learn more about how the Event Reactor works, see [Event Reactor](https://docs.autopi.io/core/services/core-services-event-reactor/).
+:::
+
 ---
 
 ## Event Filters
