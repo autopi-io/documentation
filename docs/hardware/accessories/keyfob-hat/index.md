@@ -11,6 +11,10 @@ The keyless entry solution described here only works with the [AutoPi](https://w
 
 This guide provides a general technical overview of the [AutoPi](https://www.autopi.io) Keyless solution. 
 
+:::note
+To learn more about managing key fobs, see [Key Fob Manager](https://docs.autopi.io/core/services/core-services-key-fob-manager/).
+:::
+
 <p align="center">
 <img src="/img/hardware/accessories/keyfob/command_flow_1.jpg" alt="Keyfob flow" width="60%" />
 </p>
