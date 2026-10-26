@@ -11,7 +11,7 @@ import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
 ---
 
 :::warning
-**Performance impact notice** - changing advanced settings can significantly affect your device's performance, battery life, data consumption, and overall stability. Only modify settings if you understand their implications. If you are unsure about any setting or need assistance, please contact our support team at **support@autopi.io** for guidance.
+Changing advanced settings can significantly affect your device's performance, battery life, data consumption, and overall stability. Only modify settings if you understand their implications. If you are unsure about any setting or need assistance, please contact our support team at **support@autopi.io** for guidance.
 :::
 
 
