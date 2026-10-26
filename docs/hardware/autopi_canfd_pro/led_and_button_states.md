@@ -5,6 +5,7 @@ supportedDevices: ['pro']
 ---
 import CardGrid from "/components/CardGrid" ;
 import DeviceSupportBanner from '@site/src/components/DeviceSupportBanner';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <DeviceSupportBanner supported={frontMatter.supportedDevices} />
 ---
@@ -31,6 +32,10 @@ With the button it is possible to control the state of the device:
 
 
 ## Status LEDs
+
+<p align="center">
+  <img src={useBaseUrl('/img/core/power_management/low_level/autopi_led_status.png')} alt="AutoPi LED Status" width="700"/>
+</p>
 
 ### Blue LED
 
