@@ -502,6 +502,7 @@ module.exports = {
     {
       "Releases": [
         "releases/introduction",
+        "releases/november-2026",
         "releases/october-2026",
         "releases/september-2026",
       ]
@@ -509,6 +510,7 @@ module.exports = {
     {
       "Changelog": [
         "changelog/introduction",
+        "changelog/november-2026",
         "changelog/october-2026",
         "changelog/september-2026",
       ]
