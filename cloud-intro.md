@@ -1,48 +1,62 @@
 # Introduction
 
-> This section is all about the [Cloud](https://www.autopi.io/software-platform/cloud-management) system. It goes over details, such as the different configuration
-options that can be set, the events that can be seen from the device. More complex functionalities
-are also explored in this section.
+> AutoPi Cloud is the central platform for managing AutoPi devices, configuring data collection, and working with vehicle and fleet data. Use it to monitor deployments, apply configuration changes remotely, investigate events and diagnostics, and integrate AutoPi data with your own systems.
 
-This section is all about the [Cloud](https://www.autopi.io/software-platform/cloud-management) system. It goes over details, such as the different configuration
-options that can be set, the events that can be seen from the device. More complex functionalities
-are also explored in this section.
+AutoPi Cloud is the central platform for managing AutoPi devices, configuring data collection, and working with vehicle and fleet data. Use it to monitor deployments, apply configuration changes remotely, investigate events and diagnostics, and integrate AutoPi data with your own systems.
 
-## What is the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management)?
+  
 
-The [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) is a system created to more easily manage your [AutoPi](https://www.autopi.io) device. The [Cloud](https://www.autopi.io/software-platform/cloud-management) is divided into several sections:
+## What You Can Do in AutoPi Cloud
 
-- Device management 
-- Fleet management 
-- API
+AutoPi Cloud is organized around the operational tasks below.
 
   
 
 ### Device Management
-This is an area that shows the current state of your devices and allows you to easily change that
-state to whatever is needed. For example, there is a section of advanced settings that are
-available that change various functionalities of the device like WiFi, hotspot, accelerometer
-and power settings. It is also possible to setup the device to send data back to your own servers.
-This way data can be kept private if needed. It possible to manage and maintain multiple devices at the same type, by applying templates to groups of devices.
+
+Use **Device Management** to monitor device connectivity, alerts, and software status. From an individual device, you can:
+
+- Configure [loggers](https://docs.autopi.io/cloud/device_management/device-loggers/), [services](https://docs.autopi.io/cloud/device_management/services/), [events](https://docs.autopi.io/cloud/device_management/events/), and [advanced device settings](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/).
+- Deploy [custom code](https://docs.autopi.io/cloud/device_management/custom-code/) and create [triggers](https://docs.autopi.io/cloud/device_management/a-guide-to-triggers/) for event-driven automation.
+- Run remote [commands](https://docs.autopi.io/core/commands/) and [jobs](https://docs.autopi.io/cloud/device_management/cloud-jobs/).
+- Deploy [software updates](https://docs.autopi.io/cloud/device_management/software-updates/) and review configuration changes.
+- Create [templates](https://docs.autopi.io/cloud/device_management/templates/) to apply consistent configurations across multiple devices.
+- Inspect incoming data and troubleshoot device behavior.
+
+Start with the [Device Management overview](/cloud/device_management/).
 
 ### Fleet Management
-The [Cloud](https://www.autopi.io/software-platform/cloud-management) also allows you to view data that has been recorded from your vehicle. There is a dashboard that
-shows past OBD-II data like RPM, speed and fuel level. The device also sends back information about
-[trips](/cloud/fleet_management/vehicles/trips/), which are also viewable. The [Cloud](https://www.autopi.io/software-platform/cloud-management) also keeps track of the
-[events](/cloud/device_management/events/index.md) that were triggered on your device. In the events page, you are
-able to view all events and filter them by date or tag.
 
-### [Cloud](https://www.autopi.io/software-platform/cloud-management) API
-The [API](/getting_started/api/) gives you acccess to all the same functionalities you see in the [Cloud](https://www.autopi.io/software-platform/cloud-management). Through the API it is possible to extend the features to your own systems or APP solution and thereby build on top of the platform. 
+Use **Fleet Management** to turn data from your devices into an operational view of your vehicles. You can:
 
-## Get Your Device Today and Get Started!
+- View vehicle [locations](https://docs.autopi.io/cloud/fleet_management/locations), status, telemetry, and [trips](/cloud/fleet_management/vehicles/trips/).
+- Organize vehicles into [groups](https://docs.autopi.io/cloud/fleet_management/vehicles/fleet-groups/) and [locations](https://docs.autopi.io/cloud/fleet_management/locations/).
+- Configure [geofences](https://docs.autopi.io/cloud/fleet_management/vehicles/fleet-geofences/), [alerts](https://docs.autopi.io/cloud/fleet_management/fleet-alerts/), [dashboards](https://docs.autopi.io/cloud/fleet_management/configurations/dashboards/), [fault codes](https://docs.autopi.io/cloud/fleet_management/configurations/fault-codes/), and [notification channels](https://docs.autopi.io/cloud/fleet_management/configurations/notification-channels/).
+- Define [asset types](https://docs.autopi.io/cloud/fleet_management/configurations/asset-types/) and review RFID activity through [Access Control](https://docs.autopi.io/cloud/fleet_management/access-control/).
+- Review [diagnostics](https://docs.autopi.io/cloud/fleet_management/fleet-diagnostics/) and generate [reports](https://docs.autopi.io/cloud/fleet_management/reports/) for fleet activity and utilization.
 
-  
+Start with the [Fleet Management introduction](/cloud/fleet_management/).
 
-[![](/img/hardware/autopi_mini/AutoPi_Mini_5_Top_right.png) **AutoPi Mini** Build for fleet volume scaling and ease of install. CAN bus ready with support for legacy protocols. Support wide range of OEM Parameters. Comes with connectivity built-in. See price.](https://shop.autopi.io/products/autopi-mini)
+### Account Management
 
-[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **AutoPi TMU CM4** Based on Raspberry Pi Compute Module 4. Best for custom solutions requiring large computation power and expansion options. Comes with connectivity built-in. See price.](https://shop.autopi.io/products/autopi-telematics-unit-cm4-4g-lte-edition)
+Use **Accounts** to manage customers, users, devices, permissions, and API tokens. Nested customers and permission groups help separate data and responsibilities across teams, business units, or customers.
 
-[![](/img/hardware/autopi_canfd_pro/canfd_pro_trans.png) **AutoPi CAN-FD Pro** Based on Raspberry Pi Compute Module 4. Our most powerful device to date, designed for full speed automotive datalogging of dual CAN-FD channels. See price.](https://shop.autopi.io/products/autopi-can-fd-pro)
+See [Accounts](/cloud/accounts/) for the account structure and access options.
 
-[![](/img/shared/autopi_devices_trans.png) **Comparison of all AutoPi devices** Compare our devices and find the best fit for your requirements.](https://www.autopi.io/hardware/compare/)
+### API
+
+The AutoPi REST API lets you automate supported Cloud workflows and connect AutoPi with your own applications. Depending on the endpoint, you can retrieve telemetry and trip data, manage device settings, execute commands, and build data export workflows.
+
+See [Getting Started with the REST API](/getting_started/api/) for authentication and examples, or use the [interactive API reference](https://api.autopi.io/) for endpoint details.
+
+## Where to Start
+
+Choose the area that matches your task:
+
+[![](/img/shared/laptop_autopi_3_scaled.png) **Device Management** Configure, monitor, update, and troubleshoot your AutoPi devices.](/cloud/device_management/)
+
+[![](/img/cloud/fleet_management/introduction/AutoPI_CTA_23-24_GeoMap_01_Flat.png) **Fleet Management** Track vehicles, review trips and diagnostics, and manage fleet workflows.](/cloud/fleet_management/)
+
+[![](/img/getting_started/api/api_intro/api_frontpage.jpg) **REST API** Authenticate, explore endpoints, and integrate AutoPi data with your systems.](/getting_started/api/)
+
+[![](/img/shared/favicon-194x194.png) **Accounts** Manage customers, users, permissions, devices, and API tokens.](/cloud/accounts/)

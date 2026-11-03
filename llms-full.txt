@@ -37,6 +37,54 @@ We recommend starting with the Releases page for a better overview, then referri
 
 ---
 
+## November 2026
+
+---
+
+## Backend
+
+### Backend 1.28.24
+
+**Release Date:** 2026-11-02
+
+#### Features
+
+- Add impact detection to motion events and update related configurations
+- Add conditional visibility for motion event thresholds based on device release version
+
+#### Bug Fixes
+
+- Add asset type to the device viewset when resolving a device to a vehicle
+- Remove unnecessary `select_related` usage in the health check configuration query
+- Fix search in the OBD library
+- Fix the incorrect error message shown when deleting a PGN that is still in use
+- Update recent statistics to support devices without an associated vehicle
+- Fix an issue where the driving state could be incorrect for AutoPi Mini devices
+
+---
+
+## Frontend
+
+### Frontend 1.28.30
+
+**Release Date:** 2026-11-02
+
+#### Features
+
+- Add XLSX export functionality and integrate download options for CSV and XLSX formats
+
+#### Bug Fixes
+
+- Use the asset type icon for recent vehicle positions and fall back to the vehicle icon only when no asset type icon is set
+- Fix an issue where a PGN could not be associated with a bus
+- Add a new `toUserTimezone` method
+
+---
+
+**Looking for a summary?** View the [**November 2026 Release highlights**](/releases/november-2026) page.
+
+---
+
 ## October 2026
 
 ---
@@ -1145,7 +1193,7 @@ Devices with a hardware version of **5.2** and above **don't** support wake on m
 ---
 
 :::warning
-**Performance impact notice** - changing advanced settings can significantly affect your device's performance, battery life, data consumption, and overall stability. Only modify settings if you understand their implications. If you are unsure about any setting or need assistance, please contact our support team at **support@autopi.io** for guidance.
+Changing advanced settings can significantly affect your device's performance, battery life, data consumption, and overall stability. Only modify settings if you understand their implications. If you are unsure about any setting or need assistance, please contact our support team at **support@autopi.io** for guidance.
 :::
 
 This guide provides a comprehensive overview of all advanced configuration settings available for your AutoPi TMU CM4 device. Advanced settings enable fine-tuned control over device behavior, power management, data logging, connectivity, and specialized features. Each setting is configurable through the AutoPi Cloud platform and can be customized to match your specific operational requirements.
@@ -8133,48 +8181,64 @@ Use diagnostics alongside **Fault Codes** to monitor vehicle health in real time
 
 ## Introduction(2)
 
-This section is all about the [Cloud](https://www.autopi.io/software-platform/cloud-management) system. It goes over details, such as the different configuration
-options that can be set, the events that can be seen from the device. More complex functionalities
-are also explored in this section.
+AutoPi Cloud is the central platform for managing AutoPi devices, configuring data collection, and working with vehicle and fleet data. Use it to monitor deployments, apply configuration changes remotely, investigate events and diagnostics, and integrate AutoPi data with your own systems.
 
-## What is the [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management)?
+  
 
-The [AutoPi](https://www.autopi.io) [Cloud](https://www.autopi.io/software-platform/cloud-management) is a system created to more easily manage your [AutoPi](https://www.autopi.io) device. The [Cloud](https://www.autopi.io/software-platform/cloud-management) is divided into several sections:
+## What You Can Do in AutoPi Cloud
 
-- Device management 
-- Fleet management 
-- API
+AutoPi Cloud is organized around the operational tasks below.
 
   
 
 ### Device Management
-This is an area that shows the current state of your devices and allows you to easily change that
-state to whatever is needed. For example, there is a section of advanced settings that are
-available that change various functionalities of the device like WiFi, hotspot, accelerometer
-and power settings. It is also possible to setup the device to send data back to your own servers.
-This way data can be kept private if needed. It possible to manage and maintain multiple devices at the same type, by applying templates to groups of devices.
+
+Use **Device Management** to monitor device connectivity, alerts, and software status. From an individual device, you can:
+
+- Configure [loggers](https://docs.autopi.io/cloud/device_management/device-loggers/), [services](https://docs.autopi.io/cloud/device_management/services/), [events](https://docs.autopi.io/cloud/device_management/events/), and [advanced device settings](https://docs.autopi.io/cloud/device_management/advanced_settings/autopi_tmu_cm4/).
+- Deploy [custom code](https://docs.autopi.io/cloud/device_management/custom-code/) and create [triggers](https://docs.autopi.io/cloud/device_management/a-guide-to-triggers/) for event-driven automation.
+- Run remote [commands](https://docs.autopi.io/core/commands/) and [jobs](https://docs.autopi.io/cloud/device_management/cloud-jobs/).
+- Deploy [software updates](https://docs.autopi.io/cloud/device_management/software-updates/) and review configuration changes.
+- Create [templates](https://docs.autopi.io/cloud/device_management/templates/) to apply consistent configurations across multiple devices.
+- Inspect incoming data and troubleshoot device behavior.
+
+Start with the [Device Management overview](/cloud/device_management/).
 
 ### Fleet Management
-The [Cloud](https://www.autopi.io/software-platform/cloud-management) also allows you to view data that has been recorded from your vehicle. There is a dashboard that
-shows past OBD-II data like RPM, speed and fuel level. The device also sends back information about
-[trips](/cloud/fleet_management/vehicles/trips/), which are also viewable. The [Cloud](https://www.autopi.io/software-platform/cloud-management) also keeps track of the
-[events](/cloud/device_management/events/index.md) that were triggered on your device. In the events page, you are
-able to view all events and filter them by date or tag.
 
-### [Cloud](https://www.autopi.io/software-platform/cloud-management) API
-The [API](/getting_started/api/) gives you acccess to all the same functionalities you see in the [Cloud](https://www.autopi.io/software-platform/cloud-management). Through the API it is possible to extend the features to your own systems or APP solution and thereby build on top of the platform. 
+Use **Fleet Management** to turn data from your devices into an operational view of your vehicles. You can:
 
-## Get Your Device Today and Get Started!
+- View vehicle [locations](https://docs.autopi.io/cloud/fleet_management/locations), status, telemetry, and [trips](/cloud/fleet_management/vehicles/trips/).
+- Organize vehicles into [groups](https://docs.autopi.io/cloud/fleet_management/vehicles/fleet-groups/) and [locations](https://docs.autopi.io/cloud/fleet_management/locations/).
+- Configure [geofences](https://docs.autopi.io/cloud/fleet_management/vehicles/fleet-geofences/), [alerts](https://docs.autopi.io/cloud/fleet_management/fleet-alerts/), [dashboards](https://docs.autopi.io/cloud/fleet_management/configurations/dashboards/), [fault codes](https://docs.autopi.io/cloud/fleet_management/configurations/fault-codes/), and [notification channels](https://docs.autopi.io/cloud/fleet_management/configurations/notification-channels/).
+- Define [asset types](https://docs.autopi.io/cloud/fleet_management/configurations/asset-types/) and review RFID activity through [Access Control](https://docs.autopi.io/cloud/fleet_management/access-control/).
+- Review [diagnostics](https://docs.autopi.io/cloud/fleet_management/fleet-diagnostics/) and generate [reports](https://docs.autopi.io/cloud/fleet_management/reports/) for fleet activity and utilization.
 
-  
+Start with the [Fleet Management introduction](/cloud/fleet_management/).
 
-[![](/img/hardware/autopi_mini/AutoPi_Mini_5_Top_right.png) **AutoPi Mini** Build for fleet volume scaling and ease of install. CAN bus ready with support for legacy protocols. Support wide range of OEM Parameters. Comes with connectivity built-in. See price.](https://shop.autopi.io/products/autopi-mini)
+### Account Management
 
-[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **AutoPi TMU CM4** Based on Raspberry Pi Compute Module 4. Best for custom solutions requiring large computation power and expansion options. Comes with connectivity built-in. See price.](https://shop.autopi.io/products/autopi-telematics-unit-cm4-4g-lte-edition)
+Use **Accounts** to manage customers, users, devices, permissions, and API tokens. Nested customers and permission groups help separate data and responsibilities across teams, business units, or customers.
 
-[![](/img/hardware/autopi_canfd_pro/canfd_pro_trans.png) **AutoPi CAN-FD Pro** Based on Raspberry Pi Compute Module 4. Our most powerful device to date, designed for full speed automotive datalogging of dual CAN-FD channels. See price.](https://shop.autopi.io/products/autopi-can-fd-pro)
+See [Accounts](/cloud/accounts/) for the account structure and access options.
 
-[![](/img/shared/autopi_devices_trans.png) **Comparison of all AutoPi devices** Compare our devices and find the best fit for your requirements.](https://www.autopi.io/hardware/compare/)
+### API
+
+The AutoPi REST API lets you automate supported Cloud workflows and connect AutoPi with your own applications. Depending on the endpoint, you can retrieve telemetry and trip data, manage device settings, execute commands, and build data export workflows.
+
+See [Getting Started with the REST API](/getting_started/api/) for authentication and examples, or use the [interactive API reference](https://api.autopi.io/) for endpoint details.
+
+## Where to Start
+
+Choose the area that matches your task:
+
+[![](/img/shared/laptop_autopi_3_scaled.png) **Device Management** Configure, monitor, update, and troubleshoot your AutoPi devices.](/cloud/device_management/)
+
+[![](/img/cloud/fleet_management/introduction/AutoPI_CTA_23-24_GeoMap_01_Flat.png) **Fleet Management** Track vehicles, review trips and diagnostics, and manage fleet workflows.](/cloud/fleet_management/)
+
+[![](/img/getting_started/api/api_intro/api_frontpage.jpg) **REST API** Authenticate, explore endpoints, and integrate AutoPi data with your systems.](/getting_started/api/)
+
+[![](/img/shared/favicon-194x194.png) **Accounts** Manage customers, users, permissions, devices, and API tokens.](/cloud/accounts/)
 
 ---
 
@@ -26107,107 +26171,91 @@ Ensure all connections are secure and properly insulated. Incorrect connections 
 
 ---
 
-:::info Need Custom Integrations?
-[Contact](mailto:support@autopi.io) our team to discuss tailored solutions for your business.
+This section covers accessories for extending, installing, and connecting AutoPi devices. Use the links below to review compatibility, installation instructions, and connector pinouts before adding an accessory to your setup.
+
+:::info Need a custom integration?
+[Contact the AutoPi team](mailto:support@autopi.io) to discuss requirements that are not covered by the standard accessories in this section.
 :::
 
-This section contains a description of addons avaible for the [AutoPi](https://www.autopi.io) devices. 
+## Global SIM Card
 
-Learn how to create and integrate various accessories with your AutoPi device to unlock its full potential. 
-These add-ons enhance functionality, allowing you to customize your setup and optimize data management. Explore the possibilities and make the most of your AutoPi experience.
+The [Global SIM Card Solution](/hardware/accessories/sim-solution/) provides cellular coverage in 188 countries. The guide lists the supported countries and network operators.
 
-## Global SIM Card Solution 
-Our Global SIM card solution works in 188 countries, providing you with reliable and seamless connectivity wherever your solution is based. Stay connected and experience the easiest setup of your device with our versatile sim card.
+The AutoPi Mini and TMU CM4 devices purchased with a subscription already include a SIM card. For other configurations, select a data plan from the [AutoPi Shop](https://shop.autopi.io/products/global-sim-card-solution). Monthly data usage is available in [AutoPi Cloud](https://my.autopi.io).
 
-You can read more about coverage and more information in this **guide**: [Global SIM Card Solution](https://docs.autopi.io/hardware/accessories/sim-solution/). 
+## DoIP HAT
 
-The solution can be **purchased** in our [AutoPi Webshop - Global SIM Card](https://shop.autopi.io/products/global-sim-card-solution). We offer different package sizes and your monthly data usage is shown from our [AutoPi Cloud solution](https://my.autopi.io).
+The DoIP HAT adds Diagnostics over Internet Protocol (ISO 13400) support to compatible AutoPi TMU CM4-based devices. It supports Ethernet-based vehicle diagnostics, including UDS communication and ECU programming workflows.
 
-## OBD-II to dual DB9 pinout Cable
-Connect two CAN bus nodes to the OBD2 port of the AutoPi TMU CM4 or the AutoPi CAN-FD Pro. The DB9 connections each connects to one of the CAN busses available on the devices. 
-
-You can read more about pinout and more information in this **guide**: [OBD-II to dual DB9 pinout](https://docs.autopi.io/hardware/accessories/dualdb9-pinout/). 
-
-This cable can be **purchased** in our [AutoPi Webshop - OBD-II to dual DB9 cable ](https://shop.autopi.io/products/obd2-to-dual-db9). 
-
-**Specifications:**
-* Compatibility: For DB9 based connections.
-* Connector Types: DB9 (male) to 16 PIN OBD2 (female).
-* Protocol Support: CAN BUS for vehicle interfacing.
-* Durability: Constructed with premium materials.
-* Ease of Use: Plug-and-play design for quick and secure connections.
-
-    
-
-## DoIP HAT 
-The DoIP HAT is a highly advanced interface module designed to enhance vehicle diagnostics using the DoIP protocol (Diagnostics over Internet Protocol). With high-speed Ethernet connectivity and support for multiple protocols, this module ensures accurate communication and comprehensive diagnostic capabilities for modern vehicles.
-
-This DoIP HAT can be **purchased** in our [AutoPi Webshop - DoIP HAT](https://shop.autopi.io/products/doip-hat-v1-3).
-
-You can read more about how to install DoIP HAT to your AutoPi device in this **guide**: [DoIP HAT Install guide](https://docs.autopi.io/hardware/accessories/doip-install/). 
-
-And you can read more on how to start using the DoIP software and **step by step guide on how to activate DoIP interface** on your AutoPi device: [Setting up DoIP](https://docs.autopi.io/developer_guides/setting-up-doip/).
-
-**Technical Overview:**
-An advanced DoIP (ISO 13400) interface module designed for enhanced diagnostic communication with vehicle ECUs, leveraging high-speed Ethernet connectivity for real-time data analysis.
-
-**Performance Advantages:**
-* DoIP Protocol Support: Fully compliant with ISO 13400 standards for efficient communication with vehicle systems, enabling precise diagnostics and firmware updates.
-* High-Speed Ethernet Connectivity: Provides fast and reliable data transfer, essential for real-time diagnostics and monitoring.
-* Multi-Protocol Compatibility: Supports UDS (Unified Diagnostic Services) and other key automotive protocols across a wide range of vehicle makes and models.
-* Rugged Construction: Engineered for durability, the HAT is built to withstand harsh automotive environments for consistent performance.
-* Quick Deployment: Designed for plug-and-play installation on compatible devices, simplifying the setup process for fast implementation.
-* Application Scope: Ideal for automotive workshops, testing centers, and manufacturers requiring advanced diagnostics, real-time vehicle monitoring, and firmware updates.
-
-    
-
-## WiFi/BLE/LTE/GPS Antennas
-If you often drive in places with poor 4G/LTE coverage and/or weak GPS signal, our Webshop offers 2 external kits that should improve the overall signal quality. The kit allows you to boost 4G/LTE connectivity and GPS signal strength, which is especially useful if you frequently drive in areas with weak signal reception. 
-
-* [4-in-1 Antenna Kit](https://shop.autopi.io/products/4-in-1-car-antenna-lte-x2-gps-wifi) - he 4in1 Antenna Kit is a high-performance solution designed to optimize connectivity for the AutoPi TMU CM4 device. Featuring two LTE antennas, one GPS antenna, and one WiFi antenna, this compact system delivers strong signal reception and reliable communication across multiple wireless standards. Built for demanding environments, the antenna kit ensures stable and long-term performance.
-This kit can be pre-installed on AutoPi TMU CM4 device or installed by using this guide: [Installation Guide for CM4 device](https://docs.autopi.io/hardware/autopi_tmu_cm4/installing_4in1_external_antennas/). 
-
-    
-
-* [3-in-1 Antenna Kit](https://shop.autopi.io/products/3in1-external-antenna-kit) - With this kit you can convert your AutoPi device to use the all in one external antenna, instead of the built-in internal antennas, thereby improving the overall signal quality. This antenna kit includes: 2x LTE and 1x GPS. 
-This kit can be pre-installed on AutoPi TMU CM4 device or installed by using this guide: [Installation Guide for CM4 device](https://docs.autopi.io/hardware/autopi_tmu_cm4/installing_external_antennas/). 
-
-    
-
-:::info
-Our [Autopi CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro) comes with the 4-in-1 Antenna Kit already included. 
+:::caution Check vehicle compatibility
+Install a DoIP-enabled device only in a vehicle that supports Ethernet diagnostics. After installation, the AutoPi Ethernet interface is routed internally to the vehicle and must not be connected to an external Ethernet device.
 :::
 
-## Adapter Cables
-Our Autopi Webshop offers various adapter cables to help integrate your AutoPi device in specific setups: 
-  * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – Add extra reach for flexible placement.
-  * [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable?pr_prod_strat=jac&pr_rec_id=17052e989&pr_rec_pid=8619774050653&pr_ref_pid=8609919074653&pr_seq=uniform) - Power the AutoPi device with any 12-24 volt DC power supply.
-  * [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform) - Use this Y-splitter cable if you need to connect an additional OBD-II device at the same time as your AutoPi device.
-  * [Tesla OBD-II Adapter Cable for Model 3 and Y](https://shop.autopi.io/products/tesla-obd2-adapter-cable-for-model-3-and-y) - Add an OBD-II port to your Tesla Model 3 or Model Y with this adapter cable.
-  * [Micro USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable) - This Micro USB to USB-A adapter cable is made to fit perfectly with the external Micro USB port on the AutoPi device.
-  * [CAN Bus Testing/Loop Cable](https://shop.autopi.io/products/can-bus-testing-cable) - The CAN Bus Testing Cable is a cable designed for internal communication testing between two CAN bus systems.
-  * [CAN Bus Cable with Open Wires](https://shop.autopi.io/products/can-bus-cable-w-open-wires) - The CAN Bus cable with open wires is a cable designed for customized installations, where you need to connect specific wires only. 
+- Follow the [DoIP HAT installation guide](/hardware/accessories/doip-install/).
+- Complete the [DoIP software setup](/developer_guides/setting-up-doip/).
+- Purchase the [DoIP HAT for AutoPi TMU CM4](https://shop.autopi.io/products/doip-hat-v1-3).
 
-    
+  
 
-## Heavy-duty Adapter Cables
-Our Autopi Webshop offers various heavy-duty adapter cables to help integrate your AutoPi device in different Heavy-duty J1939 vehicles. You can browse through the selection for: 
-* [Catapiller 14 PIN J1939 to 16 PIN OBD-II Adapter cable](https://shop.autopi.io/products/catapiller-14-pin-j1939-to-16-pin-obd-ii-adapter-cable)
-* [IVECO 30 PIN J1939 to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/iveco-30-pin-to-16-pin-obd2-adapter-cable)
-* [Knorr Wabco Trailer 7 PIN J1939 to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/knorr-wabco-trailer-7-pin-to-16-pin-obd2-adapter-cable) 
-* [MAN 37 PIN J1939 to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/man-37-pin-to-16-pin-obd2-adapter-cable)
-* [MAN Truck 12 PIN J1939 to 16 PIN OBD-II Adapter](https://shop.autopi.io/products/man-truck-12-to-16-pin-obd2-adapter)
-* [Mercedes 14 PIN J1939 to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/mercedes-14-pin-to-16-pin-obd2-adapter-cable)
-* [Renault 12 PIN J1939 to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/renault-12-pin-to-16-pin-obd2-adapter-cable)
-* [Scania 16 PIN J1939 to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/scania-16-pin-to-16-pin-obd2-adapter-cable)
-* [Volvo 8 PIN J1939 to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/volvo-8-pin-to-16-pin-obd2-adapter-cable)
-* [Cummins 9 PIN J1939 (J1708) to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/cummins-9-pin-j1939-j1708-to-16-pin-obd2-adapter-cable)
+## External Antenna Kits
 
-![Heavy-duty Adapter Cables](/img/hardware/accessories/cables/j1939_cables.png)
-![Heavy-duty Adapter Cables2](/img/hardware/accessories/cables/j1939_cables2.png)
+External antenna kits can improve reception when a device is installed where its internal antennas have limited access to cellular, GNSS, or Wi-Fi signals. Both kits can be ordered pre-installed or installed on a compatible TMU CM4.
 
-## Device Mounts 
-At the moment we have 2 mounting options available for the AutoPi devices. You can mount your AutoPi device with [Flat Surface Mount](https://docs.autopi.io/hardware/accessories/device_mounts/#flat-surfaces-mount) or [Curved Surfaces Mount](https://docs.autopi.io/hardware/accessories/device_mounts/#curved-surfaces-mount). For both of the options we have a free designs available for download, you can read more at this **guide**: [Device Mounts](https://docs.autopi.io/hardware/accessories/device_mounts/).
+### 4-in-1 Antenna Kit
+
+The [4-in-1 Antenna Kit](https://shop.autopi.io/products/4-in-1-car-antenna-lte-x2-gps-wifi) includes two LTE antennas, one GNSS antenna, and one Wi-Fi antenna. Follow the [4-in-1 installation guide](/hardware/autopi_tmu_cm4/installing_4in1_external_antennas/) when adding the kit to a TMU CM4.
+
+:::note
+The AutoPi CAN-FD Pro includes the 4-in-1 antenna kit as standard.
+:::
+
+  
+
+### 3-in-1 Antenna Kit
+
+The [3-in-1 Antenna Kit](https://shop.autopi.io/products/3in1-external-antenna-kit) includes two LTE antennas and one GNSS antenna. Follow the [3-in-1 installation guide](/hardware/autopi_tmu_cm4/installing_external_antennas/) when adding the kit to a TMU CM4.
+
+  
+
+## General-Purpose Cables
+
+The following cables support common installation, development, and testing scenarios:
+
+- [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable): Relocates the device using a direct pass-through connection on all 16 pins.
+- [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable): Powers a device from a 12-24 V DC supply for setup, testing, or development outside a vehicle.
+- [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable): Connects an AutoPi and a second OBD-II device while keeping both ports available.
+- [OBD-II to Dual DB9 Cable](/hardware/accessories/dualdb9-pinout/): Connects two CAN bus channels from an AutoPi TMU CM4 or AutoPi CAN-FD Pro to separate DB9 connectors. [Purchase the cable](https://shop.autopi.io/products/obd2-to-dual-db9).
+- [Tesla OBD-II Adapter Cable for Model 3 and Y](/hardware/accessories/tesla-obd2-adapter-model-3-y/): Adds an OBD-II connection to a compatible Tesla Model 3 or Model Y.
+- [Micro USB to USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable): Connects a USB-A peripheral to the Micro USB port on an AutoPi Telematics Unit.
+- [CAN Bus Testing/Loop Cable](https://shop.autopi.io/products/can-bus-testing-cable): Loops the two CAN interfaces on an AutoPi TMU CM4 for communication testing.
+- [Male CAN Bus Cable with Open Wires](/hardware/accessories/male-can-bus-open-wires/): Exposes individual signals for a custom installation.
+- [Female CAN Bus Cable with Open Wires](/hardware/accessories/female-can-bus-open-wires/): Provides a female OBD-II connector with individual wires for custom connections.
+
+  
+
+## Heavy-Duty Vehicle Adapter Cables
+
+Vehicle-specific adapter cables connect an AutoPi OBD-II interface to J1939 or J1708 diagnostic connectors. Select the guide that matches the connector and vehicle. Each guide includes a pinout and a link to the corresponding cable.
+
+- [Caterpillar 14-pin J1939 adapter](/hardware/accessories/caterpillar-14pin-j1939-obd2/)
+- [Caterpillar 538-5051 9-pin J1939 adapter](/hardware/accessories/caterpillar-538-5051-9pin-j1939-obd2/)
+- [Cummins 9-pin J1939/J1708 adapter](/hardware/accessories/cummins-9pin-j1939-obd2/)
+- [Cummins-Komatsu 12-pin J1939 adapter](/hardware/accessories/cummins-komatsu-12pin-j1939-obd2/)
+- [IVECO 30-pin J1939 adapter](/hardware/accessories/iveco-30pin-j1939-obd2/)
+- [Knorr Wabco trailer 7-pin J1939 adapter](/hardware/accessories/knorr-wabco-7pin-j1939-obd2/)
+- [MAN 37-pin J1939 adapter](/hardware/accessories/man-37pin-j1939-obd2/)
+- [MAN truck 12-pin J1939 adapter](/hardware/accessories/man-truck-12pin-j1939-obd2/)
+- [Mercedes 14-pin J1939 adapter](/hardware/accessories/mercedes-14pin-j1939-obd2/)
+- [Renault 12-pin J1939 adapter](/hardware/accessories/renault-12pin-j1939-obd2/)
+- [Scania 16-pin J1939 adapter](/hardware/accessories/scania-16pin-j1939-obd2/)
+- [Volvo 8-pin J1939 adapter](/hardware/accessories/volvo-8pin-j1939-obd2/)
+
+![Heavy-duty J1939 adapter cables](/img/hardware/accessories/cables/j1939_cables.png)
+![Additional heavy-duty J1939 adapter cables](/img/hardware/accessories/cables/j1939_cables2.png)
+
+## Device Mounts
+
+The [Device Mounts guide](/hardware/accessories/device_mounts/) provides downloadable 3D-printable designs for mounting a compatible AutoPi device on a flat or curved surface.
 
 ---
 
@@ -26842,47 +26890,59 @@ The pinout above is based on the standard J1939 to OBD-II mapping. Refer to your
 ---
 
 ## Introduction
-[AutoPi](https://www.autopi.io) offers a global SIM card solution. The SIM card solution is mainly targeted for our [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) and [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) (without simcard) solutions, as these does not come with a SIM card per standard. 
-The solution can be purchased in our webshop. We offer different package sizes and your monthly data usage is shown from our [Cloud](https://www.autopi.io/software-platform/cloud-management) solution. 
+
+AutoPi offers a global SIM card solution for reliable cellular connectivity across multiple countries and regions. It is primarily intended for [AutoPi CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) and [AutoPi TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) devices purchased without a SIM card, as these devices do not include one as standard.
+
+The solution is available in several data package sizes and can be purchased from the [AutoPi shop](https://shop.autopi.io/products/global-sim-card-solution).
+
+### Monitor SIM usage and status
+
+When using an AutoPi SIM card, you can monitor its data usage and status directly in [AutoPi Cloud](https://www.autopi.io/software-platform/cloud-management):
+
+1. Select your device in AutoPi Cloud.
+2. Open the **Overview** page.
+3. Locate the **AutoPi.io SIM** widget to view the SIM card's current status and data usage.
+
+  
 
 :::tip
-In case you have any questions, don't hesitate to contact us at [sales@autopi.io](mailto:sales@autopi.io).
+If you have any questions, contact us at [sales@autopi.io](mailto:sales@autopi.io).
 :::
 
 ## Global coverage
 
-Our SIM solution offers coverage in 188 countries. This is a list of our supported countries. 
+The AutoPi SIM card solution provides coverage in 188 countries. The table below lists the available operators by country and region.
 
 | Country                | Operators                                                 |
 |------------------------|-----------------------------------------------------------|
 | Afghanistan            | MTN                                                       |
 | Albania                | ONE Telecommunications                                    |
 | Algeria                | Optimum Telecom Algerie S.p.A, Wataniya Telecom Algerie   |
-| Anguilla               | CWI Carribbean Ltd, Digicel, Digicel                      |
+| Anguilla               | CWI Caribbean Ltd, Digicel                                |
 | Antigua and Barbuda    | Cable & Wireless                                          |
 | Armenia                | Telecom Armenia, K Telecom - Vivacel (MTS)                |
 | Austria                | H3G Austria, A1 Telekom Austria AG                        |
 | Azerbaijan             | BAKCELL LLC., Azercell Telecom B.M                        |
-| Bahrain                | Batelco - Bahrain Telecommunications Company, VIVA Bahrain|
+| Bahrain                | Batelco - Bahrain Telecommunications Company, VIVA Bahrain |
 | Bangladesh             | Grameenphone                                              |
 | Barbados               | Cable & Wireless                                          |
 | Belgium                | Orange (Ex Mobistar), Proximus                            |
 | Benin                  | Spacetel-Benin (MTN Benin), Etisalat Benin S.A            |
 | Bermuda                | Bermuda Digital                                           |
 | Bolivia                | Telecel, Nuevatel PCS de Bolivia SA                       |
-| Bonaire                |  Mossel Digicel Curaçao & Bonaire                         |
+| Bonaire                | Mossel Digicel Curaçao & Bonaire                          |
 | Bosnia and Herzegovina | m:tel, HT Mobile                                          |
 | Botswana               | MASCOM                                                    |
 | Brazil                 | Vivo, Claro, TIM                                          |
 | British Virgin Islands | Cable & Wireless, Digicel British Virgin Islands          |
-| Brunei                 | DST Communications Sdn Bhd(public)                        |
+| Brunei                 | DST Communications Sdn Bhd (public)                       |
 | Bulgaria               | Yettel (Telenor), A1                                      |
 | Burkina Faso           | Orange                                                    |
 | Cambodia               | Mobitel, Metfon                                           |
 | Cameroon               | Orange Cameroun S.A., MTN                                 |
 | Cape Verde             | T+ Telecomunicacões, CVTelecom                            |
-| Cayman Islands         | CWI Carribbean Ltd                                        |
-| Central AfricanRepublic| Orange Centrafrique                                       |
+| Cayman Islands         | CWI Caribbean Ltd                                         |
+| Central African Republic | Orange Centrafrique                                     |
 | Chad                   | Celtel Tchad (Airtel), Millicom Tchad (Tigo)              |
 | China                  | China Unicom, China Mobile                                |
 | Congo                  | Airtel Congo Brazzaville, MTN                             |
@@ -26890,7 +26950,7 @@ Our SIM solution offers coverage in 188 countries. This is a list of our support
 | Croatia                | Tele2 AB Croatia, Croatian Telecom, VIPnet                |
 | Cyprus                 | MTN, CytaMobile                                           |
 | Czech Republic         | O2, Vodafone                                              |
-| Denmark                | Telia Mobile, Telia Mobile, Hi3G Access AB 2              |
+| Denmark                | Telia Mobile, Hi3G Access AB 2                            |
 | Dominican Republic     | Claro Dominicana, Cable & Wireless                        |
 | Ecuador                | Conecel Ecuador                                           |
 | Egypt                  | Orange Egypt                                              |
@@ -26921,9 +26981,9 @@ Our SIM solution offers coverage in 188 countries. This is a list of our support
 | Israel                 | Pelephone                                                 |
 | Italy                  | Wind, Vodafone Omnitel N.V., Telekom Italia, Hutchison 3G |
 | Ivory Coast            | Orange Cote Divoire S.A. (Orange CI), MTN                 |
-| Jamaica                | CWI Carribbean Ltd                                        |
+| Jamaica                | CWI Caribbean Ltd                                         |
 | Jordan	             | Orange, Umniah Jordan                                     |
-| Kazakhstan	         | Kcell JSC, Kazakhstam Tele2, KaR-Tel LLP (Beeline)        |
+| Kazakhstan	         | Kcell JSC, Kazakhstan Tele2, KaR-Tel LLP (Beeline)        |
 | Kenya	                 | Airtel Networks Kenya Limited                             |
 | Kosovo	             | IPKO                                                      |
 | Kyrgyzstan	         | Beeline, MegaCom                                          |
@@ -26940,14 +27000,14 @@ Our SIM solution offers coverage in 188 countries. This is a list of our support
 | Malawi                 | CelTel- ZAIN- Airtel                                      |
 | Malaysia               | Digi Telecom                                              |
 | Mali                   | Orange Mali, Malitel SA                                   |
-| Malta                  | Epic Malte, MobIsle Communications Ltd                    |
+| Malta                  | Epic Malta, MobIsle Communications Ltd                    |
 | Martinique             | Orange Caraïbe                                            |
 | Mauritania             | MAURITEL MOBILES                                          |
 | Mauritius              | Cellplus Mobile Communications Ltd, Emtel, MTML           |
 | Mayotte                | Societe Reunionnaise de Radiotelephone (SRR REUNION)      |
 | Mexico                 | Telcel                                                    |
-| Moldova                | Moldcell SA, Orange Moldava (VoXtel S.A.)                 |
-| Kosovo                 | Monaco Telecom                                            |
+| Moldova                | Moldcell SA, Orange Moldova (VoXtel S.A.)                 |
+| Monaco                 | Monaco Telecom                                            |
 | Mongolia               | MobiCom, SKY TEL, Unitel LLC                              |
 | Montserrat             | Cable & Wireless                                          |
 | Myanmar	             | Myanma Posts and Telecommunications                       |
@@ -26988,7 +27048,7 @@ Our SIM solution offers coverage in 188 countries. This is a list of our support
 | Tonga	                 | Digicel Tonga                                             |
 | Trinidad and Tobago	 | Digicel                                                   |
 | Turkey	             | Turk Telecom, Turkcell Iletisim Hizmetleri A.S.           |
-| Turks & Caicos Islands | CWI Carribbean Ltd                                        |
+| Turks & Caicos Islands | CWI Caribbean Ltd                                         |
 | Uganda	             | MTN, Airtel Uganda                                        |
 | Ukraine	             | LIFECELL ex Astelit                                       |
 | United Kingdom	     | Virgin Media O2, Hutchison UK 3G, Vodafone Ltd            |
@@ -27244,6 +27304,8 @@ With the button it is possible to control the state of the device:
 | Click | **HIBERNATING** State | SPM will go into **BOOTING** state. |
 
 ## Status LEDs
+
+  
 
 ### Blue LED
 
@@ -27984,6 +28046,8 @@ With the button it is possible to control the state of the device:
 
 ## Status LEDs
 
+  
+
 ### Blue LED
 
 The blue LED indicates the current state of the [low-level ](/core/power_management/core-power-low) SPM system.
@@ -28415,58 +28479,71 @@ This is an image of the OBD connector pinout. It is valid for the [AutoPi](https
 
 ---
 
-## HW Introduction
+## Introduction(13)
 
-This section explores the hardware components of the [AutoPi](https://www.autopi.io) and how they differ from one generation
-to another.
+This section contains hardware documentation for current and legacy AutoPi devices, along with supported accessories and
+adapter cables. Use it to identify connectors, review technical specifications, plan an installation, or find information
+specific to your device model.
 
-## [AutoPi](https://www.autopi.io) Hardware
-The [AutoPi](https://www.autopi.io) device is built with two major components - an [AutoPi](https://www.autopi.io) board and a Raspberry Pi. The 
-[AutoPi](https://www.autopi.io) board has the OBD-II connector, used to plug the [AutoPi](https://www.autopi.io) device into your vehicle, but also
-has many other components (chips) that work together to provide the full [AutoPi](https://www.autopi.io) experience.
+## What You Will Find Here
+
+The available documentation varies by device, but generally covers:
+
+- Device dimensions and technical specifications.
+- Connector and pinout references.
+- LED and button states.
+- Mounting and antenna installation.
+- Replaceable components and hardware expansion options.
+- Accessories, cables, and vehicle-specific adapters.
+- Reference material for legacy devices.
+
+For initial installation and Cloud setup, select your device from the **Getting Started** category in the sidebar. For device
+configuration and data management, see the [Cloud documentation](/cloud/). This section focuses on the physical device and
+its connections.
+
+## Choose Your Device
+
+Select your device model to find the relevant hardware documentation.
 
   
 
-The [AutoPi](https://www.autopi.io) board is then connected to the Raspberry Pi's GPIO pins and an extra USB connector to
-build the full [AutoPi](https://www.autopi.io) device. There are two generations of [AutoPi](https://www.autopi.io) devices - Generation 2, which uses
-a Raspberry Pi Zero W and a Generation 3 (also called TMU), which uses a Raspberry Pi 3A+. It is
-also possible to use Pi 3B+ or Pi 4 with the TMU device.
+[![](/img/hardware/autopi_mini/AutoPi_Mini_5_Top_right.png) **AutoPi Mini** View specifications and the OBD-II connector pinout for the compact, plug-and-play fleet device.](/hardware/autopi_mini/)
 
-Our latest generaetion devices is the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4), which is built on the Compute Module 4 from Raspberry Pi. This version is more industrialized. 
+[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **AutoPi TMU CM4** Find dimensions, specifications, connector details, mounting information, and hardware expansion guides.](/hardware/autopi_tmu_cm4/)
 
-## Get Your Device Today and Get Started!
+[![](/img/hardware/autopi_canfd_pro/canfd_pro_trans.png) **AutoPi CAN-FD Pro** Review specifications, dimensions, mounting options, indicators, and connector pinouts.](/hardware/autopi_canfd_pro/)
 
-  
+[![](/img/shared/autopi_devices_trans.png) **AutoPi CAN-FD Pro with IP67 casing** Find mounting instructions and pinouts for the protected CAN-FD Pro enclosure.](/hardware/autopi_canfd_pro_casing/)
 
-[![](/img/hardware/autopi_mini/AutoPi_Mini_5_Top_right.png) **AutoPi Mini** Build for fleet volume scaling and ease of install. CAN bus ready with support for legacy protocols. Support wide range of OEM Parameters. Comes with connectivity built-in. See price.](https://shop.autopi.io/products/autopi-mini)
+Looking for an earlier model? See the **Legacy Devices** category in the sidebar. For cables, mounts, antennas, and other
+supported hardware, see [Accessories](/hardware/accessories/).
 
-[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **AutoPi TMU CM4** Based on Raspberry Pi Compute Module 4. Best for custom solutions requiring large computation power and expansion options. Comes with connectivity built-in. See price.](https://shop.autopi.io/products/autopi-telematics-unit-cm4-4g-lte-edition)
+## General Installation Guidance
 
-[![](/img/hardware/autopi_canfd_pro/canfd_pro_trans.png) **AutoPi CAN-FD Pro** Based on Raspberry Pi Compute Module 4. Our most powerful device to date, designed for full speed automotive datalogging of dual CAN-FD channels. See price.](https://shop.autopi.io/products/autopi-can-fd-pro)
-
-[![](/img/shared/autopi_devices_trans.png) **Comparison of all AutoPi devices** Compare our devices and find the best fit for your requirements.](https://www.autopi.io/hardware/compare/)
-
-## Tips for Best Device Performance
-
-When installing the device in the car, there is a few tips on how to get the best performance of your device.
+Always follow the model-specific installation and connector documentation. The following guidance applies to most AutoPi
+installations.
 
 	
-		Hint 1: Try to avoid installing the device in direct sun. Direct sun will heat up the device and in the summertime this can cause the CPU to throttle down, if the temperature gets too hot. 
+		Avoid direct sunlight. Install the device away from direct sunlight and other heat sources. Excessive
+		heat can reduce performance and may cause the processor to throttle.
 	
 	
 
 	
-		Hint 2: The device contains a GPS antenna inside. Make sure that there is no metal covering the device as this can affect the performance of the device. 
+		Keep the GNSS antenna clear. Do not place metal directly over a device with an internal GNSS antenna.
+		Metal can obstruct satellite signals and reduce positioning accuracy.
 	
 	
 
 	
-		Hint 3: The GPS antenna is located close the the logo on the device. To ensure the best performance of your device, make sure the logo side of the device is facing the sky.
+		Use the correct orientation. For devices with an internal GNSS antenna near the logo, position the
+		logo side toward the sky whenever possible. Check your device guide for its antenna location.
 	
 	
 
 	
-		Hint 4: When powering the device, make sure you only power it through the OBD connector. The device can not be powered through any of the other ports.
+		Use the designated power input. Power the device only through the connector and cable specified in its
+		hardware guide. Do not attempt to power it through data or expansion ports.
 
 ---
 
@@ -28924,7 +29001,7 @@ In case you have any questions, don't hesitate to contact us at [support@autopi.
 
 ---
 
-## Introduction(13)
+## Introduction(14)
 
 This section has a few guides written out that are specifically for third generation (TMU) devices.
 Some of the knowledge may be transferrable to second generation devices.
@@ -29190,7 +29267,7 @@ The power to the extension ports can be controlled using the following commands:
 
 ---
 
-## Introduction(14)
+## Introduction(15)
 
 This section has a few guides written out that are specifically for third generation (TMU) devices.
 Some of the knowledge may be transferrable to second generation devices.
@@ -29481,7 +29558,7 @@ stays in sync with the site.
 
 ---
 
-## Introduction(15)
+## Introduction(16)
 
 ---
 # Releases
@@ -29516,11 +29593,46 @@ Looking for a complete, unfiltered list of all changes? Visit the Changelog sect
 
 ---
 
-## October 2026(Releases)
+## November 2026(Releases)
 
 ---
 
-# October 2026 Releases
+## New Features
+
+### XLSX Data Export
+
+*Where to find it: Vehicle or Device -> Dashboard -> Actions -> Download All Data (XLSX)*
+
+You can now export data in XLSX format in addition to CSV. Choose the format that best suits your reporting and analysis workflow when downloading data from a vehicle or device dashboard.
+
+![XLSX Data Export](/img/releases/november_2026/excel_export.png)
+
+### Impact Detection Event
+
+*Where to find it: Device -> Events*
+
+Impact detection is a new event that can notify you when a device detects a significant impact. This can help you identify when a vehicle may have been involved in an accident so that you can investigate and respond quickly.
+
+The impact detection settings are available on devices running version `1.28.6` or later. This ensures that the available configuration options match the capabilities of the device.
+
+![Impact Detection Event](/img/releases/november_2026/impact_event.png)
+
+## Bug Fixes
+
+- When creating a PGN in the OBD library, it was not possible to associate it with a CAN bus. PGNs can now be associated with a CAN bus as expected.
+- The OBD library search did not always return results that matched the specified input. Search results now reflect the entered search criteria correctly.
+- The Device Metrics widget displayed an error when data could not be retrieved from a device that had been offline for an extended period. The widget now handles unavailable data without displaying an error.
+- AutoPi Mini devices did not always display the correct driving state. Driving state detection has been improved to provide more accurate status information.
+
+---
+
+For a full list of all changes, see the [**November 2026 Changelog**](/changelog/november-2026).
+
+---
+
+## October 2026(Releases)
+
+---
 
 ## New Features
 

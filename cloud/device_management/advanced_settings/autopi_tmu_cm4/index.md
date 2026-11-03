@@ -6,7 +6,7 @@
 ---
 
 :::warning
-**Performance impact notice** - changing advanced settings can significantly affect your device's performance, battery life, data consumption, and overall stability. Only modify settings if you understand their implications. If you are unsure about any setting or need assistance, please contact our support team at **support@autopi.io** for guidance.
+Changing advanced settings can significantly affect your device's performance, battery life, data consumption, and overall stability. Only modify settings if you understand their implications. If you are unsure about any setting or need assistance, please contact our support team at **support@autopi.io** for guidance.
 :::
 
 This guide provides a comprehensive overview of all advanced configuration settings available for your AutoPi TMU CM4 device. Advanced settings enable fine-tuned control over device behavior, power management, data logging, connectivity, and specialized features. Each setting is configurable through the AutoPi Cloud platform and can be customized to match your specific operational requirements.

@@ -1,107 +1,91 @@
 # Accessories Overview
 
-> Explore a range of compatible accessories to enhance your AutoPi device. Find the right add-ons to maximize functionality and improve data management.
+> Find supported AutoPi accessories, installation guides, cable pinouts, antenna kits, and vehicle-specific adapters.
 
 ---
 
-:::info Need Custom Integrations?
-[Contact](mailto:support@autopi.io) our team to discuss tailored solutions for your business.
+This section covers accessories for extending, installing, and connecting AutoPi devices. Use the links below to review compatibility, installation instructions, and connector pinouts before adding an accessory to your setup.
+
+:::info Need a custom integration?
+[Contact the AutoPi team](mailto:support@autopi.io) to discuss requirements that are not covered by the standard accessories in this section.
 :::
 
-This section contains a description of addons avaible for the [AutoPi](https://www.autopi.io) devices. 
+## Global SIM Card
 
-Learn how to create and integrate various accessories with your AutoPi device to unlock its full potential. 
-These add-ons enhance functionality, allowing you to customize your setup and optimize data management. Explore the possibilities and make the most of your AutoPi experience.
+The [Global SIM Card Solution](/hardware/accessories/sim-solution/) provides cellular coverage in 188 countries. The guide lists the supported countries and network operators.
 
-## Global SIM Card Solution 
-Our Global SIM card solution works in 188 countries, providing you with reliable and seamless connectivity wherever your solution is based. Stay connected and experience the easiest setup of your device with our versatile sim card.
+The AutoPi Mini and TMU CM4 devices purchased with a subscription already include a SIM card. For other configurations, select a data plan from the [AutoPi Shop](https://shop.autopi.io/products/global-sim-card-solution). Monthly data usage is available in [AutoPi Cloud](https://my.autopi.io).
 
-You can read more about coverage and more information in this **guide**: [Global SIM Card Solution](https://docs.autopi.io/hardware/accessories/sim-solution/). 
+## DoIP HAT
 
-The solution can be **purchased** in our [AutoPi Webshop - Global SIM Card](https://shop.autopi.io/products/global-sim-card-solution). We offer different package sizes and your monthly data usage is shown from our [AutoPi Cloud solution](https://my.autopi.io).
+The DoIP HAT adds Diagnostics over Internet Protocol (ISO 13400) support to compatible AutoPi TMU CM4-based devices. It supports Ethernet-based vehicle diagnostics, including UDS communication and ECU programming workflows.
 
-## OBD-II to dual DB9 pinout Cable
-Connect two CAN bus nodes to the OBD2 port of the AutoPi TMU CM4 or the AutoPi CAN-FD Pro. The DB9 connections each connects to one of the CAN busses available on the devices. 
-
-You can read more about pinout and more information in this **guide**: [OBD-II to dual DB9 pinout](https://docs.autopi.io/hardware/accessories/dualdb9-pinout/). 
-
-This cable can be **purchased** in our [AutoPi Webshop - OBD-II to dual DB9 cable ](https://shop.autopi.io/products/obd2-to-dual-db9). 
-
-**Specifications:**
-* Compatibility: For DB9 based connections.
-* Connector Types: DB9 (male) to 16 PIN OBD2 (female).
-* Protocol Support: CAN BUS for vehicle interfacing.
-* Durability: Constructed with premium materials.
-* Ease of Use: Plug-and-play design for quick and secure connections.
-
-    
-
-## DoIP HAT 
-The DoIP HAT is a highly advanced interface module designed to enhance vehicle diagnostics using the DoIP protocol (Diagnostics over Internet Protocol). With high-speed Ethernet connectivity and support for multiple protocols, this module ensures accurate communication and comprehensive diagnostic capabilities for modern vehicles.
-
-This DoIP HAT can be **purchased** in our [AutoPi Webshop - DoIP HAT](https://shop.autopi.io/products/doip-hat-v1-3).
-
-You can read more about how to install DoIP HAT to your AutoPi device in this **guide**: [DoIP HAT Install guide](https://docs.autopi.io/hardware/accessories/doip-install/). 
-
-And you can read more on how to start using the DoIP software and **step by step guide on how to activate DoIP interface** on your AutoPi device: [Setting up DoIP](https://docs.autopi.io/developer_guides/setting-up-doip/).
-
-**Technical Overview:**
-An advanced DoIP (ISO 13400) interface module designed for enhanced diagnostic communication with vehicle ECUs, leveraging high-speed Ethernet connectivity for real-time data analysis.
-
-**Performance Advantages:**
-* DoIP Protocol Support: Fully compliant with ISO 13400 standards for efficient communication with vehicle systems, enabling precise diagnostics and firmware updates.
-* High-Speed Ethernet Connectivity: Provides fast and reliable data transfer, essential for real-time diagnostics and monitoring.
-* Multi-Protocol Compatibility: Supports UDS (Unified Diagnostic Services) and other key automotive protocols across a wide range of vehicle makes and models.
-* Rugged Construction: Engineered for durability, the HAT is built to withstand harsh automotive environments for consistent performance.
-* Quick Deployment: Designed for plug-and-play installation on compatible devices, simplifying the setup process for fast implementation.
-* Application Scope: Ideal for automotive workshops, testing centers, and manufacturers requiring advanced diagnostics, real-time vehicle monitoring, and firmware updates.
-
-    
-
-## WiFi/BLE/LTE/GPS Antennas
-If you often drive in places with poor 4G/LTE coverage and/or weak GPS signal, our Webshop offers 2 external kits that should improve the overall signal quality. The kit allows you to boost 4G/LTE connectivity and GPS signal strength, which is especially useful if you frequently drive in areas with weak signal reception. 
-
-* [4-in-1 Antenna Kit](https://shop.autopi.io/products/4-in-1-car-antenna-lte-x2-gps-wifi) - he 4in1 Antenna Kit is a high-performance solution designed to optimize connectivity for the AutoPi TMU CM4 device. Featuring two LTE antennas, one GPS antenna, and one WiFi antenna, this compact system delivers strong signal reception and reliable communication across multiple wireless standards. Built for demanding environments, the antenna kit ensures stable and long-term performance.
-This kit can be pre-installed on AutoPi TMU CM4 device or installed by using this guide: [Installation Guide for CM4 device](https://docs.autopi.io/hardware/autopi_tmu_cm4/installing_4in1_external_antennas/). 
-
-    
-
-* [3-in-1 Antenna Kit](https://shop.autopi.io/products/3in1-external-antenna-kit) - With this kit you can convert your AutoPi device to use the all in one external antenna, instead of the built-in internal antennas, thereby improving the overall signal quality. This antenna kit includes: 2x LTE and 1x GPS. 
-This kit can be pre-installed on AutoPi TMU CM4 device or installed by using this guide: [Installation Guide for CM4 device](https://docs.autopi.io/hardware/autopi_tmu_cm4/installing_external_antennas/). 
-
-    
-
-:::info
-Our [Autopi CAN-FD Pro device](https://shop.autopi.io/products/autopi-can-fd-pro) comes with the 4-in-1 Antenna Kit already included. 
+:::caution Check vehicle compatibility
+Install a DoIP-enabled device only in a vehicle that supports Ethernet diagnostics. After installation, the AutoPi Ethernet interface is routed internally to the vehicle and must not be connected to an external Ethernet device.
 :::
 
-## Adapter Cables
-Our Autopi Webshop offers various adapter cables to help integrate your AutoPi device in specific setups: 
-  * [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable?pr_prod_strat=jac&pr_rec_id=f2111200b&pr_rec_pid=8619775328605&pr_ref_pid=14961336746333&pr_seq=uniform) – Add extra reach for flexible placement.
-  * [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable?pr_prod_strat=jac&pr_rec_id=17052e989&pr_rec_pid=8619774050653&pr_ref_pid=8609919074653&pr_seq=uniform) - Power the AutoPi device with any 12-24 volt DC power supply.
-  * [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable?pr_prod_strat=jac&pr_rec_id=70ef610e3&pr_rec_pid=8619777327453&pr_ref_pid=8619774050653&pr_seq=uniform) - Use this Y-splitter cable if you need to connect an additional OBD-II device at the same time as your AutoPi device.
-  * [Tesla OBD-II Adapter Cable for Model 3 and Y](https://shop.autopi.io/products/tesla-obd2-adapter-cable-for-model-3-and-y) - Add an OBD-II port to your Tesla Model 3 or Model Y with this adapter cable.
-  * [Micro USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable) - This Micro USB to USB-A adapter cable is made to fit perfectly with the external Micro USB port on the AutoPi device.
-  * [CAN Bus Testing/Loop Cable](https://shop.autopi.io/products/can-bus-testing-cable) - The CAN Bus Testing Cable is a cable designed for internal communication testing between two CAN bus systems.
-  * [CAN Bus Cable with Open Wires](https://shop.autopi.io/products/can-bus-cable-w-open-wires) - The CAN Bus cable with open wires is a cable designed for customized installations, where you need to connect specific wires only. 
+- Follow the [DoIP HAT installation guide](/hardware/accessories/doip-install/).
+- Complete the [DoIP software setup](/developer_guides/setting-up-doip/).
+- Purchase the [DoIP HAT for AutoPi TMU CM4](https://shop.autopi.io/products/doip-hat-v1-3).
 
-    
+  
 
-## Heavy-duty Adapter Cables
-Our Autopi Webshop offers various heavy-duty adapter cables to help integrate your AutoPi device in different Heavy-duty J1939 vehicles. You can browse through the selection for: 
-* [Catapiller 14 PIN J1939 to 16 PIN OBD-II Adapter cable](https://shop.autopi.io/products/catapiller-14-pin-j1939-to-16-pin-obd-ii-adapter-cable)
-* [IVECO 30 PIN J1939 to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/iveco-30-pin-to-16-pin-obd2-adapter-cable)
-* [Knorr Wabco Trailer 7 PIN J1939 to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/knorr-wabco-trailer-7-pin-to-16-pin-obd2-adapter-cable) 
-* [MAN 37 PIN J1939 to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/man-37-pin-to-16-pin-obd2-adapter-cable)
-* [MAN Truck 12 PIN J1939 to 16 PIN OBD-II Adapter](https://shop.autopi.io/products/man-truck-12-to-16-pin-obd2-adapter)
-* [Mercedes 14 PIN J1939 to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/mercedes-14-pin-to-16-pin-obd2-adapter-cable)
-* [Renault 12 PIN J1939 to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/renault-12-pin-to-16-pin-obd2-adapter-cable)
-* [Scania 16 PIN J1939 to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/scania-16-pin-to-16-pin-obd2-adapter-cable)
-* [Volvo 8 PIN J1939 to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/volvo-8-pin-to-16-pin-obd2-adapter-cable)
-* [Cummins 9 PIN J1939 (J1708) to 16 PIN OBD-II Adapter Cable](https://shop.autopi.io/products/cummins-9-pin-j1939-j1708-to-16-pin-obd2-adapter-cable)
+## External Antenna Kits
 
-![Heavy-duty Adapter Cables](/img/hardware/accessories/cables/j1939_cables.png)
-![Heavy-duty Adapter Cables2](/img/hardware/accessories/cables/j1939_cables2.png)
+External antenna kits can improve reception when a device is installed where its internal antennas have limited access to cellular, GNSS, or Wi-Fi signals. Both kits can be ordered pre-installed or installed on a compatible TMU CM4.
 
-## Device Mounts 
-At the moment we have 2 mounting options available for the AutoPi devices. You can mount your AutoPi device with [Flat Surface Mount](https://docs.autopi.io/hardware/accessories/device_mounts/#flat-surfaces-mount) or [Curved Surfaces Mount](https://docs.autopi.io/hardware/accessories/device_mounts/#curved-surfaces-mount). For both of the options we have a free designs available for download, you can read more at this **guide**: [Device Mounts](https://docs.autopi.io/hardware/accessories/device_mounts/).
+### 4-in-1 Antenna Kit
+
+The [4-in-1 Antenna Kit](https://shop.autopi.io/products/4-in-1-car-antenna-lte-x2-gps-wifi) includes two LTE antennas, one GNSS antenna, and one Wi-Fi antenna. Follow the [4-in-1 installation guide](/hardware/autopi_tmu_cm4/installing_4in1_external_antennas/) when adding the kit to a TMU CM4.
+
+:::note
+The AutoPi CAN-FD Pro includes the 4-in-1 antenna kit as standard.
+:::
+
+  
+
+### 3-in-1 Antenna Kit
+
+The [3-in-1 Antenna Kit](https://shop.autopi.io/products/3in1-external-antenna-kit) includes two LTE antennas and one GNSS antenna. Follow the [3-in-1 installation guide](/hardware/autopi_tmu_cm4/installing_external_antennas/) when adding the kit to a TMU CM4.
+
+  
+
+## General-Purpose Cables
+
+The following cables support common installation, development, and testing scenarios:
+
+- [OBD-II Extension Cable](https://shop.autopi.io/products/obd-ii-extension-cable): Relocates the device using a direct pass-through connection on all 16 pins.
+- [OBD-II Power Cable](https://shop.autopi.io/products/obd-ii-power-cable): Powers a device from a 12-24 V DC supply for setup, testing, or development outside a vehicle.
+- [OBD-II Splitter Cable](https://shop.autopi.io/products/obd-ii-splitter-cable): Connects an AutoPi and a second OBD-II device while keeping both ports available.
+- [OBD-II to Dual DB9 Cable](/hardware/accessories/dualdb9-pinout/): Connects two CAN bus channels from an AutoPi TMU CM4 or AutoPi CAN-FD Pro to separate DB9 connectors. [Purchase the cable](https://shop.autopi.io/products/obd2-to-dual-db9).
+- [Tesla OBD-II Adapter Cable for Model 3 and Y](/hardware/accessories/tesla-obd2-adapter-model-3-y/): Adds an OBD-II connection to a compatible Tesla Model 3 or Model Y.
+- [Micro USB to USB-A Adapter Cable](https://shop.autopi.io/products/micro-usb-to-usb-a-adapter-cable): Connects a USB-A peripheral to the Micro USB port on an AutoPi Telematics Unit.
+- [CAN Bus Testing/Loop Cable](https://shop.autopi.io/products/can-bus-testing-cable): Loops the two CAN interfaces on an AutoPi TMU CM4 for communication testing.
+- [Male CAN Bus Cable with Open Wires](/hardware/accessories/male-can-bus-open-wires/): Exposes individual signals for a custom installation.
+- [Female CAN Bus Cable with Open Wires](/hardware/accessories/female-can-bus-open-wires/): Provides a female OBD-II connector with individual wires for custom connections.
+
+  
+
+## Heavy-Duty Vehicle Adapter Cables
+
+Vehicle-specific adapter cables connect an AutoPi OBD-II interface to J1939 or J1708 diagnostic connectors. Select the guide that matches the connector and vehicle. Each guide includes a pinout and a link to the corresponding cable.
+
+- [Caterpillar 14-pin J1939 adapter](/hardware/accessories/caterpillar-14pin-j1939-obd2/)
+- [Caterpillar 538-5051 9-pin J1939 adapter](/hardware/accessories/caterpillar-538-5051-9pin-j1939-obd2/)
+- [Cummins 9-pin J1939/J1708 adapter](/hardware/accessories/cummins-9pin-j1939-obd2/)
+- [Cummins-Komatsu 12-pin J1939 adapter](/hardware/accessories/cummins-komatsu-12pin-j1939-obd2/)
+- [IVECO 30-pin J1939 adapter](/hardware/accessories/iveco-30pin-j1939-obd2/)
+- [Knorr Wabco trailer 7-pin J1939 adapter](/hardware/accessories/knorr-wabco-7pin-j1939-obd2/)
+- [MAN 37-pin J1939 adapter](/hardware/accessories/man-37pin-j1939-obd2/)
+- [MAN truck 12-pin J1939 adapter](/hardware/accessories/man-truck-12pin-j1939-obd2/)
+- [Mercedes 14-pin J1939 adapter](/hardware/accessories/mercedes-14pin-j1939-obd2/)
+- [Renault 12-pin J1939 adapter](/hardware/accessories/renault-12pin-j1939-obd2/)
+- [Scania 16-pin J1939 adapter](/hardware/accessories/scania-16pin-j1939-obd2/)
+- [Volvo 8-pin J1939 adapter](/hardware/accessories/volvo-8pin-j1939-obd2/)
+
+![Heavy-duty J1939 adapter cables](/img/hardware/accessories/cables/j1939_cables.png)
+![Additional heavy-duty J1939 adapter cables](/img/hardware/accessories/cables/j1939_cables2.png)
+
+## Device Mounts
+
+The [Device Mounts guide](/hardware/accessories/device_mounts/) provides downloadable 3D-printable designs for mounting a compatible AutoPi device on a flat or curved surface.

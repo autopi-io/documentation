@@ -6,47 +6,59 @@
 ---
 
 ## Introduction
-[AutoPi](https://www.autopi.io) offers a global SIM card solution. The SIM card solution is mainly targeted for our [CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) and [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) (without simcard) solutions, as these does not come with a SIM card per standard. 
-The solution can be purchased in our webshop. We offer different package sizes and your monthly data usage is shown from our [Cloud](https://www.autopi.io/software-platform/cloud-management) solution. 
+
+AutoPi offers a global SIM card solution for reliable cellular connectivity across multiple countries and regions. It is primarily intended for [AutoPi CAN-FD Pro](https://www.autopi.io/hardware/autopi-canfd-pro) and [AutoPi TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4) devices purchased without a SIM card, as these devices do not include one as standard.
+
+The solution is available in several data package sizes and can be purchased from the [AutoPi shop](https://shop.autopi.io/products/global-sim-card-solution).
+
+### Monitor SIM usage and status
+
+When using an AutoPi SIM card, you can monitor its data usage and status directly in [AutoPi Cloud](https://www.autopi.io/software-platform/cloud-management):
+
+1. Select your device in AutoPi Cloud.
+2. Open the **Overview** page.
+3. Locate the **AutoPi.io SIM** widget to view the SIM card's current status and data usage.
+
+  
 
 :::tip
-In case you have any questions, don't hesitate to contact us at [sales@autopi.io](mailto:sales@autopi.io).
+If you have any questions, contact us at [sales@autopi.io](mailto:sales@autopi.io).
 :::
 
 ## Global coverage
 
-Our SIM solution offers coverage in 188 countries. This is a list of our supported countries. 
+The AutoPi SIM card solution provides coverage in 188 countries. The table below lists the available operators by country and region.
 
 | Country                | Operators                                                 |
 |------------------------|-----------------------------------------------------------|
 | Afghanistan            | MTN                                                       |
 | Albania                | ONE Telecommunications                                    |
 | Algeria                | Optimum Telecom Algerie S.p.A, Wataniya Telecom Algerie   |
-| Anguilla               | CWI Carribbean Ltd, Digicel, Digicel                      |
+| Anguilla               | CWI Caribbean Ltd, Digicel                                |
 | Antigua and Barbuda    | Cable & Wireless                                          |
 | Armenia                | Telecom Armenia, K Telecom - Vivacel (MTS)                |
 | Austria                | H3G Austria, A1 Telekom Austria AG                        |
 | Azerbaijan             | BAKCELL LLC., Azercell Telecom B.M                        |
-| Bahrain                | Batelco - Bahrain Telecommunications Company, VIVA Bahrain|
+| Bahrain                | Batelco - Bahrain Telecommunications Company, VIVA Bahrain |
 | Bangladesh             | Grameenphone                                              |
 | Barbados               | Cable & Wireless                                          |
 | Belgium                | Orange (Ex Mobistar), Proximus                            |
 | Benin                  | Spacetel-Benin (MTN Benin), Etisalat Benin S.A            |
 | Bermuda                | Bermuda Digital                                           |
 | Bolivia                | Telecel, Nuevatel PCS de Bolivia SA                       |
-| Bonaire                |  Mossel Digicel Curaçao & Bonaire                         |
+| Bonaire                | Mossel Digicel Curaçao & Bonaire                          |
 | Bosnia and Herzegovina | m:tel, HT Mobile                                          |
 | Botswana               | MASCOM                                                    |
 | Brazil                 | Vivo, Claro, TIM                                          |
 | British Virgin Islands | Cable & Wireless, Digicel British Virgin Islands          |
-| Brunei                 | DST Communications Sdn Bhd(public)                        |
+| Brunei                 | DST Communications Sdn Bhd (public)                       |
 | Bulgaria               | Yettel (Telenor), A1                                      |
 | Burkina Faso           | Orange                                                    |
 | Cambodia               | Mobitel, Metfon                                           |
 | Cameroon               | Orange Cameroun S.A., MTN                                 |
 | Cape Verde             | T+ Telecomunicacões, CVTelecom                            |
-| Cayman Islands         | CWI Carribbean Ltd                                        |
-| Central AfricanRepublic| Orange Centrafrique                                       |
+| Cayman Islands         | CWI Caribbean Ltd                                         |
+| Central African Republic | Orange Centrafrique                                     |
 | Chad                   | Celtel Tchad (Airtel), Millicom Tchad (Tigo)              |
 | China                  | China Unicom, China Mobile                                |
 | Congo                  | Airtel Congo Brazzaville, MTN                             |
@@ -54,7 +66,7 @@ Our SIM solution offers coverage in 188 countries. This is a list of our support
 | Croatia                | Tele2 AB Croatia, Croatian Telecom, VIPnet                |
 | Cyprus                 | MTN, CytaMobile                                           |
 | Czech Republic         | O2, Vodafone                                              |
-| Denmark                | Telia Mobile, Telia Mobile, Hi3G Access AB 2              |
+| Denmark                | Telia Mobile, Hi3G Access AB 2                            |
 | Dominican Republic     | Claro Dominicana, Cable & Wireless                        |
 | Ecuador                | Conecel Ecuador                                           |
 | Egypt                  | Orange Egypt                                              |
@@ -85,9 +97,9 @@ Our SIM solution offers coverage in 188 countries. This is a list of our support
 | Israel                 | Pelephone                                                 |
 | Italy                  | Wind, Vodafone Omnitel N.V., Telekom Italia, Hutchison 3G |
 | Ivory Coast            | Orange Cote Divoire S.A. (Orange CI), MTN                 |
-| Jamaica                | CWI Carribbean Ltd                                        |
+| Jamaica                | CWI Caribbean Ltd                                         |
 | Jordan	             | Orange, Umniah Jordan                                     |
-| Kazakhstan	         | Kcell JSC, Kazakhstam Tele2, KaR-Tel LLP (Beeline)        |
+| Kazakhstan	         | Kcell JSC, Kazakhstan Tele2, KaR-Tel LLP (Beeline)        |
 | Kenya	                 | Airtel Networks Kenya Limited                             |
 | Kosovo	             | IPKO                                                      |
 | Kyrgyzstan	         | Beeline, MegaCom                                          |
@@ -104,14 +116,14 @@ Our SIM solution offers coverage in 188 countries. This is a list of our support
 | Malawi                 | CelTel- ZAIN- Airtel                                      |
 | Malaysia               | Digi Telecom                                              |
 | Mali                   | Orange Mali, Malitel SA                                   |
-| Malta                  | Epic Malte, MobIsle Communications Ltd                    |
+| Malta                  | Epic Malta, MobIsle Communications Ltd                    |
 | Martinique             | Orange Caraïbe                                            |
 | Mauritania             | MAURITEL MOBILES                                          |
 | Mauritius              | Cellplus Mobile Communications Ltd, Emtel, MTML           |
 | Mayotte                | Societe Reunionnaise de Radiotelephone (SRR REUNION)      |
 | Mexico                 | Telcel                                                    |
-| Moldova                | Moldcell SA, Orange Moldava (VoXtel S.A.)                 |
-| Kosovo                 | Monaco Telecom                                            |
+| Moldova                | Moldcell SA, Orange Moldova (VoXtel S.A.)                 |
+| Monaco                 | Monaco Telecom                                            |
 | Mongolia               | MobiCom, SKY TEL, Unitel LLC                              |
 | Montserrat             | Cable & Wireless                                          |
 | Myanmar	             | Myanma Posts and Telecommunications                       |
@@ -152,7 +164,7 @@ Our SIM solution offers coverage in 188 countries. This is a list of our support
 | Tonga	                 | Digicel Tonga                                             |
 | Trinidad and Tobago	 | Digicel                                                   |
 | Turkey	             | Turk Telecom, Turkcell Iletisim Hizmetleri A.S.           |
-| Turks & Caicos Islands | CWI Carribbean Ltd                                        |
+| Turks & Caicos Islands | CWI Caribbean Ltd                                         |
 | Uganda	             | MTN, Airtel Uganda                                        |
 | Ukraine	             | LIFECELL ex Astelit                                       |
 | United Kingdom	     | Virgin Media O2, Hutchison UK 3G, Vodafone Ltd            |

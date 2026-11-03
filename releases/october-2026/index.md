@@ -4,8 +4,6 @@
 
 ---
 
-# October 2026 Releases
-
 ## New Features
 
 ### Listen-only mode for AutoPI TMU CM4 device 

@@ -1,55 +1,69 @@
-# HW Introduction
+# Introduction
 
-> This section explores the hardware components of the [AutoPi](https://www.autopi.io) and how they differ from one generation
-to another.
+> This section contains hardware documentation for current and legacy AutoPi devices, along with supported accessories and
+adapter cables. Use it to identify connectors, review technical specifications, plan an installation, or find information
+specific to your device model.
 
-This section explores the hardware components of the [AutoPi](https://www.autopi.io) and how they differ from one generation
-to another.
+This section contains hardware documentation for current and legacy AutoPi devices, along with supported accessories and
+adapter cables. Use it to identify connectors, review technical specifications, plan an installation, or find information
+specific to your device model.
 
-## [AutoPi](https://www.autopi.io) Hardware
-The [AutoPi](https://www.autopi.io) device is built with two major components - an [AutoPi](https://www.autopi.io) board and a Raspberry Pi. The 
-[AutoPi](https://www.autopi.io) board has the OBD-II connector, used to plug the [AutoPi](https://www.autopi.io) device into your vehicle, but also
-has many other components (chips) that work together to provide the full [AutoPi](https://www.autopi.io) experience.
+## What You Will Find Here
+
+The available documentation varies by device, but generally covers:
+
+- Device dimensions and technical specifications.
+- Connector and pinout references.
+- LED and button states.
+- Mounting and antenna installation.
+- Replaceable components and hardware expansion options.
+- Accessories, cables, and vehicle-specific adapters.
+- Reference material for legacy devices.
+
+For initial installation and Cloud setup, select your device from the **Getting Started** category in the sidebar. For device
+configuration and data management, see the [Cloud documentation](/cloud/). This section focuses on the physical device and
+its connections.
+
+## Choose Your Device
+
+Select your device model to find the relevant hardware documentation.
 
   
 
-The [AutoPi](https://www.autopi.io) board is then connected to the Raspberry Pi's GPIO pins and an extra USB connector to
-build the full [AutoPi](https://www.autopi.io) device. There are two generations of [AutoPi](https://www.autopi.io) devices - Generation 2, which uses
-a Raspberry Pi Zero W and a Generation 3 (also called TMU), which uses a Raspberry Pi 3A+. It is
-also possible to use Pi 3B+ or Pi 4 with the TMU device.
+[![](/img/hardware/autopi_mini/AutoPi_Mini_5_Top_right.png) **AutoPi Mini** View specifications and the OBD-II connector pinout for the compact, plug-and-play fleet device.](/hardware/autopi_mini/)
 
-Our latest generaetion devices is the [AutoPi](https://www.autopi.io) [TMU CM4](https://www.autopi.io/hardware/autopi-tmu-cm4), which is built on the Compute Module 4 from Raspberry Pi. This version is more industrialized. 
+[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **AutoPi TMU CM4** Find dimensions, specifications, connector details, mounting information, and hardware expansion guides.](/hardware/autopi_tmu_cm4/)
 
-## Get Your Device Today and Get Started!
+[![](/img/hardware/autopi_canfd_pro/canfd_pro_trans.png) **AutoPi CAN-FD Pro** Review specifications, dimensions, mounting options, indicators, and connector pinouts.](/hardware/autopi_canfd_pro/)
 
-  
+[![](/img/shared/autopi_devices_trans.png) **AutoPi CAN-FD Pro with IP67 casing** Find mounting instructions and pinouts for the protected CAN-FD Pro enclosure.](/hardware/autopi_canfd_pro_casing/)
 
-[![](/img/hardware/autopi_mini/AutoPi_Mini_5_Top_right.png) **AutoPi Mini** Build for fleet volume scaling and ease of install. CAN bus ready with support for legacy protocols. Support wide range of OEM Parameters. Comes with connectivity built-in. See price.](https://shop.autopi.io/products/autopi-mini)
+Looking for an earlier model? See the **Legacy Devices** category in the sidebar. For cables, mounts, antennas, and other
+supported hardware, see [Accessories](/hardware/accessories/).
 
-[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **AutoPi TMU CM4** Based on Raspberry Pi Compute Module 4. Best for custom solutions requiring large computation power and expansion options. Comes with connectivity built-in. See price.](https://shop.autopi.io/products/autopi-telematics-unit-cm4-4g-lte-edition)
+## General Installation Guidance
 
-[![](/img/hardware/autopi_canfd_pro/canfd_pro_trans.png) **AutoPi CAN-FD Pro** Based on Raspberry Pi Compute Module 4. Our most powerful device to date, designed for full speed automotive datalogging of dual CAN-FD channels. See price.](https://shop.autopi.io/products/autopi-can-fd-pro)
-
-[![](/img/shared/autopi_devices_trans.png) **Comparison of all AutoPi devices** Compare our devices and find the best fit for your requirements.](https://www.autopi.io/hardware/compare/)
-
-## Tips for Best Device Performance
-
-When installing the device in the car, there is a few tips on how to get the best performance of your device.
+Always follow the model-specific installation and connector documentation. The following guidance applies to most AutoPi
+installations.
 
 	
-		Hint 1: Try to avoid installing the device in direct sun. Direct sun will heat up the device and in the summertime this can cause the CPU to throttle down, if the temperature gets too hot. 
+		Avoid direct sunlight. Install the device away from direct sunlight and other heat sources. Excessive
+		heat can reduce performance and may cause the processor to throttle.
 	
 	
 
 	
-		Hint 2: The device contains a GPS antenna inside. Make sure that there is no metal covering the device as this can affect the performance of the device. 
+		Keep the GNSS antenna clear. Do not place metal directly over a device with an internal GNSS antenna.
+		Metal can obstruct satellite signals and reduce positioning accuracy.
 	
 	
 
 	
-		Hint 3: The GPS antenna is located close the the logo on the device. To ensure the best performance of your device, make sure the logo side of the device is facing the sky.
+		Use the correct orientation. For devices with an internal GNSS antenna near the logo, position the
+		logo side toward the sky whenever possible. Check your device guide for its antenna location.
 	
 	
 
 	
-		Hint 4: When powering the device, make sure you only power it through the OBD connector. The device can not be powered through any of the other ports.
+		Use the designated power input. Power the device only through the connector and cable specified in its
+		hardware guide. Do not attempt to power it through data or expansion ports.

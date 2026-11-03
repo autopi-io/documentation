@@ -26,6 +26,8 @@ With the button it is possible to control the state of the device:
 
 ## Status LEDs
 
+  
+
 ### Blue LED
 
 The blue LED indicates the current state of the [low-level ](/core/power_management/core-power-low) SPM system.
