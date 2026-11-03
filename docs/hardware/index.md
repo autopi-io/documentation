@@ -37,18 +37,18 @@ Select your device model to find the relevant hardware documentation.
 
 <CardGrid home>
 
-[![](/img/hardware/autopi_mini/AutoPi_Mini_5_Top_right.png) **AutoPi Mini** View specifications and the OBD-II connector pinout for the compact, plug-and-play fleet device.](/hardware/autopi_mini/autopi-mini-intro/)
+[![](/img/hardware/autopi_mini/AutoPi_Mini_5_Top_right.png) **AutoPi Mini** View specifications and the OBD-II connector pinout for the compact, plug-and-play fleet device.](/hardware/autopi_mini/)
 
-[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **AutoPi TMU CM4** Find dimensions, specifications, connector details, mounting information, and hardware expansion guides.](/hardware/autopi_tmu_cm4/autopi-cm4-intro/)
+[![](/img/hardware/autopi_tmu_cm4/TMU_Floating_Topside_V1_scaled.png) **AutoPi TMU CM4** Find dimensions, specifications, connector details, mounting information, and hardware expansion guides.](/hardware/autopi_tmu_cm4/)
 
-[![](/img/hardware/autopi_canfd_pro/canfd_pro_trans.png) **AutoPi CAN-FD Pro** Review specifications, dimensions, mounting options, indicators, and connector pinouts.](/hardware/autopi_canfd_pro/autopi-pro-intro/)
+[![](/img/hardware/autopi_canfd_pro/canfd_pro_trans.png) **AutoPi CAN-FD Pro** Review specifications, dimensions, mounting options, indicators, and connector pinouts.](/hardware/autopi_canfd_pro/)
 
-[![](/img/shared/autopi_devices_trans.png) **AutoPi CAN-FD Pro with IP67 casing** Find mounting instructions and pinouts for the protected CAN-FD Pro enclosure.](/hardware/autopi_canfd_pro_casing/autopi-pro-casing-intro/)
+[![](/img/shared/autopi_devices_trans.png) **AutoPi CAN-FD Pro with IP67 casing** Find mounting instructions and pinouts for the protected CAN-FD Pro enclosure.](/hardware/autopi_canfd_pro_casing/)
 
 </CardGrid>
 
 Looking for an earlier model? See the **Legacy Devices** category in the sidebar. For cables, mounts, antennas, and other
-supported hardware, see [Accessories](/hardware/accessories/accessories-intro/).
+supported hardware, see [Accessories](/hardware/accessories/).
 
 ## General Installation Guidance
 
