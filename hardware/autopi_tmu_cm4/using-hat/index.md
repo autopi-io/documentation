@@ -52,7 +52,7 @@ The following table is an explanation of each pinout. The type describes the usa
 |   29    |  ETH_TD1-      |  Ethernet Data pin TD1-      | Bi-directional | |
 |   30    |  ETH_TD1+      |  Ethernet Data pin TD1+      | Bi-directional | |
 |   31    |  RPI_PWR      |   CM4 power status pin     | Output | 3.3V Level - [See CM4 datasheet  for details](https://datasheets.raspberrypi.com/cm4/cm4-datasheet.pdf) |
-|   32    |  RP2040_GPIO17      |  Connection to RP2040 SPM on GPIO17      | Input | When high the CM4 will wake - 3.3V Level - [See RPI2040 datasheet  for details](https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf) |
+|   32    |  RP2040_GPIO17      |  Connection to RP2040 SPM on GPIO17      | Input | When pulled low shortly by a pulse, the CM4 will wake - 3.3V Level - 3.3V Level - [See RPI2040 datasheet  for details](https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf) |
 |   33    |  RP2040_GPIO28      |  Connection to RP2040 SPM on GPIO28      | Output |3.3V Level - [See RPI2040 datasheet  for details](https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf) |
 |   34    |  USB_DP_EXT      |  USB4 D+ Data line - HAT USB      | Bi-directional | |
 |   35    |  USB_DM_EXT      |  USB4 D- Data line - HAT USB        | Bi-directional | |
